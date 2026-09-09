@@ -19,6 +19,7 @@ from datetime import date, datetime, timedelta
 
 from abteilung_basis import BASIS, DATEN, config_laden
 from orchestrator_mail import senden
+import namen
 
 ZUSTAND = os.path.join(DATEN, "auftraege.json")
 MAX_NACHARBEIT = 2
@@ -62,10 +63,35 @@ def naechste_id(daten: dict) -> str:
 
 # ---------- Auftraege ----------
 
+def abteilung_aufloesen(eingabe: str) -> str:
+    """Nimmt den langen Schluessel ('07 Einkauf China'), die Nummer ('07'),
+    den Vornamen ('Henrik') oder ein eindeutiges Wortstueck und liefert den
+    kanonischen Schluessel aus ABTEILUNGEN. Sonst ValueError mit Liste."""
+    e = (eingabe or "").strip()
+    if e in ABTEILUNGEN:
+        return e
+    ekl = e.lower()
+    # nach Nummer
+    for schluessel in ABTEILUNGEN:
+        if schluessel[:2] == e.zfill(2) or schluessel.split(" ", 1)[0] == e:
+            return schluessel
+    # nach Vorname
+    for nr, vn in namen.VORNAMEN.items():
+        if vn.lower() == ekl:
+            for schluessel in ABTEILUNGEN:
+                if schluessel.startswith(nr + " "):
+                    return schluessel
+    # eindeutiges Wortstueck im langen Namen
+    treffer = [s for s in ABTEILUNGEN if ekl and ekl in s.lower()]
+    if len(treffer) == 1:
+        return treffer[0]
+    moeglich = ", ".join(f"{s} ({namen.vorname(s)})" for s in ABTEILUNGEN)
+    raise ValueError(f"Abteilung '{eingabe}' nicht eindeutig. Moeglich: {moeglich}")
+
+
 def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
                     kriterien: list[str] | None = None) -> dict:
-    if abteilung not in ABTEILUNGEN:
-        raise ValueError(f"Unbekannte Abteilung '{abteilung}'. Bekannt: {list(ABTEILUNGEN)}")
+    abteilung = abteilung_aufloesen(abteilung)
     daten = zustand_laden()
     auftrag = {
         "id": naechste_id(daten),
@@ -86,7 +112,9 @@ def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
     }
     daten["auftraege"].append(auftrag)
     zustand_speichern(daten)
-    print(f"Auftrag {auftrag['id']} an {abteilung} angelegt, Frist {auftrag['frist']}.")
+    vn = namen.vorname(abteilung)
+    wer = f"{abteilung} ({vn})" if vn else abteilung
+    print(f"Auftrag {auftrag['id']} an {wer} angelegt, Frist {auftrag['frist']}.")
     return auftrag
 
 
@@ -114,7 +142,11 @@ def eskalieren(auftrag: dict, grund: str, text: str, config: dict) -> None:
     auftrag["eskaliert"] = True
     auftrag["stand"] = "wartet auf Bjoern"
     betreff = f"[Bello] {auftrag['id']} {auftrag['abteilung']} — {grund}"
-    senden(betreff, text, config)
+    vn = namen.vorname(auftrag.get("abteilung", ""))
+    fuss = f"\n\n— {namen.ORCHESTRATOR} (Orchestrator)"
+    if vn:
+        fuss = f"\n\nBearbeitet von {vn}.{fuss}"
+    senden(betreff, text + fuss, config)
 
 
 # ---------- Lauf ----------
@@ -246,6 +278,7 @@ def wochenbericht_text(daten: dict | None = None) -> str:
     if wartend:
         zeilen += ["", "Wartet auf deine Entscheidung:"]
         zeilen += [f"  ! {a['id']} {a['abteilung']}: {a['ziel']}" for a in wartend]
+    zeilen += ["", f"— {namen.ORCHESTRATOR} (Orchestrator)"]
     return "\n".join(zeilen)
 
 
@@ -281,9 +314,14 @@ def main() -> None:
     elif "--auftrag" in argumente:
         rest = argumente[argumente.index("--auftrag") + 1:]
         if len(rest) < 2:
-            print('Aufruf: orchestrator.py --auftrag "01 Innovation" "Ziel" [JJJJ-MM-TT]')
+            print('Aufruf: orchestrator.py --auftrag "07 Einkauf China" "Ziel" [JJJJ-MM-TT]')
+            print('        (statt "07 Einkauf China" gehen auch "07" oder "Henrik")')
             sys.exit(1)
-        auftrag_anlegen(rest[0], rest[1], rest[2] if len(rest) > 2 else None)
+        try:
+            auftrag_anlegen(rest[0], rest[1], rest[2] if len(rest) > 2 else None)
+        except ValueError as fehler:
+            print(fehler)
+            sys.exit(1)
     else:
         lauf(probelauf="--probelauf" in argumente)
 

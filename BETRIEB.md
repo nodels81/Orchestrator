@@ -37,8 +37,31 @@ sudo -u bello /opt/bello/.venv/bin/python /opt/bello/orchestrator.py \
   --auftrag "01 Innovation" "Kurze Marktbeobachtung Fettleder-Halsbänder 69–99 €" 2026-10-01
 ```
 
-Abteilungen: `"01 Innovation"`, `"02 Produkt & Ausführung"`, `"03 Vertrieb"`, `"04 Social Media"`,
-`"05 Personal"` (Wiebke), `"06 Einkauf"` (Insa), `"07 Einkauf China"`. Die Frist am Ende ist optional (Standard: 7 Tage).
+Die Belegschaft (im Aufruf nutzt du den Namen in Anführungszeichen, nicht den Vornamen):
+
+| Aufruf | Name | Aufgabe |
+|---|---|---|
+| `"01 Innovation"` | Merle | Marktbeobachtung, Produktkonzepte |
+| `"02 Produkt & Ausführung"` | Konrad | Spezifikation, Stückliste, bemaßte Zeichnung |
+| `"03 Vertrieb"` | Silke | Angebote und Kundenantworten als Entwurf |
+| `"04 Social Media"` | Lasse | Beitragstexte, Aufnahmeanweisungen |
+| `"05 Personal"` | Wiebke | erkennt Bedarf, entwirft neue Abteilungen |
+| `"06 Einkauf"` | Insa | allgemeine Lieferantenanfragen (Inland/EU) |
+| `"07 Einkauf China"` | Henrik | RFQ / Verhandlung / Muster mit China |
+
+Der Orchestrator, der alles verteilt, prüft und dir schreibt, heißt **Gustav** (= die
+Absenderadresse `gustav.bellowerk@gmail.com`). Die Frist am Ende ist optional (Standard: 7 Tage).
+
+Beim `--auftrag` kannst du die Abteilung auf **drei Arten** angeben — alle gleichwertig:
+
+```
+--auftrag "07 Einkauf China" "..."      # langer Name
+--auftrag "07" "..."                     # Nummer
+--auftrag "Henrik" "..."                 # Vorname
+```
+
+Nur `"Einkauf"` allein ist mehrdeutig (Insa **und** Henrik) — dann `"06"`/`"Insa"` bzw.
+`"07"`/`"Henrik"` nehmen. Im gespeicherten Auftrag steht immer der lange Name.
 
 Der Auftrag wird beim **nächsten Lauf** abgearbeitet. Sofort abarbeiten:
 

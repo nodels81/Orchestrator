@@ -51,8 +51,9 @@
   .wb{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
   .wb-aktiv{border-color:var(--kupfer);box-shadow:0 0 0 3px var(--kupfer-weich)}
   .wb-kopf{display:flex;align-items:baseline;gap:8px}
-  .wb-nr{font-family:'Lora',serif;font-size:17px;font-weight:700;color:var(--kupfer)}
-  .wb-name{font-weight:700;font-size:14.5px}
+  .wb-nr{font-family:'Lora',serif;font-size:15px;font-weight:700;color:var(--kupfer)}
+  .wb-name{font-weight:700;font-size:15px}
+  .wb-fach{font-size:11.5px;color:var(--muted)}
   .wb-rolle{font-size:12px;color:var(--muted);margin:2px 0 9px}
   .wb-status{margin-bottom:6px}
   .wb-grund{font-size:11.5px;color:var(--muted)}
@@ -60,8 +61,10 @@
   .wb-auf.leer{color:var(--muted);font-style:italic}
   .wb-fragen{font-size:12px;color:var(--braun);margin-top:6px;background:var(--kupfer-weich);padding:6px 8px;border-radius:6px}
   .wb-next{font-size:12px;color:var(--oliv);margin-top:5px}
-  .karte-svg{width:100%;height:auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px}
-  table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .svg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--paper);border:1px solid var(--line);border-radius:10px}
+  .karte-svg{display:block;width:100%;min-width:600px;height:auto;padding:8px}
+  .tabelle-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+  table{width:100%;border-collapse:collapse;background:var(--paper);min-width:520px}
   th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
   th{background:#faf6ee;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
   tr:last-child td{border-bottom:none}
@@ -86,7 +89,7 @@
 <header>
   <div>
     <div class="wortmarke">Herr Bello <span>&amp;</span> Fräulein Kläff</div>
-    <div class="unterzeile">KI-Agentenbetrieb · Werkbank für Björn · Stand 09.09.2026 19:33</div>
+    <div class="unterzeile">KI-Agentenbetrieb · Werkbank für Björn · Stand 09.09.2026 20:09</div>
   </div>
   <div class="statuspille s-gut">Tageslauf: läuft</div>
 </header>
@@ -104,7 +107,7 @@
   
     <article class="karte">
       <div class="karte-kopf">
-        <div><span class="aid">A-2026-003</span> <span class="abt">06 Einkauf</span></div>
+        <div><span class="aid">A-2026-003</span> <span class="abt">Insa · 06 Einkauf</span></div>
         <div class="frist ">Frist 2026-09-30</div>
       </div>
       <h3>Entwirf zwei Anfragetexte: (1) an eine Gerberei fuer Fettleder, vegetabil gegerbt, feste Narbenseite, Breiten 20-40 mm fuer Halsband HB-01; (2) an einen Messingzulieferer fuer Schnallen, Ringe und Buchschrauben 5 mm. Jeweils mit Fragen zu Preis, Mindestmenge, Musterbestellung und Lieferzeit. Lieferantennamen als Platzhalter.</h3>
@@ -125,7 +128,7 @@ Verwendung: Hundehalsband, …</p>
     </article>
     <article class="karte">
       <div class="karte-kopf">
-        <div><span class="aid">A-2026-004</span> <span class="abt">02 Produkt &amp; Ausführung</span></div>
+        <div><span class="aid">A-2026-004</span> <span class="abt">Konrad · 02 Produkt &amp; Ausführung</span></div>
         <div class="frist ">Frist 2026-09-23</div>
       </div>
       <h3>Konzept freigegeben (A-2026-001): HB-01 Halsband als Premium-Halsband im Segment 69-99 EUR, Kaufargument Praxistest. Liefere die lieferfertige Ausfuehrung: (1) Spezifikation HB-01 Fettleder einlagig ohne Naht, Groessen S/M/L/XL, Breiten 20-40 mm, mit Lederstaerke, Lochabstaenden, Toleranzen; (2) Stueckliste je Groesse mit Messingschnalle, Ring(en), Buchschrauben 5 mm inkl. Schraubenlaenge; (3) bemasste SVG-Strichzeichnung. Die Lederstaerke und Buchschraubenlaenge sind verbindlich festzulegen, damit Abteilung 06 sie in Lieferantenanfragen uebernehmen kann.</h3>
@@ -142,7 +145,7 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
     </article>
     <article class="karte">
       <div class="karte-kopf">
-        <div><span class="aid">A-2026-005</span> <span class="abt">07 Einkauf China</span></div>
+        <div><span class="aid">A-2026-005</span> <span class="abt">Henrik · 07 Einkauf China</span></div>
         <div class="frist ">Frist 2026-09-19</div>
       </div>
       <h3>Erstkontakt/RFQ (Vorlage 01) fuer HB-01 Halsband und LE-01 Fuehrleine an einen Lieferanten der Shortlist, 100 Stueck je Modell, Muster zuerst. Nenne Plattform, Profil-Signale und Zielpreis-Korridor.</h3>
@@ -158,49 +161,49 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
   <div class="lead">Wo jeder Agent gerade steht, was er zuletzt gemacht hat und was von dir gebraucht wird. Kupfer umrandet = arbeitet gerade.</div>
   <div class="wb-gitter">
       <div class="wb ">
-        <div class="wb-kopf"><span class="wb-nr">01</span><span class="wb-name">Innovation</span></div>
+        <div class="wb-kopf"><span class="wb-nr">01</span><span class="wb-name">Merle</span><span class="wb-fach">Innovation</span></div>
         <div class="wb-rolle">beobachtet den Markt, liefert Produktkonzepte</div>
         <div class="wb-status"><span class="pill p-oliv">erledigt</span></div>
         <div class='wb-auf'><span class='aid'>A-2026-001</span> Kurze Marktbeobachtung: Fettleder-Halsbaender im Preissegment 69-99 EUR - wer bietet was, …</div>
         
       </div>
       <div class="wb wb-aktiv">
-        <div class="wb-kopf"><span class="wb-nr">02</span><span class="wb-name">Produkt &amp; Ausführung</span></div>
+        <div class="wb-kopf"><span class="wb-nr">02</span><span class="wb-name">Konrad</span><span class="wb-fach">Produkt &amp; Ausführung</span></div>
         <div class="wb-rolle">macht aus Konzepten Spezifikation, Stückliste, Zeichnung</div>
         <div class="wb-status"><span class="pill p-kupfer">wartet auf dich</span> <span class='wb-grund'>Alle Kriterien erfuellt.</span></div>
         <div class='wb-auf'><span class='aid'>A-2026-004</span> Konzept freigegeben (A-2026-001): HB-01 Halsband als Premium-Halsband im Segment 69-99 …</div>
         
       </div>
       <div class="wb ">
-        <div class="wb-kopf"><span class="wb-nr">03</span><span class="wb-name">Vertrieb</span></div>
+        <div class="wb-kopf"><span class="wb-nr">03</span><span class="wb-name">Silke</span><span class="wb-fach">Vertrieb</span></div>
         <div class="wb-rolle">Angebote und Kundenantworten als Entwurf</div>
         <div class="wb-status"><span class='pill p-grau'>bereit</span></div>
         <div class='wb-auf leer'>noch kein Auftrag</div>
         
       </div>
       <div class="wb ">
-        <div class="wb-kopf"><span class="wb-nr">04</span><span class="wb-name">Social Media</span></div>
+        <div class="wb-kopf"><span class="wb-nr">04</span><span class="wb-name">Lasse</span><span class="wb-fach">Social Media</span></div>
         <div class="wb-rolle">Beitragstexte und Aufnahmeanweisungen für echte Fotos</div>
         <div class="wb-status"><span class='pill p-grau'>bereit</span></div>
         <div class='wb-auf leer'>noch kein Auftrag</div>
         
       </div>
       <div class="wb ">
-        <div class="wb-kopf"><span class="wb-nr">05</span><span class="wb-name">Personal — Wiebke</span></div>
+        <div class="wb-kopf"><span class="wb-nr">05</span><span class="wb-name">Wiebke</span><span class="wb-fach">Personal</span></div>
         <div class="wb-rolle">erkennt Personalbedarf, entwirft neue Abteilungen</div>
         <div class="wb-status"><span class="pill p-oliv">erledigt</span></div>
         <div class='wb-auf'><span class='aid'>A-2026-002</span> Brauchen wir eine Abteilung fuer Lieferantenanfragen (Fettleder, Messingbeschlaege: …</div>
         
       </div>
       <div class="wb wb-aktiv">
-        <div class="wb-kopf"><span class="wb-nr">06</span><span class="wb-name">Einkauf — Insa</span></div>
+        <div class="wb-kopf"><span class="wb-nr">06</span><span class="wb-name">Insa</span><span class="wb-fach">Einkauf</span></div>
         <div class="wb-rolle">allgemeine Lieferantenanfragen und Angebotsvergleiche</div>
         <div class="wb-status"><span class="pill p-kupfer">wartet auf dich</span> <span class='wb-grund'>Alle Kriterien erfuellt.</span></div>
         <div class='wb-auf'><span class='aid'>A-2026-003</span> Entwirf zwei Anfragetexte: (1) an eine Gerberei fuer Fettleder, vegetabil gegerbt, feste …</div>
         
       </div>
       <div class="wb wb-aktiv">
-        <div class="wb-kopf"><span class="wb-nr">07</span><span class="wb-name">Einkauf China</span></div>
+        <div class="wb-kopf"><span class="wb-nr">07</span><span class="wb-name">Henrik</span><span class="wb-fach">Einkauf China</span></div>
         <div class="wb-rolle">RFQ / Verhandlung / Muster mit chinesischen Herstellern</div>
         <div class="wb-status"><span class="pill p-kupfer">wartet auf dich</span> <span class='wb-grund'>Alle Kriterien erfuellt.</span></div>
         <div class='wb-auf'><span class='aid'>A-2026-005</span> Erstkontakt/RFQ (Vorlage 01) fuer HB-01 Halsband und LE-01 Fuehrleine an einen …</div>
@@ -210,14 +213,14 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
 
 <section>
   <h2>Zusammenspiel</h2>
-  <div class="lead">Wer mit wem. Björn entscheidet, der Orchestrator verteilt und prüft, die Abteilungen liefern zu.</div>
-  <svg viewBox="0 0 940 430" xmlns="http://www.w3.org/2000/svg" class="karte-svg"><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8a7d63"/></marker><marker id="ak" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#b06a34"/></marker></defs><line x1="470.0" y1="142" x2="70.0" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="203.33333333333334" y2="278.0" stroke="#b06a34" stroke-width="2" marker-end="url(#ak)"/><line x1="470.0" y1="142" x2="336.6666666666667" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="470.0" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="603.3333333333334" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="736.6666666666666" y2="278.0" stroke="#b06a34" stroke-width="2" marker-end="url(#ak)"/><line x1="470.0" y1="142" x2="870.0" y2="278.0" stroke="#b06a34" stroke-width="2" marker-end="url(#ak)"/><path d="M 70.0 322.0 Q 136.66666666666669 368.0 203.33333333333334 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 203.33333333333334 322.0 Q 470.0 368.0 736.6666666666666 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 203.33333333333334 322.0 Q 536.6666666666666 368.0 870.0 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 603.3333333333334 322.0 Q 670.0 368.0 736.6666666666666 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 603.3333333333334 322.0 Q 736.6666666666667 368.0 870.0 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><line x1="470.0" y1="56" x2="470.0" y2="104" stroke="#5c4433" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/><text x="480.0" y="84.0" font-size="10" fill="#7a7266">eskaliert · gibt frei</text><rect x="418.0" y="24" width="104" height="32" rx="16" fill="#5c4433"/><text x="470.0" y="44" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">Björn</text><rect x="392.0" y="102" width="156" height="40" rx="10" fill="#6b6f3e"/><text x="470.0" y="122" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">Orchestrator</text><text x="470.0" y="136" text-anchor="middle" font-size="9" fill="#e7edda">verteilt · prüft · eskaliert</text><rect x="11.0" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="70.0" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">01 Innovation</text><text x="70.0" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">erledigt</text><rect x="144.33333333333334" y="278.0" width="118" height="44" rx="9" fill="#f7ebdd" stroke="#b06a34" stroke-width="1.4"/><text x="203.33333333333334" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">02 Produkt &amp; Ausführung</text><text x="203.33333333333334" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">wartet auf dich</text><rect x="277.6666666666667" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="336.6666666666667" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">03 Vertrieb</text><text x="336.6666666666667" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">bereit</text><rect x="411.0" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="470.0" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">04 Social Media</text><text x="470.0" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">bereit</text><rect x="544.3333333333334" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="603.3333333333334" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">05 Personal</text><text x="603.3333333333334" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">erledigt</text><rect x="677.6666666666666" y="278.0" width="118" height="44" rx="9" fill="#f7ebdd" stroke="#b06a34" stroke-width="1.4"/><text x="736.6666666666666" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">06 Einkauf</text><text x="736.6666666666666" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">wartet auf dich</text><rect x="811.0" y="278.0" width="118" height="44" rx="9" fill="#f7ebdd" stroke="#b06a34" stroke-width="1.4"/><text x="870.0" y="297" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">07 Einkauf China</text><text x="870.0" y="312" text-anchor="middle" font-size="8.5" fill="#8a7d63">wartet auf dich</text><text x="68" y="392.0" font-size="9" fill="#9a8f7c">durchgezogen: Auftrag &amp; Bericht über den Orchestrator · gestrichelt: fachliche Zulieferung</text></svg>
+  <div class="lead">Wer mit wem. Björn entscheidet, Gustav (der Orchestrator) verteilt und prüft, die Abteilungen liefern zu.</div>
+  <div class="svg-wrap"><svg viewBox="0 0 940 430" xmlns="http://www.w3.org/2000/svg" class="karte-svg"><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8a7d63"/></marker><marker id="ak" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#b06a34"/></marker></defs><line x1="470.0" y1="142" x2="70.0" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="203.33333333333334" y2="278.0" stroke="#b06a34" stroke-width="2" marker-end="url(#ak)"/><line x1="470.0" y1="142" x2="336.6666666666667" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="470.0" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="603.3333333333334" y2="278.0" stroke="#c9bda3" stroke-width="1.2" marker-end="url(#a)"/><line x1="470.0" y1="142" x2="736.6666666666666" y2="278.0" stroke="#b06a34" stroke-width="2" marker-end="url(#ak)"/><line x1="470.0" y1="142" x2="870.0" y2="278.0" stroke="#b06a34" stroke-width="2" marker-end="url(#ak)"/><path d="M 70.0 322.0 Q 136.66666666666669 368.0 203.33333333333334 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 203.33333333333334 322.0 Q 470.0 368.0 736.6666666666666 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 203.33333333333334 322.0 Q 536.6666666666666 368.0 870.0 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 603.3333333333334 322.0 Q 670.0 368.0 736.6666666666666 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><path d="M 603.3333333333334 322.0 Q 736.6666666666667 368.0 870.0 322.0" fill="none" stroke="#b9a98a" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/><line x1="470.0" y1="56" x2="470.0" y2="104" stroke="#5c4433" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/><text x="480.0" y="84.0" font-size="10" fill="#7a7266">eskaliert · gibt frei</text><rect x="418.0" y="24" width="104" height="32" rx="16" fill="#5c4433"/><text x="470.0" y="44" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">Björn</text><rect x="392.0" y="102" width="156" height="40" rx="10" fill="#6b6f3e"/><text x="470.0" y="122" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">Gustav</text><text x="470.0" y="136" text-anchor="middle" font-size="9" fill="#e7edda">Orchestrator · verteilt · prüft · eskaliert</text><rect x="11.0" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="70.0" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Merle</text><text x="70.0" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">01 · Innovation</text><text x="70.0" y="315" text-anchor="middle" font-size="8" fill="#a99e88">erledigt</text><rect x="144.33333333333334" y="278.0" width="118" height="44" rx="9" fill="#f7ebdd" stroke="#b06a34" stroke-width="1.4"/><text x="203.33333333333334" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Konrad</text><text x="203.33333333333334" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">02 · Produkt &amp; Ausführung</text><text x="203.33333333333334" y="315" text-anchor="middle" font-size="8" fill="#b06a34">wartet auf dich</text><rect x="277.6666666666667" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="336.6666666666667" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Silke</text><text x="336.6666666666667" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">03 · Vertrieb</text><text x="336.6666666666667" y="315" text-anchor="middle" font-size="8" fill="#a99e88">bereit</text><rect x="411.0" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="470.0" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Lasse</text><text x="470.0" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">04 · Social Media</text><text x="470.0" y="315" text-anchor="middle" font-size="8" fill="#a99e88">bereit</text><rect x="544.3333333333334" y="278.0" width="118" height="44" rx="9" fill="#ffffff" stroke="#e4dac6" stroke-width="1.4"/><text x="603.3333333333334" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Wiebke</text><text x="603.3333333333334" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">05 · Personal</text><text x="603.3333333333334" y="315" text-anchor="middle" font-size="8" fill="#a99e88">erledigt</text><rect x="677.6666666666666" y="278.0" width="118" height="44" rx="9" fill="#f7ebdd" stroke="#b06a34" stroke-width="1.4"/><text x="736.6666666666666" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Insa</text><text x="736.6666666666666" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">06 · Einkauf</text><text x="736.6666666666666" y="315" text-anchor="middle" font-size="8" fill="#b06a34">wartet auf dich</text><rect x="811.0" y="278.0" width="118" height="44" rx="9" fill="#f7ebdd" stroke="#b06a34" stroke-width="1.4"/><text x="870.0" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">Henrik</text><text x="870.0" y="304" text-anchor="middle" font-size="7.5" fill="#8a7d63">07 · Einkauf China</text><text x="870.0" y="315" text-anchor="middle" font-size="8" fill="#b06a34">wartet auf dich</text><text x="68" y="392.0" font-size="9" fill="#9a8f7c">durchgezogen: Auftrag &amp; Bericht über den Orchestrator · gestrichelt: fachliche Zulieferung</text></svg></div>
 </section>
 
 <section>
-  <h2>Was der Orchestrator tut</h2>
+  <h2>Was Gustav tut</h2>
   <div class="erkl">
-    Einmal am Tag um 07:00 nimmt er sich jeden offenen Auftrag vor:
+    <b>Gustav</b> ist der Orchestrator. Einmal am Tag um 07:00 nimmt er sich jeden offenen Auftrag vor:
     <ol>
       <li>Auftrag an die zuständige Abteilung geben, Ergebnis maschinell gegen die Abnahmekriterien prüfen.</li>
       <li>Bestanden → an dich eskalieren (jedes Ergebnis geht zur Freigabe). Nicht bestanden → einmal Nacharbeit, höchstens 2× insgesamt, dann eskalieren.</li>
@@ -234,10 +237,10 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
 
 <section>
   <h2>Alle Aufträge <span class="anz">5</span></h2>
-  <table><thead><tr><th>ID</th><th>Abteilung</th><th>Ziel</th><th>Stand</th><th>Vers.</th><th>Frist</th><th>angelegt</th></tr></thead><tbody>
+  <div class="tabelle-wrap"><table><thead><tr><th>ID</th><th>Abteilung</th><th>Ziel</th><th>Stand</th><th>Vers.</th><th>Frist</th><th>angelegt</th></tr></thead><tbody>
       <tr>
         <td class="mono">A-2026-003</td>
-        <td>06 Einkauf</td>
+        <td>Insa · 06 Einkauf</td>
         <td class="ziel">Entwirf zwei Anfragetexte: (1) an eine Gerberei fuer Fettleder, vegetabil gegerbt, feste Narbenseite, Breiten …</td>
         <td><span class="pill p-kupfer">wartet auf dich</span></td>
         <td class="zentr">1</td>
@@ -246,7 +249,7 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
       </tr>
       <tr>
         <td class="mono">A-2026-004</td>
-        <td>02 Produkt &amp; Ausführung</td>
+        <td>Konrad · 02 Produkt &amp; Ausführung</td>
         <td class="ziel">Konzept freigegeben (A-2026-001): HB-01 Halsband als Premium-Halsband im Segment 69-99 EUR, Kaufargument …</td>
         <td><span class="pill p-kupfer">wartet auf dich</span></td>
         <td class="zentr">2</td>
@@ -255,7 +258,7 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
       </tr>
       <tr>
         <td class="mono">A-2026-005</td>
-        <td>07 Einkauf China</td>
+        <td>Henrik · 07 Einkauf China</td>
         <td class="ziel">Erstkontakt/RFQ (Vorlage 01) fuer HB-01 Halsband und LE-01 Fuehrleine an einen Lieferanten der Shortlist, 100 …</td>
         <td><span class="pill p-kupfer">wartet auf dich</span></td>
         <td class="zentr">1</td>
@@ -264,7 +267,7 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
       </tr>
       <tr>
         <td class="mono">A-2026-001</td>
-        <td>01 Innovation</td>
+        <td>Merle · 01 Innovation</td>
         <td class="ziel">Kurze Marktbeobachtung: Fettleder-Halsbaender im Preissegment 69-99 EUR - wer bietet was, wo ist die Luecke</td>
         <td><span class="pill p-oliv">erledigt</span></td>
         <td class="zentr">1</td>
@@ -273,13 +276,13 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
       </tr>
       <tr>
         <td class="mono">A-2026-002</td>
-        <td>05 Personal</td>
+        <td>Wiebke · 05 Personal</td>
         <td class="ziel">Brauchen wir eine Abteilung fuer Lieferantenanfragen (Fettleder, Messingbeschlaege: Preise, Mindestmengen, …</td>
         <td><span class="pill p-oliv">erledigt</span></td>
         <td class="zentr">2</td>
         <td class="">2026-09-30</td>
         <td class="mono klein">09.09.2026 11:16</td>
-      </tr></tbody></table>
+      </tr></tbody></table></div>
 </section>
 
 <section>
@@ -288,7 +291,7 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
     <div class="sys-zeile"><b>Tageslauf</b>aktiv, täglich 07:00</div>
     <div class="sys-zeile"><b>Nächster Lauf</b>10.09.2026 07:00</div>
     <div class="sys-zeile"><b>Letzter Lauf</b>09.09.2026 19:31</div>
-    <div class="sys-zeile"><b>Letzte Sicherung</b>— (0 vorhanden)</div>
+    <div class="sys-zeile"><b>Letzte Sicherung</b>09.09.2026 11:09 (3 vorhanden)</div>
     <div class="sys-zeile"><b>Speicher frei</b>71G</div>
     <div class="sys-zeile"><b>Eskalationsmail</b>gustav.bellowerk@gmail.com → pijoern.nodels@gmail.com</div>
     <div class="sys-zeile"><b>Code</b>git-Repo, Update mit <code>git pull</code></div>
@@ -297,7 +300,7 @@ Material Riemen: Fettleder pflanzlich gegerbt, feste Narbenseite aussen, einlagi
 
 <footer>
   <span>Automatisch nach jedem Tageslauf · <code>/opt/bello/daten/dashboard.html</code></span>
-  <span>09.09.2026 19:33:02</span>
+  <span>09.09.2026 20:09:10</span>
 </footer>
 </body>
 </html>

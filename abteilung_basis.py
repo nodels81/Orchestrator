@@ -17,6 +17,7 @@ except ImportError:
     sys.exit(1)
 
 import markenwissen
+import namen
 
 BASIS = os.path.dirname(os.path.abspath(__file__))
 DATEN = os.path.join(BASIS, "daten")
@@ -70,9 +71,12 @@ class Abteilung:
     # ---------- Prompt ----------
 
     def system_prompt(self) -> str:
+        vn = namen.vorname(self.NUMMER)
+        anrede = f"Du heisst {vn} und arbeitest " if vn else "Du arbeitest "
         return (
-            f"Du bist Abteilung {self.NUMMER} ({self.NAME}) im Betrieb "
-            f"{markenwissen.MARKE}.\n\n"
+            f"{anrede}als Abteilung {self.NUMMER} ({self.NAME}) im Betrieb "
+            f"{markenwissen.MARKE}. Der Orchestrator, der dir Auftraege gibt und "
+            f"deine Ergebnisse an Bjoern weiterreicht, heisst {namen.ORCHESTRATOR}.\n\n"
             f"DEINE ROLLE:\n{self.ROLLE}\n\n"
             f"MARKENWISSEN (bindend):\n{markenwissen.als_kontext()}\n\n"
             "REGELN:\n"

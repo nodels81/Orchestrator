@@ -10,16 +10,17 @@ AUF = os.path.join(DATEN, "auftraege.json")
 OUT_LIVE = os.path.join(DATEN, "dashboard.html")
 OUT_REPO = os.path.join(BASIS, "dashboard", "dashboard.html")
 
-# nr, name, kurzrolle, mit wem (fachliche Zulieferung -> Zielabteilungsnummern)
+# nr, vorname, fach, kurzrolle, fachliche Zulieferung -> Zielabteilungsnummern
 ABTEILUNGEN = [
-    ("01", "Innovation",          "beobachtet den Markt, liefert Produktkonzepte",              ["02"]),
-    ("02", "Produkt & Ausführung", "macht aus Konzepten Spezifikation, Stückliste, Zeichnung",   ["06", "07"]),
-    ("03", "Vertrieb",             "Angebote und Kundenantworten als Entwurf",                   []),
-    ("04", "Social Media",         "Beitragstexte und Aufnahmeanweisungen für echte Fotos",      []),
-    ("05", "Personal — Wiebke",    "erkennt Personalbedarf, entwirft neue Abteilungen",          ["06", "07"]),
-    ("06", "Einkauf — Insa",       "allgemeine Lieferantenanfragen und Angebotsvergleiche",      []),
-    ("07", "Einkauf China",        "RFQ / Verhandlung / Muster mit chinesischen Herstellern",    []),
+    ("01", "Merle",  "Innovation",           "beobachtet den Markt, liefert Produktkonzepte",             ["02"]),
+    ("02", "Konrad", "Produkt & Ausführung", "macht aus Konzepten Spezifikation, Stückliste, Zeichnung",  ["06", "07"]),
+    ("03", "Silke",  "Vertrieb",             "Angebote und Kundenantworten als Entwurf",                  []),
+    ("04", "Lasse",  "Social Media",         "Beitragstexte und Aufnahmeanweisungen für echte Fotos",     []),
+    ("05", "Wiebke", "Personal",             "erkennt Personalbedarf, entwirft neue Abteilungen",         ["06", "07"]),
+    ("06", "Insa",   "Einkauf",              "allgemeine Lieferantenanfragen und Angebotsvergleiche",     []),
+    ("07", "Henrik", "Einkauf China",        "RFQ / Verhandlung / Muster mit chinesischen Herstellern",   []),
 ]
+ORCHESTRATOR = "Gustav"
 
 STAND_META = {
     "wartet auf Bjoern": ("wartet auf dich", "kupfer", 0),
@@ -175,6 +176,15 @@ def pill(stand):
     return f'<span class="pill p-{farbe}">{esc(label)}</span>'
 
 
+VN = {nr: vn for nr, vn, *_ in ABTEILUNGEN}
+
+
+def agent_label(abteilung):
+    nr = str(abteilung).split(" ", 1)[0]
+    vn = VN.get(nr, "")
+    return f"{vn} · {abteilung}" if vn else str(abteilung)
+
+
 # ---------- Karten: Deine Entscheidungen ----------
 ent_karten = []
 for a in wartend:
@@ -189,7 +199,7 @@ for a in wartend:
     ent_karten.append(f"""
     <article class="karte">
       <div class="karte-kopf">
-        <div><span class="aid">{esc(a.get('id'))}</span> <span class="abt">{esc(a.get('abteilung'))}</span></div>
+        <div><span class="aid">{esc(a.get('id'))}</span> <span class="abt">{esc(agent_label(a.get('abteilung')))}</span></div>
         <div class="frist {frist_klasse(a)}">Frist {esc(a.get('frist','—'))}</div>
       </div>
       <h3>{esc(a.get('ziel'))}</h3>
@@ -201,7 +211,7 @@ for a in wartend:
 
 # ---------- Werkbank: pro Abteilung ----------
 wb_karten = []
-for nr, name, rolle, _ in ABTEILUNGEN:
+for nr, vn, fach, rolle, _ in ABTEILUNGEN:
     a = letzter_auftrag_fuer(nr)
     aktiv = nr in aktiv_nr
     if a:
@@ -222,7 +232,7 @@ for nr, name, rolle, _ in ABTEILUNGEN:
         frag = nx = ""
     wb_karten.append(f"""
       <div class="wb {'wb-aktiv' if aktiv else ''}">
-        <div class="wb-kopf"><span class="wb-nr">{nr}</span><span class="wb-name">{esc(name)}</span></div>
+        <div class="wb-kopf"><span class="wb-nr">{nr}</span><span class="wb-name">{esc(vn)}</span><span class="wb-fach">{esc(fach)}</span></div>
         <div class="wb-rolle">{esc(rolle)}</div>
         <div class="wb-status">{zeile_stand}</div>
         {zeile_auftrag}
@@ -244,7 +254,7 @@ svg.append('<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY=
            '<marker id="ak" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">'
            '<path d="M0,0 L6,3 L0,6 Z" fill="#b06a34"/></marker></defs>')
 # Linien Orchestrator <-> Abteilungen
-for i, (nr, name, _, _) in enumerate(ABTEILUNGEN):
+for i, (nr, vn, fach, _, _) in enumerate(ABTEILUNGEN):
     akt = nr in aktiv_nr
     col = "#b06a34" if akt else "#c9bda3"
     wsw = "2" if akt else "1.2"
@@ -252,7 +262,7 @@ for i, (nr, name, _, _) in enumerate(ABTEILUNGEN):
                f'stroke="{col}" stroke-width="{wsw}" marker-end="url(#{"ak" if akt else "a"})"/>')
 # fachliche Zulieferungen (gestrichelt)
 pos = {nr: xs[i] for i, (nr, *_r) in enumerate(ABTEILUNGEN)}
-for nr, name, rolle, ziele in ABTEILUNGEN:
+for nr, vn, fach, rolle, ziele in ABTEILUNGEN:
     for z in ziele:
         if z in pos:
             x_a, x_b = pos[nr], pos[z]
@@ -268,20 +278,20 @@ svg.append(f'<rect x="{cx-52}" y="{bjoern_y-16}" width="104" height="32" rx="16"
            f'<text x="{cx}" y="{bjoern_y+4}" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">Björn</text>')
 # Knoten Orchestrator
 svg.append(f'<rect x="{cx-78}" y="{orch_y-18}" width="156" height="40" rx="10" fill="#6b6f3e"/>'
-           f'<text x="{cx}" y="{orch_y+2}" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">Orchestrator</text>'
-           f'<text x="{cx}" y="{orch_y+16}" text-anchor="middle" font-size="9" fill="#e7edda">verteilt · prüft · eskaliert</text>')
+           f'<text x="{cx}" y="{orch_y+2}" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">{ORCHESTRATOR}</text>'
+           f'<text x="{cx}" y="{orch_y+16}" text-anchor="middle" font-size="9" fill="#e7edda">Orchestrator · verteilt · prüft · eskaliert</text>')
 # Knoten Abteilungen
-for i, (nr, name, _, _) in enumerate(ABTEILUNGEN):
+for i, (nr, vn, fach, _, _) in enumerate(ABTEILUNGEN):
     akt = nr in aktiv_nr
     fill = "#f7ebdd" if akt else "#ffffff"
     stroke = "#b06a34" if akt else "#e4dac6"
-    kurzname = name.split("—")[0].strip()
     svg.append(f'<rect x="{xs[i]-node_w/2}" y="{dept_y-node_h/2}" width="{node_w}" height="{node_h}" rx="9" '
                f'fill="{fill}" stroke="{stroke}" stroke-width="1.4"/>')
-    svg.append(f'<text x="{xs[i]}" y="{dept_y-3}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5c4433">{nr} {esc(kurzname)}</text>')
     a = letzter_auftrag_fuer(nr)
     lab = STAND_META.get(a.get("stand"), ("", "", 9))[0] if a else "bereit"
-    svg.append(f'<text x="{xs[i]}" y="{dept_y+12}" text-anchor="middle" font-size="8.5" fill="#8a7d63">{esc(lab)}</text>')
+    svg.append(f'<text x="{xs[i]}" y="{dept_y-7}" text-anchor="middle" font-size="11" font-weight="700" fill="#5c4433">{esc(vn)}</text>')
+    svg.append(f'<text x="{xs[i]}" y="{dept_y+4}" text-anchor="middle" font-size="7.5" fill="#8a7d63">{nr} · {esc(fach)}</text>')
+    svg.append(f'<text x="{xs[i]}" y="{dept_y+15}" text-anchor="middle" font-size="8" fill="{"#b06a34" if akt else "#a99e88"}">{esc(lab)}</text>')
 svg.append(f'<text x="{x0-2}" y="{dept_y+node_h/2+70}" font-size="9" fill="#9a8f7c">'
            f'durchgezogen: Auftrag &amp; Bericht über den Orchestrator · gestrichelt: fachliche Zulieferung</text>')
 svg.append("</svg>")
@@ -293,7 +303,7 @@ for a in auftraege_sortiert:
     zeilen.append(f"""
       <tr>
         <td class="mono">{esc(a.get('id'))}</td>
-        <td>{esc(a.get('abteilung'))}</td>
+        <td>{esc(agent_label(a.get('abteilung')))}</td>
         <td class="ziel">{esc(kurz(a.get('ziel'), 110))}</td>
         <td>{pill(a.get('stand'))}</td>
         <td class="zentr">{esc(a.get('versuche', 0))}</td>
@@ -358,8 +368,9 @@ HTML = f"""<!doctype html>
   .wb{{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}}
   .wb-aktiv{{border-color:var(--kupfer);box-shadow:0 0 0 3px var(--kupfer-weich)}}
   .wb-kopf{{display:flex;align-items:baseline;gap:8px}}
-  .wb-nr{{font-family:'Lora',serif;font-size:17px;font-weight:700;color:var(--kupfer)}}
-  .wb-name{{font-weight:700;font-size:14.5px}}
+  .wb-nr{{font-family:'Lora',serif;font-size:15px;font-weight:700;color:var(--kupfer)}}
+  .wb-name{{font-weight:700;font-size:15px}}
+  .wb-fach{{font-size:11.5px;color:var(--muted)}}
   .wb-rolle{{font-size:12px;color:var(--muted);margin:2px 0 9px}}
   .wb-status{{margin-bottom:6px}}
   .wb-grund{{font-size:11.5px;color:var(--muted)}}
@@ -367,8 +378,10 @@ HTML = f"""<!doctype html>
   .wb-auf.leer{{color:var(--muted);font-style:italic}}
   .wb-fragen{{font-size:12px;color:var(--braun);margin-top:6px;background:var(--kupfer-weich);padding:6px 8px;border-radius:6px}}
   .wb-next{{font-size:12px;color:var(--oliv);margin-top:5px}}
-  .karte-svg{{width:100%;height:auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px}}
-  table{{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}}
+  .svg-wrap{{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--paper);border:1px solid var(--line);border-radius:10px}}
+  .karte-svg{{display:block;width:100%;min-width:600px;height:auto;padding:8px}}
+  .tabelle-wrap{{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}}
+  table{{width:100%;border-collapse:collapse;background:var(--paper);min-width:520px}}
   th,td{{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}}
   th{{background:#faf6ee;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}}
   tr:last-child td{{border-bottom:none}}
@@ -419,14 +432,14 @@ HTML = f"""<!doctype html>
 
 <section>
   <h2>Zusammenspiel</h2>
-  <div class="lead">Wer mit wem. Björn entscheidet, der Orchestrator verteilt und prüft, die Abteilungen liefern zu.</div>
-  {svg_html}
+  <div class="lead">Wer mit wem. Björn entscheidet, {ORCHESTRATOR} (der Orchestrator) verteilt und prüft, die Abteilungen liefern zu.</div>
+  <div class="svg-wrap">{svg_html}</div>
 </section>
 
 <section>
-  <h2>Was der Orchestrator tut</h2>
+  <h2>Was {ORCHESTRATOR} tut</h2>
   <div class="erkl">
-    Einmal am Tag um 07:00 nimmt er sich jeden offenen Auftrag vor:
+    <b>{ORCHESTRATOR}</b> ist der Orchestrator. Einmal am Tag um 07:00 nimmt er sich jeden offenen Auftrag vor:
     <ol>
       <li>Auftrag an die zuständige Abteilung geben, Ergebnis maschinell gegen die Abnahmekriterien prüfen.</li>
       <li>Bestanden → an dich eskalieren (jedes Ergebnis geht zur Freigabe). Nicht bestanden → einmal Nacharbeit, höchstens {esc(2)}× insgesamt, dann eskalieren.</li>
@@ -443,7 +456,7 @@ HTML = f"""<!doctype html>
 
 <section>
   <h2>Alle Aufträge <span class="anz">{len(auftraege)}</span></h2>
-  {'<table><thead><tr><th>ID</th><th>Abteilung</th><th>Ziel</th><th>Stand</th><th>Vers.</th><th>Frist</th><th>angelegt</th></tr></thead><tbody>' + ''.join(zeilen) + '</tbody></table>' if auftraege else '<div class="leer-box">Noch keine Aufträge.</div>'}
+  {'<div class="tabelle-wrap"><table><thead><tr><th>ID</th><th>Abteilung</th><th>Ziel</th><th>Stand</th><th>Vers.</th><th>Frist</th><th>angelegt</th></tr></thead><tbody>' + ''.join(zeilen) + '</tbody></table></div>' if auftraege else '<div class="leer-box">Noch keine Aufträge.</div>'}
 </section>
 
 <section>
