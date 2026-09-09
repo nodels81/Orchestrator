@@ -17,10 +17,10 @@ import os
 import sys
 from datetime import date, datetime, timedelta
 
-from abteilung_basis import BASIS, config_laden
+from abteilung_basis import BASIS, DATEN, config_laden
 from orchestrator_mail import senden
 
-ZUSTAND = os.path.join(BASIS, "auftraege.json")
+ZUSTAND = os.path.join(DATEN, "auftraege.json")
 MAX_NACHARBEIT = 2
 
 ABTEILUNGEN = {
@@ -28,7 +28,9 @@ ABTEILUNGEN = {
     "02 Produkt & Ausführung": ("abteilung_ausfuehrung", "Ausfuehrung"),
     "03 Vertrieb": ("abteilung_vertrieb", "Vertrieb"),
     "04 Social Media": ("abteilung_social", "Social"),
-    "05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
+    "05 Personal": ("abteilung_personal", "Personal"),
+    "06 Einkauf": ("abteilung_einkauf", "Einkauf"),
+    "07 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
 }
 
 
@@ -164,6 +166,7 @@ def lauf(probelauf: bool = False) -> None:
         if bestanden:
             auftrag["stand"] = "fertig"
             print(f"    OK — {begruendung}")
+            # Ergebnisse werden nach aussen sichtbar -> immer Bjoerns Freigabe
             eskalieren(auftrag, "Ergebnis liegt vor",
                        _bericht(auftrag, ergebnis, begruendung), config)
             eskalationen += 1
@@ -269,7 +272,9 @@ def _jetzt() -> str:
 
 def main() -> None:
     argumente = sys.argv[1:]
-    if "--stand" in argumente:
+    if "--hilfe" in argumente or "--help" in argumente or "-h" in argumente:
+        print(__doc__.strip())
+    elif "--stand" in argumente:
         stand_zeigen()
     elif "--wochenbericht" in argumente:
         print(wochenbericht_text())

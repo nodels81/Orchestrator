@@ -6,9 +6,8 @@ Gilt fuer alle Abteilungen. Aenderungen hier wirken sofort ueberall.
 Quelle: Blatt 3 (Wettbewerbsrecherche) und Blatt 5 (Kernserie Fettleder).
 """
 
-MARKE = "Bellowerk Manufaktur"
-MARKE_BISHER = "Herr Bello und Frau Wuff / Fraeulein Klaeff"
-INSTAGRAM = "@herr.bello.und.frau.wuff"
+MARKE = "Herr Bello und Fraeulein Klaeff"
+INSTAGRAM = "@herr_bello_und_fraeulein_klaef"
 STANDORT = "Hamburg"
 
 POSITIONIERUNG = """
@@ -70,12 +69,10 @@ KERNSERIE = {
     "HB-01": "Halsband Fettleder, einlagig, ohne Naht, Groessen S/M/L/XL, 20-40 mm",
     "LE-01": "Fuehrleine 3,00 m, dreifach verstellbar, sechs Fuehrlaengen, Ringe bei 45/140/245 cm",
     "HS-01": "Handschlaufe, Zubehoer, Umfang 50 cm",
-    "HB-02": "Halsband geflochten: Halsteil im 3-straengigen Mystery Braid, O-Ring, flache Enden mit Schnalle und Patch",
-    "PATCH-01": "Lederpatch cognac, lasergraviert 'BELLOWERK' / 'Manufaktur', 2 Buchschrauben; Karabiner und Ringe der Leine im Mystery Braid",
 }
 
 GESTALTUNG = {
-    "farben": "Leder: Grau, Dunkelbraun, Oliv, Cognac, Schwarz; Logo: Oliv, Braun, Kupfer/Messing",
+    "farben": "Oliv, Braun, Kupfer",
     "schrift": "Lora (Serife)",
     "bildsprache": "echte Fotos aus dem Betrieb, ehrliche Verschleissspuren, kein Studio-Look",
 }
@@ -84,7 +81,7 @@ GESTALTUNG = {
 def als_kontext() -> str:
     """Gibt das Markenwissen als Textblock fuer die System-Prompts der Abteilungen."""
     zeilen = [
-        f"MARKE: {MARKE} ({INSTAGRAM}), {STANDORT} — bisheriger Name: {MARKE_BISHER}",
+        f"MARKE: {MARKE} ({INSTAGRAM}), {STANDORT}",
         "",
         "POSITIONIERUNG:" + POSITIONIERUNG,
         "MARKTLAGE:" + MARKTLUECKE,

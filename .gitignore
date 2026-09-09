@@ -1,14 +1,26 @@
-# Geheimnisse und Betriebszustand bleiben auf dem Server
+# --- Geheimnisse & Betriebszustand: bleiben auf dem Server, nie ins Repo ---
 config.json
-auftraege.json
-auftraege.json.tmp
-*.log
+config.json.bak-*
+daten/
 logs/
-zeichnungen/*.svg
-!sourcing/bellowerk/zeichnungen/*.svg
+*.log
 
-# Python
-venv/
+# --- lokale Sicherungskopien vor Aenderungen ---
+*.bak-*
+venv.bak-*/
+
+# --- Python-Umgebung ---
 .venv/
+venv/
 __pycache__/
 *.pyc
+
+# --- Dashboard: Live-Version bleibt auf dem Server (daten/), nur der Schnappschuss
+#     unter dashboard/ wird versioniert ---
+
+# --- versehentlich angelegte Dateien ---
+/echo
+/else
+/export
+/fi
+/read

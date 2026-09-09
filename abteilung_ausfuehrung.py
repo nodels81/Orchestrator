@@ -3,14 +3,15 @@
 import os
 import re
 
-from abteilung_basis import Abteilung, einzeltest, BASIS
+from abteilung_basis import Abteilung, einzeltest, DATEN
 
-ZEICHNUNGEN = os.path.join(BASIS, "zeichnungen")
+ZEICHNUNGEN = os.path.join(DATEN, "zeichnungen")
 
 
 class Ausfuehrung(Abteilung):
     NUMMER = "02"
     NAME = "Produkt & Ausfuehrung"
+    MAX_TOKENS = 32000  # Spezifikation + Stueckliste + SVG-Zeichnung (gestreamt)
     ROLLE = (
         "Du machst aus einem freigegebenen Konzept eine lieferfertige technische "
         "Zeichnung — Masse, Material, Konstruktion —, damit Bjoern sie nur noch "

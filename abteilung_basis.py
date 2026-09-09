@@ -7,20 +7,36 @@ damit der Orchestrator maschinell pruefen kann statt zu interpretieren.
 
 import json
 import os
+import re
 import sys
 
 try:
     import anthropic
 except ImportError:
-    # Kein Abbruch: --probelauf und --stand muessen ohne das Paket laufen.
-    # Erst der echte API-Aufruf verlangt es (siehe __init__).
-    anthropic = None
+    print("FEHLER: Paket 'anthropic' fehlt. Mit venv/bin/pip install anthropic nachinstallieren.")
+    sys.exit(1)
 
 import markenwissen
 
 BASIS = os.path.dirname(os.path.abspath(__file__))
+DATEN = os.path.join(BASIS, "daten")
+os.makedirs(DATEN, exist_ok=True)
 CONFIG_PFAD = os.path.join(BASIS, "config.json")
 STANDARD_MODELL = "claude-sonnet-5"
+
+
+def _env_aufloesen(wert):
+    """Ersetzt "${VAR}" rekursiv durch os.environ["VAR"]. Fehlt die
+    Variable, bleibt der Platzhalter stehen; der Aufrufer meldet das dann."""
+    if isinstance(wert, dict):
+        return {k: _env_aufloesen(v) for k, v in wert.items()}
+    if isinstance(wert, list):
+        return [_env_aufloesen(v) for v in wert]
+    if isinstance(wert, str):
+        t = re.fullmatch(r"\$\{([A-Z0-9_]+)\}", wert.strip())
+        if t:
+            return os.environ.get(t.group(1), wert)
+    return wert
 
 
 def config_laden() -> dict:
@@ -29,13 +45,7 @@ def config_laden() -> dict:
             f"{CONFIG_PFAD} fehlt. Vorlage: config.beispiel.json kopieren und ausfuellen."
         )
     with open(CONFIG_PFAD, encoding="utf-8") as f:
-        try:
-            return json.load(f)
-        except json.JSONDecodeError as fehler:
-            raise ValueError(
-                f"{CONFIG_PFAD} ist kein gueltiges JSON ({fehler}). "
-                "Haeufigster Grund: fehlendes Komma oder Anfuehrungszeichen."
-            ) from fehler
+        return _env_aufloesen(json.load(f))
 
 
 class Abteilung:
@@ -44,18 +54,17 @@ class Abteilung:
     NUMMER = "00"
     NAME = "Basis"
     ROLLE = "Keine Rolle definiert."
+    MAX_TOKENS = 4000  # Ableitungen duerfen hochsetzen (z. B. lange Entwuerfe)
 
     def __init__(self, config: dict | None = None):
         self.config = config or config_laden()
-        if anthropic is None:
-            raise RuntimeError(
-                "Paket 'anthropic' fehlt. Nachinstallieren mit: "
-                "venv/bin/pip install anthropic"
-            )
         schluessel = self.config.get("anthropic_api_key") or os.environ.get("ANTHROPIC_API_KEY")
         if not schluessel:
             raise ValueError("Kein API-Schluessel in config.json oder ANTHROPIC_API_KEY.")
-        self.client = anthropic.Anthropic(api_key=schluessel)
+        # gebremst: hoechstens 2 Wiederholungen, hartes Zeitlimit pro Aufruf
+        self.client = anthropic.Anthropic(
+            api_key=schluessel, max_retries=2, timeout=900.0
+        )
         self.modell = self.config.get("modell", STANDARD_MODELL)
 
     # ---------- Prompt ----------
@@ -103,14 +112,21 @@ class Abteilung:
 
         argumente = {
             "model": self.modell,
-            "max_tokens": 4000,
+            "max_tokens": self.MAX_TOKENS,
             "system": self.system_prompt(),
             "messages": [{"role": "user", "content": nutzer}],
         }
         if recherche:
             argumente["tools"] = [{"type": "web_search_20250305", "name": "web_search"}]
 
-        antwort = self.client.messages.create(**argumente)
+        if self.MAX_TOKENS > 8000:
+            # lange Antworten (Zeichnungen, Stellenbeschreibungen): streamen, sonst Timeout
+            with self.client.messages.stream(**argumente) as strom:
+                antwort = strom.get_final_message()
+        else:
+            antwort = self.client.messages.create(**argumente)
+        if getattr(antwort, "stop_reason", "") == "max_tokens":
+            print(f"    [API] Antwort am Tokenlimit ({self.MAX_TOKENS}) abgeschnitten.")
         text = "".join(b.text for b in antwort.content if getattr(b, "type", "") == "text")
         return self._json_lesen(text, len(kriterien))
 

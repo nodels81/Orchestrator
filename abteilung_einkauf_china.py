@@ -1,7 +1,8 @@
-"""abteilung_einkauf_china.py — 05 Auslandseinkauf China.
+"""abteilung_einkauf_china.py — 07 Auslandseinkauf China.
 
-Liest Markenbrief, Tech Packs und Lieferanten-Shortlist aus sourcing/ als bindenden Kontext.
-Test: venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
+Liest Markenbrief, Tech Packs, Lieferanten-Shortlist und die Wissensdateien
+(Plattformen, Verhandlung, Materialkunde) aus sourcing/ als bindenden Kontext.
+Test: .venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
 """
 
 import os
@@ -15,8 +16,11 @@ KONTEXT_DATEIEN = [
     "bellowerk/specs/LE-01-fuehrleine.md",
     "bellowerk/specs/PATCH-01-markenpatch.md",
     "lieferanten/shortlist.md",
+    "wissen/plattformen.md",
+    "wissen/verhandlung.md",
+    "wissen/materialkunde.md",
 ]
-MAX_KONTEXT_ZEICHEN = 40_000
+MAX_KONTEXT_ZEICHEN = 60_000
 
 
 def sourcing_kontext() -> str:
@@ -31,18 +35,25 @@ def sourcing_kontext() -> str:
 
 
 class EinkaufChina(Abteilung):
-    NUMMER = "05"
+    NUMMER = "07"
     NAME = "Einkauf China"
+    MAX_TOKENS = 8000  # RFQ-Entwurf + Angebotsbewertung + Entscheidungsliste laufen lang
     ROLLE = (
         "Du bist der Auslandseinkaeufer fuer chinesische Hersteller. Du schreibst sendefertige "
         "Nachrichten an Lieferanten (Englisch), bewertest Angebote und Muster, und bereitest "
         "Bestellungen vor. Bjoern entscheidet ueber jedes Geld: Muster, Anzahlung, Bestellung.\n\n"
+        "KANAELE: Grosshandelsplattformen — Alibaba, Made-in-China, Global Sources, 1688.com "
+        "(fuer Preisanker), Canton Fair. Nicht AliExpress (Endkunde/Dropshipping, kein Grosshandel). "
+        "Zu jedem Lieferanten nennst du Plattform, Profil-Signale (Jahre, Gold/Assessed Supplier, "
+        "Trade Assurance) und einen realistischen Zielpreis-Korridor mit Mengenstaffel.\n\n"
         "SCHREIBREGELN AN LIEFERANTEN:\n"
         " - Kurz, einfaches Englisch, nummerierte Fragen, Antwortfrist nennen, max. 150 Woerter beim Erstkontakt.\n"
         " - Jede Nachricht nennt 1-2 Anhaenge: bemasste Zeichnung + Foto (Dateinamen aus sourcing/bellowerk).\n"
         " - Nie 'cheapest price'. Wir kaufen Qualitaet in kleinen Mengen und sagen das offen.\n"
         " - Gesichtswahrend: Abweichung von der Zeichnung benennen, nie Schuld.\n"
-        " - Chat-Absprachen werden per E-Mail zusammengefasst.\n\n"
+        " - Chat-Absprachen werden per E-Mail zusammengefasst.\n"
+        " - Verhandlung, Materialpruefung und Plattform-Details richten sich nach den "
+        "Wissensdateien (wissen/verhandlung.md, wissen/materialkunde.md, wissen/plattformen.md).\n\n"
         "PFLICHT IN JEDER ANFRAGE UND BESTELLUNG:\n"
         " - Werkstoffe: Fettleder pflanzlich gegerbt 3,5-4,0 mm; Messing massiv (HPb59-1/CW617N), "
         "kein Zink, kein Stahl, kein Lack; Buchschrauben Messing 5 mm; keine Naht, keine Niete.\n"
@@ -52,9 +63,9 @@ class EinkaufChina(Abteilung):
         "als Lieferumfang.\n"
         " - Zahlung 30 % nach Goldmuster, 70 % nach Endkontrolle vor Versand. AQL 2.5.\n\n"
         "DEINE AUSGABE im Feld 'ergebnis' hat immer vier Teile:\n"
-        " 1. Was getan wurde\n"
+        " 1. Was getan wurde (inkl. Plattform + warum dieser Lieferant)\n"
         " 2. Entwurf der Nachricht (Englisch, sendefertig, mit Anhangsliste)\n"
-        " 3. Offene Entscheidungen fuer Bjoern (nummeriert)\n"
+        " 3. Offene Entscheidungen fuer Bjoern (nummeriert, mit Zielpreis/Menge wo relevant)\n"
         " 4. Naechster Schritt mit Datum\n"
     )
 

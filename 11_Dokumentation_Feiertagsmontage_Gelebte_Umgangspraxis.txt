@@ -1,0 +1,30 @@
+KI-Betrieb Herr Bello und Fraeulein Klaeff — Dateien fuer /opt/bello
+
+EINRICHTUNG AUF DEM SERVER
+  cd /opt/bello
+  python3 -m venv venv && venv/bin/pip install anthropic
+  cp config.beispiel.json config.json
+  nano config.json          # API-Schluessel und Mail-Daten eintragen
+  chmod 600 config.json
+
+  venv/bin/python orchestrator.py --probelauf      # Trockenlauf, keine Kosten
+  venv/bin/python orchestrator_mail.py --test      # Eskalationskanal testen
+
+ERSTER ECHTER LAUF
+  venv/bin/python orchestrator.py --auftrag "01 Innovation" "Drei Produktkonzepte fuer Lederhalsbaender"
+  venv/bin/python orchestrator.py
+
+ZEITPLAN
+  crontab -e
+  0 6 * * * cd /opt/bello && ./venv/bin/python orchestrator.py >> lauf.log 2>&1
+
+ALLTAG
+  venv/bin/python orchestrator.py --stand          # woran wird gearbeitet
+  venv/bin/python orchestrator.py --wochenbericht
+  tail -30 lauf.log
+
+Ein ! vor einer Zeile in --stand heisst: wartet auf Bjoerns Entscheidung.
+
+WICHTIG
+  config.json verlaesst den Server nicht — kein Git, keine Cloud, kein Chat.
+  Die Ausgabengrenze steht auf null; jede Ausgabe wird eskaliert.
