@@ -12,16 +12,24 @@ mit Personen) — **nicht an Lieferanten schicken**.
 | `LE-01-flechtung-ringe-farben.jpg` | Vier Leinen grau/dunkelbraun/oliv/cognac: Mystery Braid (V-Muster) um O-Ring und Karabiner, Lederpatch cognac mit 2 Buchschrauben, Gravur "HERR BELLO & FRAU WUFF / Manufaktur" | LE-01, PATCH-01, Farben |
 | `HB-01-detail-patch.jpg` | Graues Halsband mit Lederpatch, 2 gewölbte Messing-Buchschrauben, Rollschnalle Messing, Lochreihe | HB-01, PATCH-01 Position |
 | `HB-01-farben-patch.jpg` | Vier Halsbänder gestapelt (dunkelbraun, oliv, cognac, grau) mit Patch | HB-01 Farben, Patch-Layout |
-| `marke/instagram-look-1.jpg`, `-2.jpg`, `instagram-logo.jpg` | Instagram-Grid und Logo "Herr Bello & Frau Wuff Manufaktur" (Wachscotton-Mäntel, Huntsman-Stil, rotes Halsband "Santa's Dog" mit graviertem Patch) | Markenlook, nicht für Lieferanten |
+| `HB-01-detail-dring-namenspatch.jpg` | Cognac-Halsband: D-Ring mit Buchschraube, Messing-Münzanhänger, Namenspatch "TILDA" | HB-01, PATCH-01 N |
+| `HB-02-geflochten-am-hund.jpg` | Halsband komplett im Mystery Braid, O-Ring, Karabiner eingehakt | HB-02 |
+| `HB-02-zweifarbig-am-hund.jpg` | Zweifarbiges Flechthalsband (dunkelbraun + grau "washed stone"), O-Ring, flaches Ende mit Schraube | HB-02 Option zweifarbig |
+| `HB-02-und-LE-01-gruen.jpg` | Grünes Flechthalsband mit Schnalle + Patch, daneben Leine mit Flechtung am Ring | HB-02 Übergang Flechtung/flach |
+| `LE-01-flechtung-karabiner-gruen.jpg` | Zwei grüne Leinen: Flechtung + Buchschraube + Bolzenkarabiner, Nahaufnahme | LE-01 Karabiner-Anbindung |
+| `LE-01-ringe-flechtung-pink.jpg`, `LE-01-farben-pink-tuerkis.jpg` | Ringe im Geflecht, Patch, Sonderfarben Pink/Türkis/Gelb; Bildtext bestätigt 2 cm Leinenbreite | LE-01 Ringe, Farben |
+| `PATCH-01-und-flechtung-detail.jpg`, `PATCH-01-namensgravur-detail.jpg` | Patch-Gravur nah: Versalien gesperrt + Schreibschrift; Namensgravur "ENZ…" in Serifen | PATCH-01 Schrift |
+| `PATCH-01-namenspatch-august.jpg`, `PATCH-01-namenspatch-detail.jpg` | Namenspatch "AUGUST" neben Markenpatch, Bolzenkarabiner | PATCH-01 Variante N |
+| `ZUB-schluesselanhaenger.jpg` | Schlüsselanhänger mit Patch und Messingring | späteres Zubehör |
+| `marke/instagram-look-1…5.jpg`, `instagram-logo.jpg`, `instagram-logo-tasche.jpg` | Instagram-Grid, Logo "Herr Bello & Frau Wuff Manufaktur" (gesperrte Sans-Versalien + Schreibschrift), Huntsman-Look, schwarzes Set, Tasche | Markenlook, nicht für Lieferanten |
 
 ## Noch fehlend (bitte nachliefern)
 
 | Datei | Was drauf sein muss |
 |---|---|
-| `HB-01-gesamt.jpg` | Halsband komplett flach, Narbenseite oben, Schnalle links, Lineal daneben |
-| `HB-01-detail-schnalle.jpg` | Schnallenfalte mit D-Ring und Schlaufe, nah |
-| `LE-01-gesamt.jpg` | Leine ausgelegt, alle drei Ringe sichtbar, Maßband entlang |
-| `LE-01-detail-ring.jpg` | Ring im Geflecht, nah, Lineal daneben (Flechtlänge messen) |
+| `HB-01-gesamt.jpg` | Halsband komplett flach, Narbenseite oben, Schnalle links, **Lineal** daneben |
+| `LE-01-gesamt.jpg` | Leine ausgelegt, alle drei Ringe sichtbar, **Maßband** entlang |
+| `LE-01-detail-ring-lineal.jpg` | Ring im Geflecht mit Lineal (Flechtlänge und Umschlag messen) |
 | `HS-01-gesamt.jpg` | Handschlaufe komplett |
 | `PATCH-01-artwork.svg` | Vektor-Logo "BELLOWERK / Manufaktur" (Schrift in Pfade) |
 | `messing-beschlaege.jpg` | Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, Lineal |

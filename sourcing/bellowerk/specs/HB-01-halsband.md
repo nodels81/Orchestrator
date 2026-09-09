@@ -5,8 +5,9 @@ Attachments: `zeichnungen/HB-01-halsband.png`, photos `bilder/HB-01-detail-patch
 
 ## 1. Product
 
-Single-layer leather collar. No stitching, no rivets. All joints fixed with solid brass Chicago screws.
-Roller buckle, welded D-ring, leather keeper. Brand nameplate PATCH-01 near the buckle.
+Plain single-layer leather collar — the brass buckle and D-ring are the visual feature, nothing else.
+No stitching, no rivets. All joints fixed with solid brass Chicago screws. Roller buckle, welded
+D-ring, leather keeper. Leather patch PATCH-01 near the buckle (see `bilder/HB-01-detail-dring-namenspatch.jpg`).
 
 ## 2. Material
 

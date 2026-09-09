@@ -22,7 +22,8 @@ Diese Datei ist die Wahrheit für alle Lieferanten-Kontakte. Änderungen hier wi
 
 - **Fettleder**: Rindleder, pflanzlich gegerbt (vegetable-tanned), gefettet/gewachst (oiled / pull-up),
   Vollnarbe (full grain), feste Narbenseite, durchgefärbt. Stärke 3,5–4,0 mm für Halsband und Leine,
-  2,0–2,5 mm für den Patch. Farben laut Fotos: **Grau, Dunkelbraun, Oliv, Cognac**.
+  2,0–2,5 mm für den Patch. Farben laut Fotos: **Grau, Dunkelbraun, Oliv, Cognac, Schwarz**.
+  Leinenbreite 20 mm (bestätigt per Instagram-Text: "Die Lederbreite der Leine beträgt 2 cm").
 - **Messing massiv** (solid brass, gegossen HPb59-1 / CW617N oder geschmiedet): Rollschnalle, D-Ring
   geschweißt, O-Ring geschweißt, Wirbel-Bolzenkarabiner (swivel eye bolt snap, poliert wie auf den
   Fotos), Riemenschlaufe. Unlackiert (Patina erwünscht).
@@ -50,10 +51,17 @@ kein Einstieg über Windhunde
 |---|---|---|
 | HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-01-halsband.md` |
 | LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | `specs/LE-01-fuehrleine.md` |
-| HB-02 | Halsband mit Mystery-Braid-Anbindung des D-Rings (Entwurf, Björn entscheidet) | `specs/HB-02-halsband-geflochten.md` |
+| HB-02 | Halsband geflochten: Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | `specs/HB-02-halsband-geflochten.md` |
 | LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
 | HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
-| PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben | `specs/PATCH-01-markenpatch.md` |
+| PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |
+| VERP-01 | Verpackung + Kennzeichnung (Entwurf, Björn entscheidet) | `specs/VERP-01-verpackung.md` |
+
+Grundsatz laut Björn: **schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung
+kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-01 und LE-01 sind
+die Kernmodelle, HB-02 die geflochtene Variante. Spätere Kandidaten (nicht jetzt anfragen):
+Führleine mit fester Handschlaufe, Schlüsselanhänger mit Patch, Messing-Münzanhänger am D-Ring
+(auf Fotos zu sehen), Sonderfarben Pink/Türkis/Mint/Gelb/Bordeaux.
 
 Jedes Produkt wird **komplett** geliefert: fertig montiert, mit Patch, mit Pflegehinweis, verpackt.
 

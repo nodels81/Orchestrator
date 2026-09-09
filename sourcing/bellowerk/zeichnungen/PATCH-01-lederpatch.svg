@@ -9,7 +9,7 @@
     <rect x="0" y="0" width="340" height="72" rx="12" fill="#b9793f" stroke="#000" stroke-width="2.5"/>
     <circle cx="28" cy="36" r="17" fill="#c9a44a" stroke="#000"/>
     <circle cx="312" cy="36" r="17" fill="#c9a44a" stroke="#000"/>
-    <text x="170" y="34" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="22" font-weight="bold" letter-spacing="4" font-family="Georgia, serif">BELLOWERK</text>
+    <text x="170" y="34" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="22" font-weight="600" letter-spacing="5" font-family="Futura, 'Century Gothic', 'Josefin Sans', Arial, sans-serif">BELLOWERK</text>
     <text x="235" y="60" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="17" font-style="italic" font-family="'Brush Script MT', 'Segoe Script', cursive">Manufaktur</text>
     <g stroke-width="1.5">
       <line x1="0" y1="100" x2="340" y2="100"/><line x1="0" y1="93" x2="0" y2="107"/><line x1="340" y1="93" x2="340" y2="107"/>
@@ -20,7 +20,7 @@
       <text x="382" y="40" fill="#000" stroke="none" font-size="14">18</text>
       <text x="382" y="16" fill="#000" stroke="none" font-size="12">R 3</text>
     </g>
-    <text x="0" y="190" fill="#000" stroke="none" font-size="13">Line 1 "BELLOWERK": serif capitals (Lora Bold), cap height 4.5 mm, tracking +15 % · Line 2 "Manufaktur": script, x-height 2.5 mm, under right half</text>
+    <text x="0" y="190" fill="#000" stroke="none" font-size="13">Line 1 "BELLOWERK": spaced geometric sans capitals as in the logo, cap height 4.5 mm, tracking +20 % · Line 2 "Manufaktur": brush script, x-height 2.5 mm, under right half</text>
     <text x="0" y="210" fill="#000" stroke="none" font-size="13">Engraving depth 0.2–0.3 mm. Min line 0.3 mm, min gap 0.5 mm. Same layout as current "HERR BELLO &amp; FRAU WUFF / Manufaktur" patch (see photos).</text>
   </g>
 
@@ -30,7 +30,7 @@
     <rect x="0" y="0" width="260" height="56" rx="12" fill="#b9793f" stroke="#000" stroke-width="2.5"/>
     <circle cx="28" cy="28" r="17" fill="#c9a44a" stroke="#000"/>
     <circle cx="232" cy="28" r="17" fill="#c9a44a" stroke="#000"/>
-    <text x="130" y="27" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="17" font-weight="bold" letter-spacing="3" font-family="Georgia, serif">BELLOWERK</text>
+    <text x="130" y="27" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="17" font-weight="600" letter-spacing="4" font-family="Futura, 'Century Gothic', 'Josefin Sans', Arial, sans-serif">BELLOWERK</text>
     <text x="175" y="47" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="13" font-style="italic" font-family="'Brush Script MT', 'Segoe Script', cursive">Manufaktur</text>
     <g stroke-width="1.5">
       <line x1="0" y1="84" x2="260" y2="84"/><line x1="0" y1="77" x2="0" y2="91"/><line x1="260" y1="77" x2="260" y2="91"/>

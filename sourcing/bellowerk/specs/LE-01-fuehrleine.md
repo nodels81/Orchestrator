@@ -15,7 +15,7 @@ piece) plus one Chicago screw** — this is the signature look, see photos. Leat
 
 | Part | Specification |
 |---|---|
-| Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm**, width **20 mm** (option 25 mm). One continuous strap, no joints. Colours: grey, dark brown, olive, cognac (see photo). |
+| Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm**, width **20 mm** (option 25 mm). One continuous strap, no joints. Width 20 mm confirmed by Björn. Colours: grey, dark brown, olive, cognac, black (see photos `bilder/LE-01-*.jpg`). |
 | Snap hooks (2) | Swivel trigger snap ("swivel eye bolt snap"), **solid brass**, polished, eye for 20 mm strap, min. breaking load **2.0 kN**, strong spring. |
 | O-rings (3) | Welded, ground smooth, solid brass, inner Ø 25 mm, wire Ø 5 mm, min. 3 kN. |
 | Screws | Chicago screws solid brass, domed head Ø 8–9 mm, post 8 mm, thread-locked. 1 per attachment. |
