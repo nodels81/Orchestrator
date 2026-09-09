@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1400" height="620" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-01 Leather Dog Collar — size M (25 mm) — scale 1:2 — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">Single layer vegetable-tanned oiled cowhide 3.5–4.0 mm · solid brass hardware · NO stitching · NO rivets · Chicago screws only</text>
+
+  <!-- scale: 1 mm = 2 px. Strap 600 mm x 25 mm -> 1200 x 50 px, origin x=100, y=200 -->
+  <g id="strap">
+    <!-- buckle end (left) folded: show fold as double line 60 mm = 120 px -->
+    <path d="M 100 200 H 1250 A 25 25 0 0 1 1250 250 H 100 Z" stroke-width="2.5"/>
+    <!-- fold region hatch -->
+    <line x1="220" y1="200" x2="220" y2="250" stroke-dasharray="6 4"/>
+    <text x="126" y="190" fill="#000" stroke="none" font-size="14">fold 60 mm</text>
+    <!-- buckle -->
+    <rect x="88" y="192" width="14" height="66" rx="3" stroke-width="3"/>
+    <line x1="95" y1="192" x2="95" y2="258" stroke-width="3"/>
+    <path d="M 95 225 L 150 225" stroke-width="3"/>
+    <text x="60" y="290" fill="#000" stroke="none" font-size="14">roller buckle 25 mm, solid brass</text>
+    <!-- D-ring in fold at 20 mm behind buckle = x 100+40 -->
+    <path d="M 140 196 V 254" stroke-width="3"/>
+    <path d="M 140 196 C 175 196 175 254 140 254" stroke-width="3"/>
+    <text x="150" y="276" fill="#000" stroke="none" font-size="14">D-ring welded, solid brass</text>
+    <!-- keeper at 15 mm behind D ring -> x 140+30=170..185 -->
+    <rect x="172" y="194" width="14" height="62" stroke-width="2"/>
+    <text x="150" y="176" fill="#000" stroke="none" font-size="14">keeper</text>
+    <!-- 2 chicago screws in the fold, in line for 25 mm -->
+    <circle cx="200" cy="225" r="5" stroke-width="2"/>
+    <circle cx="214" cy="225" r="5" stroke-width="2"/>
+    <!-- nameplate 30 mm behind fold: fold ends at x 220, plate 50x18 mm => 100x36 px at x 280 -->
+    <rect x="280" y="207" width="100" height="36" rx="4" stroke-width="2"/>
+    <circle cx="293" cy="225" r="4"/>
+    <circle cx="367" cy="225" r="4"/>
+    <text x="330" y="221" text-anchor="middle" fill="#000" stroke="none" font-size="11" font-weight="bold">Bellowerk</text>
+    <text x="330" y="233" text-anchor="middle" fill="#000" stroke="none" font-size="7">Manufaktur</text>
+    <text x="260" y="176" fill="#000" stroke="none" font-size="14">nameplate PATCH-01 (50×18 mm), 2 Chicago screws, 30 mm behind fold</text>
+    <!-- holes: from tip (x=1250) at 60,85,110,135,160 mm => 120,170,220,270,320 px -->
+    <g stroke-width="2">
+      <ellipse cx="1130" cy="225" rx="7" ry="4"/>
+      <ellipse cx="1080" cy="225" rx="7" ry="4"/>
+      <ellipse cx="1030" cy="225" rx="7" ry="4"/>
+      <ellipse cx="980" cy="225" rx="7" ry="4"/>
+      <ellipse cx="930" cy="225" rx="7" ry="4"/>
+    </g>
+    <text x="900" y="176" fill="#000" stroke="none" font-size="14">5 oval holes 4×7 mm, pitch 25 mm, first hole 60 mm from tip</text>
+  </g>
+
+  <!-- dimensions -->
+  <g stroke-width="1.5">
+    <!-- overall length -->
+    <line x1="100" y1="330" x2="1250" y2="330"/>
+    <line x1="100" y1="320" x2="100" y2="340"/>
+    <line x1="1250" y1="320" x2="1250" y2="340"/>
+    <text x="675" y="352" text-anchor="middle" fill="#000" stroke="none">cut length 600 mm (size M) — S 520 · L 680 · XL 760</text>
+    <!-- width -->
+    <line x1="1300" y1="200" x2="1300" y2="250"/>
+    <line x1="1290" y1="200" x2="1310" y2="200"/>
+    <line x1="1290" y1="250" x2="1310" y2="250"/>
+    <text x="1315" y="230" fill="#000" stroke="none">25 mm</text>
+    <!-- hole pitch -->
+    <line x1="1080" y1="300" x2="1130" y2="300"/>
+    <line x1="1080" y1="292" x2="1080" y2="308"/>
+    <line x1="1130" y1="292" x2="1130" y2="308"/>
+    <text x="1105" y="318" text-anchor="middle" fill="#000" stroke="none" font-size="13">25</text>
+    <line x1="1130" y1="280" x2="1250" y2="280"/>
+    <line x1="1130" y1="272" x2="1130" y2="288"/>
+    <line x1="1250" y1="272" x2="1250" y2="288"/>
+    <text x="1190" y="270" text-anchor="middle" fill="#000" stroke="none" font-size="13">60</text>
+  </g>
+
+  <!-- section view -->
+  <g transform="translate(100,400)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Section A–A (buckle fold), scale 2:1</text>
+    <rect x="0" y="20" width="300" height="16" fill="#ddd"/>
+    <rect x="0" y="36" width="300" height="16" fill="#ddd"/>
+    <text x="310" y="34" fill="#000" stroke="none" font-size="13">grain side out</text>
+    <text x="310" y="50" fill="#000" stroke="none" font-size="13">flesh to flesh, 2 layers × 4 mm</text>
+    <!-- chicago screw -->
+    <rect x="120" y="12" width="20" height="8" fill="#000"/>
+    <rect x="126" y="20" width="8" height="32" fill="#000"/>
+    <rect x="120" y="52" width="20" height="8" fill="#000"/>
+    <text x="100" y="80" fill="#000" stroke="none" font-size="13">Chicago screw brass, head Ø 5 mm, post 8 mm, thread-locked</text>
+  </g>
+
+  <g transform="translate(700,400)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Sizes (starting values — confirm)</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="14">S: 20 mm, neck 30–40 cm, cut 520 mm</text>
+    <text x="0" y="44" fill="#000" stroke="none" font-size="14">M: 25 mm, neck 38–48 cm, cut 600 mm</text>
+    <text x="0" y="64" fill="#000" stroke="none" font-size="14">L: 30 mm, neck 46–56 cm, cut 680 mm</text>
+    <text x="0" y="84" fill="#000" stroke="none" font-size="14">XL: 40 mm, neck 54–64 cm, cut 760 mm</text>
+    <text x="0" y="110" fill="#000" stroke="none" font-size="14">Tolerances: length ±5 mm · width ±0.5 mm · hole pitch ±1 mm</text>
+    <text x="0" y="130" fill="#000" stroke="none" font-size="14">Edges bevelled + burnished, no edge paint. Tip: English point.</text>
+  </g>
+</svg>

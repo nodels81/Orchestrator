@@ -1,0 +1,16 @@
+firma;ort;typ;kategorie;kontaktperson;kanal;letzter_kontakt;modell;preis_exw;moq;musterkosten;musterzeit;lieferzeit;zahlung;incoterm;status;naechster_schritt;faellig;quelle;notiz
+Kingming Pet;Dongguan;Fabrik (vermutet);Leder Halsband/Leine;;Website kmpetcollars.com;;HB-01, LE-01;;~100;;;;;;neu;RFQ senden (Vorlage 01);;kmpetcollars.com;Bridle-Leder, Messing; Content-lastig, per Video-Call prüfen
+Wedogy;Guangzhou;Kleinfabrik;Leder Halsband/Leine;;Website wedogy.com;;HB-01, LE-01;ab 2 USD (Standard);15–50;Sample-Pack 50 USD;;;;;neu;RFQ senden;;wedogy.com;Standard Edelstahl → Messing anfragen
+Wenzhou Vigorous Pet Products;Wenzhou/Pingyang;Fabrik seit 1990, ISO 9001;Leder Halsband/Leine;;made-in-china;;HB-01, LE-01;;;;;;;;neu;RFQ senden;;sabrinayzx.en.made-in-china.com;ehem. Gürtelfabrik → Buchschrauben-Know-how wahrscheinlich
+Dongguan Zhengyong Leather (JANYO);Dongguan/Chang'an;Fabrik seit 2005, 300 MA;Leder + Flechtung;;Alibaba;;HB-01, HB-02;;;;;;;;neu;RFQ senden, PU ausschließen;;dgzhengyong.en.alibaba.com;Gürtelhersteller, auch PU-Linie – Leder klar vorgeben
+Qingdao Adityna Pet Products;Qingdao;Fabrik, 40 Handwerker, eigene Lederlinie;Flechtung Leder;;inquiry@joydogcollars.com;;HB-02, LE-02;;300 (verhandeln);;;15–25 Tage;;;neu;RFQ Flechtung senden;;joydogcollars.com;glaubwürdigster Leder-Flechter
+Szoneier Leather;Guangdong;Fabrik seit 2007;Leder Halsband/Leine;;Website;;HB-01;;20;;;;;;neu;RFQ senden;;szoneierleather.com;veg-tan Option, Sonderfarben 300–500
+Dongguan Yantao Industrial;Dongguan;Fabrik seit 2012, eigene Beschlagfertigung;Leder + Beschläge;;made-in-china;;HB-01, Beschläge;;;;;;;;neu;RFQ senden;;yantao.en.made-in-china.com;interessant weil Beschläge im Haus
+P-NUTS Pet;Dongguan;Fabrik seit 2009;Leder + Flechtung;;Website;;HB-01, HB-02;;;;;;;;neu;RFQ senden;;p-nutspaws.com;PetSmart-Lieferant, Private Label
+Dongguan Yongfu Hardware;Dongguan;Fabrik, ISO 9001;Namensschild Messing (A);;Alibaba yfnameplate;;PATCH-01;0,06–0,50 USD;100–5000;;;;;;neu;RFQ PATCH-01 senden;;yfnameplate.com;Ätzen + Prägen
+Dongguan Haixinda Nameplate;Dongguan;Fabrik;Namensschild Messing (A);;made-in-china;;PATCH-01;;500 (kleiner auf Anfrage);Muster 5–7 AT;;10–15 AT;;;neu;RFQ PATCH-01 senden;;hxindanameplate.com;Ätzen, Prägen, Laser
+Guangzhou DOY Label;Guangzhou;Fabrik;Leder-Patch geprägt (B);;doylabel.com;;PATCH-01 B;;100;Muster 3–5 AT;;5–7 AT;;;neu;nur falls Variante A scheitert;;doylabel.com;Blindprägung Echtleder
+Dongguan Weikeman Hardware;Dongguan/Chang'an;Kleinfabrik;Messing-Beschläge;;Alibaba wkm;;Schnalle, Ringe, Karabiner;;10;;;;;;neu;Musteranfrage Beschläge;;wkm.en.alibaba.com;solid brass laut Listing
+Dongguan Kimjee Hardware;Dongguan/Chang'an;Fabrik, 80 MA;Messing-Beschläge;;cnkimjee.com;;Karabiner, Schnallen;;;;;;;;neu;Musteranfrage, Messing vs Zink trennen;;cnkimjee.com;führt auch Zink – explizit ausschließen
+Fitrite International;Dongguan;Fabrik, Messing-Sandguss, Zugprüfung;Messing-Beschläge Premium;;fitrite.com.tw;;Schnalle, D-Ring;;;;;;;;neu;Anfrage mit Bruchlast-Forderung;;fitrite.com.tw;Luxus-Lederwaren-Lieferant, Projekt-MOQ
+Dongguan ShuangXin / Jiesheng Hardware;Dongguan;Fabrik;Buchschrauben Messing;;Global Sources;;Chicago screws;ab 0,03 USD;;;;;;;neu;Musteranfrage;;globalsources.com;solid brass chicago screws

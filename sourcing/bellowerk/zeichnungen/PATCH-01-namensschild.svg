@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1200" height="620" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none" font-family="Arial, sans-serif">PATCH-01 Brass Nameplate "Bellowerk / Manufaktur" — scale 5:1 — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none" font-family="Arial, sans-serif">Solid brass H62 / C2680, 1.5 mm · chemical etching 0.3 mm deep · brushed lengthwise · unlacquered · 2 holes Ø 4.2 mm for brass Chicago screws (head Ø 5 mm)</text>
+
+  <!-- PL-M 50x18 mm at 5:1 = 250x90 px -->
+  <g transform="translate(100,140)">
+    <text x="0" y="-16" fill="#000" stroke="none" font-family="Arial, sans-serif" font-weight="bold">PL-M 50 × 18 mm (for 25–40 mm straps)</text>
+    <rect x="0" y="0" width="250" height="90" rx="10" stroke-width="2.5"/>
+    <circle cx="32.5" cy="45" r="10.5"/>
+    <circle cx="217.5" cy="45" r="10.5"/>
+    <text x="125" y="46" text-anchor="middle" fill="#000" stroke="none" font-size="30" font-weight="bold">Bellowerk</text>
+    <text x="125" y="72" text-anchor="middle" fill="#000" stroke="none" font-size="13" letter-spacing="1">Manufaktur</text>
+    <!-- dims -->
+    <g stroke-width="1.5" font-family="Arial, sans-serif">
+      <line x1="0" y1="115" x2="250" y2="115"/><line x1="0" y1="108" x2="0" y2="122"/><line x1="250" y1="108" x2="250" y2="122"/>
+      <text x="125" y="135" text-anchor="middle" fill="#000" stroke="none" font-size="14">50</text>
+      <line x1="32.5" y1="150" x2="217.5" y2="150"/><line x1="32.5" y1="143" x2="32.5" y2="157"/><line x1="217.5" y1="143" x2="217.5" y2="157"/>
+      <text x="125" y="170" text-anchor="middle" fill="#000" stroke="none" font-size="14">37 (hole spacing)</text>
+      <line x1="280" y1="0" x2="280" y2="90"/><line x1="273" y1="0" x2="287" y2="0"/><line x1="273" y1="90" x2="287" y2="90"/>
+      <text x="292" y="49" fill="#000" stroke="none" font-size="14">18</text>
+      <text x="292" y="20" fill="#000" stroke="none" font-size="12">R 2</text>
+      <text x="0" y="195" fill="#000" stroke="none" font-size="13">Line 1 "Bellowerk": Lora Bold, cap height 5.5 mm · Line 2 "Manufaktur": Lora Regular, cap height 2.4 mm, tracking +5 %</text>
+      <text x="0" y="215" fill="#000" stroke="none" font-size="13">Holes Ø 4.2 mm, centres 6.5 mm from each end, countersink 0.3 mm. Min line 0.25 mm, min gap 0.4 mm.</text>
+    </g>
+  </g>
+
+  <!-- PL-S 40x14 mm at 5:1 = 200x70 px -->
+  <g transform="translate(100,400)">
+    <text x="0" y="-16" fill="#000" stroke="none" font-family="Arial, sans-serif" font-weight="bold">PL-S 40 × 14 mm (for 20 mm straps: LE-01, HS-01, collar S)</text>
+    <rect x="0" y="0" width="200" height="70" rx="10" stroke-width="2.5"/>
+    <circle cx="32.5" cy="35" r="10.5"/>
+    <circle cx="167.5" cy="35" r="10.5"/>
+    <text x="100" y="36" text-anchor="middle" fill="#000" stroke="none" font-size="22" font-weight="bold">Bellowerk</text>
+    <text x="100" y="56" text-anchor="middle" fill="#000" stroke="none" font-size="10" letter-spacing="1">Manufaktur</text>
+    <g stroke-width="1.5" font-family="Arial, sans-serif">
+      <line x1="0" y1="95" x2="200" y2="95"/><line x1="0" y1="88" x2="0" y2="102"/><line x1="200" y1="88" x2="200" y2="102"/>
+      <text x="100" y="115" text-anchor="middle" fill="#000" stroke="none" font-size="14">40</text>
+      <line x1="32.5" y1="130" x2="167.5" y2="130"/><line x1="32.5" y1="123" x2="32.5" y2="137"/><line x1="167.5" y1="123" x2="167.5" y2="137"/>
+      <text x="100" y="150" text-anchor="middle" fill="#000" stroke="none" font-size="14">27 (hole spacing)</text>
+      <line x1="230" y1="0" x2="230" y2="70"/><line x1="223" y1="0" x2="237" y2="0"/><line x1="223" y1="70" x2="237" y2="70"/>
+      <text x="242" y="39" fill="#000" stroke="none" font-size="14">14</text>
+      <text x="0" y="175" fill="#000" stroke="none" font-size="13">Cap heights: "Bellowerk" 4.0 mm · "Manufaktur" 1.8 mm</text>
+    </g>
+  </g>
+
+  <!-- section -->
+  <g transform="translate(620,400)" font-family="Arial, sans-serif">
+    <text x="0" y="-16" fill="#000" stroke="none" font-weight="bold">Section (schematic)</text>
+    <rect x="0" y="0" width="300" height="10" fill="#c9a44a" stroke="#000"/>
+    <rect x="0" y="10" width="300" height="24" fill="#ddd" stroke="#000"/>
+    <rect x="60" y="-6" width="16" height="6" fill="#000"/><rect x="65" y="0" width="6" height="40" fill="#000"/><rect x="60" y="34" width="16" height="6" fill="#000"/>
+    <rect x="224" y="-6" width="16" height="6" fill="#000"/><rect x="229" y="0" width="6" height="40" fill="#000"/><rect x="224" y="34" width="16" height="6" fill="#000"/>
+    <text x="0" y="62" fill="#000" stroke="none" font-size="13">brass plate 1.5 mm on leather 3.5–4.0 mm</text>
+    <text x="0" y="82" fill="#000" stroke="none" font-size="13">Chicago screw post 8 mm, head Ø 5 mm both sides</text>
+    <text x="0" y="102" fill="#000" stroke="none" font-size="13">Letters recessed 0.3 mm, filled black (Pantone Black C)</text>
+    <text x="0" y="122" fill="#000" stroke="none" font-size="13">— sample both filled and unfilled</text>
+    <text x="0" y="142" fill="#000" stroke="none" font-size="13">NOT acceptable: zinc alloy, plated steel, lacquer, sewn/woven/PVC patch</text>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1400" height="700" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">One continuous strap, veg-tan oiled cowhide 3.5–4.0 mm · 2 solid brass swivel trigger snaps · 3 welded solid brass O-rings fixed in the strap · NO stitching, NO rivets</text>
+
+  <!-- scale: 1 cm = 4 px horizontally. 300 cm = 1200 px. origin x=120 -->
+  <g id="strap">
+    <rect x="120" y="200" width="1200" height="20" stroke-width="2.5"/>
+    <!-- hook A -->
+    <g transform="translate(120,210)">
+      <path d="M 0 0 H -20 A 12 12 0 1 0 -44 0 A 12 12 0 1 0 -20 0" stroke-width="3"/>
+      <path d="M -44 0 H -70 A 10 10 0 0 1 -70 -18 L -60 -18" stroke-width="3"/>
+      <path d="M -70 0 A 10 10 0 0 0 -70 18 L -50 18" stroke-width="3"/>
+    </g>
+    <text x="20" y="250" fill="#000" stroke="none" font-size="14">hook A</text>
+    <!-- hook B -->
+    <g transform="translate(1320,210)">
+      <path d="M 0 0 H 20 A 12 12 0 1 1 44 0 A 12 12 0 1 1 20 0" stroke-width="3"/>
+      <path d="M 44 0 H 70 A 10 10 0 0 0 70 -18 L 60 -18" stroke-width="3"/>
+      <path d="M 70 0 A 10 10 0 0 1 70 18 L 50 18" stroke-width="3"/>
+    </g>
+    <text x="1330" y="250" fill="#000" stroke="none" font-size="14">hook B</text>
+    <!-- folds 5 cm = 20 px at hook A (120..140), rings and hook B -->
+    <g stroke-dasharray="5 3">
+      <line x1="140" y1="200" x2="140" y2="220"/>
+      <line x1="1300" y1="200" x2="1300" y2="220"/>
+    </g>
+    <!-- rings at 45,140,245 cm => x = 120+180=300, 120+560=680, 120+980=1100 -->
+    <g stroke-width="3">
+      <circle cx="300" cy="210" r="14"/>
+      <circle cx="680" cy="210" r="14"/>
+      <circle cx="1100" cy="210" r="14"/>
+    </g>
+    <!-- screws: 2 per fold -->
+    <g stroke-width="1.5">
+      <circle cx="126" cy="210" r="3"/><circle cx="134" cy="210" r="3"/>
+      <circle cx="320" cy="210" r="3"/><circle cx="328" cy="210" r="3"/>
+      <circle cx="700" cy="210" r="3"/><circle cx="708" cy="210" r="3"/>
+      <circle cx="1120" cy="210" r="3"/><circle cx="1128" cy="210" r="3"/>
+      <circle cx="1306" cy="210" r="3"/><circle cx="1314" cy="210" r="3"/>
+    </g>
+    <text x="270" y="180" fill="#000" stroke="none" font-size="14">ring 1</text>
+    <text x="650" y="180" fill="#000" stroke="none" font-size="14">ring 2</text>
+    <text x="1070" y="180" fill="#000" stroke="none" font-size="14">ring 3</text>
+    <!-- nameplate at 8 cm => x=120+32=152, 40x14 mm at this scale ~ 16x6px; draw symbolic 40x14 px -->
+    <rect x="152" y="203" width="40" height="14" rx="2" stroke-width="1.5"/>
+    <text x="150" y="250" fill="#000" stroke="none" font-size="13">nameplate PATCH-01 (40×14 mm) at 8 cm</text>
+  </g>
+
+  <!-- dimension chain from hook A -->
+  <g stroke-width="1.5">
+    <line x1="120" y1="300" x2="300" y2="300"/>
+    <line x1="120" y1="290" x2="120" y2="310"/>
+    <line x1="300" y1="290" x2="300" y2="310"/>
+    <text x="210" y="322" text-anchor="middle" fill="#000" stroke="none">45 cm</text>
+
+    <line x1="120" y1="350" x2="680" y2="350"/>
+    <line x1="680" y1="340" x2="680" y2="360"/>
+    <line x1="120" y1="340" x2="120" y2="360"/>
+    <text x="400" y="372" text-anchor="middle" fill="#000" stroke="none">140 cm</text>
+
+    <line x1="120" y1="400" x2="1100" y2="400"/>
+    <line x1="1100" y1="390" x2="1100" y2="410"/>
+    <line x1="120" y1="390" x2="120" y2="410"/>
+    <text x="610" y="422" text-anchor="middle" fill="#000" stroke="none">245 cm</text>
+
+    <line x1="120" y1="450" x2="1320" y2="450"/>
+    <line x1="1320" y1="440" x2="1320" y2="460"/>
+    <line x1="120" y1="440" x2="120" y2="460"/>
+    <text x="720" y="472" text-anchor="middle" fill="#000" stroke="none">300 cm (hook eye to hook eye) · all positions ±1 cm, measured from inner edge of hook A eye</text>
+
+    <!-- width -->
+    <line x1="900" y1="150" x2="900" y2="200"/>
+    <line x1="900" y1="150" x2="900" y2="200" stroke-dasharray="3 3"/>
+    <line x1="880" y1="200" x2="880" y2="220"/>
+    <line x1="872" y1="200" x2="888" y2="200"/>
+    <line x1="872" y1="220" x2="888" y2="220"/>
+    <text x="850" y="145" fill="#000" stroke="none" font-size="13">strap width 20 mm ±0.5</text>
+  </g>
+
+  <!-- detail: ring fold -->
+  <g transform="translate(60,520)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Detail: ring fold (scale 1:1)</text>
+    <rect x="0" y="30" width="200" height="8" fill="#ddd"/>
+    <rect x="0" y="38" width="200" height="8" fill="#ddd"/>
+    <circle cx="-14" cy="38" r="25" stroke-width="3"/>
+    <rect x="40" y="26" width="8" height="24" fill="#000"/>
+    <rect x="120" y="26" width="8" height="24" fill="#000"/>
+    <text x="0" y="75" fill="#000" stroke="none" font-size="13">strap around ring, back 50 mm, flesh to flesh, 2 Chicago screws at 15 + 35 mm from fold</text>
+    <text x="0" y="95" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide</text>
+  </g>
+
+  <g transform="translate(760,520)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Six working lengths</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="14">B→ring 3: 245 cm · B→ring 2: 140 cm (loop 160, hands-free) · B→ring 1: 45 cm</text>
+    <text x="0" y="44" fill="#000" stroke="none" font-size="14">A→ring 1: 255 cm · A→ring 2: 160 cm · A→ring 3: 55 cm · both hooks: 300 cm</text>
+    <text x="0" y="74" fill="#000" stroke="none" font-size="14">Cut length of strap: 325 cm (300 + 5 folds × 5 cm). Swivel trigger snap solid brass, eye 20 mm, ≥ 2 kN.</text>
+    <text x="0" y="94" fill="#000" stroke="none" font-size="14">All screw heads on the grain side. Edges bevelled + burnished, no paint.</text>
+  </g>
+</svg>

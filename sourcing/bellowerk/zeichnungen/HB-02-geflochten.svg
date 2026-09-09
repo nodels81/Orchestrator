@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1400" height="560" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-02 Braided Leather Collar — size M — scale 1:2 — Bellowerk Manufaktur, v0.9 DRAFT, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">4-strand round braid Ø 12 mm with leather core, back-braided into flat ends · flat ends as HB-01 (buckle, D-ring, Chicago screws) · NO stitching, NO rivets</text>
+
+  <!-- scale 1 mm = 2 px. Buckle end flat 160 mm = 320 px; braid 280 mm = 560 px; D-ring end 120 mm = 240 px. origin x=100,y=200 -->
+  <g>
+    <!-- buckle flat end -->
+    <rect x="100" y="200" width="320" height="50" stroke-width="2.5"/>
+    <rect x="88" y="192" width="14" height="66" rx="3" stroke-width="3"/>
+    <line x1="95" y1="192" x2="95" y2="258" stroke-width="3"/>
+    <!-- holes on buckle end: 5 holes pitch 25 mm, first hole 60 mm from... here on buckle end? In HB-02 holes are on the buckle-end flat strap? No: buckle on one flat end, holes on the other flat end. Draw holes on D-ring end. -->
+    <path d="M 140 196 V 254" stroke-width="3"/>
+    <path d="M 140 196 C 175 196 175 254 140 254" stroke-width="3"/>
+    <rect x="172" y="194" width="14" height="62"/>
+    <circle cx="200" cy="225" r="5"/><circle cx="214" cy="225" r="5"/>
+    <!-- nameplate -->
+    <rect x="270" y="207" width="100" height="36" rx="4"/>
+    <circle cx="283" cy="225" r="4"/><circle cx="357" cy="225" r="4"/>
+    <text x="320" y="221" text-anchor="middle" fill="#000" stroke="none" font-size="11" font-weight="bold">Bellowerk</text>
+    <text x="320" y="233" text-anchor="middle" fill="#000" stroke="none" font-size="7">Manufaktur</text>
+    <!-- transition slots -->
+    <line x1="400" y1="205" x2="400" y2="245" stroke-dasharray="4 3"/>
+    <text x="330" y="280" fill="#000" stroke="none" font-size="13">strands through slots, back-braided 30 mm, 1 screw through bundle</text>
+
+    <!-- braid: 280 mm = 560 px from x 420 to 980, diameter 12 mm = 24 px -->
+    <g stroke-width="2">
+      <path d="M 420 213 Q 450 237 480 213 T 540 213 T 600 213 T 660 213 T 720 213 T 780 213 T 840 213 T 900 213 T 960 213 L 980 213"/>
+      <path d="M 420 237 Q 450 213 480 237 T 540 237 T 600 237 T 660 237 T 720 237 T 780 237 T 840 237 T 900 237 T 960 237 L 980 237"/>
+      <path d="M 420 225 Q 450 201 480 225 T 540 225 T 600 225 T 660 225 T 720 225 T 780 225 T 840 225 T 900 225 T 960 225 L 980 225" stroke="#666"/>
+      <line x1="420" y1="201" x2="980" y2="201"/>
+      <line x1="420" y1="249" x2="980" y2="249"/>
+    </g>
+    <text x="560" y="180" fill="#000" stroke="none" font-size="14">4-strand round braid, strands 4 × 2.2 mm, leather core, finished Ø 12 mm</text>
+
+    <!-- D-ring flat end with holes: 120 mm = 240 px from x 980 to 1220 -->
+    <path d="M 980 200 H 1195 A 25 25 0 0 1 1195 250 H 980 Z" stroke-width="2.5"/>
+    <line x1="1000" y1="205" x2="1000" y2="245" stroke-dasharray="4 3"/>
+    <g stroke-width="2">
+      <ellipse cx="1170" cy="225" rx="7" ry="4"/><ellipse cx="1120" cy="225" rx="7" ry="4"/><ellipse cx="1070" cy="225" rx="7" ry="4"/>
+    </g>
+    <text x="1010" y="280" fill="#000" stroke="none" font-size="13">holes 4×7 mm, pitch 25 mm (3–5 holes, size-dependent)</text>
+  </g>
+
+  <!-- dims -->
+  <g stroke-width="1.5">
+    <line x1="100" y1="330" x2="420" y2="330"/><line x1="100" y1="322" x2="100" y2="338"/><line x1="420" y1="322" x2="420" y2="338"/>
+    <text x="260" y="352" text-anchor="middle" fill="#000" stroke="none">flat buckle end 160 mm</text>
+    <line x1="420" y1="330" x2="980" y2="330"/><line x1="980" y1="322" x2="980" y2="338"/>
+    <text x="700" y="352" text-anchor="middle" fill="#000" stroke="none">braided section 280 mm (size M)</text>
+    <line x1="980" y1="330" x2="1220" y2="330"/><line x1="1220" y1="322" x2="1220" y2="338"/>
+    <text x="1100" y="352" text-anchor="middle" fill="#000" stroke="none">flat hole end 120 mm</text>
+    <line x1="1260" y1="200" x2="1260" y2="250"/><line x1="1252" y1="200" x2="1268" y2="200"/><line x1="1252" y1="250" x2="1268" y2="250"/>
+    <text x="1272" y="230" fill="#000" stroke="none">25 mm</text>
+  </g>
+
+  <g transform="translate(100,410)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Sizes (starting values — confirm)</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="14">S: braid 220 mm Ø 12, ends 160/120, buckle 20 mm, neck 30–40 cm · M: braid 280 mm Ø 12, ends 160/120, buckle 25 mm, neck 38–48 cm</text>
+    <text x="0" y="44" fill="#000" stroke="none" font-size="14">L: braid 340 mm Ø 14, ends 180/140, buckle 25 mm, neck 46–56 cm · XL: braid 400 mm Ø 14, ends 180/140, buckle 30 mm, neck 54–64 cm</text>
+    <text x="0" y="74" fill="#000" stroke="none" font-size="14">Braid tight and even, no twisted strands, no gaps, stretch ≤ 3 % at 30 kg. Strands cut from the same hide as the ends (colour match).</text>
+    <text x="0" y="94" fill="#000" stroke="none" font-size="14">Alternative braids on request: 8-strand round (Ø 14) · flat 5-strand (22 mm wide, no core). Say the exact term in the RFQ.</text>
+  </g>
+</svg>

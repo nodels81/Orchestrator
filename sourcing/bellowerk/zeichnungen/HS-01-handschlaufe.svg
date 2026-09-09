@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1000" height="520" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HS-01 Leather Hand Loop, 50 cm — 20 mm — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">Veg-tan oiled cowhide 3.5–4.0 mm · 1 solid brass swivel trigger snap · overlap + snap fold fixed with Chicago screws · NO stitching, NO rivets</text>
+
+  <!-- loop drawn as ellipse, circumference 50 cm symbolic -->
+  <g transform="translate(300,270)">
+    <ellipse cx="0" cy="0" rx="200" ry="110" stroke-width="12" stroke="#bbb"/>
+    <ellipse cx="0" cy="0" rx="200" ry="110" stroke-width="2"/>
+    <!-- snap fold at right -->
+    <g transform="translate(200,0)">
+      <rect x="-30" y="-12" width="60" height="24" fill="#fff" stroke="#000"/>
+      <circle cx="-15" cy="0" r="4"/><circle cx="15" cy="0" r="4"/>
+      <path d="M 30 0 H 50 A 12 12 0 1 0 74 0 A 12 12 0 1 0 50 0" stroke-width="3"/>
+      <path d="M 74 0 H 100 A 10 10 0 0 0 100 -18 L 90 -18" stroke-width="3"/>
+      <path d="M 100 0 A 10 10 0 0 1 100 18 L 80 18" stroke-width="3"/>
+    </g>
+    <text x="235" y="-40" fill="#000" stroke="none" font-size="14">snap fold 50 mm, 2 screws</text>
+    <text x="300" y="60" fill="#000" stroke="none" font-size="14">swivel trigger snap, solid brass, eye 20 mm, ≥ 2 kN</text>
+    <!-- overlap at left -->
+    <g transform="translate(-200,0)">
+      <rect x="-30" y="-12" width="60" height="24" fill="#fff" stroke="#000"/>
+      <circle cx="-15" cy="0" r="4"/><circle cx="15" cy="0" r="4"/>
+    </g>
+    <text x="-330" y="-40" fill="#000" stroke="none" font-size="14">overlap 50 mm, flesh to flesh, 2 screws</text>
+    <!-- nameplate on overlap -->
+    <rect x="-60" y="-118" width="40" height="14" rx="2" stroke-width="1.5"/>
+    <text x="-140" y="-135" fill="#000" stroke="none" font-size="13">nameplate PATCH-01 (40×14)</text>
+  </g>
+
+  <g transform="translate(620,380)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Dimensions</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="14">Loop circumference: 500 mm ±5</text>
+    <text x="0" y="44" fill="#000" stroke="none" font-size="14">Strap width: 20 mm ±0.5</text>
+    <text x="0" y="64" fill="#000" stroke="none" font-size="14">Cut length: 600 mm (500 + 50 overlap + 50 snap fold)</text>
+    <text x="0" y="84" fill="#000" stroke="none" font-size="14">Chicago screws brass, head Ø 5, post 8 mm</text>
+    <text x="0" y="104" fill="#000" stroke="none" font-size="14">Edges bevelled + burnished</text>
+  </g>
+</svg>
