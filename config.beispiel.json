@@ -1,0 +1,11 @@
+{
+  "anthropic_api_key": "sk-ant-api03-HIER-DEN-SCHLUESSEL-EINTRAGEN",
+  "modell": "claude-sonnet-5",
+  "mail": {
+    "absender": "orchestrator.herbello@gmail.com",
+    "app_passwort": "HIER-DAS-16-STELLIGE-APP-PASSWORT",
+    "empfaenger": "DEINE-HAUPTADRESSE@example.com",
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 465
+  }
+}

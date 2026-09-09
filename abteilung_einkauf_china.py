@@ -1,10 +1,7 @@
 """abteilung_einkauf_china.py — 05 Auslandseinkauf China.
 
-Einbau in /opt/bello:
-  1. Datei nach /opt/bello kopieren, Ordner sourcing/ nach /opt/bello/sourcing kopieren.
-  2. In orchestrator.py ABTEILUNGEN ergaenzen:
-       "05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
-  3. Test: venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
+Liest Markenbrief, Tech Packs und Lieferanten-Shortlist aus sourcing/ als bindenden Kontext.
+Test: venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
 """
 
 import os

@@ -1,0 +1,14 @@
+# Geheimnisse und Betriebszustand bleiben auf dem Server
+config.json
+auftraege.json
+auftraege.json.tmp
+*.log
+logs/
+zeichnungen/*.svg
+!sourcing/bellowerk/zeichnungen/*.svg
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
