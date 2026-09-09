@@ -54,6 +54,9 @@ nichts eigenmächtig.
 8. **Optional, nur mit Ansage:** `venv/bin/python orchestrator_mail.py --test` schickt eine echte
    Testmail an Björns Adresse — nur ausführen, wenn du das im Bericht ausdrücklich ankündigst, da es
    eine reale Mail verschickt.
+9. `ls -la /opt/bello/daten/dashboard.html 2>&1` — prüfen, ob das (in einer früheren Sitzung gebaute)
+   Status-Dashboard noch da ist. Falls ja: Inhalt notieren (Pfad, ungefähre Größe), aber noch nicht
+   verschieben — das passiert erst in Phase 2, damit es beim GitHub-Repo mitgesichert wird.
 
 Fasse das Ergebnis für Björn kompakt zusammen: Läuft der Timer, kommt Mail an, welche Abteilungen
 sind da, gibt es Abweichungen vom erwarteten Stand. **Dann stoppst du** und schreibst z. B.:
@@ -84,8 +87,11 @@ per `git pull` ankommen — bei laufender Mail-Eskalation und ohne Abteilungen 0
    `"05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),` im Dict `ABTEILUNGEN` muss am
    Ende vorhanden sein. Dann aus dem alten `/opt/bello` **nur** diese Dinge nach `/opt/bello.neu`
    kopieren: `config.json`, `auftraege.json`, `venv/` bzw. `.venv/`, `logs/`, `zeichnungen/`,
-   `BETRIEB.md`, `requirements.txt`. Danach `/opt/bello` gegen `/opt/bello.neu` tauschen (`mv`).
-   Rechte wiederherstellen: `chown -R bello:bello /opt/bello`, `chmod 640 /opt/bello/config.json`.
+   `BETRIEB.md`, `requirements.txt`. Existiert `daten/dashboard.html` (siehe Phase 1 Punkt 9), auch
+   das kopieren, zusätzlich nach `/opt/bello.neu/dashboard/dashboard.html` (neuer Ordner) — damit es
+   beim nächsten `git add`/`commit`/`push` ins Repo mitgesichert wird und nicht nur auf diesem Server
+   liegt. Danach `/opt/bello` gegen `/opt/bello.neu` tauschen (`mv`). Rechte wiederherstellen:
+   `chown -R bello:bello /opt/bello`, `chmod 640 /opt/bello/config.json`.
 
 4. **Umgebung prüfen.** `venv/bin/pip install anthropic` falls fehlend; `requirements.txt`
    aktualisieren. `venv/bin/python -c "import abteilung_einkauf_china; print('ok')"` muss `ok` liefern.
@@ -108,6 +114,11 @@ per `git pull` ankommen — bei laufender Mail-Eskalation und ohne Abteilungen 0
 9. **BETRIEB.md ergänzen.** Abschnitt "Neue Version holen": `cd /opt/bello && git pull &&
    venv/bin/python orchestrator.py --probelauf`. Abschnitt "Einkauf China beauftragen" mit dem
    Aufruf aus Schritt 6. Kurz, in Björns Sprache.
+
+10. **Dashboard ins Repo sichern.** Falls in Phase 1 Punkt 9 ein Dashboard gefunden wurde: im Repo
+    `git add dashboard/dashboard.html`, committen ("Dashboard aus dem Server-Betrieb sichern") und
+    `git push`. Danach existiert es an zwei Stellen (Server + GitHub) — kein Datenverlust mehr bei
+    einem Server-Wechsel.
 
 ### Regeln im Betrieb (unverändert)
 
