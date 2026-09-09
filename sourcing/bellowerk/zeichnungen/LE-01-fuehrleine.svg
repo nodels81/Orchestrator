@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
   <rect x="0" y="0" width="1400" height="700" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
-  <text x="40" y="66" fill="#000" stroke="none">One continuous strap, veg-tan oiled cowhide 3.5–4.0 mm · 2 solid brass swivel trigger snaps · 3 welded solid brass O-rings fixed in the strap · NO stitching, NO rivets</text>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.1, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">One continuous strap, veg-tan oiled cowhide 3.5–4.0 mm · 2 solid brass swivel bolt snaps · 3 welded solid brass O-rings · hooks and rings held by 3-strand mystery braid + 1 Chicago screw · NO stitching, NO rivets</text>
 
   <!-- scale: 1 cm = 4 px horizontally. 300 cm = 1200 px. origin x=120 -->
   <g id="strap">
@@ -31,20 +31,20 @@
       <circle cx="680" cy="210" r="14"/>
       <circle cx="1100" cy="210" r="14"/>
     </g>
-    <!-- screws: 2 per fold -->
-    <g stroke-width="1.5">
-      <circle cx="126" cy="210" r="3"/><circle cx="134" cy="210" r="3"/>
-      <circle cx="320" cy="210" r="3"/><circle cx="328" cy="210" r="3"/>
-      <circle cx="700" cy="210" r="3"/><circle cx="708" cy="210" r="3"/>
-      <circle cx="1120" cy="210" r="3"/><circle cx="1128" cy="210" r="3"/>
-      <circle cx="1306" cy="210" r="3"/><circle cx="1314" cy="210" r="3"/>
+    <!-- braided sections (12 cm = 48 px) at each attachment, 1 screw each -->
+    <g stroke-width="1.2">
+      <path d="M 120 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="176" cy="210" r="3.5"/>
+      <path d="M 314 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="370" cy="210" r="3.5"/>
+      <path d="M 694 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="750" cy="210" r="3.5"/>
+      <path d="M 1114 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="1170" cy="210" r="3.5"/>
+      <path d="M 1264 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="1258" cy="210" r="3.5"/>
     </g>
     <text x="270" y="180" fill="#000" stroke="none" font-size="14">ring 1</text>
     <text x="650" y="180" fill="#000" stroke="none" font-size="14">ring 2</text>
     <text x="1070" y="180" fill="#000" stroke="none" font-size="14">ring 3</text>
     <!-- nameplate at 8 cm => x=120+32=152, 40x14 mm at this scale ~ 16x6px; draw symbolic 40x14 px -->
-    <rect x="152" y="203" width="40" height="14" rx="2" stroke-width="1.5"/>
-    <text x="150" y="250" fill="#000" stroke="none" font-size="13">nameplate PATCH-01 (40×14 mm) at 8 cm</text>
+    <rect x="192" y="204" width="26" height="12" rx="3" stroke-width="1.5"/>
+    <text x="150" y="250" fill="#000" stroke="none" font-size="13">leather patch PATCH-01 PA-S (65×14 mm) at 8 cm after braid</text>
   </g>
 
   <!-- dimension chain from hook A -->
@@ -78,23 +78,31 @@
     <text x="850" y="145" fill="#000" stroke="none" font-size="13">strap width 20 mm ±0.5</text>
   </g>
 
-  <!-- detail: ring fold -->
-  <g transform="translate(60,520)">
-    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Detail: ring fold (scale 1:1)</text>
-    <rect x="0" y="30" width="200" height="8" fill="#ddd"/>
-    <rect x="0" y="38" width="200" height="8" fill="#ddd"/>
-    <circle cx="-14" cy="38" r="25" stroke-width="3"/>
-    <rect x="40" y="26" width="8" height="24" fill="#000"/>
-    <rect x="120" y="26" width="8" height="24" fill="#000"/>
-    <text x="0" y="75" fill="#000" stroke="none" font-size="13">strap around ring, back 50 mm, flesh to flesh, 2 Chicago screws at 15 + 35 mm from fold</text>
-    <text x="0" y="95" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide</text>
+  <!-- detail: braided attachment -->
+  <g transform="translate(60,510)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Detail: braided attachment at hook / ring (scale ~1:1.5)</text>
+    <circle cx="-2" cy="40" r="22" stroke-width="3"/>
+    <rect x="20" y="30" width="300" height="20" fill="#ddd" stroke="#000"/>
+    <!-- braid chevrons over 80 mm ~ 120 px -->
+    <path d="M 40 32 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16" stroke-width="1.5"/>
+    <path d="M 40 48 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16" stroke-width="1.5"/>
+    <circle cx="200" cy="40" r="6" fill="#c9a44a" stroke="#000"/>
+    <line x1="40" y1="60" x2="160" y2="60" stroke-width="1.2"/><line x1="40" y1="55" x2="40" y2="65" stroke-width="1.2"/><line x1="160" y1="55" x2="160" y2="65" stroke-width="1.2"/>
+    <text x="100" y="78" text-anchor="middle" fill="#000" stroke="none" font-size="12">braid 80 mm</text>
+    <line x1="20" y1="90" x2="230" y2="90" stroke-width="1.2"/><line x1="20" y1="85" x2="20" y2="95" stroke-width="1.2"/><line x1="230" y1="85" x2="230" y2="95" stroke-width="1.2"/>
+    <text x="125" y="108" text-anchor="middle" fill="#000" stroke="none" font-size="12">fold-back 120 mm</text>
+    <text x="0" y="135" fill="#000" stroke="none" font-size="13">Strap through ring/hook eye, folded back 120 mm. Two lengthwise slits → 3 strands, "mystery braid" (one piece, ends uncut),</text>
+    <text x="0" y="153" fill="#000" stroke="none" font-size="13">6–8 crossings, chevron pattern as photo. Free end flat on the inside, 1 Chicago screw 15 mm after the braid. Attachment ≥ 2.0 kN.</text>
+    <text x="0" y="171" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide · alternative plain fold 50 mm + 2 screws only on request</text>
   </g>
 
-  <g transform="translate(760,520)">
+  <g transform="translate(900,510)">
     <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Six working lengths</text>
-    <text x="0" y="24" fill="#000" stroke="none" font-size="14">B→ring 3: 245 cm · B→ring 2: 140 cm (loop 160, hands-free) · B→ring 1: 45 cm</text>
-    <text x="0" y="44" fill="#000" stroke="none" font-size="14">A→ring 1: 255 cm · A→ring 2: 160 cm · A→ring 3: 55 cm · both hooks: 300 cm</text>
-    <text x="0" y="74" fill="#000" stroke="none" font-size="14">Cut length of strap: 325 cm (300 + 5 folds × 5 cm). Swivel trigger snap solid brass, eye 20 mm, ≥ 2 kN.</text>
-    <text x="0" y="94" fill="#000" stroke="none" font-size="14">All screw heads on the grain side. Edges bevelled + burnished, no paint.</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="13">B→ring 3: 245 · B→ring 2: 140 (loop 160, hands-free) · B→ring 1: 45 cm</text>
+    <text x="0" y="44" fill="#000" stroke="none" font-size="13">A→ring 1: 255 · A→ring 2: 160 · A→ring 3: 55 cm · both hooks: 300 cm</text>
+    <text x="0" y="74" fill="#000" stroke="none" font-size="13">Cut length of strap: 360 cm (300 + 5 attachments × 12 cm).</text>
+    <text x="0" y="94" fill="#000" stroke="none" font-size="13">Swivel bolt snap solid brass, polished, eye 20 mm, ≥ 2 kN.</text>
+    <text x="0" y="114" fill="#000" stroke="none" font-size="13">Colours: grey, dark brown, olive, cognac. One hide per lead.</text>
+    <text x="0" y="134" fill="#000" stroke="none" font-size="13">Screw heads on grain side. Edges bevelled + burnished, no paint.</text>
   </g>
 </svg>

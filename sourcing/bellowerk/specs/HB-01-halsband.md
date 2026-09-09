@@ -1,7 +1,7 @@
 # HB-01 — Leather Dog Collar (Tech Pack v1.0, 9 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
-Attachments: `zeichnungen/HB-01-halsband.png`, photo(s) from `bilder/HB-01-*.jpg`.
+Attachments: `zeichnungen/HB-01-halsband.png`, photos `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg`.
 
 ## 1. Product
 
@@ -16,8 +16,8 @@ Roller buckle, welded D-ring, leather keeper. Brand nameplate PATCH-01 near the 
 | Buckle | Roller buckle, **solid brass** (cast HPb59-1 / CW617N or forged), brushed, unlacquered. Width = strap width. Min. breaking load 2.5 kN. |
 | D-ring | Welded, weld ground smooth, solid brass, inner width = strap width, wire Ø 4 mm (20/25 mm) or 5 mm (30/40 mm). Min. 3 kN. |
 | Keeper | Leather loop, same leather, fixed with 1 Chicago screw (no stitching). |
-| Screws | Chicago screws, solid brass, head Ø 5 mm, post 8 mm for 2 layers, 10 mm for 3 layers, thread M3/M4, thread-locked. |
-| Nameplate | PATCH-01 (see spec), 2 Chicago screws. |
+| Screws | Chicago screws, solid brass, domed head Ø 8–9 mm (as on photos), post 8 mm for 2 layers, 10 mm for 3 layers, thread-locked. |
+| Patch | PATCH-01 engraved leather patch (PA-M 85 × 18 mm; PA-S 65 × 14 mm on size S), 2 Chicago screws — see photos `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg`. |
 | Edges | Bevelled both sides, burnished (gum tragacanth/wax), no edge paint. |
 | Holes | Oval punch, 5 holes, pitch 25 mm, hole size 4 × 7 mm (20/25 mm strap) or 5 × 8 mm (30/40 mm). |
 
@@ -41,13 +41,15 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
    the buckle, keeper 15 mm behind the D-ring.
 2. Fold fixed with **2 Chicago screws** (side by side for 30/40 mm, in line for 20/25 mm), D-ring
    captured between them.
-3. Nameplate PATCH-01 on the outside, 30 mm behind the fold, centred on strap, 2 Chicago screws.
+3. Leather patch PATCH-01 on the outside, 30 mm behind the fold, centred on strap, 2 Chicago screws.
+   Optional (Björn decides): D-ring held by a 3-strand mystery braid instead of the screwed fold — see HB-02.
 4. Buckle tongue slot 10 mm long, punched clean.
 5. Grain side out. Flesh side lightly finished (no loose fibres, no coating).
 
 ## 5. Quantity and packaging
 
-- Samples: 1 pc per size, colour olive. Then 100 pcs: S 20 / M 35 / L 30 / XL 15.
+- Samples: 1 pc per size, colour olive. Then 100 pcs: S 20 / M 35 / L 30 / XL 15, colours grey /
+  dark brown / olive / cognac (split to be confirmed).
 - Packing: 1 pc in kraft paper bag with size sticker (model, size, colour); 25 pcs per inner carton.
 - Care card (we supply artwork) in each bag.
 

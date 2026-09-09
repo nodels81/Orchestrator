@@ -67,9 +67,9 @@ an Björn.
 | Modell / Bezeichnung | HB-01 leather dog collar, 25 mm |
 | Material | vegetable-tanned oiled cowhide (pull-up), 3.5–4.0 mm, colour olive |
 | Beschläge | solid brass (not zinc alloy, not plated): roller buckle, welded D-ring, Chicago screws 5 mm |
-| Konstruktion | single layer, no stitching, no rivets, screw-fixed |
+| Konstruktion | single layer, no stitching, no rivets; hooks/rings attached by 3-strand mystery braid + 1 Chicago screw |
 | Maße | Tabelle mit Länge, Breite, Lochabstand, Ringposition; Toleranz ±1 mm / ±1 cm |
-| Branding | brass nameplate "Bellowerk / Manufaktur", 2 Chicago screws; Datei liegt bei |
+| Branding | engraved leather patch "BELLOWERK / Manufaktur", 2 Chicago screws; photo + artwork liegen bei |
 | Menge | sample 2 pcs per size, then 100 pcs (S/M/L/XL split) |
 | Verpackung | 1 pc per kraft paper bag, no plastic; carton label with model + size |
 | Fragen | 1. unit price EXW 2. MOQ 3. sample cost + time 4. lead time 5. payment terms 6. pattern files included? |

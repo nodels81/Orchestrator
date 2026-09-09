@@ -41,8 +41,9 @@ während der Einkäufer RFQs an Lederfabriken schreibt). Auf dem Server: mehrere
 
 ## Bekannte Lücken
 
-- Instagram (@herr.bello.und.frau.wuff) und herrbelloundfrauwuff.de sind aus der Cloud-Umgebung
-  gesperrt — Fotos müssen manuell abgelegt werden.
-- Größentabellen und Lochabstände sind Startwerte aus der Kernserie, nicht vermessen.
-- Patch: `markenwissen.py` schließt Nähte aus, daher Messing-Namensschild mit Buchschrauben statt
-  Stoff-Patch. Wenn Björn ein genähtes/gewebtes Patch will, muss die Ausschlussliste geändert werden.
+- Instagram und herrbelloundfrauwuff.de sind aus der Cloud-Umgebung gesperrt — Björn hat vier
+  Produktfotos geliefert (in `bilder/`), weitere fehlen laut `bilder/README.md`.
+- Größentabellen, Lochabstände, Patch-Maße und Flechtlängen sind aus den Fotos geschätzte Startwerte,
+  nicht vermessen.
+- LE-02 (rundgeflochtene Leine) ist zurückgestellt; die Bellowerk-Flechtung ist der Mystery Braid an
+  Karabinern und Ringen und Teil von LE-01.

@@ -14,7 +14,8 @@ Closed loop of leather, circumference **50 cm**, with one solid brass swivel tri
 - Snap: swivel trigger snap solid brass, eye 20 mm, min. 2.0 kN.
 - Loop closed by overlapping the two strap ends 50 mm (flesh to flesh) and fixing with 2 Chicago
   screws; the snap eye sits in a second fold (50 mm, 2 screws) opposite the overlap.
-- Optional: nameplate PATCH-01 on the overlap (default: yes).
+- Snap attachment preferably as on LE-01: fold 120 mm, 3-strand mystery braid 80 mm, 1 Chicago screw.
+- Leather patch PATCH-01 PA-S on the overlap (default: yes).
 - Edges bevelled and burnished. No stitching, no rivets.
 
 ## 3. Quantity

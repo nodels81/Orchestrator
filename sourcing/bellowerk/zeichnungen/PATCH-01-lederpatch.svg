@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="640" viewBox="0 0 1300 640" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1300" height="640" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">PATCH-01 Engraved Leather Patch "BELLOWERK / Manufaktur" — scale 4:1 — Bellowerk Manufaktur, v1.1, 9 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">Veg-tan cowhide 2.0–2.5 mm, cognac/medium brown · laser-engraved, dark burn, no foil, no paint · 2 solid brass Chicago screws, domed head Ø 8–9 mm · NO stitching</text>
+
+  <!-- PA-M 85x18 at 4:1 = 340x72 -->
+  <g transform="translate(80,130)">
+    <text x="0" y="-16" fill="#000" stroke="none" font-weight="bold">PA-M 85 × 18 mm (25–40 mm straps)</text>
+    <rect x="0" y="0" width="340" height="72" rx="12" fill="#b9793f" stroke="#000" stroke-width="2.5"/>
+    <circle cx="28" cy="36" r="17" fill="#c9a44a" stroke="#000"/>
+    <circle cx="312" cy="36" r="17" fill="#c9a44a" stroke="#000"/>
+    <text x="170" y="34" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="22" font-weight="bold" letter-spacing="4" font-family="Georgia, serif">BELLOWERK</text>
+    <text x="235" y="60" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="17" font-style="italic" font-family="'Brush Script MT', 'Segoe Script', cursive">Manufaktur</text>
+    <g stroke-width="1.5">
+      <line x1="0" y1="100" x2="340" y2="100"/><line x1="0" y1="93" x2="0" y2="107"/><line x1="340" y1="93" x2="340" y2="107"/>
+      <text x="170" y="120" text-anchor="middle" fill="#000" stroke="none" font-size="14">85</text>
+      <line x1="28" y1="140" x2="312" y2="140"/><line x1="28" y1="133" x2="28" y2="147"/><line x1="312" y1="133" x2="312" y2="147"/>
+      <text x="170" y="160" text-anchor="middle" fill="#000" stroke="none" font-size="14">71 (hole spacing) · holes Ø 4.5, centres 7 mm from ends</text>
+      <line x1="370" y1="0" x2="370" y2="72"/><line x1="363" y1="0" x2="377" y2="0"/><line x1="363" y1="72" x2="377" y2="72"/>
+      <text x="382" y="40" fill="#000" stroke="none" font-size="14">18</text>
+      <text x="382" y="16" fill="#000" stroke="none" font-size="12">R 3</text>
+    </g>
+    <text x="0" y="190" fill="#000" stroke="none" font-size="13">Line 1 "BELLOWERK": serif capitals (Lora Bold), cap height 4.5 mm, tracking +15 % · Line 2 "Manufaktur": script, x-height 2.5 mm, under right half</text>
+    <text x="0" y="210" fill="#000" stroke="none" font-size="13">Engraving depth 0.2–0.3 mm. Min line 0.3 mm, min gap 0.5 mm. Same layout as current "HERR BELLO &amp; FRAU WUFF / Manufaktur" patch (see photos).</text>
+  </g>
+
+  <!-- PA-S 65x14 at 4:1 = 260x56 -->
+  <g transform="translate(80,400)">
+    <text x="0" y="-16" fill="#000" stroke="none" font-weight="bold">PA-S 65 × 14 mm (20 mm straps: LE-01, HS-01, collar S)</text>
+    <rect x="0" y="0" width="260" height="56" rx="12" fill="#b9793f" stroke="#000" stroke-width="2.5"/>
+    <circle cx="28" cy="28" r="17" fill="#c9a44a" stroke="#000"/>
+    <circle cx="232" cy="28" r="17" fill="#c9a44a" stroke="#000"/>
+    <text x="130" y="27" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="17" font-weight="bold" letter-spacing="3" font-family="Georgia, serif">BELLOWERK</text>
+    <text x="175" y="47" text-anchor="middle" fill="#2a1a0e" stroke="none" font-size="13" font-style="italic" font-family="'Brush Script MT', 'Segoe Script', cursive">Manufaktur</text>
+    <g stroke-width="1.5">
+      <line x1="0" y1="84" x2="260" y2="84"/><line x1="0" y1="77" x2="0" y2="91"/><line x1="260" y1="77" x2="260" y2="91"/>
+      <text x="130" y="104" text-anchor="middle" fill="#000" stroke="none" font-size="14">65</text>
+      <line x1="28" y1="124" x2="232" y2="124"/><line x1="28" y1="117" x2="28" y2="131"/><line x1="232" y1="117" x2="232" y2="131"/>
+      <text x="130" y="144" text-anchor="middle" fill="#000" stroke="none" font-size="14">51 (hole spacing)</text>
+      <line x1="290" y1="0" x2="290" y2="56"/><line x1="283" y1="0" x2="297" y2="0"/><line x1="283" y1="56" x2="297" y2="56"/>
+      <text x="302" y="32" fill="#000" stroke="none" font-size="14">14</text>
+    </g>
+    <text x="0" y="175" fill="#000" stroke="none" font-size="13">Cap height 3.5 mm · script x-height 2.0 mm</text>
+  </g>
+
+  <!-- section -->
+  <g transform="translate(720,400)">
+    <text x="0" y="-16" fill="#000" stroke="none" font-weight="bold">Section (schematic)</text>
+    <rect x="0" y="0" width="360" height="12" fill="#b9793f" stroke="#000"/>
+    <rect x="0" y="12" width="360" height="22" fill="#ddd" stroke="#000"/>
+    <path d="M 55 0 A 12 6 0 0 1 79 0 Z" fill="#c9a44a" stroke="#000"/><rect x="63" y="0" width="8" height="34" fill="#c9a44a" stroke="#000"/><rect x="58" y="34" width="18" height="5" fill="#c9a44a" stroke="#000"/>
+    <path d="M 281 0 A 12 6 0 0 1 305 0 Z" fill="#c9a44a" stroke="#000"/><rect x="289" y="0" width="8" height="34" fill="#c9a44a" stroke="#000"/><rect x="284" y="34" width="18" height="5" fill="#c9a44a" stroke="#000"/>
+    <text x="0" y="62" fill="#000" stroke="none" font-size="13">patch leather 2.0–2.5 mm on strap 3.5–4.0 mm</text>
+    <text x="0" y="82" fill="#000" stroke="none" font-size="13">Chicago screw solid brass, domed head Ø 8–9 mm outside,</text>
+    <text x="0" y="102" fill="#000" stroke="none" font-size="13">flat head inside, post 8 mm, thread-locked</text>
+    <text x="0" y="132" fill="#000" stroke="none" font-size="13">Position: collar 30 mm behind buckle fold · lead 80 mm from hook A</text>
+    <text x="0" y="152" fill="#000" stroke="none" font-size="13">NOT acceptable: woven/embroidered/PVC patch, foil stamp, glue only, PU leather</text>
+  </g>
+</svg>

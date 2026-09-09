@@ -40,7 +40,11 @@ Befund: Echtes Handflechten in Leder (round braid, mystery braid) ist in China s
 Foto/Video vom Flechter verlangen. Preisindikation handgeflochtenes Vollrindleder + Messing, kleine
 Serie: 12–25 USD — nur per Angebot.
 
-## C) Namensschild / Patch (PATCH-01)
+## C) Patch (PATCH-01) — Stand nach Björns Fotos: **Lederpatch lasergraviert** ist Standard
+
+Erste Wahl: die Lederfabrik graviert den Patch selbst (Frage 1 im PATCH-01-Tech-Pack). Fällt das aus,
+Leder-Patch-Hersteller (DOY Label, ClothingTAGs, PB-Patch). Messing-Namensschilder (Yongfu, Haixinda)
+bleiben als spätere Alternative in der Liste.
 
 | Prio | Firma | Ort | Variante | Verfahren | MOQ | Kontakt |
 |---|---|---|---|---|---|---|

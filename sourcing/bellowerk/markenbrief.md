@@ -22,18 +22,22 @@ Diese Datei ist die Wahrheit für alle Lieferanten-Kontakte. Änderungen hier wi
 
 - **Fettleder**: Rindleder, pflanzlich gegerbt (vegetable-tanned), gefettet/gewachst (oiled / pull-up),
   Vollnarbe (full grain), feste Narbenseite, durchgefärbt. Stärke 3,5–4,0 mm für Halsband und Leine,
-  2,0–2,4 mm für Flechtstränge. Farben: Oliv, Dunkelbraun, Cognac.
+  2,0–2,5 mm für den Patch. Farben laut Fotos: **Grau, Dunkelbraun, Oliv, Cognac**.
 - **Messing massiv** (solid brass, gegossen HPb59-1 / CW617N oder geschmiedet): Rollschnalle, D-Ring
-  geschweißt, O-Ring geschweißt, Wirbelkarabiner (swivel trigger snap), Riemenschlaufe. Oberfläche:
-  gebürstet, unlackiert (living finish — Patina erwünscht).
-- **Buchschrauben Messing** (Chicago screws), Kopf Ø 5 mm, Schaft 6–10 mm, Schraubensicherung.
+  geschweißt, O-Ring geschweißt, Wirbel-Bolzenkarabiner (swivel eye bolt snap, poliert wie auf den
+  Fotos), Riemenschlaufe. Unlackiert (Patina erwünscht).
+- **Buchschrauben Messing** (Chicago screws), gewölbter Kopf Ø 8–9 mm, Schaft 8 mm, Schraubensicherung.
+- **Flechtung**: 3-strängiger Mystery Braid (Trick Braid) aus einem Stück, V-Muster — so werden
+  Karabiner und Ringe ohne Naht befestigt (Fotos `bilder/LE-01-*.jpg`). Keine anderen Flechtarten.
+- **Patch**: Lederpatch in Cognac/Mittelbraun, lasergraviert "BELLOWERK" (Versalien, gesperrt) und
+  darunter "Manufaktur" in Schreibschrift, 2 Buchschrauben. Siehe `specs/PATCH-01-markenpatch.md`.
 
 ## Werkstoffe — ausgeschlossen (Verstoß = Ablehnung)
 
 Nähte und Garn · Nieten · Stahl (auch vermessingt) · Zinkdruckguss ("zinc alloy", "Zamak") ·
 Kunststoff · Klickverschlüsse · Gurtband/Nylon · PU-/Spalt-/Bonded-Leder · Lack auf Messing
 
-Ausnahme nur mit Björns Freigabe: Paracord-Flechtung (LE-02/HB-02 Variante B) als eigene Linie.
+Ausnahme nur mit Björns Freigabe: Paracord oder rundgeflochtenes Leder als eigene Linie.
 
 ## Harte Ausschlüsse (Konzept)
 
@@ -44,12 +48,12 @@ kein Einstieg über Windhunde
 
 | Modell | Beschreibung | Spec |
 |---|---|---|
-| HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm | `specs/HB-01-halsband.md` |
-| LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm | `specs/LE-01-fuehrleine.md` |
-| HB-02 | Halsband geflochten (Leder, 4-/8-strängig rund) | `specs/HB-02-halsband-geflochten.md` |
-| LE-02 | Führleine geflochten (Leder rund), Ringe wie LE-01 | `specs/LE-02-fuehrleine-geflochten.md` |
+| HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-01-halsband.md` |
+| LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | `specs/LE-01-fuehrleine.md` |
+| HB-02 | Halsband mit Mystery-Braid-Anbindung des D-Rings (Entwurf, Björn entscheidet) | `specs/HB-02-halsband-geflochten.md` |
+| LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
 | HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
-| PATCH-01 | Marken-Namensschild Messing "Bellowerk / Manufaktur", 2 Buchschrauben | `specs/PATCH-01-markenpatch.md` |
+| PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben | `specs/PATCH-01-markenpatch.md` |
 
 Jedes Produkt wird **komplett** geliefert: fertig montiert, mit Patch, mit Pflegehinweis, verpackt.
 

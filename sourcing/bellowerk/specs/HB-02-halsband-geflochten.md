@@ -1,48 +1,34 @@
-# HB-02 — Braided Leather Dog Collar (Tech Pack v0.9 DRAFT, 9 Sep 2026)
+# HB-02 — Collar with Braided Sections (Tech Pack v1.0 DRAFT, 9 Sep 2026)
 
-Status: draft — Björn to confirm braid type and sizes against the reference piece.
-Attachments: `zeichnungen/HB-02-geflochten.png`, photos from `bilder/HB-02-*.jpg` (**braid close-up
-required** — supplier must see the braid pattern).
+Status: draft — Björn confirms whether HB-02 is a separate model or whether the braid is only used on
+leads. Reference for the braid look: `bilder/LE-01-flechtung-ringe-farben.jpg`.
+Drawing: `zeichnungen/HB-02-geflochten.png` (braid principle).
 
 ## 1. Product
 
-Collar with a braided centre section between two flat leather ends. Flat ends carry the roller buckle
-(with holes) and the D-ring, same construction as HB-01 (Chicago screws, no stitching, no rivets).
-The braid is **back-braided** into the flat ends (no stitching, no glue as only fixing).
+Same as HB-01 (single-layer Fettleder, brass roller buckle, welded D-ring, leather patch, Chicago
+screws, no stitching, no rivets) but the **D-ring is held by a 3-strand mystery braid** instead of a
+plain screwed fold, and optionally a decorative braided section of **80–120 mm** sits on the centre of
+the strap (only if Björn wants it — ask).
 
 ## 2. Braid — say exactly this to the supplier
 
-| Option | Term | Description |
-|---|---|---|
-| **A (default)** | **4-strand round braid, solid leather core** | four strands of 4 mm × 2.2 mm veg-tan leather around a leather core strand, finished Ø ≈ 12 mm |
-| B | 8-strand round braid | eight strands 3 mm wide, finished Ø ≈ 14 mm, for L/XL |
-| C | Flat 5-strand braid | five strands 5 mm, finished width ≈ 22 mm, no core |
+**"3-strand mystery braid (trick braid) cut from one piece: two lengthwise slits in the strap, braided
+so the ends stay uncut, chevron pattern as in the photo. No separate strands, no glue, no stitching."**
 
-Strands: same vegetable-tanned oiled leather, 2.0–2.4 mm thick, cut from the same hide as the ends
-(colour match). Braid tight, even, no twisted strands, no visible gaps. Braid tension: no stretch
-> 3 % under 30 kg.
+- Slit length 80 mm for 20–25 mm straps, 100 mm for 30–40 mm; three equal strands (width/3), slits
+  cut clean with a strap cutter, ends of slits punched round (Ø 2 mm) to stop tearing.
+- 6–8 crossings, tight and even; braid must not open under 30 kg pull; strands bevelled.
 
-## 3. Sizes (starting values)
+Other braid types (round 4-/8-strand, flat 5-strand, paracord) are **not** part of this model.
 
-| Size | Braided section | Flat ends (buckle end / D-ring end) | Neck range | Buckle width |
-|---|---|---|---|---|
-| S | 22 cm, Ø 12 mm | 16 cm / 12 cm | 30–40 cm | 20 mm |
-| M | 28 cm, Ø 12 mm | 16 cm / 12 cm | 38–48 cm | 25 mm |
-| L | 34 cm, Ø 14 mm | 18 cm / 14 cm | 46–56 cm | 25 mm |
-| XL | 40 cm, Ø 14 mm | 18 cm / 14 cm | 54–64 cm | 30 mm |
+## 3. Sizes, hardware, patch, packaging
 
-Flat buckle end: 5 holes pitch 25 mm as HB-01. Transition braid → flat end: strands pass through
-slots in the flat end and are back-braided 30 mm, then trimmed flush and fixed with 1 Chicago screw
-through the bundle.
+As HB-01. D-ring attachment: strap through ring, fold 120 mm, mystery braid 80 mm, 1 Chicago screw.
+Buckle attachment remains a plain fold with 2 screws (the buckle tongue needs a flat fold).
 
-## 4. Hardware, screws, nameplate, edges, packaging
+## 4. Quotation questions
 
-As HB-01. Nameplate PATCH-01 sits on the flat buckle end, 30 mm behind the fold.
-
-## 5. Quotation questions
-
-1. Do you hand-braid in-house? Photo of your braider at work + photo of a finished round braid.
-2. Unit price EXW per size for option A, 100 pcs
-3. Sample cost/time (1 pc size M, olive)
-4. Lead time, MOQ, payment terms
-5. Pattern (PDF/DXF) for flat ends + strand cutting list included — yes/no
+1. Do you make mystery braids in-house? Photo of a finished piece.
+2. Unit price EXW per size, 100 pcs; MOQ; sample cost/time; lead time; payment terms
+3. Pattern (PDF/DXF) with slit layout included — yes/no

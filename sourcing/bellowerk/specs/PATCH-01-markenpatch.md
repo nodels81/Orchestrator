@@ -1,51 +1,50 @@
-# PATCH-01 — Brand Nameplate "Bellowerk / Manufaktur" (Tech Pack v1.0, 9 Sep 2026)
+# PATCH-01 — Leather Brand Patch "BELLOWERK / Manufaktur" (Tech Pack v1.1, 9 Sep 2026)
 
-Attachments: `zeichnungen/PATCH-01-namensschild.png` (dimensioned), vector artwork
-`bilder/PATCH-01-artwork.svg` (Björn supplies final logo file; placeholder uses Lora).
+Reference photos: `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg` (current patch reads
+"HERR BELLO & FRAU WUFF / Manufaktur" — new patch uses the same layout with the new name).
+Drawing: `zeichnungen/PATCH-01-lederpatch.png`. Artwork: Björn supplies vector file; placeholder in drawing.
 
-## Why a brass plate and not a sewn patch
+## Design (as on the existing products)
 
-Bellowerk products have **no stitching and no rivets**. A sewn or iron-on patch would break the rule.
-The brand mark is therefore a **solid brass nameplate fixed with two brass Chicago screws** — same
-material family as the buckles, same ageing (patina). A debossed leather patch (variant B) is the
-fallback if the brass plate cannot be made small enough for 20 mm straps.
+A narrow strip of **contrast leather** (cognac/medium brown, vegetable-tanned) laid on the outside of
+the strap, fixed with **one solid brass Chicago screw at each end**. Lettering **laser-engraved**
+(dark brown/black burn, no foil, no paint): line 1 "BELLOWERK" in spaced capitals, line 2 "Manufaktur"
+in a handwritten script, right-aligned under line 1. No stitching, no glue as the only fixing.
 
-## Variant A (default): solid brass nameplate
+## Variant A (default): engraved leather patch
 
 | | |
 |---|---|
-| Material | Solid brass sheet H62 / C2680, **1.5 mm** thick. Not zinc alloy, not plated steel. |
-| Sizes | **PL-S 40 × 14 mm** (for 20 mm straps, LE-01/HS-01/S collars) · **PL-M 50 × 18 mm** (25–40 mm straps) |
-| Shape | Rectangle, corner radius 2 mm, edges deburred and slightly rounded |
-| Lettering | Line 1 "Bellowerk" — Lora Bold, cap height 4.0 mm (PL-S) / 5.5 mm (PL-M). Line 2 "Manufaktur" — Lora Regular, cap height 1.8 mm / 2.4 mm, centred under line 1, tracking +5 %. |
-| Process | **Chemical etching**, depth 0.3 mm, recessed letters. Recess filled black (Pantone Black C, baked enamel) — or left unfilled (Björn decides after sample; order both). |
-| Surface | Brushed (satin, lengthwise), **unlacquered** (living finish) |
-| Holes | 2 × Ø 4.2 mm, centred on the short axis; hole centres 6.5 mm from each end → hole spacing **27 mm** (PL-S) / **37 mm** (PL-M). Countersink 0.3 mm for screw head seating. |
-| Fixing | Chicago screws solid brass, head Ø 5 mm (flat, slotted), post 8 mm (2 layers) — supplied with plate |
-| Marking on back | none (optional: batch number laser) |
+| Leather | Vegetable-tanned cowhide, full grain, **2.0–2.5 mm**, colour cognac / medium brown (same on all strap colours: grey, dark brown, olive, cognac). Firm, smooth grain for clean engraving. |
+| Sizes | **PA-M 85 × 18 mm** for 25–40 mm straps (collar M/L/XL, lead 25 mm) · **PA-S 65 × 14 mm** for 20 mm straps (lead LE-01, hand loop HS-01, collar S). Corner radius 3 mm. |
+| Lettering | Line 1 "BELLOWERK": spaced capitals (tracking +15 %), cap height 4.5 mm (PA-M) / 3.5 mm (PA-S), font Lora Bold or similar serif capitals. Line 2 "Manufaktur": script font (e.g. Allura/Great Vibes style), x-height 2.5 mm / 2.0 mm, placed under the right half of line 1. Engraving depth 0.2–0.3 mm, dark burn, no paint, no foil. |
+| Holes | 2 × Ø 4.5 mm, hole centres 7 mm from each end → spacing **71 mm** (PA-M) / **51 mm** (PA-S) |
+| Screws | Chicago screws solid brass, head Ø 8–9 mm domed (as on photos), post 8 mm (patch + strap), thread-locked |
+| Edges | Cut clean, lightly bevelled, burnished, no edge paint |
+| Position | Collar: centred on strap, 30 mm behind buckle fold. Lead: 80 mm from hook A. Hand loop: on the overlap. |
 
-Min. line width for etching 0.25 mm; min. gap 0.4 mm. Artwork as vector (AI/PDF/SVG), text converted
-to outlines, 1:1 scale, black = recessed.
+Artwork: vector (AI/PDF/SVG), text converted to outlines, 1:1, black = engraved. Min line width 0.3 mm,
+min gap 0.5 mm. Supplier to send a digital proof and one engraved sample before production.
 
-## Variant B (fallback): debossed leather patch
+## Variant B (alternative for later): solid brass nameplate
 
-Vegetable-tanned leather 2.0 mm, 45 × 18 mm, corner radius 3 mm, **blind deboss** (no foil) with a
-brass die, same lettering (cap heights +20 %), 2 holes Ø 4.5 mm for Chicago screws, hole spacing 32 mm.
-Edge bevelled and burnished. Die fee once (ask price; typical 100–250 USD).
+Brass H62, 1.5 mm, 40 × 14 / 50 × 18 mm, chemically etched, brushed, unlacquered, 2 Chicago screws.
+Only on Björn's request — not part of the first order.
 
 ## Not acceptable
 
-Embroidered / woven / PVC patches, iron-on, glued-only, plated zinc, lacquered brass, screen print.
+Embroidered / woven / PVC / printed patches, iron-on, glued-only, foil stamping instead of engraving,
+PU or bonded leather, stitching.
 
 ## Quantity
 
-Samples: 5 pcs each size, both filled and unfilled. Then **500 pcs** PL-S + **500 pcs** PL-M with
-screws (nameplates are cheap; order for two product batches).
+Samples: 5 pcs each size, engraved, with screws. Then **500 pcs PA-M + 500 pcs PA-S** with screws.
+Preferred: the collar/lead factory makes the patch in-house (same hide family). If they cannot laser
+engrave, a patch supplier delivers to the factory.
 
 ## Quotation questions
 
-1. Unit price 500 / 1000 pcs, each size, filled vs. unfilled
-2. Tooling/film fee (etching) and sample cost/time
-3. Lead time
-4. Can you deliver directly to our collar factory in China? (Saves one shipment.)
-5. Material certificate for brass (alloy, lead content) — REACH
+1. Do you laser-engrave leather in-house? Send a photo of an engraved sample.
+2. Unit price 500 / 1000 pcs, each size, incl. brass screws
+3. Sample cost/time, lead time
+4. Leather colour match to our photos — send swatches of cognac / medium brown
