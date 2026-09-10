@@ -44,6 +44,7 @@ keine Geschirre · keine reine Handelsware ohne Markenbezug · kein Verkaufsargu
 | HB-01 | Halsband Fettleder — einlagig, ohne Naht, S/M/L/XL, 20-40 mm, mit Lederpatch | Serie |
 | LE-01 | Fuehrleine 3,00 m — dreifach verstellbar, sechs Fuehrlaengen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | Serie |
 | HB-02 | Halsband geflochten — Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | in Entwicklung |
+| HB-03 | Hamburg No.1 — Halsband 'Steg': kurze schmale Enden 25 mm, schneller Uebergang auf den breiten Steg ca. 40 mm ueber den groessten Teil der Laenge, Steg oben/unten leicht gerundet, ein Stueck Fettleder 3,8 mm, 5 Loecher Abstand 25 mm, Rollschnalle + D-Ring + 3 Buchschrauben, keine Halteschlaufe. Form von Bjoern freigegeben 2026-09-10 (A-2026-006). | in Entwicklung |
 | LE-02 | Fuehrleine rundgeflochten — rundgeflochtene Leine — vorerst nicht anfragen | zurueckgestellt |
 | HS-01 | Handschlaufe — Zubehoer, Umfang 50 cm | Serie |
 | PATCH-01 | Lederpatch — lasergraviert 'BELLOWERK / Manufaktur', 2 Buchschrauben; spaeter Variante mit Hundenamen | Serie |

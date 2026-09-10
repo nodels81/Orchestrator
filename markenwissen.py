@@ -103,6 +103,12 @@ PRODUKTE = {
     "HB-02": {"name": "Halsband geflochten", "status": "in Entwicklung",
               "kurz": "Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden "
                       "mit Schnalle und Patch"},
+    "HB-03": {"name": "Hamburg No.1", "status": "in Entwicklung", "kollektion": "Kollektion 1",
+              "kurz": "Halsband 'Steg': kurze schmale Enden 25 mm, schneller Uebergang auf den "
+                      "breiten Steg ca. 40 mm ueber den groessten Teil der Laenge, Steg oben/unten "
+                      "leicht gerundet, ein Stueck Fettleder 3,8 mm, 5 Loecher Abstand 25 mm, "
+                      "Rollschnalle + D-Ring + 3 Buchschrauben, keine Halteschlaufe. "
+                      "Form von Bjoern freigegeben 2026-09-10 (A-2026-006)."},
     "LE-02": {"name": "Fuehrleine rundgeflochten", "status": "zurueckgestellt",
               "kurz": "rundgeflochtene Leine — vorerst nicht anfragen"},
     "HS-01": {"name": "Handschlaufe", "status": "Serie", "kurz": "Zubehoer, Umfang 50 cm"},
@@ -176,7 +182,8 @@ def als_kontext() -> str:
 
     z += ["", "PRODUKTPROGRAMM (Modellnummern sind vergeben — keine doppelt verwenden):"]
     for code, d in PRODUKTE.items():
-        z.append(f"  - {code} {d['name']} [{d['status']}]: {d['kurz']}")
+        koll = f", {d['kollektion']}" if d.get("kollektion") else ""
+        z.append(f"  - {code} {d['name']} [{d['status']}{koll}]: {d['kurz']}")
     z += ["  Spaetere Kandidaten (nicht jetzt): " + "; ".join(SPAETERE_KANDIDATEN)]
 
     z += ["", "HARTE AUSSCHLUESSE (Konzept, Verstoss = Ablehnung):"]
