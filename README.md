@@ -50,6 +50,9 @@ venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzho
 Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
 `SERVER-PROMPT-einkauf-china.md` in Claude Code auf dem Server einfügen.
 
+Programmierabteilung für Android-Apps (noch nicht im Tageslauf, als einfügbarer Prompt):
+`PROMPT-abteilung-app-android.md`.
+
 ## Lokal / in Claude Code
 
 Die vier Agenten in `.claude/agents/` laufen in jeder Claude-Code-Session mit diesem Repo, auch
