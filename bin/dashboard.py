@@ -30,7 +30,9 @@ STAND_META = {
     "offen":             ("offen",           "grau",   2),
     "gestoert":          ("gestört",         "rot",    3),
     "gescheitert":       ("gescheitert",     "rot",    3),
-    "fertig":            ("erledigt",        "oliv",   4),
+    "abgelehnt":         ("abgelehnt",       "rot",    3),
+    "freigegeben":       ("freigegeben",     "oliv",   4),
+    "fertig":            ("erledigt",        "oliv",   5),
 }
 AKTIV_STAENDE = ("offen", "nacharbeit", "wartet auf Bjoern")
 

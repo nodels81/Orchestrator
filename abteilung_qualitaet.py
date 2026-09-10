@@ -65,7 +65,11 @@ class Qualitaet(Abteilung):
         ziel = auftrag.get("ziel", "")
         treffer = re.search(r"A-\d{4}-\d+", ziel)
         geprueft_id = treffer.group(0) if treffer else None
-        pruefstoff = self._auftrag_ergebnis(geprueft_id) if geprueft_id else None
+        # Nur aus auftraege.json nachladen, wenn im Ziel noch kein Pruefstoff steht
+        # (der QM-Zwischenschritt im Tageslauf liefert das Ergebnis direkt mit).
+        schon_dabei = "ZU PRUEFEN" in ziel or len(ziel) > 400
+        pruefstoff = (self._auftrag_ergebnis(geprueft_id)
+                      if geprueft_id and not schon_dabei else None)
         if pruefstoff:
             auftrag = dict(auftrag)
             auftrag["ziel"] = (

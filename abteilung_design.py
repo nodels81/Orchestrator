@@ -10,6 +10,7 @@ import os
 import re
 
 from abteilung_basis import Abteilung, einzeltest, DATEN
+import markenwissen
 
 SILHOUETTEN = os.path.join(DATEN, "zeichnungen")
 
@@ -33,7 +34,10 @@ class Design(Abteilung):
         "diesem Rahmen herstellbar bleiben (kein aufwaendiges Flechtwerk, keine Sonderteile); "
         "geht ein Entwurf darueber hinaus, benennst du das offen.\n\n"
         "JE ENTWURF lieferst du:\n"
-        " - Name und Gestaltungsidee in einem Satz — wodurch unterscheidet er sich von den anderen?\n"
+        " - Modellnummer: die naechste freie aus dem Produktprogramm im Markenwissen "
+        "(HB-.. fuer Halsband, LE-.. fuer Leine, HS-.. Zubehoer). Vergebene Nummern NICHT "
+        "wiederverwenden. Dazu ein kurzer Name.\n"
+        " - Gestaltungsidee in einem Satz — wodurch unterscheidet er sich von den anderen?\n"
         " - Silhouette: Laenge, Breite und Breitenverlauf (gleichbleibend / tailliert / "
         "konisch zur Spitze), Kantenbild, Form der Riemenspitze, bei Leinen die Handschlaufe\n"
         " - Beschlag-Layout: Lage von Schnalle, D-Ring(en), Halteschlaufe; bei Leinen "

@@ -8,8 +8,11 @@ Aufrufe:
   orchestrator.py                                   Lauf sofort ausloesen
   orchestrator.py --probelauf                       Trockenlauf, keine API-Kosten
   orchestrator.py --stand                           Woran wird gearbeitet
-  orchestrator.py --auftrag "01 Innovation" "Ziel" [Frist]
+  orchestrator.py --auftrag "01 Innovation" "Ziel" [Frist]   (auch "01" oder "Merle")
+  orchestrator.py --freigeben A-2026-006 ["Kommentar"]       Ergebnis annehmen
+  orchestrator.py --ablehnen  A-2026-006 "was ueberarbeitet werden soll"
   orchestrator.py --wochenbericht
+  orchestrator.py --hilfe
 """
 
 import json
@@ -140,6 +143,32 @@ def pruefen(auftrag: dict, ergebnis: dict) -> tuple[bool, str]:
     return True, "Alle Kriterien erfuellt."
 
 
+def _qm_pruefung(auftrag: dict, ergebnis: dict, config: dict) -> str | None:
+    """Optionaler Zwischenschritt: Almut (09) prueft das Ergebnis, bevor es zu Bjoern geht.
+    Aktiv nur fuer Abteilungen in config['qm_gate']."""
+    gate = config.get("qm_gate") or []
+    abt = auftrag.get("abteilung", "")
+    if abt not in gate or abt.startswith("09"):
+        return None
+    try:
+        qm_auftrag = {
+            "id": auftrag["id"], "abteilung": "09 Qualität",
+            "ziel": (f"Pruefe dieses Ergebnis von {abt} zu Auftrag {auftrag['id']}.\n\n"
+                     f"--- ZU PRUEFEN ---\n{ergebnis.get('ergebnis', '')}"
+                     + (f"\n\nANMERKUNG der Abteilung: {ergebnis['anmerkung']}"
+                        if ergebnis.get("anmerkung") else "")),
+            "kriterien": ["Pruefung ist konkret und vollstaendig",
+                          "Nachbesserungspunkte sind umsetzbar benannt",
+                          "Pruefbuch-Eintrag vorhanden"],
+            "frist": date.today().isoformat(), "rahmen": "keine Ausgaben",
+        }
+        qe = abteilung_laden("09 Qualität").bearbeiten(qm_auftrag)
+        return qe.get("ergebnis") or None
+    except Exception as fehler:
+        print(f"    [QM] Zwischenpruefung uebersprungen: {fehler}")
+        return None
+
+
 def _zeichnungen(ergebnis: dict) -> list[str]:
     pfade = list(ergebnis.get("zeichnungen") or [])
     if ergebnis.get("zeichnung"):
@@ -210,10 +239,12 @@ def lauf(probelauf: bool = False) -> None:
         if bestanden:
             auftrag["stand"] = "fertig"
             print(f"    OK — {begruendung}")
+            bericht = _bericht(auftrag, ergebnis, begruendung)
+            qm = _qm_pruefung(auftrag, ergebnis, config)
+            if qm:
+                bericht += "\n\n" + "=" * 40 + "\nQUALITAETSPRUEFUNG (Almut, 09):\n" + qm
             # Ergebnisse werden nach aussen sichtbar -> immer Bjoerns Freigabe
-            eskalieren(auftrag, "Ergebnis liegt vor",
-                       _bericht(auftrag, ergebnis, begruendung), config,
-                       anhaenge=zeichnungen)
+            eskalieren(auftrag, "Ergebnis liegt vor", bericht, config, anhaenge=zeichnungen)
             eskalationen += 1
         elif auftrag["versuche"] >= MAX_NACHARBEIT:
             auftrag["stand"] = "gescheitert"
@@ -318,6 +349,44 @@ def _jetzt() -> str:
     return datetime.now().isoformat(timespec="seconds")
 
 
+# ---------- Freigabe / Ablehnung ----------
+
+def _auftrag_finden(daten: dict, auftrag_id: str) -> dict | None:
+    return next((a for a in daten["auftraege"] if a["id"] == auftrag_id), None)
+
+
+def freigeben(auftrag_id: str, kommentar: str = "") -> None:
+    daten = zustand_laden()
+    a = _auftrag_finden(daten, auftrag_id)
+    if not a:
+        print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
+    a["stand"] = "freigegeben"
+    a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "freigegeben",
+                         "kommentar": kommentar or None})
+    zustand_speichern(daten)
+    print(f"{auftrag_id} freigegeben." + (f" ({kommentar})" if kommentar else ""))
+
+
+def ablehnen(auftrag_id: str, kommentar: str) -> None:
+    daten = zustand_laden()
+    a = _auftrag_finden(daten, auftrag_id)
+    if not a:
+        print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
+    a["stand"] = "abgelehnt"
+    a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "abgelehnt",
+                         "kommentar": kommentar})
+    zustand_speichern(daten)
+    print(f"{auftrag_id} abgelehnt.")
+    # Ueberarbeitungs-Auftrag an dieselbe Abteilung
+    neu = auftrag_anlegen(
+        a["abteilung"],
+        f"Ueberarbeitung zu {auftrag_id}. Bjoerns Rueckmeldung: {kommentar}\n\n"
+        f"Urspruengliches Ziel war: {a['ziel']}",
+        (date.today() + timedelta(days=7)).isoformat(),
+    )
+    print(f"Ueberarbeitung als {neu['id']} angelegt.")
+
+
 # ---------- Einstieg ----------
 
 def main() -> None:
@@ -339,6 +408,16 @@ def main() -> None:
         except ValueError as fehler:
             print(fehler)
             sys.exit(1)
+    elif "--freigeben" in argumente:
+        rest = argumente[argumente.index("--freigeben") + 1:]
+        if not rest:
+            print('Aufruf: orchestrator.py --freigeben A-2026-006 ["Kommentar"]'); sys.exit(1)
+        freigeben(rest[0], rest[1] if len(rest) > 1 else "")
+    elif "--ablehnen" in argumente:
+        rest = argumente[argumente.index("--ablehnen") + 1:]
+        if len(rest) < 2:
+            print('Aufruf: orchestrator.py --ablehnen A-2026-006 "was ueberarbeitet werden soll"'); sys.exit(1)
+        ablehnen(rest[0], rest[1])
     else:
         lauf(probelauf="--probelauf" in argumente)
 

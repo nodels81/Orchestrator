@@ -1,77 +1,64 @@
 # Bellowerk — Markenbrief für den Einkauf
 
-Quelle: `markenwissen.py` (Blatt 3 + 5), Logo-Konzepte, Björns Vorgaben vom 9. September 2026.
-Diese Datei ist die Wahrheit für alle Lieferanten-Kontakte. Änderungen hier wirken überall.
+**AUTOMATISCH ERZEUGT aus `markenwissen.py` — nicht von Hand ändern.**
+Änderungen an der Marke gehören in `markenwissen.py`.
 
 ## Marke
 
 | | |
 |---|---|
-| Markenname auf dem Produkt | **Bellowerk** — darunter kleiner: **Manufaktur** |
-| Bisheriger Betriebsname | Herr Bello & Frau Wuff / Herr Bello und Fräulein Kläff (Instagram @herr.bello.und.frau.wuff, @herr_bello_und_fraeulein_klaef) |
+| Markenname auf dem Produkt | **Bellowerk** — darunter klein: **Manufaktur** |
+| Kundennaher Name / Social | Herr Bello und Frau Wuff (@herr.bello.und.frau.wuff, @herr_bello_und_fraeulein_klaef) |
 | Standort | Hamburg / Altes Land |
-| Inhaber, einziger Entscheider | Björn |
-| Positionierung | Premium-Lederzubehör aus eigener Werkstatt. Jedes Modell hängt vor dem Verkauf eine Saison an fremden Hunden (Gassi-Service, Pension, Training). |
-| Zielgruppe | Familien- und Gebrauchshunde mittel bis groß. Keine Windhunde. |
-| Preisrahmen VK | Halsband 69–99 EUR, Leine 89–139 EUR, Zubehör 25–59 EUR |
-| Ziel-EK ab Werk (Orientierung, 100 Stück) | Halsband ≤ 20 EUR, Leine ≤ 30 EUR, Handschlaufe ≤ 8 EUR, Namensschild ≤ 1,50 EUR |
-| Gestaltung | Farben Oliv, Braun, Kupfer; Schrift Lora (Serife); Logo-Farben Waldgrün #23352A, Olivgrün #566347, Cognac #9A6238, Messing #B08D57 |
-| Bildsprache | Echte Fotos aus dem Betrieb, ehrliche Verschleißspuren, kein Studio-Look |
+| Inhaber, einziger Entscheider | Björn — einziger Entscheider |
+| Positionierung | Premium-Lederzubehoer fuer Hunde aus eigener Werkstatt. Der Unterschied zum Wettbewerb ist nicht das Material, sondern der Praxistest: Björn führt Gassi-Service, Pension und Training. Jedes Modell haengt vor dem Verkauf eine Saison lang an fremden Hunden, taeglich, bei jedem Wetter. Kein Wettbewerber kann das nachmachen, ohne selbst einen Hundebetrieb zu fuehren. Das ist ein echter Unterschied im Herstellungsprozess, kein Marketingdreh. |
+| Zielgruppe | Familien- und Gebrauchshunde mittlerer bis grosser Groesse aus der eigenen Kundschaft (Gassi-Service, Pension, Training). Nicht Windhunde. |
+| Preisrahmen VK | Halsband 69–99 EUR, Leine 89–139 EUR, Zubehoer 25–59 EUR |
+| Ziel-EK ab Werk (100 Stück) | halsband ≤ 20 EUR, leine ≤ 30 EUR, handschlaufe ≤ 8 EUR, namensschild ≤ 1.5 EUR |
+| Gestaltung | Farben Oliv, Braun, Kupfer; Schrift Lora (Serife); Logo-Farben Waldgruen #23352A, Olivgruen #566347, Cognac #9A6238, Messing #B08D57 |
+| Lederfarben | Grau, Dunkelbraun, Oliv, Cognac, Schwarz |
+| Bildsprache | echte Fotos aus dem Betrieb, ehrliche Verschleissspuren, kein Studio-Look |
 
 ## Werkstoffe — erlaubt
 
-- **Fettleder**: Rindleder, pflanzlich gegerbt (vegetable-tanned), gefettet/gewachst (oiled / pull-up),
-  Vollnarbe (full grain), feste Narbenseite, durchgefärbt. Stärke 3,5–4,0 mm für Halsband und Leine,
-  2,0–2,5 mm für den Patch. Farben laut Fotos: **Grau, Dunkelbraun, Oliv, Cognac, Schwarz**.
-  Leinenbreite 20 mm (bestätigt per Instagram-Text: "Die Lederbreite der Leine beträgt 2 cm").
-- **Messing massiv** (solid brass, gegossen HPb59-1 / CW617N oder geschmiedet): Rollschnalle, D-Ring
-  geschweißt, O-Ring geschweißt, Wirbel-Bolzenkarabiner (swivel eye bolt snap, poliert wie auf den
-  Fotos), Riemenschlaufe. Unlackiert (Patina erwünscht).
-- **Buchschrauben Messing** (Chicago screws), gewölbter Kopf Ø 8–9 mm, Schaft 8 mm, Schraubensicherung.
-- **Flechtung**: 3-strängiger Mystery Braid (Trick Braid) aus einem Stück, V-Muster — so werden
-  Karabiner und Ringe ohne Naht befestigt (Fotos `bilder/LE-01-*.jpg`). Keine anderen Flechtarten.
-- **Patch**: Lederpatch in Cognac/Mittelbraun, lasergraviert "BELLOWERK" (Versalien, gesperrt) und
-  darunter "Manufaktur" in Schreibschrift, 2 Buchschrauben. Siehe `specs/PATCH-01-markenpatch.md`.
+- Fettleder: Rindleder, pflanzlich gegerbt (vegetable-tanned), gefettet/gewachst (oiled / pull-up), Vollnarbe (full grain), feste Narbenseite, durchgefaerbt. Staerke 3,5-4,0 mm fuer Halsband und Leine, 2,0-2,5 mm fuer den Patch. Leinenbreite 20 mm.
+- Messing massiv (solid brass, gegossen HPb59-1 / CW617N oder geschmiedet): Rollschnalle, D-Ring geschweisst, O-Ring geschweisst, Wirbel-Bolzenkarabiner (swivel eye bolt snap), Riemenschlaufe. Unlackiert, Patina erwuenscht.
+- Buchschrauben Messing (Chicago screws), gewoelbter Kopf Durchmesser 8-9 mm, Schaft 8 mm, mit Schraubensicherung.
+- Flechtung: 3-straengiger Mystery Braid (Trick Braid) aus einem Stueck, V-Muster — so werden Karabiner und Ringe ohne Naht befestigt. Keine anderen Flechtarten.
+- Patch: Lederpatch in Cognac/Mittelbraun, lasergraviert 'BELLOWERK' (Versalien, gesperrt) und darunter 'Manufaktur' in Schreibschrift, 2 Buchschrauben.
 
 ## Werkstoffe — ausgeschlossen (Verstoß = Ablehnung)
 
-Nähte und Garn · Nieten · Stahl (auch vermessingt) · Zinkdruckguss ("zinc alloy", "Zamak") ·
-Kunststoff · Klickverschlüsse · Gurtband/Nylon · PU-/Spalt-/Bonded-Leder · Lack auf Messing
+Naehte und Garn · Nieten · Stahl (auch vermessingt) · Zinkdruckguss (zinc alloy / Zamak) · Kunststoff · Klickverschluesse · Gurtband / Nylon · PU-, Spalt- oder Bonded-Leder · Lack auf Messing
 
-Ausnahme nur mit Björns Freigabe: Paracord oder rundgeflochtenes Leder als eigene Linie.
+Nur mit Björns Freigabe: Paracord oder rundgeflochtenes Leder als eigene Linie.
 
 ## Harte Ausschlüsse (Konzept)
 
-Keine Geschirre · keine Handelsware ohne Markenbezug · kein Verkaufsargument über den Preis ·
-kein Einstieg über Windhunde
+keine Geschirre · keine reine Handelsware ohne Markenbezug · kein Verkaufsargument ueber den Preis · kein Einstieg ueber Windhunde
 
 ## Produktprogramm
 
-| Modell | Beschreibung | Spec |
+| Modell | Beschreibung | Status |
 |---|---|---|
-| HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-01-halsband.md` |
-| LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | `specs/LE-01-fuehrleine.md` |
-| HB-02 | Halsband geflochten: Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | `specs/HB-02-halsband-geflochten.md` |
-| LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
-| HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
-| PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |
-| VERP-01 | Verpackung + Kennzeichnung (Entwurf, Björn entscheidet) | `specs/VERP-01-verpackung.md` |
+| HB-01 | Halsband Fettleder — einlagig, ohne Naht, S/M/L/XL, 20-40 mm, mit Lederpatch | Serie |
+| LE-01 | Fuehrleine 3,00 m — dreifach verstellbar, sechs Fuehrlaengen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | Serie |
+| HB-02 | Halsband geflochten — Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | in Entwicklung |
+| LE-02 | Fuehrleine rundgeflochten — rundgeflochtene Leine — vorerst nicht anfragen | zurueckgestellt |
+| HS-01 | Handschlaufe — Zubehoer, Umfang 50 cm | Serie |
+| PATCH-01 | Lederpatch — lasergraviert 'BELLOWERK / Manufaktur', 2 Buchschrauben; spaeter Variante mit Hundenamen | Serie |
+| VERP-01 | Verpackung + Kennzeichnung — Björn entscheidet | Entwurf |
 
-Grundsatz laut Björn: **schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung
-kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-01 und LE-01 sind
-die Kernmodelle, HB-02 die geflochtene Variante. Spätere Kandidaten (nicht jetzt anfragen):
-Führleine mit fester Handschlaufe, Schlüsselanhänger mit Patch, Messing-Münzanhänger am D-Ring
-(auf Fotos zu sehen), Sonderfarben Pink/Türkis/Mint/Gelb/Bordeaux.
+Grundsatz: Schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung kommen. Jedes Produkt wird komplett geliefert: fertig montiert, mit Patch, mit Pflegehinweis, verpackt.
 
-Jedes Produkt wird **komplett** geliefert: fertig montiert, mit Patch, mit Pflegehinweis, verpackt.
+Spätere Kandidaten (nicht jetzt anfragen): Fuehrleine mit fester Handschlaufe; Schluesselanhaenger mit Patch; Messing-Muenzanhaenger am D-Ring; Sonderfarben Pink / Tuerkis / Mint / Gelb / Bordeaux
 
 ## Lieferumfang je Bestellung (Pflicht)
 
 1. Fertige Ware nach Goldmuster
-2. **Schnittmuster** je Modell und Größe: PDF 1:1 und DXF, mit Länge, Breite, Lochabstand,
-   Lochdurchmesser, Ringpositionen, Materialstärke, Schrauben-Positionen
-3. Materialdatenblatt Leder (Gerbung, Stärke, Herkunft) und Messing (Legierung, Bruchlast)
-4. Testbericht REACH Chrom VI (Leder) und Blei (Messing) — oder Erlaubnis, dass wir selbst testen
+2. Schnittmuster je Modell und Groesse: PDF 1:1 und DXF, mit Laenge, Breite, Lochabstand, Lochdurchmesser, Ringpositionen, Materialstaerke, Schrauben-Positionen
+3. Materialdatenblatt Leder (Gerbung, Staerke, Herkunft) und Messing (Legierung, Bruchlast)
+4. Testbericht REACH Chrom VI (Leder) und Blei (Messing) — oder Erlaubnis zum Selbsttest
 5. Fotos jedes Modells vor Versand
 
 ## Was der Einkäufer darf und nicht darf
