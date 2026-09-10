@@ -32,6 +32,7 @@ ABTEILUNGEN = {
     "05 Personal": ("abteilung_personal", "Personal"),
     "06 Einkauf": ("abteilung_einkauf", "Einkauf"),
     "07 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
+    "08 Design": ("abteilung_design", "Design"),
 }
 
 
@@ -191,7 +192,7 @@ def lauf(probelauf: bool = False) -> None:
             "versuch": auftrag["versuche"],
             "bestanden": bestanden,
             "begruendung": begruendung,
-            "ergebnis": ergebnis.get("ergebnis", "")[:4000],
+            "ergebnis": ergebnis.get("ergebnis", "")[:12000],
             "anmerkung": ergebnis.get("anmerkung"),
         })
 
@@ -253,6 +254,9 @@ def _bericht(auftrag: dict, ergebnis: dict, begruendung: str) -> str:
         zeilen += ["", "ANMERKUNG:", str(ergebnis["anmerkung"])]
     if ergebnis.get("zeichnung"):
         zeilen += ["", f"ZEICHNUNG: {ergebnis['zeichnung']}"]
+    if ergebnis.get("zeichnungen"):
+        zeilen += ["", "ZEICHNUNGEN:"]
+        zeilen += [f"  {p}" for p in ergebnis["zeichnungen"]]
     return "\n".join(zeilen)
 
 

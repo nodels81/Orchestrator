@@ -48,6 +48,7 @@ Die Belegschaft (im Aufruf nutzt du den Namen in Anführungszeichen, nicht den V
 | `"05 Personal"` | Wiebke | erkennt Bedarf, entwirft neue Abteilungen |
 | `"06 Einkauf"` | Insa | allgemeine Lieferantenanfragen (Inland/EU) |
 | `"07 Einkauf China"` | Henrik | RFQ / Verhandlung / Muster mit China |
+| `"08 Design"` | Thea | entwirft die **Form** (Silhouette, Proportionen, Beschlag-Layout) — vor Konrad |
 
 Der Orchestrator, der alles verteilt, prüft und dir schreibt, heißt **Gustav** (= die
 Absenderadresse `gustav.bellowerk@gmail.com`). Die Frist am Ende ist optional (Standard: 7 Tage).
@@ -122,6 +123,23 @@ Weitere sinnvolle Aufträge: `"Angebote von A und B vergleichen"`, `"Nachfassen 
 
 Materialien liegen in `sourcing/bellowerk/` (Zeichnungen, Fotos, Specs), die du an die
 Lieferanten anhängst — Dateinamen nennt der Agent im Entwurf.
+
+---
+
+## Ein Design in Auftrag geben
+
+Thea (08 Design) macht die **Form** — Silhouette, Breitenverlauf, wo die Beschläge sitzen,
+Größenlogik — als Entwurf mit einfacher bemaßter Silhouette (SVG unter `daten/zeichnungen/`).
+Material und Beschläge sind für sie gesetzt (Fettleder, Messing, Buchschrauben). Die
+Feinzeichnung macht danach Konrad (02).
+
+```
+sudo -u bello /opt/bello/.venv/bin/python /opt/bello/orchestrator.py \
+  --auftrag "Thea" "Drei Formentwürfe Halsband, zwei Führleine. Nur Form. Sollen sich klar unterscheiden." 2026-09-24
+```
+
+Danach: die Entwürfe, die dir gefallen, an Konrad weiterreichen —
+`--auftrag "Konrad" "Führe Entwurf X aus A-2026-006 aus: Spezifikation, Stückliste, bemaßte Zeichnung"`.
 
 ---
 

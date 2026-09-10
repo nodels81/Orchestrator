@@ -15,6 +15,7 @@ VORNAMEN = {
     "05": "Wiebke",   # Personal
     "06": "Insa",     # Einkauf
     "07": "Henrik",   # Einkauf China
+    "08": "Thea",     # Design (Formgestaltung)
 }
 
 

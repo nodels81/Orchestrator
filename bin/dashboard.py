@@ -19,6 +19,7 @@ ABTEILUNGEN = [
     ("05", "Wiebke", "Personal",             "erkennt Personalbedarf, entwirft neue Abteilungen",         ["06", "07"]),
     ("06", "Insa",   "Einkauf",              "allgemeine Lieferantenanfragen und Angebotsvergleiche",     []),
     ("07", "Henrik", "Einkauf China",        "RFQ / Verhandlung / Muster mit chinesischen Herstellern",   []),
+    ("08", "Thea",   "Design",               "entwirft die Form: Silhouette, Proportionen, Beschlag-Layout", ["02"]),
 ]
 ORCHESTRATOR = "Gustav"
 
@@ -62,7 +63,8 @@ def dt(s):
 
 HEAD_START = ("OFFENE ENTSCHEIDUNGEN", "RÜCKFRAGEN AN BJ", "RUECKFRAGEN AN BJ",
              "ENTSCHEIDUNGEN FÜR BJ", "ENTSCHEIDUNGEN FUER BJ", "OFFENE PUNKTE FÜR BJ",
-             "OFFENE PUNKTE FUER BJ", "OFFENE FRAGEN")
+             "OFFENE PUNKTE FUER BJ", "OFFENE FRAGEN", "EMPFEHLUNG / REIHENFOLGE",
+             "EMPFEHLUNG UND REIHENFOLGE", "EMPFEHLUNG FÜR BJ", "EMPFEHLUNG FUER BJ")
 HEAD_STOP = ("NÄCHSTER SCHRITT", "NAECHSTER SCHRITT", "EINBAU", "ANMERKUNG",
              "ERGEBNIS", "LIEFERT", "GRENZEN", "ABNAHMEKRITERIEN", "ERSTER TESTAUFTRAG",
              "BEDARF", "NUMMER UND NAME", "ROLLE", "SPEZIFIKATION", "STÜCKLISTE",
@@ -240,13 +242,13 @@ for nr, vn, fach, rolle, _ in ABTEILUNGEN:
       </div>""")
 
 # ---------- Zusammenspiel (SVG) ----------
-W, H = 940, 430
+W, H = 1080, 430
 cx = W / 2
 bjoern_y, orch_y, dept_y = 40, 120, 300
 n = len(ABTEILUNGEN)
 x0, x1 = 70, W - 70
 xs = [x0 + i * (x1 - x0) / (n - 1) for i in range(n)]
-node_w, node_h = 118, 44
+node_w, node_h = 116, 44
 
 svg = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="karte-svg">']
 svg.append('<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">'
@@ -379,7 +381,7 @@ HTML = f"""<!doctype html>
   .wb-fragen{{font-size:12px;color:var(--braun);margin-top:6px;background:var(--kupfer-weich);padding:6px 8px;border-radius:6px}}
   .wb-next{{font-size:12px;color:var(--oliv);margin-top:5px}}
   .svg-wrap{{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--paper);border:1px solid var(--line);border-radius:10px}}
-  .karte-svg{{display:block;width:100%;min-width:600px;height:auto;padding:8px}}
+  .karte-svg{{display:block;width:100%;min-width:820px;height:auto;padding:8px}}
   .tabelle-wrap{{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}}
   table{{width:100%;border-collapse:collapse;background:var(--paper);min-width:520px}}
   th,td{{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}}
