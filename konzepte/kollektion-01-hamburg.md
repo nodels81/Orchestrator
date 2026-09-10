@@ -38,39 +38,42 @@ Zutat. Alles zu nummerieren würde die Nummer entwerten.
 - Auf der Produktseite steht der Name groß, die Artikelnummer klein darunter in Mono.
   Beide müssen auffindbar sein, weil Bestandskunden nach HB-01 suchen werden.
 
-## Die eine Frage, die vorher geklärt sein muss
+## Herkunft — entschieden am 10.09.2026
 
-Ein Kollektionsname mit einem Ortsnamen ist eine Herkunftsaussage, sobald das Publikum ihn so
-versteht. Zusammen mit dem Wort "Manufaktur" im Markennamen und dem Satz "aus eigener Werkstatt"
-entsteht der Eindruck: hier in Hamburg gefertigt.
+**Entscheidung Björn: ein Name für alles. Hamburg bleibt.** Begründung: Idee und Handel sitzen
+in Hamburg.
 
-Parallel läuft Abteilung 05 Einkauf China und bereitet an, dass HB-01, HB-02, LE-01 und die
-Patches bei chinesischen Herstellern produziert werden. Beides zusammen ist angreifbar. Eine
-irreführende Herkunftsangabe ist ein Fall für eine Abmahnung durch Wettbewerber, und die Nachbarn
-in Hamburg sind Wettbewerber.
+Damit gilt Weg 2 aus der Vorlage. Der Name bezieht sich erkennbar auf Entwurf, Prüfung und
+Handel, nicht auf die Fertigung. Das hält, aber nur unter einer Bedingung: **Die Herkunftsangabe
+muss genauso sichtbar sein wie der Name.** Versteckt im Fußbereich reicht nicht, und genau daran
+scheitern die meisten Abmahnfälle.
 
-**Drei Wege, einer muss gewählt werden:**
+Verbindlich ab sofort:
 
-1. **Hamburg bleibt der Werkstattlinie vorbehalten.** Nur Stücke, die Björn selbst fertigt,
-   heißen Hamburg No. X. Die zugekaufte Serie bekommt einen eigenen Namen ohne Ortsbezug.
-   Sauberste Lösung, kostet aber die schöne Nummer für die Massenartikel.
-2. **Hamburg für alles, mit offener Herkunftsangabe.** Auf jeder Produktseite und am Etikett steht,
-   wo gefertigt wurde: "Entworfen und geprüft in Hamburg, gefertigt in ...". Der Name bezieht sich
-   dann erkennbar auf Entwurf und Prüfung, nicht auf die Fertigung. Funktioniert nur, wenn die
-   Angabe genauso sichtbar ist wie der Name, nicht im Fußbereich versteckt.
-3. **Kein Ortsname.** Die Kollektion heißt anders, etwa nach der Straße der Werkstatt oder nach der
-   Serie selbst. Verschenkt Substanz, hat aber kein Risiko.
+1. **Auf jeder Produktseite**, im selben Block wie Preis und Größe, nicht darunter weggeklappt:
+   `Entworfen, geprüft und gehandelt in Hamburg · Gefertigt in [Land]`
+2. **In der Fußzeile jeder Seite**, einmal ausgeschrieben.
+3. **Am Etikett und auf dem Beileger** derselbe Satz.
+4. **Kein Satz behauptet Fertigung in Hamburg**, wenn das Stück nicht dort gefertigt wurde.
+   Betroffen sind die Formulierungen "aus eigener Werkstatt" und "in unserer Werkstatt gefertigt".
+   Erlaubt und wahr bleibt: "in Hamburg entworfen", "in Hamburg geprüft", "aus dem eigenen Betrieb
+   geprüft", "eine Saison an fremden Hunden getragen".
+5. **Der Praxistest bleibt der Beweis.** Er findet wirklich in Hamburg statt und ist damit die
+   Herkunftsaussage, die trägt. Sie ersetzt die Fertigungsbehauptung vollständig und ist stärker,
+   weil kein Wettbewerber sie kopieren kann.
 
-**Empfehlung: Weg 1.** Er passt zum Verkaufsargument. Der Praxistest findet in Hamburg statt, die
-Fertigung nicht überall. Wenn Hamburg No. 1 heißt "aus dieser Werkstatt", dann trägt der Name
-etwas. Wenn er auf allem klebt, trägt er nichts, und angreifbar ist er obendrein.
+Offen bleibt eine Formulierung: `markenwissen.py` sagt in POSITIONIERUNG
+"Premium-Lederzubehoer fuer Hunde aus eigener Werkstatt". Sobald ein Modell aus China kommt, ist
+der Satz für dieses Modell nicht mehr wahr. Vorschlag zur Ersetzung, wortgleich einsetzbar:
 
-Das Wort **Manufaktur** im Markennamen steht unter derselben Frage und sollte mitentschieden
-werden.
+> Premium-Lederzubehör für Hunde, in Hamburg entworfen und im eigenen Betrieb geprüft.
+
+Das Wort **Manufaktur** im Markennamen bleibt davon unberührt, solange die Werkstatt existiert
+und dort gearbeitet wird.
 
 ## Was daraus folgt, wenn der Name kommt
 
-1. `markenwissen.py`: Verkaufsnamen neben die Artikelnummern in `KERNSERIE` aufnehmen.
+1. `markenwissen.py`: Verkaufsnamen als `VERKAUFSNAMEN` neben `KERNSERIE` aufgenommen. Erledigt.
 2. Website: Produktkarten und Produktseiten zeigen Name groß, Nummer klein.
    Betrifft `web/startseite-nachtwerkstatt.html`.
 3. Patch: Der Markenpatch bleibt "BELLOWERK / Manufaktur". Die Kollektionsnummer kommt nicht auf

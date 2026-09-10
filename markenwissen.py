@@ -74,6 +74,22 @@ KERNSERIE = {
     "PATCH-01": "Lederpatch cognac, lasergraviert 'BELLOWERK' / 'Manufaktur', 2 Buchschrauben; Karabiner und Ringe der Leine im Mystery Braid",
 }
 
+# Verkaufsnamen der Kollektion 01 "Hamburg" (Entscheidung Bjoern, 10.09.2026).
+# Nach aussen der Name, intern und gegenueber Herstellern immer die Artikelnummer.
+# Herkunftsregel: Der Name steht fuer Entwurf, Pruefung und Handel in Hamburg,
+# nicht fuer den Fertigungsort. Siehe konzepte/kollektion-01-hamburg.md.
+VERKAUFSNAMEN = {
+    "HB-01": "Hamburg No. 1",
+    "LE-01": "Hamburg No. 2",
+    "HS-01": "Hamburg No. 3",
+    "HB-02": "Hamburg No. 4",
+    "LE-02": "Hamburg No. 5",
+    "HB-03": "Hamburg No. 6",
+    "KO-01": "Hamburg No. 7",
+}
+
+HERKUNFTSSATZ = "Entworfen, geprueft und gehandelt in Hamburg. Gefertigt in [Land eintragen]."
+
 GESTALTUNG = {
     "farben": "Leder: Grau, Dunkelbraun, Oliv, Cognac, Schwarz; Logo: Oliv, Braun, Kupfer/Messing",
     "schrift": "Lora (Serife)",
@@ -108,9 +124,18 @@ def als_kontext() -> str:
         zeilen.append(f"  - {name}: {beschreibung}")
 
     zeilen += ["", "BESTEHENDE LEISTUNGEN: " + ", ".join(BESTEHENDE_LEISTUNGEN)]
-    zeilen += ["", "KERNSERIE:"]
+    zeilen += ["", "KERNSERIE (Verkaufsname / Artikelnummer):"]
     for kuerzel, beschreibung in KERNSERIE.items():
-        zeilen.append(f"  - {kuerzel}: {beschreibung}")
+        name = VERKAUFSNAMEN.get(kuerzel)
+        vorn = f"{name} ({kuerzel})" if name else kuerzel
+        zeilen.append(f"  - {vorn}: {beschreibung}")
+
+    zeilen += [
+        "",
+        "HERKUNFT (bindend): " + HERKUNFTSSATZ,
+        "  Kein Text behauptet Fertigung in Hamburg fuer Ware, die dort nicht gefertigt wurde.",
+        "  Wahr und erlaubt: in Hamburg entworfen, in Hamburg geprueft, im eigenen Betrieb getestet.",
+    ]
 
     zeilen += [
         "",

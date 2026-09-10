@@ -192,7 +192,10 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
   font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;line-height:1.5;
   background:rgb(0 0 0/.5);color:#E9E1D4;padding:5px 8px;border-radius:2px;
 }
-.karte h3{font-size:var(--step-1);font-weight:500;letter-spacing:.005em}
+.karte h3{font-family:var(--display);font-size:var(--step-2);font-weight:500;letter-spacing:-.005em;line-height:1.1}
+.karte-nr{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--messing-tief);margin-top:2px}
+.herkunft{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border:1px solid var(--linie);border-left:2px solid var(--messing-tief);background:var(--flaeche);padding:12px 16px;margin-bottom:var(--raum-6);display:inline-block}
+.herkunft b{color:var(--ink);font-weight:500}
 .karte p{color:var(--mute);font-size:var(--step--1);line-height:1.55}
 .karte-fuss{display:flex;align-items:baseline;justify-content:space-between;gap:var(--raum-3);margin-top:auto;padding-top:var(--raum-3)}
 .karte-preis{font-family:var(--display);font-size:1.25rem;font-weight:500;color:var(--messing)}
@@ -340,15 +343,18 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
     <div class="kopfzeile">
       <span class="nr">02 · Kollektion</span>
       <h2>Vier Stücke. Mehr braucht kein Hund.</h2>
-      <p>Alles aus pflanzlich gegerbtem Fettleder, alle Beschläge aus massivem Messing. Fünf Farben, vier Größen.</p>
+      <p>Jedes Stück trägt seine Nummer in der Reihenfolge, in der es entstanden ist. Alles aus pflanzlich gegerbtem Fettleder, alle Beschläge aus massivem Messing.</p>
     </div>
+
+    <p class="herkunft"><b>Entworfen, geprüft und gehandelt in Hamburg.</b> &nbsp;Gefertigt in [Land eintragen].</p>
 
     <div class="raster">
       <article class="karte">
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%)">
           <span>FOTO 01 · HB-01 auf Eiche<br>Streiflicht von links, 85 mm</span>
         </div>
-        <h3>HB-01 Halsband Fettleder</h3>
+        <h3>Hamburg No. 1</h3>
+        <p class="karte-nr">HB-01 · Halsband Fettleder</p>
         <p>Einlagig, ohne Naht, aus einem Stück geschnitten. 20 bis 40 mm.</p>
         <div class="karte-fuss"><span class="karte-preis tab">89,00 €</span><span class="karte-mehr">Ansehen</span></div>
       </article>
@@ -357,7 +363,8 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 34% 22%,#4C3D28,#131009 76%)">
           <span>FOTO 02 · HB-02 Flechtung<br>schräg, harter Kontrast</span>
         </div>
-        <h3>HB-02 Halsband geflochten</h3>
+        <h3>Hamburg No. 4</h3>
+        <p class="karte-nr">HB-02 · Halsband geflochten</p>
         <p>Dreisträngiger Mystery Braid aus einem Stück. O-Ring, flache Enden.</p>
         <div class="karte-fuss"><span class="karte-preis tab">99,00 €</span><span class="karte-mehr">Ansehen</span></div>
       </article>
@@ -366,7 +373,8 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 20%,#463726,#120F09 76%)">
           <span>FOTO 03 · LE-01 hängend<br>Gegenlicht, Werkstatt</span>
         </div>
-        <h3>LE-01 Führleine 3,00 m</h3>
+        <h3>Hamburg No. 2</h3>
+        <p class="karte-nr">LE-01 · Führleine 3,00 m</p>
         <p>Sechs Führlängen, dreifach verstellbar. Ringe bei 45, 140 und 245 cm.</p>
         <div class="karte-fuss"><span class="karte-preis tab">129,00 €</span><span class="karte-mehr">Ansehen</span></div>
       </article>
@@ -375,7 +383,8 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 36% 24%,#413424,#120E08 76%)">
           <span>FOTO 04 · HS-01 in der Hand<br>Makro, warmes Licht</span>
         </div>
-        <h3>HS-01 Handschlaufe</h3>
+        <h3>Hamburg No. 3</h3>
+        <p class="karte-nr">HS-01 · Handschlaufe</p>
         <p>Umfang 50 cm. Für die Leine am Gürtel oder über der Schulter.</p>
         <div class="karte-fuss"><span class="karte-preis tab">39,00 €</span><span class="karte-mehr">Ansehen</span></div>
       </article>
@@ -440,7 +449,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
           <div style="display:contents"><dt>Breite</dt><dd id="breite">25 mm</dd></div>
           <div style="display:contents"><dt>Verstellbereich</dt><dd id="bereich">34 bis 42 cm</dd></div>
           <div style="display:contents"><dt>Gesamtlänge</dt><dd id="laenge">480 mm</dd></div>
-          <div style="display:contents"><dt>Empfehlung</dt><dd id="rat">HB-01 in Größe M</dd></div>
+          <div style="display:contents"><dt>Empfehlung</dt><dd id="rat">Hamburg No. 1 in Größe M</dd></div>
         </dl>
       </div>
     </div>
@@ -512,6 +521,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
     </div>
 
     <p class="rechtszeile">
+      Entworfen, geprüft und gehandelt in Hamburg. Gefertigt in [Land eintragen]. Der Praxistest findet im eigenen Betrieb in Hamburg statt.<br>
       Alle Preise inklusive gesetzlicher Umsatzsteuer, zuzüglich Versandkosten. Versand innerhalb Deutschlands 4,90 €, ab 120 € versandkostenfrei. Lieferzeit 2 bis 4 Werktage, bei Maßanfertigung 10 bis 14 Werktage.<br>
       Entwurfsstand 10.09.2026 · Richtung 03 Nachtwerkstatt · Namen, Prüftage und Befunde sind Platzhalter und vor der Veröffentlichung durch echte Werte zu ersetzen. Bildflächen sind Aufnahmeanweisungen, keine Bilder.
     </p>
@@ -687,7 +697,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
     felder.breite.textContent = treffer.breite;
     felder.bereich.textContent = treffer.von + ' bis ' + treffer.bis + ' cm';
     felder.laenge.textContent = treffer.laenge;
-    felder.rat.textContent = 'HB-01 in Größe ' + treffer.gr;
+    felder.rat.textContent = 'Hamburg No. 1 in Größe ' + treffer.gr;
   }
   eingabe.addEventListener('input', rechnen);
   rechnen();
