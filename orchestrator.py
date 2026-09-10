@@ -139,7 +139,15 @@ def pruefen(auftrag: dict, ergebnis: dict) -> tuple[bool, str]:
     return True, "Alle Kriterien erfuellt."
 
 
-def eskalieren(auftrag: dict, grund: str, text: str, config: dict) -> None:
+def _zeichnungen(ergebnis: dict) -> list[str]:
+    pfade = list(ergebnis.get("zeichnungen") or [])
+    if ergebnis.get("zeichnung"):
+        pfade.append(ergebnis["zeichnung"])
+    return [p for p in pfade if p]
+
+
+def eskalieren(auftrag: dict, grund: str, text: str, config: dict,
+               anhaenge: list[str] | None = None) -> None:
     auftrag["eskaliert"] = True
     auftrag["stand"] = "wartet auf Bjoern"
     betreff = f"[Bello] {auftrag['id']} {auftrag['abteilung']} — {grund}"
@@ -147,7 +155,7 @@ def eskalieren(auftrag: dict, grund: str, text: str, config: dict) -> None:
     fuss = f"\n\n— {namen.ORCHESTRATOR} (Orchestrator)"
     if vn:
         fuss = f"\n\nBearbeitet von {vn}.{fuss}"
-    senden(betreff, text + fuss, config)
+    senden(betreff, text + fuss, config, anhaenge=anhaenge)
 
 
 # ---------- Lauf ----------
@@ -187,6 +195,7 @@ def lauf(probelauf: bool = False) -> None:
 
         auftrag["versuche"] += 1
         bestanden, begruendung = pruefen(auftrag, ergebnis)
+        zeichnungen = _zeichnungen(ergebnis)
         auftrag["verlauf"].append({
             "zeit": _jetzt(),
             "versuch": auftrag["versuche"],
@@ -194,6 +203,7 @@ def lauf(probelauf: bool = False) -> None:
             "begruendung": begruendung,
             "ergebnis": ergebnis.get("ergebnis", "")[:12000],
             "anmerkung": ergebnis.get("anmerkung"),
+            "zeichnungen": zeichnungen or None,
         })
 
         if bestanden:
@@ -201,13 +211,15 @@ def lauf(probelauf: bool = False) -> None:
             print(f"    OK — {begruendung}")
             # Ergebnisse werden nach aussen sichtbar -> immer Bjoerns Freigabe
             eskalieren(auftrag, "Ergebnis liegt vor",
-                       _bericht(auftrag, ergebnis, begruendung), config)
+                       _bericht(auftrag, ergebnis, begruendung), config,
+                       anhaenge=zeichnungen)
             eskalationen += 1
         elif auftrag["versuche"] >= MAX_NACHARBEIT:
             auftrag["stand"] = "gescheitert"
             print(f"    Zweimal erfolglos — eskaliert.")
             eskalieren(auftrag, "Zweimal Nacharbeit erfolglos",
-                       _bericht(auftrag, ergebnis, begruendung), config)
+                       _bericht(auftrag, ergebnis, begruendung), config,
+                       anhaenge=zeichnungen)
             eskalationen += 1
         else:
             auftrag["stand"] = "nacharbeit"

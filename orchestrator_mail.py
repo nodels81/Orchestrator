@@ -4,12 +4,15 @@ orchestrator_mail.py — Verschickt Eskalationsmails per SMTP.
 Absender und Empfaenger MUESSEN verschiedene Konten sein, sonst unterdrueckt
 Gmail die Handy-Benachrichtigung.
 
-Test:  venv/bin/python orchestrator_mail.py --test
+Test:  .venv/bin/python orchestrator_mail.py --test
 """
 
+import mimetypes
 import os
+import shutil
 import smtplib
 import ssl
+import subprocess
 import sys
 from email.message import EmailMessage
 from email.utils import formatdate, make_msgid
@@ -17,7 +20,49 @@ from email.utils import formatdate, make_msgid
 from abteilung_basis import config_laden
 
 
-def senden(betreff: str, text: str, config: dict | None = None) -> bool:
+def _svg_als_png(pfad: str) -> str | None:
+    """Rendert eine SVG einmalig neben sich als PNG (fuer die Gmail-Vorschau).
+    Braucht rsvg-convert (apt: librsvg2-bin). Fehlt es, wird nur die SVG angehaengt."""
+    png = os.path.splitext(pfad)[0] + ".png"
+    if os.path.exists(png) and os.path.getmtime(png) >= os.path.getmtime(pfad):
+        return png
+    werkzeug = shutil.which("rsvg-convert")
+    if not werkzeug:
+        return None
+    try:
+        subprocess.run([werkzeug, "-w", "1400", "-b", "white", "-o", png, pfad],
+                       check=True, capture_output=True, timeout=20)
+        return png if os.path.exists(png) else None
+    except Exception:
+        return None
+
+
+def _anhaengen(nachricht: EmailMessage, pfade) -> list[str]:
+    angehaengt = []
+    for pfad in pfade or []:
+        if not pfad or not os.path.isfile(pfad):
+            continue
+        kandidaten = [pfad]
+        if pfad.lower().endswith(".svg"):
+            png = _svg_als_png(pfad)
+            if png:
+                kandidaten = [png, pfad]  # PNG zuerst -> Gmail zeigt es inline
+        for k in kandidaten:
+            typ, _ = mimetypes.guess_type(k)
+            haupt, _, unter = (typ or "application/octet-stream").partition("/")
+            try:
+                with open(k, "rb") as f:
+                    nachricht.add_attachment(f.read(), maintype=haupt,
+                                             subtype=unter or "octet-stream",
+                                             filename=os.path.basename(k))
+                angehaengt.append(os.path.basename(k))
+            except Exception as fehler:
+                print(f"[MAIL] Anhang {k} uebersprungen: {fehler}")
+    return angehaengt
+
+
+def senden(betreff: str, text: str, config: dict | None = None,
+           anhaenge: list[str] | None = None) -> bool:
     config = config or config_laden()
     mail = config.get("mail", {})
 
@@ -41,6 +86,10 @@ def senden(betreff: str, text: str, config: dict | None = None) -> bool:
     nachricht["Message-ID"] = make_msgid(domain="gmail.com")
     nachricht["Reply-To"] = absender
     nachricht.set_content(text)
+
+    angehaengt = _anhaengen(nachricht, anhaenge)
+    if angehaengt:
+        print(f"[MAIL] Anhaenge: {', '.join(angehaengt)}")
 
     zeitlimit = int(mail.get("timeout_sekunden", 20))
     try:
