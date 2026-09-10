@@ -407,7 +407,7 @@ HTML = f"""<!doctype html>
 <body>
 <header>
   <div>
-    <div class="wortmarke">Herr Bello <span>&amp;</span> Fräulein Kläff</div>
+    <div class="wortmarke">Bello<span>werk</span></div>
     <div class="unterzeile">KI-Agentenbetrieb · Werkbank für Björn · Stand {now.strftime('%d.%m.%Y %H:%M')}</div>
   </div>
   <div class="statuspille {status_farbe}">Tageslauf: {status_txt}</div>

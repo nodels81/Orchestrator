@@ -6,9 +6,12 @@ Gilt fuer alle Abteilungen. Aenderungen hier wirken sofort ueberall.
 Quelle: Blatt 3 (Wettbewerbsrecherche) und Blatt 5 (Kernserie Fettleder).
 """
 
-MARKE = "Herr Bello und Fraeulein Klaeff"
-INSTAGRAM = "@herr_bello_und_fraeulein_klaef"
-STANDORT = "Hamburg"
+# Der Betrieb heisst nach aussen und auf dem Produkt "Bellowerk" (darunter klein "Manufaktur").
+# "Herr Bello und Frau Wuff" ist der bisherige, kundennahe Betriebsname und die Social-Media-Identitaet.
+MARKE = "Bellowerk"
+MARKE_SOCIAL = "Herr Bello und Frau Wuff"
+INSTAGRAM = "@herr.bello.und.frau.wuff"
+STANDORT = "Hamburg / Altes Land"
 
 POSITIONIERUNG = """
 Premium-Lederzubehoer fuer Hunde aus eigener Werkstatt.
@@ -81,7 +84,9 @@ GESTALTUNG = {
 def als_kontext() -> str:
     """Gibt das Markenwissen als Textblock fuer die System-Prompts der Abteilungen."""
     zeilen = [
-        f"MARKE: {MARKE} ({INSTAGRAM}), {STANDORT}",
+        f"MARKE (Produkt/Manufaktur): {MARKE}",
+        f"KUNDENNAHER NAME / SOCIAL: {MARKE_SOCIAL} ({INSTAGRAM})",
+        f"STANDORT: {STANDORT}",
         "",
         "POSITIONIERUNG:" + POSITIONIERUNG,
         "MARKTLAGE:" + MARKTLUECKE,
