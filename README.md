@@ -62,6 +62,17 @@ Nutze den Agenten web-creative-director: Leitidee und Sektionsfolge für die neu
 Nutze den Agenten web-art-director: Designsystem und Tokens dazu bauen.
 ```
 
+## Konzepte (`konzepte/`)
+
+Vorlagen der Abteilung 01 Innovation, jeweils durch die sieben Prüffragen gelaufen.
+Abgelehnte Konzepte stehen mit Grund am Ende der Datei.
+
+## Gebaute Seiten (`web/`)
+
+`web/entwurfsblaetter.html` zeigt vier Designrichtungen im Vergleich,
+`web/startseite-nachtwerkstatt.html` die gewählte Richtung 03 als Startseite.
+Stand und offene Punkte in `web/README.md`.
+
 ## Auf dem Server (`/opt/bello`)
 
 ```bash

@@ -1,0 +1,750 @@
+<title>Bellowerk Entwurfsblätter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Zilla+Slab:wght@400;600;700&display=swap">
+
+<style>
+/* ══════════════════════════════════════════════════════════════════
+   ZEICHENBRETT — die Hülle. Kühl, technisch, damit die vier warmen
+   Entwürfe darauf wirken wie aufgepinnte Blätter.
+   ══════════════════════════════════════════════════════════════════ */
+:root{
+  --c-bg:#E3E7E5;
+  --c-surface:#F3F5F3;
+  --c-ink:#161B19;
+  --c-mute:#5B6661;
+  --c-line:#C4CBC7;
+  --c-line-soft:#D6DBD8;
+  --c-accent:#2E5C7E;
+  --c-accent-soft:#DCE6ED;
+
+  --korn:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --c-bg:#13171A;
+    --c-surface:#1A2024;
+    --c-ink:#DEE4E2;
+    --c-mute:#909B95;
+    --c-line:#2B3337;
+    --c-line-soft:#232A2E;
+    --c-accent:#82B2D6;
+    --c-accent-soft:#1D2A33;
+  }
+}
+:root[data-theme="dark"]{
+  --c-bg:#13171A;
+  --c-surface:#1A2024;
+  --c-ink:#DEE4E2;
+  --c-mute:#909B95;
+  --c-line:#2B3337;
+  --c-line-soft:#232A2E;
+  --c-accent:#82B2D6;
+  --c-accent-soft:#1D2A33;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--c-bg);
+  color:var(--c-ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.rahmen{max-width:1180px;margin-inline:auto;padding-inline:20px;padding-block:0}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+
+/* ── Kopf ──────────────────────────────────────────────────────── */
+.kopf{padding-block:56px 40px;border-bottom:1px solid var(--c-line)}
+.kopf-marke{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--c-accent);display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;
+}
+.kopf-marke span:last-child{color:var(--c-mute)}
+.kopf h1{
+  font-family:var(--sans);font-weight:600;letter-spacing:-.025em;line-height:1.05;
+  font-size:clamp(2.1rem,1.5rem + 2.8vw,3.5rem);margin-block:18px 20px;max-width:20ch;
+}
+.kopf-text{max-width:62ch;color:var(--c-mute);font-size:16px}
+.kopf-text strong{color:var(--c-ink);font-weight:600}
+
+/* ── Register ──────────────────────────────────────────────────── */
+.register{
+  position:sticky;top:0;z-index:40;background:color-mix(in oklab,var(--c-bg) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--c-line);
+}
+.register-innen{
+  max-width:1180px;margin-inline:auto;padding-inline:20px;
+  display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;
+}
+.register a{
+  flex:0 0 auto;text-decoration:none;padding:13px 14px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--c-mute);
+  border-bottom:2px solid transparent;white-space:nowrap;
+}
+.register a:hover{color:var(--c-ink);border-bottom-color:var(--c-line)}
+.register a b{color:var(--c-accent);font-weight:500;margin-right:7px}
+.register a:focus-visible,.wipe:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}
+
+/* ── Blatt = Spezifikationsstreifen + Artboard ─────────────────── */
+.blatt{padding-block:64px 0;scroll-margin-top:52px}
+.spec{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:start}
+@media (max-width:820px){.spec{grid-template-columns:1fr;gap:26px}}
+
+.spec-nr{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--c-accent);display:flex;align-items:center;gap:12px;margin-bottom:14px;
+}
+.spec-nr::after{content:"";flex:1;height:1px;background:var(--c-line)}
+.spec h2{
+  font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;
+}
+.spec-idee{
+  font-family:"Lora",Georgia,serif;font-size:clamp(1.05rem,1rem + .4vw,1.28rem);
+  line-height:1.45;margin-top:14px;max-width:38ch;
+}
+.spec-warum{color:var(--c-mute);margin-top:14px;max-width:52ch;font-size:14.5px}
+
+.werte{
+  border:1px solid var(--c-line);background:var(--c-surface);border-radius:3px;
+  font-family:var(--mono);font-size:12.5px;
+}
+.werte div{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:9px 14px;border-bottom:1px solid var(--c-line-soft)}
+.werte div:last-child{border-bottom:0}
+.werte dt{color:var(--c-accent);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px;padding-top:2px}
+.werte dd{margin:0;color:var(--c-ink)}
+.werte .risiko dd{color:var(--c-mute)}
+
+.board-huelle{margin-top:32px;position:relative}
+.board-marke{
+  position:absolute;top:-11px;left:20px;z-index:3;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--c-bg);color:var(--c-mute);padding-inline:9px;
+}
+.board{
+  border:1px solid var(--c-line);border-radius:2px;overflow:hidden;position:relative;
+  box-shadow:0 1px 1px rgb(0 0 0/.05),0 18px 40px -26px rgb(0 0 0/.4);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   GEMEINSAME MECHANIK DER ARTBOARDS
+   Jedes Board malt seinen Grund selbst und lebt in seiner eigenen Welt.
+   ══════════════════════════════════════════════════════════════════ */
+.board{--pad:clamp(20px,4vw,54px)}
+.b-nav{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:16px var(--pad);font-size:12px;
+}
+.b-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+@media (max-width:640px){.b-nav ul{display:none}}
+.b-wort{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px}
+.b-korn{position:absolute;inset:0;background-image:var(--korn);opacity:.05;pointer-events:none;mix-blend-mode:multiply}
+.foto{
+  position:relative;display:flex;align-items:flex-end;padding:14px;overflow:hidden;
+  background-image:var(--korn),var(--foto-flaeche);background-blend-mode:soft-light,normal;
+}
+.foto span{
+  font-family:var(--mono);font-size:10px;letter-spacing:.09em;line-height:1.45;
+  background:rgb(0 0 0/.42);color:#F2EFE9;padding:5px 8px;border-radius:2px;backdrop-filter:blur(2px);
+}
+.preis{font-variant-numeric:tabular-nums}
+
+/* ══════════════════════════════════════════════════════════════════
+   BLATT 01 — WERKBANK
+   Redaktionell. Die Serife trägt, das Foto beweist.
+   ══════════════════════════════════════════════════════════════════ */
+.w1{
+  --bg:#E9E9E3;--ink:#1E211B;--mute:#5C6157;--oliv:#454E33;--cognac:#7A4E24;--linie:#CFCFC4;
+  background:var(--bg);color:var(--ink);font-family:"Lora",Georgia,serif;
+}
+.w1 .b-nav{border-bottom:1px solid var(--linie);color:var(--mute)}
+.w1 .b-wort{font-family:"Lora",serif;color:var(--ink);letter-spacing:.2em}
+.w1 .b-nav ul{font-size:13px}
+.w1-hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);padding:clamp(34px,5vw,72px) var(--pad) clamp(30px,4vw,56px);align-items:end}
+@media (max-width:760px){.w1-hero{grid-template-columns:1fr}}
+.w1-hero h3{
+  font-weight:500;letter-spacing:-.022em;line-height:1.02;
+  font-size:clamp(2.1rem,1.2rem + 4.2vw,4.15rem);
+}
+.w1-hero h3 em{font-style:italic;color:var(--cognac)}
+.w1-lead{margin-top:22px;max-width:44ch;font-size:clamp(1rem,.95rem + .25vw,1.12rem);color:var(--mute);line-height:1.62}
+.w1-marke{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--oliv);margin-bottom:20px}
+.w1-hero .foto{--foto-flaeche:linear-gradient(158deg,#4A4436 0%,#2A2620 55%,#3D3529 100%);aspect-ratio:4/5;border-radius:2px}
+
+/* Vergleich neu / getragen */
+.w1-vergleich{padding:clamp(28px,4vw,52px) var(--pad);border-top:1px solid var(--linie);background:#E4E4DC}
+.w1-vergleich h4{font-size:clamp(1.15rem,1rem + .7vw,1.55rem);font-weight:500;letter-spacing:-.015em}
+.w1-vergleich p{color:var(--mute);max-width:52ch;margin-top:8px;font-size:14.5px}
+.wipe-box{position:relative;margin-top:22px;border-radius:2px;overflow:hidden;aspect-ratio:21/8;min-height:140px}
+.wipe-lage{position:absolute;inset:0;background-image:var(--korn),var(--flaeche);background-blend-mode:soft-light,normal}
+.wipe-a{--flaeche:linear-gradient(96deg,#7C5A34,#5F4326 62%,#6E4E2C)}
+.wipe-b{--flaeche:linear-gradient(96deg,#3E2E1C,#241A10 48%,#4A3520);clip-path:inset(0 0 0 var(--pos,55%))}
+.wipe-naht{position:absolute;top:0;bottom:0;left:var(--pos,55%);width:1px;background:#EDE8DD;box-shadow:0 0 0 1px rgb(0 0 0 / .3)}
+.wipe-schild{position:absolute;bottom:10px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#F0EBE1;background:rgb(0 0 0/.45);padding:4px 7px;border-radius:2px}
+.wipe-schild.links{left:12px}
+.wipe-schild.rechts{right:12px}
+.wipe{-webkit-appearance:none;appearance:none;position:absolute;inset:0;width:100%;height:100%;background:transparent;cursor:ew-resize;margin:0}
+.wipe::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:100%;background:transparent;cursor:ew-resize}
+.wipe::-moz-range-thumb{width:34px;height:140px;background:transparent;border:0;cursor:ew-resize}
+
+/* Produktzeile */
+.w1-zeile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,34px);padding:clamp(28px,4vw,56px) var(--pad) clamp(34px,5vw,64px);border-top:1px solid var(--linie)}
+@media (max-width:760px){.w1-zeile{grid-template-columns:1fr;gap:26px}}
+.w1-karte .foto{aspect-ratio:1;border-radius:2px;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.w1-karte:hover .foto{transform:translateY(-4px)}
+.w1-karte h5{margin:16px 0 0;font-weight:500;font-size:1.06rem;letter-spacing:-.01em}
+.w1-karte p{color:var(--mute);font-size:13.5px;margin-top:4px;line-height:1.5}
+.w1-karte .preis{display:block;margin-top:10px;font-family:var(--mono);font-size:13px;color:var(--cognac)}
+
+/* ══════════════════════════════════════════════════════════════════
+   BLATT 02 — PRÜFSTAND
+   Der Praxistest wird zur Gestaltung. Prüfbericht statt Werbeseite.
+   ══════════════════════════════════════════════════════════════════ */
+.w2{
+  --bg:#EFF0ED;--ink:#15181B;--mute:#5E6862;--linie:#CFD4CE;--stempel:#93341F;
+  background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13px;
+}
+.w2 .b-nav{border-bottom:1px solid var(--ink);color:var(--mute);font-size:11px;letter-spacing:.06em}
+.w2 .b-wort{font-family:"Archivo",sans-serif;font-weight:700;letter-spacing:.16em}
+.w2-kopf{padding:clamp(26px,3.5vw,48px) var(--pad) clamp(20px,3vw,32px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start}
+@media (max-width:700px){.w2-kopf{grid-template-columns:1fr}}
+.w2-kopf h3{
+  font-family:"Archivo",system-ui,sans-serif;font-weight:700;letter-spacing:-.03em;line-height:.94;
+  font-size:clamp(2.3rem,1.3rem + 4.6vw,4.4rem);text-transform:uppercase;
+}
+.w2-zeile-klein{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stempel);margin-bottom:14px}
+.w2-lead{margin-top:16px;max-width:50ch;color:var(--mute);line-height:1.6}
+.w2-stempel{
+  border:2px solid var(--stempel);color:var(--stempel);padding:10px 14px;border-radius:2px;
+  transform:rotate(-3deg);text-align:center;font-family:"Archivo",sans-serif;font-weight:700;
+  letter-spacing:.1em;font-size:12px;line-height:1.25;flex:0 0 auto;
+}
+.w2-stempel small{display:block;font-family:var(--mono);font-weight:400;letter-spacing:.06em;font-size:9.5px;margin-top:3px;opacity:.85}
+.w2-tabelle{width:100%;border-collapse:collapse;font-size:12.5px}
+.w2-tabelle-huelle{overflow-x:auto;padding-inline:var(--pad);padding-bottom:clamp(24px,3vw,40px)}
+.w2-tabelle th{
+  text-align:left;font-weight:500;color:var(--stempel);font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;border-bottom:1px solid var(--ink);padding:0 14px 7px 0;white-space:nowrap;
+}
+.w2-tabelle td{padding:9px 14px 9px 0;border-bottom:1px solid var(--linie);vertical-align:top}
+.w2-tabelle tbody tr:hover{background:#E5E7E2}
+.w2-tabelle .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.w2-tabelle .befund{color:var(--mute)}
+.w2-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+@media (max-width:700px){.w2-raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.w2-feld{padding:20px var(--pad) 22px;border-right:1px solid var(--linie)}
+.w2-raster .w2-feld{padding-inline:clamp(14px,2vw,22px)}
+.w2-feld:last-child{border-right:0}
+.w2-feld b{display:block;font-family:"Archivo",sans-serif;font-size:clamp(1.5rem,1.1rem + 1.6vw,2.3rem);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.w2-feld span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.w2-produkt{display:grid;grid-template-columns:200px minmax(0,1fr) auto;gap:clamp(16px,2.6vw,32px);align-items:center;padding:22px var(--pad);border-top:1px solid var(--linie)}
+@media (max-width:700px){.w2-produkt{grid-template-columns:1fr;gap:14px}}
+.w2-produkt .foto{--foto-flaeche:linear-gradient(140deg,#5A4A34,#2B231A);aspect-ratio:16/10;border-radius:2px}
+.w2-produkt h5{font-family:"Archivo",sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;margin:0}
+.w2-produkt p{color:var(--mute);font-size:12px;margin-top:5px;line-height:1.55;max-width:46ch}
+.w2-knopf{
+  font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--ink);color:var(--bg);border:0;padding:13px 20px;border-radius:2px;cursor:pointer;white-space:nowrap;
+}
+.w2-preis{font-family:"Archivo",sans-serif;font-weight:700;font-size:1.3rem;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
+/* ══════════════════════════════════════════════════════════════════
+   BLATT 03 — NACHTWERKSTATT
+   Dunkel, Messing, ein einziger Glanzmoment.
+   ══════════════════════════════════════════════════════════════════ */
+.w3{
+  --bg:#0E0C0A;--flaeche:#171310;--ink:#F0E8DB;--mute:#9C8F7E;--linie:#2A231C;
+  --messing:#E3C376;
+  background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;
+}
+.w3 .b-korn{mix-blend-mode:overlay;opacity:.14}
+.w3 .b-nav{border-bottom:1px solid var(--linie);color:var(--mute);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.w3 .b-wort{
+  background:linear-gradient(96deg,#8A6A2C,var(--messing) 42%,#F6E7BC 52%,#A8842F 70%,#7A5C24);
+  -webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.24em;
+}
+.w3-hero{position:relative;padding:clamp(46px,7vw,104px) var(--pad) clamp(38px,5vw,80px);text-align:center;overflow:hidden}
+.w3-hero::before{
+  content:"";position:absolute;inset:-40% -10% auto;height:150%;
+  background:radial-gradient(58% 46% at 50% 34%,rgb(227 195 118/.14),transparent 68%);pointer-events:none;
+}
+.w3-eyebrow{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);position:relative}
+.w3-hero h3{
+  font-family:"Bodoni Moda",Didot,Georgia,serif;font-weight:400;
+  font-size:clamp(2.4rem,1.2rem + 5.6vw,5.4rem);line-height:.98;letter-spacing:-.02em;
+  margin-block:22px 0;position:relative;max-width:15ch;margin-inline:auto;
+}
+.w3-hero h3 b{
+  font-weight:600;background:linear-gradient(94deg,#7E6029 0%,var(--messing) 30%,#FBF0D2 46%,#C79E4A 62%,#7A5C24 100%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:glanz 7s cubic-bezier(.55,0,.45,1) infinite;
+}
+@keyframes glanz{0%,58%{background-position:110% 0}82%,100%{background-position:-10% 0}}
+.w3-lead{color:var(--mute);max-width:46ch;margin:22px auto 0;font-size:15px;line-height:1.62;position:relative}
+.w3-linie{height:1px;background:linear-gradient(90deg,transparent,rgb(227 195 118/.55),transparent);margin-top:clamp(34px,4vw,56px)}
+.w3-zeile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--linie)}
+@media (max-width:760px){.w3-zeile{grid-template-columns:1fr}}
+.w3-karte{background:var(--flaeche);padding:clamp(18px,2.4vw,26px);transition:background .4s ease}
+.w3-karte:hover{background:#1E1811}
+.w3-karte .foto{--foto-flaeche:radial-gradient(120% 90% at 30% 18%,#4A3B27,#171310 72%);aspect-ratio:5/4;border-radius:2px;border:1px solid var(--linie)}
+.w3-karte h5{margin:16px 0 0;font-size:1.02rem;font-weight:500;letter-spacing:.01em}
+.w3-karte p{color:var(--mute);font-size:12.5px;margin-top:5px;line-height:1.5}
+.w3-karte .preis{
+  display:block;margin-top:12px;font-family:"Bodoni Moda",Georgia,serif;font-size:1.15rem;color:var(--messing);
+}
+.w3-fuss{display:flex;flex-wrap:wrap;gap:10px 26px;padding:20px var(--pad);border-top:1px solid var(--linie);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+
+/* ══════════════════════════════════════════════════════════════════
+   BLATT 04 — WERKVERZEICHNIS
+   Hardware-Katalog. Zweite Druckfarbe, Tafelnummern, bemaßte Zeichnung.
+   ══════════════════════════════════════════════════════════════════ */
+.w4{
+  --bg:#E4E1D4;--ink:#26221A;--mute:#5E5849;--rot:#8E2B1F;--rule:#B6B0A0;
+  background:var(--bg);color:var(--ink);font-family:"Zilla Slab",Georgia,serif;
+}
+.w4 .b-korn{opacity:.09}
+.w4 .b-nav{border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.w4 .b-wort{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--ink)}
+.w4-kopf{text-align:center;padding:clamp(26px,3.6vw,44px) var(--pad) clamp(20px,2.6vw,30px);border-bottom:1px solid var(--rule)}
+.w4-kopf .tafel{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--rot)}
+.w4-kopf h3{font-weight:700;font-size:clamp(1.9rem,1.2rem + 3.2vw,3.4rem);line-height:1.02;letter-spacing:-.012em;margin-block:12px 0}
+.w4-kopf p{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-top:12px;letter-spacing:.04em}
+.w4-tafel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border-bottom:1px solid var(--rule)}
+@media (max-width:760px){.w4-tafel{grid-template-columns:1fr}}
+.w4-zeichnung{padding:clamp(20px,3vw,36px);border-right:1px solid var(--rule);display:flex;align-items:center;justify-content:center}
+@media (max-width:760px){.w4-zeichnung{border-right:0;border-bottom:1px solid var(--rule)}}
+.w4-zeichnung svg{width:100%;height:auto;max-width:460px}
+.w4-text{padding:clamp(20px,3vw,36px)}
+.w4-text h4{font-weight:700;font-size:1.35rem;letter-spacing:-.01em}
+.w4-text .unter{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--rot);margin-bottom:8px}
+.w4-text p{color:var(--mute);font-size:14px;margin-top:10px;line-height:1.6;max-width:44ch}
+.w4-daten{margin-top:18px;font-family:var(--mono);font-size:12px;border-top:1px solid var(--rule)}
+.w4-daten div{display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--rule)}
+.w4-daten dt{color:var(--mute);white-space:nowrap}
+.w4-daten .fuell{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-3px)}
+.w4-daten dd{margin:0;font-variant-numeric:tabular-nums;white-space:nowrap}
+.w4-liste{padding:clamp(20px,3vw,34px) var(--pad) clamp(26px,3.4vw,44px)}
+.w4-liste h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--rot);margin-bottom:14px}
+.w4-liste ol{list-style:none;margin:0;padding:0;font-size:14.5px}
+.w4-liste li{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--rule)}
+.w4-liste li:hover{color:var(--rot)}
+.w4-liste .nr{font-family:var(--mono);font-size:11px;color:var(--rot);width:34px;flex:0 0 auto}
+.w4-liste .fuell{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-4px);min-width:20px}
+.w4-liste .preis{font-family:var(--mono);font-size:13px}
+
+/* ══════════════════════════════════════════════════════════════════
+   VERGLEICH UND EMPFEHLUNG
+   ══════════════════════════════════════════════════════════════════ */
+.abschluss{padding-block:72px 88px;margin-top:72px;border-top:1px solid var(--c-line)}
+.abschluss h2{font-size:clamp(1.5rem,1.2rem + 1.3vw,2.1rem);font-weight:600;letter-spacing:-.02em}
+.tab-huelle{overflow-x:auto;margin-top:26px}
+table.vergleich{width:100%;border-collapse:collapse;font-size:13.5px;min-width:660px}
+table.vergleich th{
+  text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--c-accent);border-bottom:1px solid var(--c-line);padding:0 16px 9px 0;font-weight:500;
+}
+table.vergleich td{padding:12px 16px 12px 0;border-bottom:1px solid var(--c-line-soft);vertical-align:top;color:var(--c-mute)}
+table.vergleich td:first-child{color:var(--c-ink);font-weight:600;white-space:nowrap}
+.empfehlung{
+  margin-top:34px;border:1px solid var(--c-accent);border-left-width:3px;background:var(--c-accent-soft);
+  border-radius:3px;padding:clamp(20px,3vw,30px);
+}
+.empfehlung h3{font-size:1.15rem;font-weight:600;letter-spacing:-.015em}
+.empfehlung p{margin-top:12px;max-width:66ch;font-size:14.5px}
+.empfehlung p + p{margin-top:10px}
+.naechste{margin-top:26px;display:grid;gap:10px;font-size:14px}
+.naechste div{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start}
+.naechste b{font-family:var(--mono);font-size:11px;color:var(--c-accent);padding-top:3px}
+.fuss{color:var(--c-mute);font-size:12.5px;font-family:var(--mono);margin-top:40px;line-height:1.7}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
+
+<div class="rahmen kopf">
+  <div class="kopf-marke">
+    <span>Bellowerk Manufaktur</span><span>Abteilung 06 Web &amp; Shop</span><span>Entwurfsstand 10.09.2026</span>
+  </div>
+  <h1>Vier Wege für den Bellowerk-Shop</h1>
+  <p class="kopf-text">Jedes Blatt zeigt dieselbe Leitidee in einer anderen Handschrift: <strong>Das Leder wurde vor dem Verkauf benutzt.</strong> Oben stehen die Kennwerte, darunter der gebaute Ausschnitt aus der Startseite. Alle Bildflächen sind zugleich die Aufnahmeanweisung: Was daraufsteht, muss fotografiert werden. Namen, Tage und Wetterangaben sind Platzhalter.</p>
+</div>
+
+<nav class="register" aria-label="Entwurfsblätter">
+  <div class="register-innen">
+    <a href="#blatt-1"><b>01</b>Werkbank</a>
+    <a href="#blatt-2"><b>02</b>Prüfstand</a>
+    <a href="#blatt-3"><b>03</b>Nachtwerkstatt</a>
+    <a href="#blatt-4"><b>04</b>Werkverzeichnis</a>
+    <a href="#vergleich"><b>05</b>Vergleich &amp; Empfehlung</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ BLATT 01 ═══════════════ -->
+<section class="rahmen blatt" id="blatt-1">
+  <div class="spec">
+    <div>
+      <div class="spec-nr">Blatt 01</div>
+      <h2>Werkbank</h2>
+      <p class="spec-idee">Eine Reportage über ein Handwerk, in der man nebenbei kaufen kann.</p>
+      <p class="spec-warum">Die Serife trägt die Seite, das Foto liefert den Beweis. Ruhig, breit gesetzt, viel Luft. Der Schieber im Vergleichsbild zeigt dasselbe Halsband neu und nach zwölf Monaten. Das ist die günstigste Art, den Preis zu erklären.</p>
+    </div>
+    <dl class="werte">
+      <div><dt>Schrift</dt><dd>Lora 500 · Display bis 66 px · Ziffern in Mono</dd></div>
+      <div><dt>Farbe</dt><dd>Papier #E9E9E3 · Oliv #454E33 · Cognac nur am Preis</dd></div>
+      <div><dt>Bewegung</dt><dd>Karten heben 4 px · Schieber als Eingabe · kein WebGL</dd></div>
+      <div><dt>Fotos</dt><dd>7 neu, davon 2 Paare neu/getragen</dd></div>
+      <div><dt>Aufwand</dt><dd>gering · Umsetzung ca. 2 Wochen</dd></div>
+      <div class="risiko"><dt>Risiko</dt><dd>Ohne starke Fotos fällt die Seite in sich zusammen</dd></div>
+    </dl>
+  </div>
+
+  <div class="board-huelle">
+    <span class="board-marke">Artboard · Entwurf · Platzhalterinhalte</span>
+    <div class="board w1">
+      <div class="b-korn"></div>
+      <div class="b-nav">
+        <span class="b-wort">Bellowerk</span>
+        <ul><li>Halsbänder</li><li>Leinen</li><li>Werkstatt</li><li>Praxistest</li><li>Gassi &amp; Pension</li></ul>
+        <span>Warenkorb (0)</span>
+      </div>
+
+      <div class="w1-hero">
+        <div>
+          <div class="w1-marke">Hamburg · seit 2019 · Fettleder und Messing</div>
+          <h3>Eine Saison an fremden Hunden, <em>bevor es in den Shop geht.</em></h3>
+          <p class="w1-lead">Jedes Modell hängt täglich am Gassi-Service, in der Pension und im Training. Was nach einer Saison noch trägt und dabei besser aussieht als am ersten Tag, kommt in den Verkauf. Der Rest wird geändert.</p>
+        </div>
+        <div class="foto" style="--foto-flaeche:linear-gradient(158deg,#4A4436 0%,#2A2620 55%,#3D3529 100%)">
+          <span>FOTO 01 · Halsband am arbeitenden Hund, Regen<br>Seitenlicht, 85 mm, Hochformat 4:5</span>
+        </div>
+      </div>
+
+      <div class="w1-vergleich">
+        <h4>Dasselbe Halsband, zwölf Monate auseinander</h4>
+        <p>Links am Tag der Fertigung, rechts nach einer Saison im Betrieb. Fettleder dunkelt nach und nimmt an den Kanten Glanz an. Ziehen Sie den Regler.</p>
+        <div class="wipe-box">
+          <div class="wipe-lage wipe-a"></div>
+          <div class="wipe-lage wipe-b" id="wipeB"></div>
+          <div class="wipe-naht" id="wipeNaht"></div>
+          <span class="wipe-schild links">FOTO 02a · neu</span>
+          <span class="wipe-schild rechts">FOTO 02b · nach 12 Monaten</span>
+          <input class="wipe" id="wipe" type="range" min="0" max="100" value="55" aria-label="Vergleich zwischen neuem und getragenem Leder">
+        </div>
+      </div>
+
+      <div class="w1-zeile">
+        <div class="w1-karte">
+          <div class="foto" style="--foto-flaeche:linear-gradient(150deg,#6B4E2E,#3A2A19)"><span>FOTO 04 · HB-01 auf Eiche, Makro</span></div>
+          <h5>HB-01 Halsband Fettleder</h5>
+          <p>Einlagig, ohne Naht. 20 bis 40 mm, vier Größen. Schnalle und Ringe aus massivem Messing.</p>
+          <span class="preis">89,00 €</span>
+        </div>
+        <div class="w1-karte">
+          <div class="foto" style="--foto-flaeche:linear-gradient(150deg,#5E4A32,#2E241A)"><span>FOTO 05 · HB-02 Flechtung, Aufsicht</span></div>
+          <h5>HB-02 Halsband geflochten</h5>
+          <p>Halsteil im dreisträngigen Mystery Braid, aus einem Stück geschnitten. Flache Enden, O-Ring.</p>
+          <span class="preis">99,00 €</span>
+        </div>
+        <div class="w1-karte">
+          <div class="foto" style="--foto-flaeche:linear-gradient(150deg,#4F4030,#241C14)"><span>FOTO 06 · LE-01 aufgerollt, Werkbank</span></div>
+          <h5>LE-01 Führleine 3,00 m</h5>
+          <p>Dreifach verstellbar, sechs Führlängen. Ringe bei 45, 140 und 245 cm.</p>
+          <span class="preis">129,00 €</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BLATT 02 ═══════════════ -->
+<section class="rahmen blatt" id="blatt-2">
+  <div class="spec">
+    <div>
+      <div class="spec-nr">Blatt 02</div>
+      <h2>Prüfstand</h2>
+      <p class="spec-idee">Der Praxistest ist nicht das Argument auf der Seite, er ist die Seite.</p>
+      <p class="spec-warum">Aufgebaut wie ein Prüfbericht: welcher Hund, wie lange, bei welchem Wetter, mit welchem Befund. Das kann kein Wettbewerber kopieren, ohne selbst einen Hundebetrieb zu führen. Verkauft über Beweis statt über Stimmung und braucht dafür weniger perfekte Fotos.</p>
+    </div>
+    <dl class="werte">
+      <div><dt>Schrift</dt><dd>Archivo 700 versal · IBM Plex Mono für alle Daten</dd></div>
+      <div><dt>Farbe</dt><dd>Prüfpapier #EFF0ED · Stempelrot #93341F als einzige Farbe</dd></div>
+      <div><dt>Bewegung</dt><dd>fast keine · Zeilen heben sich beim Überfahren</dd></div>
+      <div><dt>Fotos</dt><dd>4 neu · dokumentarisch, dürfen rau sein</dd></div>
+      <div><dt>Aufwand</dt><dd>mittel · Björn muss die Tests wirklich protokollieren</dd></div>
+      <div class="risiko"><dt>Risiko</dt><dd>Wirkt kühl. Lebt davon, dass die Daten echt sind</dd></div>
+    </dl>
+  </div>
+
+  <div class="board-huelle">
+    <span class="board-marke">Artboard · Entwurf · Platzhalterinhalte</span>
+    <div class="board w2">
+      <div class="b-korn"></div>
+      <div class="b-nav">
+        <span class="b-wort">Bellowerk</span>
+        <ul><li>Prüfberichte</li><li>Halsbänder</li><li>Leinen</li><li>Werkstatt</li></ul>
+        <span>Warenkorb (0)</span>
+      </div>
+
+      <div class="w2-kopf">
+        <div>
+          <div class="w2-zeile-klein">Prüfbericht HB-01 · Fettleder 25 mm · Serie 2025/26</div>
+          <h3>212 Tage.<br>Vier Hunde.<br>Kein Bruch.</h3>
+          <p class="w2-lead">Jedes Modell läuft eine Saison im eigenen Betrieb, bevor es in den Verkauf geht. Getragen wird täglich, bei jedem Wetter, von Hunden, die uns nicht gehören. Was reißt, dehnt oder scheuert, steht hier.</p>
+        </div>
+        <div class="w2-stempel">Serie freigegeben<small>Werkstatt Hamburg · 04/2026</small></div>
+      </div>
+
+      <div class="w2-tabelle-huelle">
+        <table class="w2-tabelle">
+          <thead>
+            <tr><th>Hund</th><th>Größe</th><th class="num">Tage</th><th>Belastung</th><th>Befund nach Prüfzeit</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nala, Labrador</td><td>M · 25 mm</td><td class="num">212</td><td>täglich, Regen und Salzwasser</td><td class="befund">Leder 1,5 Töne nachgedunkelt. Messing matt, kein Grünspan. Löcher unverändert.</td></tr>
+            <tr><td>Rocco, Schäferhund</td><td>L · 30 mm</td><td class="num">186</td><td>Training, Zug an der Leine</td><td class="befund">Kante am dritten Loch leicht gedehnt, 1 mm. Schnalle fest.</td></tr>
+            <tr><td>Fine, Mischling</td><td>S · 20 mm</td><td class="num">203</td><td>Pension, Spiel mit Artgenossen</td><td class="befund">Zwei Kratzer auf der Narbenseite, nicht durchgehend. Patch fest.</td></tr>
+            <tr><td>Bo, Rhodesian Ridgeback</td><td>XL · 40 mm</td><td class="num">141</td><td>täglich, Wald und Schlamm</td><td class="befund">Nach Fettung wie neu. Buchschrauben einmal nachgezogen.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="w2-raster">
+        <div class="w2-feld"><b>742</b><span>Prüftage gesamt</span></div>
+        <div class="w2-feld"><b>4</b><span>Hunde im Test</span></div>
+        <div class="w2-feld"><b>1</b><span>Änderung an der Serie</span></div>
+        <div class="w2-feld"><b>0</b><span>Brüche</span></div>
+      </div>
+
+      <div class="w2-produkt">
+        <div class="foto"><span>FOTO 07 · HB-01 nach Prüfzeit, ungeputzt</span></div>
+        <div>
+          <h5>HB-01 Halsband Fettleder</h5>
+          <p>Einlagig, ohne Naht, aus einem Stück geschnitten. Schnalle, Ringe und Buchschrauben aus massivem Messing. Vier Größen von 20 bis 40 mm. Geprüft wie oben.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <span class="w2-preis">89,00 €</span>
+          <button class="w2-knopf" type="button">In den Warenkorb</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BLATT 03 ═══════════════ -->
+<section class="rahmen blatt" id="blatt-3">
+  <div class="spec">
+    <div>
+      <div class="spec-nr">Blatt 03</div>
+      <h2>Nachtwerkstatt</h2>
+      <p class="spec-idee">Messing im Streiflicht. Die Seite ist dunkel, damit das Material leuchtet.</p>
+      <p class="spec-warum">Der Hochglanz-Weg. Tiefschwarzer Grund, hoher Schriftkontrast, ein einziger Glanzmoment: der Reflex wandert über die Überschrift, im Shader später über das echte Leder. Hebt die Preiswahrnehmung am stärksten und ist am schnellsten zu ruinieren, wenn man einen zweiten Effekt dazunimmt.</p>
+    </div>
+    <dl class="werte">
+      <div><dt>Schrift</dt><dd>Bodoni Moda bis 86 px · Archivo für alles Bedienbare</dd></div>
+      <div><dt>Farbe</dt><dd>Grund #0E0C0A · Messingverlauf statt Goldfläche</dd></div>
+      <div><dt>Bewegung</dt><dd>ein Glanzlauf alle 7 s · später WebGL-Shader auf Lederscan</dd></div>
+      <div><dt>Fotos</dt><dd>5 neu · dunkler Grund, hartes Streiflicht, zwingend gut</dd></div>
+      <div><dt>Aufwand</dt><dd>hoch · Shader und Standbild-Ersatz kommen dazu</dd></div>
+      <div class="risiko"><dt>Risiko</dt><dd>Kann nach Luxusmode aussehen statt nach Werkstatt</dd></div>
+    </dl>
+  </div>
+
+  <div class="board-huelle">
+    <span class="board-marke">Artboard · Entwurf · Platzhalterinhalte</span>
+    <div class="board w3">
+      <div class="b-korn"></div>
+      <div class="b-nav">
+        <span class="b-wort">Bellowerk</span>
+        <ul><li>Kollektion</li><li>Material</li><li>Werkstatt</li><li>Maßanfertigung</li></ul>
+        <span>Warenkorb (0)</span>
+      </div>
+
+      <div class="w3-hero">
+        <div class="w3-eyebrow">Fettleder · Messing massiv · Hamburg</div>
+        <h3>Messing altert.<br>Leder auch. <b>Beides zu Ihren Gunsten.</b></h3>
+        <p class="w3-lead">Kein Lack, keine Beschichtung, nichts, was abplatzen kann. Was Sie nach fünf Jahren in der Hand halten, ist dunkler, glatter und fester als am ersten Tag.</p>
+        <div class="w3-linie"></div>
+      </div>
+
+      <div class="w3-zeile">
+        <div class="w3-karte">
+          <div class="foto"><span>FOTO 08 · Schnalle im Streiflicht, Makro</span></div>
+          <h5>HB-01 Halsband Fettleder</h5>
+          <p>Einlagig, ohne Naht. Vier Größen, fünf Farben.</p>
+          <span class="preis">89,00 €</span>
+        </div>
+        <div class="w3-karte">
+          <div class="foto"><span>FOTO 09 · Flechtung schräg, harter Kontrast</span></div>
+          <h5>HB-02 Halsband geflochten</h5>
+          <p>Mystery Braid aus einem Stück. O-Ring, flache Enden.</p>
+          <span class="preis">99,00 €</span>
+        </div>
+        <div class="w3-karte">
+          <div class="foto"><span>FOTO 10 · LE-01 hängend, Gegenlicht</span></div>
+          <h5>LE-01 Führleine 3,00 m</h5>
+          <p>Sechs Führlängen, Ringe bei 45, 140 und 245 cm.</p>
+          <span class="preis">129,00 €</span>
+        </div>
+      </div>
+
+      <div class="w3-fuss">
+        <span>Versand ab 120 € frei</span><span>30 Tage Rückgabe</span><span>Reparatur statt Ersatz</span><span>Aus dem eigenen Betrieb geprüft</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BLATT 04 ═══════════════ -->
+<section class="rahmen blatt" id="blatt-4">
+  <div class="spec">
+    <div>
+      <div class="spec-nr">Blatt 04</div>
+      <h2>Werkverzeichnis</h2>
+      <p class="spec-idee">Ein Werkstattkatalog von 1928, der bestellen kann.</p>
+      <p class="spec-warum">Zweite Druckfarbe, Tafelnummern, bemaßte Zeichnungen aus dem Tech Pack, Preisliste mit Punktlinien. Nutzt Unterlagen, die bereits im Repo liegen, und funktioniert auch mit wenigen Fotos. Der eigenständigste der vier Wege und der, der am ehesten polarisiert.</p>
+    </div>
+    <dl class="werte">
+      <div><dt>Schrift</dt><dd>Zilla Slab 700 · Mono für Tafelnummern und Maße</dd></div>
+      <div><dt>Farbe</dt><dd>Papier #E4E1D4 · Katalogrot #8E2B1F als zweite Farbe</dd></div>
+      <div><dt>Bewegung</dt><dd>keine · Letternsatz bewegt sich nicht</dd></div>
+      <div><dt>Fotos</dt><dd>3 neu · der Rest sind Zeichnungen aus sourcing/</dd></div>
+      <div><dt>Aufwand</dt><dd>gering bis mittel · Zeichnungen existieren bereits</dd></div>
+      <div class="risiko"><dt>Risiko</dt><dd>Kann altmodisch statt zeitlos wirken, wenn zu brav gesetzt</dd></div>
+    </dl>
+  </div>
+
+  <div class="board-huelle">
+    <span class="board-marke">Artboard · Entwurf · Platzhalterinhalte</span>
+    <div class="board w4">
+      <div class="b-korn"></div>
+      <div class="b-nav">
+        <span class="b-wort">Bellowerk</span>
+        <ul><li>Tafel I Halsbänder</li><li>Tafel II Leinen</li><li>Tafel III Zubehör</li><li>Werkstatt</li></ul>
+        <span>Warenkorb (0)</span>
+      </div>
+
+      <div class="w4-kopf">
+        <div class="tafel">Werkverzeichnis · Tafel I</div>
+        <h3>Halsbänder aus Fettleder</h3>
+        <p>Maße in Millimetern · Beschläge Messing massiv · gefertigt in Hamburg</p>
+      </div>
+
+      <div class="w4-tafel">
+        <div class="w4-zeichnung">
+          <svg viewBox="0 0 460 210" role="img" aria-label="Bemaßte Zeichnung des Halsbands HB-01 mit Schnalle, Löchern und O-Ring">
+            <g fill="none" stroke="#26221A" stroke-width="1.6" stroke-linejoin="round">
+              <rect x="52" y="74" width="352" height="34" rx="17"></rect>
+              <rect x="70" y="74" width="34" height="34" rx="3"></rect>
+              <line x1="87" y1="74" x2="87" y2="108"></line>
+              <circle cx="392" cy="91" r="11"></circle>
+              <rect x="286" y="80" width="52" height="22" rx="2"></rect>
+            </g>
+            <g fill="#26221A">
+              <circle cx="150" cy="91" r="3.4"></circle><circle cx="176" cy="91" r="3.4"></circle>
+              <circle cx="202" cy="91" r="3.4"></circle><circle cx="228" cy="91" r="3.4"></circle>
+              <circle cx="254" cy="91" r="3.4"></circle>
+              <circle cx="296" cy="91" r="2.6"></circle><circle cx="328" cy="91" r="2.6"></circle>
+            </g>
+            <g stroke="#8E2B1F" stroke-width="1" fill="none">
+              <line x1="52" y1="140" x2="404" y2="140"></line>
+              <line x1="52" y1="134" x2="52" y2="146"></line><line x1="404" y1="134" x2="404" y2="146"></line>
+              <line x1="424" y1="74" x2="424" y2="108"></line>
+              <line x1="418" y1="74" x2="430" y2="74"></line><line x1="418" y1="108" x2="430" y2="108"></line>
+              <line x1="150" y1="60" x2="254" y2="60"></line>
+              <line x1="150" y1="54" x2="150" y2="66"></line><line x1="254" y1="54" x2="254" y2="66"></line>
+            </g>
+            <g fill="#8E2B1F" font-family="IBM Plex Mono, monospace" font-size="10.5">
+              <text x="228" y="156" text-anchor="middle">480 mm · Größe M</text>
+              <text x="200" y="48" text-anchor="middle">5 × 26 mm Lochabstand</text>
+              <text x="437" y="95">25</text>
+            </g>
+            <g fill="#5E5849" font-family="IBM Plex Mono, monospace" font-size="9.5">
+              <text x="87" y="128" text-anchor="middle">Schnalle</text>
+              <text x="312" y="120" text-anchor="middle">Patch, 2 Buchschrauben</text>
+              <text x="392" y="122" text-anchor="middle">O-Ring</text>
+            </g>
+          </svg>
+        </div>
+        <div class="w4-text">
+          <div class="unter">Nr. HB-01</div>
+          <h4>Halsband Fettleder, einlagig</h4>
+          <p>Aus einem Stück geschnitten, ohne Naht und ohne Niete. Kanten geschliffen und gewachst. Schnalle, O-Ring und Buchschrauben aus massivem Messing, unlackiert.</p>
+          <dl class="w4-daten">
+            <div><dt>Breite</dt><span class="fuell"></span><dd>20 / 25 / 30 / 40 mm</dd></div>
+            <div><dt>Größen</dt><span class="fuell"></span><dd>S bis XL</dd></div>
+            <div><dt>Lederstärke</dt><span class="fuell"></span><dd>3,5 mm</dd></div>
+            <div><dt>Farben</dt><span class="fuell"></span><dd>Grau, Dunkelbraun, Oliv, Cognac, Schwarz</dd></div>
+            <div><dt>Prüfzeit</dt><span class="fuell"></span><dd>212 Tage</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="w4-liste">
+        <h4>Preisliste Tafel I bis III</h4>
+        <ol>
+          <li><span class="nr">HB-01</span> Halsband Fettleder, einlagig, ohne Naht <span class="fuell"></span> <span class="preis">89,00 €</span></li>
+          <li><span class="nr">HB-02</span> Halsband geflochten, Mystery Braid <span class="fuell"></span> <span class="preis">99,00 €</span></li>
+          <li><span class="nr">LE-01</span> Führleine 3,00 m, sechs Führlängen <span class="fuell"></span> <span class="preis">129,00 €</span></li>
+          <li><span class="nr">HS-01</span> Handschlaufe, Umfang 50 cm <span class="fuell"></span> <span class="preis">39,00 €</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VERGLEICH ═══════════════ -->
+<section class="rahmen abschluss" id="vergleich">
+  <h2>Was die vier Wege unterscheidet</h2>
+  <div class="tab-huelle">
+    <table class="vergleich">
+      <thead>
+        <tr><th>Weg</th><th>Verkauft über</th><th>Preiswirkung</th><th>Fotobedarf</th><th>Aufwand</th><th>Größte Gefahr</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01 Werkbank</td><td>Stimmung und Handwerk</td><td>hoch</td><td>7 Fotos, davon 2 Paare</td><td>gering</td><td>steht und fällt mit den Fotos</td></tr>
+        <tr><td>02 Prüfstand</td><td>Beweis</td><td>hoch</td><td>4 Fotos, dürfen rau sein</td><td>mittel</td><td>wirkt kühl, braucht echte Daten</td></tr>
+        <tr><td>03 Nachtwerkstatt</td><td>Material und Glanz</td><td>am höchsten</td><td>5 Fotos, zwingend gut</td><td>hoch</td><td>rutscht Richtung Luxusmode</td></tr>
+        <tr><td>04 Werkverzeichnis</td><td>Genauigkeit</td><td>mittel bis hoch</td><td>3 Fotos plus Zeichnungen</td><td>gering bis mittel</td><td>wirkt altmodisch statt zeitlos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="empfehlung">
+    <h3>Empfehlung: 02 Prüfstand als Rückgrat, 01 Werkbank als Oberfläche</h3>
+    <p>Der Prüfbericht ist das Einzige auf diesen vier Blättern, das ein Wettbewerber nicht nachbauen kann, ohne selbst Gassi-Service, Pension und Training zu führen. Er gehört deshalb ins Zentrum, nicht in eine Nebensektion. Als ganze Seite ist er allerdings kühl, und Leder verkauft sich auch über Wärme.</p>
+    <p>Deshalb: Aufbau, Typografie und Ruhe von Blatt 01, und darin der Prüfstand als eigener Bereich mit Tabelle, Kennzahlen und Stempel auf jeder Produktseite. Der Glanzmoment aus Blatt 03 kommt als einziger schwerer Effekt auf die Produktseite, dort wo das Material gezeigt wird. Die bemaßten Zeichnungen aus Blatt 04 wandern in die Materialkunde und in den Größenfinder, wo sie Retouren sparen.</p>
+    <p>Blatt 03 als Ganzes wäre der Weg, wenn die Preise später über 139 € gehen sollen. Blatt 04 als Ganzes wäre der Weg für einen Katalogversand auf Papier.</p>
+    <div class="naechste">
+      <div><b>01</b><span>Einen Weg festlegen oder die empfohlene Mischung bestätigen.</span></div>
+      <div><b>02</b><span>Aufnahmeliste abarbeiten: 7 Fotos, davon zwei Paare neu und getragen. Ohne diese Fotos beginnt der Bau nicht.</span></div>
+      <div><b>03</b><span>Prüfdaten für HB-01 und LE-01 nachtragen: Hund, Tage, Belastung, Befund. Die Platzhalter hier ersetzen.</span></div>
+      <div><b>04</b><span>Danach Designsystem und Tokens bauen, dann die Startseite, dann den Shop.</span></div>
+    </div>
+  </div>
+
+  <p class="fuss">Alle Namen, Tage, Befunde und Preise auf diesen Blättern sind Platzhalter und vor der Veröffentlichung durch echte Werte zu ersetzen.<br>Bildflächen sind Aufnahmeanweisungen, keine Bilder. Auf Produktseiten kommen ausschließlich echte Fotos.<br>Regelwerk: WEBSITE-PROMPT-ultra.md · .claude/skills/website-highend/ · Abteilung 06 Web &amp; Shop</p>
+</section>
+
+<script>
+(function(){
+  var s = document.getElementById('wipe'),
+      b = document.getElementById('wipeB'),
+      n = document.getElementById('wipeNaht');
+  if(!s || !b || !n) return;
+  function setzen(){
+    var p = s.value + '%';
+    b.style.setProperty('--pos', p);
+    n.style.left = p;
+  }
+  s.addEventListener('input', setzen);
+  setzen();
+})();
+</script>
