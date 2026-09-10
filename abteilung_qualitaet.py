@@ -38,7 +38,7 @@ PRUEFPUNKTE = [
 class Qualitaet(Abteilung):
     NUMMER = "09"
     NAME = "Qualitaet"
-    MAX_TOKENS = 6000
+    MAX_TOKENS = 10000  # als QM-Zwischenschritt prueft sie lange Ergebnisse — 6000 wurde abgeschnitten
 
     ROLLE = (
         "Du bist die Qualitaetspruefung. Du kontrollierst die Arbeit der anderen "
