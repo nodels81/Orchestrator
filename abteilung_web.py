@@ -138,7 +138,7 @@ ROLLE_FRAUKE = (
 class Web(Abteilung):
     NUMMER = "10"
     NAME = "Homepage"
-    MAX_TOKENS = 12000
+    MAX_TOKENS = 32000  # drei lange Plaene (Design, Aufbau, Zusammenfuehrung) — 12000 reichte nicht
     ROLLE = ROLLE_FRAUKE  # das Gesicht der Abteilung nach aussen
 
     def bearbeiten(self, auftrag: dict, recherche: bool = False) -> dict:
