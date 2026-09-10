@@ -17,6 +17,10 @@ BESETZUNG = [
     "04 Social Media — Beitragstexte, Aufnahmeanweisungen fuer echte Fotos",
     "05 Personal (Wiebke) — Bedarf erkennen, neue Abteilungen entwerfen",
     "06 Einkauf (Insa) — Lieferantenanfragen und Angebotsvergleiche als Entwurf",
+    "07 Einkauf China (Henrik) — RFQ, Verhandlung, Muster mit chinesischen Herstellern",
+    "08 Design (Thea) — Formentwuerfe: Silhouette, Proportionen, Beschlag-Layout",
+    "09 Qualitaet (Almut) — prueft die Arbeit der anderen vor Bjoerns Entscheidung",
+    "10 Homepage (Frauke; Team Mira Design, Jonas Errichtung) — Shop auf Shopify als Plan",
 ]
 
 # Jede vorgeschlagene Abteilung muss diese Fragen mit Ja bestehen, sonst kein Vorschlag.

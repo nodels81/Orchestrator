@@ -38,6 +38,7 @@ ABTEILUNGEN = {
     "07 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
     "08 Design": ("abteilung_design", "Design"),
     "09 Qualität": ("abteilung_qualitaet", "Qualitaet"),
+    "10 Homepage": ("abteilung_web", "Web"),
 }
 
 

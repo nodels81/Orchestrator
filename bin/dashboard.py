@@ -21,6 +21,7 @@ ABTEILUNGEN = [
     ("07", "Henrik", "Einkauf China",        "RFQ / Verhandlung / Muster mit chinesischen Herstellern",   []),
     ("08", "Thea",   "Design",               "entwirft die Form: Silhouette, Proportionen, Beschlag-Layout", ["02"]),
     ("09", "Almut",  "Qualität",             "prüft die Arbeit der anderen vor deiner Entscheidung",         []),
+    ("10", "Frauke", "Homepage",             "Shop auf Shopify: Mira entwirft, Jonas baut, Frauke prüft",    []),
 ]
 ORCHESTRATOR = "Gustav"
 
@@ -246,7 +247,7 @@ for nr, vn, fach, rolle, _ in ABTEILUNGEN:
       </div>""")
 
 # ---------- Zusammenspiel (SVG) ----------
-W, H = 1180, 430
+W, H = 1280, 430
 cx = W / 2
 bjoern_y, orch_y, dept_y = 40, 120, 300
 n = len(ABTEILUNGEN)
