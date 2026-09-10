@@ -216,6 +216,30 @@ journalctl -u bello-orchestrator.service -n 50
 
 ---
 
+## Vom Handy: per Mail-Antwort einen Auftrag geben
+
+Antworte aus der Gmail-App auf eine Ergebnis-Mail einer Abteilung. Die **erste Zeile** steuert:
+
+| Erste Zeile der Antwort | Wirkung |
+|---|---|
+| `@Konrad Führe Steg und Taille aus` | Auftrag an Konrad (02) |
+| `@Henrik Zweiten Lieferanten anschreiben` | Auftrag an Henrik (07) |
+| `Auftrag: Noch eine Variante mit +40 %` | Auftrag an die Abteilung aus dem Betreff |
+| `Danke, passt` | nichts (kein Schlüsselwort) |
+
+Der Rest der Mail ist Kontext. Du bekommst sofort eine Bestätigung; der Auftrag läuft beim
+nächsten 07:00-Lauf. Nur Mails von deiner Adresse werden verarbeitet, nur `[Bello]`-Threads.
+
+Prüfen / anhalten:
+
+```
+systemctl list-timers bello-mailin.timer          # wann wird geprüft
+sudo systemctl start bello-mailin.service         # jetzt sofort prüfen
+sudo systemctl disable --now bello-mailin.timer   # abschalten
+```
+
+---
+
 ## Den Tageslauf anhalten und wieder starten
 
 Anhalten (Agent macht dann gar nichts mehr):
