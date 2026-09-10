@@ -50,8 +50,25 @@ venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzho
 Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
 `SERVER-PROMPT-einkauf-china.md` in Claude Code auf dem Server einfügen.
 
-Programmierabteilung für Android-Apps (noch nicht im Tageslauf, als einfügbarer Prompt):
-`PROMPT-abteilung-app-android.md`.
+## App-Entwicklung Android (Abteilung 06)
+
+Läuft **nicht** im Tageslauf: `abteilung_basis.py` ruft die API ohne Werkzeuge und ohne Dateizugriff —
+damit lässt sich konzipieren, aber keine App bauen. Gebaut wird in Claude Code mit fünf Agenten:
+
+| Agent | Rolle |
+|---|---|
+| `android-architekt` | Idee → Spezifikation, Bildschirmfluss, Datenmodell, Bauplan |
+| `android-entwickler` | Kotlin, Compose, ViewModel, Room, Netz, Gradle |
+| `android-ui` | Material-3-Theme, Zustände, Dark Mode, Barrierefreiheit |
+| `android-tester` | Tests, Build, Lint — prüft jede Fertigmeldung nach |
+| `android-release` | Version, Signierung, AAB, Store-Unterlagen (lädt nichts hoch) |
+
+Standard und Prüfregeln: `.claude/skills/android-app/`. Rollenverteilung, Umgebungsvoraussetzungen
+und der einfügbare Einzel-Prompt: `PROMPT-abteilung-app-android.md`.
+
+Ein Build braucht Android SDK und Zugriff auf `dl.google.com` — in einer Web-Session mit engem
+Netz-Regelwerk ist beides gesperrt. Dort entstehen Spezifikation und Code, gebaut wird auf Björns
+Rechner mit Android Studio.
 
 ## Lokal / in Claude Code
 
