@@ -128,6 +128,42 @@ def verarbeiten() -> int:
             zeilen = koerper.splitlines()
             erste = zeilen[0].strip()
             rest_zeilen = "\n".join(zeilen[1:]).strip()
+
+            # Entscheidungs-Verben: @freigabe / @ablehnen / @verwerfen auf den Auftrag aus dem Betreff
+            m_ent = re.match(r"@\s*(freigabe|freigeben|freigegeben|ablehnen|verwerfen|verworfen)\b[:,\-\s]*(.*)",
+                             erste, re.I)
+            if m_ent:
+                verb = m_ent.group(1).lower()
+                kommentar = (m_ent.group(2).strip() + ("\n" + rest_zeilen if rest_zeilen else "")).strip()
+                d0 = orchestrator.zustand_laden()
+                if not orchestrator._auftrag_finden(d0, parent):
+                    print(f"[MAILIN] {parent} nicht gefunden — uebersprungen")
+                    continue
+                try:
+                    if verb.startswith("freig"):
+                        orchestrator.freigeben(parent, kommentar)
+                        was = "freigegeben"
+                    elif verb.startswith("verw"):
+                        orchestrator.verwerfen(parent, kommentar)
+                        was = "verworfen"
+                    else:  # ablehnen
+                        if not kommentar:
+                            senden(f"[Bello] {parent} — Ablehnung ohne Begruendung",
+                                   "Zum Ablehnen brauche ich eine kurze Begruendung "
+                                   "(erste Zeile: '@ablehnen was ueberarbeitet werden soll').", cfg)
+                            continue
+                        orchestrator.ablehnen(parent, kommentar)
+                        was = "abgelehnt, Ueberarbeitung angelegt"
+                except SystemExit:
+                    continue
+                neu += 1
+                print(f"[MAILIN] {parent} -> {was}")
+                senden(f"[Bello] {parent} — {was}",
+                       f"Deine Entscheidung zu {parent} ist eingetragen: {was}."
+                       + (f"\n\nKommentar: {kommentar}" if kommentar else "")
+                       + f"\n\n— {getattr(__import__('namen'), 'ORCHESTRATOR', 'Gustav')}", cfg)
+                continue
+
             m_at = re.match(r"@\s*([A-Za-zÄÖÜäöüß0-9 &]+?)\s*[:,\-\s]\s*(.*)", erste)
             m_auf = re.match(r"(?i)^auftrag\s*[:\-]?\s*(.+)", erste)
             if m_at:
