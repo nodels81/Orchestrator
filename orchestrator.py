@@ -10,6 +10,9 @@ Aufrufe:
   orchestrator.py --stand                           Woran wird gearbeitet
   orchestrator.py --auftrag "01 Innovation" "Ziel" [Frist]
   orchestrator.py --wochenbericht
+  orchestrator.py --gedaechtnis                     Was der Betrieb weiss und was das spart
+  orchestrator.py --wissen "Wenzhou Vigorous"       Im Gedaechtnis nachschlagen
+  orchestrator.py --vergessen [Tage]                Alte Episoden wegraeumen (Standard 180)
 """
 
 import json
@@ -17,6 +20,7 @@ import os
 import sys
 from datetime import date, datetime, timedelta
 
+import gedaechtnis
 from abteilung_basis import BASIS, config_laden
 from orchestrator_mail import senden
 
@@ -243,7 +247,19 @@ def wochenbericht_text(daten: dict | None = None) -> str:
     if wartend:
         zeilen += ["", "Wartet auf deine Entscheidung:"]
         zeilen += [f"  ! {a['id']} {a['abteilung']}: {a['ziel']}" for a in wartend]
+    zeilen += ["", _gedaechtnis_zeile()]
     return "\n".join(zeilen)
+
+
+def _gedaechtnis_zeile() -> str:
+    """Eine Zeile Gedaechtnis fuer die Wochenuebersicht. Faellt sie aus, faellt nur sie aus."""
+    try:
+        with gedaechtnis.Gedaechtnis() as g:
+            s = g.statistik()
+    except Exception as fehler:
+        return f"Gedaechtnis: nicht lesbar ({fehler})."
+    return (f"Gedaechtnis: {s['episoden']} Episoden, {s['fakten_aktuell']} gueltige Fakten, "
+            f"{s['gespart_gesamt']} Tokens gespart.")
 
 
 # ---------- Anzeige ----------
@@ -261,6 +277,25 @@ def stand_zeigen() -> None:
     print("\nEin ! heisst: wartet auf Bjoerns Entscheidung.")
 
 
+def wissen_zeigen(suchbegriff: str) -> None:
+    with gedaechtnis.Gedaechtnis() as g:
+        treffer = g.suchen(suchbegriff)
+    if not treffer["fakten"] and not treffer["episoden"]:
+        print(f"Nichts zu '{suchbegriff}' im Gedaechtnis.")
+        return
+    if treffer["fakten"]:
+        print("FAKTEN:")
+        for f in treffer["fakten"]:
+            stand = "gilt" if f["gueltig_bis"] is None else f"abgeloest {f['gueltig_bis'][:10]}"
+            print(f"  [{stand}] {f['aussage']}  (seit {(f['gueltig_ab'] or '')[:10]}, "
+                  f"{f['quelle'] or 'ohne Quelle'})")
+    if treffer["episoden"]:
+        print("\nFRUEHERE AUFTRAEGE:")
+        for e in treffer["episoden"]:
+            print(f"  {e['auftrag_id']} {(e['zeit'] or '')[:10]} {e['abteilung']}: {e['ziel'][:60]}")
+            print(f"     {e['zusammenfassung']}")
+
+
 def _jetzt() -> str:
     return datetime.now().isoformat(timespec="seconds")
 
@@ -271,6 +306,20 @@ def main() -> None:
     argumente = sys.argv[1:]
     if "--stand" in argumente:
         stand_zeigen()
+    elif "--gedaechtnis" in argumente:
+        print(gedaechtnis.bericht())
+    elif "--wissen" in argumente:
+        rest = argumente[argumente.index("--wissen") + 1:]
+        if not rest:
+            print('Aufruf: orchestrator.py --wissen "Suchbegriff"')
+            sys.exit(1)
+        wissen_zeigen(" ".join(rest))
+    elif "--vergessen" in argumente:
+        rest = argumente[argumente.index("--vergessen") + 1:]
+        tage = int(rest[0]) if rest and rest[0].isdigit() else 180
+        with gedaechtnis.Gedaechtnis() as g:
+            geloescht = g.vergessen(tage)
+        print(f"{geloescht} Episoden aelter als {tage} Tage weggeraeumt. Fakten bleiben.")
     elif "--wochenbericht" in argumente:
         print(wochenbericht_text())
     elif "--auftrag" in argumente:

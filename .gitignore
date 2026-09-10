@@ -2,6 +2,9 @@
 config.json
 auftraege.json
 auftraege.json.tmp
+gedaechtnis.db
+gedaechtnis.db-wal
+gedaechtnis.db-shm
 *.log
 logs/
 zeichnungen/*.svg
