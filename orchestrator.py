@@ -10,7 +10,8 @@ Aufrufe:
   orchestrator.py --stand                           Woran wird gearbeitet
   orchestrator.py --auftrag "01 Innovation" "Ziel" [Frist]   (auch "01" oder "Merle")
   orchestrator.py --freigeben A-2026-006 ["Kommentar"]       Ergebnis annehmen
-  orchestrator.py --ablehnen  A-2026-006 "was ueberarbeitet werden soll"
+  orchestrator.py --ablehnen  A-2026-006 "was ueberarbeitet werden soll"   (legt Ueberarbeitung an)
+  orchestrator.py --verwerfen A-2026-006 ["Grund"]           endgueltig raus, keine Ueberarbeitung
   orchestrator.py --wochenbericht
   orchestrator.py --hilfe
 """
@@ -367,6 +368,17 @@ def freigeben(auftrag_id: str, kommentar: str = "") -> None:
     print(f"{auftrag_id} freigegeben." + (f" ({kommentar})" if kommentar else ""))
 
 
+def verwerfen(auftrag_id: str, grund: str = "") -> None:
+    daten = zustand_laden()
+    a = _auftrag_finden(daten, auftrag_id)
+    if not a:
+        print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
+    a["stand"] = "verworfen"
+    a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "verworfen", "kommentar": grund or None})
+    zustand_speichern(daten)
+    print(f"{auftrag_id} verworfen." + (f" ({grund})" if grund else ""))
+
+
 def ablehnen(auftrag_id: str, kommentar: str) -> None:
     daten = zustand_laden()
     a = _auftrag_finden(daten, auftrag_id)
@@ -418,6 +430,11 @@ def main() -> None:
         if len(rest) < 2:
             print('Aufruf: orchestrator.py --ablehnen A-2026-006 "was ueberarbeitet werden soll"'); sys.exit(1)
         ablehnen(rest[0], rest[1])
+    elif "--verwerfen" in argumente:
+        rest = argumente[argumente.index("--verwerfen") + 1:]
+        if not rest:
+            print('Aufruf: orchestrator.py --verwerfen A-2026-006 ["Grund"]'); sys.exit(1)
+        verwerfen(rest[0], rest[1] if len(rest) > 1 else "")
     else:
         lauf(probelauf="--probelauf" in argumente)
 

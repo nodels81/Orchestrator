@@ -31,6 +31,7 @@ STAND_META = {
     "gestoert":          ("gestört",         "rot",    3),
     "gescheitert":       ("gescheitert",     "rot",    3),
     "abgelehnt":         ("abgelehnt",       "rot",    3),
+    "verworfen":         ("verworfen",       "grau",   6),
     "freigegeben":       ("freigegeben",     "oliv",   4),
     "fertig":            ("erledigt",        "oliv",   5),
 }
