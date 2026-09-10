@@ -1,6 +1,28 @@
 # Konzeptvorlage 01 Innovation — Halsbänder und Leinen
 
-Stand 10.09.2026 · Abteilung 01 Innovation · Entscheidung liegt bei Björn
+Stand 10.09.2026 · Abteilung 01 Innovation
+
+## Entscheidung Björn, 10.09.2026
+
+| Konzept | Entscheidung | Änderung gegenüber der Vorlage |
+|---|---|---|
+| **A · NS-01 Namensschild Messing** | **freigegeben** | zusätzlich als Lederpatch, siehe NS-02 |
+| **NS-02 Namenspatch Leder** | **neu, freigegeben** | Alternative zum Messingschild, gleicher Preis, gleiche Befestigung |
+| **B · KO-01 Koppel für zwei Hunde** | **freigegeben** | — |
+| **D · HB-03 Zugstopp-Halsband** | **freigegeben** | Auflage bleibt: keine Windhund-Kommunikation |
+| C · WD-01 Werkstattdurchsicht | offen | — |
+| E · PF-01 Pflegeset | offen | — |
+
+Dazu die Vorgabe: Die Kollektion bekommt Namen, das Grundmodell heißt **Hamburg No. 1**.
+Ausgearbeitet in `konzepte/kollektion-01-hamburg.md`. Dort steht auch die eine Frage, die vor
+der Einführung des Namens geklärt sein muss.
+
+**Beide Namensschilder sind bereits spezifiziert.** `sourcing/bellowerk/specs/PATCH-01-markenpatch.md`
+enthält Variante N (Hundename in Leder graviert, Versalien mit Serife, bis 10 Zeichen) und
+Variante B (Messingschild H62, 1,5 mm, geätzt, gebürstet, unlackiert, zwei Buchschrauben).
+Es ist also keine neue Spezifikation nötig, sondern eine Entscheidung im Einkauf: Frage 5 der
+RFQ fragt den Hersteller bereits, ob er Einzelstücke auf Zuruf gravieren kann und zu welchem
+Preis. Diese Antwort entscheidet, ob NS-01 und NS-02 als Lagerware oder als Anfertigung laufen.
 
 Jedes Konzept hat die sieben Prüffragen aus `abteilung_innovation.py` durchlaufen.
 Konzepte, die durchgefallen sind, stehen mit Grund am Ende. Keines dieser Konzepte
@@ -9,7 +31,7 @@ im eigenen Betrieb.
 
 ---
 
-## A · NS-01 Namensschild aus Messing, zum Anschrauben
+## A · NS-01 Namensschild aus Messing, zum Anschrauben  ·  FREIGEGEBEN
 
 **Was** Ein graviertes Vollmessingschild, 45 × 12 mm, das mit denselben 5-mm-Buchschrauben
 auf jedes Bellowerk-Halsband kommt. Name auf der Vorderseite, Telefonnummer auf der Rückseite.
@@ -30,7 +52,33 @@ Kantenbruch prüfen. Spec kann der Agent `china-spec-writer` aus PATCH-01 ableit
 
 ---
 
-## B · KO-01 Koppel für zwei Hunde
+## A2 · NS-02 Namenspatch aus Leder  ·  FREIGEGEBEN
+
+**Was** Derselbe Gedanke wie NS-01, aber in Leder statt Messing: ein Streifen Kontrastleder
+in Cognac, mit dem Hundenamen in gesperrten Serifen-Versalien lasergraviert, mit zwei
+Buchschrauben aufgeschraubt. Entspricht Variante N in `PATCH-01-markenpatch.md`.
+
+**Für wen** Kunden, denen Messing am Hals zu viel Metall ist, und alle, die den ruhigeren Look
+wollen. Erfahrungsgemäß ist das etwa die Hälfte.
+
+**Preis** 34 EUR als Zubehör, 29 EUR zusammen mit einem Halsband. Gleicher Preis wie NS-01,
+damit die Wahl eine Geschmacksfrage bleibt und keine Preisfrage wird.
+
+**Maße** PA-M 85 × 18 mm für Bänder von 25 bis 40 mm, PA-S 65 × 14 mm für 20 mm.
+Namen über 10 Zeichen brauchen PA-L 110 × 18 mm. Versalhöhe 6 mm bei PA-M, 5 mm bei PA-S,
+Sperrung +20 Prozent.
+
+**Warum die zwei Varianten zusammengehören** Sie teilen Lochabstand, Schraube und Position auf
+dem Band. Der Kunde kann später tauschen, ohne ein neues Halsband zu kaufen. Genau das ist das
+Verkaufsargument: geschraubt statt genietet, also austauschbar. Ein zweites Schild ist damit ein
+naheliegender Nachkauf, etwa wenn ein zweiter Hund dazukommt.
+
+**Nächster Schritt** Keine neue Spezifikation nötig. Im Einkauf beide Varianten in die
+Musterbestellung aufnehmen und Frage 5 der RFQ beantworten lassen.
+
+---
+
+## B · KO-01 Koppel für zwei Hunde  ·  FREIGEGEBEN
 
 **Was** Ein Y-Stück aus Fettleder mit drei Messingringen, das zwei Hunde an eine Leine bringt.
 Zwei Schenkel je 30 cm, mittlerer Ring für den Karabiner der LE-01.
@@ -75,7 +123,7 @@ eine Karte beilegen.
 
 ---
 
-## D · HB-03 Zugstopp-Halsband aus Fettleder
+## D · HB-03 Zugstopp-Halsband aus Fettleder  ·  FREIGEGEBEN
 
 **Was** Halsband mit Zugstoppschlaufe, komplett aus Leder und Messing, ohne Kette. Zieht sich bei
 Zug auf Halsumfang zusammen und nicht weiter, damit der Hund nicht herausrutscht.
@@ -120,13 +168,14 @@ schreiben. Erst danach über Einkauf reden.
 
 ---
 
-## Rangfolge nach Marktpotenzial
+## Reihenfolge der Umsetzung nach der Freigabe
 
-1. **A · NS-01 Namensschild** — höchster Deckungsbeitrag, geringstes Risiko, verkauft an Bestandskunden
-2. **C · WD-01 Werkstattdurchsicht** — kostet fast nichts, liefert Bilder und Wiederkäufe
-3. **D · HB-03 Zugstopp** — größter Umsatz je Stück, aber eine Saison Vorlauf
-4. **B · KO-01 Koppel** — kleinere Zielgruppe, dafür echter Entwicklungsvorsprung aus dem Betrieb
-5. **E · PF-01 Pflegeset** — sinnvoll, aber nur mit eigener Anleitung
+1. **NS-01 und NS-02** — zusammen als ein Vorgang. Spezifikation liegt vor, es fehlt nur die
+   Antwort des Herstellers auf die Einzelgravur. Schnellster Weg zu neuem Umsatz.
+2. **KO-01 Koppel** — zwei Wochen Eigenbau und Selbsttest im Gassi-Service, bevor angefragt wird.
+   Offene Frage bleibt der Wirbel.
+3. **HB-03 Zugstopp** — Zeichnung als Ableitung von HB-01, dann Muster, dann eine Saison Praxistest.
+4. C und E, sobald entschieden.
 
 ---
 
@@ -146,9 +195,8 @@ schreiben. Erst danach über Einkauf reden.
 
 ---
 
-## Was Björn entscheiden muss
+## Was noch offen ist
 
-1. Welche Konzepte in die Musterphase gehen. Empfehlung: A und C sofort, D nach dem Selbsttest von B.
-2. Ob KO-01 mit Messingwirbel gebaut werden darf, falls sich kein solcher Beschlag finden lässt.
-   Andernfalls fällt das Konzept.
-3. Ob HB-03 unter der genannten Auflage gebaut werden soll.
+1. Ob die Koppel gebaut wird, falls sich kein Messingwirbel finden lässt. Stahl ist ausgeschlossen.
+2. Ob C (Werkstattdurchsicht) und E (Pflegeset) kommen.
+3. Die Herkunftsfrage zum Kollektionsnamen, siehe `konzepte/kollektion-01-hamburg.md`.
