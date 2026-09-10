@@ -20,6 +20,7 @@ ABTEILUNGEN = [
     ("06", "Insa",   "Einkauf",              "allgemeine Lieferantenanfragen und Angebotsvergleiche",     []),
     ("07", "Henrik", "Einkauf China",        "RFQ / Verhandlung / Muster mit chinesischen Herstellern",   []),
     ("08", "Thea",   "Design",               "entwirft die Form: Silhouette, Proportionen, Beschlag-Layout", ["02"]),
+    ("09", "Almut",  "Qualität",             "prüft die Arbeit der anderen vor deiner Entscheidung",         []),
 ]
 ORCHESTRATOR = "Gustav"
 
@@ -242,13 +243,13 @@ for nr, vn, fach, rolle, _ in ABTEILUNGEN:
       </div>""")
 
 # ---------- Zusammenspiel (SVG) ----------
-W, H = 1080, 430
+W, H = 1180, 430
 cx = W / 2
 bjoern_y, orch_y, dept_y = 40, 120, 300
 n = len(ABTEILUNGEN)
-x0, x1 = 70, W - 70
+x0, x1 = 66, W - 66
 xs = [x0 + i * (x1 - x0) / (n - 1) for i in range(n)]
-node_w, node_h = 116, 44
+node_w, node_h = 112, 44
 
 svg = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" class="karte-svg">']
 svg.append('<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">'

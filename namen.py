@@ -16,6 +16,7 @@ VORNAMEN = {
     "06": "Insa",     # Einkauf
     "07": "Henrik",   # Einkauf China
     "08": "Thea",     # Design (Formgestaltung)
+    "09": "Almut",    # Qualitaet (prueft die Arbeit der anderen)
 }
 
 
