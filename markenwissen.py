@@ -88,7 +88,30 @@ VERKAUFSNAMEN = {
     "KO-01": "Hamburg No. 7",
 }
 
-HERKUNFTSSATZ = "Entworfen, geprueft und gehandelt in Hamburg. Gefertigt in [Land eintragen]."
+# Fertigungsort je Artikel. Steht bewusst hier und nicht als ein Satz fuer alles:
+# sobald ein einziges Modell im Ausland gefertigt wird, aendert sich nur diese eine Zeile,
+# und die Herkunftsangabe auf Website und Etikett bleibt fuer alle anderen wahr.
+FERTIGUNGSORT = {
+    "HB-01": "Hamburg, Deutschland",
+    "LE-01": "Hamburg, Deutschland",
+    "HS-01": "Hamburg, Deutschland",
+    "HB-02": "Hamburg, Deutschland",
+    "LE-02": "Hamburg, Deutschland",
+    "HB-03": "Hamburg, Deutschland",
+    "KO-01": "Hamburg, Deutschland",
+    "PATCH-01": "Hamburg, Deutschland",
+}
+
+HERKUNFTSSATZ = "Entworfen, geprueft und gehandelt in Hamburg. Gefertigt in Deutschland."
+
+# Stand 11.09.2026: gilt fuer alle Artikel. Aendert sich, sobald der Einkauf China liefert.
+HERKUNFT_REGEL = """
+Die Angabe 'Gefertigt in Deutschland' gilt nur, solange der wesentliche Fertigungsschritt
+(Zuschnitt, Lochung, Kantenbearbeitung, Montage der Beschlaege) in Hamburg stattfindet.
+Wird ein Modell im Ausland gefertigt, wird FERTIGUNGSORT fuer dieses Modell geaendert und
+die Angabe auf Website, Etikett und Beileger folgt automatisch. Fertige Ware einzukaufen und
+nur den Patch anzuschrauben genuegt nicht fuer 'Made in Germany'.
+"""
 
 GESTALTUNG = {
     "farben": "Leder: Grau, Dunkelbraun, Oliv, Cognac, Schwarz; Logo: Oliv, Braun, Kupfer/Messing",
@@ -130,12 +153,14 @@ def als_kontext() -> str:
         vorn = f"{name} ({kuerzel})" if name else kuerzel
         zeilen.append(f"  - {vorn}: {beschreibung}")
 
-    zeilen += [
-        "",
-        "HERKUNFT (bindend): " + HERKUNFTSSATZ,
-        "  Kein Text behauptet Fertigung in Hamburg fuer Ware, die dort nicht gefertigt wurde.",
-        "  Wahr und erlaubt: in Hamburg entworfen, in Hamburg geprueft, im eigenen Betrieb getestet.",
-    ]
+    zeilen += ["", "HERKUNFT (bindend): " + HERKUNFTSSATZ]
+    orte = sorted(set(FERTIGUNGSORT.values()))
+    if len(orte) == 1:
+        zeilen.append(f"  Fertigung aller Artikel: {orte[0]}")
+    else:
+        for kuerzel, ort in FERTIGUNGSORT.items():
+            zeilen.append(f"  {kuerzel}: gefertigt in {ort}")
+    zeilen += ["  " + z.strip() for z in HERKUNFT_REGEL.strip().splitlines()]
 
     zeilen += [
         "",

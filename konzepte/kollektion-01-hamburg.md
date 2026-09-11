@@ -51,7 +51,7 @@ scheitern die meisten Abmahnfälle.
 Verbindlich ab sofort:
 
 1. **Auf jeder Produktseite**, im selben Block wie Preis und Größe, nicht darunter weggeklappt:
-   `Entworfen, geprüft und gehandelt in Hamburg · Gefertigt in [Land]`
+   `Entworfen, geprüft und gehandelt in Hamburg · Gefertigt in Deutschland`
 2. **In der Fußzeile jeder Seite**, einmal ausgeschrieben.
 3. **Am Etikett und auf dem Beileger** derselbe Satz.
 4. **Kein Satz behauptet Fertigung in Hamburg**, wenn das Stück nicht dort gefertigt wurde.
@@ -62,9 +62,23 @@ Verbindlich ab sofort:
    Herkunftsaussage, die trägt. Sie ersetzt die Fertigungsbehauptung vollständig und ist stärker,
    weil kein Wettbewerber sie kopieren kann.
 
-Offen bleibt eine Formulierung: `markenwissen.py` sagt in POSITIONIERUNG
-"Premium-Lederzubehoer fuer Hunde aus eigener Werkstatt". Sobald ein Modell aus China kommt, ist
-der Satz für dieses Modell nicht mehr wahr. Vorschlag zur Ersetzung, wortgleich einsetzbar:
+**Fertigungsort, Stand 11.09.2026: Deutschland.** Alle Artikel werden in der Werkstatt in
+Hamburg gefertigt, damit ist die Angabe wahr und "aus eigener Werkstatt" darf stehen bleiben.
+Der Ort steht in `markenwissen.py` als `FERTIGUNGSORT` **je Artikel**, nicht als ein Satz für
+alles. Sobald der Einkauf China für ein Modell liefert, wird dort eine Zeile geändert, und
+Website, Etikett und Beileger folgen. Alle anderen Modelle bleiben unberührt.
+
+Zwei Grenzen dazu:
+
+- "Gefertigt in Deutschland" trägt nur, solange der wesentliche Fertigungsschritt hier
+  stattfindet: Zuschnitt, Lochung, Kantenbearbeitung, Montage der Beschläge. Fertige Ware
+  einkaufen und nur den Patch anschrauben genügt dafür nicht.
+- Zugekaufte Einzelteile wie Schnallen oder Ringe aus dem Ausland sind unschädlich, solange
+  die Fertigung hier passiert. Sie müssen nicht ausgewiesen werden.
+
+Damit erledigt: Der Satz in POSITIONIERUNG, "Premium-Lederzubehör für Hunde aus eigener Werkstatt", bleibt
+stehen, weil er heute wahr ist. Er wird zu ersetzen sein, sobald ein Modell aus China kommt.
+Ersatz liegt bereit, wortgleich einsetzbar:
 
 > Premium-Lederzubehör für Hunde, in Hamburg entworfen und im eigenen Betrieb geprüft.
 
