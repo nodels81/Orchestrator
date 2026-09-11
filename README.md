@@ -27,6 +27,10 @@ gehören immer **einer** Abteilung — erkennbar am Namensanfang.
 ```
 Bellowerk  (Björn entscheidet)
 │
+├─ wiebke  — Personalerin, Stabsstelle neben der Hierarchie
+│           stellt Agenten und Skills ein, schärft nach, legt zusammen
+│           Skill: agenten-personal
+│
 ├─ 01 Innovation            abteilung_innovation.py
 ├─ 02 Produkt & Ausführung  abteilung_ausfuehrung.py
 ├─ 03 Vertrieb              abteilung_vertrieb.py
@@ -59,6 +63,9 @@ Bellowerk  (Björn entscheidet)
 Die Abteilungsdatei ist der Kopf: sie konzipiert im Tageslauf und verteilt Aufträge an ihre
 Agenten. Die Agenten arbeiten in Claude Code am Repo. Abteilungen 01–04 haben keine Agenten,
 sie laufen nur im Tageslauf.
+
+Wiebke gehört keiner Abteilung. Fehlt für eine Aufgabe der passende Agent, oder liefert einer
+schlechte Arbeit, ist sie zuständig: `Nutze den Agenten wiebke: …`
 
 **Achtung, noch nicht zusammengeführt:** Abteilung 06 Web & Shop liegt auf Branch
 `claude/ultimate-website-prompt-ira6ls`, Abteilung 07 App Android auf
