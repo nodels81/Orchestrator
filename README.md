@@ -14,7 +14,7 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 | 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
 | 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
 | **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
-| **06** | **App Android** | `abteilung_app_android.py` | Spezifikationen, Baupläne, Code-Reviews und Store-Texte für Android-Apps — konzipiert im Tageslauf, gebaut wird in Claude Code |
+| **07** | **App Android** | `abteilung_app_android.py` | Spezifikationen, Baupläne, Code-Reviews und Store-Texte für Android-Apps — konzipiert im Tageslauf, gebaut wird in Claude Code |
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
 Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`.
@@ -38,7 +38,17 @@ Bellowerk  (Björn entscheidet)
 │   ├─ china-qc-pruefer          Muster, Endkontrolle, Reklamation
 │   └─ china-spec-writer         Tech Packs und Zeichnungen
 │
-└─ 06 App Android           abteilung_app_android.py     Skill: android-app
+├─ 06 Web & Shop            abteilung_web.py             Skill: website-highend
+│   ├─ web-creative-director     Leitidee der Seite, Sektionsfolge
+│   ├─ web-art-director          Designsystem, Farbleitern, Typoskala, Raster
+│   ├─ web-bildregie             Bildwelt, Aufnahmeanweisungen für echte Fotos
+│   ├─ web-texter                Claim, Headlines, Produkttexte, Mikrotexte
+│   ├─ web-frontend              setzt Designsystem und Sektionen als Code um
+│   ├─ web-motion-fx             Scroll-Choreografie, Übergänge, WebGL
+│   ├─ web-shop-commerce         das Shopsystem (Shopify Hydrogen / Next.js + Medusa)
+│   └─ web-qc-abnahme            Abnahmetor mit 20 Punkten
+│
+└─ 07 App Android           abteilung_app_android.py     Skill: android-app
     ├─ android-architekt         Spezifikation, Datenmodell, Bauplan
     ├─ android-entwickler        programmiert: Kotlin, Compose, Daten, Netz
     ├─ android-ui                Layout: Theme, Dark Mode, Barrierefreiheit
@@ -49,6 +59,11 @@ Bellowerk  (Björn entscheidet)
 Die Abteilungsdatei ist der Kopf: sie konzipiert im Tageslauf und verteilt Aufträge an ihre
 Agenten. Die Agenten arbeiten in Claude Code am Repo. Abteilungen 01–04 haben keine Agenten,
 sie laufen nur im Tageslauf.
+
+**Achtung, noch nicht zusammengeführt:** Abteilung 06 Web & Shop liegt auf Branch
+`claude/ultimate-website-prompt-ira6ls`, Abteilung 07 App Android auf
+`claude/android-app-dev-prompt-2suf67`. Beide waren ursprünglich als „06" angelegt — App Android
+ist deshalb auf 07 umnummeriert, damit sich beim Zusammenführen keine Abteilung verdrängt.
 
 ## Einkaufsunterlagen (`sourcing/`)
 
@@ -82,7 +97,7 @@ venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzho
 Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
 `SERVER-PROMPT-einkauf-china.md` in Claude Code auf dem Server einfügen.
 
-## App-Entwicklung Android (Abteilung 06)
+## App-Entwicklung Android (Abteilung 07)
 
 Zweigeteilt, weil `abteilung_basis.py` die API ohne Werkzeuge und ohne Dateizugriff ruft: die
 Abteilung im Tageslauf **konzipiert** (Spezifikation, Bauplan, Review, Store-Texte), **gebaut** wird
@@ -101,7 +116,7 @@ Kontext, die Agenten laden ihn als Skill. Rollenverteilung, Umgebungsvoraussetzu
 einfügbare Einzel-Prompt: `PROMPT-abteilung-app-android.md`.
 
 ```bash
-venv/bin/python orchestrator.py --auftrag "06 App Android" "Spezifikation fuer App Bello Tour" 2026-09-25
+venv/bin/python orchestrator.py --auftrag "07 App Android" "Spezifikation fuer App Bello Tour" 2026-09-25
 venv/bin/python abteilung_app_android.py "App-Idee: Hunderunden aufzeichnen"
 ```
 

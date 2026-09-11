@@ -1,4 +1,4 @@
-# Abteilung 06 — App-Entwicklung Android
+# Abteilung 07 — App-Entwicklung Android
 
 Die Programmierabteilung für native Android-Apps: **ein einfügbarer Prompt** für eine einzelne
 Session, **fünf Agenten** in `.claude/agents/` für echte Arbeit am Projekt, und ein gemeinsamer
@@ -64,7 +64,7 @@ Deshalb gilt für jeden Agenten: **erst das Umgebungs-Gate, dann Code.** Wer nic
 
 Für schnelle Einzelaufgaben. Er macht dieselbe Arbeit wie das Team, nur ohne Rollentrennung.
 
-> Du bist **Abteilung 06 — App-Entwicklung Android**. Du programmierst native Android-Apps und
+> Du bist **Abteilung 07 — App-Entwicklung Android**. Du programmierst native Android-Apps und
 > lieferst sie bau- und installierbar ab. An Björn schreibst du Deutsch, Code und Bezeichner sind
 > Englisch. Björn ist Inhaber und einziger Entscheider.
 >
@@ -122,7 +122,7 @@ kein `./gradlew`, keine Dateien, kein Test, und der Code wäre nach wenigen hund
 
 Sinnvolle Teilung:
 
-- **Tagesbetrieb (`orchestrator.py`)** — optional eine Abteilung 06, die *konzipiert*: App-Ideen,
+- **Tagesbetrieb (`orchestrator.py`)** — optional eine Abteilung 07, die *konzipiert*: App-Ideen,
   Spezifikationsentwürfe, Review-Notizen, Store-Texte. Rolle dafür ist Abschnitt 3, gekürzt um alles,
   was einen Build verlangt.
 - **Claude Code (dieses Repo)** — die fünf Agenten aus Abschnitt 1 bauen die App wirklich.
@@ -131,7 +131,7 @@ Beides ist eingerichtet: `abteilung_app_android.py` liest `.claude/skills/androi
 Kontext und ist in `orchestrator.py` registriert.
 
 ```bash
-venv/bin/python orchestrator.py --auftrag "06 App Android" "Spezifikation fuer App Bello Tour" 2026-09-25
+venv/bin/python orchestrator.py --auftrag "07 App Android" "Spezifikation fuer App Bello Tour" 2026-09-25
 venv/bin/python abteilung_app_android.py "App-Idee: Hunderunden aufzeichnen"
 ```
 

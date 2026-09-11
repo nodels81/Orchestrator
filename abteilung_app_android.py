@@ -32,7 +32,7 @@ def standard_kontext() -> str:
 
 
 class AppAndroid(Abteilung):
-    NUMMER = "06"
+    NUMMER = "07"
     NAME = "App Android"
     ROLLE = (
         "Du bist der Abteilungsleiter App-Entwicklung Android. Im Tageslauf konzipierst du, "
