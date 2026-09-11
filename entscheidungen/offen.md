@@ -12,6 +12,9 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Der Server /opt/bello ist weiter als dieses Repo: dort laufen 06 Einkauf, 07 Einkauf China, 08 Design, 09 Qualität und 10 Homepage, die hier fehlen. Servercode nach Git bringen, bevor dort das nächste Mal gepullt wird. Siehe SERVER-ABGLEICH.md
 - [ ] Abteilungsnummer für Web & Shop festlegen: hier steht sie als 06, auf dem Server ist 06 bereits Einkauf und 10 bereits Homepage
 
+- [ ] Läuft auf dem Server bereits ein Tagesbrief? Wenn ja, mit tagesbrief.py vergleichen und nur eines von beidem behalten. Screenshots der bisherigen Morgenmails helfen
+- [ ] Vor dem nächsten Pull auf /opt/bello: `bash sicherung.sh` ausführen
+
 ## Produkt
 
 - [ ] Koppel KO-01: Wird sie gebaut, wenn sich kein Messingwirbel findet? Stahl ist ausgeschlossen

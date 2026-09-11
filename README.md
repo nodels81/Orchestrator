@@ -75,7 +75,7 @@ venv/bin/python tagesbrief.py --senden               # hoechstens einmal pro Tag
 0 7 * * *  cd /opt/bello && venv/bin/python tagesbrief.py --senden >> logs/tagesbrief.log 2>&1
 ```
 
-**Vor dem nächsten `git pull` auf dem Server: `SERVER-ABGLEICH.md` lesen.** Der Server führt
+**Vor dem nächsten `git pull` auf dem Server: `bash sicherung.sh`, dann `SERVER-ABGLEICH.md` lesen.** Der Server führt
 Abteilungen, die hier fehlen, und ein Pull würde das Abteilungsverzeichnis überschreiben.
 
 ## Konzepte (`konzepte/`)

@@ -37,23 +37,32 @@ Server und macht inhaltlich dasselbe wie das dortige "10 Homepage".
 
 **Also: auf /opt/bello nicht pullen, bevor die folgenden Schritte gelaufen sind.**
 
-## Schritt 1 — Serverstand sichern und nach Git bringen
+## Schritt 1 — Sichern, mit einem Kommando
 
-Auf dem Server, in dieser Reihenfolge:
+`sicherung.sh` liegt in diesem Repo und macht die Sicherung vollständig. Es löscht nichts,
+pullt nichts und überschreibt nichts.
 
 ```bash
 cd /opt/bello
-cp auftraege.json auftraege.json.sicherung
-git status                      # zeigt, was auf dem Server geaendert oder neu ist
-git stash list                  # nur zur Sicherheit
-git checkout -b server-stand-2026-09-11
-git add abteilung_*.py orchestrator.py
-git commit -m "Serverstand: Abteilungen 06 Einkauf bis 10 Homepage"
-git push -u origin server-stand-2026-09-11
+bash sicherung.sh
 ```
 
-Danach steht der echte Betriebsstand in GitHub und kann mit dem Website-Zweig
-zusammengeführt werden, ohne dass etwas verlorengeht.
+Drei Dinge passieren:
+
+1. **Tararchiv** des ganzen Ordners ohne `venv` und Caches nach `/opt/bello-sicherungen/`,
+   danach sofort auf Lesbarkeit geprüft. Ein Archiv, das sich nicht öffnen lässt, ist keine
+   Sicherung, deshalb bricht das Skript an dieser Stelle ab statt weiterzumachen.
+2. **Geheimnisse und Betriebszustand getrennt**: `config.json`, `auftraege.json` und `logs/`
+   liegen zusätzlich einzeln daneben, mit Rechten 600. So lässt sich der Zustand
+   zurückspielen, ohne das ganze Archiv auszupacken.
+3. **Servercode auf einen eigenen Git-Zweig** `server-stand-JJJJ-MM-TT`, festgeschrieben und
+   hochgeladen. `config.json` bleibt dabei draußen, dafür sorgt `.gitignore`. Gibt es auf dem
+   Server keine Zugangsdaten für GitHub, bleibt der Zweig lokal, und das Skript sagt das.
+
+Am Ende druckt es den Wiederherstellungsweg mit den echten Pfaden aus. Aufheben oder
+abfotografieren.
+
+Erst danach pullen.
 
 ## Schritt 2 — Nummer für Web & Shop entscheiden
 
@@ -72,9 +81,13 @@ Server gebracht.
 
 ## Schritt 3 — Tagesbrief einrichten
 
-Der Orchestrator schweigt von sich aus und meldet nur einzelne Aufträge. Eine feste
-Morgenmail gab es im Code nie — was bisher morgens ankam, waren Ergebnismails einzelner
-Aufträge, die zufällig früh fertig wurden. Deshalb `tagesbrief.py`.
+**Zur Einordnung, damit hier nichts Falsches stehen bleibt:** In der Fassung des
+Orchestrators, die in diesem Repo liegt, gibt es keine feste Morgenmail. Der Servercode ist
+aber nicht in Git, also lässt sich von hier aus nicht ausschließen, dass dort bereits ein
+Tagesbrief läuft. Im Postfach ist zwischen dem 9. und 11. September keine Mail zu sehen, die
+nach einem täglichen Brief aussieht, und am 11. September gar keine. Sollte es auf dem Server
+schon etwas Entsprechendes geben, wird `tagesbrief.py` nicht zusätzlich eingerichtet, sondern
+mit dem Bestehenden verglichen und das bessere von beiden behalten.
 
 ```bash
 cd /opt/bello
