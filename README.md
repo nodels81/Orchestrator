@@ -62,6 +62,22 @@ Nutze den Agenten web-creative-director: Leitidee und Sektionsfolge für die neu
 Nutze den Agenten web-art-director: Designsystem und Tokens dazu bauen.
 ```
 
+## Tagesbrief und offene Entscheidungen
+
+`tagesbrief.py` schickt jeden Morgen um 07:00 eine Mail: was auf eine Entscheidung wartet,
+welche Fristen fallen, was gestern fertig wurde, ob der Lauf überhaupt noch startet.
+Quelle für die offenen Punkte ist `entscheidungen/offen.md`, ein Register von Hand:
+`- [ ]` wird gemeldet, `- [x]` nicht mehr.
+
+```bash
+venv/bin/python tagesbrief.py                        # Vorschau, sendet nichts
+venv/bin/python tagesbrief.py --senden               # hoechstens einmal pro Tag
+0 7 * * *  cd /opt/bello && venv/bin/python tagesbrief.py --senden >> logs/tagesbrief.log 2>&1
+```
+
+**Vor dem nächsten `git pull` auf dem Server: `SERVER-ABGLEICH.md` lesen.** Der Server führt
+Abteilungen, die hier fehlen, und ein Pull würde das Abteilungsverzeichnis überschreiben.
+
 ## Konzepte (`konzepte/`)
 
 Vorlagen der Abteilung 01 Innovation, jeweils durch die sieben Prüffragen gelaufen.
