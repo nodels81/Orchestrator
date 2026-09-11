@@ -127,9 +127,14 @@ Sinnvolle Teilung:
   was einen Build verlangt.
 - **Claude Code (dieses Repo)** — die fünf Agenten aus Abschnitt 1 bauen die App wirklich.
 
-Soll die konzipierende Abteilung eingerichtet werden, entsteht `abteilung_app_android.py` nach dem
-Muster von `abteilung_einkauf_china.py` und wird in `orchestrator.py` eingetragen:
+Beides ist eingerichtet: `abteilung_app_android.py` liest `.claude/skills/android-app/` als bindenden
+Kontext und ist in `orchestrator.py` registriert.
 
-```python
-"06 App Android": ("abteilung_app_android", "AppAndroid"),
+```bash
+venv/bin/python orchestrator.py --auftrag "06 App Android" "Spezifikation fuer App Bello Tour" 2026-09-25
+venv/bin/python abteilung_app_android.py "App-Idee: Hunderunden aufzeichnen"
 ```
+
+Die Abteilung liefert im vierten Ausgabeteil immer einen **Auftrag an Claude Code**: welcher Agent,
+welcher Schritt, welches Abnahmekriterium. So geht der Tageslauf in echte Arbeit über, ohne dass
+jemand die Spezifikation von Hand übersetzt.

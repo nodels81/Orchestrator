@@ -14,6 +14,7 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 | 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
 | 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
 | **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| **06** | **App Android** | `abteilung_app_android.py` | Spezifikationen, Baupläne, Code-Reviews und Store-Texte für Android-Apps — konzipiert im Tageslauf, gebaut wird in Claude Code |
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
 Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`.
@@ -52,8 +53,9 @@ Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
 
 ## App-Entwicklung Android (Abteilung 06)
 
-Läuft **nicht** im Tageslauf: `abteilung_basis.py` ruft die API ohne Werkzeuge und ohne Dateizugriff —
-damit lässt sich konzipieren, aber keine App bauen. Gebaut wird in Claude Code mit fünf Agenten:
+Zweigeteilt, weil `abteilung_basis.py` die API ohne Werkzeuge und ohne Dateizugriff ruft: die
+Abteilung im Tageslauf **konzipiert** (Spezifikation, Bauplan, Review, Store-Texte), **gebaut** wird
+in Claude Code mit fünf Agenten:
 
 | Agent | Rolle |
 |---|---|
@@ -63,8 +65,14 @@ damit lässt sich konzipieren, aber keine App bauen. Gebaut wird in Claude Code 
 | `android-tester` | Tests, Build, Lint — prüft jede Fertigmeldung nach |
 | `android-release` | Version, Signierung, AAB, Store-Unterlagen (lädt nichts hoch) |
 
-Standard und Prüfregeln: `.claude/skills/android-app/`. Rollenverteilung, Umgebungsvoraussetzungen
-und der einfügbare Einzel-Prompt: `PROMPT-abteilung-app-android.md`.
+Standard und Prüfregeln: `.claude/skills/android-app/` — die Abteilung liest ihn als bindenden
+Kontext, die Agenten laden ihn als Skill. Rollenverteilung, Umgebungsvoraussetzungen und der
+einfügbare Einzel-Prompt: `PROMPT-abteilung-app-android.md`.
+
+```bash
+venv/bin/python orchestrator.py --auftrag "06 App Android" "Spezifikation fuer App Bello Tour" 2026-09-25
+venv/bin/python abteilung_app_android.py "App-Idee: Hunderunden aufzeichnen"
+```
 
 Ein Build braucht Android SDK und Zugriff auf `dl.google.com` — in einer Web-Session mit engem
 Netz-Regelwerk ist beides gesperrt. Dort entstehen Spezifikation und Code, gebaut wird auf Björns
