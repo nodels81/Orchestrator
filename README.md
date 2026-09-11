@@ -19,6 +19,37 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
 Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`.
 
+### Wer sitzt wo
+
+Alles gehört zu Bellowerk. Jede Abteilung ist eigenständig; die Agenten in `.claude/agents/`
+gehören immer **einer** Abteilung — erkennbar am Namensanfang.
+
+```
+Bellowerk  (Björn entscheidet)
+│
+├─ 01 Innovation            abteilung_innovation.py
+├─ 02 Produkt & Ausführung  abteilung_ausfuehrung.py
+├─ 03 Vertrieb              abteilung_vertrieb.py
+├─ 04 Social Media          abteilung_social.py
+│
+├─ 05 Einkauf China         abteilung_einkauf_china.py   Skill: china-sourcing
+│   ├─ china-einkauf             schreibt an Lieferanten, bewertet Angebote
+│   ├─ china-lieferanten-scout   sucht und prüft Hersteller
+│   ├─ china-qc-pruefer          Muster, Endkontrolle, Reklamation
+│   └─ china-spec-writer         Tech Packs und Zeichnungen
+│
+└─ 06 App Android           abteilung_app_android.py     Skill: android-app
+    ├─ android-architekt         Spezifikation, Datenmodell, Bauplan
+    ├─ android-entwickler        programmiert: Kotlin, Compose, Daten, Netz
+    ├─ android-ui                Layout: Theme, Dark Mode, Barrierefreiheit
+    ├─ android-tester            Tests, Build, Lint — prüft Fertigmeldungen nach
+    └─ android-release           Version, Signierung, AAB, Store-Unterlagen
+```
+
+Die Abteilungsdatei ist der Kopf: sie konzipiert im Tageslauf und verteilt Aufträge an ihre
+Agenten. Die Agenten arbeiten in Claude Code am Repo. Abteilungen 01–04 haben keine Agenten,
+sie laufen nur im Tageslauf.
+
 ## Einkaufsunterlagen (`sourcing/`)
 
 ```
