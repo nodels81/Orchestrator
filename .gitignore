@@ -2,6 +2,11 @@
 config.json
 config.json.bak-*
 daten/
+auftraege.json
+auftraege.json.tmp
+gedaechtnis.db
+gedaechtnis.db-wal
+gedaechtnis.db-shm
 logs/
 *.log
 
