@@ -9,8 +9,8 @@ Diese Datei ist die Wahrheit für alle Lieferanten-Kontakte. Änderungen hier wi
 |---|---|
 | Markenname auf dem Produkt | **Bellowerk** — darunter kleiner: **Manufaktur** |
 | Bisheriger Betriebsname | Herr Bello & Frau Wuff / Herr Bello und Fräulein Kläff (Instagram @herr.bello.und.frau.wuff, @herr_bello_und_fraeulein_klaef) |
-| Standort | Hamburg / Altes Land |
-| Inhaber, einziger Entscheider | Björn |
+| Standort | Harsefeld (Altes Land), Landkreis Stade — rund 40 km von Hamburg |
+| Inhaber, einziger Entscheider | Björn Bujko, Einzelunternehmen |
 | Positionierung | Premium-Lederzubehör aus eigener Werkstatt. Jedes Modell hängt vor dem Verkauf eine Saison an fremden Hunden (Gassi-Service, Pension, Training). |
 | Zielgruppe | Familien- und Gebrauchshunde mittel bis groß. Keine Windhunde. |
 | Preisrahmen VK | Halsband 69–99 EUR, Leine 89–139 EUR, Zubehör 25–59 EUR |

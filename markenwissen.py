@@ -9,7 +9,7 @@ Quelle: Blatt 3 (Wettbewerbsrecherche) und Blatt 5 (Kernserie Fettleder).
 MARKE = "Bellowerk Manufaktur"
 MARKE_BISHER = "Herr Bello und Frau Wuff / Fraeulein Klaeff"
 INSTAGRAM = "@herr.bello.und.frau.wuff"
-STANDORT = "Hamburg"
+STANDORT = "Harsefeld (Altes Land), Landkreis Stade"
 
 POSITIONIERUNG = """
 Premium-Lederzubehoer fuer Hunde aus eigener Werkstatt.
@@ -76,8 +76,10 @@ KERNSERIE = {
 
 # Verkaufsnamen der Kollektion 01 "Hamburg" (Entscheidung Bjoern, 10.09.2026).
 # Nach aussen der Name, intern und gegenueber Herstellern immer die Artikelnummer.
-# Herkunftsregel: Der Name steht fuer Entwurf, Pruefung und Handel in Hamburg,
-# nicht fuer den Fertigungsort. Siehe konzepte/kollektion-01-hamburg.md.
+# Herkunftsregel: Der Kollektionsname bleibt 'Hamburg' — ein Produktname, der auf
+# eine Region verweist, ist keine Herkunftsbehauptung. Der Betrieb sitzt aber in
+# Harsefeld im Alten Land, nicht in Hamburg, deshalb nennt der HERKUNFTSSATZ seit
+# dem 12.09.2026 das Alte Land. Siehe konzepte/kollektion-01-hamburg.md.
 VERKAUFSNAMEN = {
     "HB-01": "Hamburg No. 1",
     "LE-01": "Hamburg No. 2",
@@ -92,22 +94,22 @@ VERKAUFSNAMEN = {
 # sobald ein einziges Modell im Ausland gefertigt wird, aendert sich nur diese eine Zeile,
 # und die Herkunftsangabe auf Website und Etikett bleibt fuer alle anderen wahr.
 FERTIGUNGSORT = {
-    "HB-01": "Hamburg, Deutschland",
-    "LE-01": "Hamburg, Deutschland",
-    "HS-01": "Hamburg, Deutschland",
-    "HB-02": "Hamburg, Deutschland",
-    "LE-02": "Hamburg, Deutschland",
-    "HB-03": "Hamburg, Deutschland",
-    "KO-01": "Hamburg, Deutschland",
-    "PATCH-01": "Hamburg, Deutschland",
+    "HB-01": "Harsefeld, Deutschland",
+    "LE-01": "Harsefeld, Deutschland",
+    "HS-01": "Harsefeld, Deutschland",
+    "HB-02": "Harsefeld, Deutschland",
+    "LE-02": "Harsefeld, Deutschland",
+    "HB-03": "Harsefeld, Deutschland",
+    "KO-01": "Harsefeld, Deutschland",
+    "PATCH-01": "Harsefeld, Deutschland",
 }
 
-HERKUNFTSSATZ = "Entworfen, geprueft und gehandelt in Hamburg. Gefertigt in Deutschland."
+HERKUNFTSSATZ = "Entworfen, geprueft und gehandelt im Alten Land bei Hamburg. Gefertigt in Deutschland."
 
 # Stand 11.09.2026: gilt fuer alle Artikel. Aendert sich, sobald der Einkauf China liefert.
 HERKUNFT_REGEL = """
 Die Angabe 'Gefertigt in Deutschland' gilt nur, solange der wesentliche Fertigungsschritt
-(Zuschnitt, Lochung, Kantenbearbeitung, Montage der Beschlaege) in Hamburg stattfindet.
+(Zuschnitt, Lochung, Kantenbearbeitung, Montage der Beschlaege) in der eigenen Werkstatt stattfindet.
 Wird ein Modell im Ausland gefertigt, wird FERTIGUNGSORT fuer dieses Modell geaendert und
 die Angabe auf Website, Etikett und Beileger folgt automatisch. Fertige Ware einzukaufen und
 nur den Patch anzuschrauben genuegt nicht fuer 'Made in Germany'.

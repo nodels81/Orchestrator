@@ -51,7 +51,7 @@ scheitern die meisten Abmahnfälle.
 Verbindlich ab sofort:
 
 1. **Auf jeder Produktseite**, im selben Block wie Preis und Größe, nicht darunter weggeklappt:
-   `Entworfen, geprüft und gehandelt in Hamburg · Gefertigt in Deutschland`
+   `Entworfen, geprüft und gehandelt im Alten Land bei Hamburg · Gefertigt in Deutschland`
 2. **In der Fußzeile jeder Seite**, einmal ausgeschrieben.
 3. **Am Etikett und auf dem Beileger** derselbe Satz.
 4. **Kein Satz behauptet Fertigung in Hamburg**, wenn das Stück nicht dort gefertigt wurde.
@@ -94,3 +94,39 @@ und dort gearbeitet wird.
    das Produkt, sonst wird aus einem Gebrauchsgegenstand ein Sammlerstück, das niemand benutzt.
 4. Einkauf: Die Hersteller arbeiten weiter ausschließlich mit HB-01, LE-01 und so weiter.
    Verkaufsnamen tauchen in keiner RFQ und in keinem Tech Pack auf.
+
+---
+
+## Nachtrag 12.09.2026 — der Satz nennt jetzt das Alte Land
+
+**Anlass:** Beim Einrichten des Impressums kam die Geschäftsanschrift dazu: Quellenweg 3,
+21698 Harsefeld, Landkreis Stade, Niedersachsen. Rund 40 km von Hamburg und ein anderes
+Bundesland.
+
+Damit stand auf jeder Produktseite „gehandelt in Hamburg", während das Impressum einen Klick
+weiter Harsefeld nannte. Ein Widerspruch auf derselben Website ist der klassische
+Abmahnungsanlass — gefährlicher als eine ungenaue Angabe, weil der Gegenbeweis gleich
+mitgeliefert wird.
+
+**Entscheidung Björn, 12.09.2026: „im Alten Land bei Hamburg".**
+
+Was sich ändert:
+
+- Der Herkunftssatz lautet ab sofort `Entworfen, geprüft und gehandelt im Alten Land bei
+  Hamburg · Gefertigt in Deutschland`. Er steht weiterhin im Preisblock jeder Produktseite,
+  in der Fußzeile jeder Seite und gehört aufs Etikett.
+- `markenwissen.py`: `STANDORT`, `HERKUNFTSSATZ` und `FERTIGUNGSORT` berichtigt.
+- Die Zeile über den Praxistest nennt keinen Ort mehr, sondern „im eigenen Hundebetrieb".
+
+Was **nicht** geändert wird:
+
+- **Die Kollektionsnamen Hamburg No. 1 bis No. 7 bleiben.** Ein Produktname, der auf eine
+  Region verweist, ist keine Herkunftsbehauptung — anders als ein Satz, der ausdrücklich sagt,
+  wo entworfen und gehandelt wird. Die Namen stehen weiter für die Region, in der die Marke
+  arbeitet und verkauft.
+- Die Begründung vom 10.09., dass der Name für Entwurf, Prüfung und Handel steht und nicht für
+  die Fertigung, gilt unverändert.
+
+**Offen:** Wenn Gassi-Service, Pension und Training tatsächlich in Hamburg stattfinden, wäre
+„in Hamburg geprüft" weiterhin wahr und dürfte zusätzlich dastehen. Das ist eine
+Tatsachenfrage, die Björn beantworten muss — bis dahin bleibt der Praxistext ohne Ortsangabe.
