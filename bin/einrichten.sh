@@ -73,9 +73,11 @@ if journalctl -u bello-orchestrator --since "-2 min" --no-pager 2>/dev/null | gr
 else
   gut "keine Schreibfehler mehr"
 fi
-if [ -n "$(git status --porcelain)" ]; then
+# systemd/vom-server/ hat dieses Skript in Schritt 3 selbst angelegt — das ist
+# keine Veraenderung durch den Tageslauf und darf hier nicht als Fehler zaehlen.
+if [ -n "$(git status --porcelain -- . ':(exclude)systemd/vom-server')" ]; then
   schlecht "der Lauf hat den Git-Baum veraendert:"
-  git status --short | head
+  git status --short -- . ':(exclude)systemd/vom-server' | head
 else
   gut "Git-Arbeitsbaum ist nach dem Lauf immer noch sauber"
 fi

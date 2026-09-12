@@ -83,16 +83,50 @@ rm -f /etc/nginx/sites-enabled/default
 nginx -t >/dev/null 2>&1 && systemctl reload nginx && gut "nginx laeuft (nur Port 80)" \
   || { schlecht "nginx-Konfiguration fehlerhaft"; nginx -t; exit 1; }
 
-if [ -d "/etc/letsencrypt/live/$HOST" ]; then
+if [ "${1:-}" = "--selbstsigniert" ]; then
+  # Eigenes Zertifikat: der Browser warnt einmal, weil niemand dafuer buergt.
+  # Die Verbindung ist trotzdem verschluesselt — das Passwort geht nicht im
+  # Klartext ueber die Leitung. Als Zwischenloesung tragbar.
+  ZERT=/etc/ssl/bello
+  mkdir -p "$ZERT"
+  if [ ! -f "$ZERT/fullchain.pem" ]; then
+    openssl req -x509 -newkey rsa:2048 -nodes -days 3650 \
+      -keyout "$ZERT/privkey.pem" -out "$ZERT/fullchain.pem" \
+      -subj "/CN=$HOST" -addext "subjectAltName=DNS:$HOST" >/dev/null 2>&1 \
+      && gut "selbstsigniertes Zertifikat erzeugt (10 Jahre)" \
+      || { schlecht "openssl fehlgeschlagen"; exit 1; }
+  else
+    gut "selbstsigniertes Zertifikat besteht bereits"
+  fi
+  ZERT_PFAD="$ZERT"
+elif [ -d "/etc/letsencrypt/live/$HOST" ]; then
   gut "Zertifikat besteht bereits"
+  ZERT_PFAD="/etc/letsencrypt/live/$HOST"
 else
-  certbot certonly --webroot -w /var/www/html -d "$HOST" \
+  AUSGABE=$(certbot certonly --webroot -w /var/www/html -d "$HOST" \
       --non-interactive --agree-tos --register-unsafely-without-email \
-      --deploy-hook "systemctl reload nginx" 2>&1 | tail -5
+      --deploy-hook "systemctl reload nginx" 2>&1)
+  echo "$AUSGABE" | tail -5
   if [ -d "/etc/letsencrypt/live/$HOST" ]; then
     gut "Zertifikat ausgestellt"
+    ZERT_PFAD="/etc/letsencrypt/live/$HOST"
+  elif echo "$AUSGABE" | grep -q "too many certificates"; then
+    schlecht "Let's-Encrypt-Kontingent erschoepft — nicht deine Schuld."
+    echo "       powersrv.de ist netcups Sammeldomain fuer alle vServer, und das"
+    echo "       Wochenkontingent von 50 Zertifikaten haben andere Kunden verbraucht."
+    echo "       Port 80 funktioniert, sonst waere die Anfrage gar nicht angekommen."
+    echo
+    echo "       Drei Wege:"
+    echo "       a) Eigene Domain eintragen (A-Record auf diesen Server), dann"
+    echo "          gilt das Kontingent nur fuer dich:"
+    echo "          BELLO_HOST=dashboard.deine-domain.de bash bin/dashboard-im-browser.sh"
+    echo "       b) Selbstsigniert weitermachen (Browserwarnung beim ersten Besuch,"
+    echo "          Verschluesselung aber echt):"
+    echo "          bash bin/dashboard-im-browser.sh --selbstsigniert"
+    echo "       c) Spaeter noch einmal versuchen — der Zeitpunkt steht oben."
+    exit 1
   else
-    schlecht "Kein Zertifikat. Meist ist Port 80 von aussen dicht."
+    schlecht "Kein Zertifikat. Haeufigste Ursache: Port 80 von aussen dicht."
     echo "       Pruefen: netcup-Kundenpanel -> Server -> Firewall, und 'ufw status'."
     echo "       Der Rest wird uebersprungen; nichts ist kaputt."
     exit 1
@@ -116,8 +150,8 @@ server {
     http2 on;
     server_name $HOST;
 
-    ssl_certificate     /etc/letsencrypt/live/$HOST/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/$HOST/privkey.pem;
+    ssl_certificate     $ZERT_PFAD/fullchain.pem;
+    ssl_certificate_key $ZERT_PFAD/privkey.pem;
 
     auth_basic           "Bellowerk";
     auth_basic_user_file $HTPASSWD;
@@ -145,9 +179,14 @@ nginx -t >/dev/null 2>&1 && systemctl reload nginx && gut "Seite ist scharf" \
 
 # ---------- 6. Gegenprobe ----------
 meldung "6/6  Gegenprobe"
-ohne=$(curl -s -o /dev/null -w '%{http_code}' "https://$HOST/dashboard.html")
-mit=$(curl -s -o /dev/null -w '%{http_code}' -u "$BENUTZER:${PASSWORT}" "https://$HOST/dashboard.html" 2>/dev/null)
-geheim=$(curl -s -o /dev/null -w '%{http_code}' "https://$HOST/auftraege.json")
+# Bei selbstsigniertem Zertifikat muss curl die Pruefung ueberspringen, sonst
+# scheitert die Gegenprobe am Zertifikat statt an dem, was sie pruefen soll.
+CURL_OPT=(-s -o /dev/null -w '%{http_code}')
+[ "${1:-}" = "--selbstsigniert" ] && CURL_OPT+=(-k)
+
+ohne=$(curl "${CURL_OPT[@]}" "https://$HOST/dashboard.html")
+mit=$(curl "${CURL_OPT[@]}" -u "$BENUTZER:${PASSWORT}" "https://$HOST/dashboard.html" 2>/dev/null)
+geheim=$(curl "${CURL_OPT[@]}" "https://$HOST/auftraege.json")
 [ "$ohne" = "401" ] && gut "ohne Passwort: 401 (abgewiesen)" || schlecht "ohne Passwort: $ohne — erwartet 401"
 [ "$geheim" = "401" ] || [ "$geheim" = "404" ] && gut "auftraege.json: $geheim (nicht erreichbar)" \
   || schlecht "auftraege.json liefert $geheim — BITTE MELDEN"
