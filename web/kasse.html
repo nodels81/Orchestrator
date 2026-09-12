@@ -142,10 +142,21 @@
         <label class="feld"><span>Land <span class="pflicht-stern">*</span></span>
           <select name="land" autocomplete="country-name">
             <option selected>Deutschland</option>
-            <option>Österreich</option>
-            <option>Schweiz</option>
+            <optgroup label="Europäische Union">
+              <option>Österreich</option><option>Belgien</option><option>Dänemark</option>
+              <option>Frankreich</option><option>Italien</option><option>Luxemburg</option>
+              <option>Niederlande</option><option>Polen</option><option>Schweden</option>
+              <option>Spanien</option><option>Tschechien</option>
+            </optgroup>
+            <optgroup label="Europa außerhalb der EU">
+              <option>Schweiz</option><option>Norwegen</option><option>Vereinigtes Königreich</option>
+            </optgroup>
+            <optgroup label="Weltweit">
+              <option>Vereinigte Staaten</option><option>Kanada</option><option>Australien</option>
+              <option>Neuseeland</option><option>Japan</option>
+            </optgroup>
           </select>
-          <span class="feld-hinweis">Außerhalb der EU versenden wir zurzeit nicht. Zoll und Einfuhrumsatzsteuer wären für beide Seiten teurer als die Ware.</span>
+          <span class="feld-hinweis">Wir versenden weltweit. Außerhalb der EU kommen Zoll und Einfuhrumsatzsteuer des Ziellandes dazu, die der Besteller trägt. Die vollständige Länderliste steht im Shop.</span>
         </label>
         <label class="haken"><input type="checkbox" name="abweichend"><span>Rechnungsadresse weicht ab</span></label>
       </section>
