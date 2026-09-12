@@ -19,7 +19,25 @@ in a handwritten script, right-aligned under line 1. No stitching, no glue as th
 | Sizes | **PA-M 85 × 18 mm** for 25–40 mm straps (collar M/L/XL, lead 25 mm) · **PA-S 65 × 14 mm** for 20 mm straps (lead LE-01, hand loop HS-01, collar S). Corner radius 3 mm. |
 | Lettering | Line 1 "BELLOWERK": spaced geometric sans-serif capitals as in the existing logo (Futura/Josefin Sans style, tracking +20 %), cap height 4.5 mm (PA-M) / 3.5 mm (PA-S). Line 2 "Manufaktur": brush script as in the logo, x-height 2.5 mm / 2.0 mm, placed under the right half of line 1. Engraving depth 0.3–0.4 mm, dark burn, no paint, no foil (the thicker, firmer leather takes a deeper burn without warping). Björn supplies the vector logo; the drawing is a placeholder. |
 | Holes | 2 × Ø 4.5 mm, hole centres 7 mm from each end → spacing **71 mm** (PA-M) / **51 mm** (PA-S) |
-| Screws | Chicago screws solid brass, head Ø 8–9 mm domed (as on photos), post 8 mm, thread-locked. Stack = patch 3.0–3.5 mm + strap 3.5–4.0 mm = **6.5–7.5 mm**; confirm the 8 mm post clamps this stack tight with no play, and quote a 7 mm post as an alternative. |
+| Screws | Chicago screws (binding screws), **solid brass** — same alloy family as buckle and D-ring: HPb59-1 / CW617N or CuZn39Pb3 / CW614N, unplated, unlacquered, brushed. Thread: ISO metric coarse (ISO 261 / DIN 13-1), M4 × 0.7 or M5 × 0.8 — your standard for this barrel class. Domed head Ø 8–9 mm outside, flat head inside. Thread-locked. **Barrel length: to be confirmed by the supplier** — see note below. |
+
+### Note on barrel length (open — supplier to advise)
+
+Chicago screws are not a DIN or ISO part; only the thread and the alloy are standardised, the barrel
+lengths are each maker's stock programme. So we give the **stack thickness** and ask for the right
+barrel from stock, rather than guessing a length:
+
+| Joint | Layers | Stack | Currently in our specs |
+|---|---|---|---|
+| Patch on strap | patch 3.0–3.5 + strap 3.5–4.0 | **6.5–7.5 mm** | post 8 mm |
+| Buckle fold, 2 layers | strap 3.5–4.0 × 2 | **7.0–8.0 mm** | post 8 mm |
+| Fold, 3 layers | strap 3.5–4.0 × 3 | **10.5–12.0 mm** | post 10 mm — **too short, see below** |
+| Keeper on strap | strap 3.5–4.0 × 2 | **7.0–8.0 mm** | post 8 mm |
+
+The 3-layer case does not add up: a 10 mm barrel is 0.5–2.0 mm shorter than the stack it has to hold.
+Leather compresses under the heads, so a barrel slightly under the stack can be correct — but how far
+under is the maker's craft knowledge, not ours. Ask the supplier which barrel length they use for each
+stack in leather goods, and standardise on as few lengths as possible across all models.
 | Edges | Cut clean, lightly bevelled, burnished, no edge paint |
 | Position | Collar: centred on strap, 30 mm behind buckle fold. Lead: 80 mm from hook A. Hand loop: on the overlap. |
 
