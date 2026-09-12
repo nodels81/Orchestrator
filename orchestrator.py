@@ -43,6 +43,7 @@ ABTEILUNGEN = {
     "08 Design": ("abteilung_design", "Design"),
     "09 Qualität": ("abteilung_qualitaet", "Qualitaet"),
     "10 Homepage": ("abteilung_web", "Web"),
+    "11 App": ("abteilung_app", "App"),
 }
 
 

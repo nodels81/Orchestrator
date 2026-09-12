@@ -18,6 +18,7 @@ VORNAMEN = {
     "08": "Thea",     # Design (Formgestaltung)
     "09": "Almut",    # Qualitaet (prueft die Arbeit der anderen)
     "10": "Frauke",   # Homepage — Leitung; im Team: Mira (Design), Jonas (Errichtung)
+    "11": "Rieke",    # App — Leitung; im Team: Malte (Bedienung), Ole (Errichtung)
 }
 
 

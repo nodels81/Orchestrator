@@ -22,6 +22,7 @@ ABTEILUNGEN = [
     ("08", "Thea",   "Design",               "entwirft die Form: Silhouette, Proportionen, Beschlag-Layout", ["02"]),
     ("09", "Almut",  "Qualität",             "prüft die Arbeit der anderen vor deiner Entscheidung",         []),
     ("10", "Frauke", "Homepage",             "Shop auf WooCommerce: Mira entwirft, Jonas baut, Frauke prüft",    []),
+    ("11", "Rieke",  "App",                   "Betriebs-App fürs Handy: Malte entwirft, Ole baut, Rieke prüft",  []),
 ]
 ORCHESTRATOR = "Gustav"
 
