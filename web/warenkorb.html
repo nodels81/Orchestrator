@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Warenkorb — Bellowerk</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+.korbseite{padding-block:var(--raum-8) var(--sektion)}
+.korbseite h1{font-family:var(--display);font-size:var(--step-3);margin-bottom:var(--raum-7)}
+.korb-raster{display:grid;grid-template-columns:1.5fr .75fr;gap:var(--raum-8);align-items:start}
+@media (max-width:900px){.korb-raster{grid-template-columns:1fr}}
+
+.zeile{display:grid;grid-template-columns:104px 1fr auto;gap:var(--raum-5);padding-block:var(--raum-6);border-bottom:1px solid var(--linie);align-items:start}
+.zeile:first-of-type{border-top:1px solid var(--linie)}
+.zeile .bildplatz{aspect-ratio:4/5}
+.zeile .bildplatz span{font-size:8.5px;letter-spacing:.08em;line-height:1.7}
+.zeile h2{font-family:var(--display);font-size:var(--step-1)}
+.zeile-nr{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--messing-tief);margin-block:var(--raum-2) var(--raum-3)}
+.zeile-eigenschaften{display:flex;gap:var(--raum-5);flex-wrap:wrap;font-size:var(--step--1);color:var(--mute);margin-bottom:var(--raum-4)}
+.zeile-eigenschaften b{color:var(--ink);font-weight:500}
+.zeile-steuerung{display:flex;gap:var(--raum-5);align-items:center;flex-wrap:wrap}
+.zeile-preis{text-align:right;font-family:var(--mono)}
+@media (max-width:460px){
+  .zeile{grid-template-columns:72px 1fr;gap:var(--raum-4)}
+  .zeile-preis{grid-column:2;text-align:left}
+}
+.zeile-preis small{display:block;color:var(--mute);font-size:10.5px;margin-top:6px}
+
+@media (min-width:901px){.korb-summe{position:sticky;top:96px}}
+.versandbalken{margin-bottom:var(--raum-6)}
+.balken{height:3px;background:var(--linie);margin-block:var(--raum-3);overflow:hidden}
+.balken i{display:block;height:100%;background:linear-gradient(90deg,var(--messing-tief),var(--messing));width:var(--fuell,0%);transition:width var(--gross) var(--raus)}
+.versandbalken p{font-size:var(--step--1);color:var(--mute)}
+.versandbalken b{color:var(--ink);font-weight:500}
+.weiter{margin-top:var(--raum-5);display:grid;gap:var(--raum-3)}
+.vertrauen{display:grid;gap:var(--raum-3);margin-top:var(--raum-6);font-size:var(--step--1);color:var(--mute)}
+.vertrauen li{display:flex;gap:10px}
+.vertrauen li::before{content:"✓";color:var(--messing-tief);font-family:var(--mono);flex:none}
+</style>
+</head>
+<body>
+
+<a class="springen" href="#inhalt">Zum Inhalt springen</a>
+
+<div class="entwurf rand">
+  <span><b>Entwurf</b> · nicht veröffentlichen</span>
+  <span>Warenkorb</span>
+  <span>Stand 12.09.2026</span>
+  <span>Zustände: gefüllt und leer · unten umschaltbar</span>
+</div>
+
+<header class="kopf">
+  <div class="kopf-innen mitte rand">
+    <a href="startseite-nachtwerkstatt.html" class="wortmarke messing">Bellowerk</a>
+    <nav aria-label="Hauptbereiche">
+      <ul>
+        <li><a href="katalog.html">Kollektion</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#werkstoff">Material</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#praxistest">Praxistest</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#finder">Größe finden</a></li>
+      </ul>
+    </nav>
+    <button class="korb" aria-label="Warenkorb, 2 Stück">Warenkorb <b id="korbzahl">2</b></button>
+  </div>
+</header>
+
+<main id="inhalt" class="korbseite mitte rand">
+  <h1>Warenkorb</h1>
+
+  <div id="gefuellt">
+    <div class="korb-raster">
+      <div>
+        <section aria-label="Waren im Korb">
+          <article class="zeile">
+            <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%)"><span>FOTO 01<br>HB-01</span></div>
+            <div>
+              <h2>Hamburg No. 1</h2>
+              <p class="zeile-nr">HB-01 · Halsband Fettleder</p>
+              <p class="zeile-eigenschaften"><span>Größe <b>M</b> · 38–46 cm</span><span>Leder <b>Dunkelbraun</b></span></p>
+              <div class="zeile-steuerung">
+                <div class="menge" role="group" aria-label="Menge Hamburg No. 1">
+                  <button type="button" aria-label="Menge verringern" disabled>−</button>
+                  <span aria-live="polite">1</span>
+                  <button type="button" aria-label="Menge erhöhen">+</button>
+                </div>
+                <button class="knopf knopf-still" type="button">Entfernen</button>
+              </div>
+            </div>
+            <p class="zeile-preis tab">89,00 €<small>Stück 89,00 €</small></p>
+          </article>
+
+          <article class="zeile">
+            <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 36% 24%,#413424,#120E08 76%)"><span>FOTO 04<br>HS-01</span></div>
+            <div>
+              <h2>Hamburg No. 3</h2>
+              <p class="zeile-nr">HS-01 · Handschlaufe</p>
+              <p class="zeile-eigenschaften"><span>Umfang <b>50 cm</b></span><span>Leder <b>Dunkelbraun</b></span></p>
+              <div class="zeile-steuerung">
+                <div class="menge" role="group" aria-label="Menge Hamburg No. 3">
+                  <button type="button" aria-label="Menge verringern" disabled>−</button>
+                  <span aria-live="polite">1</span>
+                  <button type="button" aria-label="Menge erhöhen">+</button>
+                </div>
+                <button class="knopf knopf-still" type="button">Entfernen</button>
+              </div>
+            </div>
+            <p class="zeile-preis tab">39,00 €<small>Stück 39,00 €</small></p>
+          </article>
+        </section>
+
+        <div class="meldung meldung-hinweis" style="margin-top:var(--raum-7)">
+          <div>
+            <b>Passt die Größe nicht, geht sie zurück</b>
+            <p>Vierzehn Tage Widerrufsrecht ohne Begründung. Solange das Stück nicht getragen wurde, tauschen wir die Größe. Der Rückweg kostet dich nichts.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="korb-summe">
+        <div class="versandbalken">
+          <p><b>Versandkostenfrei.</b> Die Grenze von 120 € ist erreicht.</p>
+          <div class="balken" role="presentation"><i style="--fuell:100%"></i></div>
+          <p>Unter 120 € kostet der Versand innerhalb Deutschlands 4,90 €.</p>
+        </div>
+
+        <div class="summe">
+          <dl>
+            <dt>Zwischensumme</dt><dd class="tab">128,00 €</dd>
+            <dt>Versand innerhalb Deutschlands</dt><dd class="tab">0,00 €</dd>
+            <div style="display:contents" class="gesamt"><dt>Gesamt</dt><dd class="tab">128,00 €</dd></div>
+          </dl>
+          <p class="feld-hinweis" style="margin-top:var(--raum-4)">Enthält 20,44 € Umsatzsteuer (19 %). Lieferzeit 2 bis 4 Werktage.</p>
+
+          <div class="weiter">
+            <a class="knopf knopf-haupt knopf-breit" href="kasse.html">Zur Kasse</a>
+            <a class="knopf knopf-neben knopf-breit" href="katalog.html">Weiter ansehen</a>
+          </div>
+        </div>
+
+        <ul class="vertrauen">
+          <li>PayPal oder Überweisung, ohne Aufschlag</li>
+          <li>Versand mit DHL GoGreen, mit Sendungsverfolgung</li>
+          <li>Reparatur statt Ersatz, solange es die Werkstatt gibt</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Leerzustand. Gehört zum Entwurf, nicht als Nachgedanke. -->
+  <div id="leerkorb" hidden>
+    <div class="leer">
+      <h3>Der Warenkorb ist leer</h3>
+      <p>Noch nichts drin. Die Kollektion ist überschaubar — das ist der schnellste Weg zurück.</p>
+      <a class="knopf knopf-haupt" href="katalog.html">Zur Kollektion</a>
+    </div>
+  </div>
+
+  <p style="margin-top:var(--sektion);text-align:center">
+    <button class="knopf knopf-neben" id="umschalten" type="button">Entwurf: Leerzustand zeigen</button>
+  </p>
+</main>
+
+<footer class="fuss">
+  <div class="mitte rand">
+    <p class="rechtszeile" style="border-top:0;padding-top:0">
+      Entworfen, geprüft und gehandelt im Alten Land bei Hamburg. Gefertigt in Deutschland.<br>
+      Alle Preise inklusive gesetzlicher Umsatzsteuer, zuzüglich Versandkosten. Versand innerhalb Deutschlands 4,90 €, ab 120 € versandkostenfrei. Lieferzeit 2 bis 4 Werktage.<br>
+      <a href="recht/impressum.html">Impressum</a> · <a href="recht/datenschutz.html">Datenschutz</a> · <a href="recht/agb.html">AGB</a> · <a href="recht/widerruf.html">Widerruf</a> · <a href="recht/versand.html">Versand und Lieferzeit</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+/* Mengenwähler je Zeile */
+document.querySelectorAll('.menge').forEach(m => {
+  const anzeige = m.querySelector('span');
+  const [weniger, mehr] = m.querySelectorAll('button');
+  let zahl = 1;
+  const zeichnen = () => { anzeige.textContent = zahl; weniger.disabled = zahl <= 1; mehr.disabled = zahl >= 10; };
+  weniger.addEventListener('click', () => { if (zahl > 1) { zahl--; zeichnen(); } });
+  mehr.addEventListener('click', () => { if (zahl < 10) { zahl++; zeichnen(); } });
+});
+
+/* Nur für den Entwurf: die beiden Zustände nebeneinander prüfbar machen. */
+const knopf = document.getElementById('umschalten');
+knopf.addEventListener('click', () => {
+  const leer = document.getElementById('leerkorb').hidden;
+  document.getElementById('leerkorb').hidden = !leer;
+  document.getElementById('gefuellt').hidden = leer;
+  document.getElementById('korbzahl').textContent = leer ? '0' : '2';
+  knopf.textContent = leer ? 'Entwurf: gefüllten Korb zeigen' : 'Entwurf: Leerzustand zeigen';
+});
+</script>
+</body>
+</html>

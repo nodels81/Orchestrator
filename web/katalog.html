@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Die Kollektion — Bellowerk</title>
+<meta name="description" content="Das Werkverzeichnis der Manufaktur Bellowerk: Halsbänder, Leinen und Zubehör aus pflanzlich gegerbtem Fettleder und massivem Messing. Jedes Stück trägt die Nummer, in der es entstanden ist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+.katalogkopf{padding-block:var(--raum-9) var(--raum-8);border-bottom:1px solid var(--linie)}
+.katalogkopf h1{font-family:var(--display);font-size:var(--step-4);line-height:1.03;letter-spacing:-.02em;max-width:17ch;margin-block:var(--raum-5) var(--raum-5)}
+.katalogkopf p{color:var(--mute);max-width:56ch}
+
+/* Filterleiste: klebt unter der Kopfleiste, bleibt erreichbar */
+.filter{position:sticky;top:65px;z-index:20;background:color-mix(in oklab,var(--nacht) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linie);padding-block:var(--raum-4)}
+.filter-innen{display:flex;justify-content:space-between;align-items:center;gap:var(--raum-5);flex-wrap:wrap}
+.filter .wahl label{padding:9px 15px;font-size:11px}
+.treffer{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+.werkraster{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:var(--raum-6);padding-block:var(--raum-8)}
+.karte{position:relative}
+.karte a::after{content:"";position:absolute;inset:0}
+.karte[hidden]{display:none}
+
+/* Zubehör steht abgesetzt: keine Werkverzeichnis-Nummer, also auch
+   nicht dieselbe Kachelgröße. Ein Schild ist kein Werkstück. */
+.zubehoer{border-top:1px solid var(--linie);padding-block:var(--sektion)}
+.zub-raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--raum-5)}
+.zub{border:1px solid var(--linie);background:var(--flaeche);padding:var(--raum-6);display:flex;flex-direction:column;gap:var(--raum-3)}
+.zub h3{font-family:var(--display);font-size:var(--step-1)}
+.zub p{color:var(--mute);font-size:var(--step--1);flex:1}
+.zub-preis{font-family:var(--mono);font-size:var(--step-0);border-top:1px solid var(--linie);padding-top:var(--raum-4);margin-top:var(--raum-3)}
+
+.hinweisband{padding-block:var(--raum-7)}
+</style>
+</head>
+<body>
+
+<a class="springen" href="#inhalt">Zum Inhalt springen</a>
+
+<div class="entwurf rand">
+  <span><b>Entwurf</b> · nicht veröffentlichen</span>
+  <span>Richtung 03 Nachtwerkstatt</span>
+  <span>Katalog</span>
+  <span>Stand 12.09.2026</span>
+  <span><b>Bildflächen sind Aufnahmeanweisungen</b></span>
+</div>
+
+<header class="kopf">
+  <div class="kopf-innen mitte rand">
+    <a href="startseite-nachtwerkstatt.html" class="wortmarke messing">Bellowerk</a>
+    <nav aria-label="Hauptbereiche">
+      <ul>
+        <li><a href="katalog.html" aria-current="page">Kollektion</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#werkstoff">Material</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#praxistest">Praxistest</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#finder">Größe finden</a></li>
+      </ul>
+    </nav>
+    <button class="korb" aria-label="Warenkorb, 1 Stück">Warenkorb <b>1</b></button>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <section class="katalogkopf mitte rand">
+    <p class="augenbraue">Werkverzeichnis</p>
+    <h1>Sieben Stücke, in der Reihenfolge ihrer Entstehung.</h1>
+    <p>Die Nummer läuft durch die ganze Kollektion, nicht je Warengruppe. No. 1 ist das zuerst gebaute Stück, nicht das erste Halsband. Was hier steht, ist alles — und mehr ist nicht geplant.</p>
+    <p class="herkunft" style="margin-top:var(--raum-6)"><b>Entworfen, geprüft und gehandelt im Alten Land bei Hamburg.</b> &nbsp;Gefertigt in Deutschland.</p>
+  </section>
+
+  <div class="filter">
+    <div class="mitte rand filter-innen">
+      <div class="wahl" role="radiogroup" aria-label="Nach Art filtern">
+        <input type="radio" name="art" id="f-alle" value="alle" checked><label for="f-alle">Alles</label>
+        <input type="radio" name="art" id="f-hals" value="hals"><label for="f-hals">Halsbänder</label>
+        <input type="radio" name="art" id="f-leine" value="leine"><label for="f-leine">Leinen</label>
+        <input type="radio" name="art" id="f-zub" value="zubehoer"><label for="f-zub">Zubehör</label>
+      </div>
+      <p class="treffer" aria-live="polite" id="treffer">7 Stücke</p>
+    </div>
+  </div>
+
+  <section class="mitte rand">
+    <div class="werkraster" id="raster">
+
+      <article class="karte" data-art="hals">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%)">
+          <span>FOTO 01 · HB-01 auf Eiche<br>Streiflicht von links, 85 mm</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-1.html">Hamburg No. 1</a></h3>
+        <p class="karte-nr">HB-01 · Halsband Fettleder</p>
+        <p>Einlagig, ohne Naht, aus einem Stück geschnitten. 20 bis 40 mm.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">89,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte" data-art="leine">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 20%,#463726,#120F09 76%)">
+          <span>FOTO 03 · LE-01 hängend<br>Gegenlicht, Werkstatt</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-2.html">Hamburg No. 2</a></h3>
+        <p class="karte-nr">LE-01 · Führleine 3,00 m</p>
+        <p>Sechs Führlängen, dreifach verstellbar. Ringe bei 45, 140 und 245 cm.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">129,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte" data-art="zubehoer">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 36% 24%,#413424,#120E08 76%)">
+          <span>FOTO 04 · HS-01 in der Hand<br>Makro, warmes Licht</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-3.html">Hamburg No. 3</a></h3>
+        <p class="karte-nr">HS-01 · Handschlaufe</p>
+        <p>Umfang 50 cm. Für die Leine am Gürtel oder über der Schulter.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">39,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte" data-art="hals">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 34% 22%,#4C3D28,#131009 76%)">
+          <span>FOTO 02 · HB-02 Flechtung<br>schräg, harter Kontrast</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-4.html">Hamburg No. 4</a></h3>
+        <p class="karte-nr">HB-02 · Halsband geflochten</p>
+        <p>Dreisträngiger Mystery Braid aus einem Stück. O-Ring, flache Enden.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">99,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte" data-art="leine" data-stand="ausverkauft">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 32% 20%,#42351F,#110E07 76%)">
+          <span class="marke-band">Zurückgestellt</span>
+          <span>FOTO · LE-02 rundgeflochten<br>noch nicht aufgenommen</span>
+        </div>
+        <h3>Hamburg No. 5</h3>
+        <p class="karte-nr">LE-02 · Führleine geflochten</p>
+        <p>Rundgeflochten. Zurückgestellt, bis die Flechtung in Serie zuverlässig läuft.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">139,00 €</span><span class="karte-mehr">Nicht bestellbar</span></div>
+      </article>
+
+      <article class="karte" data-art="hals" data-stand="ausverkauft">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 22%,#463A26,#120F08 76%)">
+          <span class="marke-band">In Arbeit</span>
+          <span>FOTO · HB-03 Zugstopp<br>noch nicht aufgenommen</span>
+        </div>
+        <h3>Hamburg No. 6</h3>
+        <p class="karte-nr">HB-03 · Zugstopp-Halsband</p>
+        <p>Freigegeben, noch nicht gebaut. Nicht für Windhunde, und so wird es auch nicht beworben.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">99,00 €</span><span class="karte-mehr">Noch nicht da</span></div>
+      </article>
+
+      <article class="karte" data-art="leine" data-stand="ausverkauft">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 24%,#3E3322,#110E07 76%)">
+          <span class="marke-band">Entscheidung offen</span>
+          <span>FOTO · KO-01 Koppel<br>noch nicht aufgenommen</span>
+        </div>
+        <h3>Hamburg No. 7</h3>
+        <p class="karte-nr">KO-01 · Koppel für zwei Hunde</p>
+        <p>Hängt an einem Messingwirbel, der noch nicht gefunden ist. Stahl kommt nicht in Frage.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">79,00 €</span><span class="karte-mehr">Noch nicht da</span></div>
+      </article>
+
+    </div>
+
+    <div class="leer" id="leer" hidden>
+      <h3>Nichts in dieser Auswahl</h3>
+      <p>In dieser Warengruppe steht zurzeit kein Stück im Verkauf. Die Kollektion wächst langsam, das ist Absicht.</p>
+      <button class="knopf knopf-neben" onclick="document.getElementById('f-alle').click()">Alles anzeigen</button>
+    </div>
+  </section>
+
+  <section class="zubehoer mitte rand">
+    <div class="kopfzeile">
+      <span class="nr">Zutaten</span>
+      <h2>Zubehör bekommt keine Nummer.</h2>
+      <p>Ein Schild ist kein Werkstück der Kollektion, sondern eine Zutat. Alles zu nummerieren würde die Nummer entwerten.</p>
+    </div>
+    <div class="zub-raster">
+      <div class="zub">
+        <h3>Namensschild Messing</h3>
+        <p class="karte-nr">NS-01</p>
+        <p>Geätzt, gebürstet, unlackiert. Zwei Buchschrauben, passt an jeden D-Ring der Kollektion.</p>
+        <p class="zub-preis tab"><span class="platzhalter" title="Preis noch nicht entschieden — Antwort des Herstellers auf Frage 5 der RFQ steht aus">Preis offen</span></p>
+      </div>
+      <div class="zub">
+        <h3>Namenspatch Leder</h3>
+        <p class="karte-nr">NS-02</p>
+        <p>Lasergraviert in Versalien, bis zehn Zeichen. Gleiche Befestigung wie das Messingschild.</p>
+        <p class="zub-preis tab"><span class="platzhalter" title="Preis noch nicht entschieden — Antwort des Herstellers auf Frage 5 der RFQ steht aus">Preis offen</span></p>
+      </div>
+      <div class="zub">
+        <h3>Pflegeset</h3>
+        <p class="karte-nr">PF-01</p>
+        <p>Lederfett, Tuch und eine Anleitung, die erklärt, warum weniger mehr ist.</p>
+        <p class="zub-preis tab"><span class="platzhalter" title="Noch nicht entschieden, ob das Set kommt">Noch nicht entschieden</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hinweisband mitte rand">
+    <div class="meldung meldung-hinweis">
+      <div>
+        <b>Warum hier so wenig steht</b>
+        <p>Jedes Stück hängt vor dem Verkauf eine Saison an fremden Hunden. Das dauert, und manches fällt dabei durch. Vier Stücke sind fertig, drei sind es noch nicht — und das steht hier so, statt sie schon einmal bestellbar zu machen.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="mitte rand">
+    <div class="fuss-raster">
+      <div class="fuss-marke">
+        <span class="wortmarke messing">Bellowerk</span>
+        <p>Manufaktur für Lederzubehör. Hamburg. Halsbänder und Leinen aus Fettleder und massivem Messing.</p>
+      </div>
+      <div>
+        <h4>Kaufen</h4>
+        <ul>
+          <li><a href="katalog.html">Kollektion</a></li>
+          <li><a href="startseite-nachtwerkstatt.html#finder">Größe finden</a></li>
+          <li><a href="warenkorb.html">Warenkorb</a></li>
+          <li><a href="recht/versand.html">Versand und Lieferzeit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Werkstatt</h4>
+        <ul>
+          <li><a href="startseite-nachtwerkstatt.html#praxistest">Praxistest</a></li>
+          <li><a href="startseite-nachtwerkstatt.html#werkstoff">Material und Pflege</a></li>
+          <li><a href="startseite-nachtwerkstatt.html#leistung">Gassi, Pension, Training</a></li>
+          <li><a href="produkt-hamburg-no-1.html#fragen">Reparatur</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="recht/impressum.html">Impressum</a></li>
+          <li><a href="recht/datenschutz.html">Datenschutz</a></li>
+          <li><a href="recht/agb.html">AGB</a></li>
+          <li><a href="recht/widerruf.html">Widerruf und Rückgabe</a></li>
+          <li><a href="recht/versand.html">Versand und Lieferzeit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="zahlarten">
+      <span>PayPal</span><span>Überweisung</span>
+    </div>
+    <p class="rechtszeile">
+      Entworfen, geprüft und gehandelt im Alten Land bei Hamburg. Gefertigt in Deutschland. Der Praxistest findet im eigenen Hundebetrieb statt.<br>
+      Alle Preise inklusive gesetzlicher Umsatzsteuer, zuzüglich Versandkosten. Versand innerhalb Deutschlands 4,90 €, ab 120 € versandkostenfrei. Lieferzeit 2 bis 4 Werktage, bei Maßanfertigung 10 bis 14 Werktage.<br>
+      Entwurfsstand 12.09.2026 · Richtung 03 Nachtwerkstatt · Bildflächen sind Aufnahmeanweisungen, keine Bilder.
+    </p>
+  </div>
+</footer>
+
+<script>
+/* Filter. Rein visuell im Entwurf — im Shop übernimmt das die Storefront-API. */
+const karten = [...document.querySelectorAll('#raster .karte')];
+const treffer = document.getElementById('treffer');
+const leer = document.getElementById('leer');
+document.querySelectorAll('input[name="art"]').forEach(e => e.addEventListener('change', () => {
+  let sichtbar = 0;
+  karten.forEach(k => {
+    const zeigen = e.value === 'alle' || k.dataset.art === e.value;
+    k.hidden = !zeigen;
+    if (zeigen) sichtbar++;
+  });
+  treffer.textContent = sichtbar === 1 ? '1 Stück' : sichtbar + ' Stücke';
+  leer.hidden = sichtbar > 0;
+}));
+</script>
+</body>
+</html>

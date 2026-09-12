@@ -1,0 +1,11 @@
+[Unit]
+Description=Bello: Tagesbrief 07:00
+
+[Timer]
+OnCalendar=*-*-* 07:00:00
+RandomizedDelaySec=0
+Persistent=true
+Unit=bello-tagesbrief.service
+
+[Install]
+WantedBy=timers.target

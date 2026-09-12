@@ -1,0 +1,712 @@
+<title>Bellowerk Nachtwerkstatt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   BELLOWERK — Richtung 03 "Nachtwerkstatt"
+   Bewusst einfarbige Welt: dunkler Grund, damit Leder und Messing
+   die einzigen hellen Dinge auf der Seite sind. Deshalb keine
+   Hell-Variante, aber jede Farbe explizit gesetzt.
+   ═══════════════════════════════════════════════════════════════════ */
+:root{
+  --nacht:#0E0C0A;
+  --flaeche:#171310;
+  --flaeche-hoch:#1E1811;
+  --ink:#F0E8DB;
+  --mute:#A2937F;
+  --linie:#2A231C;
+  --linie-hell:#3A3025;
+  --messing:#E3C376;
+  --messing-tief:#A8842F;
+  --messing-licht:#FBF0D2;
+
+  --raum-1:4px; --raum-2:8px; --raum-3:12px; --raum-4:16px; --raum-5:24px;
+  --raum-6:32px; --raum-7:48px; --raum-8:64px; --raum-9:96px; --raum-10:128px;
+  --sektion:clamp(64px, 9vw, 152px);
+  --rand:clamp(20px, 5vw, 72px);
+
+  --display:"Bodoni Moda",Didot,"Times New Roman",Georgia,serif;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --step--1:clamp(.78rem, .75rem + .12vw, .85rem);
+  --step-0:clamp(.95rem, .92rem + .16vw, 1.05rem);
+  --step-1:clamp(1.1rem, 1.02rem + .3vw, 1.3rem);
+  --step-2:clamp(1.45rem, 1.25rem + .8vw, 2rem);
+  --step-3:clamp(2rem, 1.5rem + 2.1vw, 3.2rem);
+  --step-5:clamp(2.6rem, 1.4rem + 5.4vw, 5.8rem);
+
+  --mikro:120ms; --klein:240ms; --gross:520ms;
+  --raus:cubic-bezier(.22,1,.36,1);
+
+  --korn:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--nacht);color:var(--ink);
+  font-family:var(--sans);font-size:var(--step-0);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:var(--korn);opacity:.028;mix-blend-mode:overlay;
+}
+.rand{padding-inline:var(--rand)}
+.mitte{max-width:1240px;margin-inline:auto}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:400}
+p{margin:0;text-wrap:pretty}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+:where(a,button,input,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--messing);outline-offset:3px;border-radius:2px;
+}
+.tab{font-variant-numeric:tabular-nums}
+
+/* Messing als Verlauf, nie als Fläche */
+.messing{
+  background:linear-gradient(96deg,#7E6029 0%,var(--messing) 28%,var(--messing-licht) 46%,#C79E4A 64%,#7A5C24 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* ── Entwurfsband ─────────────────────────────────────────────── */
+.entwurf{
+  position:relative;z-index:2;border-bottom:1px solid var(--linie);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--mute);padding-block:9px;
+  display:flex;flex-wrap:wrap;gap:6px 22px;
+}
+.entwurf b{color:var(--messing-tief);font-weight:500}
+
+/* ── Kopfleiste ───────────────────────────────────────────────── */
+.kopf{
+  position:sticky;top:0;z-index:30;
+  background:color-mix(in oklab,var(--nacht) 86%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--linie);
+}
+.kopf-innen{display:flex;align-items:center;justify-content:space-between;gap:var(--raum-5);padding-block:var(--raum-4)}
+.wortmarke{font-family:var(--display);font-size:1.25rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+.kopf nav ul{display:flex;gap:var(--raum-6);font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.kopf nav a{transition:color var(--mikro) ease}
+.kopf nav a:hover{color:var(--ink)}
+.korb{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--mute);
+  border:1px solid var(--linie-hell);padding:8px 14px;border-radius:2px;background:transparent;cursor:pointer;
+  transition:border-color var(--mikro) ease,color var(--mikro) ease;
+}
+.korb:hover{border-color:var(--messing-tief);color:var(--ink)}
+@media (max-width:860px){.kopf nav{display:none}}
+@media (max-width:400px){
+  /* Gemessen: bei 320 px passten Wortmarke und Warenkorbknopf nicht
+     nebeneinander, die Seite scrollte 6 px waagerecht. */
+  .wortmarke{font-size:1.05rem;letter-spacing:.18em}
+  .korb{padding:7px 10px;font-size:10.5px}
+  .kopf-innen{gap:var(--raum-3)}
+}
+
+/* ── Kopfbereich ──────────────────────────────────────────────── */
+.hero{position:relative;padding-block:clamp(56px,8vw,120px) clamp(36px,5vw,72px);text-align:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;left:50%;top:-30%;width:min(1100px,120%);height:120%;
+  transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(52% 44% at 50% 40%,rgb(227 195 118/.13),transparent 70%);
+}
+.augenbraue{position:relative;font-family:var(--mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
+.hero h1{
+  position:relative;font-family:var(--display);font-size:var(--step-5);
+  line-height:.99;letter-spacing:-.022em;margin-block:var(--raum-5) 0;
+  max-width:16ch;margin-inline:auto;
+}
+.hero h1 b{
+  font-weight:600;
+  background:linear-gradient(94deg,#7E6029 0%,var(--messing) 26%,var(--messing-licht) 44%,#C79E4A 62%,#7A5C24 100%);
+  background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:glanz 9s cubic-bezier(.5,0,.4,1) infinite;
+}
+@keyframes glanz{0%,62%{background-position:112% 0}86%,100%{background-position:-12% 0}}
+.hero-lead{position:relative;color:var(--mute);max-width:52ch;margin:var(--raum-5) auto 0;font-size:var(--step-1);line-height:1.6}
+.knopfreihe{position:relative;display:flex;gap:var(--raum-3);justify-content:center;flex-wrap:wrap;margin-top:var(--raum-7)}
+.knopf{
+  font-family:var(--sans);font-weight:600;font-size:var(--step--1);letter-spacing:.11em;text-transform:uppercase;
+  padding:15px 26px;border-radius:2px;cursor:pointer;border:1px solid transparent;
+  transition:transform var(--mikro) var(--raus),background var(--klein) ease,border-color var(--klein) ease;
+}
+.knopf-voll{
+  background:linear-gradient(180deg,#F0DCA8,var(--messing) 42%,#B08D38);color:#171008;
+  box-shadow:0 1px 1px rgb(0 0 0/.4),0 10px 22px -14px rgb(227 195 118/.6),inset 0 1px 0 rgb(255 255 255/.42);
+}
+.knopf-voll:hover{transform:translateY(-1px)}
+.knopf-leer{background:transparent;border-color:var(--linie-hell);color:var(--ink)}
+.knopf-leer:hover{border-color:var(--messing-tief)}
+
+/* ── Materialansicht (der eine schwere Effekt) ────────────────── */
+.material-buehne{position:relative;margin-top:clamp(30px,4vw,56px);border-block:1px solid var(--linie)}
+#leder{display:block;width:100%;height:clamp(200px,32vw,380px);background:
+  radial-gradient(120% 130% at 32% 22%,#4A3B27,#100D0A 74%);}
+#leder.aus{background:
+  radial-gradient(120% 130% at 32% 22%,#5A4830,#100D0A 76%),var(--korn);
+  background-blend-mode:soft-light,normal;}
+.material-schild{
+  position:absolute;left:var(--rand);bottom:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);
+  background:rgb(14 12 10/.55);padding:6px 10px;border-radius:2px;
+}
+.material-schild b{color:var(--messing);font-weight:500}
+
+/* ── Abschnittsköpfe ──────────────────────────────────────────── */
+section{position:relative;z-index:1}
+.kopfzeile{display:flex;align-items:baseline;gap:var(--raum-5);margin-bottom:var(--raum-7);flex-wrap:wrap}
+.kopfzeile h2{font-family:var(--display);font-size:var(--step-3);letter-spacing:-.018em;line-height:1.05}
+.kopfzeile .nr{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--messing-tief);white-space:nowrap}
+.kopfzeile p{color:var(--mute);max-width:46ch;font-size:var(--step-0)}
+
+/* ── Praxistest ───────────────────────────────────────────────── */
+.pruef{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.pruef-tabelle-huelle{overflow-x:auto}
+table.pruef-tabelle{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px;min-width:640px}
+table.pruef-tabelle th{
+  text-align:left;font-weight:500;color:var(--messing-tief);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;padding:0 var(--raum-5) 10px 0;border-bottom:1px solid var(--linie-hell);white-space:nowrap;
+}
+table.pruef-tabelle td{padding:14px var(--raum-5) 14px 0;border-bottom:1px solid var(--linie);vertical-align:top;color:var(--mute)}
+table.pruef-tabelle td:first-child{color:var(--ink)}
+table.pruef-tabelle tr{transition:background var(--mikro) ease}
+table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
+.kennzahlen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--linie);margin-top:var(--raum-7);border:1px solid var(--linie)}
+@media (max-width:700px){.kennzahlen{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kennzahl{background:var(--flaeche);padding:var(--raum-5) var(--raum-4)}
+.kennzahl b{display:block;font-family:var(--display);font-size:clamp(1.9rem,1.3rem + 2.2vw,2.9rem);font-weight:500;letter-spacing:-.02em;color:var(--messing)}
+.kennzahl span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:var(--raum-2)}
+
+/* ── Kollektion ───────────────────────────────────────────────── */
+.kollektion{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--linie);border:1px solid var(--linie)}
+@media (max-width:1000px){.raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.raster{grid-template-columns:1fr}}
+.karte{background:var(--flaeche);padding:var(--raum-5);display:flex;flex-direction:column;gap:var(--raum-3);transition:background var(--klein) ease}
+.karte:hover{background:var(--flaeche-hoch)}
+.bildplatz{
+  position:relative;aspect-ratio:5/4;border:1px solid var(--linie);border-radius:2px;overflow:hidden;
+  display:flex;align-items:flex-end;padding:12px;
+  background-image:var(--korn),var(--flaeche-bild);background-blend-mode:soft-light,normal;
+  transition:transform var(--gross) var(--raus);
+}
+.karte:hover .bildplatz{transform:translateY(-3px)}
+.bildplatz span{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;line-height:1.5;
+  background:rgb(0 0 0/.5);color:#E9E1D4;padding:5px 8px;border-radius:2px;
+}
+.karte h3{font-family:var(--display);font-size:var(--step-2);font-weight:500;letter-spacing:-.005em;line-height:1.1}
+.karte-nr{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--messing-tief);margin-top:2px}
+.herkunft{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border:1px solid var(--linie);border-left:2px solid var(--messing-tief);background:var(--flaeche);padding:12px 16px;margin-bottom:var(--raum-6);display:inline-block}
+.herkunft b{color:var(--ink);font-weight:500}
+.karte p{color:var(--mute);font-size:var(--step--1);line-height:1.55}
+.karte-fuss{display:flex;align-items:baseline;justify-content:space-between;gap:var(--raum-3);margin-top:auto;padding-top:var(--raum-3)}
+.karte-preis{font-family:var(--display);font-size:1.25rem;font-weight:500;color:var(--messing)}
+.karte-mehr{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--linie-hell);padding-bottom:2px;transition:color var(--mikro) ease,border-color var(--mikro) ease}
+.karte:hover .karte-mehr{color:var(--messing);border-color:var(--messing-tief)}
+
+/* ── Material und Ausschlüsse ─────────────────────────────────── */
+.werkstoff{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.werkstoff-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--raum-7)}
+@media (max-width:860px){.werkstoff-raster{grid-template-columns:1fr;gap:var(--raum-6)}}
+.werkstoff-raster h3{font-family:var(--display);font-size:var(--step-2);letter-spacing:-.01em}
+.werkstoff-raster .kenn{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--messing-tief);display:block;margin-bottom:var(--raum-3)}
+.werkstoff-raster p{color:var(--mute);margin-top:var(--raum-3);font-size:var(--step--1);line-height:1.65}
+.nicht{
+  margin-top:var(--raum-8);border:1px solid var(--linie);border-left:2px solid var(--messing-tief);
+  background:var(--flaeche);padding:var(--raum-6) var(--raum-6);
+}
+.nicht h3{font-family:var(--display);font-size:var(--step-2);margin-bottom:var(--raum-4)}
+.nicht ul{display:flex;flex-wrap:wrap;gap:var(--raum-3) var(--raum-5);font-family:var(--mono);font-size:12px;color:var(--mute)}
+.nicht li::before{content:"× ";color:var(--messing-tief)}
+.nicht p{color:var(--mute);margin-top:var(--raum-5);max-width:62ch;font-size:var(--step--1)}
+
+/* ── Größenfinder ─────────────────────────────────────────────── */
+.finder{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.finder-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--raum-8);align-items:center;
+  border:1px solid var(--linie);background:var(--flaeche);padding:clamp(24px,4vw,56px)}
+@media (max-width:860px){.finder-box{grid-template-columns:1fr;gap:var(--raum-6)}}
+.finder label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--raum-3)}
+.finder-eingabe{display:flex;align-items:center;gap:var(--raum-3);flex-wrap:wrap}
+.finder input{
+  font-family:var(--display);font-size:2rem;font-weight:500;width:130px;background:var(--nacht);
+  color:var(--ink);border:1px solid var(--linie-hell);border-radius:2px;padding:10px 14px;text-align:center;
+}
+.finder .einheit{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.1em}
+.finder .hinweis{color:var(--mute);font-size:var(--step--1);margin-top:var(--raum-4);max-width:42ch}
+.ergebnis{border-left:1px solid var(--linie);padding-left:var(--raum-7)}
+@media (max-width:860px){.ergebnis{border-left:0;border-top:1px solid var(--linie);padding-left:0;padding-top:var(--raum-6)}}
+.ergebnis .gr{font-family:var(--display);font-size:clamp(3rem,2rem + 4vw,5rem);line-height:1;font-weight:600;color:var(--messing)}
+.ergebnis dl{display:grid;grid-template-columns:auto 1fr;gap:var(--raum-2) var(--raum-5);margin:var(--raum-5) 0 0;font-family:var(--mono);font-size:12.5px}
+.ergebnis dt{color:var(--mute);letter-spacing:.06em}
+.ergebnis dd{margin:0;color:var(--ink)}
+
+/* ── Leistungen ───────────────────────────────────────────────── */
+.leistung{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.leistung-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--linie);border:1px solid var(--linie)}
+@media (max-width:760px){.leistung-raster{grid-template-columns:1fr}}
+.leistung-feld{background:var(--flaeche);padding:var(--raum-6);transition:background var(--klein) ease}
+.leistung-feld:hover{background:var(--flaeche-hoch)}
+.leistung-feld h3{font-family:var(--display);font-size:var(--step-2);margin-bottom:var(--raum-3)}
+.leistung-feld p{color:var(--mute);font-size:var(--step--1)}
+
+/* ── Fußzeile ─────────────────────────────────────────────────── */
+.fuss{border-top:1px solid var(--linie);padding-block:var(--raum-9) var(--raum-7);margin-top:var(--sektion);background:var(--flaeche)}
+.fuss-raster{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--raum-7)}
+@media (max-width:860px){.fuss-raster{grid-template-columns:1fr 1fr;gap:var(--raum-6)}}
+@media (max-width:520px){.fuss-raster{grid-template-columns:1fr}}
+.fuss h4{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--messing-tief);margin-bottom:var(--raum-4)}
+.fuss li{margin-bottom:var(--raum-2);color:var(--mute);font-size:var(--step--1)}
+.fuss li a:hover{color:var(--ink)}
+.fuss-marke p{color:var(--mute);font-size:var(--step--1);max-width:34ch;margin-top:var(--raum-3)}
+.rechtszeile{
+  margin-top:var(--raum-8);padding-top:var(--raum-5);border-top:1px solid var(--linie);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--mute);line-height:1.8;
+}
+.zahlarten{display:flex;flex-wrap:wrap;gap:var(--raum-2) var(--raum-4);margin-top:var(--raum-4);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.zahlarten span{border:1px solid var(--linie-hell);padding:5px 10px;border-radius:2px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
+
+<div class="mitte rand entwurf">
+  <span><b>Entwurf</b> · Startseite · Richtung 03 Nachtwerkstatt</span>
+  <span>Bildflächen sind Aufnahmeanweisungen</span>
+  <span>Prüfdaten sind Platzhalter</span>
+</div>
+
+<header class="kopf">
+  <div class="mitte rand kopf-innen">
+    <a class="wortmarke messing" href="startseite-nachtwerkstatt.html">Bellowerk</a>
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#kollektion">Kollektion</a></li>
+        <li><a href="#praxistest">Praxistest</a></li>
+        <li><a href="#werkstoff">Material</a></li>
+        <li><a href="#finder">Größe finden</a></li>
+        <li><a href="#leistung">Werkstatt</a></li>
+      </ul>
+    </nav>
+    <button class="korb" type="button">Warenkorb (0)</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero mitte rand">
+    <p class="augenbraue">Fettleder · Messing massiv · Hamburg</p>
+    <h1>Messing altert. Leder auch. <b>Beides zu Ihren Gunsten.</b></h1>
+    <p class="hero-lead">Kein Lack, keine Beschichtung, nichts, was abplatzen kann. Was Sie nach fünf Jahren in der Hand halten, ist dunkler, glatter und fester als am ersten Tag.</p>
+    <div class="knopfreihe">
+      <a class="knopf knopf-voll" href="#kollektion">Kollektion ansehen</a>
+      <a class="knopf knopf-leer" href="#praxistest">Prüfbericht lesen</a>
+    </div>
+  </section>
+
+  <div class="material-buehne">
+    <canvas id="leder" aria-label="Materialansicht: Fettleder im wandernden Streiflicht" role="img"></canvas>
+    <p class="material-schild"><b>Materialansicht</b><span id="lederHinweis">Zeiger über die Fläche bewegen</span><span>Platzhalter bis zum Lederscan</span></p>
+  </div>
+
+  <!-- ═══ Praxistest ═══ -->
+  <section class="pruef mitte rand" id="praxistest">
+    <div class="kopfzeile">
+      <span class="nr">01 · Prüfbericht</span>
+      <h2>Eine Saison an fremden Hunden,<br>bevor es in den Shop geht.</h2>
+      <p>Jedes Modell läuft täglich im Gassi-Service, in der Pension und im Training. Was reißt, dehnt oder scheuert, steht hier und nicht im Kleingedruckten.</p>
+    </div>
+
+    <div class="pruef-tabelle-huelle">
+      <table class="pruef-tabelle">
+        <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Prüfbericht HB-01, Serie 2025/26</caption>
+        <thead>
+          <tr><th scope="col">Hund</th><th scope="col">Größe</th><th scope="col">Tage</th><th scope="col">Belastung</th><th scope="col">Befund nach Prüfzeit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nala, Labrador</td><td>M · 25 mm</td><td class="tab">212</td><td>täglich, Regen und Salzwasser</td><td>Leder 1,5 Töne nachgedunkelt. Messing matt, kein Grünspan. Löcher unverändert.</td></tr>
+          <tr><td>Rocco, Schäferhund</td><td>L · 30 mm</td><td class="tab">186</td><td>Training, Zug an der Leine</td><td>Kante am dritten Loch 1 mm gedehnt. Schnalle fest.</td></tr>
+          <tr><td>Fine, Mischling</td><td>S · 20 mm</td><td class="tab">203</td><td>Pension, Spiel mit Artgenossen</td><td>Zwei Kratzer auf der Narbenseite, nicht durchgehend. Patch fest.</td></tr>
+          <tr><td>Bo, Rhodesian Ridgeback</td><td>XL · 40 mm</td><td class="tab">141</td><td>täglich, Wald und Schlamm</td><td>Nach Fettung wie neu. Buchschrauben einmal nachgezogen.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="kennzahlen">
+      <div class="kennzahl"><b class="tab">742</b><span>Prüftage gesamt</span></div>
+      <div class="kennzahl"><b class="tab">4</b><span>Hunde im Test</span></div>
+      <div class="kennzahl"><b class="tab">1</b><span>Änderung an der Serie</span></div>
+      <div class="kennzahl"><b class="tab">0</b><span>Brüche</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ Kollektion ═══ -->
+  <section class="kollektion mitte rand" id="kollektion">
+    <div class="kopfzeile">
+      <span class="nr">02 · Kollektion</span>
+      <h2>Vier Stücke. Mehr braucht kein Hund.</h2>
+      <p>Jedes Stück trägt seine Nummer in der Reihenfolge, in der es entstanden ist. Alles aus pflanzlich gegerbtem Fettleder, alle Beschläge aus massivem Messing.</p>
+    </div>
+
+    <p class="herkunft"><b>Entworfen, geprüft und gehandelt im Alten Land bei Hamburg.</b> &nbsp;Gefertigt in Deutschland.</p>
+
+    <div class="raster">
+      <article class="karte">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%)">
+          <span>FOTO 01 · HB-01 auf Eiche<br>Streiflicht von links, 85 mm</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-1.html">Hamburg No. 1</a></h3>
+        <p class="karte-nr">HB-01 · Halsband Fettleder</p>
+        <p>Einlagig, ohne Naht, aus einem Stück geschnitten. 20 bis 40 mm.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">89,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 34% 22%,#4C3D28,#131009 76%)">
+          <span>FOTO 02 · HB-02 Flechtung<br>schräg, harter Kontrast</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-4.html">Hamburg No. 4</a></h3>
+        <p class="karte-nr">HB-02 · Halsband geflochten</p>
+        <p>Dreisträngiger Mystery Braid aus einem Stück. O-Ring, flache Enden.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">99,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 20%,#463726,#120F09 76%)">
+          <span>FOTO 03 · LE-01 hängend<br>Gegenlicht, Werkstatt</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-2.html">Hamburg No. 2</a></h3>
+        <p class="karte-nr">LE-01 · Führleine 3,00 m</p>
+        <p>Sechs Führlängen, dreifach verstellbar. Ringe bei 45, 140 und 245 cm.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">129,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+
+      <article class="karte">
+        <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 36% 24%,#413424,#120E08 76%)">
+          <span>FOTO 04 · HS-01 in der Hand<br>Makro, warmes Licht</span>
+        </div>
+        <h3><a href="produkt-hamburg-no-3.html">Hamburg No. 3</a></h3>
+        <p class="karte-nr">HS-01 · Handschlaufe</p>
+        <p>Umfang 50 cm. Für die Leine am Gürtel oder über der Schulter.</p>
+        <div class="karte-fuss"><span class="karte-preis tab">39,00 €</span><span class="karte-mehr">Ansehen</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ Werkstoff ═══ -->
+  <section class="werkstoff mitte rand" id="werkstoff">
+    <div class="kopfzeile">
+      <span class="nr">03 · Material</span>
+      <h2>Drei Werkstoffe, sonst nichts.</h2>
+      <p>Je weniger verschiedene Teile, desto weniger kann kaputtgehen. Das ist der ganze Trick.</p>
+    </div>
+
+    <div class="werkstoff-raster">
+      <div>
+        <span class="kenn">3,5 mm</span>
+        <h3>Fettleder</h3>
+        <p>Pflanzlich gegerbt, feste Narbenseite, durchgefettet. Nimmt Wasser auf, ohne hart zu werden. Kanten geschliffen und gewachst. Dunkelt im ersten Jahr um ein bis zwei Töne nach und wird dabei geschmeidiger.</p>
+      </div>
+      <div>
+        <span class="kenn">Massiv, unlackiert</span>
+        <h3>Messing</h3>
+        <p>Schnalle, Ringe und Karabiner aus Vollmaterial, nicht aus Zinkdruckguss und nicht vermessingt. Läuft matt an, was sich mit einem Tuch zurückholen lässt. Kein Rost, auch nach einem Winter am Meer.</p>
+      </div>
+      <div>
+        <span class="kenn">Ø 5 mm</span>
+        <h3>Buchschrauben</h3>
+        <p>Halten Patch und Endstücke. Lassen sich mit einem Schraubendreher nachziehen und lösen, wenn ein Teil ersetzt werden soll. Genau deshalb keine Nieten: eine Niete ist eine Entscheidung für immer.</p>
+      </div>
+    </div>
+
+    <div class="nicht">
+      <h3>Was nicht verbaut wird</h3>
+      <ul>
+        <li>Nähte und Garn</li><li>Nieten</li><li>Stahl</li><li>Kunststoff</li><li>Klickverschlüsse</li><li>Gurtband</li>
+      </ul>
+      <p>Eine Naht ist die Stelle, an der ein Halsband zuerst aufgeht. Ein Klickverschluss ist die Stelle, an der es bricht. Beides lässt sich weglassen, wenn man das Leder dick genug wählt und die Schnalle aus Vollmessing macht. Genau das tun wir.</p>
+    </div>
+  </section>
+
+  <!-- ═══ Größenfinder ═══ -->
+  <section class="finder mitte rand" id="finder">
+    <div class="kopfzeile">
+      <span class="nr">04 · Größe finden</span>
+      <h2>Ein Maß genügt.</h2>
+      <p>Messen Sie den Halsumfang dort, wo das Halsband sitzt, mit zwei Fingern Platz darunter.</p>
+    </div>
+
+    <div class="finder-box">
+      <div>
+        <label for="umfang">Halsumfang des Hundes</label>
+        <div class="finder-eingabe">
+          <input id="umfang" type="number" min="24" max="70" step="0.5" value="45" inputmode="decimal">
+          <span class="einheit">Zentimeter</span>
+        </div>
+        <p class="hinweis">Zwischen zwei Größen nehmen Sie die größere. Jedes Halsband hat fünf Löcher im Abstand von 26 mm, das gleicht vier Zentimeter aus.</p>
+      </div>
+      <div class="ergebnis">
+        <div class="gr" id="groesse">M</div>
+        <dl>
+          <div style="display:contents"><dt>Breite</dt><dd id="breite">25 mm</dd></div>
+          <div style="display:contents"><dt>Verstellbereich</dt><dd id="bereich">34 bis 42 cm</dd></div>
+          <div style="display:contents"><dt>Gesamtlänge</dt><dd id="laenge">480 mm</dd></div>
+          <div style="display:contents"><dt>Empfehlung</dt><dd id="rat">Hamburg No. 1 in Größe M</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Leistungen ═══ -->
+  <section class="leistung mitte rand" id="leistung">
+    <div class="kopfzeile">
+      <span class="nr">05 · Werkstatt und Betrieb</span>
+      <h2>Warum wir wissen, was hält.</h2>
+      <p>Das Leder kommt aus der Werkstatt. Der Praxistest kommt aus dem Betrieb nebenan.</p>
+    </div>
+    <div class="leistung-raster">
+      <div class="leistung-feld">
+        <h3>Gassi-Service</h3>
+        <p>Täglich unterwegs, bei jedem Wetter. Hier läuft der größte Teil der Prüfstunden zusammen.</p>
+      </div>
+      <div class="leistung-feld">
+        <h3>Pension</h3>
+        <p>Hunde in der Gruppe, Spiel und Reibung. Der härteste Test für Kanten und Beschläge.</p>
+      </div>
+      <div class="leistung-feld">
+        <h3>Training</h3>
+        <p>Zug an der Leine, wiederholte Belastung an denselben Stellen. Zeigt, wo Leder dehnt.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="mitte rand">
+    <div class="fuss-raster">
+      <div class="fuss-marke">
+        <span class="wortmarke messing">Bellowerk</span>
+        <p>Manufaktur für Lederzubehör. Hamburg. Halsbänder und Leinen aus Fettleder und massivem Messing.</p>
+      </div>
+      <div>
+        <h4>Kaufen</h4>
+        <ul>
+          <li><a href="katalog.html">Halsbänder</a></li>
+          <li><a href="katalog.html">Leinen</a></li>
+          <li><a href="katalog.html">Zubehör</a></li>
+          <li><a href="#finder">Größe finden</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Werkstatt</h4>
+        <ul>
+          <li><a href="#praxistest">Praxistest</a></li>
+          <li><a href="#werkstoff">Material und Pflege</a></li>
+          <li><a href="#leistung">Gassi, Pension, Training</a></li>
+          <li><a href="produkt-hamburg-no-1.html#fragen">Reparatur</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="recht/impressum.html">Impressum</a></li>
+          <li><a href="recht/datenschutz.html">Datenschutz</a></li>
+          <li><a href="recht/agb.html">AGB</a></li>
+          <li><a href="recht/widerruf.html">Widerruf und Rückgabe</a></li>
+          <li><a href="recht/versand.html">Versand und Lieferzeit</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="zahlarten">
+      <span>PayPal</span><span>Überweisung</span>
+    </div>
+
+    <p class="rechtszeile">
+      Entworfen, geprüft und gehandelt im Alten Land bei Hamburg. Gefertigt in Deutschland. Der Praxistest findet im eigenen Hundebetrieb statt.<br>
+      Alle Preise inklusive gesetzlicher Umsatzsteuer, zuzüglich Versandkosten. Versand innerhalb Deutschlands 4,90 €, ab 120 € versandkostenfrei. Lieferzeit 2 bis 4 Werktage, bei Maßanfertigung 10 bis 14 Werktage.<br>
+      Entwurfsstand 10.09.2026 · Richtung 03 Nachtwerkstatt · Namen, Prüftage und Befunde sind Platzhalter und vor der Veröffentlichung durch echte Werte zu ersetzen. Bildflächen sind Aufnahmeanweisungen, keine Bilder.
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   Der eine schwere Effekt: Fettleder im wandernden Streiflicht.
+   Abschaltmatrix nach Regelwerk, statischer Ersatz per CSS-Klasse.
+   ═══════════════════════════════════════════════════════════════════ */
+(function(){
+  var leinwand = document.getElementById('leder');
+  var hinweis  = document.getElementById('lederHinweis');
+  if(!leinwand) return;
+
+  function ersatz(grund){
+    leinwand.classList.add('aus');
+    if(hinweis) hinweis.textContent = grund;
+  }
+
+  var sparsam =
+    matchMedia('(prefers-reduced-motion: reduce)').matches ||
+    (navigator.hardwareConcurrency || 8) <= 4 ||
+    (navigator.connection && navigator.connection.saveData === true);
+
+  if(sparsam){ ersatz('Standbild — Bewegung ist abgeschaltet'); return; }
+
+  var gl = leinwand.getContext('webgl', {antialias:false, alpha:false, powerPreference:'low-power'})
+        || leinwand.getContext('experimental-webgl');
+  if(!gl){ ersatz('Standbild — kein WebGL verfügbar'); return; }
+
+  var vsQuelle =
+    'attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}';
+
+  var fsQuelle = [
+    'precision mediump float;',
+    'uniform vec2 u_res; uniform vec2 u_licht;',
+    'float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
+    'float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);',
+    ' float a=hash(i),b=hash(i+vec2(1.0,0.0)),c=hash(i+vec2(0.0,1.0)),d=hash(i+vec2(1.0,1.0));',
+    ' return mix(mix(a,b,f.x),mix(c,d,f.x),f.y);}',
+    'float fbm(vec2 p){float v=0.0,a=0.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.03;a*=0.5;}return v;}',
+    'float hoehe(vec2 p){return fbm(p*2.1)*0.62+fbm(p*8.5)*0.24;}',
+    'void main(){',
+    ' vec2 uv=gl_FragCoord.xy/u_res;',
+    ' vec2 p=vec2(uv.x*u_res.x/u_res.y,uv.y)*7.5;',
+    ' float e=0.012;',
+    ' float h=hoehe(p);',
+    ' float hx=hoehe(p+vec2(e,0.0));',
+    ' float hy=hoehe(p+vec2(0.0,e));',
+    ' vec3 n=normalize(vec3((h-hx)*7.0,(h-hy)*7.0,1.0));',
+    ' vec3 L=normalize(vec3((u_licht-uv)*vec2(u_res.x/u_res.y,1.0),0.42));',
+    ' float diff=max(dot(n,L),0.0);',
+    ' vec3 A=normalize(vec3(0.0,0.0,1.0));',
+    ' float spec=pow(max(dot(reflect(-L,n),A),0.0),26.0);',
+    ' vec3 leder=mix(vec3(0.085,0.062,0.040),vec3(0.36,0.245,0.135),h);',
+    ' vec3 farbe=leder*(0.22+0.95*diff)+vec3(0.96,0.84,0.58)*spec*0.5;',
+    ' farbe*=1.0-0.55*length(uv-vec2(0.5));',
+    ' gl_FragColor=vec4(farbe,1.0);',
+    '}'
+  ].join('\n');
+
+  function bauen(art, quelle){
+    var s = gl.createShader(art);
+    gl.shaderSource(s, quelle); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) return null;
+    return s;
+  }
+  var vs = bauen(gl.VERTEX_SHADER, vsQuelle);
+  var fs = bauen(gl.FRAGMENT_SHADER, fsQuelle);
+  if(!vs || !fs){ ersatz('Standbild — Shader nicht verfügbar'); return; }
+
+  var prog = gl.createProgram();
+  gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){ ersatz('Standbild — Shader nicht verfügbar'); return; }
+  gl.useProgram(prog);
+
+  var puffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, puffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  var ort = gl.getAttribLocation(prog, 'p');
+  gl.enableVertexAttribArray(ort);
+  gl.vertexAttribPointer(ort, 2, gl.FLOAT, false, 0, 0);
+
+  var uRes = gl.getUniformLocation(prog, 'u_res');
+  var uLicht = gl.getUniformLocation(prog, 'u_licht');
+
+  var ziel = {x:0.34, y:0.68}, ist = {x:0.34, y:0.68}, beruehrt = false, laeuft = false, t = 0;
+
+  function messen(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var b = leinwand.getBoundingClientRect();
+    leinwand.width = Math.max(1, Math.round(b.width * dpr));
+    leinwand.height = Math.max(1, Math.round(b.height * dpr));
+    gl.viewport(0, 0, leinwand.width, leinwand.height);
+    gl.uniform2f(uRes, leinwand.width, leinwand.height);
+  }
+
+  function bild(){
+    if(!laeuft) return;
+    t += 0.006;
+    if(!beruehrt){ ziel.x = 0.5 + Math.cos(t) * 0.3; ziel.y = 0.5 + Math.sin(t * 0.8) * 0.22; }
+    ist.x += (ziel.x - ist.x) * 0.07;
+    ist.y += (ziel.y - ist.y) * 0.07;
+    gl.uniform2f(uLicht, ist.x, ist.y);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    requestAnimationFrame(bild);
+  }
+
+  leinwand.addEventListener('pointermove', function(ev){
+    var b = leinwand.getBoundingClientRect();
+    beruehrt = true;
+    ziel.x = (ev.clientX - b.left) / b.width;
+    ziel.y = 1 - (ev.clientY - b.top) / b.height;
+  });
+  leinwand.addEventListener('pointerleave', function(){ beruehrt = false; });
+  addEventListener('resize', messen, {passive:true});
+
+  /* Läuft nur, solange die Fläche sichtbar ist. */
+  var beobachter = new IntersectionObserver(function(eintraege){
+    var sichtbar = eintraege[0].isIntersecting;
+    if(sichtbar && !laeuft){ laeuft = true; requestAnimationFrame(bild); }
+    else if(!sichtbar){ laeuft = false; }
+  }, {rootMargin:'120px'});
+
+  messen();
+  beobachter.observe(leinwand);
+})();
+
+/* ═══ Größenfinder ═══════════════════════════════════════════════ */
+(function(){
+  var eingabe = document.getElementById('umfang');
+  if(!eingabe) return;
+  var felder = {
+    groesse: document.getElementById('groesse'),
+    breite:  document.getElementById('breite'),
+    bereich: document.getElementById('bereich'),
+    laenge:  document.getElementById('laenge'),
+    rat:     document.getElementById('rat')
+  };
+  var stufen = [
+    {gr:'S',  von:28, bis:34, breite:'20 mm', laenge:'400 mm'},
+    {gr:'M',  von:34, bis:42, breite:'25 mm', laenge:'480 mm'},
+    {gr:'L',  von:42, bis:50, breite:'30 mm', laenge:'560 mm'},
+    {gr:'XL', von:50, bis:60, breite:'40 mm', laenge:'660 mm'}
+  ];
+
+  function rechnen(){
+    var cm = parseFloat(eingabe.value);
+    if(isNaN(cm)){ return; }
+    var treffer = null;
+    for(var i = 0; i < stufen.length; i++){
+      if(cm <= stufen[i].bis){ treffer = stufen[i]; break; }
+    }
+    if(cm < 28){
+      felder.groesse.textContent = '–';
+      felder.breite.textContent = 'nach Maß';
+      felder.bereich.textContent = 'unter 28 cm';
+      felder.laenge.textContent = 'nach Maß';
+      felder.rat.textContent = 'Bitte anfragen, wir fertigen nach Maß';
+      return;
+    }
+    if(!treffer){
+      felder.groesse.textContent = '–';
+      felder.breite.textContent = 'nach Maß';
+      felder.bereich.textContent = 'über 60 cm';
+      felder.laenge.textContent = 'nach Maß';
+      felder.rat.textContent = 'Bitte anfragen, wir fertigen nach Maß';
+      return;
+    }
+    felder.groesse.textContent = treffer.gr;
+    felder.breite.textContent = treffer.breite;
+    felder.bereich.textContent = treffer.von + ' bis ' + treffer.bis + ' cm';
+    felder.laenge.textContent = treffer.laenge;
+    felder.rat.textContent = 'Hamburg No. 1 in Größe ' + treffer.gr;
+  }
+  eingabe.addEventListener('input', rechnen);
+  rechnen();
+})();
+</script>
