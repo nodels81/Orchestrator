@@ -28,8 +28,9 @@ gehören immer **einer** Abteilung — erkennbar am Namensanfang.
 Bellowerk  (Björn entscheidet)
 │
 ├─ wiebke  — Personalerin, Stabsstelle neben der Hierarchie
-│           stellt Agenten und Skills ein, schärft nach, legt zusammen
-│           Skill: agenten-personal
+│           wöchentlicher Rundgang durch alle Abteilungen, meldet Schwachstellen per Mail;
+│           stellt nach Björns Freigabe ein, schärft nach, legt zusammen
+│           Skill: agenten-personal · Protokoll: personal/protokoll.md
 │
 ├─ 01 Innovation            abteilung_innovation.py
 ├─ 02 Produkt & Ausführung  abteilung_ausfuehrung.py
@@ -66,6 +67,18 @@ sie laufen nur im Tageslauf.
 
 Wiebke gehört keiner Abteilung. Fehlt für eine Aufgabe der passende Agent, oder liefert einer
 schlechte Arbeit, ist sie zuständig: `Nutze den Agenten wiebke: …`
+
+Ihr Rundgang läuft ohne Nachfrage und schickt Björn den Bericht per Mail:
+
+```bash
+venv/bin/python personal_rundgang.py --probelauf   # zeigt nur, was geladen wird
+venv/bin/python personal_rundgang.py --senden      # Bericht erzeugen und mailen
+```
+
+Wöchentlich per Timer, z. B. montags 07:30. **Der Rundgang stellt niemanden ein** — er meldet.
+Eingestellt wird in vier Schritten: vorschlagen, Björns „ja" abwarten, Datei schreiben und im
+Wortlaut vorlegen, erst nach der zweiten Freigabe hochladen. Jede Änderung landet als Zeile in
+`personal/protokoll.md`.
 
 **Achtung, noch nicht zusammengeführt:** Abteilung 06 Web & Shop liegt auf Branch
 `claude/ultimate-website-prompt-ira6ls`, Abteilung 07 App Android auf
