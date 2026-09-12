@@ -1,0 +1,355 @@
+/* ═══════════════════════════════════════════════════════════════════
+   BELLOWERK — Designsystem, Richtung 03 "Nachtwerkstatt"
+   Herausgelöst aus startseite-nachtwerkstatt.html, als die zweite Seite
+   entstand. Ab hier ist diese Datei die Quelle, nicht die Startseite.
+
+   Bewusst einfarbige Welt: dunkler Grund, damit Leder und Messing die
+   einzigen hellen Dinge auf der Seite sind. Deshalb keine Hell-Variante,
+   aber jede Farbe explizit gesetzt — nie geerbt.
+
+   Licht kommt aus EINER Richtung: Lichtkante oben, Schatten unten.
+   Kein reines #000, kein reines #fff.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ── Farbe ───────────────────────────────────────────────────── */
+  --nacht:#0E0C0A;
+  --flaeche:#171310;
+  --flaeche-hoch:#1E1811;
+  --ink:#F0E8DB;
+  --mute:#A2937F;
+  --linie:#2A231C;
+  --linie-hell:#3A3025;
+  --messing:#E3C376;
+  --messing-tief:#A8842F;
+  --messing-licht:#FBF0D2;
+
+  /* Zustandsfarben. Rot und Grün sind in die Markenwelt gezogen,
+     damit sie nicht wie Systemmeldungen eines fremden Programms wirken. */
+  --warnung:#E0A054;
+  --fehler:#D9705E;
+  --fehler-grund:#2A1512;
+  --gut:#8FA86B;
+  --gut-grund:#18200F;
+
+  /* ── Raum. Größter Abstand ist das 32-fache des kleinsten. ───── */
+  --raum-1:4px; --raum-2:8px; --raum-3:12px; --raum-4:16px; --raum-5:24px;
+  --raum-6:32px; --raum-7:48px; --raum-8:64px; --raum-9:96px; --raum-10:128px;
+  --sektion:clamp(64px, 9vw, 152px);
+  --rand:clamp(20px, 5vw, 72px);
+
+  /* ── Schrift ─────────────────────────────────────────────────── */
+  --display:"Bodoni Moda",Didot,"Times New Roman",Georgia,serif;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --step--1:clamp(.78rem, .75rem + .12vw, .85rem);
+  --step-0:clamp(.95rem, .92rem + .16vw, 1.05rem);
+  --step-1:clamp(1.1rem, 1.02rem + .3vw, 1.3rem);
+  --step-2:clamp(1.45rem, 1.25rem + .8vw, 2rem);
+  --step-3:clamp(2rem, 1.5rem + 2.1vw, 3.2rem);
+  --step-4:clamp(2.3rem, 1.6rem + 3.2vw, 4.2rem);
+  --step-5:clamp(2.6rem, 1.4rem + 5.4vw, 5.8rem);
+
+  /* ── Bewegung ────────────────────────────────────────────────── */
+  --mikro:120ms; --klein:240ms; --gross:520ms;
+  --raus:cubic-bezier(.22,1,.36,1);
+
+  /* ── Oberfläche ──────────────────────────────────────────────── */
+  --korn:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  --lage-1:0 1px 0 rgb(255 255 255/.04) inset, 0 2px 8px rgb(0 0 0/.35);
+  --lage-2:0 1px 0 rgb(255 255 255/.055) inset, 0 8px 28px rgb(0 0 0/.45);
+  --lage-3:0 1px 0 rgb(255 255 255/.07) inset, 0 20px 60px rgb(0 0 0/.55);
+}
+
+/* ── Grundlage ─────────────────────────────────────────────────── */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+body{
+  margin:0;background:var(--nacht);color:var(--ink);
+  font-family:var(--sans);font-size:var(--step-0);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:var(--korn);opacity:.028;mix-blend-mode:overlay;
+}
+.rand{padding-inline:var(--rand)}
+.mitte{max-width:1240px;margin-inline:auto}
+.schmal{max-width:760px;margin-inline:auto}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:400}
+p{margin:0;text-wrap:pretty}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--messing);outline-offset:3px;border-radius:2px;
+}
+.tab{font-variant-numeric:tabular-nums}
+.nur-vorlesen{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.springen{position:absolute;left:-9999px;top:0;background:var(--messing);color:var(--nacht);padding:12px 20px;z-index:100;font-family:var(--mono);font-size:12px}
+.springen:focus{left:var(--rand)}
+
+/* Messing als Verlauf, nie als Fläche */
+.messing{
+  background:linear-gradient(96deg,#7E6029 0%,var(--messing) 28%,var(--messing-licht) 46%,#C79E4A 64%,#7A5C24 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* ── Entwurfsband ──────────────────────────────────────────────── */
+.entwurf{
+  position:relative;z-index:2;border-bottom:1px solid var(--linie);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--mute);padding-block:9px;
+  display:flex;flex-wrap:wrap;gap:6px 22px;
+}
+.entwurf b{color:var(--messing-tief);font-weight:500}
+
+/* ── Kopfleiste ────────────────────────────────────────────────── */
+.kopf{
+  position:sticky;top:0;z-index:30;
+  background:color-mix(in oklab,var(--nacht) 86%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--linie);
+}
+.kopf-innen{display:flex;align-items:center;justify-content:space-between;gap:var(--raum-5);padding-block:var(--raum-4)}
+.wortmarke{font-family:var(--display);font-size:1.25rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+.kopf nav ul{display:flex;gap:var(--raum-6);font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.kopf nav a{transition:color var(--mikro) ease}
+.kopf nav a:hover,.kopf nav a[aria-current="page"]{color:var(--ink)}
+.kopf nav a[aria-current="page"]{border-bottom:1px solid var(--messing-tief);padding-bottom:2px}
+.korb{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--mute);
+  border:1px solid var(--linie-hell);padding:8px 14px;border-radius:2px;background:transparent;cursor:pointer;
+  transition:border-color var(--mikro) ease,color var(--mikro) ease;
+}
+.korb:hover{border-color:var(--messing-tief);color:var(--ink)}
+.korb b{color:var(--messing);font-weight:500}
+@media (max-width:860px){.kopf nav{display:none}}
+@media (max-width:400px){
+  /* Bei 320 px passten Wortmarke und Warenkorbknopf nicht nebeneinander. */
+  .wortmarke{font-size:1.05rem;letter-spacing:.18em}
+  .korb{padding:7px 10px;font-size:10.5px}
+  .kopf-innen{gap:var(--raum-3)}
+}
+
+/* ── Rasterkinder dürfen schrumpfen ────────────────────────────── */
+/* Ohne min-width:0 steht ein Rasterkind auf min-width:auto. Der Inhalt
+   erzwingt dann die Spaltenbreite, und die Seite scrollt waagerecht —
+   bei 320 px auf jeder Seite dieses Shops gemessen, bevor das hier stand. */
+:where(.produkt,.korb-raster,.kasse-raster,.zweispalt,.praxis-raster,
+       .fuss-raster,.raster,.werkraster,.zub-raster,.paar,.zeile,.mini) > *{
+  min-width:0;
+}
+
+/* ── Sektionskopf ──────────────────────────────────────────────── */
+.kopfzeile{max-width:62ch;margin-bottom:var(--raum-8)}
+.kopfzeile .nr{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--messing-tief);display:block;margin-bottom:var(--raum-4)}
+.kopfzeile h2{font-family:var(--display);font-size:var(--step-3);line-height:1.06;letter-spacing:-.018em;margin-bottom:var(--raum-4)}
+.kopfzeile p{color:var(--mute);max-width:54ch}
+.augenbraue{font-family:var(--mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
+
+/* ── Herkunftsangabe. Pflicht, siehe kollektion-01-hamburg.md ──── */
+.herkunft{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);
+  border:1px solid var(--linie);border-left:2px solid var(--messing-tief);background:var(--flaeche);
+  padding:12px 16px;display:inline-block;
+}
+.herkunft b{color:var(--ink);font-weight:500}
+
+/* ── Bildplatz. Steht, bis ein echtes Foto da ist. ─────────────── */
+.bildplatz{
+  position:relative;aspect-ratio:5/4;max-width:100%;overflow:hidden;
+  background:var(--flaeche-bild,radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%));
+  border:1px solid var(--linie);display:grid;place-items:center;text-align:center;
+}
+.bildplatz span{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgb(240 232 219/.62);line-height:1.9;padding:var(--raum-4);
+}
+.bildplatz::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(255 255 255/.05),transparent 40%)}
+
+/* ── Karte ─────────────────────────────────────────────────────── */
+.raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:var(--raum-6)}
+.karte{
+  border:1px solid var(--linie);background:var(--flaeche);
+  display:flex;flex-direction:column;
+  transition:border-color var(--klein) var(--raus),transform var(--klein) var(--raus),box-shadow var(--klein) var(--raus);
+}
+.karte:hover,.karte:focus-within{border-color:var(--linie-hell);transform:translateY(-3px);box-shadow:var(--lage-2)}
+.karte > :not(.bildplatz){padding-inline:var(--raum-5)}
+.karte h3{font-family:var(--display);font-size:var(--step-1);margin-top:var(--raum-5)}
+.karte-nr{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--messing-tief);margin-block:var(--raum-2) var(--raum-3)}
+.karte > p:not(.karte-nr){color:var(--mute);font-size:var(--step--1);flex:1}
+.karte-fuss{display:flex;align-items:baseline;justify-content:space-between;padding-block:var(--raum-5);margin-top:var(--raum-5);border-top:1px solid var(--linie)}
+.karte-preis{font-family:var(--mono);font-size:var(--step-0);color:var(--ink)}
+.karte-mehr{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--messing-tief)}
+.karte:hover .karte-mehr{color:var(--messing)}
+
+/* Ausverkauft: die Karte wird ruhiger, nicht rot. */
+.karte[data-stand="ausverkauft"]{opacity:.72}
+.karte[data-stand="ausverkauft"] .bildplatz{filter:saturate(.5)}
+.marke-band{
+  position:absolute;top:var(--raum-4);left:var(--raum-4);z-index:2;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--nacht);color:var(--mute);border:1px solid var(--linie-hell);padding:5px 10px;
+}
+
+/* ── Knöpfe ────────────────────────────────────────────────────── */
+.knopf{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:16px 28px;border-radius:2px;cursor:pointer;display:inline-flex;align-items:center;
+  justify-content:center;gap:10px;border:1px solid transparent;text-align:center;
+  transition:background var(--mikro) ease,border-color var(--mikro) ease,color var(--mikro) ease,transform var(--mikro) ease;
+}
+.knopf:active{transform:translateY(1px)}
+.knopf-haupt{
+  background:linear-gradient(180deg,var(--messing) 0%,var(--messing-tief) 100%);
+  color:#1B1408;border-color:var(--messing-tief);font-weight:500;
+  box-shadow:var(--lage-1);
+}
+.knopf-haupt:hover{background:linear-gradient(180deg,var(--messing-licht) 0%,var(--messing) 100%)}
+.knopf-neben{background:transparent;color:var(--ink);border-color:var(--linie-hell)}
+.knopf-neben:hover{border-color:var(--messing-tief)}
+.knopf-still{background:transparent;color:var(--mute);border-color:transparent;padding-inline:var(--raum-3)}
+.knopf-still:hover{color:var(--ink)}
+.knopf[disabled],.knopf[aria-disabled="true"]{
+  opacity:.45;cursor:not-allowed;transform:none;
+  background:var(--flaeche-hoch);color:var(--mute);border-color:var(--linie);box-shadow:none;
+}
+.knopf[data-laedt]{color:transparent;position:relative;pointer-events:none}
+.knopf[data-laedt]::after{
+  content:"";position:absolute;width:15px;height:15px;border-radius:50%;
+  border:2px solid rgb(27 20 8/.3);border-top-color:#1B1408;animation:dreh .7s linear infinite;
+}
+.knopf-neben[data-laedt]::after{border-color:rgb(240 232 219/.25);border-top-color:var(--ink)}
+@keyframes dreh{to{transform:rotate(360deg)}}
+.knopf-breit{width:100%}
+
+/* ── Formular ──────────────────────────────────────────────────── */
+.feld{display:block;margin-bottom:var(--raum-5)}
+.feld > span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--raum-2)}
+.feld input,.feld select,.feld textarea{
+  width:100%;background:var(--flaeche);color:var(--ink);font-family:var(--sans);font-size:var(--step-0);
+  border:1px solid var(--linie-hell);border-radius:2px;padding:13px 15px;
+  transition:border-color var(--mikro) ease,background var(--mikro) ease;
+}
+.feld input::placeholder,.feld textarea::placeholder{color:rgb(162 147 127/.55)}
+.feld input:hover,.feld select:hover,.feld textarea:hover{border-color:var(--mute)}
+.feld input:focus,.feld select:focus,.feld textarea:focus{background:var(--flaeche-hoch);border-color:var(--messing-tief)}
+.feld-hinweis{font-size:var(--step--1);color:var(--mute);margin-top:var(--raum-2)}
+
+/* Fehler steht AM Feld und sagt, was zu tun ist. Eingaben bleiben stehen. */
+.feld[data-fehler] input,.feld[data-fehler] select{border-color:var(--fehler);background:var(--fehler-grund)}
+.feld-fehler{display:flex;gap:8px;align-items:flex-start;font-size:var(--step--1);color:var(--fehler);margin-top:var(--raum-2)}
+.feld-fehler::before{content:"↳";font-family:var(--mono);flex:none}
+.feld:not([data-fehler]) .feld-fehler{display:none}
+.pflicht-stern{color:var(--messing-tief)}
+
+.wahl{display:flex;gap:var(--raum-3);flex-wrap:wrap}
+.wahl input{position:absolute;opacity:0;width:0;height:0}
+.wahl label{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+  border:1px solid var(--linie-hell);padding:12px 18px;border-radius:2px;cursor:pointer;color:var(--mute);
+  transition:border-color var(--mikro) ease,color var(--mikro) ease,background var(--mikro) ease;
+}
+.wahl label:hover{border-color:var(--mute);color:var(--ink)}
+.wahl input:checked + label{border-color:var(--messing);color:var(--ink);background:var(--flaeche-hoch)}
+.wahl input:focus-visible + label{outline:2px solid var(--messing);outline-offset:3px}
+.wahl input:disabled + label{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+
+.haken{display:flex;gap:var(--raum-3);align-items:flex-start;font-size:var(--step--1);color:var(--mute);cursor:pointer}
+.haken input{margin-top:3px;accent-color:var(--messing-tief);width:17px;height:17px;flex:none}
+
+/* ── Menge ─────────────────────────────────────────────────────── */
+.menge{display:inline-flex;border:1px solid var(--linie-hell);border-radius:2px;overflow:hidden}
+.menge button{
+  background:transparent;border:0;color:var(--mute);width:38px;height:40px;cursor:pointer;font-size:16px;
+  transition:background var(--mikro) ease,color var(--mikro) ease;
+}
+.menge button:hover:not([disabled]){background:var(--flaeche-hoch);color:var(--ink)}
+.menge button[disabled]{opacity:.3;cursor:not-allowed}
+.menge span{min-width:40px;display:grid;place-items:center;font-family:var(--mono);font-size:13px;border-inline:1px solid var(--linie)}
+
+/* ── Meldungen ─────────────────────────────────────────────────── */
+.meldung{
+  display:flex;gap:var(--raum-4);padding:var(--raum-4) var(--raum-5);border:1px solid var(--linie);
+  border-left-width:2px;background:var(--flaeche);font-size:var(--step--1);
+}
+.meldung b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.meldung p{color:var(--mute)}
+.meldung-hinweis{border-left-color:var(--messing-tief)}
+.meldung-warnung{border-left-color:var(--warnung)}
+.meldung-fehler{border-left-color:var(--fehler);background:var(--fehler-grund)}
+.meldung-gut{border-left-color:var(--gut);background:var(--gut-grund)}
+
+/* ── Leerzustand ───────────────────────────────────────────────── */
+.leer{text-align:center;padding-block:var(--raum-10);border:1px dashed var(--linie-hell);background:var(--flaeche)}
+.leer h3{font-family:var(--display);font-size:var(--step-2);margin-bottom:var(--raum-4)}
+.leer p{color:var(--mute);max-width:44ch;margin:0 auto var(--raum-7)}
+
+/* ── Ladeskelett ───────────────────────────────────────────────── */
+.skelett{background:linear-gradient(90deg,var(--flaeche) 25%,var(--flaeche-hoch) 50%,var(--flaeche) 75%);background-size:200% 100%;animation:schieben 1.4s ease-in-out infinite;border-radius:2px;color:transparent}
+@keyframes schieben{to{background-position:-200% 0}}
+
+/* ── Tabelle ───────────────────────────────────────────────────── */
+.tabellenrahmen{overflow-x:auto;border:1px solid var(--linie);background:var(--flaeche)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:var(--step--1)}
+th,td{text-align:left;padding:var(--raum-4) var(--raum-5);border-bottom:1px solid var(--linie);vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--messing-tief);font-weight:400}
+tbody tr:last-child td{border-bottom:0}
+td.tab{font-family:var(--mono)}
+
+/* ── Akkordeon ─────────────────────────────────────────────────── */
+.klapp{border-top:1px solid var(--linie)}
+.klapp:last-of-type{border-bottom:1px solid var(--linie)}
+.klapp summary{
+  cursor:pointer;padding-block:var(--raum-5);display:flex;justify-content:space-between;
+  align-items:center;gap:var(--raum-5);list-style:none;font-size:var(--step-1);font-family:var(--display);
+}
+.klapp summary::-webkit-details-marker{display:none}
+.klapp summary::after{content:"+";font-family:var(--mono);color:var(--messing-tief);font-size:var(--step-1);flex:none;transition:transform var(--klein) var(--raus)}
+.klapp[open] summary::after{transform:rotate(45deg)}
+.klapp summary:hover{color:var(--messing)}
+.klapp-inhalt{padding-bottom:var(--raum-6);color:var(--mute);max-width:64ch}
+
+/* ── Summenblock ───────────────────────────────────────────────── */
+.summe{border:1px solid var(--linie);background:var(--flaeche);padding:var(--raum-6)}
+.summe dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:var(--raum-3) var(--raum-5)}
+.summe dt{color:var(--mute);font-size:var(--step--1)}
+.summe dd{margin:0;font-family:var(--mono);font-size:var(--step--1);text-align:right}
+.summe .gesamt{border-top:1px solid var(--linie);margin-top:var(--raum-4);padding-top:var(--raum-4);font-size:var(--step-1)}
+.summe .gesamt dt{color:var(--ink);font-size:var(--step-1)}
+.summe .gesamt dd{font-size:var(--step-1);color:var(--ink)}
+
+/* ── Schrittanzeige ────────────────────────────────────────────── */
+.schritte{display:flex;gap:var(--raum-5);flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--raum-8)}
+.schritte li{display:flex;gap:8px;align-items:center}
+.schritte li[aria-current="step"]{color:var(--ink)}
+.schritte li[aria-current="step"] i{background:var(--messing);color:var(--nacht);border-color:var(--messing)}
+.schritte li[data-fertig] i{border-color:var(--messing-tief);color:var(--messing-tief)}
+.schritte i{width:22px;height:22px;border:1px solid var(--linie-hell);border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px;flex:none}
+
+/* ── Fußzeile ──────────────────────────────────────────────────── */
+.fuss{position:relative;z-index:2;border-top:1px solid var(--linie);padding-block:var(--raum-9) var(--raum-7);margin-top:var(--sektion)}
+.fuss-raster{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--raum-7);margin-bottom:var(--raum-8)}
+@media (max-width:860px){.fuss-raster{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fuss-raster{grid-template-columns:1fr}}
+.fuss-marke p{color:var(--mute);font-size:var(--step--1);max-width:38ch;margin-top:var(--raum-4)}
+.fuss h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--messing-tief);margin-bottom:var(--raum-4)}
+.fuss ul{display:flex;flex-direction:column;gap:var(--raum-3);font-size:var(--step--1);color:var(--mute)}
+.fuss a:hover{color:var(--ink)}
+.zahlarten{display:flex;flex-wrap:wrap;gap:var(--raum-3);padding-block:var(--raum-6);border-top:1px solid var(--linie)}
+.zahlarten span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border:1px solid var(--linie);padding:7px 12px}
+.rechtszeile{font-size:var(--step--1);color:var(--mute);line-height:1.9;border-top:1px solid var(--linie);padding-top:var(--raum-6)}
+
+/* ── Platzhalter sichtbar machen ───────────────────────────────── */
+/* Alles, was vor der Veröffentlichung durch echte Werte ersetzt werden
+   muss, wird markiert. Nichts Erfundenes darf unauffällig aussehen. */
+.platzhalter{
+  border-bottom:1px dotted var(--warnung);color:var(--warnung);
+  cursor:help;
+}

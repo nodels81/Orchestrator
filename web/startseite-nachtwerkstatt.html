@@ -99,6 +99,13 @@ a{color:inherit;text-decoration:none}
 }
 .korb:hover{border-color:var(--messing-tief);color:var(--ink)}
 @media (max-width:860px){.kopf nav{display:none}}
+@media (max-width:400px){
+  /* Gemessen: bei 320 px passten Wortmarke und Warenkorbknopf nicht
+     nebeneinander, die Seite scrollte 6 px waagerecht. */
+  .wortmarke{font-size:1.05rem;letter-spacing:.18em}
+  .korb{padding:7px 10px;font-size:10.5px}
+  .kopf-innen{gap:var(--raum-3)}
+}
 
 /* ── Kopfbereich ──────────────────────────────────────────────── */
 .hero{position:relative;padding-block:clamp(56px,8vw,120px) clamp(36px,5vw,72px);text-align:center;overflow:hidden}
@@ -277,7 +284,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
 
 <header class="kopf">
   <div class="mitte rand kopf-innen">
-    <a class="wortmarke messing" href="#">Bellowerk</a>
+    <a class="wortmarke messing" href="startseite-nachtwerkstatt.html">Bellowerk</a>
     <nav aria-label="Hauptnavigation">
       <ul>
         <li><a href="#kollektion">Kollektion</a></li>
@@ -353,7 +360,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%)">
           <span>FOTO 01 · HB-01 auf Eiche<br>Streiflicht von links, 85 mm</span>
         </div>
-        <h3>Hamburg No. 1</h3>
+        <h3><a href="produkt-hamburg-no-1.html">Hamburg No. 1</a></h3>
         <p class="karte-nr">HB-01 · Halsband Fettleder</p>
         <p>Einlagig, ohne Naht, aus einem Stück geschnitten. 20 bis 40 mm.</p>
         <div class="karte-fuss"><span class="karte-preis tab">89,00 €</span><span class="karte-mehr">Ansehen</span></div>
@@ -363,7 +370,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 34% 22%,#4C3D28,#131009 76%)">
           <span>FOTO 02 · HB-02 Flechtung<br>schräg, harter Kontrast</span>
         </div>
-        <h3>Hamburg No. 4</h3>
+        <h3><a href="produkt-hamburg-no-4.html">Hamburg No. 4</a></h3>
         <p class="karte-nr">HB-02 · Halsband geflochten</p>
         <p>Dreisträngiger Mystery Braid aus einem Stück. O-Ring, flache Enden.</p>
         <div class="karte-fuss"><span class="karte-preis tab">99,00 €</span><span class="karte-mehr">Ansehen</span></div>
@@ -373,7 +380,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 20%,#463726,#120F09 76%)">
           <span>FOTO 03 · LE-01 hängend<br>Gegenlicht, Werkstatt</span>
         </div>
-        <h3>Hamburg No. 2</h3>
+        <h3><a href="produkt-hamburg-no-2.html">Hamburg No. 2</a></h3>
         <p class="karte-nr">LE-01 · Führleine 3,00 m</p>
         <p>Sechs Führlängen, dreifach verstellbar. Ringe bei 45, 140 und 245 cm.</p>
         <div class="karte-fuss"><span class="karte-preis tab">129,00 €</span><span class="karte-mehr">Ansehen</span></div>
@@ -383,7 +390,7 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
         <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 36% 24%,#413424,#120E08 76%)">
           <span>FOTO 04 · HS-01 in der Hand<br>Makro, warmes Licht</span>
         </div>
-        <h3>Hamburg No. 3</h3>
+        <h3><a href="produkt-hamburg-no-3.html">Hamburg No. 3</a></h3>
         <p class="karte-nr">HS-01 · Handschlaufe</p>
         <p>Umfang 50 cm. Für die Leine am Gürtel oder über der Schulter.</p>
         <div class="karte-fuss"><span class="karte-preis tab">39,00 €</span><span class="karte-mehr">Ansehen</span></div>
@@ -489,9 +496,9 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
       <div>
         <h4>Kaufen</h4>
         <ul>
-          <li><a href="#kollektion">Halsbänder</a></li>
-          <li><a href="#kollektion">Leinen</a></li>
-          <li><a href="#kollektion">Zubehör</a></li>
+          <li><a href="katalog.html">Halsbänder</a></li>
+          <li><a href="katalog.html">Leinen</a></li>
+          <li><a href="katalog.html">Zubehör</a></li>
           <li><a href="#finder">Größe finden</a></li>
         </ul>
       </div>
@@ -501,17 +508,17 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
           <li><a href="#praxistest">Praxistest</a></li>
           <li><a href="#werkstoff">Material und Pflege</a></li>
           <li><a href="#leistung">Gassi, Pension, Training</a></li>
-          <li><a href="#">Reparatur</a></li>
+          <li><a href="produkt-hamburg-no-1.html#fragen">Reparatur</a></li>
         </ul>
       </div>
       <div>
         <h4>Rechtliches</h4>
         <ul>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Datenschutz</a></li>
-          <li><a href="#">AGB</a></li>
-          <li><a href="#">Widerruf und Rückgabe</a></li>
-          <li><a href="#">Versand und Lieferzeit</a></li>
+          <li><a href="recht/impressum.html">Impressum</a></li>
+          <li><a href="recht/datenschutz.html">Datenschutz</a></li>
+          <li><a href="recht/agb.html">AGB</a></li>
+          <li><a href="recht/widerruf.html">Widerruf und Rückgabe</a></li>
+          <li><a href="recht/versand.html">Versand und Lieferzeit</a></li>
         </ul>
       </div>
     </div>

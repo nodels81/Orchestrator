@@ -35,6 +35,13 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Lederscan als Textur für die Materialansicht liefern
 - [ ] Shopsystem entscheiden: Shopify mit Hydrogen, wie empfohlen, oder Next.js mit Medusa
 
+- [ ] **Kleinunternehmerregelung nach § 19 UStG: ja oder nein?** Zurzeit steht auf jeder Seite "inklusive 19 % Umsatzsteuer". Bei Kleinunternehmerregelung ist das falsch und muss überall geändert werden. Diese eine Antwort läuft durch den ganzen Shop
+- [ ] **Wer trägt die Rücksendekosten beim Widerruf?** Muss in Widerrufsbelehrung und Versandseite wortgleich stehen. Zurzeit steht dort beides nebeneinander, einer der Sätze muss weg
+- [ ] Anbieterangaben für die Rechtsseiten: Name oder Firma mit Rechtsform, ladungsfähige Anschrift, zweiter Kontaktweg neben der Mail, USt-IdNr. Alles orange unterstrichen in web/recht/. Danach anwaltlich prüfen lassen
+- [ ] Abnahmetor Punkt 4: Richtung 03 ist bewusst nur dunkel. Punkt für dieses Projekt streichen oder Hell-Variante bauen? Siehe web/ABNAHME.md
+- [ ] Abnahmetor Punkt 6: drei Schriftfamilien bei einem Budget von zwei. Vorschlag: IBM Plex Mono streichen, Artikelnummern und Preise in gesperrtem Archivo setzen. Kostet Charakter, hält das Budget
+- [ ] Startseite auf tokens.css umstellen. Sie trägt das Designsystem noch als Kopie, und bei der ersten Korrektur musste dieselbe Änderung schon an zwei Stellen gemacht werden
+
 ## Marke
 
 - [ ] Positionierungssatz "aus eigener Werkstatt" bleibt gültig, solange in Hamburg gefertigt wird. Bei der ersten Lieferung aus China ersetzen, Ersatztext liegt in konzepte/kollektion-01-hamburg.md

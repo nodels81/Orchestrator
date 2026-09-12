@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kasse — Bellowerk</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+/* Die Kasse hat eine eigene, ruhigere Kopfleiste: ab hier gibt es nur
+   noch einen Weg, und Navigation lenkt davon ab. Der Weg zurück bleibt. */
+.kassekopf{border-bottom:1px solid var(--linie);padding-block:var(--raum-5)}
+.kassekopf-innen{display:flex;align-items:center;justify-content:space-between;gap:var(--raum-5)}
+.zurueck{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.zurueck:hover{color:var(--ink)}
+
+.kasse{padding-block:var(--raum-8) var(--sektion)}
+.kasse-raster{display:grid;grid-template-columns:1.25fr .75fr;gap:var(--raum-9);align-items:start}
+@media (max-width:900px){.kasse-raster{grid-template-columns:1fr;gap:var(--raum-8)}}
+
+.block{border-top:1px solid var(--linie);padding-top:var(--raum-6);margin-bottom:var(--raum-8)}
+.block:first-of-type{border-top:0;padding-top:0}
+.block > h2{font-family:var(--display);font-size:var(--step-2);margin-bottom:var(--raum-3)}
+.block > p.leit{color:var(--mute);font-size:var(--step--1);margin-bottom:var(--raum-6);max-width:52ch}
+.paar{display:grid;grid-template-columns:1fr 1fr;gap:var(--raum-5)}
+@media (max-width:560px){.paar{grid-template-columns:1fr}}
+.eng{grid-template-columns:.4fr 1fr}
+
+/* Zahlarten stehen oben, nicht erst nach der Adresse. */
+.zahlwahl{display:grid;gap:var(--raum-3)}
+.zahlart{display:flex;gap:var(--raum-4);align-items:flex-start;border:1px solid var(--linie-hell);padding:var(--raum-5);cursor:pointer;transition:border-color var(--mikro) ease,background var(--mikro) ease}
+.zahlart:hover{border-color:var(--mute)}
+.zahlart input{margin-top:2px;accent-color:var(--messing-tief);width:17px;height:17px;flex:none}
+.zahlart:has(input:checked){border-color:var(--messing);background:var(--flaeche-hoch)}
+.zahlart:has(input:focus-visible){outline:2px solid var(--messing);outline-offset:3px}
+.zahlart b{display:block;font-weight:500;margin-bottom:3px}
+.zahlart span{font-size:var(--step--1);color:var(--mute)}
+
+@media (min-width:901px){.bestellung{position:sticky;top:var(--raum-5)}}
+.mini{display:grid;grid-template-columns:56px 1fr auto;gap:var(--raum-4);padding-block:var(--raum-4);border-bottom:1px solid var(--linie);align-items:center;font-size:var(--step--1)}
+.mini .bildplatz{aspect-ratio:1}
+.mini .bildplatz span{font-size:8px;letter-spacing:.06em}
+.mini b{display:block;font-weight:500}
+.mini em{font-style:normal;color:var(--mute);font-size:10.5px}
+.mini .tab{white-space:nowrap}
+
+.abschluss{border:1px solid var(--messing-tief);background:var(--flaeche-hoch);padding:var(--raum-6);margin-top:var(--raum-6)}
+.abschluss h3{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--messing-tief);margin-bottom:var(--raum-5)}
+.abschluss .haken{margin-bottom:var(--raum-5)}
+.abschluss .haken a{border-bottom:1px solid var(--linie-hell);color:var(--ink)}
+.abschluss .haken a:hover{border-color:var(--messing-tief)}
+.nach-knopf{font-size:var(--step--1);color:var(--mute);margin-top:var(--raum-4);line-height:1.8}
+
+/* Zustimmungsbanner. "Alle ablehnen" ist gleichrangig — gleiche Ebene,
+   gleiche Größe, gleiche Gestaltungswertigkeit. Vorschrift, nicht Geschmack. */
+.zustimmung{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--flaeche);border-top:1px solid var(--linie-hell);box-shadow:var(--lage-3);padding:var(--raum-6) 0}
+.zustimmung-innen{display:grid;grid-template-columns:1fr auto;gap:var(--raum-7);align-items:center}
+@media (max-width:760px){.zustimmung-innen{grid-template-columns:1fr;gap:var(--raum-5)}}
+.zustimmung p{font-size:var(--step--1);color:var(--mute);max-width:64ch}
+.zustimmung b{color:var(--ink);font-weight:500;display:block;margin-bottom:6px}
+.zustimmung-knoepfe{display:flex;gap:var(--raum-3);flex-wrap:wrap}
+.zustimmung-knoepfe .knopf{flex:1;min-width:150px}
+</style>
+</head>
+<body>
+
+<a class="springen" href="#inhalt">Zum Inhalt springen</a>
+
+<div class="entwurf rand">
+  <span><b>Entwurf</b> · nicht veröffentlichen</span>
+  <span>Kasse</span>
+  <span>Stand 12.09.2026</span>
+  <span><b>Fehlerzustand unten prüfbar</b></span>
+</div>
+
+<header class="kassekopf">
+  <div class="kassekopf-innen mitte rand">
+    <a href="startseite-nachtwerkstatt.html" class="wortmarke messing">Bellowerk</a>
+    <a class="zurueck" href="warenkorb.html">← Zurück zum Warenkorb</a>
+  </div>
+</header>
+
+<main id="inhalt" class="kasse mitte rand">
+
+  <h1 class="nur-vorlesen">Kasse — Adresse und Zahlung</h1>
+
+  <ol class="schritte">
+    <li data-fertig><i>✓</i>Warenkorb</li>
+    <li aria-current="step"><i>2</i>Adresse und Zahlung</li>
+    <li><i>3</i>Prüfen und bestellen</li>
+  </ol>
+
+  <div class="kasse-raster">
+
+    <form id="kasseform" novalidate>
+
+      <!-- Gastbestellung: kein Konto, kein Zwang. -->
+      <section class="block">
+        <h2>Kontakt</h2>
+        <p class="leit">Für die Bestellbestätigung und die Sendungsverfolgung. Ein Konto brauchst du nicht — und wir legen auch keins an, ohne dass du es willst.</p>
+        <label class="feld" id="feld-mail">
+          <span>E-Mail <span class="pflicht-stern">*</span></span>
+          <input type="email" name="mail" autocomplete="email" required placeholder="name@beispiel.de" aria-describedby="mail-fehler">
+          <span class="feld-fehler" id="mail-fehler">Bitte die E-Mail-Adresse prüfen — es fehlt das @-Zeichen. Deine Eingabe bleibt stehen.</span>
+        </label>
+        <label class="haken">
+          <input type="checkbox" name="neuigkeiten">
+          <span>Schick mir Post, wenn ein neues Stück fertig ist. Vier- bis sechsmal im Jahr, keine Rabatte, Abmeldung in jeder Mail. Du bekommst zuerst eine Mail zur Bestätigung.</span>
+        </label>
+      </section>
+
+      <!-- Zahlarten stehen oben, nicht erst nach der Adresse. -->
+      <section class="block">
+        <h2>Zahlung</h2>
+        <p class="leit">Rechnungskauf ist hier Grundausstattung, kein Zuschlag. Du zahlst, wenn die Ware da ist und passt.</p>
+        <div class="zahlwahl" role="radiogroup" aria-label="Zahlungsart">
+          <label class="zahlart"><input type="radio" name="zahlung" value="rechnung" checked><span><b>Rechnung</b><span>14 Tage Zahlungsziel. Die Rechnung liegt dem Paket bei.</span></span></label>
+          <label class="zahlart"><input type="radio" name="zahlung" value="paypal"><span><b>PayPal</b><span>Weiterleitung zu PayPal, danach zurück zur Bestätigung.</span></span></label>
+          <label class="zahlart"><input type="radio" name="zahlung" value="karte"><span><b>Kreditkarte, Apple Pay oder Google Pay</b><span>Kartendaten werden verschlüsselt beim Zahlungsdienstleister eingegeben, nicht bei uns.</span></span></label>
+          <label class="zahlart"><input type="radio" name="zahlung" value="sepa"><span><b>SEPA-Lastschrift</b><span>Einzug nach dem Versand, mit Ankündigung.</span></span></label>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Lieferadresse</h2>
+        <p class="leit">Pflichtfelder sind mit <span class="pflicht-stern">*</span> gekennzeichnet. Die Telefonnummer ist keins — wir rufen nicht an.</p>
+        <div class="paar">
+          <label class="feld"><span>Vorname <span class="pflicht-stern">*</span></span><input name="vorname" autocomplete="given-name" required></label>
+          <label class="feld"><span>Nachname <span class="pflicht-stern">*</span></span><input name="nachname" autocomplete="family-name" required></label>
+        </div>
+        <label class="feld"><span>Straße und Hausnummer <span class="pflicht-stern">*</span></span><input name="strasse" autocomplete="street-address" required></label>
+        <label class="feld"><span>Adresszusatz</span><input name="zusatz" autocomplete="address-line2" placeholder="Etage, bei wem, Paketstation"></label>
+        <div class="paar eng">
+          <label class="feld" id="feld-plz">
+            <span>PLZ <span class="pflicht-stern">*</span></span>
+            <input name="plz" autocomplete="postal-code" inputmode="numeric" maxlength="5" required aria-describedby="plz-fehler">
+            <span class="feld-fehler" id="plz-fehler">Eine deutsche Postleitzahl hat fünf Ziffern.</span>
+          </label>
+          <label class="feld"><span>Ort <span class="pflicht-stern">*</span></span><input name="ort" autocomplete="address-level2" required><span class="feld-hinweis" id="ort-vorschlag" hidden>Aus der Postleitzahl ergänzt. Stimmt das nicht, einfach überschreiben.</span></label>
+        </div>
+        <label class="feld"><span>Land <span class="pflicht-stern">*</span></span>
+          <select name="land" autocomplete="country-name">
+            <option selected>Deutschland</option>
+            <option>Österreich</option>
+            <option>Schweiz</option>
+          </select>
+          <span class="feld-hinweis">Außerhalb der EU versenden wir zurzeit nicht. Zoll und Einfuhrumsatzsteuer wären für beide Seiten teurer als die Ware.</span>
+        </label>
+        <label class="haken"><input type="checkbox" name="abweichend"><span>Rechnungsadresse weicht ab</span></label>
+      </section>
+
+      <section class="block">
+        <h2>Versand</h2>
+        <div class="zahlwahl" role="radiogroup" aria-label="Versandart">
+          <label class="zahlart"><input type="radio" name="versand" value="dhl" checked><span><b>DHL GoGreen — 0,00 €</b><span>Versandkostenfrei ab 120 €. Lieferzeit 2 bis 4 Werktage, mit Sendungsverfolgung.</span></span></label>
+          <label class="zahlart"><input type="radio" name="versand" value="abholung"><span><b>Abholung in Hamburg — 0,00 €</b><span>Nach Absprache. Wir melden uns mit einem Termin, sobald das Stück fertig liegt.</span></span></label>
+        </div>
+      </section>
+    </form>
+
+    <!-- Bestellübersicht unmittelbar vor dem Abschluss: Ware, Menge,
+         Preis, Versand, Gesamtsumme. Pflicht nach § 312j BGB. -->
+    <aside class="bestellung">
+      <div class="summe">
+        <h2 style="font-family:var(--display);font-size:var(--step-1);margin-bottom:var(--raum-5)">Deine Bestellung</h2>
+
+        <div class="mini">
+          <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 30% 18%,#54422C,#141009 74%)"><span>01</span></div>
+          <span><b>Hamburg No. 1</b><em>HB-01 · Größe M · Dunkelbraun · 1 Stück</em></span>
+          <span class="tab">89,00 €</span>
+        </div>
+        <div class="mini">
+          <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 36% 24%,#413424,#120E08 76%)"><span>04</span></div>
+          <span><b>Hamburg No. 3</b><em>HS-01 · 50 cm · Dunkelbraun · 1 Stück</em></span>
+          <span class="tab">39,00 €</span>
+        </div>
+
+        <dl style="margin-top:var(--raum-5)">
+          <dt>Zwischensumme</dt><dd class="tab">128,00 €</dd>
+          <dt>Versand (DHL GoGreen)</dt><dd class="tab">0,00 €</dd>
+          <div style="display:contents" class="gesamt"><dt>Gesamtsumme</dt><dd class="tab">128,00 €</dd></div>
+        </dl>
+        <p class="feld-hinweis" style="margin-top:var(--raum-4)">Endpreis inklusive 20,44 € Umsatzsteuer (19 %). Versandkosten sind enthalten. Lieferzeit 2 bis 4 Werktage.</p>
+
+        <div class="abschluss">
+          <h3>Letzter Schritt</h3>
+          <label class="haken">
+            <input type="checkbox" id="agb-haken">
+            <span>Ich habe die <a href="recht/agb.html">AGB</a> und die <a href="recht/widerruf.html">Widerrufsbelehrung</a> gelesen und bin einverstanden. <span class="pflicht-stern">*</span></span>
+          </label>
+
+          <!-- Die Beschriftung ist vorgeschrieben: "Zahlungspflichtig
+               bestellen". Nicht "Jetzt kaufen", nicht "Absenden". -->
+          <button class="knopf knopf-haupt knopf-breit" id="bestellknopf" type="submit" form="kasseform" aria-disabled="true">Zahlungspflichtig bestellen</button>
+
+          <p class="nach-knopf">Mit dem Klick kommt ein zahlungspflichtiger Vertrag zustande. Die Bestellbestätigung geht sofort per Mail raus, mit Rechnung, Widerrufsformular und Pflegehinweis.</p>
+        </div>
+      </div>
+
+      <p class="feld-hinweis" style="margin-top:var(--raum-6);text-align:center">
+        <button class="knopf knopf-still" type="button" id="fehler-zeigen">Entwurf: Fehlerzustand zeigen</button>
+      </p>
+    </aside>
+  </div>
+</main>
+
+<!-- Zustimmung nach TDDDG. Kein vorangekreuztes Kästchen, keine Messung
+     vor der Zustimmung, "Alle ablehnen" genauso leicht wie "Alle annehmen". -->
+<div class="zustimmung" id="zustimmung" role="dialog" aria-label="Zustimmung zu Messung">
+  <div class="mitte rand zustimmung-innen">
+    <p>
+      <b>Dürfen wir messen, wie die Seite benutzt wird?</b>
+      Wir benutzen eine Messung ohne Personenbezug, um zu sehen, welche Seiten gelesen werden. Notwendige Cookies für Warenkorb und Kasse laufen unabhängig davon — die kannst du nicht abwählen, ohne dass der Kauf aufhört zu funktionieren. Mehr in der <a href="recht/datenschutz.html" style="border-bottom:1px solid var(--linie-hell);color:var(--ink)">Datenschutzerklärung</a>.
+    </p>
+    <div class="zustimmung-knoepfe">
+      <button class="knopf knopf-neben" type="button" onclick="document.getElementById('zustimmung').remove()">Alle ablehnen</button>
+      <button class="knopf knopf-neben" type="button" onclick="document.getElementById('zustimmung').remove()">Alle annehmen</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Der Bestellknopf bleibt gesperrt, bis der Haken sitzt. Gesperrt heißt
+   sichtbar gesperrt, nicht versteckt — sonst sucht man ihn. */
+const haken = document.getElementById('agb-haken');
+const bestellen = document.getElementById('bestellknopf');
+haken.addEventListener('change', () => bestellen.setAttribute('aria-disabled', String(!haken.checked)));
+
+bestellen.addEventListener('click', e => {
+  e.preventDefault();
+  if (bestellen.getAttribute('aria-disabled') === 'true') {
+    document.querySelector('.abschluss .haken').animate(
+      [{transform:'translateX(0)'},{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(0)'}],
+      {duration:260});
+    haken.focus();
+    return;
+  }
+  bestellen.dataset.laedt = '';
+  setTimeout(() => { delete bestellen.dataset.laedt; bestellen.textContent = 'Im Entwurf endet der Weg hier'; }, 1000);
+});
+
+/* PLZ ergänzt den Ort. Im Entwurf nur angedeutet, im Shop über eine
+   Postleitzahlentabelle. Überschreiben bleibt immer möglich. */
+const plz = document.querySelector('[name="plz"]');
+plz.addEventListener('blur', () => {
+  const feld = document.getElementById('feld-plz');
+  if (plz.value && !/^\d{5}$/.test(plz.value)) feld.setAttribute('data-fehler','');
+  else feld.removeAttribute('data-fehler');
+});
+
+/* Entwurfsschalter: Fehlerzustände sichtbar machen, ohne sie auszulösen. */
+document.getElementById('fehler-zeigen').addEventListener('click', e => {
+  const an = document.getElementById('feld-mail').hasAttribute('data-fehler');
+  ['feld-mail','feld-plz'].forEach(id => {
+    const f = document.getElementById(id);
+    an ? f.removeAttribute('data-fehler') : f.setAttribute('data-fehler','');
+  });
+  e.currentTarget.textContent = an ? 'Entwurf: Fehlerzustand zeigen' : 'Entwurf: Fehlerzustand ausblenden';
+});
+</script>
+</body>
+</html>
