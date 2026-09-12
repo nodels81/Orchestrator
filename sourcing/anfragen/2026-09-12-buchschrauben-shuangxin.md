@@ -14,29 +14,27 @@ Anhänge:
 
 Hello,
 
-I am Björn, owner of Bellowerk Manufaktur in Hamburg, Germany. We make premium leather dog
-collars and leads. All joints are Chicago screws — no stitching, no rivets. We need solid brass,
-unplated and unlacquered. Drawings and a photo are attached.
+Björn here, owner of Bellowerk Manufaktur, Hamburg, Germany. We make leather dog collars and
+leads; all joints are Chicago screws — no stitching, no rivets. We need solid brass, unplated
+and unlacquered. Drawings attached.
 
 Our current dimensions:
 
-- Head: domed Ø 8–9 mm outside, flat head inside
-- Hole in the leather: Ø 4.5 mm
-- Barrel length: 8 mm and 10 mm
-- Thread: ISO metric coarse, your standard for this size
+- Head domed Ø 8–9 mm outside, flat head inside
+- Hole in the leather Ø 4.5 mm
+- Barrel length 8 mm and 10 mm
+- Thread ISO metric coarse, your standard
 
 Please answer by number:
 
-1. Are these dimensions possible from your standard programme? If not, what are your nearest
-   stock sizes?
-2. What barrel diameter matches our 4.5 mm hole in leather?
-3. Barrel 8 mm has to hold 6.5–8.0 mm of leather, barrel 10 mm has to hold 10.5–12.0 mm.
-   Leather compresses under the head. Are these the right lengths, or do you advise others?
-4. Brass alloy: HPb59-1 or CuZn39Pb3? Solid brass only, not plated steel, not zinc alloy.
-5. Unit price EXW at 1,000 pcs and 5,000 pcs, per length.
-6. MOQ per length.
-7. Sample cost and sample time.
-8. Photo and weight in grams of the screw you would supply.
+1. Possible from your standard programme? If not, your nearest stock sizes.
+2. Which barrel diameter suits a 4.5 mm hole in leather?
+3. The 8 mm barrel holds 6.5–8.0 mm of leather, the 10 mm barrel 10.5–12.0 mm. Leather
+   compresses under the head — are these lengths right, or do you advise others?
+4. Alloy HPb59-1 or CuZn39Pb3? Solid brass only, no plated steel, no zinc.
+5. Price EXW at 1,000 and 5,000 pcs per length, and MOQ.
+6. Sample cost and time.
+7. Photo and weight in grams of the screw you would supply.
 
 Please reply by Friday, 19 Sep 2026.
 
