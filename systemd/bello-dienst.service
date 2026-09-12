@@ -1,0 +1,29 @@
+# Der Dienst hinter der Betriebs-App. Lauscht nur auf 127.0.0.1;
+# nach aussen kommt man ausschliesslich ueber nginx mit Passwort.
+[Unit]
+Description=Bello: Dienst fuer die Betriebs-App
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bello
+Group=bello
+WorkingDirectory=/opt/bello
+ExecStart=/opt/bello/.venv/bin/python /opt/bello/bin/dienst.py
+Restart=on-failure
+RestartSec=5s
+
+# Dieselbe Haertung wie der Tageslauf: nur daten/ und logs/ sind beschreibbar.
+ProtectSystem=strict
+ReadWritePaths=/opt/bello/daten /opt/bello/logs
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+# Der Dienst braucht nur die Rueckschleife, sonst nichts nach aussen.
+RestrictAddressFamilies=AF_INET AF_UNIX
+IPAddressAllow=localhost
+IPAddressDeny=any
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f1ebdd">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/app-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/app-icon.svg">
+<title>Bellowerk</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap');
+  :root{
+    --papier:#fff; --grund:#f1ebdd; --tinte:#2c2822; --leise:#7d7365;
+    --linie:#e4dac6; --oliv:#5f6b3a; --kupfer:#b06a34; --kupfer-weich:#f7ebdd;
+    --rot:#a5402f; --amber:#b8862b;
+    --serif:"Lora",Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --papier:#23201b; --grund:#1a1814; --tinte:#ece5d8; --leise:#9d9384;
+      --linie:#3a342c; --oliv:#8fa055; --kupfer:#d68f52; --kupfer-weich:#33291f;
+      --rot:#d2705e; --amber:#d4a33f; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--grund);color:var(--tinte);font-family:var(--sans);
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .rahmen{max-width:560px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column}
+
+  header{padding:calc(12px + env(safe-area-inset-top)) 16px 12px;border-bottom:1px solid var(--linie);
+    background:var(--papier);display:flex;align-items:baseline;gap:10px;position:sticky;top:0;z-index:5}
+  .wortmarke{font-family:var(--serif);font-size:20px;font-weight:700}
+  .wortmarke span{color:var(--kupfer)}
+  .kopfzeile{margin-left:auto;font-size:11px;color:var(--leise);text-transform:uppercase;letter-spacing:.07em}
+
+  main{flex:1;padding:16px 16px 24px}
+  .blatt{display:none}.blatt.an{display:block}
+  h2{font-family:var(--serif);font-size:17px;font-weight:600;margin:0 0 3px}
+  .unterzeile{font-size:13px;color:var(--leise);margin:0 0 16px}
+
+  .kennzahlen{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+  .kz{background:var(--papier);border:1px solid var(--linie);border-radius:6px;padding:11px 8px;text-align:center}
+  .kz .zahl{font-family:var(--serif);font-size:23px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+  .kz .txt{font-size:10px;color:var(--leise);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+  .kz.wartet .zahl{color:var(--kupfer)}
+
+  .posten{background:var(--papier);border:1px solid var(--linie);border-radius:6px;
+    padding:13px 14px;margin-bottom:10px}
+  .posten.entscheidung{border-left:3px solid var(--kupfer)}
+  .posten-kopf{display:flex;gap:8px;align-items:baseline;margin-bottom:5px;flex-wrap:wrap}
+  .kennung{font-family:var(--mono);font-size:11.5px;color:var(--leise)}
+  .von{font-size:12px;color:var(--oliv);font-weight:600}
+  .pille{font-size:10px;padding:2px 7px;border-radius:99px;background:var(--kupfer-weich);
+    color:var(--kupfer);font-weight:600;margin-left:auto;white-space:nowrap}
+  .posten p{margin:0;font-size:14px}
+  .ergebnis{margin-top:8px;font-size:13px;color:var(--leise);white-space:pre-wrap;
+    max-height:7.5em;overflow:hidden}
+  .posten-fuss{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}
+
+  button{font:inherit;cursor:pointer;border-radius:5px;border:1px solid transparent}
+  .knopf{padding:8px 13px;font-size:13px;font-weight:500;background:var(--papier);
+    border-color:var(--linie);color:var(--tinte)}
+  .knopf.ja{background:var(--oliv);color:#fff;border-color:var(--oliv)}
+  .knopf.nein{color:var(--rot)}
+  button:disabled{opacity:.5;cursor:default}
+  button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,
+  .reiter:focus-visible{outline:2px solid var(--kupfer);outline-offset:2px}
+
+  label{display:block;font-size:12px;color:var(--leise);text-transform:uppercase;
+    letter-spacing:.05em;margin:14px 0 5px;font-weight:600}
+  select,input,textarea{width:100%;font:inherit;font-size:16px;padding:10px 11px;
+    border:1px solid var(--linie);border-radius:6px;background:var(--papier);color:var(--tinte)}
+  textarea{resize:vertical;min-height:110px}
+  .hinweis{font-size:12px;color:var(--leise);margin-top:5px}
+  .absenden{width:100%;padding:13px;font-size:15px;font-weight:600;margin-top:20px;
+    background:var(--oliv);color:#fff;border-color:var(--oliv)}
+
+  .zeile{width:100%;text-align:left;display:flex;gap:12px;align-items:center;
+    background:var(--papier);border:1px solid var(--linie);border-radius:6px;
+    padding:11px 13px;margin-bottom:7px;color:inherit}
+  .nr{font-family:var(--mono);font-size:11px;color:var(--leise);min-width:20px}
+  .wer{flex:1}.wer .name{font-family:var(--serif);font-size:15.5px;font-weight:600}
+  .wer .fach{font-size:12.5px;color:var(--leise)}
+
+  .meldung{padding:12px 14px;border-radius:6px;margin-bottom:14px;font-size:14px}
+  .meldung.gut{background:rgba(95,107,58,.13);color:var(--oliv);border:1px solid var(--oliv)}
+  .meldung.schlecht{background:rgba(165,64,47,.1);color:var(--rot);border:1px solid var(--rot)}
+  .laedt{text-align:center;color:var(--leise);padding:40px 0;font-size:14px}
+
+  nav{display:flex;border-top:1px solid var(--linie);background:var(--papier);
+    position:sticky;bottom:0;padding-bottom:env(safe-area-inset-bottom)}
+  .reiter{flex:1;background:none;border:none;padding:9px 4px 11px;color:var(--leise);
+    font-size:10.5px;display:flex;flex-direction:column;align-items:center;gap:3px}
+  .reiter .zeichen{font-size:17px;line-height:1}
+  .reiter[aria-selected="true"]{color:var(--kupfer);font-weight:600}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="rahmen">
+  <header>
+    <div class="wortmarke">Bello<span>werk</span></div>
+    <div class="kopfzeile" id="kopfzeile">Werkbank</div>
+  </header>
+
+  <main>
+    <section class="blatt an" id="blatt-werkbank">
+      <h2>Was auf Dich wartet</h2>
+      <p class="unterzeile" id="stand-zeit">wird geladen …</p>
+      <div id="meldung-werkbank"></div>
+      <div id="werkbank-inhalt"><div class="laedt">Lade den Stand …</div></div>
+    </section>
+
+    <section class="blatt" id="blatt-auftrag">
+      <h2>Auftrag geben</h2>
+      <p class="unterzeile">Geht ins selbe Register wie ein Auftrag von der Kommandozeile.</p>
+      <div id="auftrag-meldung"></div>
+      <form id="auftrag-form">
+        <label for="f-abteilung">An wen</label>
+        <select id="f-abteilung" required></select>
+        <label for="f-ziel">Was soll gemacht werden</label>
+        <textarea id="f-ziel" required maxlength="2000"
+          placeholder="Je genauer, desto brauchbarer das Ergebnis."></textarea>
+        <p class="hinweis">Gustav verteilt beim nächsten Lauf, Almut prüft, das Ergebnis kommt per Mail.</p>
+        <label for="f-frist">Frist</label>
+        <input type="date" id="f-frist">
+        <p class="hinweis">Leer lassen heißt: in sieben Tagen.</p>
+        <button type="submit" class="absenden" id="f-senden">Auftrag anlegen</button>
+      </form>
+    </section>
+
+    <section class="blatt" id="blatt-belegschaft">
+      <h2>Belegschaft</h2>
+      <p class="unterzeile">Antippen legt einen Auftrag an diese Abteilung an.</p>
+      <div id="belegschaft-inhalt"><div class="laedt">…</div></div>
+    </section>
+  </main>
+
+  <nav>
+    <button class="reiter" data-blatt="werkbank" aria-selected="true"><span class="zeichen">▤</span>Werkbank</button>
+    <button class="reiter" data-blatt="auftrag" aria-selected="false"><span class="zeichen">＋</span>Auftrag</button>
+    <button class="reiter" data-blatt="belegschaft" aria-selected="false"><span class="zeichen">☰</span>Belegschaft</button>
+  </nav>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+let daten = null;
+
+async function hole(weg, auswahl){
+  const antwort = await fetch(weg, auswahl);
+  const inhalt = await antwort.json().catch(() => ({fehler:"Antwort war kein JSON."}));
+  if (!antwort.ok) throw new Error(inhalt.fehler || `Fehler ${antwort.status}`);
+  return inhalt;
+}
+
+function melde(wo, art, text){
+  wo.innerHTML = `<div class="meldung ${art}">${text}</div>`;
+  if (art === "gut") setTimeout(() => { wo.innerHTML = ""; }, 6000);
+}
+
+/* ---------- Werkbank ---------- */
+async function ladeStand(){
+  try {
+    daten = await hole("/api/stand");
+  } catch (f) {
+    $("#werkbank-inhalt").innerHTML =
+      `<div class="meldung schlecht">Der Stand ließ sich nicht laden: ${f.message}</div>`;
+    return;
+  }
+  const zeit = new Date(daten.stand_vom).toLocaleString("de-DE",
+    {day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});
+  $("#stand-zeit").textContent = `Stand ${zeit}`;
+  zeichneWerkbank();
+  fuelleAbteilungen();
+  zeichneBelegschaft();
+}
+
+function zeichneWerkbank(){
+  const wartet = daten.auftraege.filter(a => a.stand === "wartet auf Bjoern");
+  const offen  = daten.auftraege.filter(a => a.stand === "offen" || a.stand === "in Arbeit");
+  let html = `<div class="kennzahlen">
+      <div class="kz wartet"><div class="zahl">${wartet.length}</div><div class="txt">warten</div></div>
+      <div class="kz"><div class="zahl">${daten.in_arbeit}</div><div class="txt">in Arbeit</div></div>
+      <div class="kz"><div class="zahl">${daten.gesamt}</div><div class="txt">gesamt</div></div>
+    </div>`;
+
+  if (!wartet.length && !offen.length){
+    html += `<div class="posten"><p>Nichts offen. Gustav meldet sich, sobald etwas zu entscheiden ist.</p></div>`;
+  }
+  for (const a of wartet) html += posten(a, true);
+  for (const a of offen)  html += posten(a, false);
+  $("#werkbank-inhalt").innerHTML = html;
+
+  $("#werkbank-inhalt").querySelectorAll("[data-tun]").forEach(k =>
+    k.addEventListener("click", () => entscheide(k.dataset.id, k.dataset.tun)));
+}
+
+function posten(a, entscheidbar){
+  const e = s => String(s ?? "").replace(/[<>&]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]));
+  return `<article class="posten ${entscheidbar ? "entscheidung" : ""}">
+    <div class="posten-kopf">
+      <span class="kennung">${e(a.id)}</span>
+      <span class="von">${e(a.name)} · ${e(a.abteilung)}</span>
+      ${entscheidbar ? "" : `<span class="pille">${e(a.stand)}</span>`}
+    </div>
+    <p>${e(a.ziel)}</p>
+    ${a.ergebnis_kurz ? `<div class="ergebnis">${e(a.ergebnis_kurz)}…</div>` : ""}
+    ${entscheidbar ? `<div class="posten-fuss">
+      <button class="knopf ja"   data-id="${e(a.id)}" data-tun="freigeben">Freigeben</button>
+      <button class="knopf"      data-id="${e(a.id)}" data-tun="ablehnen">Überarbeiten</button>
+      <button class="knopf nein" data-id="${e(a.id)}" data-tun="verwerfen">Verwerfen</button>
+    </div>` : `<div class="posten-fuss"><span class="hinweis">Frist ${e(a.frist)}</span></div>`}
+  </article>`;
+}
+
+async function entscheide(id, was){
+  let kommentar = "";
+  if (was === "ablehnen"){
+    kommentar = prompt("Was soll überarbeitet werden?") || "";
+    if (!kommentar.trim()) return;
+  } else if (was === "verwerfen"){
+    if (!confirm(`${id} endgültig verwerfen? Es gibt keine Überarbeitung.`)) return;
+    kommentar = prompt("Grund (darf leer bleiben)") || "";
+  }
+  const wo = $("#meldung-werkbank");
+  try {
+    await hole("/api/entscheidung", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({id, entscheidung:was, kommentar})
+    });
+    await ladeStand();
+    melde(wo, "gut", `${id} ist ${was === "freigeben" ? "freigegeben"
+      : was === "ablehnen" ? "zur Überarbeitung zurück" : "verworfen"}.`);
+  } catch (f){
+    melde(wo, "schlecht", f.message);
+  }
+}
+
+/* ---------- Auftrag geben ---------- */
+function fuelleAbteilungen(){
+  const feld = $("#f-abteilung");
+  feld.innerHTML = daten.abteilungen.map(a =>
+    `<option value="${a.lang}">${a.nummer} ${a.fach} — ${a.name}</option>`).join("");
+}
+
+$("#auftrag-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const knopf = $("#f-senden");
+  knopf.disabled = true; knopf.textContent = "wird angelegt …";
+  try {
+    const r = await hole("/api/auftrag", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({abteilung:$("#f-abteilung").value,
+        ziel:$("#f-ziel").value, frist:$("#f-frist").value})
+    });
+    melde($("#auftrag-meldung"), "gut",
+      `${r.id} an ${r.name} angelegt, Frist ${r.frist}.`);
+    $("#f-ziel").value = ""; $("#f-frist").value = "";
+    await ladeStand();
+  } catch (f){
+    melde($("#auftrag-meldung"), "schlecht", f.message);
+  } finally {
+    knopf.disabled = false; knopf.textContent = "Auftrag anlegen";
+  }
+});
+
+/* ---------- Belegschaft ---------- */
+function zeichneBelegschaft(){
+  $("#belegschaft-inhalt").innerHTML = daten.abteilungen.map(a => `
+    <button class="zeile" data-lang="${a.lang}">
+      <span class="nr">${a.nummer}</span>
+      <span class="wer"><span class="name">${a.name}</span>
+      <span class="fach">${a.fach}</span></span><span class="nr">›</span>
+    </button>`).join("")
+    + `<p class="hinweis" style="margin-top:14px">Verteilt und prüft: ${daten.orchestrator}.</p>`;
+  $("#belegschaft-inhalt").querySelectorAll(".zeile").forEach(b =>
+    b.addEventListener("click", () => {
+      $("#f-abteilung").value = b.dataset.lang;
+      zeige("auftrag"); $("#f-ziel").focus();
+    }));
+}
+
+/* ---------- Blätter ---------- */
+function zeige(name){
+  document.querySelectorAll(".blatt").forEach(b => b.classList.remove("an"));
+  $("#blatt-" + name).classList.add("an");
+  document.querySelectorAll(".reiter").forEach(r =>
+    r.setAttribute("aria-selected", String(r.dataset.blatt === name)));
+  $("#kopfzeile").textContent =
+    {werkbank:"Werkbank", auftrag:"Auftrag geben", belegschaft:"Belegschaft"}[name];
+  window.scrollTo(0,0);
+}
+document.querySelectorAll(".reiter").forEach(r =>
+  r.addEventListener("click", () => zeige(r.dataset.blatt)));
+
+ladeStand();
+// Beim Zurückholen aus dem Hintergrund neu laden: der Timer läuft stündlich.
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) ladeStand();
+});
+</script>
+</body>
+</html>

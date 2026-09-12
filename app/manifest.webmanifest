@@ -1,0 +1,16 @@
+{
+  "name": "Bellowerk Werkbank",
+  "short_name": "Bellowerk",
+  "description": "Betrieb ansehen, entscheiden, beauftragen.",
+  "start_url": "/app.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f1ebdd",
+  "theme_color": "#f1ebdd",
+  "lang": "de",
+  "icons": [
+    { "src": "/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

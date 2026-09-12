@@ -179,10 +179,24 @@ server {
     root  $DATEN;
     autoindex off;
 
-    # Ausdrueckliche Freigabe: nur diese beiden Seiten. Alles andere unter
-    # daten/ (auftraege.json, gedaechtnis.db, Markenbrief, Zeichnungen) faellt
-    # in das 404 am Ende.
-    location = /              { return 302 /dashboard.html; }
+    # Die App und ihr Zubehoer liegen im Repo, nicht unter daten/.
+    location = /app.html            { alias /opt/bello/app/app.html; }
+    location = /manifest.webmanifest { alias /opt/bello/app/manifest.webmanifest; }
+    location = /app-icon.svg        { alias /opt/bello/app/icon.svg; }
+
+    # Der Dienst hinter der App. Er lauscht nur auf der Rueckschleife; von
+    # aussen kommt man nur hier durch, und das Passwort gilt auch dafuer.
+    location /api/ {
+        proxy_pass http://127.0.0.1:8787;
+        proxy_set_header Host $host;
+        proxy_read_timeout 30s;
+        client_max_body_size 64k;
+    }
+
+    # Ausdrueckliche Freigabe: nur diese beiden Seiten aus daten/. Alles andere
+    # dort (auftraege.json, gedaechtnis.db, Markenbrief, Zeichnungen) faellt in
+    # das 404 am Ende.
+    location = /              { return 302 /app.html; }
     location = /dashboard.html { }
     location = /galerie.html   { }
     location /                 { return 404; }
@@ -192,7 +206,22 @@ nginx -t >/dev/null 2>&1 && systemctl reload nginx && gut "Seite ist scharf" \
   || { schlecht "Konfiguration fehlerhaft — nichts uebernommen"; nginx -t; exit 1; }
 
 # ---------- 6. Gegenprobe ----------
-meldung "6/6  Gegenprobe"
+meldung "6/7  Dienst fuer die App"
+if [ -f /opt/bello/systemd/bello-dienst.service ]; then
+  cp /opt/bello/systemd/bello-dienst.service /etc/systemd/system/
+  systemctl daemon-reload
+  systemctl enable --now bello-dienst.service >/dev/null 2>&1
+  sleep 2
+  if systemctl is-active --quiet bello-dienst.service; then
+    gut "bello-dienst laeuft auf 127.0.0.1:8787"
+  else
+    schlecht "bello-dienst startet nicht — journalctl -u bello-dienst -n 20"
+  fi
+else
+  echo "  --   systemd/bello-dienst.service fehlt (aelterer Stand? git pull)"
+fi
+
+meldung "7/7  Gegenprobe"
 # Bei selbstsigniertem Zertifikat muss curl die Pruefung ueberspringen, sonst
 # scheitert die Gegenprobe am Zertifikat statt an dem, was sie pruefen soll.
 CURL_OPT=(-s -o /dev/null -w '%{http_code}')
@@ -206,8 +235,18 @@ geheim=$(curl "${CURL_OPT[@]}" "https://$HOST/auftraege.json")
   || schlecht "auftraege.json liefert $geheim — BITTE MELDEN"
 case "$mit" in 200) gut "mit Passwort: 200" ;; *) echo "  --   mit Passwort: $mit (bei bestehender Passwortdatei normal)" ;; esac
 
+# Die API darf ohne Passwort genauso wenig erreichbar sein wie die Seiten.
+api=$(curl "${CURL_OPT[@]}" "https://$HOST/api/stand")
+[ "$api" = "401" ] && gut "API ohne Passwort: 401 (abgewiesen)" \
+  || schlecht "API ohne Passwort: $api — erwartet 401, BITTE MELDEN"
+# Und der Dienst muss von aussen unerreichbar sein, auch am Port vorbei.
+direkt=$(curl -s -o /dev/null -w '%{http_code}' --max-time 4 "http://$HOST:8787/api/stand" 2>/dev/null || echo "kein")
+[ "$direkt" = "kein" ] || [ "$direkt" = "000" ] && gut "Port 8787 von aussen dicht" \
+  || schlecht "Port 8787 antwortet von aussen ($direkt) — BITTE MELDEN"
+
 meldung "Fertig"
-echo "  https://$HOST/"
+echo "  https://$HOST/          (die App)"
+echo "  https://$HOST/dashboard.html  (die alte Werkbank)"
 echo "  Benutzer: $BENUTZER"
 echo "  Passwort: siehe $ZUGANG   (cat $ZUGANG)"
 echo
