@@ -78,7 +78,7 @@ Die Belegschaft (im Aufruf nutzt du den Namen in Anführungszeichen, nicht den V
 | `"07 Einkauf China"` | Henrik | RFQ / Verhandlung / Muster mit China |
 | `"08 Design"` | Thea | entwirft die **Form** (Silhouette, Proportionen, Beschlag-Layout) — vor Konrad |
 | `"09 Qualität"` | Almut | prüft die Arbeit der anderen (`--auftrag "Almut" "prüfe A-2026-006"`) |
-| `"10 Homepage"` | Frauke (Team: Mira Design, Jonas Errichtung) | Shop auf **Shopify** als Plan — drei Köpfe in einem Auftrag, Frauke prüft am Schluss |
+| `"10 Homepage"` | Frauke (Team: Mira Design, Jonas Errichtung) | Shop auf **WordPress/WooCommerce** als Plan — drei Köpfe in einem Auftrag, Frauke prüft am Schluss |
 
 Der Orchestrator, der alles verteilt, prüft und dir schreibt, heißt **Gustav** (= die
 Absenderadresse `gustav.bellowerk@gmail.com`). Die Frist am Ende ist optional (Standard: 7 Tage).
@@ -176,16 +176,16 @@ Danach: die Entwürfe, die dir gefallen, an Konrad weiterreichen —
 ## Den Shop planen lassen (10 Homepage)
 
 Ein Auftrag, drei Köpfe: **Mira** entwirft (Seitenplan, Produktseite, Gestaltungswerte, Foto-Briefing),
-**Jonas** macht daraus die Klick-Anleitung für die Shopify-Verwaltung (Produkte, Varianten, Theme,
+**Jonas** macht daraus die Klick-Anleitung für All-Inkl-KAS und WordPress (Produkte, Variationen, Theme,
 Rechtsseiten, Versand/Zahlung, Testplan), **Frauke** prüft beide und liefert dir den Plan aus einem Guss.
 
 ```
 sudo -u bello /opt/bello/.venv/bin/python /opt/bello/orchestrator.py \
-  --auftrag "Frauke" "Bellowerk-Shop auf Shopify: Startseite, Kollektion, Produktseite HB-01, Werkstatt/Praxistest, Größen & Pflege, rechtliche Seiten. Erste Fassung zum Nachbauen." 2026-09-30
+  --auftrag "Frauke" "Bellowerk-Shop auf WooCommerce: Startseite, Kollektion, Produktseite HB-01, Werkstatt/Praxistest, Größen & Pflege, rechtliche Seiten. Erste Fassung zum Nachbauen." 2026-09-30
 ```
 
 Die Abteilung **baut nichts live und kauft nichts** — sie liefert den Plan, du legst den Shop
-in Shopify an (oder gibst später frei, dass es automatisiert wird). Dauer eines Laufs: 5–10 Minuten,
+auf deinem All-Inkl-Webspace an (oder gibst später frei, dass es automatisiert wird). Dauer eines Laufs: 5–10 Minuten,
 drei API-Aufrufe.
 
 ---

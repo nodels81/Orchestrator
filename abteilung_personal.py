@@ -20,7 +20,7 @@ BESETZUNG = [
     "07 Einkauf China (Henrik) — RFQ, Verhandlung, Muster mit chinesischen Herstellern",
     "08 Design (Thea) — Formentwuerfe: Silhouette, Proportionen, Beschlag-Layout",
     "09 Qualitaet (Almut) — prueft die Arbeit der anderen vor Bjoerns Entscheidung",
-    "10 Homepage (Frauke; Team Mira Design, Jonas Errichtung) — Shop auf Shopify als Plan",
+    "10 Homepage (Frauke; Team Mira Design, Jonas Errichtung) — Shop auf WordPress/WooCommerce als Plan",
 ]
 
 # Jede vorgeschlagene Abteilung muss diese Fragen mit Ja bestehen, sonst kein Vorschlag.

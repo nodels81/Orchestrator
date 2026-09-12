@@ -21,7 +21,7 @@ ABTEILUNGEN = [
     ("07", "Henrik", "Einkauf China",        "RFQ / Verhandlung / Muster mit chinesischen Herstellern",   []),
     ("08", "Thea",   "Design",               "entwirft die Form: Silhouette, Proportionen, Beschlag-Layout", ["02"]),
     ("09", "Almut",  "Qualität",             "prüft die Arbeit der anderen vor deiner Entscheidung",         []),
-    ("10", "Frauke", "Homepage",             "Shop auf Shopify: Mira entwirft, Jonas baut, Frauke prüft",    []),
+    ("10", "Frauke", "Homepage",             "Shop auf WooCommerce: Mira entwirft, Jonas baut, Frauke prüft",    []),
 ]
 ORCHESTRATOR = "Gustav"
 
