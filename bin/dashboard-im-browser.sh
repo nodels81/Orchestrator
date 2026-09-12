@@ -42,6 +42,11 @@ meldung "2/6  Zugang"
 if [ -f "$HTPASSWD" ]; then
   gut "Passwortdatei besteht bereits — bleibt unveraendert"
   PASSWORT="(unveraendert, siehe $ZUGANG)"
+  # Die URL kann sich geaendert haben (andere Domain), das Passwort nicht.
+  if [ -f "$ZUGANG" ]; then
+    sed -i "s|^URL:.*|URL:      https://$HOST/|" "$ZUGANG"
+    gut "URL in $ZUGANG auf https://$HOST/ gesetzt"
+  fi
 else
   PASSWORT="$(openssl rand -base64 18 | tr -d '/+=' | cut -c1-20)"
   htpasswd -bc "$HTPASSWD" "$BENUTZER" "$PASSWORT" >/dev/null 2>&1 \
@@ -68,6 +73,15 @@ gut "Durchgangsrechte auf /opt/bello und daten/ gesetzt"
 
 # ---------- 4. Zertifikat holen (noch ohne HTTPS-Block) ----------
 meldung "4/6  Zertifikat fuer $HOST"
+# Ohne Mailadresse verschickt Let's Encrypt keine Warnung, falls die automatische
+# Erneuerung einmal scheitert. Mit BELLO_MAIL=... setzen, dann kommt eine.
+if [ -n "${BELLO_MAIL:-}" ]; then
+  CERTBOT_MAIL=(-m "$BELLO_MAIL" --no-eff-email)
+  gut "Ablaufwarnungen gehen an $BELLO_MAIL"
+else
+  CERTBOT_MAIL=(--register-unsafely-without-email)
+  echo "  --   ohne Mailadresse (BELLO_MAIL=... setzen, dann warnt Let's Encrypt)"
+fi
 mkdir -p /var/www/html
 cat > /etc/nginx/sites-available/bello <<NGINX
 server {
@@ -104,7 +118,7 @@ elif [ -d "/etc/letsencrypt/live/$HOST" ]; then
   ZERT_PFAD="/etc/letsencrypt/live/$HOST"
 else
   AUSGABE=$(certbot certonly --webroot -w /var/www/html -d "$HOST" \
-      --non-interactive --agree-tos --register-unsafely-without-email \
+      --non-interactive --agree-tos "${CERTBOT_MAIL[@]}" \
       --deploy-hook "systemctl reload nginx" 2>&1)
   echo "$AUSGABE" | tail -5
   if [ -d "/etc/letsencrypt/live/$HOST" ]; then
