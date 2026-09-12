@@ -251,13 +251,20 @@ def markenbrief_md() -> str:
 
 if __name__ == "__main__":
     if "--schreibe-markenbrief" in sys.argv:
-        ziel = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "sourcing", "bellowerk", "markenbrief.md")
-        if os.path.isdir(os.path.dirname(ziel)):
-            with open(ziel, "w", encoding="utf-8") as f:
-                f.write(markenbrief_md())
-            print(f"geschrieben: {ziel}")
-        else:
-            print("sourcing/bellowerk/ fehlt — nichts geschrieben")
+        # Nach daten/ schreiben, nicht nach sourcing/: daten/ ist der einzige Ort, den
+        # der gehaertete Dienst beschreiben darf, und der Git-Arbeitsbaum bleibt sauber.
+        # Mit --ins-repo landet er zusaetzlich in sourcing/ (fuer einen bewussten Commit).
+        basis = os.path.dirname(os.path.abspath(__file__))
+        ziele = [os.path.join(basis, "daten", "markenbrief.md")]
+        if "--ins-repo" in sys.argv:
+            ziele.append(os.path.join(basis, "sourcing", "bellowerk", "markenbrief.md"))
+        for ziel in ziele:
+            try:
+                os.makedirs(os.path.dirname(ziel), exist_ok=True)
+                with open(ziel, "w", encoding="utf-8") as f:
+                    f.write(markenbrief_md())
+                print(f"geschrieben: {ziel}")
+            except OSError as fehler:
+                print(f"markenbrief: {ziel} nicht schreibbar ({fehler})")
     else:
         print(als_kontext())

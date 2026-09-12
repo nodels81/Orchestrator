@@ -2,7 +2,7 @@
 """dashboard.py — baut /opt/bello/daten/dashboard.html (+ dashboard/dashboard.html)
 aus dem aktuellen Stand. Wird vom Tageslauf-Wrapper nach jedem Lauf aufgerufen.
 Kein Server, nur Dateien."""
-import json, os, re, subprocess, datetime, html
+import json, os, re, subprocess, datetime, html, sys
 
 BASIS = "/opt/bello"
 DATEN = os.path.join(BASIS, "daten")
@@ -487,7 +487,12 @@ HTML = f"""<!doctype html>
 </html>
 """
 
-for ziel in (OUT_LIVE, OUT_REPO):
+# Der Tageslauf schreibt nur nach daten/. Die versionierte Kopie im Repo entsteht
+# nur auf ausdrücklichen Wunsch (--auch-ins-repo), damit der Git-Arbeitsbaum
+# sauber bleibt und "git pull" nie in einen Konflikt laeuft.
+ZIELE = [OUT_LIVE] + ([OUT_REPO] if "--auch-ins-repo" in sys.argv else [])
+
+for ziel in ZIELE:
     try:
         os.makedirs(os.path.dirname(ziel), exist_ok=True)
         tmp = ziel + ".tmp"

@@ -23,10 +23,21 @@ KONTEXT_DATEIEN = [
 MAX_KONTEXT_ZEICHEN = 60_000
 
 
+def _pfad(rel: str) -> str:
+    """Frischer Markenbrief zuerst. markenwissen.py erzeugt ihn bei jedem Lauf nach
+    daten/; die Fassung unter sourcing/ ist der aeltere, versionierte Stand und
+    springt nur ein, wenn noch kein Lauf stattgefunden hat."""
+    if rel == "bellowerk/markenbrief.md":
+        frisch = os.path.join(BASIS, "daten", "markenbrief.md")
+        if os.path.exists(frisch):
+            return frisch
+    return os.path.join(SOURCING, rel)
+
+
 def sourcing_kontext() -> str:
     teile = []
     for rel in KONTEXT_DATEIEN:
-        pfad = os.path.join(SOURCING, rel)
+        pfad = _pfad(rel)
         if os.path.exists(pfad):
             with open(pfad, encoding="utf-8") as f:
                 teile.append(f"### {rel}\n{f.read()}")

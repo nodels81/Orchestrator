@@ -3,8 +3,36 @@
 Kurzfassung für den Alltag. Der Server macht **nur** den KI-Agentenbetrieb, sonst nichts.
 Alle Befehle als `root` per SSH auf dem Server.
 
-Der Agent läuft **automatisch jeden Morgen um 07:00**. Er meldet sich per Mail nur,
+Der Agent läuft **automatisch stündlich von 07 bis 19 Uhr**. Er meldet sich per Mail nur,
 wenn er eine Entscheidung von dir braucht oder etwas kaputt ist. Stille ist der Normalfall.
+
+---
+
+## Was der Betrieb wohin schreibt
+
+Der Tageslauf schreibt **ausschließlich** nach `daten/` und `logs/` — die einzigen
+Ordner, die der gehärtete systemd-Dienst beschreiben darf (`ProtectSystem=strict`).
+Der Git-Arbeitsbaum bleibt dadurch immer sauber, und `git pull` läuft nie in einen
+Konflikt.
+
+| Was | Läuft nach | Versioniert |
+|---|---|---|
+| Dashboard | `daten/dashboard.html` | nein |
+| Galerie | `daten/galerie.html` | nein |
+| Markenbrief | `daten/markenbrief.md` | nein |
+| Zeichnungen | `daten/zeichnungen/` | nein |
+
+Henrik (07) liest den Markenbrief aus `daten/`, sobald es ihn dort gibt — sonst die
+ältere versionierte Fassung unter `sourcing/`.
+
+Einen **versionierten Schnappschuss** ins Repo legst du bewusst von Hand:
+
+```
+sudo -u bello /opt/bello/.venv/bin/python /opt/bello/bin/dashboard.py --auch-ins-repo
+sudo -u bello /opt/bello/.venv/bin/python /opt/bello/bin/galerie.py   --auch-ins-repo
+sudo -u bello /opt/bello/.venv/bin/python /opt/bello/markenwissen.py --schreibe-markenbrief --ins-repo
+git add dashboard/ galerie/ sourcing/ && git commit -m "Schnappschuss"
+```
 
 ---
 
