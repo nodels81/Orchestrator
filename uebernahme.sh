@@ -27,6 +27,7 @@ UNBEDENKLICH=(
   entscheidungen
   konzepte
   web
+  autonom
   .claude/skills/website-highend
 )
 
@@ -131,9 +132,12 @@ cat <<'ENDE'
 Naechste Schritte:
   1. Probelauf ansehen, dann einmal echt senden:
        venv/bin/python tagesbrief.py --senden --erzwingen
-  2. Wenn die Mail ankommt, in den Cron eintragen:
-       crontab -e
-       0 7 * * *  cd /opt/bello && venv/bin/python tagesbrief.py --senden >> logs/tagesbrief.log 2>&1
+  2. Wenn die Mail ankommt, den Dauerbetrieb einrichten:
+       bash autonom/autonom.sh
+     Das legt die systemd-Zeitgeber an: Lauf alle zwei Stunden, Tagesbrief 07:00,
+     Posteingang alle fuenf Minuten, Waechter stuendlich. Kein Cron-Eintrag noetig
+     und auch nicht erwuenscht, sonst kaeme die Morgenmail doppelt.
+     Erklaert in autonom/README.md.
   3. Serverstand festschreiben, damit er nicht wieder verlorengeht:
        git add -A && git commit -m "Tagesbrief und Unterlagen uebernommen"
 

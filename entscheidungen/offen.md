@@ -15,6 +15,12 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Läuft auf dem Server bereits ein Tagesbrief? Wenn ja, mit tagesbrief.py vergleichen und nur eines von beidem behalten. Screenshots der bisherigen Morgenmails helfen
 - [ ] Vor dem nächsten Pull auf /opt/bello: `bash sicherung.sh` ausführen
 
+- [ ] Autonom-Betrieb auf dem Server anwerfen, in dieser Reihenfolge: `bash sicherung.sh`, dann `bash uebernahme.sh`, dann `bash autonom/autonom.sh`. Danach läuft der Betrieb 24/7 ohne deinen Rechner. Siehe autonom/README.md
+- [ ] Kennwort für den Posteingang festlegen. `autonom.sh` schlägt eines vor und trägt es nach Rückfrage in config.json ein. Ohne Kennwort bleibt der Mail-Eingang abgeschaltet
+- [ ] Falls im Cron noch `tagesbrief.py` steht: Eintrag entfernen, sonst kommt die Morgenmail doppelt. `autonom.sh` warnt, löscht aber nichts
+- [ ] Zweiter Kanal neben der Mail: Telegram-Bot mit Knöpfen statt Tippen? Braucht einen Bot-Token von dir. Mail funktioniert ohne alles und ist deshalb zuerst gebaut
+- [ ] Solange der Server keine Abteilung "06 Web & Shop" kennt, werden Aufträge dorthin abgewiesen — auch die per Mail. Hängt an der Nummernentscheidung zwei Punkte weiter oben
+
 ## Produkt
 
 - [ ] Koppel KO-01: Wird sie gebaut, wenn sich kein Messingwirbel findet? Stahl ist ausgeschlossen

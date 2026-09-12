@@ -1,0 +1,11 @@
+[Unit]
+Description=Bello: Waechter stuendlich
+
+[Timer]
+OnCalendar=*-*-* *:25:00
+RandomizedDelaySec=120
+Persistent=true
+Unit=bello-waechter.service
+
+[Install]
+WantedBy=timers.target

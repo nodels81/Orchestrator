@@ -1,0 +1,11 @@
+[Unit]
+Description=Bello: Lauf alle zwei Stunden
+
+[Timer]
+OnCalendar=*-*-* 00/2:10:00
+RandomizedDelaySec=300
+Persistent=true
+Unit=bello-lauf.service
+
+[Install]
+WantedBy=timers.target
