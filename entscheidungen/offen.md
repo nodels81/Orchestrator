@@ -36,17 +36,22 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [x] Shopsystem entschieden 12.09.2026: **WooCommerce** auf eigenem Webspace bei All-Inkl (Tarif Premium). Nicht Shopify, nicht Medusa
 
 - [x] Kleinunternehmerregelung geklärt 12.09.2026: **nein, Regelbesteuerung** mit Vorsteuerabzug. "inklusive 19 % Umsatzsteuer" bleibt überall stehen
-- [ ] **Wer trägt die Rücksendekosten beim Widerruf?** Muss in Widerrufsbelehrung und Versandseite wortgleich stehen. Zurzeit steht dort beides nebeneinander, einer der Sätze muss weg
+- [x] Rücksendekosten entschieden 12.09.2026: **der Käufer trägt sie.** Steht jetzt wortgleich in Widerrufsbelehrung und Versandseite
 - [x] Herkunftsangabe geklärt 12.09.2026: **"im Alten Land bei Hamburg"**, Kollektionsnamen Hamburg No. 1–7 bleiben. Überall durchgezogen. Alter Punkt: Auf jeder Produktseite steht "Entworfen, geprüft und gehandelt in Hamburg", im Impressum steht dann 21698. Das widerspricht sich auf derselben Website. Vorschlag: "Entworfen, geprüft und gehandelt im Alten Land bei Hamburg" — wahr und trägt dasselbe Signal. Die Kollektionsnamen "Hamburg No. 1" bleiben davon unberührt. Betrifft konzepte/kollektion-01-hamburg.md und sourcing/bellowerk/markenbrief.md
 - [ ] **Telefonnummer fürs Impressum.** Björn will sie eintragen lassen, hat sie aber noch nicht geschickt. Sie steht dann öffentlich im Impressum und im Muster-Widerrufsformular. Alternative, falls die private Nummer nicht öffentlich stehen soll: Kontaktformular mit zugesicherter Antwortzeit von 24 bis 48 Stunden — erfüllt § 5 DDG genauso
 - [x] Ort bestätigt 12.09.2026: **Harsefeld**
 - [x] Inhaber bestätigt 12.09.2026: **Björn Bujko**, Einzelunternehmen, Geschäftsname Bellowerk Manufaktur
-- [ ] USt-IdNr. nach § 27a UStG. Bei Regelbesteuerung in der Regel vorhanden, sonst kostenlos beim Bundeszentralamt für Steuern beantragen
+- [ ] USt-IdNr. nach § 27a UStG — Björn reicht sie nach (12.09.2026). Bis dahin bleibt die Stelle im Impressum markiert. **Wird mit dem weltweiten Versand wichtiger**: für die OSS-Anmeldung wird sie gebraucht
 - [x] E-Mail bestätigt 12.09.2026: **info@bellowerk.de**, eingetragen in Impressum, Datenschutz und Widerruf
 - [ ] Liegt auf bellowerk.de schon etwas? Vor dem ersten Hochladen zu klären, ich komme von hier nicht auf die Domain
+- [ ] **OSS-Verfahren anmelden, bevor die Schwelle reißt.** Folge des weltweiten Versands: Für Privatkunden in der EU gilt eine einheitliche Lieferschwelle von **10.000 EUR netto im Kalenderjahr, zusammengerechnet über alle EU-Länder**. Darunter berechnest du deutsche Umsatzsteuer. Darüber wird der Steuersatz des Ziellandes fällig — ab dem Paket, das die Schwelle reißt, nicht ab dem nächsten Jahr. Das One-Stop-Shop-Verfahren bündelt das in einer Meldung beim Bundeszentralamt für Steuern, statt einer Registrierung je Land. Teilnahme ist freiwillig, die Steuerpflicht nicht. Mit dem Steuerberater klären
+- [ ] **Ausfuhr in Drittländer ist umsatzsteuerfrei — das muss der Shop können.** Bei Lieferung in die Schweiz, die USA und alle Länder außerhalb der EU fällt keine deutsche Umsatzsteuer an (§ 4 Nr. 1a i. V. m. § 6 UStG, Ausfuhrnachweis vorausgesetzt). Zurzeit steht auf jeder Seite "inklusive 19 % Umsatzsteuer" — für einen Kunden in den USA ist das falsch, der zahlt sonst deutsche Steuer **und** Einfuhrsteuer im Zielland. Wird in WooCommerce über die Steuerzonen eingestellt, nicht im Text gelöst
+- [ ] Versandtarife je Zone festlegen: EU, Europa außerhalb der EU, Welt — dazu die Grenze für versandkostenfrei je Zone. In web/recht/versand.html als offen markiert
+- [ ] Einfuhrbestimmungen für Lederwaren prüfen. Bei Rindleder meist unproblematisch, aber Australien und Neuseeland haben strenge Regeln für tierische Erzeugnisse
 - [ ] Kauf auf Rechnung zusätzlich anbieten? Zurzeit nur PayPal und Überweisung (Vorkasse). Rechnung heißt Zahlungsausfallrisiko, ist aber im deutschen Onlinehandel das stärkste Vertrauenssignal
 - [ ] Wie viele der zehn inklusiven Domains sind belegt? Für die Weiterleitungen herr-bello-und-frau-wuff und hundebetreuung-hamburg
-- [ ] Anbieterangaben für die Rechtsseiten: Name oder Firma mit Rechtsform, ladungsfähige Anschrift, zweiter Kontaktweg neben der Mail, USt-IdNr. Alles orange unterstrichen in web/recht/. Danach anwaltlich prüfen lassen
+- [x] Anbieterangaben eingetragen 12.09.2026: Björn Bujko, Einzelunternehmen, Quellenweg 3, 21698 Harsefeld, info@bellowerk.de. Offen bleiben nur Telefonnummer und USt-IdNr.
+- [ ] Rechtsseiten anwaltlich prüfen lassen, sobald Telefonnummer und USt-IdNr. drin sind. Kein Muster aus dem Netz ersetzt das
 - [ ] Abnahmetor Punkt 4: Richtung 03 ist bewusst nur dunkel. Punkt für dieses Projekt streichen oder Hell-Variante bauen? Siehe web/ABNAHME.md
 - [ ] Abnahmetor Punkt 6: drei Schriftfamilien bei einem Budget von zwei. Vorschlag: IBM Plex Mono streichen, Artikelnummern und Preise in gesperrtem Archivo setzen. Kostet Charakter, hält das Budget
 - [ ] Startseite auf tokens.css umstellen. Sie trägt das Designsystem noch als Kopie, und bei der ersten Korrektur musste dieselbe Änderung schon an zwei Stellen gemacht werden
