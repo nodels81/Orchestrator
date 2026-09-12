@@ -1,4 +1,4 @@
-# PATCH-01 — Leather Brand Patch "BELLOWERK / Manufaktur" (Tech Pack v1.1, 9 Sep 2026)
+# PATCH-01 — Leather Brand Patch "BELLOWERK / Manufaktur" (Tech Pack v1.2, 12 Sep 2026)
 
 Reference photos: `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg` (current patch reads
 "HERR BELLO & FRAU WUFF / Manufaktur" — new patch uses the same layout with the new name).
@@ -6,7 +6,7 @@ Drawing: `zeichnungen/PATCH-01-lederpatch.png`. Artwork: Björn supplies vector 
 
 ## Design (as on the existing products)
 
-A narrow strip of **contrast leather** (cognac/medium brown, vegetable-tanned) laid on the outside of
+A narrow strip of **firm bridle leather** ("Riemenleder", cognac/medium brown, vegetable-tanned) laid on the outside of
 the strap, fixed with **one solid brass Chicago screw at each end**. Lettering **laser-engraved**
 (dark brown/black burn, no foil, no paint): line 1 "BELLOWERK" in spaced capitals, line 2 "Manufaktur"
 in a handwritten script, right-aligned under line 1. No stitching, no glue as the only fixing.
@@ -15,11 +15,11 @@ in a handwritten script, right-aligned under line 1. No stitching, no glue as th
 
 | | |
 |---|---|
-| Leather | Vegetable-tanned cowhide, full grain, **2.0–2.5 mm**, colour cognac / medium brown (same on all strap colours: grey, dark brown, olive, cognac). Firm, smooth grain for clean engraving. |
+| Leather | **Bridle leather ("Riemenleder")** — vegetable-tanned cowhide, full grain, firm and dense, **3.0–3.5 mm** (±0.2), colour cognac / medium brown (same on all strap colours: grey, dark brown, olive, cognac). Firm, smooth grain for clean engraving. Soft, spongy or loosely fibred leather is rejected: it blurs the engraving and the patch curls at the edges. |
 | Sizes | **PA-M 85 × 18 mm** for 25–40 mm straps (collar M/L/XL, lead 25 mm) · **PA-S 65 × 14 mm** for 20 mm straps (lead LE-01, hand loop HS-01, collar S). Corner radius 3 mm. |
-| Lettering | Line 1 "BELLOWERK": spaced geometric sans-serif capitals as in the existing logo (Futura/Josefin Sans style, tracking +20 %), cap height 4.5 mm (PA-M) / 3.5 mm (PA-S). Line 2 "Manufaktur": brush script as in the logo, x-height 2.5 mm / 2.0 mm, placed under the right half of line 1. Engraving depth 0.2–0.3 mm, dark burn, no paint, no foil. Björn supplies the vector logo; the drawing is a placeholder. |
+| Lettering | Line 1 "BELLOWERK": spaced geometric sans-serif capitals as in the existing logo (Futura/Josefin Sans style, tracking +20 %), cap height 4.5 mm (PA-M) / 3.5 mm (PA-S). Line 2 "Manufaktur": brush script as in the logo, x-height 2.5 mm / 2.0 mm, placed under the right half of line 1. Engraving depth 0.3–0.4 mm, dark burn, no paint, no foil (the thicker, firmer leather takes a deeper burn without warping). Björn supplies the vector logo; the drawing is a placeholder. |
 | Holes | 2 × Ø 4.5 mm, hole centres 7 mm from each end → spacing **71 mm** (PA-M) / **51 mm** (PA-S) |
-| Screws | Chicago screws solid brass, head Ø 8–9 mm domed (as on photos), post 8 mm (patch + strap), thread-locked |
+| Screws | Chicago screws solid brass, head Ø 8–9 mm domed (as on photos), post 8 mm, thread-locked. Stack = patch 3.0–3.5 mm + strap 3.5–4.0 mm = **6.5–7.5 mm**; confirm the 8 mm post clamps this stack tight with no play, and quote a 7 mm post as an alternative. |
 | Edges | Cut clean, lightly bevelled, burnished, no edge paint |
 | Position | Collar: centred on strap, 30 mm behind buckle fold. Lead: 80 mm from hook A. Hand loop: on the overlap. |
 
@@ -56,5 +56,5 @@ engrave, a patch supplier delivers to the factory.
 1. Do you laser-engrave leather in-house? Send a photo of an engraved sample.
 2. Unit price 500 / 1000 pcs, each size, incl. brass screws
 3. Sample cost/time, lead time
-4. Leather colour match to our photos — send swatches of cognac / medium brown
+4. Leather colour and substance match to our photos — send swatches of cognac / medium brown **bridle leather in 3.0–3.5 mm**, not softer upholstery or lining leather
 5. Later option: engraving of individual dog names (serif capitals) on single patches — possible? Price and lead time per piece?
