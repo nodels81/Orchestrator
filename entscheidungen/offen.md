@@ -33,10 +33,19 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Aufnahmeliste abarbeiten: 11 Fotos, davon zwei Paare neu und getragen. Ohne diese Fotos kein Shopstart. Siehe web/aufnahmen/
 - [ ] Echte Prüfdaten für den Prüfbericht liefern: Hund, Tage, Belastung, Befund. Aktuell stehen Platzhalter auf der Seite
 - [ ] Lederscan als Textur für die Materialansicht liefern
-- [ ] Shopsystem entscheiden: Shopify mit Hydrogen, wie empfohlen, oder Next.js mit Medusa
+- [x] Shopsystem entschieden 12.09.2026: **WooCommerce** auf eigenem Webspace bei All-Inkl (Tarif Premium). Nicht Shopify, nicht Medusa
 
-- [ ] **Kleinunternehmerregelung nach § 19 UStG: ja oder nein?** Zurzeit steht auf jeder Seite "inklusive 19 % Umsatzsteuer". Bei Kleinunternehmerregelung ist das falsch und muss überall geändert werden. Diese eine Antwort läuft durch den ganzen Shop
+- [x] Kleinunternehmerregelung geklärt 12.09.2026: **nein, Regelbesteuerung** mit Vorsteuerabzug. "inklusive 19 % Umsatzsteuer" bleibt überall stehen
 - [ ] **Wer trägt die Rücksendekosten beim Widerruf?** Muss in Widerrufsbelehrung und Versandseite wortgleich stehen. Zurzeit steht dort beides nebeneinander, einer der Sätze muss weg
+- [ ] **Herkunftsangabe prüfen: Die Geschäftsanschrift liegt im Landkreis Stade, nicht in Hamburg.** Auf jeder Produktseite steht "Entworfen, geprüft und gehandelt in Hamburg", im Impressum steht dann 21698. Das widerspricht sich auf derselben Website. Vorschlag: "Entworfen, geprüft und gehandelt im Alten Land bei Hamburg" — wahr und trägt dasselbe Signal. Die Kollektionsnamen "Hamburg No. 1" bleiben davon unberührt. Betrifft konzepte/kollektion-01-hamburg.md und sourcing/bellowerk/markenbrief.md
+- [ ] **Zweiter Kontaktweg neben der E-Mail.** § 5 DDG verlangt ihn, E-Mail allein genügt nicht. Telefonnummer oder Kontaktformular mit zugesicherter Antwortzeit. Ohne das ist das Impressum unvollständig
+- [ ] Genaue Schreibweise des Ortes zu PLZ 21698 bestätigen: Harsefeld, Brest oder Bargstedt
+- [ ] Vollständiger Name des Inhabers fürs Impressum. Beim Einzelunternehmen Pflicht, ein Geschäftsname genügt nicht
+- [ ] USt-IdNr. nach § 27a UStG. Bei Regelbesteuerung in der Regel vorhanden, sonst kostenlos beim Bundeszentralamt für Steuern beantragen
+- [ ] Genaue Schreibweise der neuen E-Mail-Adresse unter bellowerk.de
+- [ ] Liegt auf bellowerk.de schon etwas? Vor dem ersten Hochladen zu klären, ich komme von hier nicht auf die Domain
+- [ ] Kauf auf Rechnung zusätzlich anbieten? Zurzeit nur PayPal und Überweisung (Vorkasse). Rechnung heißt Zahlungsausfallrisiko, ist aber im deutschen Onlinehandel das stärkste Vertrauenssignal
+- [ ] Wie viele der zehn inklusiven Domains sind belegt? Für die Weiterleitungen herr-bello-und-frau-wuff und hundebetreuung-hamburg
 - [ ] Anbieterangaben für die Rechtsseiten: Name oder Firma mit Rechtsform, ladungsfähige Anschrift, zweiter Kontaktweg neben der Mail, USt-IdNr. Alles orange unterstrichen in web/recht/. Danach anwaltlich prüfen lassen
 - [ ] Abnahmetor Punkt 4: Richtung 03 ist bewusst nur dunkel. Punkt für dieses Projekt streichen oder Hell-Variante bauen? Siehe web/ABNAHME.md
 - [ ] Abnahmetor Punkt 6: drei Schriftfamilien bei einem Budget von zwei. Vorschlag: IBM Plex Mono streichen, Artikelnummern und Preise in gesperrtem Archivo setzen. Kostet Charakter, hält das Budget
