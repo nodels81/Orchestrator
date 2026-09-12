@@ -14,6 +14,7 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 | 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
 | 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
 | **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| **06** | **SEO** | `abteilung_seo.py` | Suchwörter, Seitenstruktur, Texte, Schema, Google-Unternehmensprofil, Sichtbarkeit in KI-Antworten — liest `seo/` als bindenden Kontext |
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
 Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`,
@@ -49,6 +50,7 @@ venv/bin/python orchestrator.py --gedaechtnis            # Stand und gesparte To
 venv/bin/python orchestrator.py --wissen "Wenzhou Vigorous"   # nachschlagen, auch die Historie
 venv/bin/python orchestrator.py --vergessen 180          # alte Episoden weg, Fakten bleiben
 venv/bin/python -m unittest test_gedaechtnis -v          # 19 Tests, ohne Schlüssel, ohne Kosten
+venv/bin/python -m unittest test_seo -v                  # 17 Tests für Abteilung 06, dito
 ```
 
 `gedaechtnis.db` ist reines SQLite aus der Standardbibliothek — kein zusätzliches Paket, kein
@@ -69,6 +71,42 @@ sourcing/lieferanten/               Shortlist (35 Kandidaten) und Tracker
 .claude/agents/                     Vier Claude-Code-Agenten: Einkäufer, Scout, Spec-Writer, QC-Prüfer
 ```
 
+## SEO-Unterlagen (`seo/`)
+
+Die Website ist im Bau. Abteilung 06 prüft deshalb keine bestehende Seite, sondern liefert
+**Vorgaben für den Bau** — und arbeitet an dem, was heute sichtbar ist: Google-Unternehmensprofil,
+Instagram und Facebook, die noch unter „Herr Bello und Frau Wuff" laufen.
+
+```
+seo/bellowerk/basisdaten.md        Stammdaten, Namenswechsel, TODO-Liste, harte Grenzen
+seo/bellowerk/keywords.md          Suchwortbasis nach Absicht — ohne erfundene Volumen
+seo/bellowerk/seitenstruktur.md    URLs, Titel, Beschreibungen, Schema als Bauvorgabe
+seo/bellowerk/wettbewerb-seo.md    Wer welche Wörter besetzt, und was daraus folgt
+seo/vorlagen/                      Produkttext, Ratgeber-Brief, Meta+Schema, Unternehmensprofil, Kanaltexte
+.claude/skills/seo/                Skill für Claude Code: Reihenfolge, Onpage, Local, KI-Sichtbarkeit
+.claude/agents/seo-*.md            Fünf Agenten: Keyword-Scout, Texter, Technik-Prüfer, Local Hamburg, KI-Sichtbarkeit
+```
+
+**Die Reihenfolge, die die Abteilung einhält.** Erst muss der Markenname „Bellowerk" die eigene
+Seite finden, dann das Google-Unternehmensprofil stehen (der stärkste Hebel, solange keine Website
+existiert), dann die lokalen Dienstleistungswörter, dann die sieben Ratgeberfragen — und erst
+zuletzt die umkämpften Kaufwörter wie „hundehalsband leder", die CopcoPet, MAUL und Das Lederband
+seit Jahren besetzen.
+
+**Was die Abteilung nie tut:** Bewertungen, Sterne, Kundenstimmen, Suchvolumen oder Lieferzeiten
+erfinden; `aggregateRating` ohne echte, sichtbare Bewertungen ins Schema schreiben (das kostet der
+Domain alle Auszeichnungen); Maße aus dem Kopf statt aus den Tech Packs nehmen; über den Preis
+argumentieren; `llms.txt` vorschlagen (kein Rankingfaktor). Fehlt eine Angabe, steht
+`[TODO Björn: …]` im Entwurf — geraten wird nicht.
+
+**Warum nicht `claude-seo`.** Das Plugin von AgriciDaniel (MIT, 18 Agenten, 25 Skills) ist gut
+gemacht und aktiv gepflegt, passt aber nicht als Abteilung: es ist ein Claude-Code-Plugin und
+lässt sich nicht von `orchestrator.py` aufrufen, es braucht eine URL, die es noch nicht gibt, und
+sein Local-Teil ist auf die USA zugeschnitten (Yelp, BBB, HIPAA, MLS). Übernommen sind die vier
+Teile, die tragen: die Gewichtung der lokalen Faktoren, die Schema-Strenge bei Bewertungen, der
+Aufbau zitierfähiger Absätze für KI-Antworten und der Ratgeber-Brief. Als separates Prüfwerkzeug
+in Claude Code lohnt es sich, sobald die Seite online ist.
+
 ## Auf dem Server (`/opt/bello`)
 
 ```bash
@@ -76,6 +114,7 @@ cd /opt/bello
 git pull                                   # neue Abteilungen und Unterlagen holen
 venv/bin/python orchestrator.py --probelauf
 venv/bin/python orchestrator.py --auftrag "05 Einkauf China" "RFQ fuer HB-01 und LE-01 an die Prio-1-Fabriken der Shortlist" 2026-09-19
+venv/bin/python orchestrator.py --auftrag "06 SEO" "Google-Unternehmensprofil nach Vorlage 04 entwerfen" 2026-09-19
 venv/bin/python orchestrator.py --stand
 venv/bin/python orchestrator.py --gedaechtnis
 ```
@@ -84,6 +123,7 @@ Einzeltest der Einkaufsabteilung ohne Orchestrator:
 
 ```bash
 venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzhou Vigorous Pet Products, 100 Stueck" --recherche
+venv/bin/python abteilung_seo.py "Produkttext und Meta fuer HB-01 nach Vorlage 01"
 ```
 
 Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
@@ -91,9 +131,16 @@ Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
 
 ## Lokal / in Claude Code
 
-Die vier Agenten in `.claude/agents/` laufen in jeder Claude-Code-Session mit diesem Repo, auch
-parallel (Scout sucht Beschlag-Lieferanten, während der Einkäufer RFQs schreibt):
-`Nutze den Agenten china-einkauf: RFQ für HB-01 und LE-01 an Wenzhou Vigorous, Vorlage 01.`
+Die neun Agenten in `.claude/agents/` laufen in jeder Claude-Code-Session mit diesem Repo, auch
+parallel (der Scout sucht Beschlag-Lieferanten, während der Einkäufer RFQs schreibt und der
+SEO-Texter Produkttexte entwirft):
+
+```
+Nutze den Agenten china-einkauf: RFQ für HB-01 und LE-01 an Wenzhou Vigorous, Vorlage 01.
+Nutze den Agenten seo-local-hamburg: Unternehmensprofil anlegen, Kategorien vorschlagen.
+Nutze den Agenten seo-texter: Produkttext für HB-02 nach Vorlage 01.
+Nutze den Agenten seo-keyword-scout: Ratgeberfragen zur Lederpflege finden.
+```
 
 ## Regeln
 
@@ -102,3 +149,5 @@ parallel (Scout sucht Beschlag-Lieferanten, während der Einkäufer RFQs schreib
 - Nacharbeit holt sich nie eine gespeicherte Antwort — sonst käme ewig dasselbe abgelehnte
   Ergebnis zurück.
 - Werkstoffliste und Ausschlüsse in `markenwissen.py` und `sourcing/bellowerk/markenbrief.md` sind bindend.
+- Abteilung 06 veröffentlicht nichts und erfindet nichts — keine Bewertungen, keine Suchvolumen,
+  keine Maße aus dem Kopf. Was fehlt, wird als `[TODO Björn: …]` zurückgemeldet.

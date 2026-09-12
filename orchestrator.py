@@ -33,6 +33,7 @@ ABTEILUNGEN = {
     "03 Vertrieb": ("abteilung_vertrieb", "Vertrieb"),
     "04 Social Media": ("abteilung_social", "Social"),
     "05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
+    "06 SEO": ("abteilung_seo", "Seo"),
 }
 
 
