@@ -245,6 +245,7 @@ mit ins GitHub-Repo, sobald gepusht wird.
 | Programm­code | `/opt/bello/*.py` |
 | Konfiguration (ohne Geheimnisse) | `/opt/bello/config.json` |
 | Geheimnisse (API-Key, Mail-Passwort) | `/etc/bello/env` – nur für root lesbar |
+| `config.json` | nur für den Betriebsnutzer lesbar halten: `chmod 600 /opt/bello/config.json`. Die Datei verlässt den Server nicht — kein Git, keine Cloud, kein Chat. |
 | Auftragsstand | `/opt/bello/daten/auftraege.json` |
 | Zeichnungen der Abteilung 02 | `/opt/bello/daten/zeichnungen/` |
 | Logs pro Tag | `/opt/bello/logs/orchestrator-JJJJ-MM-TT.log` |
