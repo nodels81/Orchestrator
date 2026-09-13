@@ -9,7 +9,11 @@
    stecken in latin. Ein Kundenname mit ł oder ě fällt auf die Systemschrift
    zurück; das ist der Preis für die Hälfte der Bytes.
 
-   Lizenz: alle drei unter der SIL Open Font License 1.1, siehe LIZENZ.md.
+   Zwei Familien, wie das Budget es verlangt. IBM Plex Mono ist am
+   13.09.2026 herausgeflogen — die einzige Funktion, gleich breite Ziffern,
+   kann Archivo über tnum; nachgemessen in der Schriftdatei.
+
+   Lizenz: beide unter der SIL Open Font License 1.1, siehe LIZENZ.md.
    Das erlaubt das Mitliefern ausdrücklich.
 
    Erzeugt aus den CSS-Antworten von Google Fonts, nicht von Hand getippt.
@@ -56,20 +60,4 @@
   font-weight: 600;
   font-display: swap;
   src: url(schriften/bodoni-1.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(schriften/plexmono-1.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(schriften/plexmono-2.woff2) format('woff2');
 }

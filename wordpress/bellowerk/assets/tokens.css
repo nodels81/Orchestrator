@@ -41,7 +41,11 @@
   /* ── Schrift ─────────────────────────────────────────────────── */
   --display:"Bodoni Moda",Didot,"Times New Roman",Georgia,serif;
   --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* Keine eigene Monoschrift mehr. Das Budget erlaubt zwei Familien, und die
+     einzige Funktion der Mono war, dass Ziffern gleich breit stehen — das
+     kann Archivo über tnum, nachgemessen in der Schriftdatei. Übrig bleibt
+     der Werkstatt-Anmutung wegen die Sperrung, die ohnehin überall stand. */
+  --mono:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
 
   --step--1:clamp(.78rem, .75rem + .12vw, .85rem);
   --step-0:clamp(.95rem, .92rem + .16vw, 1.05rem);
@@ -90,6 +94,9 @@ img{max-width:100%;height:auto;display:block}
   outline:2px solid var(--messing);outline-offset:3px;border-radius:2px;
 }
 .tab{font-variant-numeric:tabular-nums}
+/* Die Sperrung ersetzt, was vorher die Monoschrift getragen hat. Ziffern
+   stehen über tnum trotzdem in einer Flucht. */
+[class*="nr"],.artikelnr,.karte-preis,.zeile-preis,.summe dd,.wert{font-variant-numeric:tabular-nums}
 .nur-vorlesen{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .springen{position:absolute;left:-9999px;top:0;background:var(--messing);color:var(--nacht);padding:12px 20px;z-index:100;font-family:var(--mono);font-size:12px}
 .springen:focus{left:var(--rand)}

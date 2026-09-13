@@ -56,7 +56,7 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [x] Anbieterangaben eingetragen 12.09.2026: Björn Bujko, Einzelunternehmen, Quellenweg 3, 21698 Harsefeld, info@bellowerk.de. Offen bleiben nur Telefonnummer und USt-IdNr.
 - [ ] Rechtsseiten anwaltlich prüfen lassen, sobald Telefonnummer und USt-IdNr. drin sind. Kein Muster aus dem Netz ersetzt das
 - [ ] Abnahmetor Punkt 4: Richtung 03 ist bewusst nur dunkel. Punkt für dieses Projekt streichen oder Hell-Variante bauen? Siehe web/ABNAHME.md
-- [ ] Abnahmetor Punkt 6: drei Schriftfamilien bei einem Budget von zwei. Vorschlag: IBM Plex Mono streichen, Artikelnummern und Preise in gesperrtem Archivo setzen. Kostet Charakter, hält das Budget
+- [x] Abnahmetor Punkt 6 erledigt 13.09.2026: IBM Plex Mono gestrichen, zwei Familien, 81,2 KB
 - [ ] Startseite auf tokens.css umstellen. Sie trägt das Designsystem noch als Kopie, und bei der ersten Korrektur musste dieselbe Änderung schon an zwei Stellen gemacht werden
 
 - [ ] **German Market oder Germanized kaufen?** WooCommerce allein erfüllt das deutsche Onlinehandelsrecht nicht: Grundpreise, Widerrufsbelehrung in der Bestellmail, Bestellübersicht vor dem Knopf. Beide Erweiterungen gibt es kostenlos in eingeschränkter Fassung, die Vollfassung kostet jährlich. Erst die kostenlose nehmen, bei Bedarf umsteigen. Preis prüfen und entscheiden
@@ -79,7 +79,7 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Echte Mailadressen eintragen: Der Orchestrator heißt **Gustav** und sendet von `gustav.bellowerk@gmail.com` an `pijoern.nodels@gmail.com`. In config.beispiel.json stand eine andere Annahme. Für den Posteingang muss `mail.empfaenger` die Adresse sein, von der Björn schreibt
 
 - [ ] `web/entwurfsblaetter.html` zeigt in einer Beispielkarte noch „gefertigt in Hamburg". Das Blatt ist der Vergleich der vier Richtungen vom 11.09. und damit ein Zeitdokument — geändert wird es nur, wenn es je wieder benutzt wird. Dann aber muss der Satz weg, und das veröffentlichte Artefakt neu hochgeladen werden
-- [ ] Drei Schriftfamilien bei einem Budget von zwei bleibt offen. Die Größe stimmt jetzt (110,8 von 120 KB), die Zahl der Familien nicht. IBM Plex Mono zu streichen spart weitere 29,6 KB und bringt es auf zwei
+- [x] Schriftbudget erfüllt 13.09.2026: **IBM Plex Mono gestrichen.** Zwei Familien, 81,2 von 120 KB. Die Ziffern richten sich über `tnum` in Archivo aus — in der Schriftdatei nachgemessen. Nebenbei wurde die Prüftabelle schmaler und bricht nicht mehr um
 
 ## Marke
 
