@@ -112,22 +112,33 @@ esac
 
 if [[ "$FEHLEND" == *"autonom.kennwort"* ]]; then
   KENNWORT="$("$PYTHON" -c 'import secrets; print(secrets.token_urlsafe(9))')"
+  KENNWORT_AGENT="$("$PYTHON" -c 'import secrets; print(secrets.token_urlsafe(9))')"
   echo
   echo "Der Posteingang braucht ein Kennwort. Es muss in jedem Betreff stehen,"
   echo "den du an den Orchestrator schickst. Ein Absender allein schuetzt nicht,"
   echo "weil das Feld From faelschbar ist."
   echo
-  echo "  Vorschlag: $KENNWORT"
+  echo "Es werden ZWEI erzeugt:"
+  echo "  deins   darf alles, auch 'freigeben' auf den laufenden Shop"
+  echo "  Agent   darf alles ausser 'freigeben'"
+  echo
+  echo "Grund: Der Agent sendet aus demselben Postfach wie du. Eine Agentenmail"
+  echo "sieht aus wie eine von dir, die Absenderpruefung unterscheidet sie nicht."
+  echo "Das zweite Kennwort tut es."
+  echo
+  echo "  Deins:  $KENNWORT"
+  echo "  Agent:  $KENNWORT_AGENT"
   echo
   read -r -p "In config.json eintragen? Nur 'ja' traegt ein: " ANTWORT
   if [ "$ANTWORT" = "ja" ]; then
     cp config.json "config.json.vor-autonom-$(date +%Y%m%d-%H%M%S)"
-    KENNWORT="$KENNWORT" "$PYTHON" - <<'PYENDE'
+    KENNWORT="$KENNWORT" KENNWORT_AGENT="$KENNWORT_AGENT" "$PYTHON" - <<'PYENDE'
 import json, os
 with open("config.json", encoding="utf-8") as f:
     c = json.load(f)
 c.setdefault("autonom", {})
 c["autonom"]["kennwort"] = os.environ["KENNWORT"]
+c["autonom"]["kennwort_agent"] = os.environ["KENNWORT_AGENT"]
 c["autonom"].setdefault("imap_server", "imap.gmail.com")
 c["autonom"].setdefault("imap_port", 993)
 with open("config.json.tmp", "w", encoding="utf-8") as f:
@@ -138,8 +149,9 @@ PYENDE
     chmod 600 config.json
     chown "$BENUTZER" config.json
     echo
-    fett "  MERKEN: $KENNWORT"
-    echo "  Steht ab jetzt auch in config.json. Nicht per Mail verschicken."
+    fett "  MERKEN, deins: $KENNWORT"
+    fett "  Fuer den Agenten: $KENNWORT_AGENT"
+    echo "  Beide stehen ab jetzt in config.json. Deins nicht weitergeben."
     FEHLEND="${FEHLEND//autonom.kennwort/}"
   else
     echo "  Uebersprungen. Der Posteingang bleibt dann abgeschaltet."

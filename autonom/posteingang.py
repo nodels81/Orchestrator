@@ -187,6 +187,8 @@ def _befehl_hilfe(_rest: str) -> str:
         "Die Kennung steht in der Mail von der Testdomain. Ohne sie wird nichts\n"
         "freigegeben: zwischen deinem Blick und der Freigabe kann ein neuer Stand\n"
         "entstanden sein, und dann ginge etwas live, das niemand gesehen hat.\n\n"
+        "Zwei Kennwoerter: deins darf alles. Das Agentenkennwort darf alles ausser\n"
+        "'freigeben' — auf den laufenden Shop schiebst nur du.\n\n"
         "Absichtlich nicht vorhanden: Shell, Dateien schreiben, Geld ausgeben,\n"
         "Bestellungen ausloesen. Das bleibt bei dir."
     )
@@ -206,24 +208,41 @@ BEFEHLE = {
 
 # ---------- Ablauf ----------
 
-def _pruefen(config: dict, absender: str, betreff: str) -> str | None:
-    """Gibt den Ablehnungsgrund zurueck, oder None wenn alles stimmt."""
+# Befehle, die das Agentenkennwort NICHT ausfuehren darf.
+# "freigeben" schiebt auf den laufenden Shop. Das bleibt bei Bjoern, und zwar
+# nicht aus Misstrauen: Der Gmail-Zugang des Agenten sendet aus Bjoerns Konto,
+# eine Agentenmail sieht also aus wie eine von ihm. Die Absenderpruefung
+# unterscheidet die beiden nicht — das Kennwort ist der einzige Unterschied.
+NUR_BJOERN = {"freigeben"}
+
+
+def _pruefen(config: dict, absender: str, betreff: str) -> tuple[str | None, str]:
+    """Gibt (Ablehnungsgrund, Rolle) zurueck. Grund None heisst: in Ordnung.
+
+    Rolle ist "bjoern" oder "agent" — je nachdem, welches Kennwort im Betreff
+    stand. Davon haengt ab, welche Befehle erlaubt sind.
+    """
     autonom = config.get("autonom", {})
     kennwort = autonom.get("kennwort", "")
+    kennwort_agent = autonom.get("kennwort_agent", "")
     erlaubt = (config.get("mail", {}).get("empfaenger") or "").lower().strip()
 
     if not kennwort:
-        return "autonom.kennwort fehlt in config.json — Eingang ist abgeschaltet"
+        return "autonom.kennwort fehlt in config.json — Eingang ist abgeschaltet", ""
     if not erlaubt:
-        return "mail.empfaenger fehlt in config.json"
+        return "mail.empfaenger fehlt in config.json", ""
     if parseaddr(absender)[1].lower().strip() != erlaubt:
-        return f"Absender {absender!r} ist nicht {erlaubt}"
-    if kennwort.lower() not in betreff.lower():
-        return "Kennwort fehlt im Betreff"
-    return None
+        return f"Absender {absender!r} ist nicht {erlaubt}", ""
+
+    betreff_klein = betreff.lower()
+    if kennwort.lower() in betreff_klein:
+        return None, "bjoern"
+    if kennwort_agent and kennwort_agent.lower() in betreff_klein:
+        return None, "agent"
+    return "Kennwort fehlt im Betreff", ""
 
 
-def _ausfuehren(text: str, probe: bool = False) -> tuple[str, str]:
+def _ausfuehren(text: str, probe: bool = False, rolle: str = "bjoern") -> tuple[str, str]:
     """Erste nicht leere Zeile ist der Befehl. Gibt (Befehlsname, Antwort).
 
     Im Probelauf wird der Befehl nur benannt, nicht ausgefuehrt. Sonst wuerde
@@ -238,6 +257,13 @@ def _ausfuehren(text: str, probe: bool = False) -> tuple[str, str]:
     funktion = BEFEHLE.get(wort)
     if not funktion:
         return wort, f"Unbekannter Befehl {wort!r}.\n\n" + _befehl_hilfe("")
+    if rolle == "agent" and wort in NUR_BJOERN:
+        return wort, (
+            f"Der Befehl {wort!r} ist mit diesem Kennwort nicht erlaubt.\n\n"
+            "Auf den laufenden Shop schiebt nur Bjoern, mit seinem eigenen "
+            "Kennwort. Alles andere — Auftraege, Stand, Ausliefern auf die "
+            "Baustelle — geht."
+        )
     if probe:
         return wort, f"(Probelauf — nicht ausgefuehrt) {wort} {rest}".strip()
     return wort, funktion(rest)
@@ -280,19 +306,19 @@ def abholen(probe: bool = False) -> int:
                 absender = _klartext(nachricht.get("From"))
                 betreff = _klartext(nachricht.get("Subject"))
 
-                grund = _pruefen(config, absender, betreff)
+                grund, rolle = _pruefen(config, absender, betreff)
                 if grund:
                     _protokoll(f"[EINGANG] Abgewiesen: {grund} | Betreff: {betreff!r}")
                     if not probe:
                         imap.store(kennung, "+FLAGS", "\\Seen")
                     continue
 
-                wort, antworttext = _ausfuehren(_koerper(nachricht), probe=probe)
+                wort, antworttext = _ausfuehren(_koerper(nachricht), probe=probe, rolle=rolle)
                 if probe:
                     print(f"[Probe] Wuerde ausfuehren: {wort}\n{antworttext}")
                     continue
 
-                _protokoll(f"[EINGANG] Ausgefuehrt: {wort} | Betreff: {betreff!r}")
+                _protokoll(f"[EINGANG] Ausgefuehrt: {wort} | Rolle: {rolle} | Betreff: {betreff!r}")
                 senden(f"[Bello] Antwort: {wort}", antworttext, config)
                 imap.store(kennung, "+FLAGS", "\\Seen")
 

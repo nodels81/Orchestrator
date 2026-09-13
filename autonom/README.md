@@ -76,6 +76,23 @@ nicht beantwortet, damit der Server nicht auf gefälschte Absender zurückschrei
 
 Schick das Kennwort nicht per Mail. Es steht in `config.json`, Rechte 600.
 
+### Zwei Kennwörter, und warum
+
+`autonom.kennwort` ist deins und darf alles. `autonom.kennwort_agent` ist für
+Claude und darf **alles außer `freigeben`**.
+
+Der Grund ist nicht Misstrauen, sondern eine technische Tatsache: Claude sendet
+über den Gmail-Zugang **aus deinem Postfach**. Eine Mail vom Agenten sieht aus
+wie eine von dir — die Absenderprüfung kann die beiden nicht unterscheiden. Das
+zweite Kennwort kann es.
+
+Damit gilt: Der Agent darf Aufträge anlegen, den Stand abfragen und **auf die
+Baustelle ausliefern**, so oft er will. Auf `bellowerk.de` schiebt nur eine Mail
+mit deinem Kennwort und der Kennung, die du vorher gesehen hast.
+
+Sollte dieser Gesprächsverlauf je in falsche Hände geraten, steht darin
+höchstens das Agentenkennwort — und damit kommt niemand an den laufenden Shop.
+
 ## Ausliefern mit Freigabe
 
 Der Agent darf jederzeit auf die **Testdomain**. Auf den **echten Shop** kommt
