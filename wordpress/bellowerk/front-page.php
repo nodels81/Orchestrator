@@ -23,7 +23,7 @@ get_header();
 ?>
 
 <section class="hero mitte rand">
-    <p class="augenbraue">Fettleder · Messing massiv · Hamburg</p>
+    <p class="augenbraue">Fettleder · Messing massiv · Altes Land</p>
     <h1>Messing altert. Leder auch. <b>Beides zu Ihren Gunsten.</b></h1>
     <p class="hero-lead">Kein Lack, keine Beschichtung, nichts, was abplatzen kann. Was Sie nach fünf Jahren in der Hand halten, ist dunkler, glatter und fester als am ersten Tag.</p>
     <div class="knopfreihe">

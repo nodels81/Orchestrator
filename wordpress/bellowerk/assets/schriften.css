@@ -1,0 +1,75 @@
+/* ═══════════════════════════════════════════════════════════════════
+   schriften.css — Die drei Familien, mitgeliefert statt von Google geladen.
+
+   Grund: Ein Aufruf an fonts.googleapis.com überträgt die IP-Adresse des
+   Besuchers in die USA und braucht dafür eine Einwilligung. Mitgeliefert
+   entfällt das, und eine Verbindung weniger wird aufgebaut.
+
+   Nur der Satz "latin". Deutsch braucht kein latin-ext — ä, ö, ü und ß
+   stecken in latin. Ein Kundenname mit ł oder ě fällt auf die Systemschrift
+   zurück; das ist der Preis für die Hälfte der Bytes.
+
+   Lizenz: alle drei unter der SIL Open Font License 1.1, siehe LIZENZ.md.
+   Das erlaubt das Mitliefern ausdrücklich.
+
+   Erzeugt aus den CSS-Antworten von Google Fonts, nicht von Hand getippt.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(schriften/archivo-1.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(schriften/archivo-1.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(schriften/archivo-1.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(schriften/bodoni-1.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(schriften/bodoni-1.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(schriften/plexmono-1.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(schriften/plexmono-2.woff2) format('woff2');
+}

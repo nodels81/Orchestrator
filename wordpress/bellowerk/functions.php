@@ -44,26 +44,32 @@ add_action( 'after_setup_theme', 'bellowerk_aufbau' );
 /**
  * Stile und Schriften.
  *
- * ACHTUNG, offener Punkt: Die Schriften sollen im Theme liegen und nicht bei
- * Google — ein Aufruf an fonts.googleapis.com überträgt die IP-Adresse des
- * Besuchers in die USA und braucht dafür eine Einwilligung.
+ * Die Schriften liegen im Theme, nicht bei Google: assets/schriften/ mit vier
+ * woff2-Dateien, eingebunden über assets/schriften.css. Grund: Ein Aufruf an
+ * fonts.googleapis.com überträgt die IP-Adresse des Besuchers in die USA und
+ * braucht dafür eine Einwilligung. Mitgeliefert entfällt das.
  *
- * Sie liegen aber noch NICHT hier. In assets/ gibt es keine Schriftdateien und
- * kein @font-face. tokens.css verlangt Bodoni Moda, Archivo und IBM Plex Mono,
- * und der Browser fällt auf Georgia und die Systemschrift zurück. Die Seite
- * steht, sieht aber nicht aus wie entworfen.
- *
- * Zu tun: die drei Familien als woff2 nach assets/schriften/ legen und hier
- * per @font-face einbinden. Siehe entscheidungen/offen.md.
+ * Zusammen 110,8 KB, Budget sind 120 KB. Erreicht durch zwei Beschränkungen:
+ * nur der Satz "latin" (Deutsch braucht kein latin-ext) und keine Datei
+ * doppelt — Archivo und Bodoni Moda sind variable Schriften, eine Datei
+ * bedient mehrere Schnitte.
  */
 function bellowerk_stile(): void {
 	$verzeichnis = get_stylesheet_directory();
 	$adresse     = get_stylesheet_directory_uri();
 
+	// Die Schriften zuerst, damit sie stehen, bevor das Designsystem sie ruft.
+	wp_enqueue_style(
+		'bellowerk-schriften',
+		$adresse . '/assets/schriften.css',
+		array(),
+		(string) filemtime( $verzeichnis . '/assets/schriften.css' )
+	);
+
 	wp_enqueue_style(
 		'bellowerk-tokens',
 		$adresse . '/assets/tokens.css',
-		array(),
+		array( 'bellowerk-schriften' ),
 		(string) filemtime( $verzeichnis . '/assets/tokens.css' )
 	);
 
