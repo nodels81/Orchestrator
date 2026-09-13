@@ -115,6 +115,41 @@ Meldet `--stand` keine offenen Aufträge, dann war das Schweigen richtig: Es gab
 melden. Der Tagesbrief kommt ab sofort trotzdem, jeden Morgen, und nennt offene
 Entscheidungen so lange, bis sie abgehakt sind.
 
+## Schritt 3b — Markenwissen richtigstellen
+
+**Neu am 13.09.2026, und dringender als der Rest.** Der Befund kam aus dem
+Postfach: Auftrag A-2026-012 von Abteilung 10 Homepage nennt HB-03 „Hamburg
+No.1" — richtig wäre Hamburg No. 6, No. 1 ist HB-01. Derselbe Auftrag schreibt
+„gefertigt in Hamburg/Altes Land", obwohl der Betrieb in Harsefeld sitzt und
+diese Formulierung dem Impressum widerspricht. Die Verkaufsnamen der Kollektion
+kommen gar nicht vor.
+
+Die Ursache ist nicht die Abteilung, sondern ihre Grundlage: `markenwissen.py`
+auf dem Server ist älter als die Namensentscheidung vom 10.09. und die
+Herkunftskorrektur vom 12.09. **Jede Abteilung dort arbeitet mit falschen
+Angaben, nicht nur die Homepage.**
+
+`uebernahme.sh` kopiert diese Datei absichtlich nicht — sie kann auf dem Server
+Felder tragen, die es hier nicht gibt. Es heilt also nicht von selbst.
+
+```bash
+cd /opt/bello
+python3 markenwissen-abgleich.py              # zeigt nur an
+python3 markenwissen-abgleich.py --anwenden   # ändert nach Rückfrage
+```
+
+Das Skript ändert **nur die vier nachweislich falschen Stellen** — STANDORT,
+HERKUNFTSSATZ, VERKAUFSNAMEN, FERTIGUNGSORT — und lässt alles andere stehen,
+auch Felder, die nur dort vorkommen. Es legt vorher eine Sicherung daneben,
+prüft danach, ob die Datei noch lädt, und setzt bei einem Fehler zurück.
+
+Geprüft gegen einen nachgebauten Serverstand mit eigenen Feldern: die bleiben
+erhalten, ein zweiter Lauf findet nichts mehr.
+
+**Was es nicht repariert:** Ergebnisse, die vorher entstanden sind. A-2026-011
+und A-2026-012 tragen weiterhin die alten Angaben und müssen von Hand geprüft
+werden, bevor irgendetwas daraus in den Shop wandert.
+
 ## Schritt 4 — Register pflegen
 
 `entscheidungen/offen.md` ist die Quelle für den Abschnitt "Wartet auf dich" im Tagesbrief.
