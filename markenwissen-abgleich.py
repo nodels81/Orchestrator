@@ -91,6 +91,53 @@ def block_finden(quelle: str, name: str) -> tuple[int, int] | None:
     return None
 
 
+# Die Abteilungen lesen das Markenwissen nicht direkt, sondern ueber
+# als_kontext(). Steht ein Feld zwar in der Datei, wird aber dort nicht
+# genannt, bekommt es niemand zu sehen. Dieser Nachtrag haengt sich hinter
+# die vorhandene Funktion, statt sie umzuschreiben — was darin steht, kann
+# auf diesem Server anders sein als hier, und daran wird nicht gerueht.
+NACHTRAG = r'''
+
+# ── Nachtrag 13.09.2026, angehaengt von markenwissen-abgleich.py ──────────
+# Grund: als_kontext() stammt aus einer aelteren Fassung und nennt die
+# Verkaufsnamen, den Herkunftssatz und den Fertigungsort nicht. Statt die
+# Funktion umzuschreiben, wird sie hier umwickelt. Die alte bleibt unter
+# ihrem neuen Namen erhalten und laesst sich jederzeit zurueckholen.
+_als_kontext_vor_nachtrag = als_kontext
+
+
+def als_kontext() -> str:
+    zeilen = [_als_kontext_vor_nachtrag()]
+
+    zeilen += ["", "VERKAUFSNAMEN (nach aussen der Name, intern die Nummer):"]
+    for kuerzel, name in VERKAUFSNAMEN.items():
+        zeilen.append(f"  - {kuerzel} heisst {name}")
+
+    zeilen += ["", "HERKUNFT (bindend, wortgleich verwenden): " + HERKUNFTSSATZ]
+    orte = sorted(set(FERTIGUNGSORT.values()))
+    if len(orte) == 1:
+        zeilen.append(f"  Fertigung aller Artikel: {orte[0]}")
+    else:
+        for kuerzel, ort in FERTIGUNGSORT.items():
+            zeilen.append(f"  {kuerzel}: gefertigt in {ort}")
+    zeilen.append("  Kein Satz behauptet Fertigung in Hamburg. Der Betrieb sitzt")
+    zeilen.append("  in Harsefeld im Alten Land, rund 40 km von Hamburg.")
+
+    return "\n".join(zeilen)
+'''
+
+
+def kontext_prueft(quelle: str) -> bool:
+    """Nennt als_kontext() die neuen Felder schon?"""
+    if "_als_kontext_vor_nachtrag" in quelle:
+        return True  # Nachtrag liegt bereits an
+    anfang = quelle.find("def als_kontext")
+    if anfang == -1:
+        return True  # keine solche Funktion — dann gibt es nichts zu ergaenzen
+    koerper = quelle[anfang:]
+    return all(f in koerper for f in ("VERKAUFSNAMEN", "HERKUNFTSSATZ", "FERTIGUNGSORT"))
+
+
 def pruefen(quelle: str) -> list[dict]:
     befunde = []
 
@@ -100,6 +147,14 @@ def pruefen(quelle: str) -> list[dict]:
             befunde.append({"name": name, "art": "fehlt", "ist": None, "soll": soll})
         elif ist != soll:
             befunde.append({"name": name, "art": "abweichend", "ist": ist, "soll": soll})
+
+    if not kontext_prueft(quelle):
+        befunde.append({
+            "name": "als_kontext()", "art": "nennt die neuen Felder nicht",
+            "ist": "Die Abteilungen bekommen Verkaufsnamen, Herkunftssatz und "
+                   "Fertigungsort nicht zu sehen.",
+            "soll": "Nachtrag wird hinten angehaengt, die alte Funktion bleibt erhalten.",
+        })
 
     for name, soll in SOLL_BLOECKE.items():
         stelle = block_finden(quelle, name)
@@ -114,8 +169,13 @@ def pruefen(quelle: str) -> list[dict]:
 
 
 def anwenden(quelle: str, befunde: list[dict]) -> str:
+    kontext_nachtragen = any(b["name"] == "als_kontext()" for b in befunde)
+
     for b in befunde:
         name, soll = b["name"], b["soll"]
+
+        if name == "als_kontext()":
+            continue  # kommt zum Schluss, nach allen Konstanten
 
         if name in SOLL_TEXTE:
             if b["art"] == "abweichend":
@@ -132,6 +192,11 @@ def anwenden(quelle: str, befunde: list[dict]) -> str:
                 quelle = quelle[:stelle[0]] + soll + quelle[stelle[1]:]
             else:
                 quelle = quelle.rstrip() + "\n\n" + soll + "\n"
+
+    # Der Nachtrag muss ans Ende: Er benutzt die Konstanten, die oben
+    # vielleicht gerade erst dazugekommen sind.
+    if kontext_nachtragen:
+        quelle = quelle.rstrip() + "\n" + NACHTRAG
     return quelle
 
 
@@ -212,6 +277,18 @@ def main() -> int:
     print(gruen("Geaendert und geprueft."))
     print(f"  {probe.stdout.strip()}")
     print()
+    if vorher_ladbar:
+        probe2 = subprocess.run(
+            [sys.executable, "-c",
+             "import markenwissen as m; t = m.als_kontext(); "
+             "print('Verkaufsnamen im Kontext:', 'Hamburg No. 1' in t); "
+             "print('Herkunftssatz im Kontext:', 'Alten Land' in t)"],
+            capture_output=True, text=True, cwd=os.getcwd(),
+        )
+        for zeile in probe2.stdout.strip().splitlines():
+            print("  " + zeile)
+        print()
+
     print("Die Abteilungen lesen das beim naechsten Auftrag. Ergebnisse, die")
     print("vorher entstanden sind — etwa A-2026-011 und A-2026-012 von")
     print("10 Homepage — tragen weiterhin die alten Angaben.")
