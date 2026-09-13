@@ -82,7 +82,7 @@ Der Agent darf jederzeit auf die **Testdomain**. Auf den **echten Shop** kommt
 nichts ohne dein Wort.
 
 ```
-Auftrag  →  Agent arbeitet  →  test.bellowerk.de  →  Mail an dich
+Auftrag  →  Agent arbeitet  →  bau.bellowerk.de  →  Mail an dich
                                                         ↓
                                      du siehst es an  →  "freigeben <Kennung>"
                                                         ↓
@@ -131,7 +131,7 @@ soll man ihn ja ansehen können.
 
 ### Einrichten
 
-Im KAS eine Unterdomain `test.bellowerk.de` anlegen, zweite WordPress-Installation
+Im KAS eine Unterdomain `bau.bellowerk.de` anlegen, zweite WordPress-Installation
 darauf, dann in `config.json` den Abschnitt `ausliefern` ausfüllen. Vorlage steht
 in `config.beispiel.json`.
 

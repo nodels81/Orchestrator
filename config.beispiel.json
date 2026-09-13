@@ -17,8 +17,8 @@
     "test": {
       "host": "wXXXXXXX.kasserver.com",
       "benutzer": "sshBENUTZER",
-      "pfad": "/www/htdocs/BENUTZER/test.bellowerk.de/wp-content/themes/bellowerk",
-      "adresse": "https://test.bellowerk.de"
+      "pfad": "/www/htdocs/BENUTZER/bau.bellowerk.de/wp-content/themes/bellowerk",
+      "adresse": "https://bau.bellowerk.de"
     },
     "live": {
       "host": "wXXXXXXX.kasserver.com",

@@ -2,7 +2,7 @@
 ausliefern.py — Bringt das Theme auf die Testdomain, und nach Freigabe auf den Shop.
 
 Der ganze Sinn dieser Datei ist eine Trennung: Der Agent darf jederzeit auf
-test.bellowerk.de ausliefern, und NIE von sich aus auf bellowerk.de. Der
+bau.bellowerk.de ausliefern, und NIE von sich aus auf bellowerk.de. Der
 Schritt auf den echten Shop passiert nur, wenn Bjoern eine Kennung freigibt,
 die er vorher gesehen hat.
 

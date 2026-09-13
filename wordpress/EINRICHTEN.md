@@ -172,28 +172,41 @@ Absicht: Ein Menü kann jemand leeren, und dann fehlt das Impressum.
 
 ---
 
-## 9 · Produkte anlegen
+## 9 · Produkte einlesen
 
-Je Stück: **Produkte → Erstellen**.
+Nicht von Hand anlegen — die vier Stücke stehen fertig in `wordpress/produkte.csv`.
 
-| Feld | Wert |
-|---|---|
-| Titel | `Hamburg No. 1` |
-| Artikelnummer (Inventar) | `HB-01` |
-| Regulärer Preis | `89` |
-| Kurzbeschreibung | Der Satz unter der Überschrift |
-| Beschreibung | Material, Maße, Pflege |
-| Varianten | Größe S/M/L/XL, Leder Grau/Dunkelbraun/Oliv/Cognac/Schwarz |
+**Produkte → Alle Produkte → Importieren**, Datei auswählen, durchklicken. Der
+Importer erkennt die Spalten selbst. Danach stehen Hamburg No. 1 bis No. 4 im
+Katalog, mit Preis, Kurzbeschreibung, Maßtabelle, Materialliste, Pflegehinweis
+und der Ausschlussliste.
 
-Die Artikelnummer ist kein Beiwerk: Sie steht klein unter dem Namen auf der
-Produktseite, weil Bestandskunden nach `HB-01` suchen werden.
+Die Datei wird erzeugt, nicht gepflegt:
 
-Texte und Maße stehen fertig in `web/produkt-hamburg-no-*.html`.
+```bash
+python3 wordpress/produkte.py            # schreibt produkte.csv neu
+python3 wordpress/produkte.py --zeigen   # nur ansehen
+```
 
-**Erfindet niemand Prüfzahlen.** Die Zahlen im Praxistest sind Platzhalter,
-bis echte Werte aus dem Betrieb vorliegen.
+Preise und Texte für No. 2, 3 und 4 kommen aus `web/vorlagen/seiten_bauen.py` —
+derselben Quelle wie die Entwurfsseiten, damit nichts auseinanderläuft. Nur HB-01
+steht zusätzlich in `wordpress/produkte.py`, weil seine Seite von Hand gepflegt wird.
 
----
+### Was der Import bewusst nicht macht
+
+- **Keine Varianten.** Größe und Leder stehen als sichtbare Eigenschaften am
+  Produkt, aber jedes Stück ist zunächst ein einfaches Produkt mit einem Preis.
+  So steht sofort ein vollständiger Katalog. Für den echten Verkauf: Produkt
+  öffnen → Produktdaten auf **Variables Produkt** stellen → Varianten →
+  *Alle Varianten erzeugen*. Dann je Variante Bestand und gegebenenfalls
+  abweichenden Preis setzen.
+- **Keine Bilder.** Es gibt noch keine. Die Bildflächen im Theme tragen bis dahin
+  ihre Aufnahmeanweisung.
+- **Keine Herkunftsangabe im Produkttext.** Die hängt im Theme am Haken und wird
+  auf jeder Produktseite unter den Preis gesetzt. Stünde sie zusätzlich im Text,
+  gäbe es sie zweimal — und beim nächsten Textwechsel einmal veraltet.
+- **Hamburg No. 5, 6 und 7 fehlen.** Die Stücke sind nicht gebaut. Sie im Shop
+  zu zeigen, wäre Ware, die es nicht gibt.
 
 ## 10 · Vor dem Freischalten
 
