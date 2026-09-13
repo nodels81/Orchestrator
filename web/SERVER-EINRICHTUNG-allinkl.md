@@ -250,20 +250,39 @@ Die Ausstellung dauert ein paar Minuten bis eine Stunde.
 
 ## 8. Zugang für den Aufbau anlegen
 
-Zwei Wege, beide im KAS:
+**So ist es bei All-Inkl wirklich** (geprüft am 13.09.2026, Tools → SSH-Zugang):
 
-**SSH (besser, im Premium enthalten):** KAS → *Tools* → *SSH-Zugang*. Benutzer anlegen, Kennwort
-erzeugen lassen. Damit kann der Shop in einem Rutsch aufgespielt und aktualisiert werden.
+- Ein Konto hat **genau einen** SSH-Zugang, hier `ssh-<kontokennung>`.
+- Die Seite bietet **kein Feld für einen öffentlichen Schlüssel**.
+- Das SSH-Kennwort ist **immer das Kennwort des Haupt-FTP-Benutzers**. Beides hängt zusammen;
+  wer das eine ändert, ändert das andere.
+- Nach dem Anlegen steht der Zugang ein paar Minuten auf *in Bearbeitung*. Vorher läuft nichts.
 
-**FTP (der einfache Weg):** KAS → *FTP* → *FTP-Benutzer anlegen*.
-- Einen **eigenen** Benutzer für den Shop, nicht den Hauptzugang benutzen.
-- Zugriff **nur** auf das Verzeichnis der Shop-Domain begrenzen.
-- Verbindung immer als **FTPS oder SFTP**, nie als einfaches FTP — einfaches FTP schickt das
-  Kennwort unverschlüsselt durchs Netz.
+Das heißt: der Zugang lässt sich **nicht** auf ein Verzeichnis begrenzen, er gilt fürs ganze
+Konto. Dagegen helfen keine Einstellungen, sondern die Reihenfolge — erst nur auf der
+Baustellen-Subdomain bauen, Sicherung vorher an, bellowerk.de zuletzt.
 
-Notiere Hostname, Benutzername, Port. Das Kennwort bleibt im Passwortmanager.
+### Trotzdem mit Schlüssel arbeiten
 
----
+Der Schlüssel wird nicht im KAS hinterlegt, sondern auf dem Webspace selbst. Ein Befehl, ein
+einziges Mal Kennwort tippen:
+
+```bash
+# auf dem netcup-Server
+ssh-copy-id -i ~/.ssh/allinkl_bellowerk.pub ssh-<kontokennung>@<kontokennung>.kasserver.com
+```
+
+Danach prüfen, dass es **ohne** Kennwort geht:
+
+```bash
+ssh -i ~/.ssh/allinkl_bellowerk ssh-<kontokennung>@<kontokennung>.kasserver.com "pwd && php -v"
+```
+
+Ab hier arbeitet der netcup-Server mit dem Schlüssel. Das Kennwort wird nicht mehr gebraucht,
+steht nirgends auf der Platte und bleibt in deinem Passwortmanager als Rückweg.
+
+Zum Aufräumen später: `~/.ssh/authorized_keys` auf dem Webspace enthält dann genau diese eine
+Zeile. Zugang entziehen heißt: Zeile löschen.
 
 ## 9. Postfach info@bellowerk.de
 
