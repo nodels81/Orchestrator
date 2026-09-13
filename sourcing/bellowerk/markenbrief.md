@@ -31,7 +31,9 @@ Diese Datei ist die Wahrheit für alle Lieferanten-Kontakte. Änderungen hier wi
 - **Flechtung**: 3-strängiger Mystery Braid (Trick Braid) aus einem Stück, V-Muster — so werden
   Karabiner und Ringe ohne Naht befestigt (Fotos `bilder/LE-01-*.jpg`). Keine anderen Flechtarten.
 - **Patch**: Lederpatch in Cognac/Mittelbraun, lasergraviert "BELLOWERK" (Versalien, gesperrt) und
-  darunter "Manufaktur" in Schreibschrift, 2 Buchschrauben. Siehe `specs/PATCH-01-markenpatch.md`.
+  darunter "Manufaktur" in Schreibschrift, 2 Buchschrauben. **PA-M 85 × 20 mm auf allen Halsbändern,
+  PA-S 65 × 14 mm auf den 20-mm-Teilen (Leine, Handschlaufe).** Der Patch bestimmt die Mindestbreite
+  des Riemens: kein Halsband schmaler als 25 mm. Siehe `specs/PATCH-01-markenpatch.md`.
 
 ## Werkstoffe — ausgeschlossen (Verstoß = Ablehnung)
 
@@ -49,9 +51,9 @@ kein Einstieg über Windhunde
 
 | Modell | Beschreibung | Spec |
 |---|---|---|
-| HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-01-halsband.md` |
+| HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 25–40 mm, Lederpatch PA-M | `specs/HB-01-halsband.md` |
 | LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | `specs/LE-01-fuehrleine.md` |
-| HB-02 | Halsband geflochten: Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | `specs/HB-02-halsband-geflochten.md` |
+| HB-02 | Halsband geflochten: Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch, S/M/L/XL, 25–40 mm | `specs/HB-02-halsband-geflochten.md` |
 | LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
 | HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
 | PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |

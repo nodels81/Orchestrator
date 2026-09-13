@@ -1,4 +1,4 @@
-# HB-01 — Leather Dog Collar (Tech Pack v1.0, 9 Sep 2026)
+# HB-01 — Leather Dog Collar (Tech Pack v1.1, 13 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
 Attachments: `zeichnungen/HB-01-halsband.png`, photos `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg`.
@@ -15,12 +15,12 @@ D-ring, leather keeper. Leather patch PATCH-01 near the buckle (see `bilder/HB-0
 |---|---|
 | Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through. Thickness **3.5–4.0 mm** (±0.3). Firm grain, no loose fibres. Colours: olive, dark brown, cognac (send swatches). |
 | Buckle | Roller buckle, **solid brass** (cast HPb59-1 / CW617N or forged), brushed, unlacquered. Width = strap width. Min. breaking load 2.5 kN. |
-| D-ring | Welded, weld ground smooth, solid brass, inner width = strap width, wire Ø 4 mm (20/25 mm) or 5 mm (30/40 mm). Min. 3 kN. |
+| D-ring | Welded, weld ground smooth, solid brass, inner width = strap width, wire Ø 4 mm (25 mm) or 5 mm (30/35/40 mm). Min. 3 kN. |
 | Keeper | Leather loop, same leather, fixed with 1 Chicago screw (no stitching). |
 | Screws | Chicago screws, solid brass, domed head Ø 8–9 mm (as on photos), post 8 mm for 2 layers, 10 mm for 3 layers, thread-locked. |
-| Patch | PATCH-01 engraved leather patch (PA-M 85 × 18 mm; PA-S 65 × 14 mm on size S), 2 Chicago screws — see photos `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg`. |
+| Patch | PATCH-01 engraved leather patch **PA-M 85 × 20 mm on every size** (the strap is never narrower than 25 mm), 2 Chicago screws — see photos `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg`. |
 | Edges | Bevelled both sides, burnished (gum tragacanth/wax), no edge paint. |
-| Holes | Oval punch, 5 holes, pitch 25 mm, hole size 4 × 7 mm (20/25 mm strap) or 5 × 8 mm (30/40 mm). |
+| Holes | Oval punch, 5 holes, pitch 25 mm, hole size 4 × 7 mm (25 mm strap) or 5 × 8 mm (30/35/40 mm). |
 
 Not acceptable: zinc alloy, brass-plated steel, PU/bonded/split leather, stitching, rivets, plastic, lacquer.
 
@@ -28,10 +28,13 @@ Not acceptable: zinc alloy, brass-plated steel, PU/bonded/split leather, stitchi
 
 | Size | Strap width | Neck range (buckle → hole 1…5) | Cut length | Holes from tip |
 |---|---|---|---|---|
-| S | 20 mm | 30–40 cm | 52 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
-| M | 25 mm | 38–48 cm | 60 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
-| L | 30 mm | 46–56 cm | 68 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
+| S | 25 mm | 30–40 cm | 52 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
+| M | 30 mm | 38–48 cm | 60 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
+| L | 35 mm | 46–56 cm | 68 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
 | XL | 40 mm | 54–64 cm | 76 cm | 6 / 8.5 / 11 / 13.5 / 16 cm |
+
+Widths raised from 20/25/30/40 mm in v1.0: the brand patch PA-M (85 × 20 mm) must sit on every size
+with leather visible above and below it, so no collar is narrower than 25 mm. Lengths are unchanged.
 
 Cut length = max neck + 12 cm (buckle fold 6 cm incl. keeper + D-ring). Tolerance: length ±5 mm,
 width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half width.
@@ -40,7 +43,7 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
 
 1. Buckle fold: strap passes through buckle, folds back 60 mm, D-ring sits in the fold 20 mm behind
    the buckle, keeper 15 mm behind the D-ring.
-2. Fold fixed with **2 Chicago screws** (side by side for 30/40 mm, in line for 20/25 mm), D-ring
+2. Fold fixed with **2 Chicago screws** (side by side for 30/35/40 mm, in line for 25 mm), D-ring
    captured between them.
 3. Leather patch PATCH-01 on the outside, 30 mm behind the fold, centred on strap, 2 Chicago screws.
    Optional (Björn decides): D-ring held by a 3-strand mystery braid instead of the screwed fold — see HB-02.
@@ -68,3 +71,7 @@ brass alloy statement, breaking-load test of buckle/D-ring, REACH Cr(VI) test re
 5. Payment terms (we propose 30 % after golden sample, 70 % after final inspection before shipment)
 6. Pattern files (PDF/DXF) included — yes/no
 7. Photo of the exact brass buckle, D-ring and Chicago screw you will use, with weight in grams
+8. Which of the widths 25 / 30 / 35 / 40 mm do you hold as **stock** solid brass roller buckles and
+   welded D-rings? If one of them is not a standard size for you, tell us your nearest stock width
+   (for example 32 or 38 mm) — we adjust the strap to the hardware, we do not accept plated steel
+   or zinc alloy as a substitute.

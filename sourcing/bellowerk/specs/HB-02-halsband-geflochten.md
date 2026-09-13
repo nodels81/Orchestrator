@@ -1,4 +1,4 @@
-# HB-02 — Braided Leather Collar (Tech Pack v1.0, 9 Sep 2026)
+# HB-02 — Braided Leather Collar (Tech Pack v1.1, 13 Sep 2026)
 
 Reference photos: `bilder/HB-02-geflochten-am-hund.jpg` (single colour, brass O-ring),
 `bilder/HB-02-zweifarbig-am-hund.jpg` (two-tone), `bilder/HB-02-und-LE-01-gruen.jpg` (flat buckle end
@@ -17,18 +17,23 @@ would do it without stitching, or quote single-colour only.
 
 ## 2. Material
 
-As HB-01: vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle, welded O-ring (inner
-Ø 25 mm, wire 5 mm, ≥ 3 kN), Chicago screws domed head Ø 8–9 mm, patch PATCH-01.
+As HB-01: vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle (width = strap width),
+welded O-ring (**inner width = strap width**, wire Ø 5 mm, ≥ 3 kN), Chicago screws domed head
+Ø 8–9 mm, patch PATCH-01 **PA-M 85 × 20 mm on every size**.
 Colours: grey, dark brown, olive, cognac, black.
 
 ## 3. Sizes (starting values — confirm on Björn's reference collar)
 
-| Size | Strap width | Braided section | Flat buckle end / flat hole end | Neck range |
-|---|---|---|---|---|
-| S | 20 mm | 180 mm | 140 mm / 120 mm | 30–40 cm |
-| M | 25 mm | 220 mm | 160 mm / 120 mm | 38–48 cm |
-| L | 25 mm | 260 mm | 160 mm / 140 mm | 46–56 cm |
-| XL | 30 mm | 300 mm | 180 mm / 140 mm | 54–64 cm |
+| Size | Strap width | Braided section | Flat buckle end / flat hole end | Neck range | Strand width |
+|---|---|---|---|---|---|
+| S | 25 mm | 180 mm | 140 mm / 120 mm | 30–40 cm | ≈ 8 mm |
+| M | 30 mm | 220 mm | 160 mm / 120 mm | 38–48 cm | ≈ 10 mm |
+| L | 35 mm | 260 mm | 160 mm / 140 mm | 46–56 cm | ≈ 11.5 mm |
+| XL | 40 mm | 300 mm | 180 mm / 140 mm | 54–64 cm | ≈ 13 mm |
+
+Widths raised from 20/25/25/30 mm in v1.0 and aligned with HB-01, so the brand patch PA-M
+(85 × 20 mm) sits on every size. The braid gets wider with the strap: the chevron on XL is visibly
+coarser than on S. Send the braid sample in size M and in size XL.
 
 Braiding shortens the strap by about 15 %: cut the braid section 15 % longer than the finished
 braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
@@ -42,7 +47,7 @@ braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
    ring before braiding, ring sits in a braided loop) — or, if the factory prefers, a short flat tab
    with a screwed fold. Ask which method they use; photo required.
 4. Buckle fold: plain fold 60 mm, 2 Chicago screws (buckle tongue needs the flat fold).
-5. Patch PATCH-01 on the flat buckle end, 30 mm behind the fold.
+5. Patch PATCH-01 PA-M (85 × 20 mm) on the flat buckle end, 30 mm behind the fold.
 6. Edges bevelled and burnished on strap and on every strand.
 
 ## 5. Quantity and packaging
@@ -57,3 +62,5 @@ S 10 / M 25 / L 20 / XL 5. Packing as HB-01.
 3. Two-tone braid possible without stitching — yes/no, how?
 4. Sample cost/time, MOQ, lead time, payment terms
 5. Pattern (PDF/DXF) with slit layout and cutting allowance included — yes/no
+6. Which of the widths 25 / 30 / 35 / 40 mm do you hold as stock solid brass roller buckles and
+   welded O-rings (inner width = strap width)? Name your nearest stock size if one is missing.

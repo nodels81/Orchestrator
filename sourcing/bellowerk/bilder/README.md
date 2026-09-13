@@ -13,6 +13,7 @@ mit Personen) — **nicht an Lieferanten schicken**.
 | `HB-01-detail-patch.jpg` | Graues Halsband mit Lederpatch, 2 gewölbte Messing-Buchschrauben, Rollschnalle Messing, Lochreihe | HB-01, PATCH-01 Position |
 | `HB-01-farben-patch.jpg` | Vier Halsbänder gestapelt (dunkelbraun, oliv, cognac, grau) mit Patch | HB-01 Farben, Patch-Layout |
 | `HB-01-detail-dring-namenspatch.jpg` | Cognac-Halsband: D-Ring mit Buchschraube, Messing-Münzanhänger, Namenspatch "TILDA" | HB-01, PATCH-01 N |
+| `HB-01-detail-dring-buchschraube.jpg` | **Ausschnitt aus dem Bild darüber** (Original bleibt liegen): D-Ring im Umschlag, eine Buchschraube, Münzanhänger — ohne Namenspatch und ohne Bildtext | HB-01 Konstruktion Schnallenende |
 | `HB-02-geflochten-am-hund.jpg` | Halsband komplett im Mystery Braid, O-Ring, Karabiner eingehakt | HB-02 |
 | `HB-02-zweifarbig-am-hund.jpg` | Zweifarbiges Flechthalsband (dunkelbraun + grau "washed stone"), O-Ring, flaches Ende mit Schraube | HB-02 Option zweifarbig |
 | `HB-02-und-LE-01-gruen.jpg` | Grünes Flechthalsband mit Schnalle + Patch, daneben Leine mit Flechtung am Ring | HB-02 Übergang Flechtung/flach |
@@ -33,6 +34,11 @@ mit Personen) — **nicht an Lieferanten schicken**.
 | `HS-01-gesamt.jpg` | Handschlaufe komplett |
 | `PATCH-01-artwork.svg` | Vektor-Logo "BELLOWERK / Manufaktur" (Schrift in Pfade) |
 | `messing-beschlaege.jpg` | Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, Lineal |
+
+## Hinweis zu Ausschnitten
+
+Ausschnitte werden **aus den Originalen gezogen**, die Originaldatei bleibt unverändert liegen.
+Dateiname des Ausschnitts beschreibt, was zu sehen ist, nicht woher er stammt.
 
 ## Regeln
 

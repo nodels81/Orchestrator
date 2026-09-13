@@ -1,4 +1,4 @@
-# PATCH-01 — Leather Brand Patch "BELLOWERK / Manufaktur" (Tech Pack v1.1, 9 Sep 2026)
+# PATCH-01 — Leather Brand Patch "BELLOWERK / Manufaktur" (Tech Pack v1.2, 13 Sep 2026)
 
 Reference photos: `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg` (current patch reads
 "HERR BELLO & FRAU WUFF / Manufaktur" — new patch uses the same layout with the new name).
@@ -11,17 +11,21 @@ the strap, fixed with **one solid brass Chicago screw at each end**. Lettering *
 (dark brown/black burn, no foil, no paint): line 1 "BELLOWERK" in spaced capitals, line 2 "Manufaktur"
 in a handwritten script, right-aligned under line 1. No stitching, no glue as the only fixing.
 
+Height raised from 18 to 20 mm in v1.2 (Björn, 13 Sep 2026): the patch reads too small on the
+strap. The collar widths of HB-01 and HB-02 were raised in the same step so it still sits with
+leather visible above and below. Length stays at 85 mm, so the hole spacing of 71 mm is unchanged.
+
 ## Variant A (default): engraved leather patch
 
 | | |
 |---|---|
 | Leather | Vegetable-tanned cowhide, full grain, **2.0–2.5 mm**, colour cognac / medium brown (same on all strap colours: grey, dark brown, olive, cognac). Firm, smooth grain for clean engraving. |
-| Sizes | **PA-M 85 × 18 mm** for 25–40 mm straps (collar M/L/XL, lead 25 mm) · **PA-S 65 × 14 mm** for 20 mm straps (lead LE-01, hand loop HS-01, collar S). Corner radius 3 mm. |
-| Lettering | Line 1 "BELLOWERK": spaced geometric sans-serif capitals as in the existing logo (Futura/Josefin Sans style, tracking +20 %), cap height 4.5 mm (PA-M) / 3.5 mm (PA-S). Line 2 "Manufaktur": brush script as in the logo, x-height 2.5 mm / 2.0 mm, placed under the right half of line 1. Engraving depth 0.2–0.3 mm, dark burn, no paint, no foil. Björn supplies the vector logo; the drawing is a placeholder. |
+| Sizes | **PA-M 85 × 20 mm** for 25–40 mm straps — **every collar size of HB-01 and HB-02** · **PA-S 65 × 14 mm** for 20 mm straps (lead LE-01, hand loop HS-01). Corner radius 3 mm. |
+| Lettering | Line 1 "BELLOWERK": spaced geometric sans-serif capitals as in the existing logo (Futura/Josefin Sans style, tracking +20 %), cap height 5.0 mm (PA-M) / 3.5 mm (PA-S). Line 2 "Manufaktur": brush script as in the logo, x-height 3.0 mm / 2.0 mm, placed under the right half of line 1. Engraving depth 0.2–0.3 mm, dark burn, no paint, no foil. Björn supplies the vector logo; the drawing is a placeholder. |
 | Holes | 2 × Ø 4.5 mm, hole centres 7 mm from each end → spacing **71 mm** (PA-M) / **51 mm** (PA-S) |
 | Screws | Chicago screws solid brass, head Ø 8–9 mm domed (as on photos), post 8 mm (patch + strap), thread-locked |
 | Edges | Cut clean, lightly bevelled, burnished, no edge paint |
-| Position | Collar: centred on strap, 30 mm behind buckle fold. Lead: 80 mm from hook A. Hand loop: on the overlap. |
+| Position | Collar: centred on strap, 30 mm behind buckle fold — leather visible above and below the patch on every size (2.5 mm on a 25 mm strap, 10 mm on 40 mm). Lead: 80 mm from hook A. Hand loop: on the overlap. |
 
 Artwork: vector (AI/PDF/SVG), text converted to outlines, 1:1, black = engraved. Min line width 0.3 mm,
 min gap 0.5 mm. Supplier to send a digital proof and one engraved sample before production.
@@ -30,8 +34,8 @@ min gap 0.5 mm. Supplier to send a digital proof and one engraved sample before 
 
 Same patch, but engraved with the **dog's name in spaced serif capitals** (as "AUGUST", "TILDA",
 "ENZO" in `bilder/PATCH-01-namenspatch-august.jpg`, `PATCH-01-namensgravur-detail.jpg`): one line,
-cap height 6 mm (PA-M) / 5 mm (PA-S), tracking +20 %, max. 10 characters (longer names → patch
-PA-L 110 × 18 mm). Björn's decision: **first order = Bellowerk patch only, no names.** Ask the factory
+cap height 7 mm (PA-M) / 5 mm (PA-S), tracking +20 %, max. 10 characters (longer names → patch
+PA-L 110 × 20 mm). Björn's decision: **first order = Bellowerk patch only, no names.** Ask the factory
 now whether they can engrave single pieces on demand later and at what price/lead time per piece
 (question 5 below), so the option is open.
 
