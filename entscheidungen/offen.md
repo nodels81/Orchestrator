@@ -44,7 +44,7 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [x] Inhaber bestätigt 12.09.2026: **Björn Bujko**, Einzelunternehmen, Geschäftsname Bellowerk Manufaktur
 - [ ] USt-IdNr. nach § 27a UStG — Björn reicht sie nach (12.09.2026). Bis dahin bleibt die Stelle im Impressum markiert. **Wird mit dem weltweiten Versand wichtiger**: für die OSS-Anmeldung wird sie gebraucht
 - [x] E-Mail bestätigt 12.09.2026: **info@bellowerk.de**, eingetragen in Impressum, Datenschutz und Widerruf
-- [ ] Liegt auf bellowerk.de schon etwas? Vor dem ersten Hochladen zu klären, ich komme von hier nicht auf die Domain
+- [x] bellowerk.de ist leer — bestätigt 13.09.2026. Es wird nichts überschrieben
 - [ ] **OSS-Verfahren anmelden, bevor die Schwelle reißt.** Folge des weltweiten Versands: Für Privatkunden in der EU gilt eine einheitliche Lieferschwelle von **10.000 EUR netto im Kalenderjahr, zusammengerechnet über alle EU-Länder**. Darunter berechnest du deutsche Umsatzsteuer. Darüber wird der Steuersatz des Ziellandes fällig — ab dem Paket, das die Schwelle reißt, nicht ab dem nächsten Jahr. Das One-Stop-Shop-Verfahren bündelt das in einer Meldung beim Bundeszentralamt für Steuern, statt einer Registrierung je Land. Teilnahme ist freiwillig, die Steuerpflicht nicht. Mit dem Steuerberater klären
 - [ ] **Ausfuhr in Drittländer ist umsatzsteuerfrei — das muss der Shop können.** Bei Lieferung in die Schweiz, die USA und alle Länder außerhalb der EU fällt keine deutsche Umsatzsteuer an (§ 4 Nr. 1a i. V. m. § 6 UStG, Ausfuhrnachweis vorausgesetzt). Zurzeit steht auf jeder Seite "inklusive 19 % Umsatzsteuer" — für einen Kunden in den USA ist das falsch, der zahlt sonst deutsche Steuer **und** Einfuhrsteuer im Zielland. Wird in WooCommerce über die Steuerzonen eingestellt, nicht im Text gelöst
 - [x] Versandtarife als Richtwerte gesetzt 12.09.2026 nach DHL-Liste: EU 10,90 €, Europa außerhalb EU 16,90 €, Welt 18,90 €, versandfrei in der EU ab 180 €. Vor der Veröffentlichung gegen den eigenen DHL-Vertrag prüfen
@@ -58,6 +58,12 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Abnahmetor Punkt 4: Richtung 03 ist bewusst nur dunkel. Punkt für dieses Projekt streichen oder Hell-Variante bauen? Siehe web/ABNAHME.md
 - [ ] Abnahmetor Punkt 6: drei Schriftfamilien bei einem Budget von zwei. Vorschlag: IBM Plex Mono streichen, Artikelnummern und Preise in gesperrtem Archivo setzen. Kostet Charakter, hält das Budget
 - [ ] Startseite auf tokens.css umstellen. Sie trägt das Designsystem noch als Kopie, und bei der ersten Korrektur musste dieselbe Änderung schon an zwei Stellen gemacht werden
+
+- [ ] **German Market oder Germanized kaufen?** WooCommerce allein erfüllt das deutsche Onlinehandelsrecht nicht: Grundpreise, Widerrufsbelehrung in der Bestellmail, Bestellübersicht vor dem Knopf. Beide Erweiterungen gibt es kostenlos in eingeschränkter Fassung, die Vollfassung kostet jährlich. Erst die kostenlose nehmen, bei Bedarf umsteigen. Preis prüfen und entscheiden
+- [ ] PayPal-Geschäftskonto: API-Zugangsdaten erzeugen und im Sandkasten testen, bevor scharf geschaltet wird
+- [ ] Bankverbindung für die Überweisung eintragen. Steht dann in jeder Bestellbestätigung
+- [ ] Startseite nach WordPress portieren. Kopfbereich und Kollektion stehen im Theme; Materialansicht mit Shader, Prüfbericht, Größenfinder und Materialkunde liegen noch als HTML in web/startseite-nachtwerkstatt.html. Größte offene Arbeit am Theme
+- [ ] SSH-Schlüssel für den Webspace erzeugen und im KAS hinterlegen. Ohne ihn läuft hochladen.sh nicht — und ein Passwort will das Skript bewusst nicht
 
 ## Marke
 

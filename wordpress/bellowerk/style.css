@@ -1,0 +1,16 @@
+/*
+Theme Name: Bellowerk
+Theme URI: https://bellowerk.de
+Author: Bellowerk Manufaktur
+Description: Theme der Manufaktur Bellowerk, Richtung 03 "Nachtwerkstatt". Dunkle, einfarbige Welt, damit Leder und Messing die einzigen hellen Dinge auf der Seite sind. Designsystem in assets/tokens.css.
+Version: 0.1.0
+Requires at least: 6.5
+Requires PHP: 8.1
+License: proprietär, alle Rechte vorbehalten
+Text Domain: bellowerk
+Tags: e-commerce, dark
+*/
+
+/* Die eigentlichen Stile stehen in assets/tokens.css und werden über
+   functions.php geladen. Diese Datei trägt nur den Themenkopf, den
+   WordPress hier und nirgendwo sonst sucht. */

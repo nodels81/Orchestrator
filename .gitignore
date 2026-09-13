@@ -12,3 +12,6 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# Zugangsdaten fuer den Webspace. Niemals einchecken.
+wordpress/zugang.conf
