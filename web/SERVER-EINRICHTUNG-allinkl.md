@@ -253,19 +253,21 @@ Die Ausstellung dauert ein paar Minuten bis eine Stunde.
 **So ist es bei All-Inkl wirklich** (geprüft am 13.09.2026, Tools → SSH-Zugang):
 
 - Ein Konto hat **genau einen** SSH-Zugang, hier `ssh-<kontokennung>`.
-- Die Seite bietet **kein Feld für einen öffentlichen Schlüssel**.
+- Ein **öffentlicher Schlüssel lässt sich hinterlegen** — im neuen KAS beim Bearbeiten des
+  Zugangs. Die Übersichtsseite zeigt das Feld nicht, deshalb erst übersehen.
 - Das SSH-Kennwort ist **immer das Kennwort des Haupt-FTP-Benutzers**. Beides hängt zusammen;
-  wer das eine ändert, ändert das andere.
+  wer das eine ändert, ändert das andere. Mit hinterlegtem Schlüssel braucht man es nicht.
 - Nach dem Anlegen steht der Zugang ein paar Minuten auf *in Bearbeitung*. Vorher läuft nichts.
 
 Das heißt: der Zugang lässt sich **nicht** auf ein Verzeichnis begrenzen, er gilt fürs ganze
 Konto. Dagegen helfen keine Einstellungen, sondern die Reihenfolge — erst nur auf der
 Baustellen-Subdomain bauen, Sicherung vorher an, bellowerk.de zuletzt.
 
-### Trotzdem mit Schlüssel arbeiten
+### Mit Schlüssel arbeiten
 
-Der Schlüssel wird nicht im KAS hinterlegt, sondern auf dem Webspace selbst. Ein Befehl, ein
-einziges Mal Kennwort tippen:
+Entweder im KAS beim Zugang hinterlegen, oder vom netcup-Server aus ablegen — beides führt an
+dieselbe Stelle, `~/.ssh/authorized_keys` auf dem Webspace. Der zweite Weg kostet einmal das
+Kennwort:
 
 ```bash
 # auf dem netcup-Server
