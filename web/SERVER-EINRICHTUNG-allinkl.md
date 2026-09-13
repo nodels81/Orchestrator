@@ -81,6 +81,17 @@ Die lange Liste weiter unten bleibt als Nachschlagewerk stehen. Gemacht wird es 
 | **Björn** | vier Dinge im KAS, einmalig, zusammen etwa eine Viertelstunde |
 | **der netcup-Server** | alles Übrige, per KAS-API und SSH, wiederholbar |
 
+### Die beiden Maschinen
+
+| | netcup | All-Inkl |
+|---|---|---|
+| Was | eigener Server, root | Webspace, geteilt |
+| Rolle | **Werkstatt** — Orchestrator, Abteilungen, Gedächtnis, der Agent | **Laden** — WordPress, WooCommerce, bellowerk.de |
+| Adresse | `v2202609413684515441.powersrv.de`, feste IP **185.163.118.110** | `wXXXXXXX.kasserver.com` (Kennung aus dem KAS) |
+
+Die feste IP ist öffentlich und steht hier bewusst: sie wird zweimal gebraucht — als IP-Sperre
+für die KAS-API und später im SPF-Eintrag, falls Mails über den netcup-Server hinausgehen.
+
 Der Agent wohnt weiter auf dem netcup-Server unter `/opt/bello`. Auf den Webspace wird er nicht
 installiert — das geht dort nicht und ist auch nicht nötig. Er liefert dorthin.
 
