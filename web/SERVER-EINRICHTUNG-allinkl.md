@@ -87,10 +87,13 @@ Die lange Liste weiter unten bleibt als Nachschlagewerk stehen. Gemacht wird es 
 |---|---|---|
 | Was | eigener Server, root | Webspace, geteilt |
 | Rolle | **Werkstatt** — Orchestrator, Abteilungen, Gedächtnis, der Agent | **Laden** — WordPress, WooCommerce, bellowerk.de |
-| Adresse | `v2202609413684515441.powersrv.de`, feste IP **185.163.118.110** | `wXXXXXXX.kasserver.com` (Kennung aus dem KAS) |
+| Adresse | steht auf dem Server selbst: `curl -4 ifconfig.me` | Servername und Stammverzeichnis stehen im KAS |
 
-Die feste IP ist öffentlich und steht hier bewusst: sie wird zweimal gebraucht — als IP-Sperre
-für die KAS-API und später im SPF-Eintrag, falls Mails über den netcup-Server hinausgehen.
+**Adressen und Kontokennungen stehen bewusst nicht in dieser Datei.** Das Repo ist öffentlich
+(Stand 13.09.2026). Eine Server-IP ist kein Geheimnis, aber sie im Netz danebenzulegen, welcher
+Betrieb darauf läuft und womit, erspart einem Angreifer die halbe Arbeit. Die feste IP wird
+zweimal gebraucht — als IP-Sperre für die KAS-API und später im SPF-Eintrag — und wird an beiden
+Stellen frisch vom Server geholt, statt hier zu stehen.
 
 Der Agent wohnt weiter auf dem netcup-Server unter `/opt/bello`. Auf den Webspace wird er nicht
 installiert — das geht dort nicht und ist auch nicht nötig. Er liefert dorthin.
