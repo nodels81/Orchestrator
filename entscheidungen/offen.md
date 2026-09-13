@@ -81,6 +81,8 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] `web/entwurfsblaetter.html` zeigt in einer Beispielkarte noch „gefertigt in Hamburg". Das Blatt ist der Vergleich der vier Richtungen vom 11.09. und damit ein Zeitdokument — geändert wird es nur, wenn es je wieder benutzt wird. Dann aber muss der Satz weg, und das veröffentlichte Artefakt neu hochgeladen werden
 - [x] Schriftbudget erfüllt 13.09.2026: **IBM Plex Mono gestrichen.** Zwei Familien, 81,2 von 120 KB. Die Ziffern richten sich über `tnum` in Archivo aus — in der Schriftdatei nachgemessen. Nebenbei wurde die Prüftabelle schmaler und bricht nicht mehr um
 
+- [ ] **`uebernahme.sh` erneut laufen lassen, bevor irgendein neues Skript auf dem Server gesucht wird.** Am 13.09. kam heraus, dass `markenwissen-abgleich.py` und `auftraege.sh` gar nicht auf `/opt/bello` lagen — sie standen nicht auf der Übernahmeliste. Jetzt stehen sie drauf, zusammen mit `wordpress/` und `config.beispiel.json`. Ohne `wordpress/` hätte der Agent später nichts zum Ausliefern gehabt
+
 ## Marke
 
 - [ ] Finden Gassi-Service, Pension und Training tatsächlich in Hamburg statt, oder im Alten Land? Wenn in Hamburg, darf "in Hamburg geprüft" zusätzlich dastehen — das ist ein starkes Argument, das zurzeit verschenkt wird. Tatsachenfrage, siehe Nachtrag in konzepte/kollektion-01-hamburg.md

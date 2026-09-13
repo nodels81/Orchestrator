@@ -22,14 +22,22 @@ UNBEDENKLICH=(
   tagesbrief.py
   sicherung.sh
   uebernahme.sh
+  markenwissen-abgleich.py
+  auftraege.sh
+  config.beispiel.json
   SERVER-ABGLEICH.md
   WEBSITE-PROMPT-ultra.md
   entscheidungen
   konzepte
   web
+  wordpress
   autonom
   .claude/skills/website-highend
 )
+
+# Warum wordpress/ dazugehoert, obwohl das Theme auf den Webspace soll:
+# autonom/ausliefern.py schiebt es von HIER per rsync dorthin. Ohne den
+# Ordner auf dem Server hat der Agent nichts zum Ausliefern.
 
 # Was ausdruecklich NICHT angefasst wird, mit Grund.
 cat <<'ENDE'

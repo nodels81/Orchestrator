@@ -132,8 +132,19 @@ Angaben, nicht nur die Homepage.**
 `uebernahme.sh` kopiert diese Datei absichtlich nicht — sie kann auf dem Server
 Felder tragen, die es hier nicht gibt. Es heilt also nicht von selbst.
 
+**Das Skript muss erst auf den Server.** Es liegt im Zweig, nicht auf `/opt/bello`.
+Entweder über `uebernahme.sh` (es steht seit dem 13.09. auf dessen Liste), oder
+einzeln:
+
 ```bash
 cd /opt/bello
+git fetch origin claude/ultimate-website-prompt-ira6ls
+git checkout origin/claude/ultimate-website-prompt-ira6ls -- markenwissen-abgleich.py auftraege.sh
+```
+
+Dann:
+
+```bash
 python3 markenwissen-abgleich.py              # zeigt nur an
 python3 markenwissen-abgleich.py --anwenden   # ändert nach Rückfrage
 ```
