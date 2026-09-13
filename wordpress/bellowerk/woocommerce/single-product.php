@@ -62,6 +62,47 @@ while ( have_posts() ) :
     do_action( 'woocommerce_after_single_product_summary' );
     ?>
 
+    <?php
+    /**
+     * Größenfinder, nur bei Halsbändern.
+     *
+     * Er stand bisher auf der Startseite, und die Produktseite verwies
+     * dorthin. Das ist der falsche Ort: Er senkt Retouren am stärksten,
+     * also gehört er dahin, wo die Größe gewählt wird. Eine Leine und
+     * eine Handschlaufe brauchen ihn nicht — dort wäre er nur Ballast.
+     */
+    $bellowerk_nummer = $product->get_sku();
+    if ( $bellowerk_nummer && str_starts_with( $bellowerk_nummer, 'HB-' ) ) :
+        ?>
+<section class="finder mitte rand" id="finder">
+    <div class="kopfzeile">
+      <span class="nr">04 · Größe finden</span>
+      <h2>Ein Maß genügt.</h2>
+      <p>Messen Sie den Halsumfang dort, wo das Halsband sitzt, mit zwei Fingern Platz darunter.</p>
+    </div>
+
+    <div class="finder-box">
+      <div>
+        <label for="umfang">Halsumfang des Hundes</label>
+        <div class="finder-eingabe">
+          <input id="umfang" type="number" min="24" max="70" step="0.5" value="45" inputmode="decimal">
+          <span class="einheit">Zentimeter</span>
+        </div>
+        <p class="hinweis">Zwischen zwei Größen nehmen Sie die größere. Jedes Halsband hat fünf Löcher im Abstand von 26 mm, das gleicht vier Zentimeter aus.</p>
+      </div>
+      <div class="ergebnis">
+        <div class="gr" id="groesse">M</div>
+        <dl>
+          <div style="display:contents"><dt>Breite</dt><dd id="breite">25 mm</dd></div>
+          <div style="display:contents"><dt>Verstellbereich</dt><dd id="bereich">34 bis 42 cm</dd></div>
+          <div style="display:contents"><dt>Gesamtlänge</dt><dd id="laenge">480 mm</dd></div>
+          <div style="display:contents"><dt>Empfehlung</dt><dd id="rat">Hamburg No. 1 in Größe M</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+    <?php endif; ?>
+
     <section class="abschnitt mitte rand" style="padding-block:var(--sektion)">
       <div class="schmal">
         <div class="leer">

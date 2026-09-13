@@ -124,26 +124,6 @@ table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
 .nicht li::before{content:"× ";color:var(--messing-tief)}
 .nicht p{color:var(--mute);margin-top:var(--raum-5);max-width:62ch;font-size:var(--step--1)}
 
-/* ── Größenfinder ─────────────────────────────────────────────── */
-.finder{padding-block:var(--sektion);border-top:1px solid var(--linie)}
-.finder-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--raum-8);align-items:center;
-  border:1px solid var(--linie);background:var(--flaeche);padding:clamp(24px,4vw,56px)}
-@media (max-width:860px){.finder-box{grid-template-columns:1fr;gap:var(--raum-6)}}
-.finder label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--raum-3)}
-.finder-eingabe{display:flex;align-items:center;gap:var(--raum-3);flex-wrap:wrap}
-.finder input{
-  font-family:var(--display);font-size:2rem;font-weight:500;width:130px;background:var(--nacht);
-  color:var(--ink);border:1px solid var(--linie-hell);border-radius:2px;padding:10px 14px;text-align:center;
-}
-.finder .einheit{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.1em}
-.finder .hinweis{color:var(--mute);font-size:var(--step--1);margin-top:var(--raum-4);max-width:42ch}
-.ergebnis{border-left:1px solid var(--linie);padding-left:var(--raum-7)}
-@media (max-width:860px){.ergebnis{border-left:0;border-top:1px solid var(--linie);padding-left:0;padding-top:var(--raum-6)}}
-.ergebnis .gr{font-family:var(--display);font-size:clamp(3rem,2rem + 4vw,5rem);line-height:1;font-weight:600;color:var(--messing)}
-.ergebnis dl{display:grid;grid-template-columns:auto 1fr;gap:var(--raum-2) var(--raum-5);margin:var(--raum-5) 0 0;font-family:var(--mono);font-size:12.5px}
-.ergebnis dt{color:var(--mute);letter-spacing:.06em}
-.ergebnis dd{margin:0;color:var(--ink)}
-
 /* ── Leistungen ───────────────────────────────────────────────── */
 .leistung{padding-block:var(--sektion);border-top:1px solid var(--linie)}
 .leistung-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--linie);border:1px solid var(--linie)}

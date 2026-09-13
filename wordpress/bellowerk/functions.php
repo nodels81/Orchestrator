@@ -70,22 +70,36 @@ function bellowerk_stile(): void {
 	// Themenkopf, damit WordPress das Theme erkennt. Trägt keine Regeln.
 	wp_enqueue_style( 'bellowerk-style', get_stylesheet_uri(), array( 'bellowerk-tokens' ), BELLOWERK_VERSION );
 
-	// Die Startseite trägt ihre Sektionen und den Shader selbst — beides
-	// lädt nur dort. Auf einer Produktseite wäre es totes Gewicht.
+	// Jede Datei lädt nur dort, wo sie gebraucht wird. Der Shader ist der
+	// eine schwere Effekt und bleibt auf der Startseite; der Größenfinder
+	// läuft auch auf der Produktseite und wiegt dort 2,7 KB.
+	$bellowerk_laden = static function ( string $name ) use ( $verzeichnis, $adresse ): void {
+		foreach ( array( 'css', 'js' ) as $art ) {
+			$datei = "/assets/$name.$art";
+			if ( ! file_exists( $verzeichnis . $datei ) ) {
+				continue;
+			}
+			$stand = (string) filemtime( $verzeichnis . $datei );
+			if ( 'css' === $art ) {
+				wp_enqueue_style( "bellowerk-$name", $adresse . $datei, array( 'bellowerk-tokens' ), $stand );
+			} else {
+				wp_enqueue_script( "bellowerk-$name", $adresse . $datei, array(), $stand, true );
+			}
+		}
+	};
+
 	if ( is_front_page() ) {
-		wp_enqueue_style(
-			'bellowerk-startseite',
-			$adresse . '/assets/startseite.css',
-			array( 'bellowerk-tokens' ),
-			(string) filemtime( $verzeichnis . '/assets/startseite.css' )
-		);
-		wp_enqueue_script(
-			'bellowerk-startseite',
-			$adresse . '/assets/startseite.js',
-			array(),
-			(string) filemtime( $verzeichnis . '/assets/startseite.js' ),
-			true
-		);
+		$bellowerk_laden( 'startseite' );
+		$bellowerk_laden( 'material' );
+		$bellowerk_laden( 'groessenfinder' );
+	}
+
+	// Auf der Produktseite nur der Finder, und nur bei Halsbändern.
+	if ( function_exists( 'is_product' ) && is_product() ) {
+		$bellowerk_produkt = wc_get_product( get_the_ID() );
+		if ( $bellowerk_produkt && str_starts_with( (string) $bellowerk_produkt->get_sku(), 'HB-' ) ) {
+			$bellowerk_laden( 'groessenfinder' );
+		}
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

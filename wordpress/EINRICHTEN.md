@@ -208,6 +208,25 @@ steht zusätzlich in `wordpress/produkte.py`, weil seine Seite von Hand gepflegt
 - **Hamburg No. 5, 6 und 7 fehlen.** Die Stücke sind nicht gebaut. Sie im Shop
   zu zeigen, wäre Ware, die es nicht gibt.
 
+## 9b · Den Shop zusperren, bis du freigibst
+
+Übernommen aus der Arbeit von 10 Homepage — ein Punkt, der mir gefehlt hat.
+
+Solange Fotos, Prüfdaten und die Rechtstexte offen sind, darf niemand den Shop
+zufällig finden. Zwei Wege, beide kostenlos:
+
+- **Im KAS:** Tools → Verzeichnisschutz auf das Verzeichnis der Domain legen.
+  Wirkt vor WordPress, also auch für Suchmaschinen und für jeden, der die
+  Adresse errät. Das ist der festere Weg.
+- **In WordPress:** ein kostenloses Plugin für „Coming Soon". Bequemer, aber es
+  schützt nur, was durch WordPress läuft.
+
+Für `bau.bellowerk.de` reicht zusätzlich **Einstellungen → Lesen → Suchmaschinen
+blockieren** nicht als Schutz — das ist eine Bitte an Suchmaschinen, keine
+Sperre. Wer die Adresse kennt, kommt trotzdem drauf.
+
+**Der Schutz kommt erst weg, wenn Punkt 10 vollständig abgehakt ist.**
+
 ## 10 · Vor dem Freischalten
 
 Nicht online gehen, solange einer dieser Punkte offen ist:

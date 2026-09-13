@@ -17,6 +17,21 @@ ein Werkstattfenster ohne Vorhang. Kein Blitz, kein Deckenlicht, keine helle Wan
 
 ---
 
+## Nachtrag 13.09.2026 — zwei Motive aus dem Briefing von 10 Homepage
+
+Abteilung 10 Homepage hat für denselben Shop ein Foto-Briefing mit acht Motiven
+geliefert. Sechs davon deckt die Liste unten bereits ab. Zwei fehlten:
+
+| Nr. | Motiv | Ausschnitt | Format | Verwendung |
+|---|---|---|---|---|
+| 12 | Björn oder Hände bei der Arbeit an der Werkbank, Tageslicht durchs Fenster | Halbtotale | 3:2 | Über die Werkstatt |
+| 13 | Verschleißspur nach einer Saison Praxistest, echte Gebrauchsspur, keine Retusche | Makro | 1:1 | Praxistest |
+
+Nr. 13 ist das wichtigere. Der Praxistest ist das Verkaufsargument, und ein Bild
+der echten Gebrauchsspur beweist ihn besser als jede Zahl.
+
+---
+
 ## Aufnahmeliste
 
 | Nr. | Motiv | Ausschnitt | Format | Verwendung |

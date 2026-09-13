@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# auftraege-bilder.sh — Legt die Auftraege an, die vor dem Shopstart laufen muessen:
-# Produktfotos und Produktbeschreibungen.
+# auftraege.sh — Legt die Auftraege an, die auf dem Server laufen muessen.
+# Fotos, Beschreibungen, Pruefdaten, und das Anhalten von 10 Homepage.
 #
 # Auf dem Server ausfuehren, dort liegt auftraege.json:
-#   cd /opt/bello && bash auftraege-bilder.sh
+#   cd /opt/bello && bash auftraege.sh
 #
 # Trockenlauf zuerst:
-#   bash auftraege-bilder.sh --probe
+#   bash auftraege.sh --probe
 
 set -euo pipefail
 
@@ -57,6 +57,12 @@ echo
 echo "=== Pruefdaten ==="
 anlegen "02 Produkt & Ausführung" \
   "Die echten Pruefdaten fuer den Praxistest zusammenstellen: je Modell wie viele Hunde, ueber wie viele Tage, bei welchem Wetter, welche Befunde. Auf den vier Produktseiten stehen zurzeit Platzhalter, die vor der Veroeffentlichung ersetzt werden muessen — oder die Sektion faellt weg. Erfundene Pruefzahlen sind angreifbare Werbung." \
+  "$FRIST_TEXT"
+
+echo
+echo "=== Richtungsentscheidung ==="
+anlegen "10 Homepage" \
+  "Der Storefront-Aufbau aus A-2026-011 und A-2026-012 wird NICHT weitergebaut. Entscheidung Bjoern vom 13.09.2026: Der Shop wird Richtung 03 'Nachtwerkstatt' mit eigenem Theme, gebaut im Zweig claude/ultimate-website-prompt-ira6ls. Begruendung in entscheidungen/2026-09-13-richtung-nachtwerkstatt.md. WICHTIG: Die Arbeit war nicht falsch, sondern beruhte auf einem veralteten markenwissen.py — dort stand HB-03 als 'Hamburg No.1' und 'gefertigt in Hamburg/Altes Land'. Das ist mit markenwissen-abgleich.py berichtigt. Uebernommen werden: der Kaufweg-Testplan mit neun Punkten, der Passwortschutz bis zum Start, das Foto-Briefing mit acht Motiven. Neue Aufgabe dieser Abteilung: den Kaufweg-Testplan am fertigen Shop auf bau.bellowerk.de durchlaufen, sobald er steht, und eine nummerierte Maengelliste liefern." \
   "$FRIST_TEXT"
 
 cat <<'ABSCHLUSS'

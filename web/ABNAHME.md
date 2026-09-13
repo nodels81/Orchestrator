@@ -66,6 +66,28 @@ Kontraste gegen WCAG 2.2 gerechnet.
 | 19 | Keine Geschirre, keine Handelsware, kein Preisargument, kein Einstieg über Windhunde; Preise im Rahmen | **bestanden.** Keine Geschirre. Kein Rabatt, kein Countdown, kein durchgestrichener Preis. Windhunde kommen einmal vor — als ausdrückliche Absage auf der Produktseite. Preise: 39 / 89 / 99 / 129 €, alle im Rahmen. |
 | 20 | Kein KI-erzeugtes Bild auf Produkt-, Katalog- oder Praxistestseite | **bestanden.** Es gibt überhaupt kein Bild. Jede Bildfläche trägt ihre Aufnahmeanweisung als Beschriftung. |
 
+## Kaufweg-Testplan
+
+Übernommen aus der Arbeit von Abteilung 10 Homepage (A-2026-012), weil er
+konkreter am Bestellknopf liegt als Punkt 13 des Abnahmetors. Abzuarbeiten am
+fertigen Shop auf `bau.bellowerk.de`, jeder Punkt einzeln abgehakt.
+
+| | Zu prüfen |
+|---|---|
+| 1 | **Am Handy:** Startseite laden, Ladezeit und Bildschärfe, Kopfbereich korrekt dargestellt |
+| 2 | **Navigation mobil:** Menü öffnen und schließen, jeden Punkt anklicken, Fußzeilenlinks prüfen |
+| 3 | **Produktseite:** alle Varianten durchklicken, Preisanzeige ändert sich richtig, Artikelnummer im Warenkorb sichtbar |
+| 4 | **Zustimmungsbanner:** erscheint beim ersten Aufruf, und **vor der Zustimmung lädt kein Messskript** — in der Netzwerkanalyse des Browsers nachsehen, nicht glauben |
+| 5 | **Warenkorb:** Menge ändern, Ware entfernen, Versandkosten für Deutschland korrekt berechnet |
+| 6 | **Kasse:** Testbestellung per Überweisung, Bestellknopf heißt „Zahlungspflichtig bestellen", Bestätigungsmail kommt an, 19 % Umsatzsteuer korrekt ausgewiesen |
+| 7 | **Bestellung im Adminbereich:** Status auf „in Bearbeitung", dann Storno durchspielen, prüfen ob der Kunde eine Stornobestätigung bekommt |
+| 8 | **Rechtsseiten:** von jeder Seite in höchstens zwei Klicks erreichbar, auch aus der Kasse heraus |
+| 9 | **Passwortschutz:** Shop ohne Passwort von außen nicht aufrufbar, mit Passwort vollständig nutzbar |
+
+Punkt 4 und 7 fehlten in meinem Abnahmetor. Punkt 4 ist der wichtigere: Dass
+das Banner erscheint, sagt nichts darüber, ob die Messung wirklich erst danach
+anläuft. Das sieht man nur im Netzwerkfenster.
+
 ## Was bis zur Abnahme fehlt
 
 1. Elf echte Fotos aus `web/aufnahmen/`
