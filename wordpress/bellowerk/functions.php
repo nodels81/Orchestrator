@@ -44,10 +44,17 @@ add_action( 'after_setup_theme', 'bellowerk_aufbau' );
 /**
  * Stile und Schriften.
  *
- * Die Schriften liegen im Theme, nicht bei Google. Grund: Ein Aufruf an
- * fonts.googleapis.com überträgt die IP-Adresse des Besuchers in die USA und
- * braucht dafür eine Einwilligung. Mitgeliefert entfällt das — und die Seite
- * wird schneller, weil eine Verbindung weniger aufgebaut wird.
+ * ACHTUNG, offener Punkt: Die Schriften sollen im Theme liegen und nicht bei
+ * Google — ein Aufruf an fonts.googleapis.com überträgt die IP-Adresse des
+ * Besuchers in die USA und braucht dafür eine Einwilligung.
+ *
+ * Sie liegen aber noch NICHT hier. In assets/ gibt es keine Schriftdateien und
+ * kein @font-face. tokens.css verlangt Bodoni Moda, Archivo und IBM Plex Mono,
+ * und der Browser fällt auf Georgia und die Systemschrift zurück. Die Seite
+ * steht, sieht aber nicht aus wie entworfen.
+ *
+ * Zu tun: die drei Familien als woff2 nach assets/schriften/ legen und hier
+ * per @font-face einbinden. Siehe entscheidungen/offen.md.
  */
 function bellowerk_stile(): void {
 	$verzeichnis = get_stylesheet_directory();
