@@ -32,9 +32,11 @@ DIENSTE=("${ALLE_DIENSTE[@]}")
 # wuerden wir ueberschreiben, das faellt auf. Gefaehrlich sind die mit anderem
 # Namen und gleicher Aufgabe: die liefen still nebeneinander -- zwei Leser auf
 # einem Postfach, zwei Arbeiter an einer Warteschlange.
+# posteingang steht NICHT hier drin: er kann etwas anderes als mailin.py
+# (Befehle ohne Thread, 'stand', 'ausliefern') und geht Bello-Threads aus
+# dem Weg, siehe MAILIN_BETREFF in autonom/posteingang.py.
 declare -A TUT_DAS_SCHON=(
   [lauf]="bello-orchestrator"
-  [posteingang]="bello-mailin"
 )
 # Trotzdem installieren, obwohl es schon jemand tut (ersetzt nichts, stellt
 # sich daneben -- nur nach bewusster Entscheidung):

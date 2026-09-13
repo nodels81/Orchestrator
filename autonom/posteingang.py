@@ -215,6 +215,13 @@ BEFEHLE = {
 # unterscheidet die beiden nicht — das Kennwort ist der einzige Unterschied.
 NUR_BJOERN = {"freigeben"}
 
+# mailin.py liest dasselbe Postfach und beantwortet Antworten auf
+# "[Bello] A-2026-NNN <Abteilung> — ..."-Threads. Dieselbe Mail darf nicht
+# von beiden bearbeitet werden, sonst entstehen zwei Auftraege aus einem
+# Satz. Der Betreff trennt sauber: was nach einem Bello-Thread aussieht,
+# gehoert mailin.py, alles andere uns. Regex wortgleich aus mailin.py.
+MAILIN_BETREFF = re.compile(r"\[Bello\]\s+(A-\d{4}-\d+)\s+(.+?)\s+[\u2014-]")
+
 
 def _pruefen(config: dict, absender: str, betreff: str) -> tuple[str | None, str]:
     """Gibt (Ablehnungsgrund, Rolle) zurueck. Grund None heisst: in Ordnung.
@@ -305,6 +312,12 @@ def abholen(probe: bool = False) -> int:
                 nachricht = email.message_from_bytes(daten[0][1])
                 absender = _klartext(nachricht.get("From"))
                 betreff = _klartext(nachricht.get("Subject"))
+
+                if MAILIN_BETREFF.search(betreff):
+                    # Nicht als gelesen markieren: mailin.py holt sie sich,
+                    # und Bjoern soll sie im Postfach weiter sehen.
+                    _protokoll(f"[EINGANG] mailin.py ueberlassen | Betreff: {betreff!r}")
+                    continue
 
                 grund, rolle = _pruefen(config, absender, betreff)
                 if grund:
