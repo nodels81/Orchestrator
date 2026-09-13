@@ -9,7 +9,7 @@ Type=oneshot
 User=@BENUTZER@
 WorkingDirectory=@PFAD@
 Environment=PYTHONPATH=@PFAD@
-ExecStart=@PFAD@/venv/bin/python tagesbrief.py --senden
+ExecStart=@PYTHON@ tagesbrief.py --senden
 TimeoutStartSec=300
 
 # Haerten: der Dienst darf nur in seinem eigenen Ordner schreiben.

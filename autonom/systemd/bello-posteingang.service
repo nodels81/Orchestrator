@@ -9,7 +9,7 @@ Type=oneshot
 User=@BENUTZER@
 WorkingDirectory=@PFAD@
 Environment=PYTHONPATH=@PFAD@
-ExecStart=@PFAD@/venv/bin/python autonom/posteingang.py
+ExecStart=@PYTHON@ autonom/posteingang.py
 TimeoutStartSec=120
 
 # Haerten: der Dienst darf nur in seinem eigenen Ordner schreiben.

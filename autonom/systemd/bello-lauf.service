@@ -9,7 +9,7 @@ Type=oneshot
 User=@BENUTZER@
 WorkingDirectory=@PFAD@
 Environment=PYTHONPATH=@PFAD@
-ExecStart=@PFAD@/venv/bin/python orchestrator.py
+ExecStart=@PYTHON@ orchestrator.py
 TimeoutStartSec=900
 
 # Haerten: der Dienst darf nur in seinem eigenen Ordner schreiben.

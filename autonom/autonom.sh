@@ -25,7 +25,21 @@ set -euo pipefail
 
 PFAD="${PFAD:-$PWD}"
 EINHEITEN="/etc/systemd/system"
-DIENSTE=(lauf tagesbrief posteingang waechter)
+ALLE_DIENSTE=(lauf tagesbrief posteingang waechter)
+DIENSTE=("${ALLE_DIENSTE[@]}")
+
+# Einheiten, die es hier schon gibt und die dieselbe Arbeit tun. Namensgleiche
+# wuerden wir ueberschreiben, das faellt auf. Gefaehrlich sind die mit anderem
+# Namen und gleicher Aufgabe: die liefen still nebeneinander -- zwei Leser auf
+# einem Postfach, zwei Arbeiter an einer Warteschlange.
+declare -A TUT_DAS_SCHON=(
+  [lauf]="bello-orchestrator"
+  [posteingang]="bello-mailin"
+)
+# Trotzdem installieren, obwohl es schon jemand tut (ersetzt nichts, stellt
+# sich daneben -- nur nach bewusster Entscheidung):
+#   ERZWINGEN="posteingang" bash autonom/autonom.sh
+ERZWINGEN="${ERZWINGEN:-}"
 
 rot()  { printf '\033[31m%s\033[0m\n' "$*"; }
 fett() { printf '\033[1m%s\033[0m\n' "$*"; }
@@ -33,7 +47,7 @@ fett() { printf '\033[1m%s\033[0m\n' "$*"; }
 # --- Rueckbau ------------------------------------------------------------
 if [ "${1:-}" = "--entfernen" ]; then
   fett "=== Autonom-Betrieb abbauen ==="
-  for name in "${DIENSTE[@]}"; do
+  for name in "${ALLE_DIENSTE[@]}"; do
     systemctl disable --now "bello-${name}.timer" 2>/dev/null || true
     rm -f "$EINHEITEN/bello-${name}.timer" "$EINHEITEN/bello-${name}.service"
     echo "  entfernt: bello-${name}"
@@ -55,12 +69,17 @@ cd "$PFAD"
 [ -f orchestrator.py ] || { rot "FEHLER: $PFAD ist nicht der Betriebsordner (orchestrator.py fehlt)."; exit 1; }
 [ -d autonom/systemd ] || { rot "FEHLER: autonom/systemd fehlt. Erst uebernahme.sh laufen lassen."; exit 1; }
 
-PYTHON="$PFAD/venv/bin/python"
-if [ ! -x "$PYTHON" ]; then
-  rot "FEHLER: $PYTHON fehlt."
-  echo "        Anlegen mit:  python3 -m venv venv && venv/bin/pip install anthropic"
+# Der Betriebsordner kann .venv oder venv heissen. Wir legen keinen zweiten an.
+PYTHON=""
+for kandidat in "$PFAD/.venv/bin/python" "$PFAD/venv/bin/python"; do
+  [ -x "$kandidat" ] && { PYTHON="$kandidat"; break; }
+done
+if [ -z "$PYTHON" ]; then
+  rot "FEHLER: Weder $PFAD/.venv/bin/python noch $PFAD/venv/bin/python gefunden."
+  echo "        Anlegen mit:  python3 -m venv .venv && .venv/bin/pip install anthropic"
   exit 1
 fi
+echo "Python: $PYTHON"
 
 if [ ! -f config.json ]; then
   rot "FEHLER: config.json fehlt. Vorlage: config.beispiel.json"
@@ -168,6 +187,32 @@ fi
 
 # --- Einheiten schreiben -------------------------------------------------
 echo
+echo "Pruefe, was auf diesem Server schon laeuft ..."
+GEFILTERT=()
+UEBERSPRUNGEN=()
+for name in "${DIENSTE[@]}"; do
+  fremd="${TUT_DAS_SCHON[$name]:-}"
+  if [ -n "$fremd" ] && systemctl cat "${fremd}.timer" >/dev/null 2>&1; then
+    if [[ " $ERZWINGEN " == *" $name "* ]]; then
+      rot "  ACHTUNG: bello-$name kommt NEBEN ${fremd}.timer. Beide tun dasselbe."
+      GEFILTERT+=("$name")
+    else
+      echo "  uebersprungen: bello-$name -- ${fremd}.timer macht das bereits"
+      UEBERSPRUNGEN+=("bello-$name (statt dessen laeuft ${fremd}.timer)")
+      continue
+    fi
+  else
+    GEFILTERT+=("$name")
+  fi
+done
+DIENSTE=("${GEFILTERT[@]}")
+if [ "${#DIENSTE[@]}" -eq 0 ]; then
+  echo
+  echo "Nichts zu tun: alles, was ich einrichten wuerde, laeuft hier schon."
+  exit 0
+fi
+
+echo
 echo "Schreibe systemd-Einheiten nach $EINHEITEN ..."
 
 # ProtectHome sperrt /home und /root. Liegt der Betrieb dort, muss es aus.
@@ -183,6 +228,7 @@ for name in "${DIENSTE[@]}"; do
     [ -f "$quelle" ] || { rot "FEHLER: $quelle fehlt."; exit 1; }
     sed -e "s|@PFAD@|$PFAD|g" \
         -e "s|@BENUTZER@|$BENUTZER|g" \
+        -e "s|@PYTHON@|$PYTHON|g" \
         -e "s|^ProtectHome=true$|ProtectHome=$SCHUTZ_HOME|" \
         "$quelle" > "$EINHEITEN/bello-${name}.${art}"
   done
@@ -226,29 +272,29 @@ echo
 fett "=== Eingerichtet ==="
 systemctl list-timers 'bello-*' --no-pager || true
 
-cat <<'ABSCHLUSS'
+if [ "${#UEBERSPRUNGEN[@]}" -gt 0 ]; then
+  echo
+  fett "Nicht eingerichtet, weil es hier schon jemand tut:"
+  for zeile in "${UEBERSPRUNGEN[@]}"; do echo "  $zeile"; done
+fi
+
+cat <<ABSCHLUSS
 
 Naechste Schritte, in dieser Reihenfolge:
 
-  1. Mailweg pruefen (sendet eine Testmail):
-       venv/bin/python orchestrator_mail.py --test
+  1. Posteingang trocken pruefen (liest, fuehrt nichts aus):
+       $PYTHON autonom/posteingang.py --probe
 
-  2. Posteingang trocken pruefen (liest, fuehrt nichts aus):
-       venv/bin/python autonom/posteingang.py --probe
+  2. Waechter trocken pruefen:
+       $PYTHON autonom/waechter.py --probe
 
-  3. Waechter trocken pruefen:
-       venv/bin/python autonom/waechter.py --probe
-
-  4. Vom Handy eine Mail an die Orchestrator-Adresse schicken.
+  3. Vom Handy eine Mail an die Orchestrator-Adresse schicken.
      Betreff: irgendwas, in dem das Kennwort vorkommt
      Text, erste Zeile:  stand
      Innerhalb von fuenf Minuten kommt die Antwort zurueck.
 
 Nachsehen, wenn etwas klemmt:
        systemctl list-timers 'bello-*'
-       journalctl -u bello-lauf.service -n 50
+       journalctl -u bello-waechter.service -n 50
        tail -40 logs/posteingang.log
-
-Abbauen:
-       bash autonom/autonom.sh --entfernen
 ABSCHLUSS
