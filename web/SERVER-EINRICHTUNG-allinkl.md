@@ -16,8 +16,9 @@ einträgst — nicht, dass du es mir schickst.
 
 | # | Schritt | Wo | Dauer | Blockiert was |
 |---|---|---|---|---|
-| 1 | Was liegt heute auf bellowerk.de? | Browser | 5 min | alles Weitere |
-| 2 | Tarif Premium buchen | all-inkl.com | 10 min | den ganzen Rest |
+| 0 | Ins KAS einloggen | kas.all-inkl.com | 5 min | alles Weitere |
+| 1 | Was liegt heute auf bellowerk.de? | Browser | 5 min | Domainumzug |
+| ~~2~~ | ~~Tarif Premium buchen~~ | all-inkl.com | — | **erledigt 13.09.** |
 | 3 | Domain anbinden oder umziehen | KAS | 10 min + Wartezeit | SSL, Mail |
 | 4 | Baustellen-Adresse anlegen | KAS | 5 min | Aufbau ohne Publikum |
 | 5 | PHP einstellen | KAS | 5 min | WordPress |
@@ -31,6 +32,43 @@ einträgst — nicht, dass du es mir schickst.
 
 KAS = das Kunden-Administrations-System von All-Inkl, `https://kas.all-inkl.com`.
 Die Menünamen unten sind so, wie sie dort heißen; kleine Abweichungen bitte nicht wundern.
+
+---
+
+## 0. Reinkommen
+
+All-Inkl hat **zwei** Anmeldungen. Die verwechselt man einmal, und dann sucht man eine halbe
+Stunde nach dem FTP-Zugang an der falschen Stelle.
+
+| Was du willst | Wo | Anmeldung |
+|---|---|---|
+| Rechnungen, Vertrag, Tarif | `all-inkl.com` → *Login* → **Mitgliedsbereich** | Kundennummer oder E-Mail + Kennwort aus der Bestellung |
+| **Alles Technische**: Domains, FTP, Datenbank, SSL, Mail, WordPress | **`https://kas.all-inkl.com`** | KAS-Login (meist `w01xxxxx`) + KAS-Kennwort |
+
+Für alles in dieser Anleitung brauchst du das **KAS**. Das ist die zweite Zeile.
+
+**Die Zugangsdaten stehen in der Begrüßungsmail von All-Inkl**, die nach der Bestellung kam —
+Betreff sinngemäß „Ihre Zugangsdaten" oder „Ihre Vertragsdaten". Darin stehen KAS-Login,
+KAS-Kennwort und die Kontonummer. Nicht da? Erst im Spam nachsehen, dann auf
+`kas.all-inkl.com` → *Passwort vergessen*.
+
+Beim ersten Einloggen, in dieser Reihenfolge:
+
+1. **Kennwort ändern** und das neue sofort in den Passwortmanager. Das Kennwort aus der Mail
+   stand im Klartext in deinem Postfach — das ist keines, mit dem man arbeitet.
+2. **Zwei-Faktor-Anmeldung einschalten**, falls angeboten. Über diesen Zugang laufen später
+   Shop, Bestellungen und Kundendaten; wer hier reinkommt, kommt überall rein.
+3. Einmal durchs Menü scrollen und die sechs Punkte suchen, um die es unten geht:
+   **Domain**, **Subdomain**, **FTP**, **Datenbank**, **E-Mail**, **Tools**, **Software**.
+
+### Die Adresse, unter der du sofort etwas sehen kannst
+
+Zu jedem All-Inkl-Konto gehört von Haus aus eine technische Adresse, meist in der Form
+`wXXXXXXX.kasserver.com` (die Kennung steht im KAS). Die funktioniert **ab der ersten Minute**,
+ohne dass die Domain umgezogen ist.
+
+Das ist unsere Baustelle: darauf entsteht der Shop, während bellowerk.de unberührt bleibt.
+Schritt 4 kannst du dir damit sparen oder aufheben, bis die Domain da ist.
 
 ---
 
@@ -50,9 +88,9 @@ Schick mir davon einfach einen Screenshot, dann weiß ich, womit wir es zu tun h
 
 ---
 
-## 2. Tarif Premium buchen
+## 2. Tarif Premium — erledigt am 13.09.2026
 
-Bei All-Inkl unter `all-inkl.com` bestellen. Premium deshalb:
+Gebucht. Premium war aus diesen Gründen richtig:
 
 - **SSH-Zugang** — damit kann der Shop sauber aufgespielt und aktualisiert werden, statt Dateien
   einzeln per FTP zu schieben.
@@ -60,8 +98,7 @@ Bei All-Inkl unter `all-inkl.com` bestellen. Premium deshalb:
   (herr-bello-und-frau-wuff, hundebetreuung-hamburg).
 - PHP in aktueller Fassung, MariaDB-Datenbanken, kostenloses SSL, tägliche Sicherung.
 
-Nach der Bestellung kommt eine Mail mit den KAS-Zugangsdaten. **Die gehören in den
-Passwortmanager**, nicht in eine Notiz-App und nicht in einen Chat.
+Die Zugangsdaten kamen per Mail — siehe Schritt 0.
 
 ---
 
