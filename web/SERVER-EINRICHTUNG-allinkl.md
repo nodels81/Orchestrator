@@ -72,6 +72,29 @@ Schritt 4 kannst du dir damit sparen oder aufheben, bis die Domain da ist.
 
 ---
 
+## Stand: der Shop läuft (13.09.2026)
+
+Auf der Baustelle steht ein vollständiges WordPress mit WooCommerce. Aufgesetzt vom
+netcup-Server aus, über SSH mit Schlüssel, ohne einen Klick im Browser.
+
+| | |
+|---|---|
+| Baustelle | `bau.bellowerk.de`, eigenes Verzeichnis, Let's Encrypt |
+| Drüben vorhanden | PHP 8.3.33, WP-CLI 2.12, MariaDB 10.11, `mysql`, `git`, `curl` |
+| Eingerichtet | WordPress de_DE, WooCommerce, Euro, Preise inkl. Steuer, Regelbesteuerung |
+| Ausgesperrt | Suchmaschinen (`blog_public=0`), bis bewusst umgelegt wird |
+| Entfernt | Akismet, Hello Dolly |
+| Vorläufig | Theme *Storefront* — es weicht dem eigenen, sobald es fertig ist |
+
+Was als Nächstes kommt: das eigene Theme, die sieben Stücke als Produkte, Steuerzonen für
+Drittländer (dort **keine** deutsche Umsatzsteuer), Versandzonen nach der DHL-Liste, und die
+fünf Rechtsseiten als echte Seiten.
+
+Noch nicht erledigt und weiterhin die eigentliche Bremse: **die elf Fotos** und die **echten
+Prüfdaten**. Ohne sie geht kein Shop live, gleich wie fertig die Technik ist.
+
+---
+
 ## Der kurze Weg — entschieden am 13.09.2026
 
 Die lange Liste weiter unten bleibt als Nachschlagewerk stehen. Gemacht wird es aber so:
