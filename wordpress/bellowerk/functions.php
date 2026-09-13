@@ -63,6 +63,24 @@ function bellowerk_stile(): void {
 	// Themenkopf, damit WordPress das Theme erkennt. Trägt keine Regeln.
 	wp_enqueue_style( 'bellowerk-style', get_stylesheet_uri(), array( 'bellowerk-tokens' ), BELLOWERK_VERSION );
 
+	// Die Startseite trägt ihre Sektionen und den Shader selbst — beides
+	// lädt nur dort. Auf einer Produktseite wäre es totes Gewicht.
+	if ( is_front_page() ) {
+		wp_enqueue_style(
+			'bellowerk-startseite',
+			$adresse . '/assets/startseite.css',
+			array( 'bellowerk-tokens' ),
+			(string) filemtime( $verzeichnis . '/assets/startseite.css' )
+		);
+		wp_enqueue_script(
+			'bellowerk-startseite',
+			$adresse . '/assets/startseite.js',
+			array(),
+			(string) filemtime( $verzeichnis . '/assets/startseite.js' ),
+			true
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

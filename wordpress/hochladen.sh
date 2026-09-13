@@ -89,6 +89,8 @@ AUSNAHMEN=(
   --exclude '*.swp'
   --exclude '.git*'
   --exclude 'node_modules'
+  --exclude '_*'          # Probedateien: _probe.html und Verwandte
+  --exclude '*.test.*'
 )
 
 # --delete räumt auf dem Server auf, was hier gelöscht wurde. Beschränkt auf

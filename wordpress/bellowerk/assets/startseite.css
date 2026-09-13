@@ -1,0 +1,154 @@
+/* ═══════════════════════════════════════════════════════════════════
+   startseite.css — Die Sektionen der Startseite.
+
+   Ausgelesen aus web/startseite-nachtwerkstatt.html, nicht abgetippt.
+   Grundlagen, Kopfleiste, Karte und Fußzeile stehen in tokens.css und
+   fehlen hier bewusst — zwei Kopien laufen auseinander.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Kopfbereich ──────────────────────────────────────────────── */
+.hero{position:relative;padding-block:clamp(56px,8vw,120px) clamp(36px,5vw,72px);text-align:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;left:50%;top:-30%;width:min(1100px,120%);height:120%;
+  transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(52% 44% at 50% 40%,rgb(227 195 118/.13),transparent 70%);
+}
+.augenbraue{position:relative;font-family:var(--mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
+.hero h1{
+  position:relative;font-family:var(--display);font-size:var(--step-5);
+  line-height:.99;letter-spacing:-.022em;margin-block:var(--raum-5) 0;
+  max-width:16ch;margin-inline:auto;
+}
+.hero h1 b{
+  font-weight:600;
+  background:linear-gradient(94deg,#7E6029 0%,var(--messing) 26%,var(--messing-licht) 44%,#C79E4A 62%,#7A5C24 100%);
+  background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:glanz 9s cubic-bezier(.5,0,.4,1) infinite;
+}
+@keyframes glanz{0%,62%{background-position:112% 0}86%,100%{background-position:-12% 0}}
+.hero-lead{position:relative;color:var(--mute);max-width:52ch;margin:var(--raum-5) auto 0;font-size:var(--step-1);line-height:1.6}
+.knopfreihe{position:relative;display:flex;gap:var(--raum-3);justify-content:center;flex-wrap:wrap;margin-top:var(--raum-7)}
+.knopf{
+  font-family:var(--sans);font-weight:600;font-size:var(--step--1);letter-spacing:.11em;text-transform:uppercase;
+  padding:15px 26px;border-radius:2px;cursor:pointer;border:1px solid transparent;
+  transition:transform var(--mikro) var(--raus),background var(--klein) ease,border-color var(--klein) ease;
+}
+.knopf-voll{
+  background:linear-gradient(180deg,#F0DCA8,var(--messing) 42%,#B08D38);color:#171008;
+  box-shadow:0 1px 1px rgb(0 0 0/.4),0 10px 22px -14px rgb(227 195 118/.6),inset 0 1px 0 rgb(255 255 255/.42);
+}
+.knopf-voll:hover{transform:translateY(-1px)}
+.knopf-leer{background:transparent;border-color:var(--linie-hell);color:var(--ink)}
+.knopf-leer:hover{border-color:var(--messing-tief)}
+
+/* ── Materialansicht (der eine schwere Effekt) ────────────────── */
+.material-buehne{position:relative;margin-top:clamp(30px,4vw,56px);border-block:1px solid var(--linie)}
+#leder{display:block;width:100%;height:clamp(200px,32vw,380px);background:
+  radial-gradient(120% 130% at 32% 22%,#4A3B27,#100D0A 74%);}
+#leder.aus{background:
+  radial-gradient(120% 130% at 32% 22%,#5A4830,#100D0A 76%),var(--korn);
+  background-blend-mode:soft-light,normal;}
+.material-schild{
+  position:absolute;left:var(--rand);bottom:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);
+  background:rgb(14 12 10/.55);padding:6px 10px;border-radius:2px;
+}
+.material-schild b{color:var(--messing);font-weight:500}
+
+/* ── Abschnittsköpfe ──────────────────────────────────────────── */
+section{position:relative;z-index:1}
+.kopfzeile{display:flex;align-items:baseline;gap:var(--raum-5);margin-bottom:var(--raum-7);flex-wrap:wrap}
+.kopfzeile h2{font-family:var(--display);font-size:var(--step-3);letter-spacing:-.018em;line-height:1.05}
+.kopfzeile .nr{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--messing-tief);white-space:nowrap}
+.kopfzeile p{color:var(--mute);max-width:46ch;font-size:var(--step-0)}
+
+/* ── Praxistest ───────────────────────────────────────────────── */
+.pruef{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.pruef-tabelle-huelle{overflow-x:auto}
+table.pruef-tabelle{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px;min-width:640px}
+table.pruef-tabelle th{
+  text-align:left;font-weight:500;color:var(--messing-tief);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;padding:0 var(--raum-5) 10px 0;border-bottom:1px solid var(--linie-hell);white-space:nowrap;
+}
+table.pruef-tabelle td{padding:14px var(--raum-5) 14px 0;border-bottom:1px solid var(--linie);vertical-align:top;color:var(--mute)}
+table.pruef-tabelle td:first-child{color:var(--ink)}
+table.pruef-tabelle tr{transition:background var(--mikro) ease}
+table.pruef-tabelle tbody tr:hover{background:var(--flaeche)}
+.kennzahlen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--linie);margin-top:var(--raum-7);border:1px solid var(--linie)}
+@media (max-width:700px){.kennzahlen{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kennzahl{background:var(--flaeche);padding:var(--raum-5) var(--raum-4)}
+.kennzahl b{display:block;font-family:var(--display);font-size:clamp(1.9rem,1.3rem + 2.2vw,2.9rem);font-weight:500;letter-spacing:-.02em;color:var(--messing)}
+.kennzahl span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:var(--raum-2)}
+
+/* ── Kollektion ───────────────────────────────────────────────── */
+.kollektion{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--linie);border:1px solid var(--linie)}
+@media (max-width:1000px){.raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.raster{grid-template-columns:1fr}}
+.karte{background:var(--flaeche);padding:var(--raum-5);display:flex;flex-direction:column;gap:var(--raum-3);transition:background var(--klein) ease}
+.karte:hover{background:var(--flaeche-hoch)}
+.bildplatz{
+  position:relative;aspect-ratio:5/4;border:1px solid var(--linie);border-radius:2px;overflow:hidden;
+  display:flex;align-items:flex-end;padding:12px;
+  background-image:var(--korn),var(--flaeche-bild);background-blend-mode:soft-light,normal;
+  transition:transform var(--gross) var(--raus);
+}
+.karte:hover .bildplatz{transform:translateY(-3px)}
+.bildplatz span{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;line-height:1.5;
+  background:rgb(0 0 0/.5);color:#E9E1D4;padding:5px 8px;border-radius:2px;
+}
+.karte h3{font-family:var(--display);font-size:var(--step-2);font-weight:500;letter-spacing:-.005em;line-height:1.1}
+.karte-nr{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--messing-tief);margin-top:2px}
+.herkunft{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border:1px solid var(--linie);border-left:2px solid var(--messing-tief);background:var(--flaeche);padding:12px 16px;margin-bottom:var(--raum-6);display:inline-block}
+.herkunft b{color:var(--ink);font-weight:500}
+.karte p{color:var(--mute);font-size:var(--step--1);line-height:1.55}
+.karte-fuss{display:flex;align-items:baseline;justify-content:space-between;gap:var(--raum-3);margin-top:auto;padding-top:var(--raum-3)}
+.karte-preis{font-family:var(--display);font-size:1.25rem;font-weight:500;color:var(--messing)}
+.karte-mehr{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--linie-hell);padding-bottom:2px;transition:color var(--mikro) ease,border-color var(--mikro) ease}
+.karte:hover .karte-mehr{color:var(--messing);border-color:var(--messing-tief)}
+
+/* ── Material und Ausschlüsse ─────────────────────────────────── */
+.werkstoff{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.werkstoff-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--raum-7)}
+@media (max-width:860px){.werkstoff-raster{grid-template-columns:1fr;gap:var(--raum-6)}}
+.werkstoff-raster h3{font-family:var(--display);font-size:var(--step-2);letter-spacing:-.01em}
+.werkstoff-raster .kenn{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--messing-tief);display:block;margin-bottom:var(--raum-3)}
+.werkstoff-raster p{color:var(--mute);margin-top:var(--raum-3);font-size:var(--step--1);line-height:1.65}
+.nicht{
+  margin-top:var(--raum-8);border:1px solid var(--linie);border-left:2px solid var(--messing-tief);
+  background:var(--flaeche);padding:var(--raum-6) var(--raum-6);
+}
+.nicht h3{font-family:var(--display);font-size:var(--step-2);margin-bottom:var(--raum-4)}
+.nicht ul{display:flex;flex-wrap:wrap;gap:var(--raum-3) var(--raum-5);font-family:var(--mono);font-size:12px;color:var(--mute)}
+.nicht li::before{content:"× ";color:var(--messing-tief)}
+.nicht p{color:var(--mute);margin-top:var(--raum-5);max-width:62ch;font-size:var(--step--1)}
+
+/* ── Größenfinder ─────────────────────────────────────────────── */
+.finder{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.finder-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--raum-8);align-items:center;
+  border:1px solid var(--linie);background:var(--flaeche);padding:clamp(24px,4vw,56px)}
+@media (max-width:860px){.finder-box{grid-template-columns:1fr;gap:var(--raum-6)}}
+.finder label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--raum-3)}
+.finder-eingabe{display:flex;align-items:center;gap:var(--raum-3);flex-wrap:wrap}
+.finder input{
+  font-family:var(--display);font-size:2rem;font-weight:500;width:130px;background:var(--nacht);
+  color:var(--ink);border:1px solid var(--linie-hell);border-radius:2px;padding:10px 14px;text-align:center;
+}
+.finder .einheit{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.1em}
+.finder .hinweis{color:var(--mute);font-size:var(--step--1);margin-top:var(--raum-4);max-width:42ch}
+.ergebnis{border-left:1px solid var(--linie);padding-left:var(--raum-7)}
+@media (max-width:860px){.ergebnis{border-left:0;border-top:1px solid var(--linie);padding-left:0;padding-top:var(--raum-6)}}
+.ergebnis .gr{font-family:var(--display);font-size:clamp(3rem,2rem + 4vw,5rem);line-height:1;font-weight:600;color:var(--messing)}
+.ergebnis dl{display:grid;grid-template-columns:auto 1fr;gap:var(--raum-2) var(--raum-5);margin:var(--raum-5) 0 0;font-family:var(--mono);font-size:12.5px}
+.ergebnis dt{color:var(--mute);letter-spacing:.06em}
+.ergebnis dd{margin:0;color:var(--ink)}
+
+/* ── Leistungen ───────────────────────────────────────────────── */
+.leistung{padding-block:var(--sektion);border-top:1px solid var(--linie)}
+.leistung-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--linie);border:1px solid var(--linie)}
+@media (max-width:760px){.leistung-raster{grid-template-columns:1fr}}
+.leistung-feld{background:var(--flaeche);padding:var(--raum-6);transition:background var(--klein) ease}
+.leistung-feld:hover{background:var(--flaeche-hoch)}
+.leistung-feld h3{font-family:var(--display);font-size:var(--step-2);margin-bottom:var(--raum-3)}
+.leistung-feld p{color:var(--mute);font-size:var(--step--1)}

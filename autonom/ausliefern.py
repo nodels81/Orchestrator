@@ -151,6 +151,7 @@ def uebertragen(angaben: dict, probe: bool = False) -> tuple[bool, str]:
     befehl = [
         "rsync", "-az", "--delete", "--itemize-changes",
         "--exclude", ".DS_Store", "--exclude", "*.swp", "--exclude", ".git*",
+        "--exclude", "_*", "--exclude", "*.test.*",
         "-e", "ssh",
         QUELLE + "/",
         f"{angaben['benutzer']}@{angaben['host']}:{angaben['pfad']}/",
