@@ -72,6 +72,68 @@ Schritt 4 kannst du dir damit sparen oder aufheben, bis die Domain da ist.
 
 ---
 
+## Der kurze Weg — entschieden am 13.09.2026
+
+Die lange Liste weiter unten bleibt als Nachschlagewerk stehen. Gemacht wird es aber so:
+
+| Wer | Was |
+|---|---|
+| **Björn** | vier Dinge im KAS, einmalig, zusammen etwa eine Viertelstunde |
+| **der netcup-Server** | alles Übrige, per KAS-API und SSH, wiederholbar |
+
+Der Agent wohnt weiter auf dem netcup-Server unter `/opt/bello`. Auf den Webspace wird er nicht
+installiert — das geht dort nicht und ist auch nicht nötig. Er liefert dorthin.
+
+### Deine vier Dinge
+
+1. **KAS-API einschalten.** `kas.all-inkl.com` → *Tools* → *API*. Einschalten, und falls dort ein
+   Feld für erlaubte IP-Adressen steht: die feste Adresse des netcup-Servers eintragen. Dann
+   nützt der Zugang niemandem, der ihn irgendwo anders einsetzt.
+2. **SSH-Zugang einschalten** und den Schlüssel hinterlegen, den der Server dir gleich ausgibt:
+   *Tools* → *SSH-Zugang*.
+3. **Die KAS-Zugangsdaten auf dem netcup-Server hinterlegen** — nicht hier im Chat:
+   ```bash
+   install -m 600 /dev/null /etc/bello/kas.env
+   nano /etc/bello/kas.env
+   # KAS_USER=w01xxxxx
+   # KAS_PASSWORD=...
+   ```
+   Die Datei gehört root, ist per `.gitignore` ausgeschlossen und wird von keinem Skript
+   ausgegeben.
+4. **Sagen, dass es losgehen kann.** Den Rest fährt der Server.
+
+### Was der Server danach selbst macht
+
+```bash
+cd /opt/bello && git pull
+
+# einmalig: Schlüssel erzeugen, öffentlichen Teil ausgeben (der darf in den Chat)
+bash web/betrieb/schluessel-fuer-allinkl.sh
+
+venv/bin/pip install zeep
+venv/bin/python web/betrieb/kas.py --stand          # Konto auslesen, nichts ändern
+venv/bin/python web/betrieb/kas.py --einrichten     # zeigt nur, was es täte
+venv/bin/python web/betrieb/kas.py --einrichten --wirklich
+```
+
+Damit entstehen Datenbank, Baustellen-Subdomain, der FTP-Zugang fürs Aufspielen und das Postfach.
+Danach, über SSH: WordPress, WooCommerce, das eigene Theme, die sieben Stücke, Steuerzonen,
+Versandzonen und die Rechtsseiten.
+
+**`--stand` läuft zuerst und ändert nichts.** Ein erster Lauf gegen ein fremdes System ist ein
+Lauf zum Zusehen. Und `--einrichten` ohne `--wirklich` sagt nur an, was es vorhätte.
+
+### Was trotzdem bei dir bleibt
+
+Die API kann viel, aber nicht alles, und manches soll sie auch nicht:
+
+- **Tarif und Vertrag** — nur im Mitgliedsbereich
+- **Domainumzug** mit AuthCode — das ist eine Willenserklärung, kein Skript
+- **SSL freischalten** — ein Klick, siehe Schritt 7
+- **Alles, was Geld kostet** — dabei bleibt es, wie überall in diesem Betrieb
+
+---
+
 ## 1. Erst nachsehen: was liegt heute auf bellowerk.de?
 
 Steht im offenen Register und ist wirklich der erste Schritt — **von hier aus komme ich nicht
