@@ -65,6 +65,9 @@ Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
 - [ ] Startseite nach WordPress portieren. Kopfbereich und Kollektion stehen im Theme; Materialansicht mit Shader, Prüfbericht, Größenfinder und Materialkunde liegen noch als HTML in web/startseite-nachtwerkstatt.html. Größte offene Arbeit am Theme
 - [ ] SSH-Schlüssel für den Webspace erzeugen und im KAS hinterlegen. Ohne ihn läuft hochladen.sh nicht — und ein Passwort will das Skript bewusst nicht
 
+- [ ] Unterdomain `test.bellowerk.de` im KAS anlegen, zweite WordPress-Installation darauf, in WordPress auf **noindex** stellen. Erst danach kann der Agent ausliefern. Siehe autonom/README.md
+- [ ] Abschnitt `ausliefern` in config.json ausfüllen: Host, Benutzer, Pfad und Adresse für Test und Shop. Vorlage in config.beispiel.json
+
 ## Marke
 
 - [ ] Finden Gassi-Service, Pension und Training tatsächlich in Hamburg statt, oder im Alten Land? Wenn in Hamburg, darf "in Hamburg geprüft" zusätzlich dastehen — das ist ein starkes Argument, das zurzeit verschenkt wird. Tatsachenfrage, siehe Nachtrag in konzepte/kollektion-01-hamburg.md

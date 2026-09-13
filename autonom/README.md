@@ -76,6 +76,69 @@ nicht beantwortet, damit der Server nicht auf gefälschte Absender zurückschrei
 
 Schick das Kennwort nicht per Mail. Es steht in `config.json`, Rechte 600.
 
+## Ausliefern mit Freigabe
+
+Der Agent darf jederzeit auf die **Testdomain**. Auf den **echten Shop** kommt
+nichts ohne dein Wort.
+
+```
+Auftrag  →  Agent arbeitet  →  test.bellowerk.de  →  Mail an dich
+                                                        ↓
+                                     du siehst es an  →  "freigeben <Kennung>"
+                                                        ↓
+                                                   bellowerk.de
+```
+
+| Dienst | Was er tut |
+|---|---|
+| `ausliefern.py --ziel test` | Prüft, überträgt, ruft die Seite ab, schickt dir Kennung und Adresse |
+| `ausliefern.py --ziel live --kennung K` | Nur mit der Kennung, die vorher auf der Testdomain stand |
+| `ausliefern.py --stand` | Was wartet auf Freigabe |
+
+Per Mail an den Orchestrator, erste Zeile im Text:
+
+```
+ausliefern              →  auf die Testdomain
+freigeben 20260913-1420-9acb87b-4f2a   →  auf den Shop
+```
+
+### Warum die Kennung
+
+Ohne sie gäbst du „den Stand von eben" frei. Zwischen deinem Blick auf die
+Testdomain und deiner Antwort kann der Agent zweimal weitergebaut haben — dann
+ginge etwas live, das nie jemand gesehen hat. Die Kennung bindet die Freigabe an
+genau den Stand, der im Bild war.
+
+Sie besteht aus Zeitstempel auf die Sekunde, Commit und vier Zufallszeichen.
+Die Zufallszeichen sind der Grund, warum zwei Auslieferungen in derselben
+Sekunde nicht dieselbe Kennung bekommen können.
+
+**`freigeben` ohne Kennung liefert nichts aus**, sondern antwortet mit der
+Kennung, die gerade wartet. Eine falsche Kennung wird abgewiesen, und der
+wartende Stand bleibt unberührt.
+
+### Was passiert, wenn es schiefgeht
+
+Vor jeder Auslieferung auf den **Shop** wird der laufende Stand auf dem Server
+weggepackt. Danach wird die Seite wirklich abgerufen — ein gelungenes `rsync`
+heißt nicht, dass die Seite läuft, ein PHP-Fehler zur Laufzeit zeigt sich erst
+im Browser. Geprüft wird auf HTTP 200 **und** darauf, dass die Herkunftsangabe
+im Text steht: fehlt sie, ist das Theme nicht aktiv.
+
+Scheitert die Prüfung, wird der Shop **automatisch zurückgesetzt** und du
+bekommst eine Mail. Auf der Testdomain bleibt der kaputte Stand stehen — dort
+soll man ihn ja ansehen können.
+
+### Einrichten
+
+Im KAS eine Unterdomain `test.bellowerk.de` anlegen, zweite WordPress-Installation
+darauf, dann in `config.json` den Abschnitt `ausliefern` ausfüllen. Vorlage steht
+in `config.beispiel.json`.
+
+**Die Testdomain gehört auf `noindex`**, sonst steht sie irgendwann neben dem
+echten Shop in der Suche. In WordPress: Einstellungen → Lesen → Suchmaschinen
+blockieren.
+
 ## Einrichten
 
 Auf dem Server, als root, **nach** `sicherung.sh`:

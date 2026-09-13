@@ -94,7 +94,13 @@ def _befehl_stand(_rest: str) -> str:
     puffer = io.StringIO()
     with redirect_stdout(puffer):
         orchestrator.stand_zeigen()
-    return puffer.getvalue() or "Keine Auftraege."
+    text = puffer.getvalue() or "Keine Auftraege."
+    try:
+        import ausliefern
+        text += "\n\n" + ausliefern.stand_text()
+    except Exception:
+        pass  # Auslieferung noch nicht eingerichtet — der Stand gilt trotzdem.
+    return text
 
 
 def _befehl_wochenbericht(_rest: str) -> str:
@@ -130,6 +136,43 @@ def _befehl_auftrag(rest: str) -> str:
             "Der naechste Lauf nimmt ihn auf.")
 
 
+def _befehl_ausliefern(_rest: str) -> str:
+    """Auf die Testdomain. Nie auf den Shop — dafuer gibt es 'freigeben'."""
+    import ausliefern
+    code = ausliefern.ausliefern("test")
+    if code == 0:
+        return ("Auf die Testdomain ausgeliefert. Eine eigene Mail mit Kennung "
+                "und Adresse ist unterwegs.\n\n" + ausliefern.stand_text())
+    return ("Die Auslieferung ist gescheitert. Einzelheiten stehen in der "
+            "Fehlermail und in logs/ausliefern.log.")
+
+
+def _befehl_freigeben(rest: str) -> str:
+    """Gibt genau die Kennung frei, die vorher auf der Testdomain stand."""
+    import ausliefern
+    wartend = ausliefern.zustand_laden().get("wartet_auf_freigabe")
+    if not wartend:
+        return "Es wartet nichts auf Freigabe.\n\n" + ausliefern.stand_text()
+
+    kennung = rest.strip() or None
+    if kennung and kennung != wartend:
+        return (f"Die Kennung {kennung!r} passt nicht.\n"
+                f"Auf Freigabe wartet: {wartend}\n\n"
+                "Nichts wurde ausgeliefert. Schreib die Kennung genau so, wie sie "
+                "in der Mail steht — sie bindet die Freigabe an den Stand, den du "
+                "wirklich gesehen hast.")
+    if not kennung:
+        return (f"Bitte die Kennung mitschicken:\n\n    freigeben {wartend}\n\n"
+                "Ohne Kennung gebe ich nichts frei. Zwischen deinem Blick auf die "
+                "Testdomain und dieser Mail kann ein neuer Stand entstanden sein.")
+
+    code = ausliefern.ausliefern("live", kennung)
+    if code == 0:
+        return f"Freigegeben und auf den Shop gebracht: {kennung}"
+    return ("Die Auslieferung auf den Shop ist gescheitert. Wenn eine Sicherung "
+            "griff, steht der vorherige Stand wieder. Einzelheiten in der Fehlermail.")
+
+
 def _befehl_hilfe(_rest: str) -> str:
     return (
         "Befehle. Einer pro Mail, in der ersten Zeile des Textes.\n"
@@ -138,7 +181,12 @@ def _befehl_hilfe(_rest: str) -> str:
         "  brief            Den Tagesbrief sofort schicken\n"
         "  wochenbericht    Die Wochenuebersicht\n"
         "  auftrag <Abteilung> | <Ziel> [| JJJJ-MM-TT]\n"
+        "  ausliefern       Den aktuellen Stand auf die Testdomain bringen\n"
+        "  freigeben <Kennung>  Den geprueften Stand auf den Shop bringen\n"
         "  hilfe            Diese Liste\n\n"
+        "Die Kennung steht in der Mail von der Testdomain. Ohne sie wird nichts\n"
+        "freigegeben: zwischen deinem Blick und der Freigabe kann ein neuer Stand\n"
+        "entstanden sein, und dann ginge etwas live, das niemand gesehen hat.\n\n"
         "Absichtlich nicht vorhanden: Shell, Dateien schreiben, Geld ausgeben,\n"
         "Bestellungen ausloesen. Das bleibt bei dir."
     )
@@ -150,6 +198,8 @@ BEFEHLE = {
     "tagesbrief": _befehl_brief,
     "wochenbericht": _befehl_wochenbericht,
     "auftrag": _befehl_auftrag,
+    "ausliefern": _befehl_ausliefern,
+    "freigeben": _befehl_freigeben,
     "hilfe": _befehl_hilfe,
 }
 
