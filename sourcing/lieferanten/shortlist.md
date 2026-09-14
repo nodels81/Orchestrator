@@ -87,3 +87,26 @@ Rollschnalle 0,30–1,00 USD; Buchschraube ab 0,03 USD.
 1. Björn bestätigt Startwerte in HB-01/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
 2. Einkäufer schickt Vorlage 01 an Prio-1/2 der Gruppe A (5 Fabriken), PATCH-01-RFQ an Yongfu + Haixinda.
 3. Nach 3 Werktagen nachfassen (Vorlage 02), Angebote in Tabelle, Björn entscheidet über Muster.
+
+## E) Leder-Rohmaterial Europa (Ergänzung 14. September 2026)
+
+Auftrag Björn: Lederproben aus China, wenn möglich auch aus Polen, dazu der deutsche Lederhandel
+von früher. Details, Kontakte und sendefertige Nachrichten in `lederproben-2026-09.md`.
+
+| Prio | Firma | Ort | Typ | Warum | Kontakt |
+|---|---|---|---|---|---|
+| 1 | maly-leder (Christoph Kabik) | Scheinfeld, DE | Handel mit eigener Fettleder-Linie | Björns früherer Lieferant; große Fettleder-Auswahl, Meterware/Endlosriemen, baut selbst Hundezubehör → auch nach Anfertigung fragen | info@maly-leder.de |
+| 1 | Garbarnia Leja | Nowy Targ, PL | Gerberei | pflanzlich gegerbte Rind-/Kalbleder 1–6 mm, englische Website | garbarnia.leja@wp.pl |
+| 1 | CraftPoint (WolfBrothers) | Kraków, PL | Handel + Zuschnitt | veg-tan 3,0–3,5 mm, Büffel-Pull-up 3,5–4 mm, fertige Riemen 15–80 mm | craft-point.com |
+| 2 | Gerberei Sellmann | Vlotho, DE | Gerberei | laut Shop Hersteller der ÖKO-Fettleder-Linie von maly-leder (unbestätigt) | Website |
+| 2 | Garbarnia Stolarczyk | PL | Gerberei | pflanzliche Gerbung, Sohlleder-Tradition | tannery.pl |
+| 3 | DS-Leder, Lederhaus, Croupon-Lederhandel, Lederversand Berlin, Dieckmann | DE | Handel | Rückfall, falls maly-leder nicht liefert | jeweils Website |
+| 3 | Hurtownia Skór G&G, mikasklep.eu | PL | Handel | Rückfall Polen | Websites |
+
+China-Leder läuft im Normalfall über die Halsband-Fabrik (Gruppe A/B) — dort zuerst Musterpaket
+anfragen (Vorlage 07 A: Swatch-Karte + fertiges Halsband + lose Messingteile). Direkte chinesische
+Lederlieferanten (Guangzhou Caihong, Foshan Fuen — beide ungeprüft) nur, falls wir das Leder selbst
+stellen wollen; dann Gerbungsnachweis verlangen ("veg-tan finish" auf Chromleder ist der Standardtrick).
+
+Alle Kontaktdaten aus Web-Recherche vom 14.09.2026; `maly-leder.de` und `garbarnialeja.pl` waren aus
+der Arbeitsumgebung nicht direkt aufrufbar → vor dem Absenden auf der Website gegenprüfen.
