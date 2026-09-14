@@ -44,15 +44,16 @@ add_action( 'after_setup_theme', 'bellowerk_aufbau' );
 /**
  * Stile und Schriften.
  *
- * Die Schriften liegen im Theme, nicht bei Google: assets/schriften/ mit vier
+ * Die Schriften liegen im Theme, nicht bei Google: assets/schriften/ mit zwei
  * woff2-Dateien, eingebunden über assets/schriften.css. Grund: Ein Aufruf an
  * fonts.googleapis.com überträgt die IP-Adresse des Besuchers in die USA und
  * braucht dafür eine Einwilligung. Mitgeliefert entfällt das.
  *
- * Zusammen 110,8 KB, Budget sind 120 KB. Erreicht durch zwei Beschränkungen:
- * nur der Satz "latin" (Deutsch braucht kein latin-ext) und keine Datei
- * doppelt — Archivo und Bodoni Moda sind variable Schriften, eine Datei
- * bedient mehrere Schnitte.
+ * Zusammen 81,2 KB, Budget sind 120 KB. Erreicht durch drei Beschränkungen:
+ * nur der Satz "latin" (Deutsch braucht kein latin-ext), keine Datei doppelt
+ * — Archivo und Bodoni Moda sind variable Schriften, eine Datei bedient
+ * mehrere Schnitte — und keine dritte Familie: Archivo trägt die
+ * Tabellenziffern selbst, eine eigene Monospace wäre nur Gewicht.
  */
 function bellowerk_stile(): void {
 	$verzeichnis = get_stylesheet_directory();
@@ -106,6 +107,13 @@ function bellowerk_stile(): void {
 		if ( $bellowerk_produkt && str_starts_with( (string) $bellowerk_produkt->get_sku(), 'HB-' ) ) {
 			$bellowerk_laden( 'groessenfinder' );
 		}
+	}
+
+	// Warenkorb, Kasse, Bestellbestätigung, Konto. Diese Seiten bringt
+	// WooCommerce selbst mit; ohne shop.css stünden sie im Standardgrau
+	// mitten in der Nachtwerkstatt — ausgerechnet beim Bezahlen.
+	if ( function_exists( 'is_cart' ) && ( is_cart() || is_checkout() || is_account_page() || is_wc_endpoint_url( 'order-received' ) ) ) {
+		$bellowerk_laden( 'shop' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

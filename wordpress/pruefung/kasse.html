@@ -1,0 +1,44 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kasse</title>
+<link rel="stylesheet" href="../bellowerk/assets/tokens.css"><link rel="stylesheet" href="../bellowerk/assets/shop.css">
+</head><body class="woocommerce woocommerce-page woocommerce-checkout">
+<div class="mitte rand" style="padding-block:48px">
+<div class="woocommerce-notices-wrapper"><ul class="woocommerce-error" role="alert"><li><strong>Postleitzahl</strong> ist kein gültiges Pflichtfeld.</li></ul></div>
+<form name="checkout" method="post" class="checkout woocommerce-checkout">
+<div class="col2-set" id="customer_details">
+<div class="col-1"><div class="woocommerce-billing-fields"><h3>Rechnungsdetails</h3>
+<div class="woocommerce-billing-fields__field-wrapper">
+<p class="form-row form-row-first validate-required" id="billing_first_name_field"><label for="billing_first_name">Vorname&nbsp;<abbr class="required" title="benötigt">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text" id="billing_first_name" autocomplete="given-name"></span></p>
+<p class="form-row form-row-last validate-required" id="billing_last_name_field"><label for="billing_last_name">Nachname&nbsp;<abbr class="required" title="benötigt">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text" id="billing_last_name" autocomplete="family-name"></span></p>
+<p class="form-row form-row-wide validate-required" id="billing_country_field"><label for="billing_country">Land / Region&nbsp;<abbr class="required">*</abbr></label><span class="woocommerce-input-wrapper"><select id="billing_country" class="country_to_state"><option>Deutschland</option><option>Österreich</option><option>Schweiz</option><option>Vereinigte Staaten von Amerika (USA)</option></select></span></p>
+<p class="form-row form-row-wide address-field validate-required" id="billing_address_1_field"><label for="billing_address_1">Straße und Hausnummer&nbsp;<abbr class="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text" id="billing_address_1" autocomplete="address-line1"></span></p>
+<p class="form-row form-row-wide address-field" id="billing_address_2_field"><label for="billing_address_2">Adresszusatz</label><span class="woocommerce-input-wrapper"><input type="text" class="input-text" id="billing_address_2" placeholder="Etage, bei wem, Paketstation"></span></p>
+<p class="form-row form-row-first address-field validate-required validate-postcode woocommerce-invalid" id="billing_postcode_field"><label for="billing_postcode">Postleitzahl&nbsp;<abbr class="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text" id="billing_postcode"></span></p>
+<p class="form-row form-row-last address-field validate-required" id="billing_city_field"><label for="billing_city">Ort&nbsp;<abbr class="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text" id="billing_city" value="Mönchengladbach-Rheindahlen"></span></p>
+<p class="form-row form-row-wide validate-required validate-email" id="billing_email_field"><label for="billing_email">E-Mail-Adresse&nbsp;<abbr class="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="email" class="input-text" id="billing_email"></span></p>
+</div></div></div>
+<div class="col-2"><div class="woocommerce-shipping-fields"><h3 id="ship-to-different-address"><label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox"><input class="woocommerce-form__input-checkbox input-checkbox" type="checkbox" id="ship-to-different-address-checkbox"><span>Lieferung an eine andere Adresse?</span></label></h3></div>
+<div class="woocommerce-additional-fields"><h3>Zusätzliche Informationen</h3><p class="form-row notes" id="order_comments_field"><label for="order_comments">Anmerkungen zur Bestellung</label><span class="woocommerce-input-wrapper"><textarea id="order_comments" rows="4" placeholder="Wünsche zur Länge, Termin, Hinweise für die Zustellung"></textarea></span></p></div></div>
+</div>
+<h3 id="order_review_heading">Deine Bestellung</h3>
+<div id="order_review" class="woocommerce-checkout-review-order">
+<table class="shop_table woocommerce-checkout-review-order-table">
+<thead><tr><th class="product-name">Produkt</th><th class="product-total">Zwischensumme</th></tr></thead>
+<tbody><tr class="cart_item"><td class="product-name">Hamburg No. 1 — Halsband Fettleder&nbsp;<strong class="product-quantity">&times;&nbsp;1</strong><dl class="variation"><dt>Größe:</dt><dd><p>M · 38–46 cm</p></dd></dl></td><td class="product-total"><span class="woocommerce-Price-amount amount">89,00&nbsp;€</span></td></tr>
+<tr class="cart_item"><td class="product-name">Hamburg No. 3 — Handschlaufe&nbsp;<strong class="product-quantity">&times;&nbsp;1</strong></td><td class="product-total"><span class="woocommerce-Price-amount amount">39,00&nbsp;€</span></td></tr></tbody>
+<tfoot><tr class="cart-subtotal"><th>Zwischensumme</th><td><span class="woocommerce-Price-amount amount">128,00&nbsp;€</span></td></tr>
+<tr class="woocommerce-shipping-totals shipping"><th>Versand</th><td data-title="Versand">DHL GoGreen: <span class="woocommerce-Price-amount amount">0,00&nbsp;€</span></td></tr>
+<tr class="order-total"><th>Gesamtsumme</th><td><strong><span class="woocommerce-Price-amount amount">128,00&nbsp;€</span></strong> <small class="includes_tax">(inkl. <span class="woocommerce-Price-amount amount">20,44&nbsp;€</span> MwSt.)</small></td></tr></tfoot>
+</table>
+<div id="payment" class="woocommerce-checkout-payment">
+<ul class="wc_payment_methods payment_methods methods">
+<li class="wc_payment_method payment_method_paypal"><input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" checked><label for="payment_method_paypal">PayPal <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='22'%3E%3C/svg%3E" alt="PayPal"></label>
+<div class="payment_box payment_method_paypal"><p>Weiterleitung zu PayPal, danach zurück zur Bestätigung. Auch ohne PayPal-Konto mit Karte möglich.</p></div></li>
+<li class="wc_payment_method payment_method_bacs"><input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method"><label for="payment_method_bacs">Überweisung</label></li>
+</ul>
+<div class="form-row place-order">
+<div class="woocommerce-terms-and-conditions-wrapper"><p class="woocommerce-privacy-policy-text">Deine Daten werden verwendet, um deine Bestellung abzuwickeln. Näheres in unserer <a href="#">Datenschutzerklärung</a>.</p></div>
+<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order">Zahlungspflichtig bestellen</button>
+</div></div></div>
+</form></div></body></html>

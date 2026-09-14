@@ -1,0 +1,396 @@
+/* shop.css — Warenkorb, Kasse, Bestellbestätigung und Konto.
+ *
+ * WooCommerce bringt eigenes Markup mit, das sich nicht ohne Weiteres
+ * ersetzen lässt: An den Vorlagen für Warenkorb und Kasse hängen Hooks von
+ * Zahlungs- und Versanderweiterungen. Wer sie überschreibt, muss sie bei
+ * jedem WooCommerce-Update nachziehen und merkt einen Bruch erst, wenn eine
+ * Bestellung scheitert.
+ *
+ * Deshalb wird hier nicht überschrieben, sondern angezogen: dieselben Marken
+ * aus tokens.css, gelegt auf die Klassen, die WooCommerce selbst vergibt.
+ * Ein Update ändert dann das Verhalten, nie das Aussehen.
+ *
+ * Gegenstück in den Entwürfen: web/warenkorb.html und web/kasse.html.
+ */
+
+/* ── Meldungen ─────────────────────────────────────────────────────
+   WooCommerce setzt sie über den Inhalt: "In den Warenkorb gelegt",
+   "Bitte Pflichtfelder ausfüllen". Sie tragen die Entscheidung des
+   Käufers und müssen deshalb aussehen wie .meldung, nicht wie ein
+   Systemhinweis. */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-noreviews{
+  display:flex;flex-wrap:wrap;gap:var(--raum-3) var(--raum-4);align-items:center;
+  padding:var(--raum-4) var(--raum-5);margin-bottom:var(--raum-6);
+  border:1px solid var(--linie);border-left-width:2px;background:var(--flaeche);
+  font-size:var(--step--1);color:var(--mute);list-style:none;
+}
+.woocommerce-message{border-left-color:var(--gut);background:var(--gut-grund)}
+.woocommerce-info{border-left-color:var(--messing-tief)}
+.woocommerce-error{border-left-color:var(--fehler);background:var(--fehler-grund);color:var(--ink);display:block}
+.woocommerce-error li{margin-block:var(--raum-2)}
+.woocommerce-message a,.woocommerce-info a{color:var(--ink);border-bottom:1px solid var(--messing-tief)}
+/* Der Knopf in der Meldung ("Warenkorb ansehen") steht rechts und drängt
+   sich nicht vor den Satz, der sagt, was passiert ist. */
+.woocommerce-message .button,
+.woocommerce-info .button{margin-left:auto}
+
+/* ── Knöpfe ────────────────────────────────────────────────────────
+   WooCommerce vergibt .button; die Marke kennt .knopf. Hier werden die
+   Regeln von .knopf auf .button gelegt, damit beides gleich aussieht. */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  padding:15px 26px;border:1px solid var(--linie-hell);border-radius:2px;
+  background:transparent;color:var(--ink);cursor:pointer;
+  transition:border-color var(--mikro) ease,background var(--mikro) ease,color var(--mikro) ease;
+}
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover{border-color:var(--messing-tief)}
+.woocommerce button.button:active{transform:translateY(1px)}
+
+/* Der eine Knopf, der weiterführt, trägt Messing. Alle anderen nicht —
+   sonst konkurrieren sie und keiner führt. */
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.wc-proceed-to-checkout a.checkout-button,
+#place_order{
+  background:linear-gradient(180deg,var(--messing) 0%,var(--messing-tief) 100%);
+  color:var(--nacht);border-color:var(--messing-tief);font-weight:500;
+}
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.wc-proceed-to-checkout a.checkout-button:hover,
+#place_order:hover{background:linear-gradient(180deg,var(--messing-licht) 0%,var(--messing) 100%)}
+
+.woocommerce .button:disabled,
+.woocommerce .button[disabled]{opacity:.4;cursor:not-allowed;filter:grayscale(.6)}
+
+/* ── Warenkorb ─────────────────────────────────────────────────── */
+/* Oberhalb des Umbruchs bleibt die Tabelle eine Tabelle. Reicht der Platz
+   dann doch nicht — lange Produktnamen, eine zusätzliche Spalte aus einer
+   Erweiterung —, scrollt sie in ihrem eigenen Kasten. Die Seite selbst
+   scrollt nie seitlich. */
+.woocommerce-cart-form{margin-bottom:var(--raum-8);overflow-x:auto}
+
+.woocommerce table.shop_table{
+  width:100%;border-collapse:collapse;border:1px solid var(--linie);background:var(--flaeche);
+}
+.woocommerce table.shop_table th{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mute);font-weight:400;text-align:left;
+  padding:var(--raum-4) var(--raum-5);border-bottom:1px solid var(--linie);
+}
+.woocommerce table.shop_table td{
+  padding:var(--raum-5);border-bottom:1px solid var(--linie);vertical-align:middle;
+}
+.woocommerce table.shop_table tr:last-child td{border-bottom:0}
+
+.woocommerce table.cart .product-thumbnail img{width:78px;height:auto;border:1px solid var(--linie)}
+.woocommerce table.cart .product-name a{font-family:var(--display);font-size:var(--step-1);color:var(--ink)}
+.woocommerce table.cart .product-name a:hover{color:var(--messing)}
+/* Größe und Farbe stehen als Variationsliste unter dem Namen. */
+.woocommerce table.cart .variation{
+  margin-top:var(--raum-2);font-size:var(--step--1);color:var(--mute);
+  display:flex;flex-wrap:wrap;gap:4px var(--raum-4);
+}
+.woocommerce table.cart .variation dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+.woocommerce table.cart .variation dd{margin:0;color:var(--ink)}
+.woocommerce table.cart .variation dd p{margin:0}
+
+/* Preise in Tabellenziffern, sonst tanzen die Spalten beim Ändern der Menge. */
+.woocommerce table.shop_table .product-price,
+.woocommerce table.shop_table .product-subtotal,
+.woocommerce table.shop_table .amount{font-variant-numeric:tabular-nums;color:var(--ink)}
+.woocommerce table.shop_table .product-subtotal{font-size:var(--step-0)}
+
+.woocommerce .quantity input.qty{
+  width:74px;background:var(--flaeche-hoch);color:var(--ink);
+  font-family:var(--mono);font-size:13px;text-align:center;
+  border:1px solid var(--linie-hell);border-radius:2px;padding:10px 6px;
+}
+.woocommerce .quantity input.qty:focus{border-color:var(--messing-tief);outline:none}
+
+/* Entfernen ist keine Hauptsache: sichtbar, aber leise, und mit einer
+   Fläche, die man auf dem Telefon trifft. */
+.woocommerce table.cart td.product-remove a.remove{
+  display:grid;place-items:center;width:32px;height:32px;
+  color:var(--mute);font-size:20px;line-height:1;border-radius:2px;text-decoration:none;
+  transition:color var(--mikro) ease,background var(--mikro) ease;
+}
+.woocommerce table.cart td.product-remove a.remove:hover{color:var(--fehler);background:var(--fehler-grund)}
+
+.woocommerce table.cart td.actions{padding:var(--raum-5);background:var(--nacht)}
+.woocommerce table.cart td.actions .coupon{display:flex;gap:var(--raum-3);flex-wrap:wrap;align-items:center}
+.woocommerce table.cart td.actions .coupon label{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);
+}
+.woocommerce table.cart td.actions .input-text{
+  background:var(--flaeche);color:var(--ink);border:1px solid var(--linie-hell);border-radius:2px;
+  padding:13px 15px;font-family:var(--sans);min-width:min(240px,100%);
+}
+.woocommerce table.cart td.actions .button[name="update_cart"]{margin-left:auto}
+
+/* Summen rechts. Die Schrift ist dieselbe wie im Entwurf .korb-summe. */
+/* minmax(0,1fr) statt 1fr: eine Rasterspalte ist sonst mindestens so breit
+   wie der schmalste unteilbare Inhalt darin — hier die Versandzeile
+   "Abholung in Harsefeld nach Absprache". Gemessen 586 px in einem 320 px
+   breiten Fenster, und die ganze Seite schob sich seitlich mit. */
+.cart-collaterals{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--raum-6)}
+.cart_totals{
+  border:1px solid var(--linie);background:var(--flaeche);padding:var(--raum-6);
+  max-width:none;min-width:0;
+}
+.cart_totals h2{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--messing-tief);margin-bottom:var(--raum-5);
+}
+.cart_totals table.shop_table{border:0;background:transparent}
+.cart_totals table.shop_table th,
+.cart_totals table.shop_table td{
+  padding:var(--raum-3) 0;border-bottom:1px solid var(--linie);
+  font-family:var(--sans);font-size:var(--step-0);letter-spacing:0;text-transform:none;
+}
+.cart_totals table.shop_table th{color:var(--mute)}
+.cart_totals table.shop_table td{text-align:right}
+.cart_totals tr.order-total th,
+.cart_totals tr.order-total td{
+  border-bottom:0;border-top:1px solid var(--linie-hell);
+  padding-top:var(--raum-4);color:var(--ink);font-size:var(--step-1);
+}
+.cart_totals tr.order-total .amount{font-family:var(--display)}
+/* Der Satz zur Umsatzsteuer ist Pflicht nach PAngV und darf nicht
+   kleiner sein als der Rest der Zeile. */
+.cart_totals .includes_tax,
+.woocommerce-checkout-review-order-table .includes_tax{
+  display:block;font-size:var(--step--1);color:var(--mute);margin-top:4px;
+}
+.woocommerce-shipping-destination{font-size:var(--step--1);color:var(--mute)}
+#shipping_method{list-style:none;margin:0;padding:0;text-align:right}
+#shipping_method li{margin-block:var(--raum-2)}
+#shipping_method label{color:var(--ink);cursor:pointer}
+#shipping_method input{accent-color:var(--messing-tief);margin-right:8px}
+
+.wc-proceed-to-checkout{margin-top:var(--raum-6)}
+.wc-proceed-to-checkout a.checkout-button{width:100%}
+
+.cart-empty{font-family:var(--display);font-size:var(--step-2);color:var(--ink);text-align:center;margin-top:var(--raum-9)}
+.return-to-shop{text-align:center;margin-bottom:var(--raum-10)}
+
+/* ── Kasse ─────────────────────────────────────────────────────── */
+.woocommerce-checkout h3,
+#order_review_heading{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--messing-tief);margin-bottom:var(--raum-5);
+}
+
+.woocommerce-checkout .form-row{display:block;margin-bottom:var(--raum-5);padding:0}
+.woocommerce-checkout .form-row label{
+  display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:var(--raum-2);
+}
+.woocommerce-checkout .form-row .required{color:var(--messing-tief);text-decoration:none}
+.woocommerce-checkout .form-row .input-text,
+.woocommerce-checkout .form-row select,
+.woocommerce-checkout textarea{
+  width:100%;background:var(--flaeche);color:var(--ink);
+  font-family:var(--sans);font-size:var(--step-0);
+  border:1px solid var(--linie-hell);border-radius:2px;padding:13px 15px;
+  transition:border-color var(--mikro) ease,background var(--mikro) ease;
+}
+.woocommerce-checkout .form-row .input-text:hover,
+.woocommerce-checkout .form-row select:hover{border-color:var(--mute)}
+.woocommerce-checkout .form-row .input-text:focus,
+.woocommerce-checkout .form-row select:focus{background:var(--flaeche-hoch);border-color:var(--messing-tief);outline:none}
+.woocommerce-checkout .form-row.woocommerce-invalid .input-text,
+.woocommerce-checkout .form-row.woocommerce-invalid select{border-color:var(--fehler);background:var(--fehler-grund)}
+.woocommerce-checkout .form-row.woocommerce-validated .input-text{border-color:var(--gut)}
+/* Zwei Felder nebeneinander, aber erst wenn Platz ist. Woo setzt dafür
+   form-row-first und -last; ohne min-width:0 sprengt ein langer Ortsname
+   die Spalte. */
+@media (min-width:620px){
+  .woocommerce-checkout .form-row-first,
+  .woocommerce-checkout .form-row-last{width:calc(50% - var(--raum-3));display:inline-block;vertical-align:top;min-width:0}
+  .woocommerce-checkout .form-row-first{margin-right:var(--raum-5)}
+}
+.woocommerce-checkout .form-row-wide{clear:both}
+
+.woocommerce-input-wrapper{display:block}
+.woocommerce-form__label-for-checkbox{
+  display:flex;gap:var(--raum-3);align-items:flex-start;
+  font-family:var(--sans);font-size:var(--step--1);letter-spacing:0;text-transform:none;color:var(--mute);cursor:pointer;
+}
+.woocommerce-form__label-for-checkbox input{margin-top:3px;accent-color:var(--messing-tief);width:17px;height:17px;flex:none}
+
+#customer_details{margin-bottom:var(--raum-8)}
+@media (min-width:900px){
+  #customer_details{display:grid;grid-template-columns:1fr 1fr;gap:var(--raum-8)}
+  #customer_details .col-1,#customer_details .col-2{width:auto;float:none;min-width:0}
+}
+
+#order_review{
+  border:1px solid var(--linie);background:var(--flaeche);padding:var(--raum-6);
+  min-width:0;
+}
+.woocommerce-checkout-review-order-table{border:0;background:transparent;width:100%}
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td{
+  padding:var(--raum-3) 0;border-bottom:1px solid var(--linie);
+  font-family:var(--sans);font-size:var(--step-0);letter-spacing:0;text-transform:none;
+}
+.woocommerce-checkout-review-order-table td{text-align:right;color:var(--ink)}
+.woocommerce-checkout-review-order-table .product-name{text-align:left;color:var(--mute)}
+.woocommerce-checkout-review-order-table .product-quantity{font-family:var(--mono);color:var(--messing-tief)}
+.woocommerce-checkout-review-order-table tfoot .order-total th,
+.woocommerce-checkout-review-order-table tfoot .order-total td{
+  border-bottom:0;border-top:1px solid var(--linie-hell);padding-top:var(--raum-4);
+  font-size:var(--step-1);color:var(--ink);
+}
+.woocommerce-checkout-review-order-table tfoot .order-total .amount{font-family:var(--display)}
+
+/* Zahlarten als Karten, wie .zahlart im Entwurf: die ganze Fläche ist
+   klickbar, nicht nur der Punkt. */
+#payment{background:transparent;border-radius:0}
+#payment ul.payment_methods{list-style:none;margin:0 0 var(--raum-5);padding:0;border:0}
+#payment ul.payment_methods li{margin-bottom:var(--raum-3)}
+#payment ul.payment_methods li label{
+  display:block;border:1px solid var(--linie-hell);border-radius:2px;
+  padding:var(--raum-4) var(--raum-5);cursor:pointer;color:var(--ink);
+  font-family:var(--sans);font-size:var(--step-0);letter-spacing:0;text-transform:none;
+  transition:border-color var(--mikro) ease,background var(--mikro) ease;
+}
+#payment ul.payment_methods li label:hover{border-color:var(--mute)}
+#payment ul.payment_methods li input[type="radio"]{accent-color:var(--messing-tief);margin-right:10px}
+#payment ul.payment_methods li input[type="radio"]:checked + label{border-color:var(--messing);background:var(--flaeche-hoch)}
+#payment ul.payment_methods li input[type="radio"]:focus-visible + label{outline:2px solid var(--messing);outline-offset:3px}
+#payment div.payment_box{
+  background:var(--flaeche);border:1px solid var(--linie);border-left:2px solid var(--messing-tief);
+  padding:var(--raum-4) var(--raum-5);margin:var(--raum-3) 0 0;
+  font-size:var(--step--1);color:var(--mute);
+}
+#payment div.payment_box::before{display:none}
+#payment .payment_method_paypal img{max-height:22px;width:auto;margin-left:8px;vertical-align:middle}
+
+.woocommerce-terms-and-conditions-wrapper{margin-block:var(--raum-5)}
+.woocommerce-privacy-policy-text{font-size:var(--step--1);color:var(--mute);margin-bottom:var(--raum-4)}
+.woocommerce-privacy-policy-text a{color:var(--ink);border-bottom:1px solid var(--messing-tief)}
+
+#place_order{width:100%;margin-top:var(--raum-4)}
+
+/* ── Bestellbestätigung ────────────────────────────────────────── */
+.woocommerce-order{margin-block:var(--raum-8)}
+.woocommerce-thankyou-order-received{
+  font-family:var(--display);font-size:var(--step-3);line-height:1.1;color:var(--ink);
+  margin-bottom:var(--raum-6);
+}
+ul.woocommerce-order-overview{
+  list-style:none;margin:0 0 var(--raum-8);padding:var(--raum-5);
+  border:1px solid var(--linie);background:var(--flaeche);
+  display:grid;gap:var(--raum-5);grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+}
+ul.woocommerce-order-overview li{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);
+}
+ul.woocommerce-order-overview li strong{
+  display:block;margin-top:var(--raum-2);
+  font-family:var(--sans);font-size:var(--step-0);letter-spacing:0;text-transform:none;
+  color:var(--ink);font-weight:400;
+}
+.woocommerce-order-details,.woocommerce-customer-details{margin-bottom:var(--raum-8)}
+.woocommerce-customer-details address{
+  font-style:normal;border:1px solid var(--linie);background:var(--flaeche);
+  padding:var(--raum-5);color:var(--ink);line-height:1.8;
+}
+
+/* ── Konto ─────────────────────────────────────────────────────── */
+.woocommerce-MyAccount-navigation ul{list-style:none;margin:0;padding:0}
+.woocommerce-MyAccount-navigation li{border-bottom:1px solid var(--linie)}
+.woocommerce-MyAccount-navigation a{
+  display:block;padding:var(--raum-3) 0;color:var(--mute);
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+}
+.woocommerce-MyAccount-navigation li.is-active a,
+.woocommerce-MyAccount-navigation a:hover{color:var(--ink)}
+@media (min-width:860px){
+  .woocommerce-account .woocommerce{display:grid;grid-template-columns:220px 1fr;gap:var(--raum-8)}
+  .woocommerce-MyAccount-navigation,.woocommerce-MyAccount-content{width:auto;float:none;min-width:0}
+}
+
+/* ── Schmale Schirme ───────────────────────────────────────────────
+   Die Tabelle wird zur Liste. WooCommerce schreibt in jede Zelle ein
+   data-title; daraus wird die Beschriftung, die sonst in der Kopfzeile
+   stünde. Ohne das steht auf dem Telefon eine Zahlenspalte ohne Sinn. */
+@media (max-width:860px){
+  /* display:none statt der sonst üblichen Absatz-ins-Abseits-Technik: bei
+     einer Tabelle, die selbst auf display:block steht, bildet der Browser
+     um die Kopfzeile wieder anonyme Tabellenkästen und die Spaltenbreiten
+     kommen zurück — gemessen 348 px Überlauf bei 320 px Fensterbreite.
+     Die Beschriftung geht dabei nicht verloren: sie steht über data-title
+     an jeder einzelnen Zelle, wo sie auf dem Telefon ohnehin hingehört. */
+  .woocommerce table.shop_table thead{display:none}
+  .woocommerce table.shop_table,
+  .woocommerce table.shop_table tbody,
+  .woocommerce table.shop_table tr,
+  .woocommerce table.shop_table td{display:block;width:auto}
+  /* min-width:0 ist hier nicht Zierde. Ein <table> auf display:block behält
+     in Blink eine selbsttätige Mindestbreite in Höhe seines schmalsten
+     Inhalts — gemessen 520 px, während der Kasten 280 px breit war. Die
+     Seite lief dadurch nicht über, der Warenkorb ließ sich aber nur noch
+     seitwärts schieben. Das fällt beim Ansehen kaum auf und beim Kaufen
+     sofort. */
+  .woocommerce table.shop_table{min-width:0}
+  .woocommerce table.cart .product-name a{overflow-wrap:anywhere}
+  .woocommerce table.shop_table tr{
+    border-bottom:1px solid var(--linie);padding:var(--raum-5);position:relative;
+  }
+  .woocommerce table.shop_table td{
+    border-bottom:0;padding:var(--raum-2) 0;
+    display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--raum-3) var(--raum-4);
+    min-width:0;
+  }
+  /* Ohne das hält ein langer Produktname seine ganze Breite und drückt die
+     Zeile auf. Gilt für jedes Kind, nicht nur den Namen: auch die
+     Variationsliste und der Mengenkasten. */
+  .woocommerce table.shop_table td > *{min-width:0;max-width:100%}
+  .woocommerce table.shop_table td::before{
+    content:attr(data-title);
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);
+    flex:none;
+  }
+  .woocommerce table.cart td.product-remove{position:absolute;top:var(--raum-4);right:var(--raum-4);padding:0}
+  .woocommerce table.cart td.product-remove::before{display:none}
+  .woocommerce table.cart td.product-thumbnail::before{display:none}
+  .woocommerce table.cart td.product-name{padding-right:44px}
+  .woocommerce table.cart td.actions{display:block}
+  .woocommerce table.cart td.actions::before{display:none}
+  .woocommerce table.cart td.actions .button[name="update_cart"]{margin-left:0;width:100%;margin-top:var(--raum-3)}
+  .cart_totals table.shop_table td::before,
+  .woocommerce-checkout-review-order-table td::before{display:none}
+  .cart_totals table.shop_table,
+  .woocommerce-checkout-review-order-table{width:100%;max-width:100%;min-width:0}
+  .cart_totals table.shop_table td,
+  .woocommerce-checkout-review-order-table td{justify-content:flex-end;text-align:right}
+  .woocommerce-checkout-review-order-table .product-name{justify-content:flex-start;text-align:left}
+  /* Der Name und das Mal-Zeichen gehören zusammen und brechen gemeinsam um. */
+  .woocommerce-checkout-review-order-table .product-name,
+  .woocommerce-checkout-review-order-table .product-quantity{min-width:0;overflow-wrap:anywhere}
+  .cart_totals table.shop_table tr,
+  .woocommerce-checkout-review-order-table tr{padding:0}
+  .cart_totals table.shop_table th,
+  .woocommerce-checkout-review-order-table th{display:block;padding-bottom:0}
+}
+
+/* Wer Bewegung abbestellt hat, bekommt keine. */
+@media (prefers-reduced-motion:reduce){
+  .woocommerce a.button,.woocommerce button.button,.woocommerce input.button,
+  .woocommerce-checkout .form-row .input-text,
+  #payment ul.payment_methods li label{transition:none}
+  .woocommerce button.button:active{transform:none}
+}
