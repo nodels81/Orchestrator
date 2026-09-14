@@ -165,10 +165,12 @@ if [[ "$FEHLEND" == *"autonom.kennwort"* ]]; then
   echo "sieht aus wie eine von dir, die Absenderpruefung unterscheidet sie nicht."
   echo "Das zweite Kennwort tut es."
   echo
-  echo "  Deins:  $KENNWORT"
-  echo "  Agent:  $KENNWORT_AGENT"
+  echo "Die Kennwoerter erscheinen NICHT auf dem Bildschirm. Sie landen in"
+  echo "config.json und in einer Merkdatei, die nur root lesen kann. Grund:"
+  echo "Terminalausgaben werden weitergereicht -- in einen Chat, ein Ticket,"
+  echo "einen Screenshot. Was nie angezeigt wurde, kann dabei nicht mitgehen."
   echo
-  read -r -p "In config.json eintragen? Nur 'ja' traegt ein: " ANTWORT
+  read -r -p "Erzeugen und eintragen? Nur 'ja' traegt ein: " ANTWORT
   if [ "$ANTWORT" = "ja" ]; then
     cp config.json "config.json.vor-autonom-$(date +%Y%m%d-%H%M%S)"
     KENNWORT="$KENNWORT" KENNWORT_AGENT="$KENNWORT_AGENT" "$PYTHON" - <<'PYENDE'
@@ -183,14 +185,29 @@ c["autonom"].setdefault("imap_port", 993)
 with open("config.json.tmp", "w", encoding="utf-8") as f:
     json.dump(c, f, indent=2, ensure_ascii=False)
 os.replace("config.json.tmp", "config.json")
-print("  Eingetragen.")
+print("  In config.json eingetragen.")
 PYENDE
     chmod 600 config.json
     chown "$BENUTZER:$GRUPPE" config.json
+
+    MERKZETTEL="/root/bello-kennwoerter.txt"
+    umask 077
+    {
+      echo "Bellowerk Posteingang, erzeugt $(date '+%F %T')"
+      echo
+      echo "Deins (darf alles, auch freigeben):  $KENNWORT"
+      echo "Agent (alles ausser freigeben):      $KENNWORT_AGENT"
+      echo
+      echo "Eines davon muss im Betreff jeder Befehlsmail stehen."
+      echo "Diese Datei nach dem Uebertragen in den Passwortspeicher loeschen:"
+      echo "  shred -u $MERKZETTEL"
+    } > "$MERKZETTEL"
+    chmod 600 "$MERKZETTEL"
     echo
-    fett "  MERKEN, deins: $KENNWORT"
-    fett "  Fuer den Agenten: $KENNWORT_AGENT"
-    echo "  Beide stehen ab jetzt in config.json. Deins nicht weitergeben."
+    fett "  Kennwoerter stehen in: $MERKZETTEL"
+    echo "  Ansehen:   sudo cat $MERKZETTEL"
+    echo "  Danach in den Passwortspeicher, dann:  sudo shred -u $MERKZETTEL"
+    rot "  Die Ausgabe von 'cat' NICHT weiterschicken."
     FEHLEND="${FEHLEND//autonom.kennwort/}"
   else
     echo "  Uebersprungen. Der Posteingang bleibt dann abgeschaltet."
