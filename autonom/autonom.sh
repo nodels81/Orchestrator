@@ -99,10 +99,28 @@ fi
 echo "Sicherung gefunden: $NEUESTE"
 
 # --- Wem gehoert der Ordner ----------------------------------------------
-BENUTZER="$(stat -c '%U' orchestrator.py)"
-echo "Dienste laufen als Benutzer: $BENUTZER"
+# Wem die Datei gehoert, sagt nichts darueber, als wer der Betrieb laeuft.
+# Hier gehoert alles root, die Dienste laufen aber als bello. Also fragen
+# wir die laufenden Einheiten, und raten nur, wenn es keine gibt.
+BENUTZER=""
+for einheit in bello-orchestrator.service bello-mailin.service; do
+  wer="$(systemctl show -p User --value "$einheit" 2>/dev/null || true)"
+  if [ -n "$wer" ] && [ "$wer" != "root" ]; then
+    BENUTZER="$wer"
+    echo "Benutzer aus $einheit uebernommen: $BENUTZER"
+    break
+  fi
+done
+if [ -z "$BENUTZER" ]; then
+  BENUTZER="$(stat -c '%U' orchestrator.py)"
+  echo "Keine laufende Einheit gefragt werden koennen, geraten: $BENUTZER"
+fi
+GRUPPE="$(id -gn "$BENUTZER" 2>/dev/null || echo "$BENUTZER")"
+echo "Dienste laufen als: $BENUTZER:$GRUPPE"
 mkdir -p logs
-chown -R "$BENUTZER" logs
+# Nur anfassen, was diesem Benutzer noch nicht gehoert. Ein blindes
+# chown -R wuerde den laufenden Diensten das Schreibrecht nehmen.
+find logs ! -user "$BENUTZER" -exec chown "$BENUTZER:$GRUPPE" {} + 2>/dev/null || true
 
 # --- config.json: Abschnitt autonom --------------------------------------
 echo
@@ -168,7 +186,7 @@ os.replace("config.json.tmp", "config.json")
 print("  Eingetragen.")
 PYENDE
     chmod 600 config.json
-    chown "$BENUTZER" config.json
+    chown "$BENUTZER:$GRUPPE" config.json
     echo
     fett "  MERKEN, deins: $KENNWORT"
     fett "  Fuer den Agenten: $KENNWORT_AGENT"
@@ -230,6 +248,7 @@ for name in "${DIENSTE[@]}"; do
     [ -f "$quelle" ] || { rot "FEHLER: $quelle fehlt."; exit 1; }
     sed -e "s|@PFAD@|$PFAD|g" \
         -e "s|@BENUTZER@|$BENUTZER|g" \
+        -e "s|^User=|Group=$GRUPPE\nUser=|" \
         -e "s|@PYTHON@|$PYTHON|g" \
         -e "s|^ProtectHome=true$|ProtectHome=$SCHUTZ_HOME|" \
         "$quelle" > "$EINHEITEN/bello-${name}.${art}"
