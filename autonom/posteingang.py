@@ -223,6 +223,31 @@ NUR_BJOERN = {"freigeben"}
 MAILIN_BETREFF = re.compile(r"\[Bello\]\s+(A-\d{4}-\d+)\s+(.+?)\s+[\u2014-]")
 
 
+def _adresse_normal(adresse: str) -> str:
+    """Eine Gmail-Adresse auf ihre eine wahre Form bringen.
+
+    Google liefert dasselbe Postfach unter mehreren Schreibweisen aus:
+    googlemail.com und gmail.com sind identisch, Punkte im Namensteil werden
+    ignoriert, und alles hinter einem Pluszeichen ist eine frei waehlbare
+    Ergaenzung. Ein Zeichenvergleich sieht darin vier verschiedene Absender.
+
+    Gefunden, weil eine Mail von pijoern.nodels@googlemail.com abgewiesen wurde,
+    obwohl in der Liste pijoern.nodels@gmail.com stand -- dasselbe Postfach.
+
+    Bei allen anderen Anbietern wird nur klein geschrieben: dort ist der
+    Namensteil laut Norm unterscheidend, und Punkte zu entfernen wuerde
+    fremde Adressen zusammenfallen lassen.
+    """
+    adresse = (adresse or "").strip().lower()
+    if "@" not in adresse:
+        return adresse
+    name, _, bereich = adresse.rpartition("@")
+    if bereich in ("gmail.com", "googlemail.com"):
+        name = name.split("+", 1)[0].replace(".", "")
+        bereich = "gmail.com"
+    return f"{name}@{bereich}"
+
+
 def _pruefen(config: dict, absender: str, betreff: str) -> tuple[str | None, str]:
     """Gibt (Ablehnungsgrund, Rolle) zurueck. Grund None heisst: in Ordnung.
 
@@ -232,13 +257,13 @@ def _pruefen(config: dict, absender: str, betreff: str) -> tuple[str | None, str
     autonom = config.get("autonom", {})
     kennwort = autonom.get("kennwort", "")
     kennwort_agent = autonom.get("kennwort_agent", "")
-    erlaubt = (config.get("mail", {}).get("empfaenger") or "").lower().strip()
+    erlaubt = _adresse_normal(config.get("mail", {}).get("empfaenger") or "")
 
     if not kennwort:
         return "autonom.kennwort fehlt in config.json — Eingang ist abgeschaltet", ""
     if not erlaubt:
         return "mail.empfaenger fehlt in config.json", ""
-    if parseaddr(absender)[1].lower().strip() != erlaubt:
+    if _adresse_normal(parseaddr(absender)[1]) != erlaubt:
         return f"Absender {absender!r} ist nicht {erlaubt}", ""
 
     betreff_klein = betreff.lower()
