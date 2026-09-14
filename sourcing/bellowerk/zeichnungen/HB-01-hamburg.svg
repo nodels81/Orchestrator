@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
   <rect x="0" y="0" width="1500" height="760" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-04 "Hamburg Nr. 4" — Collar with widened centre — size M — scale 1:2 — Bellowerk Manufaktur, v1.0, 14 Sep 2026</text>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-01 "Hamburg Nr. 1" — Collar with widened centre — size M — scale 1:2 — Bellowerk Manufaktur, v1.0, 14 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">Single piece vegetable-tanned oiled cowhide 3.5–4.0 mm · widened centre cut from one blank · solid brass · NO stitching · NO rivets · Chicago screws only</text>
 
   <!-- scale: 1 mm = 2 px. Cut length 600 mm -> 1200 px, origin x=120, centre line y=250 -->

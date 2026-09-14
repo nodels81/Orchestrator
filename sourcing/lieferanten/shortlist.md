@@ -6,7 +6,7 @@ Anfrage per Video-Call und Business licence prüfen. Kein Suchtreffer nennt die 
 Nischen-Spezifikation und wird über Muster abgefragt. Beste Chancen: Gürtel-/Lederfabriken
 (Buchschrauben sind Gürtelstandard) in Guangdong und Wenzhou.
 
-## A) Leder-Halsband / Leine (HB-01, LE-01, HS-01)
+## A) Leder-Halsband / Leine (HB-04, LE-01, HS-01)
 
 | Prio | Firma | Ort | Einschätzung | Warum | MOQ | Kontakt |
 |---|---|---|---|---|---|---|
@@ -84,6 +84,6 @@ Rollschnalle 0,30–1,00 USD; Buchschraube ab 0,03 USD.
 
 ## Nächste Schritte (Vorschlag)
 
-1. Björn bestätigt Startwerte in HB-01/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
+1. Björn bestätigt Startwerte in HB-04/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
 2. Einkäufer schickt Vorlage 01 an Prio-1/2 der Gruppe A (5 Fabriken), PATCH-01-RFQ an Yongfu + Haixinda.
 3. Nach 3 Werktagen nachfassen (Vorlage 02), Angebote in Tabelle, Björn entscheidet über Muster.

@@ -12,7 +12,7 @@ inklusive Schnittmuster mit allen Maßen.
 ## Bindende Quellen (immer zuerst lesen)
 
 1. `sourcing/bellowerk/markenbrief.md` — Marke, Werkstoffe, harte Ausschlüsse, Patch-Vorgabe
-2. `sourcing/bellowerk/specs/*.md` — Tech Packs je Modell (HB-01, LE-01, HB-02, LE-02, PATCH-01, HS-01)
+2. `sourcing/bellowerk/specs/*.md` — Tech Packs je Modell (HB-01 „Hamburg Nr. 1“ verbreitert, HB-04 „Hamburg Nr. 4“ glatt, HB-02 geflochten, LE-01, PATCH-01; LE-02 und HS-01 zurueckgestellt)
 3. `sourcing/bellowerk/zeichnungen/` — bemaßte Zeichnungen (SVG/PNG), an jede Anfrage anhängen
 4. `sourcing/bellowerk/bilder/` — Beispielfotos (1–2 pro Anfrage anhängen; fehlt ein Foto, Björn nennen welches)
 5. `sourcing/vorlagen/` — Nachrichtenvorlagen für jede Phase

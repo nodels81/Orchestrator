@@ -8,7 +8,7 @@ with patch, transition to braid). Drawing: `zeichnungen/HB-02-geflochten.png`.
 
 Collar whose neck section is a **3-strand mystery braid cut from one piece** of the strap (two
 lengthwise slits, ends uncut — chevron pattern as in the photos). Flat ends carry the roller buckle
-(with holes) and the leather patch, exactly as HB-01. A **solid brass O-ring** sits in the braid at the
+(with holes) and the leather patch, exactly as HB-04. A **solid brass O-ring** sits in the braid at the
 centre back (leash ring). No stitching, no rivets; Chicago screws only.
 
 Option two-tone: the braid is made from two colours (e.g. dark brown + grey "washed stone") — only
@@ -17,7 +17,7 @@ would do it without stitching, or quote single-colour only.
 
 ## 2. Material
 
-As HB-01: vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle, welded O-ring (inner
+As HB-04: vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle, welded O-ring (inner
 Ø 25 mm, wire 5 mm, ≥ 3 kN), Chicago screws domed head Ø 8–9 mm, patch PATCH-01.
 Colours: grey, dark brown, olive, cognac, black.
 
@@ -31,7 +31,7 @@ Colours: grey, dark brown, olive, cognac, black.
 | XL | 30 mm | 300 mm | 180 mm / 140 mm | 54–64 cm |
 
 Braiding shortens the strap by about 15 %: cut the braid section 15 % longer than the finished
-braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
+braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-04.
 
 ## 4. Construction
 
@@ -48,7 +48,7 @@ braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
 ## 5. Quantity and packaging
 
 Samples: 1 pc size M olive, 1 pc size M two-tone (dark brown + grey) if feasible. Then 60 pcs:
-S 10 / M 25 / L 20 / XL 5. Packing as HB-01.
+S 10 / M 25 / L 20 / XL 5. Packing as HB-04.
 
 ## 6. Quotation questions
 

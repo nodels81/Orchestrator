@@ -1,15 +1,15 @@
-# HB-04 "Hamburg Nr. 4" — Collar with Widened Centre (Tech Pack v1.0, 14 Sep 2026)
+# HB-01 "Hamburg Nr. 1" — Collar with Widened Centre (Tech Pack v1.1, 14 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
-Drawing: `zeichnungen/HB-04-hamburg.png`. Reference: Björn's own piece, photographed 13 June 2022
+Drawing: `zeichnungen/HB-01-hamburg.png`. Reference: Björn's own piece, photographed 13 June 2022
 (grey collar, cognac patch, brass buckle) — photo file still to be added as
-`bilder/HB-04-hamburg-gesamt.jpg`.
+`bilder/HB-01-hamburg-gesamt.jpg`.
 
 ## 1. Product
 
 Collar cut from **one blank**: normal strap width at both ends, widening over a **tangential curve**
 to **double width** in the centre, narrowing back the same way. The widened centre carries the
-leather patch PATCH-01. Buckle end, D-ring, keeper and hole pattern exactly as HB-01.
+leather patch PATCH-01. Buckle end, D-ring, keeper and hole pattern exactly as HB-04 (the plain collar, "Hamburg Nr. 4").
 
 **The collar gets wider, not thicker.** The centre is the same single layer of 3.5–4.0 mm leather as
 the ends — not two layers, not a lining, not a padded insert. Anything glued, stitched or doubled in
@@ -17,7 +17,7 @@ the centre is a reject.
 
 ## 2. Material
 
-As HB-01 without exception:
+As HB-04 without exception:
 
 | Part | Specification |
 |---|---|
@@ -78,7 +78,7 @@ centre width plus cutting allowance — say so in your quotation if that changes
 
 - Samples: 1 pc size M in grey ("washed stone") plus 1 pc size M in olive.
 - Then 60 pcs: S 10 · M 20 · L 20 · XL 10, colours grey / dark brown / olive (split to be confirmed).
-- Packing as HB-01: 1 pc in kraft paper bag with size sticker, 25 pcs per inner carton, care card.
+- Packing as HB-04: 1 pc in kraft paper bag with size sticker, 25 pcs per inner carton, care card.
 
 ## 7. Deliverables with the order
 
@@ -89,7 +89,7 @@ D-ring plus the 2.5 kN pull test above; REACH Cr(VI) test report.
 ## 8. Questions to answer in your quotation
 
 1. Can you cut the widened outline with a clicker die? **Tooling cost per size** and lead time for the dies.
-2. Unit price EXW per size, 60 pcs / 150 pcs — and the price difference against the plain collar HB-01.
+2. Unit price EXW per size, 60 pcs / 150 pcs — and the price difference against the plain collar HB-04.
 3. MOQ per size and per colour.
 4. Sample cost and sample lead time.
 5. Production lead time after golden sample approval.

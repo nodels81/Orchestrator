@@ -5,13 +5,13 @@ Foto, Artwork PATCH-01, Lieferadresse.
 
 ---
 
-**Subject:** Bellowerk – sample order HB-01 (4 pcs) + LE-01 (2 pcs) – please confirm
+**Subject:** Bellowerk – sample order HB-04 (4 pcs) + LE-01 (2 pcs) – please confirm
 
 Hello [Name],
 
 we confirm the sample order:
 
-1. HB-01 collar: 1 pc each S / M / L / XL, colour olive, with brass nameplate "Bellowerk / Manufaktur"
+1. HB-04 collar: 1 pc each S / M / L / XL, colour olive, with brass nameplate "Bellowerk / Manufaktur"
 2. LE-01 lead: 2 pcs, 20 mm, olive, rings at 45 / 140 / 245 cm
 3. Leather swatches: olive, dark brown, cognac (5 × 5 cm each)
 4. Loose hardware: 1 buckle 25 mm, 1 D-ring 25 mm, 1 swivel snap 20 mm, 5 Chicago screws
