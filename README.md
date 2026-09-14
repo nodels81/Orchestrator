@@ -23,11 +23,12 @@ Gedächtnis: `gedaechtnis.py`.
 
 Bisher fing jeder Auftrag bei null an: Markenwissen und Einkaufsunterlagen wurden jedes Mal
 komplett neu bezahlt (Abteilung 05: rund 7.500 Eingabe-Tokens pro Auftrag), und was gestern
-herausgefunden wurde, war heute vergessen. Drei Maßnahmen greifen jetzt ineinander:
+herausgefunden wurde, war heute vergessen. Vier Maßnahmen greifen jetzt ineinander:
 
 | Was | Wie | Ersparnis |
 |---|---|---|
-| **Prompt-Cache** | Der unveränderliche Teil der Anfrage (Markenwissen + `sourcing/`) wird mit `cache_control` markiert. Ab dem zweiten Aufruf liest die API ihn aus dem Zwischenspeicher. | ~90 % der Eingabe-Tokens, sobald derselbe Prompt innerhalb von 5 Minuten wiederkommt — also bei jedem Lauf mit mehreren Aufträgen an dieselbe Abteilung und bei jeder Nacharbeit |
+| **Kurze Ausgabe** | Ausgabe-Tokens kosten das Fünffache der Eingabe und machen den Großteil der Rechnung aus. Wo eine Abteilung Entscheidungen liefert statt langer Entwürfe, begrenzt `MAX_WOERTER` die Antwort, `MAX_TOKENS` setzt das Dach und `DENKTIEFE` den Denkaufwand (`"denktiefe"` in `config.json`, Standard `low`; wer abwägt, steht auf `medium`). Abteilungen mit langen Ergebnissen — Ausführung, Design, Personal, Homepage, App — haben `MAX_WOERTER = None` und bleiben unberührt. | grob 40–60 % bei den Abteilungen mit Wortgrenze |
+| **Prompt-Cache** | Der unveränderliche Teil der Anfrage (Markenwissen + `sourcing/`) wird mit `cache_control` markiert. Ab dem zweiten Aufruf liest die API ihn aus dem Zwischenspeicher. Der Vermerk wird **nur gesetzt, wenn dieselbe Abteilung in diesem Lauf mehrfach drankommt** — jede hat einen eigenen System-Prompt, und Schreiben kostet das 1,25-fache. Bei einem einzelnen Aufruf wäre er ein Aufschlag auf etwas, das nie gelesen wird. Die Zwischenprüfung zählt mit: sie ruft `09 Qualität` je geprüftem Auftrag erneut auf, dort trägt der Cache am zuverlässigsten. Nacharbeit läuft erst im nächsten Lauf, also außerhalb der 5-Minuten-Frist. | ~90 % der Eingabe-Tokens, wo eine Abteilung mehrfach läuft |
 | **Gedächtnis** | Statt aller Unterlagen wandern nur die zum Ziel passenden Fakten und Kurzfassungen früherer Aufträge in den Prompt (max. 2.500 Zeichen). | Wissen aus alten Aufträgen kostet ein paar hundert statt zehntausender Tokens |
 | **Antwortspeicher** | Ein wortgleicher Auftrag wird aus der Datenbank beantwortet. | 100 % — kein API-Aufruf |
 

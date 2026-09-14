@@ -19,6 +19,8 @@ class Design(Abteilung):
     NUMMER = "08"
     NAME = "Design"
     MAX_TOKENS = 16000  # mehrere Entwuerfe mit Silhouetten -> wird gestreamt
+    MAX_WOERTER = None  # Ergebnis ist von Natur aus lang — keine Wortgrenze
+    DENKTIEFE = "medium"  # echte Planungsarbeit, nicht Schreiben nach Schema
 
     ROLLE = (
         "Du bist die Formgestalterin. Du entwirfst die FORM von Lederprodukten — "

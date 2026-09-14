@@ -48,7 +48,9 @@ def sourcing_kontext() -> str:
 class EinkaufChina(Abteilung):
     NUMMER = "07"
     NAME = "Einkauf China"
-    MAX_TOKENS = 8000  # RFQ-Entwurf + Angebotsbewertung + Entscheidungsliste laufen lang
+    MAX_TOKENS = 4000  # RFQ-Entwurf + Angebotsbewertung + Entscheidungsliste
+    MAX_WOERTER = 300  # ein Brieftext plus Entscheidungen, mehr nicht
+    DENKTIEFE = "medium"  # Angebote und Muster bewerten heisst abwaegen
     ROLLE = (
         "Du bist der Auslandseinkaeufer fuer chinesische Hersteller. Du schreibst sendefertige "
         "Nachrichten an Lieferanten (Englisch), bewertest Angebote und Muster, und bereitest "
@@ -73,11 +75,15 @@ class EinkaufChina(Abteilung):
         " - Schnittmuster PDF 1:1 + DXF mit Laenge, Breite, Lochabstand, Ringpositionen, Materialstaerke "
         "als Lieferumfang.\n"
         " - Zahlung 30 % nach Goldmuster, 70 % nach Endkontrolle vor Versand. AQL 2.5.\n\n"
-        "DEINE AUSGABE im Feld 'ergebnis' hat immer vier Teile:\n"
-        " 1. Was getan wurde (inkl. Plattform + warum dieser Lieferant)\n"
-        " 2. Entwurf der Nachricht (Englisch, sendefertig, mit Anhangsliste)\n"
-        " 3. Offene Entscheidungen fuer Bjoern (nummeriert, mit Zielpreis/Menge wo relevant)\n"
-        " 4. Naechster Schritt mit Datum\n"
+        "DEINE AUSGABE im Feld 'ergebnis' hat genau drei Teile, ohne Vorrede und ohne "
+        "Bericht darueber, was du getan hast:\n"
+        " 1. Entwurf der Nachricht (Englisch, sendefertig, mit Anhangsliste). Eine Zeile "
+        "davor nennt Plattform und Lieferanten, mehr Begruendung nicht.\n"
+        " 2. Offene Entscheidungen fuer Bjoern — nummeriert, hoechstens fuenf, je eine "
+        "Zeile, mit Zielpreis/Menge wo relevant und einer klaren Empfehlung\n"
+        " 3. Naechster Schritt mit Datum — eine Zeile\n"
+        "Teil 2 und 3 zusammen bleiben unter 120 Woertern. Was in der Nachricht steht, "
+        "wiederholst du dort nicht.\n"
     )
 
     def system_prompt(self) -> str:
