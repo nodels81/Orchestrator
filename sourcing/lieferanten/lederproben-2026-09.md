@@ -53,7 +53,7 @@ B Lederlieferant, C deutscher Handel, D polnische Kurzfassung).
 > Viele Grüße
 > Merle Ahrens
 > Einkauf Europa · Bellowerk Manufaktur
-> Quellenweg 3 · 21698 Harsefeld · Tel. 0152 53390255 · einkauf.eu@bellowerk.de
+> Quellenweg 3 · 21698 Harsefeld · Tel. 0152 53390255 · Merle.Ahrens@bellowerk.de
 
 Anhang: `bilder/HB-01-farben-patch.jpg`, `zeichnungen/HB-01-halsband.png`.
 
@@ -141,7 +141,7 @@ Alle stehen schon im Tracker mit Status "neu". Jetzt geht **zuerst** das Musterp
 >
 > Best regards,
 > Ole Petersen · Purchasing China · Bellowerk Manufaktur
-> Harsefeld near Hamburg, Germany · einkauf.china@bellowerk.de · WhatsApp/WeChat +49 152 53390255
+> Harsefeld near Hamburg, Germany · Ole.Petersen@bellowerk.de · WhatsApp/WeChat +49 152 53390255
 
 Anhang je Nachricht: `zeichnungen/HB-01-halsband.png` + `bilder/HB-01-farben-patch.jpg`
 (für Adityna stattdessen `bilder/HB-02-geflochten-am-hund.jpg`).

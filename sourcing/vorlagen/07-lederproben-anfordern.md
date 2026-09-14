@@ -37,7 +37,7 @@ Please reply by [Friday, 25 Sep 2026].
 
 Best regards,
 Ole Petersen · Purchasing China · Bellowerk Manufaktur
-Harsefeld near Hamburg, Germany · einkauf.china@bellowerk.de · WhatsApp/WeChat +49 152 53390255
+Harsefeld near Hamburg, Germany · Ole.Petersen@bellowerk.de · WhatsApp/WeChat +49 152 53390255
 
 ---
 
@@ -68,8 +68,8 @@ Please answer by number:
 Please reply by [Friday, 25 Sep 2026].
 
 Best regards,
-[Ole Petersen · Purchasing China · einkauf.china@bellowerk.de] /
-[Merle Ahrens · Purchasing Europe · einkauf.eu@bellowerk.de]
+[Ole Petersen · Purchasing China · Ole.Petersen@bellowerk.de] /
+[Merle Ahrens · Purchasing Europe · Merle.Ahrens@bellowerk.de]
 Bellowerk Manufaktur · Harsefeld near Hamburg, Germany
 
 ---
@@ -104,7 +104,7 @@ Bitte antworten Sie mit den Nummern:
 Viele Grüße
 Merle Ahrens
 Einkauf Europa · Bellowerk Manufaktur
-Quellenweg 3 · 21698 Harsefeld · Tel. 0152 53390255 · einkauf.eu@bellowerk.de
+Quellenweg 3 · 21698 Harsefeld · Tel. 0152 53390255 · Merle.Ahrens@bellowerk.de
 
 ---
 
@@ -127,4 +127,4 @@ brąz, koniak, szary, czarny.
 Proszę o odpowiedź do [piątku, 25.09.2026]. Możemy pisać po angielsku lub niemiecku.
 
 Pozdrawiam,
-Merle Ahrens · Zakupy Europa · Bellowerk Manufaktur · einkauf.eu@bellowerk.de
+Merle Ahrens · Zakupy Europa · Bellowerk Manufaktur · Merle.Ahrens@bellowerk.de
