@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hamburg No. 2 — Führleine 3,00 m | Bellowerk</title>
+<meta name="description" content="Führleine aus pflanzlich gegerbtem Fettleder, 3,00 m lang und dreifach verstellbar. Karabiner und Ringe sind im Mystery Braid eingeflochten, ohne Naht.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+.brot{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding-block:var(--raum-6) 0}
+.brot a:hover{color:var(--ink)}
+.brot span{color:var(--linie-hell);margin-inline:8px}
+.produkt{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--raum-9);padding-block:var(--raum-7) var(--sektion);align-items:start}
+@media (max-width:960px){.produkt{grid-template-columns:1fr;gap:var(--raum-8)}}
+.galerie-haupt .bildplatz{aspect-ratio:4/5;cursor:zoom-in}
+.galerie-reihe{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--raum-3);margin-top:var(--raum-3)}
+.galerie-reihe .bildplatz{aspect-ratio:1;border-color:var(--linie)}
+.galerie-reihe button{padding:0;border:0;background:none;cursor:pointer}
+.galerie-reihe button[aria-current="true"] .bildplatz{border-color:var(--messing-tief)}
+.galerie-reihe .bildplatz span{font-size:9px;letter-spacing:.1em;line-height:1.6}
+@media (max-width:420px){.galerie-reihe{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:961px){.kaufblock{position:sticky;top:96px}}
+.kaufblock h1{font-family:var(--display);font-size:var(--step-4);line-height:1.02;letter-spacing:-.02em}
+.artikelnr{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--messing-tief);margin-top:var(--raum-3)}
+.einsatz{color:var(--mute);margin-top:var(--raum-5);max-width:44ch}
+.preisblock{border-block:1px solid var(--linie);padding-block:var(--raum-6);margin-block:var(--raum-6)}
+.preis{font-family:var(--mono);font-size:var(--step-2);color:var(--ink);display:flex;align-items:baseline;gap:var(--raum-4)}
+.preis small{font-family:var(--sans);font-size:var(--step--1);color:var(--mute);letter-spacing:0;text-transform:none}
+.steuerzeile{font-size:var(--step--1);color:var(--mute);margin-top:var(--raum-3);line-height:1.9}
+.steuerzeile a{border-bottom:1px solid var(--linie-hell)}
+.steuerzeile a:hover{border-color:var(--messing-tief);color:var(--ink)}
+.preisblock .herkunft{margin-top:var(--raum-5)}
+.wahlblock{margin-bottom:var(--raum-6)}
+.wahlkopf{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:var(--raum-3);gap:var(--raum-4)}
+.wahlkopf > span:first-child{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.wahlkopf a{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--messing-tief);border-bottom:1px solid var(--linie-hell)}
+.wahlkopf a:hover{color:var(--messing)}
+.gewaehlt{color:var(--ink)}
+.leder{display:flex;gap:var(--raum-3);flex-wrap:wrap}
+.leder input{position:absolute;opacity:0;width:0;height:0}
+.leder label{display:grid;gap:7px;justify-items:center;cursor:pointer;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.leder label i{width:46px;height:46px;border-radius:50%;border:1px solid var(--linie-hell);background:var(--ton);box-shadow:inset 0 2px 5px rgb(255 255 255/.09),inset 0 -4px 9px rgb(0 0 0/.45);transition:border-color var(--mikro) ease,transform var(--mikro) ease}
+.leder label:hover i{transform:scale(1.05)}
+.leder input:checked + label i{border-color:var(--messing);box-shadow:inset 0 2px 5px rgb(255 255 255/.12),inset 0 -4px 9px rgb(0 0 0/.45),0 0 0 3px var(--nacht),0 0 0 4px var(--messing-tief)}
+.leder input:checked + label{color:var(--ink)}
+.leder input:focus-visible + label i{outline:2px solid var(--messing);outline-offset:3px}
+.kauf-reihe{display:flex;gap:var(--raum-3);align-items:stretch;margin-bottom:var(--raum-4)}
+.kauf-reihe .knopf{flex:1}
+.lieferhinweis{display:flex;gap:10px;align-items:baseline;font-size:var(--step--1);color:var(--mute);margin-bottom:var(--raum-6)}
+.lieferhinweis::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gut);flex:none;transform:translateY(-1px)}
+.praxis{border-block:1px solid var(--linie);padding-block:var(--sektion);background:var(--flaeche)}
+.praxis-raster{display:grid;grid-template-columns:1fr 1fr;gap:var(--raum-9);align-items:center}
+@media (max-width:860px){.praxis-raster{grid-template-columns:1fr;gap:var(--raum-7)}}
+.kennzahlen{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--raum-5);margin-top:var(--raum-7)}
+.kennzahl b{display:block;font-family:var(--display);font-size:var(--step-3);line-height:1;color:var(--ink)}
+.kennzahl span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:var(--raum-3)}
+.abschnitt{padding-block:var(--sektion)}
+.zweispalt{display:grid;grid-template-columns:1fr 1fr;gap:var(--raum-9)}
+@media (max-width:860px){.zweispalt{grid-template-columns:1fr;gap:var(--raum-7)}}
+.liste-strich li{display:flex;gap:var(--raum-4);padding-block:var(--raum-4);border-bottom:1px solid var(--linie);color:var(--mute);font-size:var(--step--1)}
+.liste-strich li b{color:var(--ink);font-weight:500;min-width:9ch;flex:none}
+.nicht li::before{content:"×";color:var(--fehler);font-family:var(--mono);flex:none}
+.nicht li{gap:var(--raum-3)}
+</style>
+</head>
+<body>
+
+<a class="springen" href="#inhalt">Zum Inhalt springen</a>
+
+<div class="entwurf rand">
+  <span><b>Entwurf</b> · nicht veröffentlichen</span>
+  <span>Richtung 03 Nachtwerkstatt</span>
+  <span>Produktseite LE-01</span>
+  <span>Stand 12.09.2026</span>
+  <span><b>Aus vorlagen/produkt.html erzeugt — nicht von Hand ändern</b></span>
+</div>
+
+<header class="kopf">
+  <div class="kopf-innen mitte rand">
+    <a href="startseite-nachtwerkstatt.html" class="wortmarke messing">Bellowerk</a>
+    <nav aria-label="Hauptbereiche">
+      <ul>
+        <li><a href="katalog.html" aria-current="page">Kollektion</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#werkstoff">Material</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#praxistest">Praxistest</a></li>
+        <li><a href="startseite-nachtwerkstatt.html#finder">Größe finden</a></li>
+      </ul>
+    </nav>
+    <button class="korb" aria-label="Warenkorb, 2 Stück">Warenkorb <b>2</b></button>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <nav class="brot mitte rand" aria-label="Sie sind hier">
+    <a href="startseite-nachtwerkstatt.html">Start</a><span>/</span><a href="katalog.html">Kollektion</a><span>/</span>Hamburg No. 2
+  </nav>
+
+  <div class="produkt mitte rand">
+
+    <div class="galerie-haupt">
+      <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 20%,#463726,#120F09 76%)" id="grossbild">
+        <span>FOTO 03 · LE-01 an einem Haken hängend<br>Gegenlicht · Halbtotale, ganze Leine<br><br>Klicken zum Vergrößern</span>
+      </div>
+      <div class="galerie-reihe" role="group" aria-label="Weitere Ansichten">
+        <button aria-current="true" aria-label="Ansicht 1: hängend">
+          <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 28% 20%,#463726,#120F09 76%)"><span>03<br>hängend</span></div>
+        </button>
+        <button aria-current="false" aria-label="Ansicht 2: Flechtung">
+          <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 38% 18%,#5E4A2E,#141009 76%)"><span>09<br>Flechtung</span></div>
+        </button>
+        <button aria-current="false" aria-label="Ansicht 3: Karabiner">
+          <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 40% 22%,#6B5730,#15110A 76%)"><span>06<br>Karabiner</span></div>
+        </button>
+        <button aria-current="false" aria-label="Ansicht 4: im Einsatz">
+          <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 26% 20%,#463726,#120F09 76%)"><span>05<br>im Einsatz</span></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="kaufblock">
+      <p class="augenbraue">Werkverzeichnis · zweites Stück</p>
+      <h1>Hamburg No. 2</h1>
+      <p class="artikelnr">LE-01 · Führleine 3,00 m</p>
+      <p class="einsatz">Drei Meter, dreifach verstellbar, sechs Führlängen. Eine Leine statt vier.</p>
+
+      <!-- Preis, Steuer, Versand und Herkunft stehen zusammen in einem Block.
+           Vorgabe aus konzepte/kollektion-01-hamburg.md: die Herkunftsangabe ist
+           genauso sichtbar wie der Name. Sie steht in der Vorlage, damit sie auf
+           keiner erzeugten Seite fehlen kann. -->
+      <div class="preisblock">
+        <p class="preis tab">129,00 € <small>Endpreis</small></p>
+        <p class="steuerzeile">
+          Inklusive 19 % Umsatzsteuer, zuzüglich <a href="recht/versand.html">Versandkosten</a>.<br>
+          Versand innerhalb Deutschlands 4,90 €, ab 120 € versandkostenfrei. Lieferzeit 2 bis 4 Werktage.
+        </p>
+        <p class="herkunft"><b>Entworfen, geprüft und gehandelt im Alten Land bei Hamburg.</b> &nbsp;Gefertigt in Deutschland.</p>
+      </div>
+
+      <div class="wahlblock">
+        <div class="wahlkopf"><span>Führlänge — <span class="gewaehlt">alle sechs Längen inbegriffen</span></span></div>
+        <p class="feld-hinweis">Alle sechs Längen stecken in derselben Leine. Es gibt nichts auszuwählen.</p>
+      </div>
+
+      <div class="wahlblock">
+        <div class="wahlkopf">
+          <span>Leder — <span class="gewaehlt" id="leder-gewaehlt">Dunkelbraun</span></span>
+        </div>
+        <div class="leder" role="radiogroup" aria-label="Lederfarbe">
+          <input type="radio" name="leder" id="l-grau" value="Grau"><label for="l-grau"><i style="--ton:linear-gradient(160deg,#6E6A63,#3B3833)"></i>Grau</label>
+          <input type="radio" name="leder" id="l-dunkelbraun" value="Dunkelbraun" checked><label for="l-dunkelbraun"><i style="--ton:linear-gradient(160deg,#5A3E29,#2A1B11)"></i>Dunkelbraun</label>
+          <input type="radio" name="leder" id="l-oliv" value="Oliv"><label for="l-oliv"><i style="--ton:linear-gradient(160deg,#5E6344,#2E3220)"></i>Oliv</label>
+          <input type="radio" name="leder" id="l-cognac" value="Cognac"><label for="l-cognac"><i style="--ton:linear-gradient(160deg,#A0662F,#4E2F14)"></i>Cognac</label>
+          <input type="radio" name="leder" id="l-schwarz" value="Schwarz"><label for="l-schwarz"><i style="--ton:linear-gradient(160deg,#3A3530,#15120F)"></i>Schwarz</label>
+        </div>
+        <p class="feld-hinweis">Durchgefärbt. Die Farbe dunkelt mit dem Tragen nach — das ist das Fett im Leder, kein Fehler.</p>
+      </div>
+
+      <div class="kauf-reihe">
+        <div class="menge" role="group" aria-label="Menge">
+          <button type="button" aria-label="Menge verringern" disabled>−</button>
+          <span aria-live="polite">1</span>
+          <button type="button" aria-label="Menge erhöhen">+</button>
+        </div>
+        <button class="knopf knopf-haupt" id="korb-knopf">In den Warenkorb</button>
+      </div>
+
+      <p class="lieferhinweis">Auf Lager. Bei Bestellung bis 14 Uhr geht es am selben Werktag raus.</p>
+    </div>
+  </div>
+
+  <section class="praxis" id="praxistest">
+    <div class="mitte rand praxis-raster">
+      <div>
+        <div class="kopfzeile" style="margin-bottom:var(--raum-6)">
+          <span class="nr">Prüfbericht · LE-01</span>
+          <h2>Drei Meter Leder, ein halbes Jahr am Hund.</h2>
+          <p>Eine Leine merkt man erst nach Wochen an: wie sie in der Hand liegt, ob der Karabiner klemmt, ob die Flechtung sich zieht. Genau deshalb hängt jedes Modell eine Saison im Betrieb, bevor es in den Verkauf geht.</p>
+        </div>
+        <div class="kennzahlen">
+          <div class="kennzahl"><b class="platzhalter" title="Platzhalter — echte Prüfdaten liefern">9</b><span>Hunde</span></div>
+          <div class="kennzahl"><b class="platzhalter" title="Platzhalter — echte Prüfdaten liefern">168</b><span>Tage</span></div>
+          <div class="kennzahl"><b class="platzhalter" title="Platzhalter — echte Prüfdaten liefern">0</b><span>Brüche</span></div>
+        </div>
+        <p class="feld-hinweis" style="margin-top:var(--raum-6)">Alle drei Zahlen sind Platzhalter. Sie werden vor der Veröffentlichung durch die echten Werte aus dem Betrieb ersetzt — oder die Sektion fällt weg. Erfundene Prüfzahlen sind angreifbare Werbung.</p>
+      </div>
+      <div class="bildplatz" style="--flaeche-bild:radial-gradient(120% 92% at 26% 20%,#463726,#120F09 76%);aspect-ratio:4/5">
+        <span>FOTO 05 · im Einsatz am arbeitenden Hund<br>Regen oder nasses Fell<br>Halbtotale</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="abschnitt mitte rand">
+    <div class="zweispalt">
+      <div>
+        <div class="kopfzeile">
+          <span class="nr">Maße</span>
+          <h2>Sechs Längen aus einer Leine</h2>
+          <p>Die Ringe sitzen bei 45, 140 und 245 cm. Aus diesen drei Punkten ergeben sich sechs Führlängen, ohne dass etwas umgeschnallt wird.</p>
+        </div>
+        <div class="tabellenrahmen">
+          <table>
+            <caption class="nur-vorlesen">Sechs Längen aus einer Leine — Hamburg No. 2</caption>
+            <thead><tr><th>Führung</th><th>Länge</th><th>Wofür</th></tr></thead>
+            <tbody>
+              <tr><td>kurz am Körper</td><td class="tab">0,45 m</td><td class="tab">Verkehr, Tierarzt, enge Wege</td></tr>
+              <tr><td>Standard</td><td class="tab">1,40 m</td><td class="tab">Alltag an der Seite</td></tr>
+              <tr><td>lang</td><td class="tab">2,45 m</td><td class="tab">freies Laufen mit Kontrolle</td></tr>
+              <tr><td>ganz lang</td><td class="tab">3,00 m</td><td class="tab">Feld und Wald</td></tr>
+              <tr><td>über der Schulter</td><td class="tab">1,40 m</td><td class="tab">Hände frei</td></tr>
+              <tr><td>um die Hüfte</td><td class="tab">2,45 m</td><td class="tab">Joggen</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="kopfzeile">
+          <span class="nr">Material</span>
+          <h2>Drei Werkstoffe. Was fehlt, ist Absicht.</h2>
+        </div>
+        <ul class="liste-strich">
+          <li><b>Leder</b><span>Rindfettleder, pflanzlich gegerbt, gefettet. 20 mm breit, 3,5 mm stark.</span></li>
+          <li><b>Beschläge</b><span>Massives Messing: Wirbel-Bolzenkarabiner, zwei geschweißte O-Ringe.</span></li>
+          <li><b>Flechtung</b><span>Dreisträngiger Mystery Braid aus einem Stück — so hält der Karabiner ohne Naht.</span></li>
+          <li><b>Schrauben</b><span>Buchschrauben aus Messing mit Schraubensicherung.</span></li>
+        </ul>
+        <p class="augenbraue" style="margin-block:var(--raum-7) var(--raum-4)">Kommt nicht vor</p>
+        <ul class="liste-strich nicht">
+          <li>Nähte und Garn</li>
+          <li>Nieten</li>
+          <li>Stahl, auch vermessingt</li>
+          <li>Zinkdruckguss</li>
+          <li>Kunststoff und Klickverschlüsse</li>
+          <li>Gurtband und Nylon</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="abschnitt mitte rand" id="fragen">
+    <div class="schmal">
+      <div class="kopfzeile" style="margin-inline:auto;text-align:center">
+        <span class="nr">Fragen</span>
+        <h2>Was vor dem Kauf meistens gefragt wird.</h2>
+      </div>
+      <details class="klapp">
+        <summary>Warum ist die Leine nicht vernäht?</summary>
+        <div class="klapp-inhalt"><p>Weil eine Naht die schwächste Stelle wäre. Der Mystery Braid führt das Leder aus einem Stück um den Ring herum und wieder zurück — es gibt nichts, was aufgehen könnte, weil nichts zusammengefügt ist.</p></div>
+      </details>
+      <details class="klapp">
+        <summary>Drei Meter sind lang. Verheddert sich das nicht?</summary>
+        <div class="klapp-inhalt"><p>Nur wenn man alle drei Meter laufen lässt. Im Alltag ist die Leine auf 1,40 m geschnallt und damit kürzer als die meisten festen Leinen. Die volle Länge braucht man im Feld, nicht in der Stadt.</p></div>
+      </details>
+      <details class="klapp">
+        <summary>Hält der Karabiner einen großen Hund?</summary>
+        <div class="klapp-inhalt"><p>Der Wirbel-Bolzenkarabiner ist massives Messing. Die Bruchlast steht im Materialdatenblatt des Herstellers. Gerissen ist im Praxistest keiner — bei welcher Last er aufgibt, steht hier erst, wenn es gemessen ist.</p></div>
+      </details>
+      <details class="klapp">
+        <summary>Kann ich die Leine kürzen lassen?</summary>
+        <div class="klapp-inhalt"><p>Ja. Schick sie ein, wir nehmen heraus und flechten neu. Die Ringpositionen verschieben sich dann entsprechend.</p></div>
+      </details>
+      <details class="klapp">
+        <summary>Was ist, wenn es nicht passt?</summary>
+        <div class="klapp-inhalt"><p>Vierzehn Tage Widerrufsrecht, ohne Begründung. Solange das Stück ungetragen ist, geht es zurück oder wird getauscht. Einzelheiten in der <a href="recht/widerruf.html" style="border-bottom:1px solid var(--linie-hell)">Widerrufsbelehrung</a>.</p></div>
+      </details>
+      <details class="klapp">
+        <summary>Kann ich es reparieren lassen?</summary>
+        <div class="klapp-inhalt"><p>Ja, und dafür ist es so gebaut. Jedes Teil ist verschraubt, nicht vernietet oder vernäht. Schick es ein, wir machen es und schicken es zurück. Die Kosten nennen wir vorher.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="abschnitt mitte rand" id="bewertungen">
+    <div class="schmal">
+      <div class="leer">
+        <h3>Noch keine Bewertungen</h3>
+        <p>Der Shop ist nicht eröffnet. Hier stehen später echte Kundenstimmen mit Foto — und nur echte. Bis dahin bleibt die Fläche leer.</p>
+        <span class="augenbraue">Leerzustand · gestaltet, nicht vergessen</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="mitte rand">
+    <div class="fuss-raster">
+      <div class="fuss-marke">
+        <span class="wortmarke messing">Bellowerk</span>
+        <p>Manufaktur für Lederzubehör. Hamburg. Halsbänder und Leinen aus Fettleder und massivem Messing.</p>
+      </div>
+      <div>
+        <h4>Kaufen</h4>
+        <ul>
+          <li><a href="katalog.html">Kollektion</a></li>
+          <li><a href="startseite-nachtwerkstatt.html#finder">Größe finden</a></li>
+          <li><a href="warenkorb.html">Warenkorb</a></li>
+          <li><a href="recht/versand.html">Versand und Lieferzeit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Werkstatt</h4>
+        <ul>
+          <li><a href="#praxistest">Praxistest</a></li>
+          <li><a href="startseite-nachtwerkstatt.html#werkstoff">Material und Pflege</a></li>
+          <li><a href="startseite-nachtwerkstatt.html#leistung">Gassi, Pension, Training</a></li>
+          <li><a href="#fragen">Reparatur</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="recht/impressum.html">Impressum</a></li>
+          <li><a href="recht/datenschutz.html">Datenschutz</a></li>
+          <li><a href="recht/agb.html">AGB</a></li>
+          <li><a href="recht/widerruf.html">Widerruf und Rückgabe</a></li>
+          <li><a href="recht/versand.html">Versand und Lieferzeit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="zahlarten">
+      <span>PayPal</span><span>Überweisung</span>
+    </div>
+    <p class="rechtszeile">
+      Entworfen, geprüft und gehandelt im Alten Land bei Hamburg. Gefertigt in Deutschland. Der Praxistest findet im eigenen Hundebetrieb statt.<br>
+      Alle Preise inklusive gesetzlicher Umsatzsteuer, zuzüglich Versandkosten. Versand innerhalb Deutschlands 4,90 €, ab 120 € versandkostenfrei. Lieferzeit 2 bis 4 Werktage, bei Maßanfertigung 10 bis 14 Werktage.<br>
+      Entwurfsstand 12.09.2026 · Richtung 03 Nachtwerkstatt · Prüfzahlen sind Platzhalter. Bildflächen sind Aufnahmeanweisungen, keine Bilder.
+    </p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('input[name="leder"]').forEach(e =>
+  e.addEventListener('change', () => document.getElementById('leder-gewaehlt').textContent = e.value));
+
+const menge = document.querySelector('.menge');
+const anzeige = menge.querySelector('span');
+const [weniger, mehr] = menge.querySelectorAll('button');
+let zahl = 1;
+const zeichnen = () => { anzeige.textContent = zahl; weniger.disabled = zahl <= 1; mehr.disabled = zahl >= 10; };
+weniger.addEventListener('click', () => { if (zahl > 1) { zahl--; zeichnen(); } });
+mehr.addEventListener('click', () => { if (zahl < 10) { zahl++; zeichnen(); } });
+
+document.getElementById('korb-knopf').addEventListener('click', e => {
+  const k = e.currentTarget;
+  k.dataset.laedt = '';
+  setTimeout(() => {
+    delete k.dataset.laedt;
+    k.textContent = 'Im Warenkorb ✓';
+    setTimeout(() => k.textContent = 'In den Warenkorb', 2200);
+  }, 850);
+});
+
+document.querySelectorAll('.galerie-reihe button').forEach(knopf => {
+  knopf.addEventListener('click', () => {
+    document.querySelectorAll('.galerie-reihe button').forEach(b => b.setAttribute('aria-current','false'));
+    knopf.setAttribute('aria-current','true');
+    const quelle = knopf.querySelector('.bildplatz');
+    document.getElementById('grossbild').style.setProperty('--flaeche-bild',
+      getComputedStyle(quelle).getPropertyValue('--flaeche-bild'));
+  });
+});
+</script>
+
+<!-- Strukturierte Daten. Bewusst OHNE aggregateRating: es gibt noch keine
+     Bewertungen, und erfundene Sternebewertungen sind irreführende Werbung. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Hamburg No. 2",
+  "sku": "LE-01",
+  "description": "Führleine aus pflanzlich gegerbtem Fettleder, 3,00 m lang und dreifach verstellbar. Karabiner und Ringe sind im Mystery Braid eingeflochten, ohne Naht.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Bellowerk"
+  },
+  "material": "Rindfettleder, pflanzlich gegerbt; Messing massiv",
+  "countryOfOrigin": "DE",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "129.00",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Warum ist die Leine nicht vernäht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil eine Naht die schwächste Stelle wäre. Der Mystery Braid führt das Leder aus einem Stück um den Ring herum und wieder zurück — es gibt nichts, was aufgehen könnte, weil nichts zusammengefügt ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Drei Meter sind lang. Verheddert sich das nicht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nur wenn man alle drei Meter laufen lässt. Im Alltag ist die Leine auf 1,40 m geschnallt und damit kürzer als die meisten festen Leinen. Die volle Länge braucht man im Feld, nicht in der Stadt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hält der Karabiner einen großen Hund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Wirbel-Bolzenkarabiner ist massives Messing. Die Bruchlast steht im Materialdatenblatt des Herstellers. Gerissen ist im Praxistest keiner — bei welcher Last er aufgibt, steht hier erst, wenn es gemessen ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich die Leine kürzen lassen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Schick sie ein, wir nehmen heraus und flechten neu. Die Ringpositionen verschieben sich dann entsprechend."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

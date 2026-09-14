@@ -7,5 +7,26 @@
     "empfaenger": "DEINE-HAUPTADRESSE@example.com",
     "smtp_server": "smtp.gmail.com",
     "smtp_port": 465
+  },
+  "autonom": {
+    "kennwort": "HIER-EIN-EIGENES-KENNWORT",
+    "imap_server": "imap.gmail.com",
+    "imap_port": 993,
+    "kennwort_agent": "HIER-EIN-ZWEITES-KENNWORT-FUER-DEN-AGENTEN"
+  },
+  "ausliefern": {
+    "test": {
+      "host": "wXXXXXXX.kasserver.com",
+      "benutzer": "sshBENUTZER",
+      "pfad": "/www/htdocs/BENUTZER/bau.bellowerk.de/wp-content/themes/bellowerk",
+      "adresse": "https://bau.bellowerk.de"
+    },
+    "live": {
+      "host": "wXXXXXXX.kasserver.com",
+      "benutzer": "sshBENUTZER",
+      "pfad": "/www/htdocs/BENUTZER/bellowerk.de/wp-content/themes/bellowerk",
+      "adresse": "https://bellowerk.de"
+    },
+    "marker": "im Alten Land bei Hamburg"
   }
 }

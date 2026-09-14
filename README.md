@@ -14,6 +14,7 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 | 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
 | 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
 | **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| **06** | **Web & Shop** | `abteilung_web.py` | Webseiten und Shopsystem auf Agenturniveau: Leitidee, Designsystem, Sektionen, FX, Shop, Abnahmetor — liest `WEBSITE-PROMPT-ultra.md` als bindenden Kontext |
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
 Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`,
@@ -66,8 +67,65 @@ sourcing/bellowerk/bilder/          Referenzfotos für Lieferanten (marke/ = nur
 sourcing/vorlagen/                  Sendefertige Nachrichten: RFQ, Nachfassen, Muster, Feedback, Schnittmuster, Reklamation
 sourcing/lieferanten/               Shortlist (35 Kandidaten) und Tracker
 .claude/skills/china-sourcing/      Skill für Claude Code: Schreibregeln, Ablauf, QC, Lieferantenprüfung
-.claude/agents/                     Vier Claude-Code-Agenten: Einkäufer, Scout, Spec-Writer, QC-Prüfer
+.claude/agents/china-*.md           Vier Claude-Code-Agenten: Einkäufer, Scout, Spec-Writer, QC-Prüfer
 ```
+
+## Website und Shop (`WEBSITE-PROMPT-ultra.md`)
+
+Der ultimative Auftragsprompt für Seiten auf dem Niveau der besten Werbeagenturen — und das
+Designteam, das danach arbeitet.
+
+```
+WEBSITE-PROMPT-ultra.md                 Der vollständige Prompt (Block 0–11) + Kurzfassung zum Kopieren
+.claude/skills/website-highend/         Arbeitsanweisung und Nachschlagewerk
+  references/designsystem.md            Tokens, OKLCH-Farbleitern, Typoskala, Raster, Glanz und Schattenlagen
+  references/motion-und-fx.md           GSAP, Lenis, WebGL/Shader, Rive, Abschaltmatrix, Verbote
+  references/bild-pipeline.md           Bildwelt, Nano-Banana-Pipeline, Prompt-Bauplan, AVIF-Ausgabe
+  references/shop-und-recht.md          Shopify Hydrogen, Bausteine, Zahlarten, deutsche Pflichtangaben
+  references/qualitaetstor.md           Budgets und Abnahmetor mit 20 Punkten
+.claude/agents/web-*.md                 Acht Agenten: Creative Director, Art Director, Motion & FX,
+                                        Bildregie, Frontend, Commerce, Texter, Qualitätsprüfer
+```
+
+Ablauf: Leitidee → Designsystem → Bauteilübersicht → Sektionen → FX → Abnahmetor.
+Budgets (LCP unter 1,8 s, INP unter 200 ms, CLS unter 0,05, Lighthouse mindestens 95/100/100)
+sind Abnahmebedingungen. Reißt ein Wert, fällt der Effekt weg, nicht der Grenzwert.
+
+Produktbilder sind echte Fotos. Nano Banana liefert Comps, Aufnahmeanweisungen, Freisteller,
+Retusche und Texturen — nie ein Produktfoto, weil der Praxistest an echten Hunden das
+Verkaufsargument ist.
+
+```
+Nutze den Agenten web-creative-director: Leitidee und Sektionsfolge für die neue Startseite.
+Nutze den Agenten web-art-director: Designsystem und Tokens dazu bauen.
+```
+
+## Tagesbrief und offene Entscheidungen
+
+`tagesbrief.py` schickt jeden Morgen um 07:00 eine Mail: was auf eine Entscheidung wartet,
+welche Fristen fallen, was gestern fertig wurde, ob der Lauf überhaupt noch startet.
+Quelle für die offenen Punkte ist `entscheidungen/offen.md`, ein Register von Hand:
+`- [ ]` wird gemeldet, `- [x]` nicht mehr.
+
+```bash
+venv/bin/python tagesbrief.py                        # Vorschau, sendet nichts
+venv/bin/python tagesbrief.py --senden               # hoechstens einmal pro Tag
+0 7 * * *  cd /opt/bello && venv/bin/python tagesbrief.py --senden >> logs/tagesbrief.log 2>&1
+```
+
+**Vor dem nächsten `git pull` auf dem Server: `bash sicherung.sh`, dann `SERVER-ABGLEICH.md` lesen.** Der Server führt
+Abteilungen, die hier fehlen, und ein Pull würde das Abteilungsverzeichnis überschreiben.
+
+## Konzepte (`konzepte/`)
+
+Vorlagen der Abteilung 01 Innovation, jeweils durch die sieben Prüffragen gelaufen.
+Abgelehnte Konzepte stehen mit Grund am Ende der Datei.
+
+## Gebaute Seiten (`web/`)
+
+`web/entwurfsblaetter.html` zeigt vier Designrichtungen im Vergleich,
+`web/startseite-nachtwerkstatt.html` die gewählte Richtung 03 als Startseite.
+Stand und offene Punkte in `web/README.md`.
 
 ## Auf dem Server (`/opt/bello`)
 
@@ -76,6 +134,7 @@ cd /opt/bello
 git pull                                   # neue Abteilungen und Unterlagen holen
 venv/bin/python orchestrator.py --probelauf
 venv/bin/python orchestrator.py --auftrag "05 Einkauf China" "RFQ fuer HB-01 und LE-01 an die Prio-1-Fabriken der Shortlist" 2026-09-19
+venv/bin/python orchestrator.py --auftrag "06 Web & Shop" "Leitidee und Designsystem fuer die neue Startseite" 2026-09-24
 venv/bin/python orchestrator.py --stand
 venv/bin/python orchestrator.py --gedaechtnis
 ```
@@ -91,7 +150,7 @@ Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
 
 ## Lokal / in Claude Code
 
-Die vier Agenten in `.claude/agents/` laufen in jeder Claude-Code-Session mit diesem Repo, auch
+Die zwölf Agenten in `.claude/agents/` (vier Einkauf, acht Web) laufen in jeder Claude-Code-Session mit diesem Repo, auch
 parallel (Scout sucht Beschlag-Lieferanten, während der Einkäufer RFQs schreibt):
 `Nutze den Agenten china-einkauf: RFQ für HB-01 und LE-01 an Wenzhou Vigorous, Vorlage 01.`
 

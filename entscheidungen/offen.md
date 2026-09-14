@@ -1,0 +1,91 @@
+# Offene Entscheidungen
+
+Dieses Register geht jeden Morgen um 07:00 als Tagesbrief raus, so lange, bis ein Punkt
+abgehakt ist. Genau dafür gibt es die Datei: Entscheidungen gehen sonst in Auftragsmails
+unter und tauchen nie wieder auf.
+
+**Pflege von Hand.** Erledigt heißt `- [x]`, dann verschwindet der Punkt aus der Mail.
+Neue Punkte legt jede Abteilung selbst an, unter der passenden Überschrift.
+
+## Betrieb
+
+- [ ] Der Server /opt/bello ist weiter als dieses Repo: dort laufen 06 Einkauf, 07 Einkauf China, 08 Design, 09 Qualität und 10 Homepage, die hier fehlen. Servercode nach Git bringen, bevor dort das nächste Mal gepullt wird. Siehe SERVER-ABGLEICH.md
+- [ ] Abteilungsnummer für Web & Shop festlegen: hier steht sie als 06, auf dem Server ist 06 bereits Einkauf und 10 bereits Homepage
+
+- [ ] Läuft auf dem Server bereits ein Tagesbrief? Wenn ja, mit tagesbrief.py vergleichen und nur eines von beidem behalten. Screenshots der bisherigen Morgenmails helfen
+- [ ] Vor dem nächsten Pull auf /opt/bello: `bash sicherung.sh` ausführen
+
+- [ ] Autonom-Betrieb auf dem Server anwerfen, in dieser Reihenfolge: `bash sicherung.sh`, dann `bash uebernahme.sh`, dann `bash autonom/autonom.sh`. Danach läuft der Betrieb 24/7 ohne deinen Rechner. Siehe autonom/README.md
+- [ ] Kennwort für den Posteingang festlegen. `autonom.sh` schlägt eines vor und trägt es nach Rückfrage in config.json ein. Ohne Kennwort bleibt der Mail-Eingang abgeschaltet
+- [ ] Falls im Cron noch `tagesbrief.py` steht: Eintrag entfernen, sonst kommt die Morgenmail doppelt. `autonom.sh` warnt, löscht aber nichts
+- [ ] Zweiter Kanal neben der Mail: Telegram-Bot mit Knöpfen statt Tippen? Braucht einen Bot-Token von dir. Mail funktioniert ohne alles und ist deshalb zuerst gebaut
+- [ ] Solange der Server keine Abteilung "06 Web & Shop" kennt, werden Aufträge dorthin abgewiesen — auch die per Mail. Hängt an der Nummernentscheidung zwei Punkte weiter oben
+
+## Produkt
+
+- [ ] Koppel KO-01: Wird sie gebaut, wenn sich kein Messingwirbel findet? Stahl ist ausgeschlossen
+- [ ] Werkstattdurchsicht WD-01 als Leistung für 29 EUR: kommt sie?
+- [ ] Pflegeset PF-01 für 44 EUR: kommt es, mit eigener Anleitung?
+- [ ] Namensschilder NS-01 und NS-02: Antwort des Herstellers auf Frage 5 der RFQ einholen, ob Einzelgravur auf Zuruf möglich ist
+
+## Website
+
+- [ ] Aufnahmeliste abarbeiten: 11 Fotos, davon zwei Paare neu und getragen. Ohne diese Fotos kein Shopstart. Siehe web/aufnahmen/
+- [ ] Echte Prüfdaten für den Prüfbericht liefern: Hund, Tage, Belastung, Befund. Aktuell stehen Platzhalter auf der Seite
+- [ ] Lederscan als Textur für die Materialansicht liefern
+- [x] Shopsystem entschieden 12.09.2026: **WooCommerce** auf eigenem Webspace bei All-Inkl (Tarif Premium). Nicht Shopify, nicht Medusa
+
+- [x] Kleinunternehmerregelung geklärt 12.09.2026: **nein, Regelbesteuerung** mit Vorsteuerabzug. "inklusive 19 % Umsatzsteuer" bleibt überall stehen
+- [x] Rücksendekosten entschieden 12.09.2026: **der Käufer trägt sie.** Steht jetzt wortgleich in Widerrufsbelehrung und Versandseite
+- [x] Herkunftsangabe geklärt 12.09.2026: **"im Alten Land bei Hamburg"**, Kollektionsnamen Hamburg No. 1–7 bleiben. Überall durchgezogen. Alter Punkt: Auf jeder Produktseite steht "Entworfen, geprüft und gehandelt in Hamburg", im Impressum steht dann 21698. Das widerspricht sich auf derselben Website. Vorschlag: "Entworfen, geprüft und gehandelt im Alten Land bei Hamburg" — wahr und trägt dasselbe Signal. Die Kollektionsnamen "Hamburg No. 1" bleiben davon unberührt. Betrifft konzepte/kollektion-01-hamburg.md und sourcing/bellowerk/markenbrief.md
+- [x] Telefonnummer eingetragen 12.09.2026: +49 152 53390255, im Impressum und im Muster-Widerrufsformular. Damit sind beide nach § 5 DDG geforderten Kontaktwege vorhanden. Alter Punkt:
+- [ ] ~~Telefonnummer fürs Impressum.~~ Björn will sie eintragen lassen, hat sie aber noch nicht geschickt. Sie steht dann öffentlich im Impressum und im Muster-Widerrufsformular. Alternative, falls die private Nummer nicht öffentlich stehen soll: Kontaktformular mit zugesicherter Antwortzeit von 24 bis 48 Stunden — erfüllt § 5 DDG genauso
+- [x] Ort bestätigt 12.09.2026: **Harsefeld**
+- [x] Inhaber bestätigt 12.09.2026: **Björn Bujko**, Einzelunternehmen, Geschäftsname Bellowerk Manufaktur
+- [ ] USt-IdNr. nach § 27a UStG — Björn reicht sie nach (12.09.2026). Bis dahin bleibt die Stelle im Impressum markiert. **Wird mit dem weltweiten Versand wichtiger**: für die OSS-Anmeldung wird sie gebraucht
+- [x] E-Mail bestätigt 12.09.2026: **info@bellowerk.de**, eingetragen in Impressum, Datenschutz und Widerruf
+- [x] bellowerk.de ist leer — bestätigt 13.09.2026. Es wird nichts überschrieben
+- [ ] **OSS-Verfahren anmelden, bevor die Schwelle reißt.** Folge des weltweiten Versands: Für Privatkunden in der EU gilt eine einheitliche Lieferschwelle von **10.000 EUR netto im Kalenderjahr, zusammengerechnet über alle EU-Länder**. Darunter berechnest du deutsche Umsatzsteuer. Darüber wird der Steuersatz des Ziellandes fällig — ab dem Paket, das die Schwelle reißt, nicht ab dem nächsten Jahr. Das One-Stop-Shop-Verfahren bündelt das in einer Meldung beim Bundeszentralamt für Steuern, statt einer Registrierung je Land. Teilnahme ist freiwillig, die Steuerpflicht nicht. Mit dem Steuerberater klären
+- [ ] **Ausfuhr in Drittländer ist umsatzsteuerfrei — das muss der Shop können.** Bei Lieferung in die Schweiz, die USA und alle Länder außerhalb der EU fällt keine deutsche Umsatzsteuer an (§ 4 Nr. 1a i. V. m. § 6 UStG, Ausfuhrnachweis vorausgesetzt). Zurzeit steht auf jeder Seite "inklusive 19 % Umsatzsteuer" — für einen Kunden in den USA ist das falsch, der zahlt sonst deutsche Steuer **und** Einfuhrsteuer im Zielland. Wird in WooCommerce über die Steuerzonen eingestellt, nicht im Text gelöst
+- [x] Versandtarife als Richtwerte gesetzt 12.09.2026 nach DHL-Liste: EU 10,90 €, Europa außerhalb EU 16,90 €, Welt 18,90 €, versandfrei in der EU ab 180 €. Vor der Veröffentlichung gegen den eigenen DHL-Vertrag prüfen
+- [ ] **Die 4,90 € für den Inlandsversand sind zu niedrig.** DHL Paket bis 2 kg kostet online 6,19 €, Päckchen M 5,19 €. Bei jedem Paket gehen 1,29 € drauf, bei Päckchen 29 Cent. Entweder auf 5,90 bis 6,90 € anheben, oder die Grenze für versandfrei von 120 € senken, damit mehr Bestellungen darüber liegen, oder es bewusst als Zuschuss stehen lassen. Eine der drei Möglichkeiten, aber bewusst
+- [ ] Geschäftskundenvertrag bei DHL prüfen. Die Richtwerte oben sind Privatkundenpreise; ab wenigen Paketen im Monat lohnt der Vertrag und senkt alle vier Zonen
+- [ ] Einfuhrbestimmungen für Lederwaren prüfen. Bei Rindleder meist unproblematisch, aber Australien und Neuseeland haben strenge Regeln für tierische Erzeugnisse
+- [ ] Kauf auf Rechnung zusätzlich anbieten? Zurzeit nur PayPal und Überweisung (Vorkasse). Rechnung heißt Zahlungsausfallrisiko, ist aber im deutschen Onlinehandel das stärkste Vertrauenssignal
+- [ ] Wie viele der zehn inklusiven Domains sind belegt? Für die Weiterleitungen herr-bello-und-frau-wuff und hundebetreuung-hamburg
+- [x] Anbieterangaben eingetragen 12.09.2026: Björn Bujko, Einzelunternehmen, Quellenweg 3, 21698 Harsefeld, info@bellowerk.de. Offen bleiben nur Telefonnummer und USt-IdNr.
+- [ ] Rechtsseiten anwaltlich prüfen lassen, sobald Telefonnummer und USt-IdNr. drin sind. Kein Muster aus dem Netz ersetzt das
+- [ ] Abnahmetor Punkt 4: Richtung 03 ist bewusst nur dunkel. Punkt für dieses Projekt streichen oder Hell-Variante bauen? Siehe web/ABNAHME.md
+- [x] Abnahmetor Punkt 6 erledigt 13.09.2026: IBM Plex Mono gestrichen, zwei Familien, 81,2 KB
+- [ ] Startseite auf tokens.css umstellen. Sie trägt das Designsystem noch als Kopie, und bei der ersten Korrektur musste dieselbe Änderung schon an zwei Stellen gemacht werden
+
+- [ ] **German Market oder Germanized kaufen?** WooCommerce allein erfüllt das deutsche Onlinehandelsrecht nicht: Grundpreise, Widerrufsbelehrung in der Bestellmail, Bestellübersicht vor dem Knopf. Beide Erweiterungen gibt es kostenlos in eingeschränkter Fassung, die Vollfassung kostet jährlich. Erst die kostenlose nehmen, bei Bedarf umsteigen. Preis prüfen und entscheiden
+- [ ] PayPal-Geschäftskonto: API-Zugangsdaten erzeugen und im Sandkasten testen, bevor scharf geschaltet wird
+- [ ] Bankverbindung für die Überweisung eintragen. Steht dann in jeder Bestellbestätigung
+- [ ] Startseite nach WordPress portieren. Kopfbereich und Kollektion stehen im Theme; Materialansicht mit Shader, Prüfbericht, Größenfinder und Materialkunde liegen noch als HTML in web/startseite-nachtwerkstatt.html. Größte offene Arbeit am Theme
+- [ ] SSH-Schlüssel für den Webspace erzeugen und im KAS hinterlegen. Ohne ihn läuft hochladen.sh nicht — und ein Passwort will das Skript bewusst nicht
+
+- [x] Unterdomain angelegt 13.09.2026: **bau.bellowerk.de**, im DNS erreichbar
+- [ ] WordPress auf bau.bellowerk.de auf **noindex** stellen (Einstellungen → Lesen). Sonst steht die Baustelle irgendwann neben dem Shop in der Suche
+- [ ] Abschnitt `ausliefern` in config.json ausfüllen: Host, Benutzer, Pfad und Adresse für Test und Shop. Vorlage in config.beispiel.json
+
+- [ ] Nach dem Import: Produkte auf **variabel** umstellen und Varianten erzeugen, sonst gibt es Größe und Leder nur als Beschriftung, nicht zur Auswahl. Siehe wordpress/EINRICHTEN.md, Abschnitt 9
+- [ ] Produktdaten zusammenführen: HB-01 steht in wordpress/produkte.py, die anderen drei in web/vorlagen/seiten_bauen.py. Zwei Quellen laufen irgendwann auseinander — eine davon soll die andere lesen
+
+- [x] Richtung entschieden 13.09.2026: **Nachtwerkstatt.** 10 Homepage wird angehalten, ihr Testplan, Passwortschutz und Foto-Briefing werden übernommen. Siehe entscheidungen/2026-09-13-richtung-nachtwerkstatt.md. Alter Punkt: Am 12.09. hat sie zu A-2026-011 und A-2026-012 einen vollständigen WooCommerce-Aufbau geliefert: Storefront-Theme, helle Farben (#F7F3EC, Waldgrün, Cognac), Lora, Produkttitel "Halsband Fettleder HB-01", Preisstaffel 69/79/89/99 nach Breite, nur Vorkasse. Das ist ein anderer Shop als der hier gebaute. **Björn muss wählen**, sonst laufen zwei Bauten nebeneinander
+- [ ] **Markenwissen auf dem Server richtigstellen:** `python3 markenwissen-abgleich.py --anwenden` in /opt/bello. Ändert nur die vier falschen Stellen, lässt servereigene Felder stehen, sichert vorher. Hintergrund: Belege aus A-2026-012: HB-03 wird dort "Hamburg No.1" genannt (richtig wäre Hamburg No. 6, HB-01 ist No. 1), es steht "gefertigt in Hamburg/Altes Land" (am 12.09. auf "im Alten Land bei Hamburg, gefertigt in Deutschland" geändert), und die Verkaufsnamen der Kollektion kommen gar nicht vor. Ursache: `markenwissen.py` auf dem Server ist älter, und `uebernahme.sh` kopiert es **absichtlich nicht**. Es heilt also nicht von selbst. Solange das so bleibt, arbeitet jede Abteilung dort mit falschen Angaben
+- [x] Schriften eingebaut 13.09.2026: Archivo, Bodoni Moda und IBM Plex Mono liegen als vier woff2-Dateien im Theme, zusammen 110,8 KB bei einem Budget von 120. Nichts geht mehr an Google. Alter Punkt:
+- [ ] ~~Die Schriften fehlen im Theme.~~ `tokens.css` verlangt Bodoni Moda, Archivo und IBM Plex Mono, aber in `assets/` liegt keine Schriftdatei und es gibt kein `@font-face`. Der Browser fällt auf Georgia und die Systemschrift zurück — die Seite steht, sieht aber nicht aus wie entworfen. Mein Kommentar in functions.php behauptete das Gegenteil, das ist berichtigt. Zu tun: die drei Familien als woff2 nach `assets/schriften/` legen. Aus dieser Umgebung heraus kann ich sie nicht herunterladen
+- [ ] Echte Mailadressen eintragen: Der Orchestrator heißt **Gustav** und sendet von `gustav.bellowerk@gmail.com` an `pijoern.nodels@gmail.com`. In config.beispiel.json stand eine andere Annahme. Für den Posteingang muss `mail.empfaenger` die Adresse sein, von der Björn schreibt
+
+- [ ] `web/entwurfsblaetter.html` zeigt in einer Beispielkarte noch „gefertigt in Hamburg". Das Blatt ist der Vergleich der vier Richtungen vom 11.09. und damit ein Zeitdokument — geändert wird es nur, wenn es je wieder benutzt wird. Dann aber muss der Satz weg, und das veröffentlichte Artefakt neu hochgeladen werden
+- [x] Schriftbudget erfüllt 13.09.2026: **IBM Plex Mono gestrichen.** Zwei Familien, 81,2 von 120 KB. Die Ziffern richten sich über `tnum` in Archivo aus — in der Schriftdatei nachgemessen. Nebenbei wurde die Prüftabelle schmaler und bricht nicht mehr um
+
+- [ ] **`uebernahme.sh` erneut laufen lassen, bevor irgendein neues Skript auf dem Server gesucht wird.** Am 13.09. kam heraus, dass `markenwissen-abgleich.py` und `auftraege.sh` gar nicht auf `/opt/bello` lagen — sie standen nicht auf der Übernahmeliste. Jetzt stehen sie drauf, zusammen mit `wordpress/` und `config.beispiel.json`. Ohne `wordpress/` hätte der Agent später nichts zum Ausliefern gehabt
+
+## Marke
+
+- [ ] Finden Gassi-Service, Pension und Training tatsächlich in Hamburg statt, oder im Alten Land? Wenn in Hamburg, darf "in Hamburg geprüft" zusätzlich dastehen — das ist ein starkes Argument, das zurzeit verschenkt wird. Tatsachenfrage, siehe Nachtrag in konzepte/kollektion-01-hamburg.md
+
+
+- [ ] Positionierungssatz "aus eigener Werkstatt" bleibt gültig, solange in Hamburg gefertigt wird. Bei der ersten Lieferung aus China ersetzen, Ersatztext liegt in konzepte/kollektion-01-hamburg.md
