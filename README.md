@@ -67,6 +67,7 @@ sourcing/vorlagen/                  Sendefertige Nachrichten: RFQ, Nachfassen, M
 sourcing/lieferanten/               Shortlist (35 Kandidaten) und Tracker
 .claude/skills/china-sourcing/      Skill für Claude Code: Schreibregeln, Ablauf, QC, Lieferantenprüfung
 .claude/skills/grill/               Skill für Claude Code: Kreuzverhör für Pläne, Angebote, Zahlen
+.claude/skills/ui-ux-pro-max/       Skill für Claude Code: Oberflächen — Maße, Zustände, Kontrast, Prüfliste
 .claude/agents/                     Vier Claude-Code-Agenten: Einkäufer, Scout, Spec-Writer, QC-Prüfer
 ```
 
