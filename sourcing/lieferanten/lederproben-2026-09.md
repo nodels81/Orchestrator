@@ -30,8 +30,8 @@ B Lederlieferant, C deutscher Handel, D polnische Kurzfassung).
 >
 > Hallo Herr Kabik,
 >
-> ich bin Björn von der Bellowerk Manufaktur in Hamburg. Wir haben früher schon bei Ihnen bestellt
-> (damals unter Herr Bello & Frau Wuff). Wir bauen Hundehalsbänder und Führleinen aus Fettleder und
+> ich bin Merle Ahrens und mache den Einkauf für die Bellowerk Manufaktur von Björn Bulko.
+> Björn hat früher schon bei Ihnen bestellt, damals unter Herr Bello & Frau Wuff. Wir bauen Hundehalsbänder und Führleinen aus Fettleder und
 > massivem Messing — einlagig, ohne Naht, alles mit Buchschrauben. Serie: 100–300 Stück pro Durchgang.
 >
 > Bitte antworten Sie mit den Nummern:
@@ -51,7 +51,9 @@ B Lederlieferant, C deutscher Handel, D polnische Kurzfassung).
 > Über eine Antwort bis Freitag, 25.09.2026 würden wir uns freuen.
 >
 > Viele Grüße
-> Björn · Bellowerk Manufaktur · Hamburg · [E-Mail] · [Telefon]
+> Merle Ahrens
+> Einkauf Europa · Bellowerk Manufaktur
+> Quellenweg 3 · 21698 Harsefeld · Tel. 0152 53390255 · einkauf.eu@bellowerk.de
 
 Anhang: `bilder/HB-01-farben-patch.jpg`, `zeichnungen/HB-01-halsband.png`.
 
@@ -119,8 +121,8 @@ Alle stehen schon im Tracker mit Status "neu". Jetzt geht **zuerst** das Musterp
 >
 > Hello [Ms./Mr. Family name],
 >
-> I am Björn, owner of Bellowerk Manufaktur in Hamburg, Germany. We make premium leather dog collars
-> and leads. We buy quality in small quantities — price is not our first question.
+> I am Ole Petersen. I do the purchasing for Bellowerk Manufaktur, a small leather workshop in
+> Harsefeld near Hamburg, Germany. We make premium leather dog collars and leads. We buy quality in small quantities — price is not our first question.
 >
 > Before we send our tech pack, we want to see your material:
 >
@@ -138,26 +140,30 @@ Alle stehen schon im Tracker mit Status "neu". Jetzt geht **zuerst** das Musterp
 > Please reply by Friday, 25 Sep 2026.
 >
 > Best regards,
-> Björn · Bellowerk Manufaktur · Hamburg, Germany · [E-Mail] · [WhatsApp/WeChat]
+> Ole Petersen · Purchasing China · Bellowerk Manufaktur
+> Harsefeld near Hamburg, Germany · einkauf.china@bellowerk.de · WhatsApp/WeChat +49 152 53390255
 
 Anhang je Nachricht: `zeichnungen/HB-01-halsband.png` + `bilder/HB-01-farben-patch.jpg`
 (für Adityna stattdessen `bilder/HB-02-geflochten-am-hund.jpg`).
 
-## 5. Was Björn entscheiden muss
+## 5. Stand der Freigaben (Björn, 14.09.2026)
 
-1. **Lieferadresse und Absender** für die Musterpakete (Werkstatt Altes Land oder Hamburg?) —
-   ohne die Adresse kann keine Nachricht raus.
-2. **E-Mail/Telefon**, die in der Signatur stehen sollen (und ob WhatsApp-Nummer an China geht).
-3. **Budget für Muster**: Vorschlag Deckel 250 EUR gesamt — ca. 8 × 20–40 USD China-Pakete,
-   Swatches Polen/Deutschland meist 0–20 EUR. Ich sage nichts zu, bevor das steht.
-4. **Polen als Materialquelle** grundsätzlich ja/nein — EU-Leder ist teurer, erzählt sich aber
-   besser und macht REACH einfacher.
-5. **Anfertigung bei maly-leder**: falls die das können, wäre das die schnellste Serie ohne China.
-   Soll ich dort auch gleich nach einem Preis für 100 Stück fragen? (steht als Punkt 4 im Entwurf)
-6. Soll ich die Mails **selbst versenden** (Gmail) oder bekommst du sie als Entwurf?
+| | Stand |
+|---|---|
+| Absender / Lieferadresse | **steht**: Björn Bulko, Bellowerk Manufaktur, Quellenweg 3, 21698 Harsefeld ⚠ ("Hasefeld" in der Ansage — 21698 ist Harsefeld, kurz bestätigen) |
+| Telefon / WhatsApp | **steht**: 0152 53390255 (+49 152 53390255), WhatsApp gleiche Nummer |
+| Musterbudget | **steht**: 300 EUR gesamt für alle Länder. Einzelpakete über 40 EUR gehen vorher noch einmal an Björn |
+| Versand der Mails | Claude schickt sie selbst — **aber erst, wenn das Einkaufspostfach existiert** |
+| E-Mail-Adressen | **offen**: `einkauf@bellowerk.de` ist gesetzt, Domain ⚠ noch bestätigen; dazu `einkauf.china@` (Ole Petersen) und `einkauf.eu@` (Merle Ahrens) |
+| Polen als Materialquelle | noch offen — Anfrage läuft trotzdem, kostet nichts |
+| Anfertigung bei maly-leder | wird als Punkt 4 mitgefragt |
+
+Alles Weitere zu Absender, Postfächern und Signaturen: `../absender.md`.
 
 ## 6. Nächster Schritt
 
-Nach Björns Freigabe (Adresse + Signatur): 8 China-Nachrichten, 3–5 Polen-Nachrichten und die
-maly-leder-Mail am selben Tag raus, Frist Freitag 25.09.2026, Nachfassen (Vorlage 02) am
-Montag 28.09.2026. Tracker wird nach jedem Kontakt fortgeschrieben.
+1. Björn richtet die Postfächer ein und gibt die endgültige Adresse durch (Erinnerung läuft).
+2. Danach am selben Tag raus: 8 China-Nachrichten (Vorlage 07 A, Absender Einkauf China),
+   4 Polen-Nachrichten (07 B + D, Absender Einkauf Europa), maly-leder (07 C, Einkauf Europa).
+3. Antwortfrist in allen Nachrichten: **Freitag, 25.09.2026**. Nachfassen (Vorlage 02) am
+   Montag, 28.09.2026. Tracker nach jedem Kontakt fortschreiben.

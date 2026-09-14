@@ -3,7 +3,8 @@
 Einsatz: erster Kontakt, wenn wir **Material** sehen wollen, bevor ein Tech Pack rausgeht —
 Lederproben (swatches), fertige Halsbänder aus laufender Produktion, lose Messingteile.
 Drei Varianten: A China-Fabrik (komplette Halsbänder), B China/EU Lederlieferant, C deutscher
-Lederhandel. Anhang: 1 Foto (`bilder/HB-01-farben-patch.jpg`), bei Fabriken zusätzlich
+Lederhandel. Absender, Lieferadresse und Postfächer stehen in `../absender.md` — dort nachschlagen, nicht raten.
+Anhang: 1 Foto (`bilder/HB-01-farben-patch.jpg`), bei Fabriken zusätzlich
 `zeichnungen/HB-01-halsband.png`. Platzhalter in `[ ]` ersetzen.
 
 Regel: Proben kosten Geld → Kosten erfragen, **nicht** zusagen. Freigabe: Björn.
@@ -16,8 +17,8 @@ Regel: Proben kosten Geld → Kosten erfragen, **nicht** zusagen. Freigabe: Bjö
 
 Hello [Ms./Mr. Family name],
 
-I am Björn, owner of Bellowerk Manufaktur in Hamburg, Germany. We make premium leather dog
-collars and leads. We buy quality in small quantities — price is not our first question.
+I am Ole Petersen. I do the purchasing for Bellowerk Manufaktur, a small leather workshop in
+Harsefeld near Hamburg, Germany. We make premium leather dog collars and leads. We buy quality in small quantities — price is not our first question.
 
 Before we send our tech pack, we want to see your material:
 
@@ -35,7 +36,8 @@ Please answer:
 Please reply by [Friday, 25 Sep 2026].
 
 Best regards,
-Björn · Bellowerk Manufaktur · Hamburg, Germany · [E-Mail] · [WhatsApp/WeChat]
+Ole Petersen · Purchasing China · Bellowerk Manufaktur
+Harsefeld near Hamburg, Germany · einkauf.china@bellowerk.de · WhatsApp/WeChat +49 152 53390255
 
 ---
 
@@ -45,15 +47,16 @@ Björn · Bellowerk Manufaktur · Hamburg, Germany · [E-Mail] · [WhatsApp/WeCh
 
 Hello [Name],
 
-I am Björn from Bellowerk Manufaktur, Hamburg, Germany. We make leather dog collars and leads in
-small series (100–300 pcs per run) and are looking for a leather supplier.
+I am [Ole Petersen (China) / Merle Ahrens (Europe)], purchasing for Bellowerk Manufaktur in
+Harsefeld near Hamburg, Germany. We make leather dog collars and leads in small series (100–300 pcs per run) and are looking for a leather supplier.
 
 What we need:
 
 1. Cowhide, **vegetable-tanned**, full grain, oiled/waxed (pull-up effect), dyed through,
    **3.5–4.0 mm**, firm grain, tight fibre — belt/bridle quality.
 2. Colours: olive, dark brown, cognac, grey, black.
-3. Please send a swatch card (5 × 5 cm per colour) to [Lieferadresse].
+3. Please send a swatch card (5 × 5 cm per colour) to:
+   Bellowerk Manufaktur, Björn Bulko, Quellenweg 3, 21698 Harsefeld, Germany, +49 152 53390255.
 
 Please answer by number:
 4. Cost of the swatch card incl. shipping to Germany?
@@ -65,7 +68,9 @@ Please answer by number:
 Please reply by [Friday, 25 Sep 2026].
 
 Best regards,
-Björn · Bellowerk Manufaktur · Hamburg, Germany · [E-Mail]
+[Ole Petersen · Purchasing China · einkauf.china@bellowerk.de] /
+[Merle Ahrens · Purchasing Europe · einkauf.eu@bellowerk.de]
+Bellowerk Manufaktur · Harsefeld near Hamburg, Germany
 
 ---
 
@@ -75,7 +80,8 @@ Björn · Bellowerk Manufaktur · Hamburg, Germany · [E-Mail]
 
 Hallo [Name],
 
-ich bin Björn von der Bellowerk Manufaktur in Hamburg (früher Herr Bello & Frau Wuff). Wir bauen
+ich bin Merle Ahrens und mache den Einkauf für die Bellowerk Manufaktur von Björn Bulko
+(früher Herr Bello & Frau Wuff). Wir bauen
 Hundehalsbänder und Führleinen aus Fettleder und massivem Messing — einlagig, ohne Naht, alles mit
 Buchschrauben. Serie: 100–300 Stück pro Durchgang.
 
@@ -96,7 +102,9 @@ Bitte antworten Sie mit den Nummern:
 Über eine Antwort bis [Freitag, 25.09.2026] würden wir uns freuen.
 
 Viele Grüße
-Björn · Bellowerk Manufaktur · Hamburg · [E-Mail] · [Telefon]
+Merle Ahrens
+Einkauf Europa · Bellowerk Manufaktur
+Quellenweg 3 · 21698 Harsefeld · Tel. 0152 53390255 · einkauf.eu@bellowerk.de
 
 ---
 
@@ -104,12 +112,13 @@ Björn · Bellowerk Manufaktur · Hamburg · [E-Mail] · [Telefon]
 
 Dzień dobry,
 
-nazywam się Björn, prowadzę manufakturę Bellowerk w Hamburgu (Niemcy). Robimy obroże i smycze
-skórzane w małych seriach. Szukamy skóry bydlęcej **garbowanej roślinnie**, licowej, nasycanej
+nazywam się Merle Ahrens, zajmuję się zakupami w manufakturze Bellowerk (Harsefeld koło Hamburga,
+Niemcy). Robimy obroże i smycze skórzane w małych seriach. Szukamy skóry bydlęcej **garbowanej roślinnie**, licowej, nasycanej
 tłuszczem (efekt pull-up), barwionej na wskroś, **grubość 3,5–4,0 mm**, kolory: oliwkowy, ciemny
 brąz, koniak, szary, czarny.
 
-1. Czy mogą Państwo wysłać próbki (5 × 5 cm w każdym kolorze) na adres [Lieferadresse]?
+1. Czy mogą Państwo wysłać próbki (5 × 5 cm w każdym kolorze) na adres:
+   Bellowerk Manufaktur, Björn Bulko, Quellenweg 3, 21698 Harsefeld, Niemcy?
 2. Koszt próbek z wysyłką do Niemiec?
 3. Cena za skórę / za m² i wielkość skóry?
 4. Minimum zamówienia i czas realizacji?
@@ -117,4 +126,5 @@ brąz, koniak, szary, czarny.
 
 Proszę o odpowiedź do [piątku, 25.09.2026]. Możemy pisać po angielsku lub niemiecku.
 
-Pozdrawiam, Björn · Bellowerk Manufaktur · Hamburg
+Pozdrawiam,
+Merle Ahrens · Zakupy Europa · Bellowerk Manufaktur · einkauf.eu@bellowerk.de
