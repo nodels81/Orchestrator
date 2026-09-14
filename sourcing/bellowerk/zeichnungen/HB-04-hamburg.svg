@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1500" height="760" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-04 "Hamburg Nr. 4" — Collar with widened centre — size M — scale 1:2 — Bellowerk Manufaktur, v1.0, 14 Sep 2026</text>
+  <text x="40" y="66" fill="#000" stroke="none">Single piece vegetable-tanned oiled cowhide 3.5–4.0 mm · widened centre cut from one blank · solid brass · NO stitching · NO rivets · Chicago screws only</text>
+
+  <!-- scale: 1 mm = 2 px. Cut length 600 mm -> 1200 px, origin x=120, centre line y=250 -->
+  <!-- narrow 25 mm = 50 px (y 225..275) · centre 50 mm = 100 px (y 200..300) -->
+  <g id="strap">
+    <path d="M 120 225 H 340 C 375 225 445 200 480 200 H 820 C 855 200 925 225 960 225 H 1295 A 25 25 0 0 1 1295 275 H 960 C 925 275 855 300 820 300 H 480 C 445 300 375 275 340 275 H 120 Z" stroke-width="2.5"/>
+
+    <!-- centre line -->
+    <line x1="120" y1="250" x2="1320" y2="250" stroke-dasharray="14 6 3 6" stroke-width="1"/>
+
+    <!-- buckle end (left), fold 60 mm = 120 px -->
+    <rect x="106" y="217" width="14" height="66" rx="3" stroke-width="3"/>
+    <line x1="113" y1="217" x2="113" y2="283" stroke-width="3"/>
+    <path d="M 113 250 L 168 250" stroke-width="3"/>
+    <text x="60" y="318" fill="#000" stroke="none" font-size="14">roller buckle 25 mm, solid brass</text>
+    <line x1="240" y1="225" x2="240" y2="275" stroke-dasharray="6 4"/>
+    <text x="146" y="215" fill="#000" stroke="none" font-size="14">fold 60 mm</text>
+    <!-- D-ring at 20 mm behind buckle -->
+    <path d="M 160 221 V 279" stroke-width="3"/>
+    <path d="M 160 221 C 195 221 195 279 160 279" stroke-width="3"/>
+    <text x="170" y="340" fill="#000" stroke="none" font-size="14">D-ring welded, solid brass, in the fold</text>
+    <!-- keeper -->
+    <rect x="184" y="219" width="14" height="62" stroke-width="2"/>
+    <text x="176" y="196" fill="#000" stroke="none" font-size="14">keeper</text>
+    <!-- 2 chicago screws in the fold, in line -->
+    <circle cx="210" cy="250" r="5" stroke-width="2"/>
+    <circle cx="226" cy="250" r="5" stroke-width="2"/>
+    <text x="196" y="362" fill="#000" stroke="none" font-size="14">2 Chicago screws</text>
+
+    <!-- patch PATCH-01 PA-M 85x18 mm centred on the widened section -->
+    <rect x="565" y="232" width="170" height="36" rx="4" stroke-width="2"/>
+    <circle cx="579" cy="250" r="4"/>
+    <circle cx="721" cy="250" r="4"/>
+    <text x="650" y="246" text-anchor="middle" fill="#000" stroke="none" font-size="12" font-weight="bold">BELLOWERK</text>
+    <text x="650" y="260" text-anchor="middle" fill="#000" stroke="none" font-size="8">Manufaktur</text>
+    <text x="650" y="180" text-anchor="middle" fill="#000" stroke="none" font-size="14">patch PATCH-01 PA-M 85 × 18 mm, centred on the widened section, 2 Chicago screws</text>
+
+    <!-- holes -->
+    <g stroke-width="2">
+      <ellipse cx="1200" cy="250" rx="7" ry="4"/>
+      <ellipse cx="1150" cy="250" rx="7" ry="4"/>
+      <ellipse cx="1100" cy="250" rx="7" ry="4"/>
+      <ellipse cx="1050" cy="250" rx="7" ry="4"/>
+      <ellipse cx="1000" cy="250" rx="7" ry="4"/>
+    </g>
+    <text x="1000" y="196" fill="#000" stroke="none" font-size="14">5 oval holes 4 × 7 mm, pitch 25 mm, first hole 60 mm from tip</text>
+
+    <!-- transition callouts -->
+    <line x1="410" y1="212" x2="392" y2="150" stroke-width="1.2"/>
+    <text x="386" y="142" text-anchor="middle" fill="#000" stroke="none" font-size="14">tangential curve, no notch, no straight bevel</text>
+    <line x1="890" y1="288" x2="950" y2="352" stroke-width="1.2"/>
+    <text x="956" y="366" fill="#000" stroke="none" font-size="14">same curve mirrored — both sides symmetrical</text>
+  </g>
+
+  <!-- dimensions -->
+  <g stroke-width="1.5">
+    <!-- overall cut length -->
+    <line x1="120" y1="420" x2="1320" y2="420"/>
+    <line x1="120" y1="410" x2="120" y2="430"/>
+    <line x1="1320" y1="410" x2="1320" y2="430"/>
+    <text x="720" y="442" text-anchor="middle" fill="#000" stroke="none">cut length 600 mm (size M) — S 520 · L 680 · XL 760</text>
+    <!-- sections -->
+    <g font-size="13">
+      <line x1="340" y1="390" x2="480" y2="390"/>
+      <line x1="340" y1="382" x2="340" y2="398"/>
+      <line x1="480" y1="382" x2="480" y2="398"/>
+      <text x="410" y="382" text-anchor="middle" fill="#000" stroke="none">70</text>
+      <line x1="480" y1="390" x2="820" y2="390"/>
+      <line x1="820" y1="382" x2="820" y2="398"/>
+      <text x="650" y="382" text-anchor="middle" fill="#000" stroke="none">widened section 170</text>
+      <line x1="820" y1="390" x2="960" y2="390"/>
+      <line x1="960" y1="382" x2="960" y2="398"/>
+      <text x="890" y="382" text-anchor="middle" fill="#000" stroke="none">70</text>
+      <line x1="120" y1="390" x2="340" y2="390"/>
+      <text x="230" y="382" text-anchor="middle" fill="#000" stroke="none">fold 60 + 50</text>
+      <line x1="960" y1="390" x2="1320" y2="390"/>
+      <text x="1140" y="382" text-anchor="middle" fill="#000" stroke="none">hole end 180</text>
+    </g>
+    <!-- centre width, drawn inside the outline -->
+    <line x1="790" y1="200" x2="790" y2="300"/>
+    <line x1="780" y1="200" x2="800" y2="200"/>
+    <line x1="780" y1="300" x2="800" y2="300"/>
+    <text x="690" y="330" text-anchor="middle" fill="#000" stroke="none" font-size="14">centre 50 mm = 2 × strap width</text>
+    <!-- end width -->
+    <line x1="1360" y1="225" x2="1360" y2="275"/>
+    <line x1="1350" y1="225" x2="1370" y2="225"/>
+    <line x1="1350" y1="275" x2="1370" y2="275"/>
+    <text x="1376" y="255" fill="#000" stroke="none">25 mm</text>
+    <!-- hole pitch -->
+    <g font-size="13">
+      <line x1="1100" y1="300" x2="1150" y2="300"/>
+      <line x1="1100" y1="292" x2="1100" y2="308"/>
+      <line x1="1150" y1="292" x2="1150" y2="308"/>
+      <text x="1125" y="318" text-anchor="middle" fill="#000" stroke="none">25</text>
+      <line x1="1200" y1="330" x2="1320" y2="330"/>
+      <line x1="1200" y1="322" x2="1200" y2="338"/>
+      <line x1="1320" y1="322" x2="1320" y2="338"/>
+      <text x="1260" y="348" text-anchor="middle" fill="#000" stroke="none">60</text>
+    </g>
+  </g>
+
+  <!-- section through the widened centre -->
+  <g transform="translate(120,500)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Section B–B (widened centre), scale 2:1</text>
+    <rect x="0" y="20" width="400" height="16" fill="#ddd"/>
+    <text x="0" y="72" fill="#000" stroke="none" font-size="13" font-weight="bold">single layer 3.5–4.0 mm — the centre is NOT two layers</text>
+    <text x="0" y="92" fill="#000" stroke="none" font-size="13">grain side out, flesh side finished, no coating</text>
+    <rect x="180" y="12" width="20" height="8" fill="#000"/>
+    <rect x="186" y="20" width="8" height="24" fill="#000"/>
+    <rect x="180" y="36" width="20" height="8" fill="#000"/>
+    <text x="0" y="112" fill="#000" stroke="none" font-size="13">Chicago screw brass, domed head Ø 8–9 mm, post 8 mm (patch + strap), thread-locked</text>
+    <text x="0" y="132" fill="#000" stroke="none" font-size="13">Edges bevelled and burnished along the whole outline, including both curves. No edge paint.</text>
+  </g>
+
+  <g transform="translate(820,500)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Sizes (starting values — confirm on Björn's reference piece)</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="14">S: ends 20 · centre 40 · widened 120 · curve 50 · cut 520 · neck 30–40 cm</text>
+    <text x="0" y="44" fill="#000" stroke="none" font-size="14">M: ends 25 · centre 50 · widened 170 · curve 70 · cut 600 · neck 38–48 cm</text>
+    <text x="0" y="64" fill="#000" stroke="none" font-size="14">L: ends 30 · centre 60 · widened 200 · curve 80 · cut 680 · neck 46–56 cm</text>
+    <text x="0" y="84" fill="#000" stroke="none" font-size="14">XL: ends 40 · centre 80 · widened 240 · curve 90 · cut 760 · neck 54–64 cm</text>
+    <text x="0" y="110" fill="#000" stroke="none" font-size="14">All mm. Tolerances: length ±5 mm · width ±0.5 mm · hole pitch ±1 mm · symmetry ±1 mm</text>
+    <text x="0" y="130" fill="#000" stroke="none" font-size="14">Cutting die (clicker) per size required — quote tooling cost separately.</text>
+    <text x="0" y="150" fill="#000" stroke="none" font-size="14">Pull test 2.5 kN at the curve: no tear, no visible deformation.</text>
+  </g>
+</svg>

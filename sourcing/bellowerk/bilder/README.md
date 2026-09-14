@@ -30,7 +30,7 @@ mit Personen) — **nicht an Lieferanten schicken**.
 | `HB-01-gesamt.jpg` | Halsband komplett flach, Narbenseite oben, Schnalle links, **Lineal** daneben |
 | `LE-01-gesamt.jpg` | Leine ausgelegt, alle drei Ringe sichtbar, **Maßband** entlang |
 | `LE-01-detail-ring-lineal.jpg` | Ring im Geflecht mit Lineal (Flechtlänge und Umschlag messen) |
-| `HS-01-gesamt.jpg` | Handschlaufe komplett |
+| `HB-04-hamburg-gesamt.jpg` | Das graue Halsband mit Mittelverbreiterung (Foto vom 13.6.2022) — bitte als Datei hier ablegen, Lineal wäre ideal |
 | `PATCH-01-artwork.svg` | Vektor-Logo "BELLOWERK / Manufaktur" (Schrift in Pfade) |
 | `messing-beschlaege.jpg` | Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, Lineal |
 

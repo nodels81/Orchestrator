@@ -220,8 +220,13 @@ textarea::placeholder{color:var(--tinte-leise)}
 <script id="bw-data" type="application/json">
 {
   "titel": "Freigabe-Mappe Kernserie",
-  "unter": "Alles, was an Halsband, Leine und Patch schon gezeichnet und spezifiziert ist — auf einem Blatt pro Modell, mit Foto, Maßzeichnung und den Punkten, an denen nur du entscheiden kannst. Was du hier freigibst, geht als Anfrage an die chinesische Shortlist.",
-  "meta": ["Bellowerk Manufaktur, Hamburg", "Abteilung 01 Innovation · 05 Einkauf China", "Stand der Tech Packs: 9. September 2026", "Quelle: sourcing/bellowerk"],
+  "unter": "Alles, was an Halsband, Leine und Patch gezeichnet und spezifiziert ist — auf einem Blatt pro Modell, mit Foto, Maßzeichnung und den Punkten, an denen nur du entscheiden kannst. Was du hier freigibst, geht als Anfrage an die chinesische Shortlist.",
+  "meta": [
+    "Bellowerk Manufaktur, Hamburg",
+    "Abteilung 01 Innovation · 05 Einkauf China",
+    "Stand: 14. September 2026",
+    "Quelle: sourcing/bellowerk"
+  ],
   "modelle": [
     {
       "code": "HB-01",
@@ -230,19 +235,52 @@ textarea::placeholder{color:var(--tinte-leise)}
       "zeichnung": "media/HB-01-halsband.png",
       "zeichnungText": "HB-01, Größe M: Schnallenfalte, D-Ring in der Falte, Lochbild 5 × 25 mm, Patch-Position",
       "fotos": [
-        {"src":"media/HB-01-detail-patch.jpg","text":"Graues Halsband: Patch mit 2 gewölbten Buchschrauben, Rollschnalle Messing"},
-        {"src":"media/HB-01-farben-patch.jpg","text":"Vier Farben gestapelt: dunkelbraun, oliv, cognac, grau"},
-        {"src":"media/HB-01-detail-dring-namenspatch.jpg","text":"Cognac: D-Ring mit Buchschraube, Namenspatch TILDA"}
+        {
+          "src": "media/HB-01-detail-patch.jpg",
+          "text": "Graues Halsband: Patch mit 2 gewölbten Buchschrauben, Rollschnalle Messing"
+        },
+        {
+          "src": "media/HB-01-farben-patch.jpg",
+          "text": "Vier Farben gestapelt: dunkelbraun, oliv, cognac, grau"
+        },
+        {
+          "src": "media/HB-01-detail-dring-namenspatch.jpg",
+          "text": "Cognac: D-Ring mit Buchschraube, Namenspatch TILDA"
+        }
       ],
       "fakten": [
-        ["Leder","Fettleder, pflanzlich gegerbt, durchgefärbt, 3,5–4,0 mm"],
-        ["Beschläge","Rollschnalle + geschweißter D-Ring, Messing massiv, gebürstet"],
-        ["Verbindung","nur Buchschrauben Messing — keine Naht, keine Niete"],
-        ["Größen","S 20 · M 25 · L 30 · XL 40 mm Breite"],
-        ["Halsumfang","30–40 · 38–48 · 46–56 · 54–64 cm"],
-        ["Lochbild","5 ovale Löcher, Abstand 25 mm, ab Spitze 6 / 8,5 / 11 / 13,5 / 16 cm"],
-        ["Patch","PATCH-01, mittig, 30 mm hinter der Falte"],
-        ["Erste Order","100 Stück — S 20 · M 35 · L 30 · XL 15"]
+        [
+          "Leder",
+          "Fettleder, pflanzlich gegerbt, durchgefärbt, 3,5–4,0 mm"
+        ],
+        [
+          "Beschläge",
+          "Rollschnalle + geschweißter D-Ring, Messing massiv, gebürstet"
+        ],
+        [
+          "Verbindung",
+          "nur Buchschrauben Messing — keine Naht, keine Niete"
+        ],
+        [
+          "Größen",
+          "S 20 · M 25 · L 30 · XL 40 mm Breite"
+        ],
+        [
+          "Halsumfang",
+          "30–40 · 38–48 · 46–56 · 54–64 cm"
+        ],
+        [
+          "Lochbild",
+          "5 ovale Löcher, Abstand 25 mm, ab Spitze 6 / 8,5 / 11 / 13,5 / 16 cm"
+        ],
+        [
+          "Patch",
+          "PATCH-01, mittig, 30 mm hinter der Falte"
+        ],
+        [
+          "Erste Order",
+          "100 Stück — S 20 · M 35 · L 30 · XL 15"
+        ]
       ],
       "bau": [
         "Band durch die Schnalle, 60 mm zurückgeschlagen; D-Ring sitzt 20 mm hinter der Schnalle in der Falte, Schlaufe 15 mm dahinter.",
@@ -251,9 +289,34 @@ textarea::placeholder{color:var(--tinte-leise)}
       ],
       "warnung": "",
       "fragen": [
-        {"id":"hb01-groessen","frage":"Größentabelle gegen dein Referenz-Halsband","optionen":["Stimmt so","Ich messe nach","Andere Maße — sage ich an"],"hinweis":"Die Werte sind aus der Kernserie abgeleitet, nicht am Stück gemessen. Der Lieferant baut danach das Goldmuster."},
-        {"id":"hb01-dring","frage":"D-Ring-Anbindung","optionen":["Geschraubte Falte wie gezeichnet","Mystery Braid wie HB-02","Beides anfragen und vergleichen"]},
-        {"id":"hb01-farben","frage":"Farben der ersten 100 Stück","optionen":["Oliv · dunkelbraun · cognac · grau","Nur oliv + dunkelbraun","Andere Aufteilung"]}
+        {
+          "id": "hb01-groessen",
+          "frage": "Größentabelle gegen dein Referenz-Halsband",
+          "optionen": [
+            "Stimmt so",
+            "Ich messe nach",
+            "Andere Maße — sage ich an"
+          ],
+          "hinweis": "Die Werte sind aus der Kernserie abgeleitet, nicht am Stück gemessen. Der Lieferant baut danach das Goldmuster."
+        },
+        {
+          "id": "hb01-dring",
+          "frage": "D-Ring-Anbindung",
+          "optionen": [
+            "Geschraubte Falte wie gezeichnet",
+            "Mystery Braid wie HB-02",
+            "Beides anfragen und vergleichen"
+          ]
+        },
+        {
+          "id": "hb01-farben",
+          "frage": "Farben der ersten 100 Stück",
+          "optionen": [
+            "Oliv · dunkelbraun · cognac · grau",
+            "Nur oliv + dunkelbraun",
+            "Andere Aufteilung"
+          ]
+        }
       ]
     },
     {
@@ -263,18 +326,48 @@ textarea::placeholder{color:var(--tinte-leise)}
       "zeichnung": "media/HB-02-geflochten.png",
       "zeichnungText": "HB-02: flache Enden mit Schnalle und Patch, geflochtener Halsteil, O-Ring mittig hinten",
       "fotos": [
-        {"src":"media/HB-02-geflochten-am-hund.jpg","text":"Einfarbig, komplett geflochten, O-Ring Messing, Karabiner eingehakt"},
-        {"src":"media/HB-02-zweifarbig-am-hund.jpg","text":"Zweifarbig dunkelbraun + grau washed stone"},
-        {"src":"media/HB-02-und-LE-01-gruen.jpg","text":"Grün: Übergang flaches Schnallenende mit Patch in die Flechtung"}
+        {
+          "src": "media/HB-02-geflochten-am-hund.jpg",
+          "text": "Einfarbig, komplett geflochten, O-Ring Messing, Karabiner eingehakt"
+        },
+        {
+          "src": "media/HB-02-zweifarbig-am-hund.jpg",
+          "text": "Zweifarbig dunkelbraun + grau washed stone"
+        },
+        {
+          "src": "media/HB-02-und-LE-01-gruen.jpg",
+          "text": "Grün: Übergang flaches Schnallenende mit Patch in die Flechtung"
+        }
       ],
       "fakten": [
-        ["Flechtung","3-strängiger Mystery Braid aus einem Stück, zwei Längsschnitte, Enden ungeschnitten"],
-        ["Flechtlänge","S 180 · M 220 · L 260 · XL 300 mm"],
-        ["Breiten","S 20 · M 25 · L 25 · XL 30 mm"],
-        ["Zuschnitt","Flechtteil 15 % länger schneiden — die Flechtung zieht sich zusammen"],
-        ["O-Ring","Messing geschweißt, innen Ø 25 mm, Draht 5 mm, ≥ 3 kN"],
-        ["Flache Enden","Schnallenende 140–180 mm, Lochende 120–140 mm, Lochbild wie HB-01"],
-        ["Erste Order","60 Stück — S 10 · M 25 · L 20 · XL 5"]
+        [
+          "Flechtung",
+          "3-strängiger Mystery Braid aus einem Stück, zwei Längsschnitte, Enden ungeschnitten"
+        ],
+        [
+          "Flechtlänge",
+          "S 180 · M 220 · L 260 · XL 300 mm"
+        ],
+        [
+          "Breiten",
+          "S 20 · M 25 · L 25 · XL 30 mm"
+        ],
+        [
+          "Zuschnitt",
+          "Flechtteil 15 % länger schneiden — die Flechtung zieht sich zusammen"
+        ],
+        [
+          "O-Ring",
+          "Messing geschweißt, innen Ø 25 mm, Draht 5 mm, ≥ 3 kN"
+        ],
+        [
+          "Flache Enden",
+          "Schnallenende 140–180 mm, Lochende 120–140 mm, Lochbild wie HB-01"
+        ],
+        [
+          "Erste Order",
+          "60 Stück — S 10 · M 25 · L 20 · XL 5"
+        ]
       ],
       "bau": [
         "Band in einem Stück zuschneiden, Flechtteil zweimal längs schlitzen, Schlitzenden Ø 2 mm gelocht.",
@@ -283,9 +376,149 @@ textarea::placeholder{color:var(--tinte-leise)}
       ],
       "warnung": "Zweifarbig geht nur, wenn zwei Streifen ohne Naht verbunden werden. Ob eine Fabrik das kann, wissen wir erst nach dem Muster — deshalb die Frage unten.",
       "fragen": [
-        {"id":"hb02-zweifarbig","frage":"Zweifarbige Flechtung","optionen":["Ja, wenn ohne Naht machbar","Nur einfarbig anfragen","Später entscheiden"]},
-        {"id":"hb02-oring","frage":"Wie der O-Ring im Geflecht sitzt","optionen":["Im Flechtauge wie auf dem Foto","Flache Lasche mit Schraube","Fabrik vorschlagen lassen, Foto verlangen"]},
-        {"id":"hb02-muster","frage":"Musterumfang","optionen":["1× M oliv + 1× M zweifarbig","Nur 1× M oliv","Alle vier Größen"]}
+        {
+          "id": "hb02-zweifarbig",
+          "frage": "Zweifarbige Flechtung",
+          "optionen": [
+            "Ja, wenn ohne Naht machbar",
+            "Nur einfarbig anfragen",
+            "Später entscheiden"
+          ]
+        },
+        {
+          "id": "hb02-oring",
+          "frage": "Wie der O-Ring im Geflecht sitzt",
+          "optionen": [
+            "Im Flechtauge wie auf dem Foto",
+            "Flache Lasche mit Schraube",
+            "Fabrik vorschlagen lassen, Foto verlangen"
+          ]
+        },
+        {
+          "id": "hb02-muster",
+          "frage": "Musterumfang",
+          "optionen": [
+            "1× M oliv + 1× M zweifarbig",
+            "Nur 1× M oliv",
+            "Alle vier Größen"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HB-04",
+      "name": "Hamburg Nr. 4 — Mittelverbreiterung",
+      "stand": "Tech Pack v1.0 — neu",
+      "zeichnung": "media/HB-04-hamburg.png",
+      "zeichnungText": "HB-04, Größe M: Enden 25 mm, Mitte 50 mm, tangentiale Bögen 70 mm, Patch mittig auf der Verbreiterung",
+      "fotos": [],
+      "fehltFoto": "Dein Foto vom 13. Juni 2022 (graues Halsband, cognac Patch, Messingschnalle) steckt bisher nur im Chat. Leg es bitte als bilder/HB-04-hamburg-gesamt.jpg ins Repo, dann steht es hier und geht an den Lieferanten mit.",
+      "fakten": [
+        [
+          "Form",
+          "Enden normale Bandbreite, Mitte auf doppelte Breite, beidseitig über einen tangentialen Bogen"
+        ],
+        [
+          "Wichtig",
+          "breiter, nicht dicker — die Mitte ist dieselbe Lage 3,5–4,0 mm wie die Enden, nicht doppelt gelegt"
+        ],
+        [
+          "Breiten M",
+          "Enden 25 mm · Mitte 50 mm · Verbreiterung 170 mm lang · Bogen je 70 mm"
+        ],
+        [
+          "Größen",
+          "S 20/40 · M 25/50 · L 30/60 · XL 40/80 mm (Ende/Mitte)"
+        ],
+        [
+          "Zuschnitt",
+          "S 520 · M 600 · L 680 · XL 760 mm — wie HB-01"
+        ],
+        [
+          "Aufteilung M",
+          "Falte 60 · glatt 50 · Bogen 70 · Verbreiterung 170 · Bogen 70 · Lochende 180"
+        ],
+        [
+          "Patch",
+          "PATCH-01 PA-M 85 × 18 mm, mittig auf der Verbreiterung, 2 Buchschrauben"
+        ],
+        [
+          "Beschläge",
+          "Rollschnalle, D-Ring in der Schnallenfalte, Schlaufe — alles wie HB-01"
+        ],
+        [
+          "Prüfung",
+          "2,5 kN quer über den Bogen gezogen: kein Riss, keine Verformung; Symmetrie der Bögen ±1 mm"
+        ],
+        [
+          "Vorschlag Order",
+          "Muster 1× M grau + 1× M oliv, dann 60 Stück — S 10 · M 20 · L 20 · XL 10"
+        ]
+      ],
+      "bau": [
+        "Komplette Kontur — Enden, beide Bögen, Verbreiterung — in einem Stück gestanzt. Kein Ansetzen, kein Stoß.",
+        "Der Bogen läuft tangential aus: kein Knick, keine gerade Fase. Genau dort reißt ein Halsband, wenn geschludert wird.",
+        "Schnallenfalte 60 mm, D-Ring 20 mm hinter der Schnalle, 2 Buchschrauben — identisch zu HB-01.",
+        "Patch mittig auf der Verbreiterung, Schraubenköpfe auf der Narbenseite. Kanten rundum abgeschrägt und poliert, auch in den Bögen."
+      ],
+      "warnung": "Für die Kontur braucht die Fabrik je Größe eine Stanzform — das kostet Werkzeug und macht das Modell teurer als HB-01. Die Werkzeugkosten stehen als eigene Frage in der Anfrage, damit wir sie sehen, bevor wir bestellen.",
+      "fragen": [
+        {
+          "id": "hb04-name",
+          "frage": "Modellname",
+          "optionen": [
+            "HB-04 „Hamburg Nr. 4“",
+            "Anderer Name",
+            "Alle Modelle auf Hamburg-Nummern umstellen"
+          ],
+          "hinweis": "Im Repo gibt es bisher keine Hamburg-Nummern — HB-01 und HB-02 heißen schlicht Halsband und Flechthalsband. Wenn die Serie durchnummeriert werden soll, sag welche Nummer wohin gehört."
+        },
+        {
+          "id": "hb04-breite",
+          "frage": "Wie breit wird die Mitte",
+          "optionen": [
+            "Genau doppelt — 50 mm bei M",
+            "Etwas weniger, rund 1,6-fach",
+            "Ich messe am Original nach"
+          ],
+          "hinweis": "Auf dem Foto wirkt die Verbreiterung eher knapp unter dem Doppelten. Gezeichnet ist das Doppelte, weil du es so gesagt hast."
+        },
+        {
+          "id": "hb04-laenge",
+          "frage": "Länge der Verbreiterung bei M",
+          "optionen": [
+            "170 mm wie gezeichnet",
+            "Länger, bis 220 mm",
+            "Messe ich nach"
+          ]
+        },
+        {
+          "id": "hb04-patch",
+          "frage": "Patch auf der Verbreiterung",
+          "optionen": [
+            "PA-M 85 mm wie bisher",
+            "Längeres PA-L 110 mm",
+            "Nach dem Muster entscheiden"
+          ]
+        },
+        {
+          "id": "hb04-dring",
+          "frage": "D-Ring",
+          "optionen": [
+            "In der Schnallenfalte wie HB-01",
+            "Am Ende der Verbreiterung",
+            "Beides anfragen"
+          ]
+        },
+        {
+          "id": "hb04-order",
+          "frage": "Erste Order",
+          "optionen": [
+            "60 Stück wie vorgeschlagen",
+            "Erst Muster, dann entscheiden",
+            "Andere Menge"
+          ]
+        }
       ]
     },
     {
@@ -295,21 +528,60 @@ textarea::placeholder{color:var(--tinte-leise)}
       "zeichnung": "media/LE-01-fuehrleine.png",
       "zeichnungText": "LE-01: Ringe bei 45 / 140 / 245 cm, Mystery-Braid-Anbindung an Karabinern und Ringen, sechs Führlängen",
       "fotos": [
-        {"src":"media/LE-01-detail-karabiner-flechtung.jpg","text":"Schwarz: Bolzenkarabiner mit Flechtanbindung, Buchschraube im Geflecht"},
-        {"src":"media/LE-01-flechtung-ringe-farben.jpg","text":"Vier Farben: Flechtung um O-Ring, Patch cognac mit 2 Schrauben"},
-        {"src":"media/LE-01-flechtung-karabiner-gruen.jpg","text":"Grün, Nahaufnahme der Anbindung"},
-        {"src":"media/LE-01-ringe-flechtung-pink.jpg","text":"Ring im Geflecht, Sonderfarbe pink"},
-        {"src":"media/LE-01-farben-pink-tuerkis.jpg","text":"Sonderfarben pink, türkis, gelb — Bildtext bestätigt 2 cm Breite"}
+        {
+          "src": "media/LE-01-detail-karabiner-flechtung.jpg",
+          "text": "Schwarz: Bolzenkarabiner mit Flechtanbindung, Buchschraube im Geflecht"
+        },
+        {
+          "src": "media/LE-01-flechtung-ringe-farben.jpg",
+          "text": "Vier Farben: Flechtung um O-Ring, Patch cognac mit 2 Schrauben"
+        },
+        {
+          "src": "media/LE-01-flechtung-karabiner-gruen.jpg",
+          "text": "Grün, Nahaufnahme der Anbindung"
+        },
+        {
+          "src": "media/LE-01-ringe-flechtung-pink.jpg",
+          "text": "Ring im Geflecht, Sonderfarbe pink"
+        },
+        {
+          "src": "media/LE-01-farben-pink-tuerkis.jpg",
+          "text": "Sonderfarben pink, türkis, gelb — Bildtext bestätigt 2 cm Breite"
+        }
       ],
       "fakten": [
-        ["Länge","300 cm, Karabinerauge bis Karabinerauge"],
-        ["Breite","20 mm, ein durchgehendes Band ohne Stoß (Option 25 mm)"],
-        ["Ringe","fest bei 45 · 140 · 245 cm, Messing innen Ø 25 mm, ≥ 3 kN"],
-        ["Karabiner","2 × Wirbel-Bolzenkarabiner Messing, ≥ 2 kN, starke Feder"],
-        ["Anbindung","Umschlag 120 mm, Flechtung 80 mm, 1 Buchschraube — das ist der Bellowerk-Look"],
-        ["Führlängen","45 · 55 · 140 · 160 · 245 · 255 cm, dazu 300 cm mit beiden Karabinern"],
-        ["Zuschnitt","360 cm aus einer Haut, wegen der Farbe"],
-        ["Erste Order","100 Stück — oliv 30 · dunkelbraun 30 · cognac 20 · grau 20"]
+        [
+          "Länge",
+          "300 cm, Karabinerauge bis Karabinerauge"
+        ],
+        [
+          "Breite",
+          "20 mm, ein durchgehendes Band ohne Stoß (Option 25 mm)"
+        ],
+        [
+          "Ringe",
+          "fest bei 45 · 140 · 245 cm, Messing innen Ø 25 mm, ≥ 3 kN"
+        ],
+        [
+          "Karabiner",
+          "2 × Wirbel-Bolzenkarabiner Messing, ≥ 2 kN, starke Feder"
+        ],
+        [
+          "Anbindung",
+          "Umschlag 120 mm, Flechtung 80 mm, 1 Buchschraube — das ist der Bellowerk-Look"
+        ],
+        [
+          "Führlängen",
+          "45 · 55 · 140 · 160 · 245 · 255 cm, dazu 300 cm mit beiden Karabinern"
+        ],
+        [
+          "Zuschnitt",
+          "360 cm aus einer Haut, wegen der Farbe"
+        ],
+        [
+          "Erste Order",
+          "100 Stück — oliv 30 · dunkelbraun 30 · cognac 20 · grau 20"
+        ]
       ],
       "bau": [
         "Bandende durch Karabinerauge, 120 mm zurückschlagen; beide Lagen zweimal längs schlitzen.",
@@ -319,34 +591,43 @@ textarea::placeholder{color:var(--tinte-leise)}
       ],
       "warnung": "",
       "fragen": [
-        {"id":"le01-ringe","frage":"Ringabstände 45 / 140 / 245 cm","optionen":["Bestätigt","Ich messe an meiner Leine nach","Andere Abstände"],"hinweis":"Daraus ergeben sich die sechs Führlängen. Ändert sich ein Ring, ändert sich die ganze Tabelle."},
-        {"id":"le01-breite","frage":"Bandbreite","optionen":["20 mm","25 mm","Beides bepreisen lassen"]},
-        {"id":"le01-notloesung","frage":"Wenn eine Fabrik den Mystery Braid nicht kann","optionen":["Dann kommt sie nicht infrage","Flache Falte mit 2 Schrauben als Notlösung","Separat bepreisen lassen"]},
-        {"id":"le01-sonderfarben","frage":"Sonderfarben pink · türkis · gelb aus deinen Fotos","optionen":["Nicht in der ersten Order","Je 10 Stück mitnehmen","Nur auf Bestellung"]}
-      ]
-    },
-    {
-      "code": "HS-01",
-      "name": "Handschlaufe 50 cm",
-      "stand": "Tech Pack v1.0",
-      "zeichnung": "media/HS-01-handschlaufe.png",
-      "zeichnungText": "HS-01: geschlossene Schlaufe 50 cm Umfang, Überlappung mit 2 Buchschrauben, Karabiner an Flechtanbindung",
-      "fotos": [],
-      "fehltFoto": "Von der Handschlaufe haben wir noch kein Foto — nur die Zeichnung. Für die Anfrage reicht das, für das Goldmuster brauchen wir ein Bild vom Original.",
-      "fakten": [
-        ["Umfang","50 cm geschlossen, Breite 20 mm"],
-        ["Zuschnitt","60 cm — 50 cm Schlaufe + 5 cm Karabinerfalte + 5 cm Überlappung"],
-        ["Karabiner","Wirbel-Bolzenkarabiner Messing, Auge 20 mm, ≥ 2 kN"],
-        ["Schluss","Enden 50 mm überlappt, Fleisch auf Fleisch, 2 Buchschrauben"],
-        ["Anbindung","wie LE-01: Umschlag 120 mm, Flechtung 80 mm, 1 Buchschraube"],
-        ["Patch","PATCH-01 PA-S auf der Überlappung"],
-        ["Erste Order","60 Stück — oliv 30 · dunkelbraun 20 · cognac 10"]
-      ],
-      "bau": [],
-      "warnung": "",
-      "fragen": [
-        {"id":"hs01-order","frage":"Handschlaufe in der ersten Anfrage","optionen":["Ja, mit anfragen","Erst nach Halsband und Leine","Streichen"]},
-        {"id":"hs01-patch","frage":"Patch auf der Handschlaufe","optionen":["Ja, PA-S","Ohne Patch","Nur auf Wunsch"]}
+        {
+          "id": "le01-ringe",
+          "frage": "Ringabstände 45 / 140 / 245 cm",
+          "optionen": [
+            "Bestätigt",
+            "Ich messe an meiner Leine nach",
+            "Andere Abstände"
+          ],
+          "hinweis": "Daraus ergeben sich die sechs Führlängen. Ändert sich ein Ring, ändert sich die ganze Tabelle."
+        },
+        {
+          "id": "le01-breite",
+          "frage": "Bandbreite",
+          "optionen": [
+            "20 mm",
+            "25 mm",
+            "Beides bepreisen lassen"
+          ]
+        },
+        {
+          "id": "le01-notloesung",
+          "frage": "Wenn eine Fabrik den Mystery Braid nicht kann",
+          "optionen": [
+            "Dann kommt sie nicht infrage",
+            "Flache Falte mit 2 Schrauben als Notlösung",
+            "Separat bepreisen lassen"
+          ]
+        },
+        {
+          "id": "le01-sonderfarben",
+          "frage": "Sonderfarben pink · türkis · gelb aus deinen Fotos",
+          "optionen": [
+            "Nicht in der ersten Order",
+            "Je 10 Stück mitnehmen",
+            "Nur auf Bestellung"
+          ]
+        }
       ]
     },
     {
@@ -356,26 +637,84 @@ textarea::placeholder{color:var(--tinte-leise)}
       "zeichnung": "media/PATCH-01-lederpatch.png",
       "zeichnungText": "PATCH-01: PA-M 85 × 18 mm und PA-S 65 × 14 mm, Bohrbild, Schriftfeld (Logo ist Platzhalter)",
       "fotos": [
-        {"src":"media/PATCH-01-und-flechtung-detail.jpg","text":"Gravur nah: gesperrte Versalien über Schreibschrift"},
-        {"src":"media/PATCH-01-namensgravur-detail.jpg","text":"Namensgravur in Serifen-Versalien"},
-        {"src":"media/PATCH-01-namenspatch-august.jpg","text":"Namenspatch AUGUST neben dem Markenpatch"},
-        {"src":"media/PATCH-01-namenspatch-detail.jpg","text":"Zweites Namenspatch mit Bolzenkarabiner"}
+        {
+          "src": "media/PATCH-01-und-flechtung-detail.jpg",
+          "text": "Gravur nah: gesperrte Versalien über Schreibschrift"
+        },
+        {
+          "src": "media/PATCH-01-namensgravur-detail.jpg",
+          "text": "Namensgravur in Serifen-Versalien"
+        },
+        {
+          "src": "media/PATCH-01-namenspatch-august.jpg",
+          "text": "Namenspatch AUGUST neben dem Markenpatch"
+        },
+        {
+          "src": "media/PATCH-01-namenspatch-detail.jpg",
+          "text": "Zweites Namenspatch mit Bolzenkarabiner"
+        }
       ],
       "fakten": [
-        ["Leder","Kontrastleder cognac / mittelbraun, 2,0–2,5 mm, feste glatte Narbe"],
-        ["Größen","PA-M 85 × 18 mm für 25–40 mm Bänder · PA-S 65 × 14 mm für 20 mm"],
-        ["Gravur","lasergraviert 0,2–0,3 mm tief, dunkler Brand — keine Folie, keine Farbe"],
-        ["Schrift","Zeile 1 Versalien gesperrt +20 % · Zeile 2 Schreibschrift, rechtsbündig darunter"],
-        ["Löcher","2 × Ø 4,5 mm, Abstand 71 mm (PA-M) bzw. 51 mm (PA-S)"],
-        ["Befestigung","je 1 Buchschraube Messing pro Ende, Kopf Ø 8–9 mm gewölbt"],
-        ["Erste Order","500 Stück PA-M + 500 Stück PA-S, inklusive Schrauben"]
+        [
+          "Leder",
+          "Kontrastleder cognac / mittelbraun, 2,0–2,5 mm, feste glatte Narbe"
+        ],
+        [
+          "Größen",
+          "PA-M 85 × 18 mm für 25–40 mm Bänder · PA-S 65 × 14 mm für 20 mm"
+        ],
+        [
+          "Gravur",
+          "lasergraviert 0,2–0,3 mm tief, dunkler Brand — keine Folie, keine Farbe"
+        ],
+        [
+          "Schrift",
+          "Zeile 1 Versalien gesperrt +20 % · Zeile 2 Schreibschrift, rechtsbündig darunter"
+        ],
+        [
+          "Löcher",
+          "2 × Ø 4,5 mm, Abstand 71 mm (PA-M) bzw. 51 mm (PA-S)"
+        ],
+        [
+          "Befestigung",
+          "je 1 Buchschraube Messing pro Ende, Kopf Ø 8–9 mm gewölbt"
+        ],
+        [
+          "Erste Order",
+          "500 Stück PA-M + 500 Stück PA-S, inklusive Schrauben"
+        ]
       ],
       "bau": [],
       "warnung": "Auf allen vorhandenen Stücken steht noch HERR BELLO & FRAU WUFF. Das Layout bleibt, der Name wird BELLOWERK — dafür braucht der Lieferant deine Vektordatei mit Schrift in Pfaden. Ohne die Datei kann die Gravur nicht freigegeben werden.",
       "fragen": [
-        {"id":"patch-name","frage":"Was steht auf dem Patch der ersten Order","optionen":["BELLOWERK / Manufaktur","Alter Name weiter","Beides, Übergangszeit"]},
-        {"id":"patch-logo","frage":"Vektorlogo","optionen":["Liefere ich","Soll nachgezeichnet werden","Noch offen"]},
-        {"id":"patch-namen","frage":"Namensgravur AUGUST · TILDA · ENZO","optionen":["Erste Order ohne Namen, aber Preis abfragen","Direkt mit anbieten","Gar nicht"],"hinweis":"Im Tech Pack steht bisher: erste Order ohne Namen, Einzelgravur nur als Preisfrage an den Lieferanten."}
+        {
+          "id": "patch-name",
+          "frage": "Was steht auf dem Patch der ersten Order",
+          "optionen": [
+            "BELLOWERK / Manufaktur",
+            "Alter Name weiter",
+            "Beides, Übergangszeit"
+          ]
+        },
+        {
+          "id": "patch-logo",
+          "frage": "Vektorlogo",
+          "optionen": [
+            "Liefere ich",
+            "Soll nachgezeichnet werden",
+            "Noch offen"
+          ]
+        },
+        {
+          "id": "patch-namen",
+          "frage": "Namensgravur AUGUST · TILDA · ENZO",
+          "optionen": [
+            "Erste Order ohne Namen, aber Preis abfragen",
+            "Direkt mit anbieten",
+            "Gar nicht"
+          ],
+          "hinweis": "Im Tech Pack steht bisher: erste Order ohne Namen, Einzelgravur nur als Preisfrage an den Lieferanten."
+        }
       ]
     },
     {
@@ -387,33 +726,101 @@ textarea::placeholder{color:var(--tinte-leise)}
       "fotos": [],
       "fehltFoto": "Noch keine Zeichnung — erst wenn du A, B oder C wählst, wird daraus eine englische Spezifikation für den Lieferanten.",
       "fakten": [
-        ["Option A","Kraftpapiertasche + Papierband + Kraftanhänger — 0,15–0,30 USD/Stück"],
-        ["Option B","Baumwollbeutel mit Zugband, Siebdruck — 0,40–0,80 USD/Stück"],
-        ["Option C","Kraftschachtel mit Blindprägung, Seidenpapier — 0,60–1,20 USD/Stück"],
-        ["Pflicht EU","GPSR: Name + Postanschrift, Modell, Charge, Made in China, Pflegehinweis"],
-        ["Immer","kein Plastik, keine Folie, kein Kleber auf Leder"],
-        ["Vorschlag","A als Standard, C nur für Geschenksets, B gegen Aufpreis"]
+        [
+          "Option A",
+          "Kraftpapiertasche + Papierband + Kraftanhänger — 0,15–0,30 USD/Stück"
+        ],
+        [
+          "Option B",
+          "Baumwollbeutel mit Zugband, Siebdruck — 0,40–0,80 USD/Stück"
+        ],
+        [
+          "Option C",
+          "Kraftschachtel mit Blindprägung, Seidenpapier — 0,60–1,20 USD/Stück"
+        ],
+        [
+          "Pflicht EU",
+          "GPSR: Name + Postanschrift, Modell, Charge, Made in China, Pflegehinweis"
+        ],
+        [
+          "Immer",
+          "kein Plastik, keine Folie, kein Kleber auf Leder"
+        ],
+        [
+          "Vorschlag",
+          "A als Standard, C nur für Geschenksets, B gegen Aufpreis"
+        ]
       ],
       "bau": [],
       "warnung": "Solange das offen ist, steht in jeder Anfrage nur: 1 Stück je Kraftpapiertasche mit Aufkleber, kein Plastik — Verpackungsspezifikation folgt mit der Bestellung.",
       "fragen": [
-        {"id":"verp-option","frage":"Welche Verpackung","optionen":["A für Standard, C für Geschenksets","Nur A","Nur B","Noch offen"]},
-        {"id":"verp-wer","frage":"Wer verpackt","optionen":["Lieferant in China","Wir in Hamburg","Beides bepreisen lassen"]},
-        {"id":"verp-gpsr","frage":"Anschrift für die GPSR-Angabe","optionen":["Liefere ich nach","Noch offen"]}
+        {
+          "id": "verp-option",
+          "frage": "Welche Verpackung",
+          "optionen": [
+            "A für Standard, C für Geschenksets",
+            "Nur A",
+            "Nur B",
+            "Noch offen"
+          ]
+        },
+        {
+          "id": "verp-wer",
+          "frage": "Wer verpackt",
+          "optionen": [
+            "Lieferant in China",
+            "Wir in Hamburg",
+            "Beides bepreisen lassen"
+          ]
+        },
+        {
+          "id": "verp-gpsr",
+          "frage": "Anschrift für die GPSR-Angabe",
+          "optionen": [
+            "Liefere ich nach",
+            "Noch offen"
+          ]
+        }
       ]
     }
   ],
   "fehlend": [
-    ["HB-01-gesamt.jpg","Halsband komplett flach, Narbenseite oben, Schnalle links, Lineal daneben"],
-    ["LE-01-gesamt.jpg","Leine ausgelegt, alle drei Ringe sichtbar, Maßband entlang"],
-    ["LE-01-detail-ring-lineal.jpg","Ring im Geflecht mit Lineal — Flechtlänge und Umschlag messen"],
-    ["HS-01-gesamt.jpg","Handschlaufe komplett"],
-    ["PATCH-01-artwork.svg","Vektorlogo BELLOWERK / Manufaktur, Schrift in Pfade"],
-    ["messing-beschlaege.jpg","Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, mit Lineal"]
+    [
+      "HB-01-gesamt.jpg",
+      "Halsband komplett flach, Narbenseite oben, Schnalle links, Lineal daneben"
+    ],
+    [
+      "LE-01-gesamt.jpg",
+      "Leine ausgelegt, alle drei Ringe sichtbar, Maßband entlang"
+    ],
+    [
+      "LE-01-detail-ring-lineal.jpg",
+      "Ring im Geflecht mit Lineal — Flechtlänge und Umschlag messen"
+    ],
+    [
+      "HB-04-hamburg-gesamt.jpg",
+      "Dein Foto des grauen Halsbands mit Verbreiterung, am besten flach mit Lineal — Breite der Mitte und Länge der Bögen"
+    ],
+    [
+      "PATCH-01-artwork.svg",
+      "Vektorlogo BELLOWERK / Manufaktur, Schrift in Pfade"
+    ],
+    [
+      "messing-beschlaege.jpg",
+      "Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, mit Lineal"
+    ]
   ],
   "ruhend": [
-    {"code":"LE-02","name":"Rundgeflochtene Leine","text":"Zurückgestellt. Nach deinen Fotos ist der Bellowerk-Zopf die Flechtung an den Beschlägen — die steckt jetzt in LE-01. Eine komplett rundgeflochtene Leine wäre ein eigenes Produkt."},
-    {"code":"ZUB","name":"Schlüsselanhänger","text":"Nur ein Foto, keine Spezifikation. Passt als Resteverwertung und Zugabe, ist aber noch nicht gezeichnet."}
+    {
+      "code": "LE-02",
+      "name": "Rundgeflochtene Leine",
+      "text": "Zurückgestellt. Nach deinen Fotos ist der Bellowerk-Zopf die Flechtung an den Beschlägen — die steckt jetzt in LE-01. Eine komplett rundgeflochtene Leine wäre ein eigenes Produkt."
+    },
+    {
+      "code": "ZUB",
+      "name": "Schlüsselanhänger",
+      "text": "Nur ein Foto, keine Spezifikation. Passt als Resteverwertung und Zugabe, ist aber noch nicht gezeichnet."
+    }
   ]
 }
 </script>

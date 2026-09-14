@@ -1,4 +1,8 @@
-# HS-01 — Leather Hand Loop, 50 cm (Tech Pack v1.0, 9 Sep 2026)
+# HS-01 — Leather Hand Loop, 50 cm (Tech Pack v1.0 — WITHDRAWN 14 Sep 2026)
+
+Status: **withdrawn on Björn's instruction, 14 September 2026.** Not part of any enquiry and not
+in the approval folder. The file stays for reference in case the hand loop comes back as an
+accessory later; nothing below has been re-checked since.
 
 Attachments: `zeichnungen/HS-01-handschlaufe.png`.
 

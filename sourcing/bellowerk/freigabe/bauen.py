@@ -39,8 +39,8 @@ FOTOS = [
 ZEICHNUNGEN = [
     "HB-01-halsband.png",
     "HB-02-geflochten.png",
+    "HB-04-hamburg.png",
     "LE-01-fuehrleine.png",
-    "HS-01-handschlaufe.png",
     "PATCH-01-lederpatch.png",
 ]
 
