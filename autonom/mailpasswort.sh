@@ -27,6 +27,25 @@ done
 KONTO="$("$PYTHON" -c 'import json;print((json.load(open("config.json")).get("mail") or {}).get("absender",""))')"
 [ -n "$KONTO" ] || { rot "FEHLER: mail.absender steht nicht in config.json."; exit 1; }
 
+# --- Sonderfall: das Passwort steht schon da, nur an der falschen Stelle ---
+# mailin.py und posteingang.py lesen config.json zuerst und die Umgebung nur
+# ersatzweise. Steht in config.json ein veralteter Wert, kommen sie nie bis
+# /etc/bello/env -- und melden "Invalid credentials", obwohl das gueltige
+# Passwort auf der Platte liegt.
+if [ "${1:-}" = "--aus-env" ]; then
+  ENVDATEI="/etc/bello/env"
+  [ -r "$ENVDATEI" ] || { rot "FEHLER: $ENVDATEI nicht lesbar (sudo?)."; exit 1; }
+  PASSWORT="$(sed -n 's/^SMTP_PASSWORT=//p' "$ENVDATEI" | tail -1)"
+  PASSWORT="${PASSWORT%\"}"; PASSWORT="${PASSWORT#\"}"
+  PASSWORT="${PASSWORT%\'}"; PASSWORT="${PASSWORT#\'}"
+  PASSWORT="${PASSWORT//[[:space:]]/}"
+  [ -n "$PASSWORT" ] || { rot "FEHLER: SMTP_PASSWORT steht nicht in $ENVDATEI."; exit 1; }
+  fett "=== Passwort aus $ENVDATEI pruefen ==="
+  echo "  Konto:  $KONTO"
+  echo "  Laenge: ${#PASSWORT} Zeichen (der Wert selbst wird nicht angezeigt)"
+  echo
+else
+
 fett "=== App-Passwort fuer $KONTO ==="
 echo
 echo "Vorher im Google-Konto von $KONTO anlegen:"
@@ -49,6 +68,8 @@ if [ "${#PASSWORT}" -ne 16 ]; then
   read -r -p "Trotzdem eintragen? Nur 'ja': " WEITER
   [ "$WEITER" = "ja" ] || exit 1
 fi
+
+fi  # Ende --aus-env
 
 echo
 echo "Anmeldung wird zuerst geprueft, bevor irgendetwas geschrieben wird ..."
@@ -121,3 +142,6 @@ fett "=== Fertig ==="
 echo "Gegenprobe, beide Dienste:"
 echo "  sudo -u bello $PYTHON mailin.py --test-imap"
 echo "  sudo -u bello $PYTHON autonom/posteingang.py --probe"
+echo
+echo "Danach die Dienste einmal von Hand anstossen, statt auf den Timer zu warten:"
+echo "  sudo systemctl start bello-posteingang.service"
