@@ -1,0 +1,699 @@
+<title>Bellowerk Freigabe-Mappe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style id="bw-css">
+:root{
+  --papier:#E6E3DA; --blatt:#F4F2EB; --vertiefung:#DCD8CD;
+  --tinte:#211C15; --tinte-weich:#5E5648; --tinte-leise:#877E6D;
+  --linie:#CBC4B4; --linie-fein:#DED8C9;
+  --messing:#8F6B1F; --messing-hell:#C29A46;
+  --oliv:#4C5A31; --rost:#8E3A24; --schiefer:#6B6355;
+  --fokus:#8F6B1F;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#14110D; --blatt:#1D1914; --vertiefung:#262118;
+    --tinte:#EDE7D9; --tinte-weich:#AAA08B; --tinte-leise:#857C6A;
+    --linie:#3A3227; --linie-fein:#2C261E;
+    --messing:#D3A957; --messing-hell:#E0BE77;
+    --oliv:#93A468; --rost:#D4775A; --schiefer:#9A9183;
+    --fokus:#D3A957;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#14110D; --blatt:#1D1914; --vertiefung:#262118;
+  --tinte:#EDE7D9; --tinte-weich:#AAA08B; --tinte-leise:#857C6A;
+  --linie:#3A3227; --linie-fein:#2C261E;
+  --messing:#D3A957; --messing-hell:#E0BE77;
+  --oliv:#93A468; --rost:#D4775A; --schiefer:#9A9183;
+  --fokus:#D3A957;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--papier); color:var(--tinte);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:17px; line-height:1.55; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+#app{max-width:1080px; margin:0 auto; padding-inline:20px; padding-block:0 64px}
+h1,h2,h3,.mark,.eyebrow,button,.pill,th{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
+.mono,dd,.masz,.code{font-family:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+p{margin:0 0 0.7em}
+a{color:var(--messing)}
+:focus-visible{outline:2px solid var(--fokus); outline-offset:2px; border-radius:2px}
+img{max-width:100%}
+
+/* ---------- Kopf ---------- */
+.kopf{padding-block:44px 20px; border-bottom:2px solid var(--tinte)}
+.eyebrow{
+  font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--tinte-leise); margin:0 0 14px
+}
+.kopf h1{
+  font-size:clamp(30px,6vw,50px); font-weight:700; letter-spacing:-.022em;
+  line-height:1.02; margin:0 0 10px; text-wrap:balance
+}
+.kopf .unter{max-width:62ch; color:var(--tinte-weich); font-size:17px; margin:0}
+.kopf .meta{
+  display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:18px;
+  font-size:12.5px; color:var(--tinte-leise)
+}
+.kopf .meta span{white-space:nowrap}
+
+/* ---------- Laufzettel ---------- */
+.laufzettel{
+  position:sticky; top:0; z-index:30; background:var(--papier);
+  border-bottom:1px solid var(--linie); margin-bottom:36px;
+  padding-block:10px
+}
+.lz-zeile{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.lz-stand{font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--tinte-weich); white-space:nowrap}
+.lz-stand b{color:var(--tinte); font-size:14px}
+.lz-links{display:flex; gap:6px; flex-wrap:wrap; margin-left:auto}
+.lz-links a{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; text-decoration:none;
+  color:var(--tinte-weich); border:1px solid var(--linie); border-radius:2px;
+  padding:3px 7px; display:inline-flex; gap:5px; align-items:center; background:var(--blatt)
+}
+.lz-links a:hover{border-color:var(--messing); color:var(--tinte)}
+.punkt{width:7px; height:7px; border-radius:50%; background:var(--tinte-leise); flex:none}
+.punkt.gut{background:var(--oliv)} .punkt.rot{background:var(--rost)} .punkt.grau{background:var(--schiefer)}
+#sicherung{font-size:11.5px; color:var(--tinte-leise); font-family:"IBM Plex Mono",monospace; white-space:nowrap}
+
+/* ---------- Blatt ---------- */
+.blatt{
+  background:var(--blatt); border:1px solid var(--linie); border-radius:3px;
+  margin-bottom:30px; scroll-margin-top:64px; overflow:hidden
+}
+.bl-kopf{
+  display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+  padding:18px 22px 16px; border-bottom:1px solid var(--linie)
+}
+.code{
+  font-size:13px; font-weight:500; color:var(--blatt); background:var(--tinte);
+  padding:3px 8px; border-radius:2px; letter-spacing:.04em
+}
+.bl-kopf h2{font-size:23px; font-weight:600; letter-spacing:-.015em; margin:0; flex:1 1 auto}
+.stand{font-size:12px; color:var(--tinte-leise); font-family:"IBM Plex Mono",monospace}
+.pill{
+  font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 10px; border-radius:2px; border:1px solid currentColor; white-space:nowrap
+}
+.pill.offen{color:var(--tinte-leise)}
+.pill.gut{color:var(--oliv)} .pill.rot{color:var(--rost)} .pill.grau{color:var(--schiefer)}
+
+.zeichnung{background:var(--vertiefung); padding:16px 22px; border-bottom:1px solid var(--linie)}
+.zeichnung button{
+  display:block; width:100%; padding:4px; cursor:zoom-in; background:#fff;
+  border:1px solid var(--linie); border-radius:2px
+}
+.zeichnung button:hover{border-color:var(--messing)}
+.zeichnung img{display:block; width:100%}
+.zeichnung figcaption{font-size:12px; color:var(--tinte-weich); margin-top:8px; font-family:"IBM Plex Mono",monospace}
+
+.rumpf{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:0}
+@media (max-width:760px){.rumpf{grid-template-columns:1fr}}
+.spalte{padding:20px 22px}
+.spalte + .spalte{border-left:1px solid var(--linie-fein)}
+@media (max-width:760px){.spalte + .spalte{border-left:0; border-top:1px solid var(--linie-fein)}}
+h3{
+  font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--tinte-leise); margin:0 0 12px
+}
+.fotos{display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:8px; margin:0}
+.fotos figure{margin:0}
+.fotos button{
+  padding:0; border:1px solid var(--linie); background:none; cursor:zoom-in; display:block;
+  width:100%; border-radius:2px; overflow:hidden
+}
+.fotos img{display:block; width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center}
+.fotos figcaption{font-size:11px; line-height:1.35; color:var(--tinte-weich); margin-top:5px}
+.fehlt{
+  font-size:13px; color:var(--tinte-weich); border:1px dashed var(--linie);
+  border-radius:2px; padding:12px; margin:0
+}
+dl.fakten{margin:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:0}
+dl.fakten dt{
+  font-family:"Archivo",sans-serif; font-size:11.5px; font-weight:500; letter-spacing:.04em;
+  text-transform:uppercase; color:var(--tinte-leise);
+  padding:7px 14px 7px 0; border-top:1px solid var(--linie-fein); white-space:nowrap
+}
+dl.fakten dd{
+  margin:0; font-size:13.5px; line-height:1.45; padding:7px 0;
+  border-top:1px solid var(--linie-fein)
+}
+dl.fakten dt:first-of-type,dl.fakten dd:first-of-type{border-top:0}
+ol.bau{margin:0; padding-left:1.15em; font-size:14.5px; color:var(--tinte-weich)}
+ol.bau li{margin-bottom:5px}
+ol.bau li::marker{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--messing)}
+.warnung{
+  font-size:14px; line-height:1.45; border-left:3px solid var(--rost);
+  padding:2px 0 2px 12px; color:var(--tinte-weich); margin:14px 0 0
+}
+
+/* ---------- Freigabe ---------- */
+.freigabe{border-top:2px solid var(--tinte); padding:18px 22px 22px; background:var(--vertiefung)}
+.fr-kopf{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px}
+.fr-kopf h3{margin:0}
+.wahlen{display:flex; gap:8px; flex-wrap:wrap}
+button.wahl,button.chip{
+  font-size:12.5px; font-weight:500; letter-spacing:.01em; cursor:pointer;
+  background:var(--blatt); color:var(--tinte-weich);
+  border:1px solid var(--linie); border-radius:2px; padding:6px 12px;
+  transition:border-color .12s ease, color .12s ease
+}
+button.wahl:hover,button.chip:hover{border-color:var(--tinte-weich); color:var(--tinte)}
+button.wahl[aria-pressed="true"]{background:var(--tinte); border-color:var(--tinte); color:var(--blatt)}
+button.wahl.gut[aria-pressed="true"]{background:var(--oliv); border-color:var(--oliv); color:#F4F2EB}
+button.wahl.rot[aria-pressed="true"]{background:var(--rost); border-color:var(--rost); color:#F4F2EB}
+button.chip[aria-pressed="true"]{
+  border-color:var(--messing); color:var(--tinte); font-weight:600;
+  box-shadow:inset 0 0 0 1px var(--messing)
+}
+.frage{padding-top:14px; border-top:1px solid var(--linie-fein); margin-top:14px}
+.frage p{font-size:15px; margin:0 0 9px; font-weight:500}
+.frage .nr{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--messing); margin-right:7px}
+.frage .hinweis{font-size:13px; color:var(--tinte-weich); margin:8px 0 0}
+textarea{
+  width:100%; margin-top:14px; min-height:74px; resize:vertical;
+  font-family:"Newsreader",Georgia,serif; font-size:15px; line-height:1.5;
+  color:var(--tinte); background:var(--blatt);
+  border:1px solid var(--linie); border-radius:2px; padding:10px 12px
+}
+textarea::placeholder{color:var(--tinte-leise)}
+
+/* ---------- Anhang ---------- */
+.anhang{margin-top:46px; border-top:2px solid var(--tinte); padding-top:22px}
+.anhang h2{font-size:20px; font-weight:600; letter-spacing:-.01em; margin:0 0 4px}
+.anhang > p{color:var(--tinte-weich); font-size:15px; max-width:62ch}
+.liste{margin:16px 0 0; padding:0; list-style:none; display:grid; gap:0}
+.liste li{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:14px; align-items:baseline;
+  padding:9px 0; border-top:1px solid var(--linie-fein); font-size:14.5px
+}
+.liste li .was{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--messing); white-space:nowrap}
+.liste li .warum{color:var(--tinte-weich)}
+.ruhend{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:18px}
+.ruhend article{border:1px dashed var(--linie); border-radius:3px; padding:14px 16px; background:var(--blatt)}
+.ruhend h4{font-family:"Archivo",sans-serif; font-size:14px; margin:0 0 5px; font-weight:600}
+.ruhend p{font-size:13.5px; color:var(--tinte-weich); margin:0}
+.ruhend .code{font-size:11.5px; display:inline-block; margin-bottom:8px}
+.fuss{margin-top:40px; padding-top:16px; border-top:1px solid var(--linie); font-size:13px; color:var(--tinte-leise)}
+
+/* ---------- Lupe ---------- */
+#lupe{
+  position:fixed; inset:0; z-index:90; background:rgba(20,17,13,.92);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  gap:12px; padding:24px; cursor:zoom-out
+}
+#lupe img{
+  max-width:min(1600px,96vw); max-height:84vh; object-fit:contain;
+  background:#fff; border-radius:2px; padding:6px
+}
+#lupe p{color:#EDE7D9; font-size:13px; max-width:60ch; text-align:center; margin:0; font-family:"Archivo",sans-serif}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+
+<div id="app"></div>
+
+<script id="bw-data" type="application/json">
+{
+  "titel": "Freigabe-Mappe Kernserie",
+  "unter": "Alles, was an Halsband, Leine und Patch schon gezeichnet und spezifiziert ist — auf einem Blatt pro Modell, mit Foto, Maßzeichnung und den Punkten, an denen nur du entscheiden kannst. Was du hier freigibst, geht als Anfrage an die chinesische Shortlist.",
+  "meta": ["Bellowerk Manufaktur, Hamburg", "Abteilung 01 Innovation · 05 Einkauf China", "Stand der Tech Packs: 9. September 2026", "Quelle: sourcing/bellowerk"],
+  "modelle": [
+    {
+      "code": "HB-01",
+      "name": "Halsband glatt, Fettleder",
+      "stand": "Tech Pack v1.0",
+      "zeichnung": "media/HB-01-halsband.png",
+      "zeichnungText": "HB-01, Größe M: Schnallenfalte, D-Ring in der Falte, Lochbild 5 × 25 mm, Patch-Position",
+      "fotos": [
+        {"src":"media/HB-01-detail-patch.jpg","text":"Graues Halsband: Patch mit 2 gewölbten Buchschrauben, Rollschnalle Messing"},
+        {"src":"media/HB-01-farben-patch.jpg","text":"Vier Farben gestapelt: dunkelbraun, oliv, cognac, grau"},
+        {"src":"media/HB-01-detail-dring-namenspatch.jpg","text":"Cognac: D-Ring mit Buchschraube, Namenspatch TILDA"}
+      ],
+      "fakten": [
+        ["Leder","Fettleder, pflanzlich gegerbt, durchgefärbt, 3,5–4,0 mm"],
+        ["Beschläge","Rollschnalle + geschweißter D-Ring, Messing massiv, gebürstet"],
+        ["Verbindung","nur Buchschrauben Messing — keine Naht, keine Niete"],
+        ["Größen","S 20 · M 25 · L 30 · XL 40 mm Breite"],
+        ["Halsumfang","30–40 · 38–48 · 46–56 · 54–64 cm"],
+        ["Lochbild","5 ovale Löcher, Abstand 25 mm, ab Spitze 6 / 8,5 / 11 / 13,5 / 16 cm"],
+        ["Patch","PATCH-01, mittig, 30 mm hinter der Falte"],
+        ["Erste Order","100 Stück — S 20 · M 35 · L 30 · XL 15"]
+      ],
+      "bau": [
+        "Band durch die Schnalle, 60 mm zurückgeschlagen; D-Ring sitzt 20 mm hinter der Schnalle in der Falte, Schlaufe 15 mm dahinter.",
+        "Falte mit 2 Buchschrauben fixiert, D-Ring dazwischen gefangen.",
+        "Patch außen auf der Falte, 2 Buchschrauben. Kanten abgeschrägt und poliert, keine Kantenfarbe."
+      ],
+      "warnung": "",
+      "fragen": [
+        {"id":"hb01-groessen","frage":"Größentabelle gegen dein Referenz-Halsband","optionen":["Stimmt so","Ich messe nach","Andere Maße — sage ich an"],"hinweis":"Die Werte sind aus der Kernserie abgeleitet, nicht am Stück gemessen. Der Lieferant baut danach das Goldmuster."},
+        {"id":"hb01-dring","frage":"D-Ring-Anbindung","optionen":["Geschraubte Falte wie gezeichnet","Mystery Braid wie HB-02","Beides anfragen und vergleichen"]},
+        {"id":"hb01-farben","frage":"Farben der ersten 100 Stück","optionen":["Oliv · dunkelbraun · cognac · grau","Nur oliv + dunkelbraun","Andere Aufteilung"]}
+      ]
+    },
+    {
+      "code": "HB-02",
+      "name": "Flechthalsband, Mystery Braid",
+      "stand": "Tech Pack v1.0",
+      "zeichnung": "media/HB-02-geflochten.png",
+      "zeichnungText": "HB-02: flache Enden mit Schnalle und Patch, geflochtener Halsteil, O-Ring mittig hinten",
+      "fotos": [
+        {"src":"media/HB-02-geflochten-am-hund.jpg","text":"Einfarbig, komplett geflochten, O-Ring Messing, Karabiner eingehakt"},
+        {"src":"media/HB-02-zweifarbig-am-hund.jpg","text":"Zweifarbig dunkelbraun + grau washed stone"},
+        {"src":"media/HB-02-und-LE-01-gruen.jpg","text":"Grün: Übergang flaches Schnallenende mit Patch in die Flechtung"}
+      ],
+      "fakten": [
+        ["Flechtung","3-strängiger Mystery Braid aus einem Stück, zwei Längsschnitte, Enden ungeschnitten"],
+        ["Flechtlänge","S 180 · M 220 · L 260 · XL 300 mm"],
+        ["Breiten","S 20 · M 25 · L 25 · XL 30 mm"],
+        ["Zuschnitt","Flechtteil 15 % länger schneiden — die Flechtung zieht sich zusammen"],
+        ["O-Ring","Messing geschweißt, innen Ø 25 mm, Draht 5 mm, ≥ 3 kN"],
+        ["Flache Enden","Schnallenende 140–180 mm, Lochende 120–140 mm, Lochbild wie HB-01"],
+        ["Erste Order","60 Stück — S 10 · M 25 · L 20 · XL 5"]
+      ],
+      "bau": [
+        "Band in einem Stück zuschneiden, Flechtteil zweimal längs schlitzen, Schlitzenden Ø 2 mm gelocht.",
+        "Flechten: fest, gleichmäßig, flach liegend, Fischgrätmuster wie auf den Fotos.",
+        "O-Ring mittig ins Geflecht eingearbeitet; Schnallenfalte flach, 2 Buchschrauben; Patch 30 mm hinter der Falte."
+      ],
+      "warnung": "Zweifarbig geht nur, wenn zwei Streifen ohne Naht verbunden werden. Ob eine Fabrik das kann, wissen wir erst nach dem Muster — deshalb die Frage unten.",
+      "fragen": [
+        {"id":"hb02-zweifarbig","frage":"Zweifarbige Flechtung","optionen":["Ja, wenn ohne Naht machbar","Nur einfarbig anfragen","Später entscheiden"]},
+        {"id":"hb02-oring","frage":"Wie der O-Ring im Geflecht sitzt","optionen":["Im Flechtauge wie auf dem Foto","Flache Lasche mit Schraube","Fabrik vorschlagen lassen, Foto verlangen"]},
+        {"id":"hb02-muster","frage":"Musterumfang","optionen":["1× M oliv + 1× M zweifarbig","Nur 1× M oliv","Alle vier Größen"]}
+      ]
+    },
+    {
+      "code": "LE-01",
+      "name": "Führleine 3,00 m, verstellbar",
+      "stand": "Tech Pack v1.1",
+      "zeichnung": "media/LE-01-fuehrleine.png",
+      "zeichnungText": "LE-01: Ringe bei 45 / 140 / 245 cm, Mystery-Braid-Anbindung an Karabinern und Ringen, sechs Führlängen",
+      "fotos": [
+        {"src":"media/LE-01-detail-karabiner-flechtung.jpg","text":"Schwarz: Bolzenkarabiner mit Flechtanbindung, Buchschraube im Geflecht"},
+        {"src":"media/LE-01-flechtung-ringe-farben.jpg","text":"Vier Farben: Flechtung um O-Ring, Patch cognac mit 2 Schrauben"},
+        {"src":"media/LE-01-flechtung-karabiner-gruen.jpg","text":"Grün, Nahaufnahme der Anbindung"},
+        {"src":"media/LE-01-ringe-flechtung-pink.jpg","text":"Ring im Geflecht, Sonderfarbe pink"},
+        {"src":"media/LE-01-farben-pink-tuerkis.jpg","text":"Sonderfarben pink, türkis, gelb — Bildtext bestätigt 2 cm Breite"}
+      ],
+      "fakten": [
+        ["Länge","300 cm, Karabinerauge bis Karabinerauge"],
+        ["Breite","20 mm, ein durchgehendes Band ohne Stoß (Option 25 mm)"],
+        ["Ringe","fest bei 45 · 140 · 245 cm, Messing innen Ø 25 mm, ≥ 3 kN"],
+        ["Karabiner","2 × Wirbel-Bolzenkarabiner Messing, ≥ 2 kN, starke Feder"],
+        ["Anbindung","Umschlag 120 mm, Flechtung 80 mm, 1 Buchschraube — das ist der Bellowerk-Look"],
+        ["Führlängen","45 · 55 · 140 · 160 · 245 · 255 cm, dazu 300 cm mit beiden Karabinern"],
+        ["Zuschnitt","360 cm aus einer Haut, wegen der Farbe"],
+        ["Erste Order","100 Stück — oliv 30 · dunkelbraun 30 · cognac 20 · grau 20"]
+      ],
+      "bau": [
+        "Bandende durch Karabinerauge, 120 mm zurückschlagen; beide Lagen zweimal längs schlitzen.",
+        "Über 80 mm als 3-strängigen Mystery Braid flechten, 6–8 Kreuzungen, fest und gleichmäßig.",
+        "Freies Ende flach dahinter, 1 Buchschraube 15 mm hinter dem Geflechtende. An den Ringen dieselbe Technik in der Doppellage.",
+        "Patch 80 mm hinter dem Geflecht an Karabiner A, alle Schraubenköpfe auf der Narbenseite."
+      ],
+      "warnung": "",
+      "fragen": [
+        {"id":"le01-ringe","frage":"Ringabstände 45 / 140 / 245 cm","optionen":["Bestätigt","Ich messe an meiner Leine nach","Andere Abstände"],"hinweis":"Daraus ergeben sich die sechs Führlängen. Ändert sich ein Ring, ändert sich die ganze Tabelle."},
+        {"id":"le01-breite","frage":"Bandbreite","optionen":["20 mm","25 mm","Beides bepreisen lassen"]},
+        {"id":"le01-notloesung","frage":"Wenn eine Fabrik den Mystery Braid nicht kann","optionen":["Dann kommt sie nicht infrage","Flache Falte mit 2 Schrauben als Notlösung","Separat bepreisen lassen"]},
+        {"id":"le01-sonderfarben","frage":"Sonderfarben pink · türkis · gelb aus deinen Fotos","optionen":["Nicht in der ersten Order","Je 10 Stück mitnehmen","Nur auf Bestellung"]}
+      ]
+    },
+    {
+      "code": "HS-01",
+      "name": "Handschlaufe 50 cm",
+      "stand": "Tech Pack v1.0",
+      "zeichnung": "media/HS-01-handschlaufe.png",
+      "zeichnungText": "HS-01: geschlossene Schlaufe 50 cm Umfang, Überlappung mit 2 Buchschrauben, Karabiner an Flechtanbindung",
+      "fotos": [],
+      "fehltFoto": "Von der Handschlaufe haben wir noch kein Foto — nur die Zeichnung. Für die Anfrage reicht das, für das Goldmuster brauchen wir ein Bild vom Original.",
+      "fakten": [
+        ["Umfang","50 cm geschlossen, Breite 20 mm"],
+        ["Zuschnitt","60 cm — 50 cm Schlaufe + 5 cm Karabinerfalte + 5 cm Überlappung"],
+        ["Karabiner","Wirbel-Bolzenkarabiner Messing, Auge 20 mm, ≥ 2 kN"],
+        ["Schluss","Enden 50 mm überlappt, Fleisch auf Fleisch, 2 Buchschrauben"],
+        ["Anbindung","wie LE-01: Umschlag 120 mm, Flechtung 80 mm, 1 Buchschraube"],
+        ["Patch","PATCH-01 PA-S auf der Überlappung"],
+        ["Erste Order","60 Stück — oliv 30 · dunkelbraun 20 · cognac 10"]
+      ],
+      "bau": [],
+      "warnung": "",
+      "fragen": [
+        {"id":"hs01-order","frage":"Handschlaufe in der ersten Anfrage","optionen":["Ja, mit anfragen","Erst nach Halsband und Leine","Streichen"]},
+        {"id":"hs01-patch","frage":"Patch auf der Handschlaufe","optionen":["Ja, PA-S","Ohne Patch","Nur auf Wunsch"]}
+      ]
+    },
+    {
+      "code": "PATCH-01",
+      "name": "Lederpatch, graviert",
+      "stand": "Tech Pack v1.1",
+      "zeichnung": "media/PATCH-01-lederpatch.png",
+      "zeichnungText": "PATCH-01: PA-M 85 × 18 mm und PA-S 65 × 14 mm, Bohrbild, Schriftfeld (Logo ist Platzhalter)",
+      "fotos": [
+        {"src":"media/PATCH-01-und-flechtung-detail.jpg","text":"Gravur nah: gesperrte Versalien über Schreibschrift"},
+        {"src":"media/PATCH-01-namensgravur-detail.jpg","text":"Namensgravur in Serifen-Versalien"},
+        {"src":"media/PATCH-01-namenspatch-august.jpg","text":"Namenspatch AUGUST neben dem Markenpatch"},
+        {"src":"media/PATCH-01-namenspatch-detail.jpg","text":"Zweites Namenspatch mit Bolzenkarabiner"}
+      ],
+      "fakten": [
+        ["Leder","Kontrastleder cognac / mittelbraun, 2,0–2,5 mm, feste glatte Narbe"],
+        ["Größen","PA-M 85 × 18 mm für 25–40 mm Bänder · PA-S 65 × 14 mm für 20 mm"],
+        ["Gravur","lasergraviert 0,2–0,3 mm tief, dunkler Brand — keine Folie, keine Farbe"],
+        ["Schrift","Zeile 1 Versalien gesperrt +20 % · Zeile 2 Schreibschrift, rechtsbündig darunter"],
+        ["Löcher","2 × Ø 4,5 mm, Abstand 71 mm (PA-M) bzw. 51 mm (PA-S)"],
+        ["Befestigung","je 1 Buchschraube Messing pro Ende, Kopf Ø 8–9 mm gewölbt"],
+        ["Erste Order","500 Stück PA-M + 500 Stück PA-S, inklusive Schrauben"]
+      ],
+      "bau": [],
+      "warnung": "Auf allen vorhandenen Stücken steht noch HERR BELLO & FRAU WUFF. Das Layout bleibt, der Name wird BELLOWERK — dafür braucht der Lieferant deine Vektordatei mit Schrift in Pfaden. Ohne die Datei kann die Gravur nicht freigegeben werden.",
+      "fragen": [
+        {"id":"patch-name","frage":"Was steht auf dem Patch der ersten Order","optionen":["BELLOWERK / Manufaktur","Alter Name weiter","Beides, Übergangszeit"]},
+        {"id":"patch-logo","frage":"Vektorlogo","optionen":["Liefere ich","Soll nachgezeichnet werden","Noch offen"]},
+        {"id":"patch-namen","frage":"Namensgravur AUGUST · TILDA · ENZO","optionen":["Erste Order ohne Namen, aber Preis abfragen","Direkt mit anbieten","Gar nicht"],"hinweis":"Im Tech Pack steht bisher: erste Order ohne Namen, Einzelgravur nur als Preisfrage an den Lieferanten."}
+      ]
+    },
+    {
+      "code": "VERP-01",
+      "name": "Verpackung und Kennzeichnung",
+      "stand": "Entwurf v0.1 — noch kein Tech Pack",
+      "zeichnung": "",
+      "zeichnungText": "",
+      "fotos": [],
+      "fehltFoto": "Noch keine Zeichnung — erst wenn du A, B oder C wählst, wird daraus eine englische Spezifikation für den Lieferanten.",
+      "fakten": [
+        ["Option A","Kraftpapiertasche + Papierband + Kraftanhänger — 0,15–0,30 USD/Stück"],
+        ["Option B","Baumwollbeutel mit Zugband, Siebdruck — 0,40–0,80 USD/Stück"],
+        ["Option C","Kraftschachtel mit Blindprägung, Seidenpapier — 0,60–1,20 USD/Stück"],
+        ["Pflicht EU","GPSR: Name + Postanschrift, Modell, Charge, Made in China, Pflegehinweis"],
+        ["Immer","kein Plastik, keine Folie, kein Kleber auf Leder"],
+        ["Vorschlag","A als Standard, C nur für Geschenksets, B gegen Aufpreis"]
+      ],
+      "bau": [],
+      "warnung": "Solange das offen ist, steht in jeder Anfrage nur: 1 Stück je Kraftpapiertasche mit Aufkleber, kein Plastik — Verpackungsspezifikation folgt mit der Bestellung.",
+      "fragen": [
+        {"id":"verp-option","frage":"Welche Verpackung","optionen":["A für Standard, C für Geschenksets","Nur A","Nur B","Noch offen"]},
+        {"id":"verp-wer","frage":"Wer verpackt","optionen":["Lieferant in China","Wir in Hamburg","Beides bepreisen lassen"]},
+        {"id":"verp-gpsr","frage":"Anschrift für die GPSR-Angabe","optionen":["Liefere ich nach","Noch offen"]}
+      ]
+    }
+  ],
+  "fehlend": [
+    ["HB-01-gesamt.jpg","Halsband komplett flach, Narbenseite oben, Schnalle links, Lineal daneben"],
+    ["LE-01-gesamt.jpg","Leine ausgelegt, alle drei Ringe sichtbar, Maßband entlang"],
+    ["LE-01-detail-ring-lineal.jpg","Ring im Geflecht mit Lineal — Flechtlänge und Umschlag messen"],
+    ["HS-01-gesamt.jpg","Handschlaufe komplett"],
+    ["PATCH-01-artwork.svg","Vektorlogo BELLOWERK / Manufaktur, Schrift in Pfade"],
+    ["messing-beschlaege.jpg","Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, mit Lineal"]
+  ],
+  "ruhend": [
+    {"code":"LE-02","name":"Rundgeflochtene Leine","text":"Zurückgestellt. Nach deinen Fotos ist der Bellowerk-Zopf die Flechtung an den Beschlägen — die steckt jetzt in LE-01. Eine komplett rundgeflochtene Leine wäre ein eigenes Produkt."},
+    {"code":"ZUB","name":"Schlüsselanhänger","text":"Nur ein Foto, keine Spezifikation. Passt als Resteverwertung und Zugabe, ist aber noch nicht gezeichnet."}
+  ]
+}
+</script>
+
+<script id="bw-state" type="application/json">
+{"v":1,"modelle":{},"fragen":{},"aktualisiert":null}
+</script>
+
+<script id="bw-js">
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("bw-data").textContent);
+  var STATE = JSON.parse(document.getElementById("bw-state").textContent);
+  if (!STATE.modelle) STATE.modelle = {};
+  if (!STATE.fragen) STATE.fragen = {};
+
+  var FONT = "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap";
+  var STATUS = {
+    offen: { label: "Offen", k: "offen" },
+    freigegeben: { label: "Freigegeben", k: "gut" },
+    aenderung: { label: "Änderung nötig", k: "rot" },
+    zurueck: { label: "Zurückgestellt", k: "grau" }
+  };
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function statusVon(code) {
+    var e = STATE.modelle[code];
+    return e && STATUS[e.status] ? e.status : "offen";
+  }
+  function notizVon(code) {
+    var e = STATE.modelle[code];
+    return e && e.notiz ? e.notiz : "";
+  }
+  function offeneFragen(m) {
+    var n = 0;
+    for (var i = 0; i < m.fragen.length; i++) if (!STATE.fragen[m.fragen[i].id]) n++;
+    return n;
+  }
+
+  function blatt(m) {
+    var st = statusVon(m.code), s = STATUS[st];
+    var h = '<section class="blatt" id="' + esc(m.code) + '">';
+    h += '<div class="bl-kopf"><span class="code">' + esc(m.code) + '</span>' +
+         '<h2>' + esc(m.name) + '</h2>' +
+         '<span class="stand">' + esc(m.stand) + '</span>' +
+         '<span class="pill ' + s.k + '" data-pill="' + esc(m.code) + '">' + esc(s.label) + '</span></div>';
+
+    if (m.zeichnung) {
+      h += '<figure class="zeichnung">' +
+           '<button type="button" data-akt="lupe" data-src="' + esc(m.zeichnung) + '" data-text="' + esc(m.zeichnungText) + '">' +
+           '<img src="' + esc(m.zeichnung) + '" alt="Maßzeichnung ' + esc(m.code) + '"></button>' +
+           '<figcaption>' + esc(m.zeichnungText) + ' — zum Vergrößern anklicken</figcaption></figure>';
+    }
+
+    h += '<div class="rumpf"><div class="spalte"><h3>Vom Original</h3>';
+    if (m.fotos && m.fotos.length) {
+      h += '<div class="fotos">';
+      for (var i = 0; i < m.fotos.length; i++) {
+        var f = m.fotos[i];
+        h += '<figure><button type="button" data-akt="lupe" data-src="' + esc(f.src) + '" data-text="' + esc(f.text) + '">' +
+             '<img src="' + esc(f.src) + '" alt="' + esc(f.text) + '" loading="lazy"></button>' +
+             '<figcaption>' + esc(f.text) + '</figcaption></figure>';
+      }
+      h += '</div>';
+    } else {
+      h += '<p class="fehlt">' + esc(m.fehltFoto || "Noch kein Foto vorhanden.") + '</p>';
+    }
+    if (m.bau && m.bau.length) {
+      h += '<h3 style="margin-top:22px">Aufbau</h3><ol class="bau">';
+      for (var b = 0; b < m.bau.length; b++) h += '<li>' + esc(m.bau[b]) + '</li>';
+      h += '</ol>';
+    }
+    h += '</div><div class="spalte"><h3>Was drinsteht</h3><dl class="fakten">';
+    for (var k = 0; k < m.fakten.length; k++) {
+      h += '<dt>' + esc(m.fakten[k][0]) + '</dt><dd>' + esc(m.fakten[k][1]) + '</dd>';
+    }
+    h += '</dl>';
+    if (m.warnung) h += '<p class="warnung">' + esc(m.warnung) + '</p>';
+    h += '</div></div>';
+
+    h += '<div class="freigabe"><div class="fr-kopf"><h3>Deine Freigabe</h3><div class="wahlen">' +
+         wahl(m.code, "freigegeben", "Freigegeben", "gut", st) +
+         wahl(m.code, "aenderung", "Änderung nötig", "rot", st) +
+         wahl(m.code, "zurueck", "Zurückgestellt", "", st) +
+         '</div></div>';
+
+    for (var q = 0; q < m.fragen.length; q++) {
+      var fr = m.fragen[q], gew = STATE.fragen[fr.id] || "";
+      h += '<div class="frage"><p><span class="nr">' + (q + 1) + '</span>' + esc(fr.frage) + '</p><div class="wahlen">';
+      for (var o = 0; o < fr.optionen.length; o++) {
+        var op = fr.optionen[o];
+        h += '<button type="button" class="chip" data-akt="frage" data-frage="' + esc(fr.id) + '"' +
+             ' data-wert="' + esc(op) + '" aria-pressed="' + (gew === op ? "true" : "false") + '">' + esc(op) + '</button>';
+      }
+      h += '</div>';
+      if (fr.hinweis) h += '<p class="hinweis">' + esc(fr.hinweis) + '</p>';
+      h += '</div>';
+    }
+
+    h += '<textarea id="notiz-' + esc(m.code) + '" data-akt="notiz" data-modell="' + esc(m.code) + '"' +
+         ' placeholder="Anmerkung zu ' + esc(m.code) + ' — was anders soll, welches Maß stimmt nicht, was du am Original nachgemessen hast">' +
+         esc(notizVon(m.code)) + '</textarea>';
+    h += '</div></section>';
+    return h;
+  }
+
+  function wahl(code, wert, label, klasse, st) {
+    return '<button type="button" class="wahl ' + klasse + '" data-akt="status" data-modell="' + esc(code) + '"' +
+           ' data-wert="' + wert + '" aria-pressed="' + (st === wert ? "true" : "false") + '">' + esc(label) + '</button>';
+  }
+
+  function seite() {
+    var h = '<header class="kopf"><p class="eyebrow">Bellowerk Manufaktur · zur Abnahme</p><h1>' +
+            esc(DATA.titel) + '</h1><p class="unter">' + esc(DATA.unter) + '</p><div class="meta">';
+    for (var i = 0; i < DATA.meta.length; i++) h += '<span>' + esc(DATA.meta[i]) + '</span>';
+    h += '</div></header>';
+
+    h += '<div class="laufzettel"><div class="lz-zeile">' +
+         '<span class="lz-stand" id="zaehler"></span><span id="sicherung"></span><nav class="lz-links">';
+    for (var m = 0; m < DATA.modelle.length; m++) {
+      h += '<a href="#' + esc(DATA.modelle[m].code) + '"><span class="punkt" data-punkt="' +
+           esc(DATA.modelle[m].code) + '"></span>' + esc(DATA.modelle[m].code) + '</a>';
+    }
+    h += '</nav></div></div>';
+
+    for (var b = 0; b < DATA.modelle.length; b++) h += blatt(DATA.modelle[b]);
+
+    h += '<section class="anhang"><h2>Was von dir noch fehlt</h2>' +
+         '<p>Für die Anfrage reichen Zeichnung und Foto. Für das Goldmuster und die Gravur brauchen wir diese sechs Dateien.</p><ul class="liste">';
+    for (var f = 0; f < DATA.fehlend.length; f++) {
+      h += '<li><span class="was">' + esc(DATA.fehlend[f][0]) + '</span><span class="warum">' + esc(DATA.fehlend[f][1]) + '</span></li>';
+    }
+    h += '</ul>';
+
+    h += '<h2 style="margin-top:32px">Nicht in dieser Freigabe</h2><div class="ruhend">';
+    for (var r = 0; r < DATA.ruhend.length; r++) {
+      h += '<article><span class="code">' + esc(DATA.ruhend[r].code) + '</span><h4>' + esc(DATA.ruhend[r].name) +
+           '</h4><p>' + esc(DATA.ruhend[r].text) + '</p></article>';
+    }
+    h += '</div><p class="fuss">Was hier freigegeben ist, geht als englische Anfrage mit Zeichnung und Foto an die Lieferanten-Shortlist. ' +
+         'Änderungen an Maßen und Mengen gehören in die Tech Packs unter sourcing/bellowerk/specs — diese Mappe zeigt deren Stand.</p></section>';
+
+    h += '<div id="lupe" hidden><img id="lupe-bild" src="" alt=""><p id="lupe-text"></p></div>';
+    return h;
+  }
+
+  document.getElementById("app").innerHTML = seite();
+
+  var zaehlerEl = document.getElementById("zaehler");
+  var sicherungEl = document.getElementById("sicherung");
+  var lupe = document.getElementById("lupe");
+
+  function zaehlerAktualisieren() {
+    var frei = 0, offeneF = 0;
+    for (var i = 0; i < DATA.modelle.length; i++) {
+      var m = DATA.modelle[i];
+      if (statusVon(m.code) === "freigegeben") frei++;
+      offeneF += offeneFragen(m);
+      var p = document.querySelector('[data-punkt="' + m.code + '"]');
+      if (p) p.className = "punkt " + STATUS[statusVon(m.code)].k;
+    }
+    zaehlerEl.innerHTML = "<b>" + frei + " von " + DATA.modelle.length + "</b> freigegeben · " +
+      (offeneF === 0 ? "alle Fragen beantwortet" : offeneF + (offeneF === 1 ? " Frage offen" : " Fragen offen"));
+  }
+
+  function melden(text) { sicherungEl.textContent = text; }
+  function uhrzeit() {
+    var d = new Date();
+    return ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+  }
+
+  function baueDokument() {
+    var css = document.getElementById("bw-css").textContent;
+    var js = document.getElementById("bw-js").textContent;
+    var daten = document.getElementById("bw-data").textContent;
+    return '<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+      '<title>Bellowerk Freigabe-Mappe</title>\n' +
+      '<link rel="preconnect" href="https://fonts.googleapis.com">\n' +
+      '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' +
+      '<link rel="stylesheet" href="' + FONT + '">\n' +
+      '<style id="bw-css">' + css + '</style>\n</head>\n<body>\n<div id="app"></div>\n' +
+      '<script id="bw-data" type="application/json">' + daten + '<\/script>\n' +
+      '<script id="bw-state" type="application/json">' + JSON.stringify(STATE) + '<\/script>\n' +
+      '<script id="bw-js">' + js + '<\/script>\n</body>\n</html>';
+  }
+
+  var artefakt = null, bereit = false, wartend = null, offenerStand = false;
+  try {
+    if (window.claude && typeof window.claude.use === "function") {
+      window.claude.use("artifact").then(function (a) {
+        artefakt = a; bereit = true;
+        if (!a) { melden("Nur Ansicht · Änderungen bleiben auf diesem Gerät"); return; }
+        melden(STATE.aktualisiert ? "Zuletzt gespeichert " + kurzDatum(STATE.aktualisiert) : "Bereit");
+        if (offenerStand) sichern();
+      }).catch(function () { bereit = true; melden("Nur Ansicht · Änderungen bleiben auf diesem Gerät"); });
+    } else { bereit = true; melden("Nur Ansicht"); }
+  } catch (e) { bereit = true; melden("Nur Ansicht"); }
+
+  function kurzDatum(iso) {
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    return ("0" + d.getDate()).slice(-2) + "." + ("0" + (d.getMonth() + 1)).slice(-2) + ". " +
+      ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+  }
+
+  function sichern() {
+    STATE.aktualisiert = new Date().toISOString();
+    if (!bereit) { offenerStand = true; return; }
+    if (!artefakt) { offenerStand = true; melden("Nicht gespeichert · nur Ansicht"); return; }
+    offenerStand = false;
+    melden("Speichert …");
+    clearTimeout(wartend);
+    wartend = setTimeout(function () {
+      artefakt.publish(baueDokument()).then(function () {
+        melden("Gespeichert · " + uhrzeit());
+      }).catch(function (err) {
+        var code = err && err.code;
+        melden(code === "conflict" ? "Jemand anderes war schneller — die Seite lädt neu"
+             : code === "not_granted" || code === "not_writer" ? "Nur Ansicht · nicht gespeichert"
+             : "Nicht gespeichert (" + (code || "Fehler") + ")");
+      });
+    }, 700);
+  }
+
+  document.getElementById("app").addEventListener("click", function (ev) {
+    var el = ev.target.closest("[data-akt]");
+    if (!el) return;
+    var akt = el.getAttribute("data-akt");
+
+    if (akt === "status") {
+      var code = el.getAttribute("data-modell"), wert = el.getAttribute("data-wert");
+      var jetzt = statusVon(code);
+      var neu = jetzt === wert ? "offen" : wert;
+      if (!STATE.modelle[code]) STATE.modelle[code] = { status: "offen", notiz: "" };
+      STATE.modelle[code].status = neu;
+      var gruppe = el.parentNode.querySelectorAll("button.wahl");
+      for (var i = 0; i < gruppe.length; i++) {
+        gruppe[i].setAttribute("aria-pressed", gruppe[i].getAttribute("data-wert") === neu ? "true" : "false");
+      }
+      var pill = document.querySelector('[data-pill="' + code + '"]');
+      if (pill) { pill.className = "pill " + STATUS[neu].k; pill.textContent = STATUS[neu].label; }
+      zaehlerAktualisieren(); sichern();
+
+    } else if (akt === "frage") {
+      var id = el.getAttribute("data-frage"), w = el.getAttribute("data-wert");
+      STATE.fragen[id] = STATE.fragen[id] === w ? "" : w;
+      var chips = el.parentNode.querySelectorAll("button.chip");
+      for (var c = 0; c < chips.length; c++) {
+        chips[c].setAttribute("aria-pressed", chips[c].getAttribute("data-wert") === STATE.fragen[id] ? "true" : "false");
+      }
+      zaehlerAktualisieren(); sichern();
+
+    } else if (akt === "lupe") {
+      document.getElementById("lupe-bild").src = el.getAttribute("data-src");
+      document.getElementById("lupe-bild").alt = el.getAttribute("data-text");
+      document.getElementById("lupe-text").textContent = el.getAttribute("data-text");
+      lupe.hidden = false;
+    }
+  });
+
+  document.getElementById("app").addEventListener("input", function (ev) {
+    var el = ev.target;
+    if (el.getAttribute && el.getAttribute("data-akt") === "notiz") {
+      var code = el.getAttribute("data-modell");
+      if (!STATE.modelle[code]) STATE.modelle[code] = { status: "offen", notiz: "" };
+      STATE.modelle[code].notiz = el.value;
+      sichern();
+    }
+  });
+
+  lupe.addEventListener("click", function () { lupe.hidden = true; });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && !lupe.hidden) lupe.hidden = true;
+  });
+
+  zaehlerAktualisieren();
+})();
+</script>
