@@ -7,5 +7,29 @@
     "empfaenger": "DEINE-HAUPTADRESSE@example.com",
     "smtp_server": "smtp.gmail.com",
     "smtp_port": 465
+  },
+  "postfaecher": {
+    "einkauf_china": {
+      "adresse": "Ole.Petersen@bellowerk.de",
+      "anzeigename": "Ole Petersen - Bellowerk Manufaktur",
+      "benutzer": "Ole.Petersen@bellowerk.de",
+      "passwort": "HIER-DAS-POSTFACH-PASSWORT-ODER-APP-PASSWORT",
+      "antwort_an": "Ole.Petersen@bellowerk.de",
+      "smtp_server": "smtp.DEIN-PROVIDER.de",
+      "smtp_port": 465,
+      "imap_server": "imap.DEIN-PROVIDER.de",
+      "imap_port": 993
+    },
+    "einkauf_eu": {
+      "adresse": "Merle.Ahrens@bellowerk.de",
+      "anzeigename": "Merle Ahrens - Bellowerk Manufaktur",
+      "benutzer": "Merle.Ahrens@bellowerk.de",
+      "passwort": "HIER-DAS-POSTFACH-PASSWORT-ODER-APP-PASSWORT",
+      "antwort_an": "Merle.Ahrens@bellowerk.de",
+      "smtp_server": "smtp.DEIN-PROVIDER.de",
+      "smtp_port": 465,
+      "imap_server": "imap.DEIN-PROVIDER.de",
+      "imap_port": 993
+    }
   }
 }
