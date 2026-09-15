@@ -30,6 +30,9 @@
   --fokus:#D3A957;
 }
 *{box-sizing:border-box}
+/* Muss im eigenen CSS stehen: veroeffentlicht die Seite sich selbst neu, fehlt im erzeugten
+   Kopf die Reset-Regel der Umgebung — ohne diese Zeile bleibt die Lupe als schwarze Flaeche offen. */
+[hidden]{display:none!important}
 body{
   background:var(--papier); color:var(--tinte);
   font-family:"Newsreader",Georgia,"Times New Roman",serif;
