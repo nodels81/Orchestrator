@@ -54,6 +54,12 @@ SVG-Maße. Für Seiten als JPEG bei Qualität 88 exportieren (ein PNG mit Verlä
 Leder grau „washed stone" `#8A8984`, dunkelbraun, oliv, cognac `#9A5B2C`, schwarz.
 Messing `#C9A24E` als Mitte. Patch immer cognac/mittelbraun, auf allen Lederfarben gleich.
 
+## Erzeugte Fotos
+
+Was in dieser Umgebung fehlt und wie die Prompts aussehen, steht in
+`references/bildprompts.md` (Kopiervorlagen für HB-01, Negativliste, Prüfliste) und in
+`sourcing/bellowerk/bilder/GENERIERTE-BILDER.md` (Zugänge, Verfahren, Grenze).
+
 ## Grenze
 
 Sobald es Fotos vom Goldmuster gibt, ersetzen sie die Darstellung — in dieser Reihenfolge:
