@@ -736,52 +736,95 @@ textarea::placeholder{color:var(--tinte-leise)}
     },
     {
       "code": "VERP-01",
-      "name": "Verpackung und Kennzeichnung",
-      "stand": "Entwurf v0.1 — noch kein Tech Pack",
+      "name": "Verpackung — die Kiste zum Auspacken",
+      "stand": "Entwurf v0.2",
       "zeichnung": "",
       "zeichnungText": "",
       "fotos": [],
-      "fehltFoto": "Noch keine Zeichnung — erst wenn du A, B oder C wählst, wird daraus eine englische Spezifikation für den Lieferanten.",
+      "fehltFoto": "Noch keine Zeichnung und kein Muster. Sobald du den Weg wählst, bestelle ich Musterkartons in beiden Zielmaßen, dann sehen wir das Auspacken am echten Stück.",
       "fakten": [
         [
-          "Option A",
-          "Kraftpapiertasche + Papierband + Kraftanhänger — 0,15–0,30 USD/Stück"
+          "Grundidee",
+          "Die Kiste ist der Versandkarton — kein Umkarton. Der Kunde reißt nichts auf, er nimmt die Banderole ab und hebt den Deckel"
         ],
         [
-          "Option B",
-          "Baumwollbeutel mit Zugband, Siebdruck — 0,40–0,80 USD/Stück"
+          "Auspacken",
+          "1 Banderole abstreifen · 2 Deckel ab · 3 Seidenpapier mit Siegelaufkleber · 4 Produkt gerollt mit Papierband · 5 Kraftanhänger an Kordel · 6 Pflegekarte"
         ],
         [
-          "Option C",
-          "Kraftschachtel mit Blindprägung, Seidenpapier — 0,60–1,20 USD/Stück"
+          "Kein Werkzeug",
+          "Alles aus vorhandenen Formaten. Sondergrößen sind der teure Teil — bei Packhelp einmalig rund 240 € Stanzform. Wir nehmen ein Lagerformat und legen das Produkt hinein"
+        ],
+        [
+          "Weg 1",
+          "Stülpdeckelkarton Naturkarton unbedruckt ab Lager + bedruckte Banderole + Siegelaufkleber. Sofort startklar, kleine Auflagen"
+        ],
+        [
+          "Weg 2",
+          "Dasselbe Format, 1-farbig bedruckt im Digitaldruck — teils ab 50 Stück, weiterhin ohne Stanzform"
+        ],
+        [
+          "Zielmaße",
+          "Halsband ca. 170 × 120 × 50 mm · Leine ca. 230 × 170 × 60 mm · Set später ca. 250 × 180 × 80 mm"
+        ],
+        [
+          "Kosten je Paket",
+          "rund 1,00–2,30 € für Kiste, Banderole, Aufkleber, Seidenpapier, Anhänger und Pflegekarte — grobe Schätzung, per Angebot zu bestätigen"
+        ],
+        [
+          "Anbieter Kartons",
+          "RAJAPACK · TransPack-Krumbach · Hoffmann-Verpackung · Boxolutions (Lagerware)"
+        ],
+        [
+          "Anbieter Druck",
+          "WIRmachenDRUCK · BOXSYS · 123BAG · FF-Packaging · EGGER · Packhelp (Standardformate)"
+        ],
+        [
+          "Anbieter Kleinteile",
+          "Banderolen, Anhänger, Aufkleber: WIRmachenDRUCK, FLYERALARM, print24 (ab 1 Stück). Seidenpapier: Vistaprint, ROCABA, Promobedarf"
         ],
         [
           "Pflicht EU",
           "GPSR: Name + Postanschrift, Modell, Charge, Pflegehinweis — keine Herkunftsangabe"
         ],
         [
+          "Herkunft",
+          "Entschieden am 15.9.2026: kein Fertigungsland auf Produkt, Verpackung, Anhänger oder im Shop. Im Gegenzug darf nirgends deutsche Fertigung behauptet werden"
+        ],
+        [
           "Immer",
           "kein Plastik, keine Folie, kein Kleber auf Leder"
-        ],
-        [
-          "Vorschlag",
-          "A als Standard, C nur für Geschenksets, B gegen Aufpreis"
-        ],
-        [
-          "Herkunft",
-          "Entschieden am 15.9.2026: kein Fertigungsland auf Produkt, Verpackung, Anhänger oder im Shop. Im Gegenzug darf nirgends deutsche Fertigung behauptet werden."
         ]
       ],
       "bau": [],
-      "warnung": "Solange das offen ist, steht in jeder Anfrage nur: 1 Stück je Kraftpapiertasche mit Aufkleber, kein Plastik — Verpackungsspezifikation folgt mit der Bestellung.",
+      "warnung": "Alle Anbieter und Preise stammen aus der Recherche vom 15.9.2026 und sind ungeprüft; zwei Anbieterseiten ließen sich aus dieser Umgebung nicht öffnen. Vor jeder Bestellung Angebot mit Format, Menge und Preis einholen. Solange nichts entschieden ist, steht in jeder Anfrage nur: 1 Stück je Kraftpapiertasche, kein Plastik.",
       "fragen": [
         {
-          "id": "verp-option",
-          "frage": "Welche Verpackung",
+          "id": "verp-weg",
+          "frage": "Welcher Weg zur Kiste",
           "optionen": [
-            "A für Standard, C für Geschenksets",
-            "Nur A",
-            "Nur B",
+            "Weg 1 jetzt, Weg 2 wenn die Serie steht",
+            "Gleich Weg 2 — bedruckte Schachtel",
+            "Beides bemustern und vergleichen"
+          ],
+          "hinweis": "Weg 1 ist in Tagen startklar und kostet kein Werkzeug. Weg 2 sieht auf dem Tisch besser aus, braucht aber Druckvorlauf."
+        },
+        {
+          "id": "verp-zugabe",
+          "frage": "Zugabe im Paket",
+          "optionen": [
+            "Der kleine Messing-Anhänger",
+            "Nur Pflegekarte",
+            "Nichts"
+          ],
+          "hinweis": "Hängt an der Beschläge-Frage: ist der Anhänger Produktbestandteil oder Extra?"
+        },
+        {
+          "id": "verp-anhaengertext",
+          "frage": "Text auf dem Anhänger",
+          "optionen": [
+            "Nur Logo und Pflichtangaben",
+            "Dazu: „Eine Saison an unseren Hunden getestet.“",
             "Noch offen"
           ]
         },
@@ -789,10 +832,11 @@ textarea::placeholder{color:var(--tinte-leise)}
           "id": "verp-wer",
           "frage": "Wer verpackt",
           "optionen": [
-            "Lieferant in China",
             "Wir in Hamburg",
+            "Lieferant in China, fertig verpackt",
             "Beides bepreisen lassen"
-          ]
+          ],
+          "hinweis": "Packen wir selbst, kommt die Kiste aus einer deutschen Druckerei und wir sehen jedes Stück vor dem Versand."
         },
         {
           "id": "verp-gpsr",
