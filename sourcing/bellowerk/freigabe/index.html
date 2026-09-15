@@ -174,6 +174,11 @@ button.chip[aria-pressed="true"]{
   border-color:var(--messing); color:var(--tinte); font-weight:600;
   box-shadow:inset 0 0 0 1px var(--messing)
 }
+button.zuruecksetzen{
+  background:none; border:0; cursor:pointer; padding:6px 4px;
+  font-family:"Archivo",sans-serif; font-size:12px; color:var(--tinte-leise); text-decoration:underline
+}
+button.zuruecksetzen:hover{color:var(--rost)}
 .frage{padding-top:14px; border-top:1px solid var(--linie-fein); margin-top:14px}
 .frage p{font-size:15px; margin:0 0 9px; font-weight:500}
 .frage .nr{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--messing); margin-right:7px}
@@ -930,7 +935,7 @@ textarea::placeholder{color:var(--tinte-leise)}
 }
 </script>
 
-<script id="bw-state" type="application/json">{"v":1,"modelle":{"HB-01":{"status":"freigegeben","notiz":""},"HB-02":{"status":"freigegeben","notiz":""}},"fragen":{},"aktualisiert":"2026-09-15T07:07:52.967Z"}</script>
+<script id="bw-state" type="application/json">{"v":1,"modelle":{"HB-01":{"status":"offen","notiz":""},"HB-02":{"status":"freigegeben","notiz":""},"HB-04":{"status":"freigegeben","notiz":""},"LE-01":{"status":"freigegeben","notiz":""},"PATCH-01":{"status":"freigegeben","notiz":""}},"fragen":{},"aktualisiert":"2026-09-15T10:29:01.627Z"}</script>
 
 <script id="bw-js">
 (function () {
@@ -1012,6 +1017,8 @@ textarea::placeholder{color:var(--tinte-leise)}
          wahl(m.code, "freigegeben", "Freigegeben", "gut", st) +
          wahl(m.code, "aenderung", "Änderung nötig", "rot", st) +
          wahl(m.code, "zurueck", "Zurückgestellt", "", st) +
+         '<button type="button" class="zuruecksetzen" data-akt="zuruecksetzen" data-modell="' + esc(m.code) + '"' +
+         (st === "offen" ? " hidden" : "") + '>Zurücksetzen</button>' +
          '</div></div>';
 
     for (var q = 0; q < m.fragen.length; q++) {
@@ -1158,16 +1165,19 @@ textarea::placeholder{color:var(--tinte-leise)}
     if (!el) return;
     var akt = el.getAttribute("data-akt");
 
-    if (akt === "status") {
-      var code = el.getAttribute("data-modell"), wert = el.getAttribute("data-wert");
-      var jetzt = statusVon(code);
-      var neu = jetzt === wert ? "offen" : wert;
+    if (akt === "status" || akt === "zuruecksetzen") {
+      var code = el.getAttribute("data-modell");
+      // Kein Umschalten bei erneutem Klick: ein zweiter Klick auf "Freigegeben" hat die Freigabe
+      // sonst still wieder aufgehoben. Zuruecknehmen geht nur ueber "Zuruecksetzen".
+      var neu = akt === "zuruecksetzen" ? "offen" : el.getAttribute("data-wert");
       if (!STATE.modelle[code]) STATE.modelle[code] = { status: "offen", notiz: "" };
       STATE.modelle[code].status = neu;
-      var gruppe = el.parentNode.querySelectorAll("button.wahl");
+      var gruppe = document.querySelectorAll('button.wahl[data-modell="' + code + '"]');
       for (var i = 0; i < gruppe.length; i++) {
         gruppe[i].setAttribute("aria-pressed", gruppe[i].getAttribute("data-wert") === neu ? "true" : "false");
       }
+      var zurueck = document.querySelector('[data-akt="zuruecksetzen"][data-modell="' + code + '"]');
+      if (zurueck) zurueck.hidden = (neu === "offen");
       var pill = document.querySelector('[data-pill="' + code + '"]');
       if (pill) { pill.className = "pill " + STATUS[neu].k; pill.textContent = STATUS[neu].label; }
       zaehlerAktualisieren(); sichern();

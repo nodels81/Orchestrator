@@ -45,6 +45,14 @@ Merke: **Alles, worauf die Seite sich verlässt, muss in `bw-css` stehen**, nich
 Umgebung. Wer `baueDokument()` ändert, prüft, ob der erzeugte Kopf noch alles enthält, was das CSS
 voraussetzt.
 
+## Zweiter Fehler: der Freigabe-Schalter
+
+Die drei Statusknöpfe waren Umschalter — ein zweiter Klick auf "Freigegeben" setzte still zurück auf
+"offen". In einem Abnahmedokument ist das die falsche Richtung: Eine Freigabe verschwindet leise,
+und niemand merkt es, bis die Anfrage nicht rausgeht. Seit 15.9.2026 setzen die Knöpfe nur noch;
+zurückgenommen wird über "Zurücksetzen" daneben. Wer Interaktionen ergänzt, fragt sich bei jeder:
+Was passiert, wenn jemand zweimal klickt?
+
 ## Redigieren
 
 - Beantwortete Fragen **entfernen** und die Entscheidung als Zeile in `fakten` festhalten, mit Datum.
