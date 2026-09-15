@@ -15,3 +15,6 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# MCP-Server-Zugangsdaten
+.env
