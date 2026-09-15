@@ -21,3 +21,7 @@ pip install playwright
 CHROMIUM_PATH=/opt/pw-browsers/chromium python3 sourcing/bellowerk/zeichnungen/render.py
 # lokal: playwright install chromium && python3 sourcing/bellowerk/zeichnungen/render.py
 ```
+
+Aus einer Zeichnung ein realistisches Konzeptbild machen (Website vor Musterlieferung, Pitch,
+Lieferantenreferenz): `PRODUKTBILDER-KI.md`. Kein Ersatz für echte Fotos — die Abteilung Social
+Media verwendet ausschließlich echte Aufnahmen.
