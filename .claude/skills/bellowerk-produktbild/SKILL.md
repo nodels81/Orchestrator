@@ -13,6 +13,17 @@ sich Proportion, Patchgröße und Beschläge beurteilen lassen. Das ist nützlic
 HB-XX vX.Y — keine Fotografie"*. Ein Bild, das als Foto durchgeht, obwohl es keins ist, kostet
 Vertrauen, sobald es jemand merkt — im Shop wäre es irreführend.
 
+## Stehende Regel: Björn will sehen, worüber geredet wird
+
+Er entscheidet am Bild, nicht am Fließtext (seine Ansage vom 15.9.2026). Also bekommt **jedes
+Konzept eine Darstellung**, nicht nur Produkte: Verpackung als Auspack-Sequenz, Beschläge als
+Teileübersicht im Maßstab, jedes neue Modell als Ansicht. Wer ein Blatt in der Freigabe-Mappe anlegt
+und nur Text hineinschreibt, ist noch nicht fertig. Zwei bis drei Panels reichen meist — die
+Reihenfolge zeigen, nicht das Material feiern.
+
+Die fertigen Darstellungen liegen in `sourcing/bellowerk/ansichten/` als SVG und PNG;
+`freigabe/bauen.py` verkleinert sie automatisch für Mappe und Shop.
+
 ## Aufbau (Vorlage: `sourcing/bellowerk/shop/HB-01-ansicht.svg`)
 
 Maßstab 3 px = 1 mm, damit Beschläge Platz haben. Reihenfolge der Ebenen:

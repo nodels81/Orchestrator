@@ -48,6 +48,7 @@ ZEICHNUNGEN = [
 # Die Darstellung des fertigen Halsbands liegt als SVG im Shop-Ordner und wird
 # als JPG mitgeliefert, weil sie in Freigabe-Mappe und Shop-Seite steht.
 ANSICHT = ORDNER.parent / "shop" / "HB-01-ansicht.png"
+ANSICHTEN = ORDNER.parent / "ansichten"
 
 
 def main() -> None:
@@ -56,6 +57,10 @@ def main() -> None:
         bild = Image.open(ANSICHT).convert("RGB")
         bild.thumbnail((1960, 1960), Image.LANCZOS)
         bild.save(ZIEL / "HB-01-ansicht.jpg", "JPEG", quality=88, optimize=True, progressive=True)
+    for gerendert in sorted(ANSICHTEN.glob("*.png")):
+        bild = Image.open(gerendert).convert("RGB")
+        bild.thumbnail((1900, 1900), Image.LANCZOS)
+        bild.save(ZIEL / (gerendert.stem + ".jpg"), "JPEG", quality=88, optimize=True, progressive=True)
     gesamt = 0
     for name in FOTOS:
         bild = Image.open(QUELLE / "bilder" / name).convert("RGB")

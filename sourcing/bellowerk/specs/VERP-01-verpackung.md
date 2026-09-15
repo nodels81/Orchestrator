@@ -20,6 +20,8 @@ bzw. eine Bestellung bei einer deutschen Druckerei.
 4. Versandfähig: Die Kiste **ist** der Versandkarton. Kein Umkarton — das spart Porto, Müll und den
    Moment, in dem der Kunde erst einen langweiligen Karton aufreißt.
 
+Darstellung: `ansichten/VERP-01-auspacken.png` — die drei Schritte gezeichnet.
+
 ## Das Auspacken, Schritt für Schritt
 
 Der ganze Reiz liegt in der Reihenfolge, nicht im Material. Sechs Schritte, alle aus Standardteilen:

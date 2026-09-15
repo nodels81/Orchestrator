@@ -59,6 +59,8 @@ Was passiert, wenn jemand zweimal klickt?
   Eine Mappe voller erledigter Fragen liest niemand mehr.
 - Frage-IDs stabil halten (`hb01-breite`), sonst verliert eine gegebene Antwort ihren Anker.
 - Modellreihenfolge nach Code.
+- **Kein Blatt ohne Bild.** Gibt es kein Foto und keine Zeichnung, wird eine Darstellung gebaut
+  (Skill `bellowerk-produktbild`). Björn entscheidet am Bild; ein reines Textblatt bleibt liegen.
 - Bilder: `python3 sourcing/bellowerk/freigabe/bauen.py` erzeugt die verkleinerten Dateien nach
   `freigabe/media/`; beim Veröffentlichen `root: "sourcing/bellowerk/freigabe"` setzen und geänderte
   Dateien in `files` mitgeben. Entfernte Bilder mit `null` abräumen.

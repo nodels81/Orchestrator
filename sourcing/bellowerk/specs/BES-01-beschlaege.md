@@ -9,6 +9,8 @@ Reference photos: `bilder/LE-01-detail-karabiner-flechtung.jpg` (both snaps, pol
 `bilder/HB-04-detail-dring-namenspatch.jpg` (ring + charm), `bilder/HB-02-geflochten-am-hund.jpg`
 (dark-looking ring and snap), `bilder/HB-04-farben-patch.jpg` (screw heads, plain punched holes).
 
+Darstellung: `ansichten/BES-01-beschlaege.png` — alle Teile im Maßstab 2:1 nebeneinander.
+
 ## 1. Material rule — applies to every part below
 
 - **Solid brass throughout** (cast CuZn39Pb3 / HPb59-1, or forged CW617N). Not plated, not filled.
