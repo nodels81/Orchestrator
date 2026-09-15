@@ -119,6 +119,11 @@ td{padding:8px 10px 8px 0; border-top:1px solid var(--linie-fein)}
 td.zahl{font-size:13.5px}
 .pflege{font-size:15.5px; color:var(--tinte-weich)}
 .pflege p{margin-bottom:.6em}
+.gpsr{line-height:1.9}
+.feld{
+  display:inline-block; min-width:210px; border-bottom:1px dashed var(--rost);
+  color:var(--rost); font-size:13px; font-family:"Archivo",sans-serif
+}
 
 /* Hinweisblock */
 .klaeren{margin-top:52px; border:1px solid var(--rost); border-radius:3px; padding:20px 22px; background:var(--blatt)}
@@ -145,7 +150,7 @@ td.zahl{font-size:13.5px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
-<div class="entwurf">Entwurf für den Shop · <b>Alle Produktfotos fehlen noch</b> — die gestrichelten Flächen sind die Aufnahmeliste · Preis und Herkunftsangabe sind Vorschläge</div>
+<div class="entwurf">Entwurf für den Shop · Das Hauptbild ist eine <b>Darstellung, kein Foto</b> — die gestrichelten Flächen sind die Aufnahmeliste · Preis ist ein Vorschlag</div>
 
 <div class="seite">
   <header class="marke">
@@ -157,11 +162,15 @@ td.zahl{font-size:13.5px}
   <div class="produkt">
     <div>
       <figure class="buehne">
-        <img src="media/HB-01-hamburg.png" alt="Maßzeichnung Hamburg Nr. 1: Enden 25 mm, Mitte 50 mm, tangentiale Bögen">
-        <figcaption>Platzhalter: bis die Fotos da sind, steht hier die Werkstattzeichnung. Größe M, Maße in mm.</figcaption>
+        <img src="media/HB-01-ansicht.jpg" alt="Hamburg Nr. 1 in Grau, flach ausgelegt: Messingschnalle, D-Ring, breite Mitte mit graviertem Lederpatch, Lochreihe">
+        <figcaption>Darstellung nach Tech Pack HB-01 v1.2 — <b>keine Fotografie</b>. Sie zeigt Maße, Patchgröße und Beschläge maßstäblich; Foto 1 aus der Liste unten ersetzt sie später.</figcaption>
+      </figure>
+      <figure class="buehne" style="margin-top:14px">
+        <img src="media/HB-01-hamburg.png" alt="Maßzeichnung Hamburg Nr. 1">
+        <figcaption>Werkstattzeichnung, Größe M, Maße in mm — gehört nicht in den Shop, steht hier zum Abgleich.</figcaption>
       </figure>
       <div class="streifen">
-        <div class="platz"><span class="nr">Foto 1</span><span class="was">Gesamt, flach</span><span class="wie">Narbenseite oben, Schnalle links, Lineal daneben</span></div>
+        <div class="platz"><span class="nr">Foto 1</span><span class="was">Gesamt, flach</span><span class="wie">ersetzt die Darstellung oben: Narbenseite oben, Schnalle links, Lineal</span></div>
         <div class="platz"><span class="nr">Foto 2</span><span class="was">Verbreiterung mit Patch</span><span class="wie">schräg, Streiflicht, Gravur lesbar</span></div>
         <div class="platz"><span class="nr">Foto 3</span><span class="was">Bogen im Detail</span><span class="wie">Makro auf die polierte Kante</span></div>
         <div class="platz"><span class="nr">Foto 4</span><span class="was">Messing</span><span class="wie">Schnalle, D-Ring, Buchschraube</span></div>
@@ -208,13 +217,13 @@ td.zahl{font-size:13.5px}
     <h2>Vorn breit, wo der Hund zieht</h2>
     <p>Hamburg Nr. 1 ist aus einem Stück Fettleder geschnitten. Die Mitte läuft über einen weichen Bogen auf die doppelte Breite und legt den Zug auf mehr Fläche — genau dort, wo er ankommt. Zu den Enden hin wird das Band wieder schmal, damit Schnalle und Lochreihe schlank bleiben und das Halsband unter dem Fell verschwindet.</p>
     <p>Breiter, nicht dicker: es bleibt eine Lage Leder, 3,5 bis 4 Millimeter, durchgefärbt und pflanzlich gegerbt. Kein Futter, keine Naht, keine Niete. Zusammengehalten wird alles von Buchschrauben aus massivem Messing — genau wie Schnalle und D-Ring. Das Messing ist unlackiert und dunkelt nach. Das ist gewollt; wer es blank mag, poliert es mit einem weichen Tuch.</p>
-    <p>Auf der Verbreiterung sitzt der gravierte Lederpatch. Er ist der einzige Schmuck, den das Halsband hat.</p>
+    <p>Auf der Verbreiterung sitzt der gravierte Lederpatch aus cognacfarbenem Leder, 110 Millimeter lang — er nutzt die breite Mitte aus. Er ist der einzige Schmuck, den das Halsband hat.</p>
     <ul class="merkmale">
       <li><span>Fettleder, pflanzlich gegerbt, durchgefärbt, 3,5–4,0 mm</span></li>
       <li><span>Rollschnalle, D-Ring und Buchschrauben aus massivem Messing</span></li>
       <li><span>Ohne Naht, ohne Niete, ohne Kunststoff</span></li>
       <li><span>Kanten geschrägt und poliert, auch in den Bögen</span></li>
-      <li><span>Lederpatch cognac, lasergraviert</span></li>
+      <li><span>Lederpatch cognac, lasergraviert, 110 × 18 mm</span></li>
       <li><span>Eine Saison an fremden Hunden getestet, bevor das Modell in den Verkauf geht</span></li>
     </ul>
   </section>
@@ -246,8 +255,15 @@ td.zahl{font-size:13.5px}
     <section>
       <h3>Herstellerangaben</h3>
       <div class="pflege">
-        <p>Bellowerk Manufaktur, Hamburg<br><span style="color:var(--rost)">Postanschrift fehlt noch — GPSR-Pflichtangabe</span></p>
-        <p>Modell HB-01 · Chargennummer auf dem Anhänger<br><span style="color:var(--rost)">Herkunftsangabe noch zu entscheiden</span></p>
+        <p class="gpsr">
+          Bellowerk Manufaktur<br>
+          <span class="feld">Straße und Hausnummer</span><br>
+          <span class="feld">PLZ und Ort</span><br>
+          <span class="feld">E-Mail</span>
+        </p>
+        <p style="font-size:13.5px; color:var(--tinte-leise); margin-top:14px">
+          Modell HB-01 · Charge auf dem Anhänger · Entwurf und Prüfung in Hamburg, gefertigt nach unserer Zeichnung, Made in China
+        </p>
       </div>
     </section>
   </div>
@@ -255,11 +271,11 @@ td.zahl{font-size:13.5px}
   <section class="klaeren">
     <h3>Bevor das online geht</h3>
     <ol>
-      <li><b>Die Herkunft muss stimmen.</b> Im Markenwissen steht „aus eigener Werkstatt“. Wenn Hamburg Nr. 1 in China gefertigt wird, darf dieser Satz so nicht im Shop stehen. Vorschlag: „In Hamburg entworfen und geprüft, gefertigt nach unserer Zeichnung“ plus „Made in China“ auf dem Anhänger — du entscheidest die Formulierung.</li>
-      <li><b>GPSR-Anschrift.</b> Name und Postanschrift des Inverkehrbringers sind seit Dezember 2024 Pflicht, im Shop und auf dem Anhänger.</li>
-      <li><b>Der Patch trägt noch den alten Namen.</b> Auf allen vorhandenen Stücken steht „Herr Bello & Frau Wuff“. Für Fotos und Verkauf brauchen wir Stücke mit „BELLOWERK“ — also erst das Vektorlogo, dann das Goldmuster, dann das Shooting.</li>
+      <li><b>Deine Anschrift für die GPSR-Angabe.</b> Die Zeilen stehen oben, sie sind nur noch leer: Straße, PLZ und Ort, E-Mail. Pflicht seit Dezember 2024, im Shop und auf dem Anhänger. Sag sie mir, dann steht sie drin.</li>
+      <li><b>Der Patch trägt auf allen vorhandenen Stücken noch den alten Namen.</b> Die Gravur ist jetzt festgeschrieben — „BELLOWERK“ oben, „Manufaktur“ kleiner rechts darunter, Patch 110 × 18 mm. Es fehlt deine Vektordatei, dann Goldmuster, dann das Shooting.</li>
       <li><b>Preis 99 € bestätigen</b>, und ob Hamburg Nr. 4 (das glatte Halsband) darunter liegt — sonst steht die Serie ohne Staffel da.</li>
     </ol>
+    <p style="font-size:14px; color:var(--tinte-weich); margin:14px 0 0">Erledigt am 15.9.: Herkunftsangabe bleibt klein und steht als eine Zeile bei den Herstellerangaben.</p>
   </section>
 
   <section class="fotoliste">
@@ -282,7 +298,7 @@ td.zahl{font-size:13.5px}
     </p>
   </section>
 
-  <p class="fuss">Entwurf vom 14. September 2026 · Inhalte aus dem Tech Pack HB-01 „Hamburg Nr. 1“ und dem Markenwissen · Der Kauf-Knopf tut hier nichts, die Seite ist eine Vorlage für den Shop.</p>
+  <p class="fuss">Entwurf vom 15. September 2026 · Inhalte aus dem Tech Pack HB-01 „Hamburg Nr. 1“ und dem Markenwissen · Der Kauf-Knopf tut hier nichts, die Seite ist eine Vorlage für den Shop.</p>
 </div>
 
 <script>

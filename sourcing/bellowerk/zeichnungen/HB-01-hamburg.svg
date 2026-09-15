@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
   <rect x="0" y="0" width="1500" height="760" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-01 "Hamburg Nr. 1" — Collar with widened centre — size M — scale 1:2 — Bellowerk Manufaktur, v1.0, 14 Sep 2026</text>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-01 "Hamburg Nr. 1" — Collar with widened centre — size M — scale 1:2 — Bellowerk Manufaktur, v1.2, 15 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">Single piece vegetable-tanned oiled cowhide 3.5–4.0 mm · widened centre cut from one blank · solid brass · NO stitching · NO rivets · Chicago screws only</text>
 
   <!-- scale: 1 mm = 2 px. Cut length 600 mm -> 1200 px, origin x=120, centre line y=250 -->
@@ -31,12 +31,12 @@
     <text x="196" y="362" fill="#000" stroke="none" font-size="14">2 Chicago screws</text>
 
     <!-- patch PATCH-01 PA-M 85x18 mm centred on the widened section -->
-    <rect x="565" y="232" width="170" height="36" rx="4" stroke-width="2"/>
-    <circle cx="579" cy="250" r="4"/>
-    <circle cx="721" cy="250" r="4"/>
-    <text x="650" y="246" text-anchor="middle" fill="#000" stroke="none" font-size="12" font-weight="bold">BELLOWERK</text>
-    <text x="650" y="260" text-anchor="middle" fill="#000" stroke="none" font-size="8">Manufaktur</text>
-    <text x="650" y="180" text-anchor="middle" fill="#000" stroke="none" font-size="14">patch PATCH-01 PA-M 85 × 18 mm, centred on the widened section, 2 Chicago screws</text>
+    <rect x="540" y="232" width="220" height="36" rx="4" stroke-width="2"/>
+    <circle cx="554" cy="250" r="4"/>
+    <circle cx="746" cy="250" r="4"/>
+    <text x="650" y="247" text-anchor="middle" fill="#000" stroke="none" font-size="13" font-weight="bold" letter-spacing="1.5">BELLOWERK</text>
+    <text x="700" y="262" text-anchor="middle" fill="#000" stroke="none" font-size="9" font-style="italic">Manufaktur</text>
+    <text x="650" y="180" text-anchor="middle" fill="#000" stroke="none" font-size="14">patch PATCH-01 PA-L 110 × 18 mm, centred on the widened section, 2 Chicago screws, hole spacing 96 mm</text>
 
     <!-- holes -->
     <g stroke-width="2">

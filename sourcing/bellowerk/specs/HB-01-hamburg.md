@@ -1,4 +1,4 @@
-# HB-01 "Hamburg Nr. 1" — Collar with Widened Centre (Tech Pack v1.1, 14 Sep 2026)
+# HB-01 "Hamburg Nr. 1" — Collar with Widened Centre (Tech Pack v1.2, 15 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
 Drawing: `zeichnungen/HB-01-hamburg.png`. Reference: Björn's own piece, photographed 13 June 2022
@@ -26,7 +26,7 @@ As HB-04 without exception:
 | D-ring | Welded, ground smooth, solid brass, inner width = end strap width, wire Ø 4 mm (20/25 mm) or 5 mm (30/40 mm), min. 3 kN. |
 | Keeper | Leather loop, same leather, 1 Chicago screw. |
 | Screws | Chicago screws, solid brass, domed head Ø 8–9 mm (as on the photo), post 8 mm, thread-locked. |
-| Patch | PATCH-01 PA-M 85 × 18 mm, 2 Chicago screws, centred on the widened section. |
+| Patch | PATCH-01 **PA-L 110 × 18 mm** (hole spacing 96 mm), 2 Chicago screws, centred on the widened section — the long patch is part of this model, not an option. |
 | Edges | Bevelled both sides, burnished, **including both curves**. No edge paint. |
 | Holes | Oval punch, 5 holes, pitch 25 mm, 4 × 7 mm (20/25 mm ends) or 5 × 8 mm (30/40 mm). |
 
@@ -60,7 +60,7 @@ Tip: rounded English point, radius = half the end width.
    tears.
 3. Buckle fold: strap through the buckle, folded back 60 mm, D-ring in the fold 20 mm behind the
    buckle, keeper 15 mm behind the D-ring, fold fixed with 2 Chicago screws, D-ring captured.
-4. Patch PATCH-01 PA-M centred on the widened section (centred in both directions), 2 Chicago screws,
+4. Patch PATCH-01 PA-L centred on the widened section (centred in both directions), 2 Chicago screws,
    heads on the grain side.
 5. Grain side out. Flesh side lightly finished, no coating. Edges bevelled and burnished all round.
 

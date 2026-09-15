@@ -224,18 +224,22 @@ textarea::placeholder{color:var(--tinte-leise)}
   "meta": [
     "Bellowerk Manufaktur, Hamburg",
     "Abteilung 01 Innovation · 05 Einkauf China",
-    "Stand: 14. September 2026",
+    "Stand: 15. September 2026",
     "Quelle: sourcing/bellowerk"
   ],
   "modelle": [
     {
       "code": "HB-01",
       "name": "Hamburg Nr. 1 — Halsband mit Mittelverbreiterung",
-      "stand": "Tech Pack v1.1",
+      "stand": "Tech Pack v1.2",
       "zeichnung": "media/HB-01-hamburg.png",
       "zeichnungText": "HB-01, Größe M: Enden 25 mm, Mitte 50 mm, tangentiale Bögen 70 mm, Patch mittig auf der Verbreiterung",
-      "fotos": [],
-      "fehltFoto": "Dein Foto vom 13. Juni 2022 (graues Halsband, cognac Patch, Messingschnalle) steckt bisher nur im Chat. Leg es bitte als bilder/HB-01-hamburg-gesamt.jpg ins Repo, dann steht es hier und geht an den Lieferanten mit.",
+      "fotos": [
+        {
+          "src": "media/HB-01-ansicht.jpg",
+          "text": "Darstellung nach Tech Pack, keine Fotografie: Grau, Messing, Patch PA-L 110 mm auf der Verbreiterung"
+        }
+      ],
       "fakten": [
         [
           "Name",
@@ -267,7 +271,7 @@ textarea::placeholder{color:var(--tinte-leise)}
         ],
         [
           "Patch",
-          "PATCH-01 PA-M 85 × 18 mm, mittig auf der Verbreiterung, 2 Buchschrauben"
+          "PATCH-01 PA-L 110 × 18 mm, mittig auf der Verbreiterung, Lochabstand 96 mm — 30 % länger als bisher, entschieden am 15.9.2026"
         ],
         [
           "Beschläge",
@@ -280,6 +284,10 @@ textarea::placeholder{color:var(--tinte-leise)}
         [
           "Vorschlag Order",
           "Muster 1× M grau + 1× M oliv, dann 60 Stück — S 10 · M 20 · L 20 · XL 10"
+        ],
+        [
+          "Noch offen",
+          "Foto vom echten Stück (bilder/HB-01-hamburg-gesamt.jpg) und dein Vektorlogo für die Gravur"
         ]
       ],
       "bau": [
@@ -307,15 +315,6 @@ textarea::placeholder{color:var(--tinte-leise)}
             "170 mm wie gezeichnet",
             "Länger, bis 220 mm",
             "Messe ich nach"
-          ]
-        },
-        {
-          "id": "hb01-patch",
-          "frage": "Patch auf der Verbreiterung",
-          "optionen": [
-            "PA-M 85 mm wie bisher",
-            "Längeres PA-L 110 mm",
-            "Nach dem Muster entscheiden"
           ]
         },
         {
@@ -631,9 +630,9 @@ textarea::placeholder{color:var(--tinte-leise)}
     {
       "code": "PATCH-01",
       "name": "Lederpatch, graviert",
-      "stand": "Tech Pack v1.1",
+      "stand": "Tech Pack v1.2",
       "zeichnung": "media/PATCH-01-lederpatch.png",
-      "zeichnungText": "PATCH-01: PA-M 85 × 18 mm und PA-S 65 × 14 mm, Bohrbild, Schriftfeld (Logo ist Platzhalter)",
+      "zeichnungText": "PATCH-01: PA-L 110 × 18 mm (Hamburg Nr. 1), PA-M 85 × 18 mm, PA-S 65 × 14 mm, Bohrbild, Schriftfeld",
       "fotos": [
         {
           "src": "media/PATCH-01-und-flechtung-detail.jpg",
@@ -659,7 +658,7 @@ textarea::placeholder{color:var(--tinte-leise)}
         ],
         [
           "Größen",
-          "PA-M 85 × 18 mm für 25–40 mm Bänder · PA-S 65 × 14 mm für 20 mm"
+          "PA-L 110 × 18 mm auf Hamburg Nr. 1 · PA-M 85 × 18 mm auf glatten Bändern 25–40 mm · PA-S 65 × 14 mm auf 20 mm"
         ],
         [
           "Gravur",
@@ -667,11 +666,11 @@ textarea::placeholder{color:var(--tinte-leise)}
         ],
         [
           "Schrift",
-          "Zeile 1 Versalien gesperrt +20 % · Zeile 2 Schreibschrift, rechtsbündig darunter"
+          "Zwei Zeilen, feste Reihenfolge: „BELLOWERK“ oben in gesperrten Versalien, „Manufaktur“ kleiner rechts darunter in Schreibschrift"
         ],
         [
           "Löcher",
-          "2 × Ø 4,5 mm, Abstand 71 mm (PA-M) bzw. 51 mm (PA-S)"
+          "2 × Ø 4,5 mm, 7 mm von den Enden → Abstand 96 (PA-L) / 71 (PA-M) / 51 mm (PA-S)"
         ],
         [
           "Befestigung",
@@ -679,11 +678,11 @@ textarea::placeholder{color:var(--tinte-leise)}
         ],
         [
           "Erste Order",
-          "500 Stück PA-M + 500 Stück PA-S, inklusive Schrauben"
+          "je 400 Stück PA-L, PA-M und PA-S, inklusive Buchschrauben"
         ]
       ],
       "bau": [],
-      "warnung": "Auf allen vorhandenen Stücken steht noch HERR BELLO & FRAU WUFF. Das Layout bleibt, der Name wird BELLOWERK — dafür braucht der Lieferant deine Vektordatei mit Schrift in Pfaden. Ohne die Datei kann die Gravur nicht freigegeben werden.",
+      "warnung": "Auf allen vorhandenen Stücken steht noch HERR BELLO & FRAU WUFF — dieser Patch darf so nicht noch einmal produziert werden. Layout bleibt, Name wird BELLOWERK. Dafür braucht der Lieferant deine Vektordatei mit Schrift in Pfaden; ohne die Datei keine Gravurfreigabe.",
       "fragen": [
         {
           "id": "patch-name",
@@ -824,7 +823,7 @@ textarea::placeholder{color:var(--tinte-leise)}
 </script>
 
 <script id="bw-state" type="application/json">
-{"v":1,"modelle":{},"fragen":{},"aktualisiert":null}
+{"v":1,"modelle":{"HB-01":{"status":"freigegeben","notiz":""}},"fragen":{},"aktualisiert":"2026-09-14T20:51:32.388Z"}
 </script>
 
 <script id="bw-js">
