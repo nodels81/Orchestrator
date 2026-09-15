@@ -1,4 +1,4 @@
-# HB-04 "Hamburg Nr. 4" — Plain Leather Dog Collar (Tech Pack v1.1, 14 Sep 2026)
+# HB-04 "Hamburg Nr. 4" — Plain Leather Dog Collar (Tech Pack v1.2, 15 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
 Attachments: `zeichnungen/HB-04-halsband.png`, photos `bilder/HB-04-farben-patch.jpg`, `bilder/HB-04-detail-dring-namenspatch.jpg`.
@@ -17,6 +17,7 @@ D-ring, leather keeper. Leather patch PATCH-01 near the buckle (see `bilder/HB-0
 | Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through. Thickness **3.5–4.0 mm** (±0.3). Firm grain, no loose fibres. Colours: olive, dark brown, cognac (send swatches). |
 | Buckle | Roller buckle, **solid brass** (cast HPb59-1 / CW617N or forged), brushed, unlacquered. Width = strap width. Min. breaking load 2.5 kN. |
 | D-ring | Welded, weld ground smooth, solid brass, inner width = strap width, wire Ø 4 mm (20/25 mm) or 5 mm (30/40 mm). Min. 3 kN. |
+| Ring shape | **Welded D-ring, not a round ring.** The reference photos show a round ring on older pieces — the drawing is binding (Björn, 15 Sep 2026). Flat side against the strap inside the fold. |
 | Keeper | Leather loop, same leather, fixed with 1 Chicago screw (no stitching). |
 | Screws | Chicago screws, solid brass, domed head Ø 8–9 mm (as on photos), post 8 mm for 2 layers, 10 mm for 3 layers, thread-locked. |
 | Patch | PATCH-01 engraved leather patch (PA-M 85 × 18 mm; PA-S 65 × 14 mm on size S), 2 Chicago screws — see photos `bilder/HB-04-farben-patch.jpg`, `bilder/HB-04-detail-dring-namenspatch.jpg`. |

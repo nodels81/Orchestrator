@@ -12,7 +12,7 @@ mit Personen) — **nicht an Lieferanten schicken**.
 | `LE-01-flechtung-ringe-farben.jpg` | Vier Leinen grau/dunkelbraun/oliv/cognac: Mystery Braid (V-Muster) um O-Ring und Karabiner, Lederpatch cognac mit 2 Buchschrauben, Gravur "HERR BELLO & FRAU WUFF / Manufaktur" | LE-01, PATCH-01, Farben |
 | `HB-01-hamburg-patch-detail.jpg` | **Hamburg Nr. 1**: graues Halsband mit Mittelverbreiterung, Patch mit 2 gewölbten Messing-Buchschrauben, Rollschnalle, O-Ring, Messing-Anhänger (13.6.2022, 11:40) — war fälschlich als HB-04 abgelegt | HB-01, PATCH-01, BES-01 |
 | `HB-04-farben-patch.jpg` | Vier Halsbänder gestapelt (dunkelbraun, oliv, cognac, grau) mit Patch | HB-04 Farben, Patch-Layout |
-| `HB-04-detail-dring-namenspatch.jpg` | Cognac-Halsband: D-Ring mit Buchschraube, Messing-Münzanhänger, Namenspatch "TILDA" | HB-04, PATCH-01 N |
+| `HB-04-detail-dring-namenspatch.jpg` | Cognac-Halsband: **runder Ring** mit Buchschraube, Messing-Münzanhänger, Namenspatch "TILDA". Achtung beim Versand an Lieferanten: die Ringform auf diesem Foto gilt nicht mehr, ab 15.9.2026 ist der D-Ring verbindlich | HB-04, PATCH-01 N, BES-01 |
 | `HB-02-geflochten-am-hund.jpg` | Halsband komplett im Mystery Braid, O-Ring, Karabiner eingehakt | HB-02 |
 | `HB-02-zweifarbig-am-hund.jpg` | Zweifarbiges Flechthalsband (dunkelbraun + grau "washed stone"), O-Ring, flaches Ende mit Schraube | HB-02 Option zweifarbig |
 | `HB-02-und-LE-01-gruen.jpg` | Grünes Flechthalsband mit Schnalle + Patch, daneben Leine mit Flechtung am Ring | HB-02 Übergang Flechtung/flach |

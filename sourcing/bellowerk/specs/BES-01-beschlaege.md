@@ -1,4 +1,4 @@
-# BES-01 — Solid Brass Hardware, all models (v1.0, 15 Sep 2026)
+# BES-01 — Solid Brass Hardware, all models (v1.1, 15 Sep 2026)
 
 Every metal part that goes on a Bellowerk collar, lead or accessory, in one list — read off Björn's
 photos and cross-checked against the tech packs. Goes to the supplier as an annex to every RFQ:
@@ -24,9 +24,9 @@ Reference photos: `bilder/LE-01-detail-karabiner-flechtung.jpg` (both snaps, pol
 | Code | Part | Sizes | Min. breaking load | Used on |
 |---|---|---|---|---|
 | BES-01-A | Roller buckle, solid brass, with roller | 20 · 25 · 30 · 40 mm inside width | 2.5 kN | HB-01, HB-02, HB-04 |
-| BES-01-B | Welded ring, ground smooth — **shape to be confirmed, see §4** | inside Ø 25 mm, wire Ø 5 mm (20/25 mm straps: wire Ø 4 mm) | 3.0 kN | HB-01, HB-02, HB-04 |
+| BES-01-B | **D-ring**, welded, weld ground smooth | inside width = strap width, wire Ø 4 mm (20/25 mm straps) or 5 mm (30/40 mm) | 3.0 kN | HB-01, HB-04 |
 | BES-01-C | Swivel eye bolt snap ("Wirbel-Bolzenkarabiner"), solid brass, strong spring | eye 20 mm (option 25 mm), overall length approx. 70–75 mm | 2.0 kN | LE-01 (2 per lead) |
-| BES-01-D | Welded O-ring for the lead | inside Ø 25 mm, wire Ø 5 mm | 3.0 kN | LE-01 (3 per lead) |
+| BES-01-D | Welded O-ring | inside Ø 25 mm, wire Ø 5 mm | 3.0 kN | LE-01 (3 per lead) · HB-02 (1, worked into the braid) |
 | BES-01-E | Chicago screw, solid brass, **domed head** | head Ø 8–9 mm, post 8 mm (2 layers) and 10 mm (3 layers), thread-locked | — | all models |
 | BES-01-F | Brass charm/medallion on a small split ring | approx. Ø 20 mm, engraved or blank | — | seen on photos, **not yet specified** — see §4 |
 
@@ -41,9 +41,12 @@ by itself when released from any position.
 
 ## 4. Open points — Björn decides before the RFQ goes out
 
-1. **D-ring or O-ring on the collar?** The tech packs HB-01 and HB-04 say D-ring. On every photo of
-   a finished collar the ring is **round**. One of the two is wrong; the photos are the older
-   evidence, the tech pack is what a factory will build. Decide, then both files get corrected.
+1. ~~D-ring or O-ring on the collar?~~ **Decided 15 Sep 2026: D-ring.** The photos of the older
+   pieces show a round ring — they are reference for leather, patch and finish, **not for the ring**.
+   Every collar with a screwed buckle fold (HB-01, HB-04) gets a welded D-ring; the flat side sits
+   against the strap so the ring cannot rotate under the fold. The braided collar HB-02 keeps its
+   O-ring: it is worked into the braid eye, where a D-ring would twist. Say so in the RFQ, because a
+   factory that compares drawing and photo will otherwise copy the photo.
 2. **Finish: bright or dark?** The lead snaps are bright polished brass. On the braided collar the
    ring and snap look dark, almost antique. If that is an aged finish rather than the light,
    we need to say so — "antique brass" is a different part number at every supplier.

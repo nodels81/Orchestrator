@@ -1,4 +1,4 @@
-# HB-01 "Hamburg Nr. 1" — Collar with Widened Centre (Tech Pack v1.2, 15 Sep 2026)
+# HB-01 "Hamburg Nr. 1" — Collar with Widened Centre (Tech Pack v1.3, 15 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
 Drawing: `zeichnungen/HB-01-hamburg.png`. Reference: Björn's own piece, photographed 13 June 2022
@@ -24,6 +24,7 @@ As HB-04 without exception:
 | Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm** (±0.3), firm grain. Colours: grey ("washed stone", as the reference piece), olive, dark brown, cognac, black. |
 | Buckle | Roller buckle, **solid brass**, brushed, unlacquered, width = end strap width, min. 2.5 kN. |
 | D-ring | Welded, ground smooth, solid brass, inner width = end strap width, wire Ø 4 mm (20/25 mm) or 5 mm (30/40 mm), min. 3 kN. |
+| Ring shape | **Welded D-ring, not a round ring.** The reference photos show a round ring on older pieces — the drawing is binding (Björn, 15 Sep 2026). Flat side against the strap inside the fold. |
 | Keeper | Leather loop, same leather, 1 Chicago screw. |
 | Screws | Chicago screws, solid brass, domed head Ø 8–9 mm (as on the photo), post 8 mm, thread-locked. |
 | Patch | PATCH-01 **PA-L 110 × 18 mm** (hole spacing 96 mm), 2 Chicago screws, centred on the widened section — the long patch is part of this model, not an option. |

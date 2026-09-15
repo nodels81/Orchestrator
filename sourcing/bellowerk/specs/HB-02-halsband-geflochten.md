@@ -9,7 +9,8 @@ with patch, transition to braid). Drawing: `zeichnungen/HB-02-geflochten.png`.
 Collar whose neck section is a **3-strand mystery braid cut from one piece** of the strap (two
 lengthwise slits, ends uncut — chevron pattern as in the photos). Flat ends carry the roller buckle
 (with holes) and the leather patch, exactly as HB-04. A **solid brass O-ring** sits in the braid at the
-centre back (leash ring). No stitching, no rivets; Chicago screws only.
+centre back (leash ring). The O-ring is deliberate here and the one exception to the D-ring rule of
+15 Sep 2026: it is worked into the braid eye, where a D-ring would twist. No stitching, no rivets; Chicago screws only.
 
 Option two-tone: the braid is made from two colours (e.g. dark brown + grey "washed stone") — only
 possible if the strap is made from two strips joined under a screwed fold; ask the factory how they
