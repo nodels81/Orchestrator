@@ -3,7 +3,8 @@
 Reference photos: `bilder/HB-01-hamburg-patch-detail.jpg`, `bilder/HB-04-farben-patch.jpg` (current patch reads
 "HERR BELLO & FRAU WUFF / Manufaktur" — **wrong name, must not be produced again**. Same layout,
 new name: "BELLOWERK" on top, "Manufaktur" smaller underneath on the right.)
-Drawing: `zeichnungen/PATCH-01-lederpatch.png`. Artwork: Björn supplies vector file; placeholder in drawing.
+Drawing: `zeichnungen/PATCH-01-lederpatch.png`. Artwork: `bilder/PATCH-01-artwork.svg` — draft of 15 Sep 2026, glyphs converted to outlines, no text element.
+Björn to confirm it, or supply the original vector file if one exists.
 
 ## Design (as on the existing products)
 
@@ -18,7 +19,7 @@ in a handwritten script, right-aligned under line 1. No stitching, no glue as th
 |---|---|
 | Leather | Vegetable-tanned cowhide, full grain, **2.0–2.5 mm**, colour cognac / medium brown (same on all strap colours: grey, dark brown, olive, cognac). Firm, smooth grain for clean engraving. |
 | Sizes | **PA-L 110 × 18 mm** on HB-01 "Hamburg Nr. 1" — the widened centre carries the long patch (Björn, 15 Sep 2026: 30 % wider than PA-M) · **PA-M 85 × 18 mm** for plain 25–40 mm straps (HB-04, HB-02) · **PA-S 65 × 14 mm** for 20 mm straps (lead LE-01, collar S). Corner radius 3 mm. |
-| Lettering | **Two lines, always in this order: "BELLOWERK" on top, "Manufaktur" smaller underneath, set to the right half of line 1.** Line 1: spaced geometric sans-serif capitals (Futura/Josefin Sans style, tracking +20 %), cap height 5.5 mm (PA-L) / 4.5 mm (PA-M) / 3.5 mm (PA-S). Line 2: brush script, x-height 3.0 / 2.5 / 2.0 mm. Engraving depth 0.2–0.3 mm, dark burn, no paint, no foil. Björn supplies the vector logo; the drawing is a placeholder. |
+| Lettering | **Two lines, always in this order: "BELLOWERK" on top, "Manufaktur" smaller underneath, set to the right half of line 1.** Line 1: spaced geometric sans-serif capitals (Futura/Josefin Sans style, tracking +20 %), cap height 5.5 mm (PA-L) / 4.5 mm (PA-M) / 3.5 mm (PA-S). Line 2: brush script, x-height 3.0 / 2.5 / 2.0 mm. Engraving depth 0.2–0.3 mm, dark burn, no paint, no foil. Artwork now exists as a draft (`bilder/PATCH-01-artwork.svg`), outlines only — Björn confirms or replaces it. |
 | Holes | 2 × Ø 4.5 mm, hole centres 7 mm from each end → spacing **96 mm** (PA-L) / **71 mm** (PA-M) / **51 mm** (PA-S) |
 | Screws | Chicago screws solid brass, head Ø 8–9 mm domed (as on photos), post 8 mm (patch + strap), thread-locked |
 | Edges | Cut clean, lightly bevelled, burnished, no edge paint |
