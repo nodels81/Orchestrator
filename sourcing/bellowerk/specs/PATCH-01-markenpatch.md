@@ -1,6 +1,6 @@
 # PATCH-01 — Leather Brand Patch "BELLOWERK / Manufaktur" (Tech Pack v1.2, 15 Sep 2026)
 
-Reference photos: `bilder/HB-04-detail-patch.jpg`, `bilder/HB-04-farben-patch.jpg` (current patch reads
+Reference photos: `bilder/HB-01-hamburg-patch-detail.jpg`, `bilder/HB-04-farben-patch.jpg` (current patch reads
 "HERR BELLO & FRAU WUFF / Manufaktur" — **wrong name, must not be produced again**. Same layout,
 new name: "BELLOWERK" on top, "Manufaktur" smaller underneath on the right.)
 Drawing: `zeichnungen/PATCH-01-lederpatch.png`. Artwork: Björn supplies vector file; placeholder in drawing.

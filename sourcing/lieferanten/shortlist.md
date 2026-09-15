@@ -87,3 +87,36 @@ Rollschnalle 0,30–1,00 USD; Buchschraube ab 0,03 USD.
 1. Björn bestätigt Startwerte in HB-04/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
 2. Einkäufer schickt Vorlage 01 an Prio-1/2 der Gruppe A (5 Fabriken), PATCH-01-RFQ an Yongfu + Haixinda.
 3. Nach 3 Werktagen nachfassen (Vorlage 02), Angebote in Tabelle, Björn entscheidet über Muster.
+
+## D) Beschläge Messing massiv (BES-01) — Recherche 15. September 2026
+
+Erste Wahl bleibt: **die Lederfabrik liefert die Beschläge mit**. Diese Liste ist für zwei Zwecke —
+ein europäisches Referenzteil zum Mitschicken ans Goldmuster, und ein Rückfall, falls keine
+Lederfabrik massives Messing in der verlangten Qualität beschaffen kann.
+
+### Europa/USA — Referenzteile, Musterbau, Kleinserie
+
+| Quelle | Land | Was | Warum |
+|---|---|---|---|
+| Tovetis | DE | Bolzen-Karabiner Messing massiv B-9740-20-MG / -25-MG, Rollschnalle B-9880-25-MG | Artikelnummern passen exakt auf unsere Maße — bestes Referenzteil |
+| Leder-Rusch | DE | Messingschnallen, Ringe, D-Ringe, Buchschrauben | nur B2B, Lager nach Termin |
+| Das Lederhaus | DE | Rollschnallen massiv Messing | kleine Mengen |
+| MetallServiceWeiss (msw-24.de) | DE | Rollschnalle massiv Messing 26 mm, Ringe, Karabiner | kleine Mengen |
+| Buckleguy | US | Buchschrauben Messing massiv, **gewölbter Kopf**, viele Postlängen, natur + antik | beste Entsprechung zu BES-01-E |
+| Weaver Leather Supply, Rocky Mountain Leather Supply | US | Bolzenkarabiner, Buchschrauben | Alternative zu Buckleguy |
+
+### China — Serie
+
+| Firma | Ort | Einschätzung | Warum |
+|---|---|---|---|
+| Dongguan Yantao Industrial | Dongguan | steht schon in Liste A | Leder **und** eigene Beschläge aus einer Hand — für uns der interessanteste Fall |
+| Guangzhou ATI Hardware | Guangzhou | Beschlägefabrik (unbestätigt) | Listung für solid brass snap hooks |
+| Dongguan Jianchang Hardware | Dongguan | Beschlägefabrik (unbestätigt) | dito |
+| Dongguan Bosin Hardware | Dongguan | Beschlägefabrik (unbestätigt) | dito |
+| Qingdao Xinquanxi Metal Products | Qingdao | unbestätigt | dito |
+| Ningbo Inunion Import & Export | Ningbo | Händler/Exporteur | nur als Rückfall |
+
+Alle China-Angaben sind Suchtreffer, nicht geprüft. Vor jeder Bestellung: Gewerbeschein, Video-Call,
+und je ein Musterteil gegen Magnet- und Gewichtstest (BES-01 §1). Größtes Risiko in dieser
+Warengruppe ist nicht der Preis, sondern **vermessingter Stahl oder Zinkdruckguss, verkauft als
+"solid brass"** — deshalb steht der Magnettest in der Wareneingangsprüfung.

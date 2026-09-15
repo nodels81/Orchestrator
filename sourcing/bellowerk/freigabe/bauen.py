@@ -19,7 +19,7 @@ QUELLE = ORDNER.parent
 ZIEL = ORDNER / "media"
 
 FOTOS = [
-    "HB-04-detail-patch.jpg",
+    "HB-01-hamburg-patch-detail.jpg",
     "HB-04-farben-patch.jpg",
     "HB-04-detail-dring-namenspatch.jpg",
     "HB-02-geflochten-am-hund.jpg",

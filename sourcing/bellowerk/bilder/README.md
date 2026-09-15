@@ -10,7 +10,7 @@ mit Personen) — **nicht an Lieferanten schicken**.
 |---|---|---|
 | `LE-01-detail-karabiner-flechtung.jpg` | Schwarze Leine: beide Karabiner (Messing, Wirbel-Bolzenkarabiner) mit Mystery-Braid-Anbindung, Buchschraube im Geflecht, Lederpatch im Hintergrund | LE-01 Konstruktion, Karabiner-Typ |
 | `LE-01-flechtung-ringe-farben.jpg` | Vier Leinen grau/dunkelbraun/oliv/cognac: Mystery Braid (V-Muster) um O-Ring und Karabiner, Lederpatch cognac mit 2 Buchschrauben, Gravur "HERR BELLO & FRAU WUFF / Manufaktur" | LE-01, PATCH-01, Farben |
-| `HB-04-detail-patch.jpg` | Graues Halsband mit Lederpatch, 2 gewölbte Messing-Buchschrauben, Rollschnalle Messing, Lochreihe | HB-04, PATCH-01 Position |
+| `HB-01-hamburg-patch-detail.jpg` | **Hamburg Nr. 1**: graues Halsband mit Mittelverbreiterung, Patch mit 2 gewölbten Messing-Buchschrauben, Rollschnalle, O-Ring, Messing-Anhänger (13.6.2022, 11:40) — war fälschlich als HB-04 abgelegt | HB-01, PATCH-01, BES-01 |
 | `HB-04-farben-patch.jpg` | Vier Halsbänder gestapelt (dunkelbraun, oliv, cognac, grau) mit Patch | HB-04 Farben, Patch-Layout |
 | `HB-04-detail-dring-namenspatch.jpg` | Cognac-Halsband: D-Ring mit Buchschraube, Messing-Münzanhänger, Namenspatch "TILDA" | HB-04, PATCH-01 N |
 | `HB-02-geflochten-am-hund.jpg` | Halsband komplett im Mystery Braid, O-Ring, Karabiner eingehakt | HB-02 |
@@ -30,7 +30,7 @@ mit Personen) — **nicht an Lieferanten schicken**.
 | `HB-04-gesamt.jpg` | Halsband komplett flach, Narbenseite oben, Schnalle links, **Lineal** daneben |
 | `LE-01-gesamt.jpg` | Leine ausgelegt, alle drei Ringe sichtbar, **Maßband** entlang |
 | `LE-01-detail-ring-lineal.jpg` | Ring im Geflecht mit Lineal (Flechtlänge und Umschlag messen) |
-| `HB-01-hamburg-gesamt.jpg` | Das graue Halsband mit Mittelverbreiterung (Foto vom 13.6.2022) — bitte als Datei hier ablegen, Lineal wäre ideal |
+| `HB-01-hamburg-gesamt.jpg` | Hamburg Nr. 1 **flach ausgelegt mit Lineal** — das vorhandene Foto zeigt es nur stehend, die Breite der Mitte ist daran nicht messbar |
 | `PATCH-01-artwork.svg` | Vektor-Logo "BELLOWERK / Manufaktur" (Schrift in Pfade) |
 | `messing-beschlaege.jpg` | Schnalle, D-Ring, O-Ring, Karabiner, Buchschraube nebeneinander, Lineal |
 

@@ -10,9 +10,13 @@ paper bag with sticker, no plastic — final packaging spec follows with the PO.
 2. Marke tragen: "Bellowerk / Manufaktur" sichtbar, Look wie die Produkte — Kraft, Leder, Messing,
    keine Hochglanzbox.
 3. Pflicht-Kennzeichnung EU (GPSR seit 12/2024): Name + Postanschrift des Inverkehrbringers
-   (Bellowerk, Adresse), Produktbezeichnung, Chargen-/Modellnummer, "Made in China" (zollrechtlich
-   nötig, wenn Herkunft genannt wird; als kleine Angabe auf dem Anhänger, nicht auf dem Produkt),
-   Pflegehinweis. Kein CE nötig.
+   (Bellowerk, Adresse), Produktbezeichnung, Chargen-/Modellnummer, Pflegehinweis. Kein CE nötig.
+   **Keine Herkunftsangabe** — Björns Entscheidung vom 15.9.2026: weder auf dem Produkt noch auf
+   Verpackung, Anhänger oder im Shop steht, wo gefertigt wird. Eine Herkunftsangabe ist für
+   Lederwaren in der EU nicht vorgeschrieben; weglassen ist zulässig. Umgekehrt gilt dann aber
+   strikt: **nichts darf deutsche Fertigung behaupten** — kein "Made in Germany", kein "in unserer
+   Werkstatt gefertigt", kein Hamburg-Bezug, der als Fertigungsort gelesen werden kann. Zulässig
+   bleiben Entwurf, Prüfung und Marke in Hamburg, wenn das auch so dasteht.
 4. Versandfähig: passt in Maxibrief/Päckchen (Halsband) bzw. Paket (Leine).
 
 ## Drei Optionen
@@ -21,7 +25,7 @@ paper bag with sticker, no plastic — final packaging spec follows with the PO.
 |---|---|---|---|
 | Halsband | Kraftpapiertasche 120 × 250 mm, Papierband um das gerollte Halsband, Anhänger aus Kraftkarton mit Kordel | Naturbeutel 150 × 250 mm, Zugband, Stempel/Siebdruck "Bellowerk" | Faltschachtel 180 × 120 × 40 mm, Blindprägung Logo, Seidenpapier |
 | Leine | Kraftpapiertasche 200 × 300 mm, Leine gerollt, Papierband | Beutel 200 × 300 mm | Schachtel 220 × 160 × 50 mm |
-| Anhänger | Kraftkarton 50 × 90 mm, 1 Loch, Jutekordel, Druck 1-farbig: Logo, Modell, Größe, Pflege, GPSR-Adresse, Made in China | gleich | Einleger 100 × 150 mm statt Anhänger |
+| Anhänger | Kraftkarton 50 × 90 mm, 1 Loch, Jutekordel, Druck 1-farbig: Logo, Modell, Größe, Pflege, GPSR-Adresse | gleich | Einleger 100 × 150 mm statt Anhänger |
 | Kosten/Stück (Schätzung China) | 0,15–0,30 USD | 0,40–0,80 USD | 0,60–1,20 USD |
 | Nachteil | wirkt einfach | Beutel oft Polyester → auf Baumwolle bestehen | Volumen im Container, Karton knickt |
 
