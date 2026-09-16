@@ -47,6 +47,15 @@ ein deutscher Lohnhersteller liefert SDB, CLP-Etikett und PCN-Meldung mit dem Pr
 Rechnung kippt erst bei mehreren Tonnen pro Jahr und Rezeptur. Die China-Kandidaten oben bleiben
 als spätere Option in der Liste, nicht für die Erstauflage.
 
+**Update 16. September 2026:** Auf Wunsch zusätzlich angeschrieben, ausdrücklich als
+Vergleichsangebot und nicht als Ersatz für Abschnitt D — Ganlas (ganlas.com, eigene
+Wheel-&-Tire-Care-Produktseite, niedrige OEM-MOQ beworben), Laikes Biotechnology
+(laikeschem.com, sales@laikeschem.com, Ersatz für Qingdao Tonyin, da Tonyin keine eigene
+Firmendomain hat — nur ein Made-in-China-Profil) und Ocean Star Inc. (oceanstar-inc.com,
+HQ Ningbo, GMP/BSCI, eigenes Contract-Manufacturing-Angebot). Zusammen mit Brilliachem und Lidi
+sind das jetzt fünf China-Vergleichsangebote — der Regulatorik-Befund oben ändert sich dadurch
+nicht: Muster und Preise dienen dem Vergleich, die Erstauflage läuft über Abschnitt D.
+
 Die Textil- und Verpackungsartikel (Mikrofaser, Sprühflaschen) sind davon **nicht** betroffen —
 dort ist China der richtige Weg.
 
@@ -118,6 +127,24 @@ Pflichtangaben in der Anfrage:
 Größte Falle: werksseitiges Weichspüler-Finish für ein weiches Griffgefühl. Es schließt die
 Faseröffnungen, zerstört die Saugleistung und ist für Lackierer-Tücher ein Ausschlussgrund.
 Explizit verbieten lassen.
+
+### Nachtrag 16. September 2026 — fünf weitere Kandidaten, Fokus Hochflor und gepolstert
+
+Zweite Runde, keine Überschneidung mit den fünf oben bereits kontaktierten Fabriken. Schwerpunkt
+diesmal: plüschige Hochflor-Ware und gepolsterte Wasch-Mitts (Schaumstoffkern).
+
+| Prio | Firma | Ort | Fabrik vs. Händler | Sortiment | Kontakt |
+|---|---|---|---|---|---|
+| 1 | Suzhou BetterClean | Suzhou, Jiangsu | Fabrik, börsennotiert (NEEQ 870922), 200+ MA, ISO 9001, OEKO-TEX 100, 48 Patente | **gepolsterte Wasch-Mitts** — Schaumstoffkern mit Coral-Fleece/Chenille-Bezug — plus Standardtücher | betterclean.net |
+| 1 | Hebei Jiuyuan Textile Group | Xingtai, Hebei | Fabrik seit 1998, 400+ MA, **vertikal integriert** (Spinnen–Stricken–Färben–Nähen unter einem Dach), 200.000 Stück/Tag | breites Mikrofasersortiment; Hochflor nur Vermutung, nicht einzeln belegt | chinajiuyuan.com |
+| 2 | Ningbo STE (Steisone) | Ningbo, Zhejiang | Fabrik seit 2007, 15.000 m², ISO 9001, BSCI, **jährliches Walmart-Audit** | 3.000+ Artikel, 250–400 GSM | steisone.com |
+| 2 | Ningbo Kaixin Daily Supplies | Ningbo, Zhejiang | Fabrik seit 2022 (jung), 260 MA, Team mit 10+ Jahren Exporterfahrung | Mikrofaser-Mitts, Handschuhe, Waschschwämme; kleine MOQ beworben | kxdailysupplies.com |
+| 3 | Shijiazhuang Pengtuan (Rocgoods) | Shijiazhuang, Hebei | eher Handelsfirma ("Trading Co."), 15+ Jahre Exporterfahrung, EU-zertifiziert | **Twisted-Loop-Hochflor 1200–1400 GSM**, Wasch-Mitts, Applikatoren — "Custom OEM Solutions" | rocgoods.com |
+
+Jiuyuan ist das stärkste Vertrauenssignal der zweiten Runde (lange Historie, alles unter einem
+Dach), BetterClean die einzige Fabrik mit ausdrücklich belegtem gepolstertem Wasch-Mitt.
+Rocgoods trägt "Trading" im Namen — Fabrikstatus vor einer Bestellung per Video-Call prüfen, wie
+bei jedem Handelsnamen in dieser Liste.
 
 ---
 
