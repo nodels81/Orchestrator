@@ -8,6 +8,7 @@ Markennamen darin vor dem Senden ersetzen).
 
 ```
 sortimentsbrief.md        Positionierung, Stufenplan, Sortiment, Ausschlüsse, offene Entscheidungen
+zusatzverkauf.md          Anlass- und Thekenverkauf in der Werkstatt, Smart-Repair-Gimmicks
 lieferanten/shortlist.md  Recherchierte Kandidaten China + Deutschland, mit Quellen
 lieferanten/tracker.csv   Stand je Lieferant, nach jedem Kontakt fortschreiben
 specs/                    Tech Packs je Artikel (entstehen nach der Sortimentsfreigabe)
