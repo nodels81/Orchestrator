@@ -24,10 +24,13 @@ Kundenkontakt am Fahrzeug**. Daraus folgt die Positionierung:
 | Nr. | Frage | Warum sie den Pfad ändert |
 |---|---|---|
 | 1 | **Markenname und Logo** — eigene Marke oder Werkstattname? | Steht auf jedem Etikett, jedem Tuchlabel, jeder Flasche. Ohne Name kein Druckdatensatz, keine Musterfreigabe. |
-| 2 | **"Felgen eigengelabelt" — Räder oder Felgenreiniger?** | Wenn wirklich **Räder/Alufelgen** gemeint sind: das ist ein komplett anderes Projekt. Räder sind sicherheitsrelevante Bauteile — ECE-R124-Genehmigung bzw. Teilegutachten/ABE, Haftung als Inverkehrbringer, Festigkeitsprüfungen, Mindestabnahmen im Containerbereich. Das gehört in einen eigenen Pfad und **nicht** in die Erstauflage. Wenn Felgen**reiniger** gemeint war, ist alles unten abgedeckt. |
-| 3 | **Zielkunde zuerst**: Endkunde im Verkaufsraum oder Werkstatt-B2B? | Entscheidet über Gebindegrößen (500-ml-Sprühflasche vs. 5/10-l-Kanister) und über die Etikettensprache. |
-| 4 | **Startbudget je Artikel** | Bestimmt, wie viele SKU gleichzeitig starten können. |
-| 5 | Preislage: Premium (Koch Chemie/Gyeon-Niveau) oder Werkstatt-Arbeitsmittel? | Bestimmt Faserqualität, Rezepturgüte und Verpackungsaufwand. |
+| 2 | **Zielkunde zuerst**: Endkunde im Verkaufsraum oder Werkstatt-B2B? | Entscheidet über Gebindegrößen (500-ml-Sprühflasche vs. 5/10-l-Kanister) und über die Etikettensprache. |
+| 3 | **Startbudget je Artikel** | Bestimmt, wie viele SKU gleichzeitig starten können. |
+| 4 | Preislage: Premium (Koch Chemie/Gyeon-Niveau) oder Werkstatt-Arbeitsmittel? | Bestimmt Faserqualität, Rezepturgüte und Verpackungsaufwand. |
+
+**Geklärt am 16. September 2026:** "Felgen eigengelabelt" meint den **Felgenreiniger**, nicht
+Räder. Das Thema Alufelgen unter eigener Marke (ECE-R124, Teilegutachten, Containermengen) ist
+damit vom Tisch und nicht Teil dieses Pfades.
 
 ## Grundsatz: Breite vor Tiefe
 
@@ -80,7 +83,7 @@ Schmutzsieb · Staubbindetücher (Tack Cloth) · Geschenkset/Pflegebox als Über
 
 ## Harte Ausschlüsse (Erstauflage)
 
-- **Keine Räder/Felgen** ohne geklärte Genehmigungslage (siehe offene Frage 2)
+- **Keine Räder/Felgen als Handelsware** — sicherheitsrelevante Bauteile, eigener Rechtsrahmen
 - **Keine Aerosoldosen** — Gefahrgut, hohe Mindestmengen, eigene Abfülltechnik
 - **Kein Chemie-Direktimport** ohne vollständige SDB-/CLP-Kette in deutscher Sprache
 - Keine Varianten-Tiefe vor dem ersten Abverkauf
