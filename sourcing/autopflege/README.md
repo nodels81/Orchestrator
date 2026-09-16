@@ -1,6 +1,7 @@
 # Pfad `sourcing/autopflege/`
 
-Zweiter, eigenständiger Sourcing-Pfad: **Autopflege-Eigenmarke für Lackiererei und Autowerkstatt**.
+Zweiter, eigenständiger Sourcing-Pfad: **Delatec — Autopflege-Eigenmarke für Lackiererei und
+Autowerkstatt**.
 Getrennt von Bellowerk — andere Marke, andere Lieferanten, anderer Tracker. Gemeinsam genutzt
 werden nur die neutralen Nachrichtenvorlagen in `sourcing/vorlagen/` (Betreffzeilen und
 Markennamen darin vor dem Senden ersetzen).

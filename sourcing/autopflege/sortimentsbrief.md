@@ -1,4 +1,4 @@
-# Autopflege-Eigenmarke — Sortimentsbrief (Entwurf, Stand 16. September 2026)
+# Delatec — Sortimentsbrief Autopflege (Entwurf, Stand 16. September 2026)
 
 Zweiter Sourcing-Pfad neben Bellowerk, eigenständig und ohne Bezug zur Leder-Manufaktur.
 Ausgangslage: bestehende **Lackiererei + Autowerkstatt**, die eine eigene Pflegemittel- und
@@ -23,14 +23,21 @@ Kundenkontakt am Fahrzeug**. Daraus folgt die Positionierung:
 
 | Nr. | Frage | Warum sie den Pfad ändert |
 |---|---|---|
-| 1 | **Markenname und Logo** — eigene Marke oder Werkstattname? | Steht auf jedem Etikett, jedem Tuchlabel, jeder Flasche. Ohne Name kein Druckdatensatz, keine Musterfreigabe. |
+| 1 | **Logo und Schreibweise** zu Delatec (Delatec / DELATEC / deLaTec?), Farben, Schrift | Steht auf jedem Etikett, jedem Tuchlabel, jeder Flasche. Für die Druckdaten braucht der Lieferant eine Vektordatei, kein Foto. |
 | 2 | **Zielkunde zuerst**: Endkunde im Verkaufsraum oder Werkstatt-B2B? | Entscheidet über Gebindegrößen (500-ml-Sprühflasche vs. 5/10-l-Kanister) und über die Etikettensprache. |
 | 3 | **Startbudget je Artikel** | Bestimmt, wie viele SKU gleichzeitig starten können. |
 | 4 | Preislage: Premium (Koch Chemie/Gyeon-Niveau) oder Werkstatt-Arbeitsmittel? | Bestimmt Faserqualität, Rezepturgüte und Verpackungsaufwand. |
 
-**Geklärt am 16. September 2026:** "Felgen eigengelabelt" meint den **Felgenreiniger**, nicht
-Räder. Das Thema Alufelgen unter eigener Marke (ECE-R124, Teilegutachten, Containermengen) ist
-damit vom Tisch und nicht Teil dieses Pfades.
+**Geklärt am 16. September 2026:**
+
+- **Markenname: Delatec.** Steht auf allen Etiketten, Tuchlabels und Flaschen dieses Pfades.
+- "Felgen eigengelabelt" meint den **Felgenreiniger**, nicht Räder. Das Thema Alufelgen unter
+  eigener Marke (ECE-R124, Teilegutachten, Containermengen) ist vom Tisch.
+
+**Vor dem ersten Etikettendruck zu prüfen (nicht danach):** Ist "Delatec" als Marke in Klasse 3
+(Putz- und Poliermittel) und Klasse 21 (Reinigungsgeräte, Tücher) frei? Recherche bei DPMA und
+EUIPO, dazu Handelsregister und Domain. Der Name steckt sonst in mehreren tausend Etiketten und
+eingewebten Labeln, bevor jemand widerspricht.
 
 ## Grundsatz: Breite vor Tiefe
 
