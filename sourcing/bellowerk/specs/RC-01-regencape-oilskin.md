@@ -1,10 +1,13 @@
-# RC-01 — Rain Cape, Waxed Cotton (Tech Pack v1.0, 17 Sep 2026)
+# RC-01 — Rain Cape, Waxed Cotton (Tech Pack v2.0, 17 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
 Attachment: `zeichnungen/RC-01-regencape.png` (pattern pieces, all dimensions).
-Reference product: our own cape "THE CAPE" (@herr.bello.und.frau.wuff) — the new version is
-**open at the centre front** instead of a pullover, and the sleeve can be **closed at the forearm
-with snaps**.
+Reference product: our own cape "THE CAPE" (@herr.bello.und.frau.wuff).
+
+> **v2.0 corrects v1.0.** v1.0 wrongly drew a coat: front opening with a snap placket and closed
+> sleeves. It is a **cape**: pulled over the head, **no front opening, no placket, no sleeves**.
+> The sides are open from the shoulder down — that is where the arms come out. The only closure on
+> the body is a pair of snap tabs that draw the open edges together at the forearm.
 
 > **New product category.** This is the first textile product. The material rules in
 > `markenbrief.md` (leather + solid brass, no stitching, no thread) describe the leather line and
@@ -12,97 +15,103 @@ with snaps**.
 
 ## 1. Product
 
-Wide A-line rain cape in waxed cotton for dog walking. Kimono cut: sleeve and body cut in one
-piece, no set-in sleeve, no shoulder seam. Full centre-front opening with brass ring snaps behind a
-storm flap. Attached hood, stand collar, one chest patch pocket with flap. The sleeve underseam is
-**not** a closed seam but a snap placket, so the arm section opens completely (cape) or closes
-around the forearm (sleeve). Worn over a jumper, long enough to cover the hips while walking.
+Wide poncho-style rain cape in waxed cotton for dog walking. **Two panels only** — front and back,
+each cut on the fold — joined by a shoulder seam that runs from the neck out over the shoulder and
+a little way down the upper arm. Below that the side edges hang **completely open**: the cape
+drapes over the arms, and the hands come out at the side. A pair of brass snap tabs at forearm
+height pulls the front and back edge together when it is windy; open, the cape falls free.
+
+Funnel-style stand collar with attached hood. One patch pocket with a flap, centred on the chest.
+No front opening — the cape goes over the head, which is why the neck opening is cut wide
+(**minimum 620 mm finished**, must pass the head).
 
 ## 2. Material
 
 | Part | Specification |
 |---|---|
 | Shell | **Waxed cotton ("oilskin")**, 100 % cotton, paraffin/beeswax dry-wax finish, **380–420 g/m²** (10–12 oz), plain or 2/2 twill weave. Halley Stevensons / British Millerain quality or equal. Re-waxable, **not** PU- or PVC-coated. Water column ≥ 800 mm, breathable. Colours: black, dark olive, dark brown (send swatches). |
-| Hood + collar facing | Same waxed cotton. Inside of collar stand: cotton corduroy or check cotton (see HM-01 lining), 8 wales/cm, 280 g/m². |
+| Hood + collar inner | Same waxed cotton outside. Inside of the collar stand: cotton corduroy or the HM-01 check cotton, 280 g/m². |
 | Snaps | **Ring-spring snaps, solid brass**, cap Ø 15 mm, unlacquered / antique brass. Pull-off ≥ 40 N. NOT nickel, NOT zinc alloy ("Zamak"), NOT plated steel. |
 | Eyelets | Solid brass, inner Ø 6 mm, 2 pcs in the hood face hem. |
 | Thread | Polyester core-spun, **Tex 60 / Tkt 40** (topstitch) and Tex 40 / Tkt 60 (assembly), colour matched, UV- and rot-resistant. |
-| Drawcord | Waxed cotton cord Ø 4 mm, 1400 mm, brass-tipped or knotted, no plastic toggles. |
-| Label | Leather patch PATCH-01 (see `specs/PATCH-01-markenpatch.md`), sewn (not screwed) to the left forearm tab. Care label + size label in the collar. |
+| Drawcord | Waxed cotton cord Ø 4 mm, 1500 mm, brass-tipped or knotted, no plastic toggles. |
+| Label | Leather patch PATCH-01 (see `specs/PATCH-01-markenpatch.md`), sewn (not screwed) to the left forearm tab. Care + size label in the collar. |
 | Interlining | Collar stand only: woven fusible or sewn-in cotton canvas, 1 layer. |
 
-Not acceptable: PU/PVC coating, nylon, plastic snaps or toggles, zinc alloy hardware, visible
-raw edges, hook-and-loop fastener.
+Not acceptable: PU/PVC coating, nylon, plastic snaps or toggles, zinc alloy hardware, visible raw
+edges, hook-and-loop fastener.
 
 ## 3. Sizes (3 sizes, generous cape fit — starting values, confirm on the first sample)
 
 | Measurement (mm) | S/M (DE 34–38) | L/XL (DE 40–44) | XXL (DE 46–50) |
 |---|---|---|---|
-| Centre-back length, neck line → hem | 880 | **930** | 980 |
-| Half span, centre back → cuff | 695 | **735** | 775 |
-| Full sleeve span (2 × half span) | 1390 | **1470** | 1550 |
-| Cuff opening (sleeve end) | 260 | **280** | 300 |
-| Neck half width (front = back) | 90 | **95** | 100 |
-| Neck drop back / front | 20 / 85 | **20 / 90** | 20 / 95 |
-| Underarm point, from CB / from neck line | 270 / 310 | **290 / 320** | 310 / 330 |
-| Half hem width, per panel | 400 | **430** | 460 |
-| Hem circumference, finished | 1600 | **1720** | 1840 |
-| Collar length, finished | 560 | **590** | 620 |
-| Hood height × neck edge | 385 × 225 | **400 × 235** | 415 × 245 |
-| Front placket extension | 60 | **60** | 60 |
+| Centre-front length, neck seam → hem | 830 | **880** | 930 |
+| Centre-back length, neck seam → hem | 880 | **930** | 980 |
+| Neck opening, finished circumference | 620 | **640** | 660 |
+| Neck half width (front = back) | 125 | **130** | 135 |
+| Neck drop, front / back | 105 / 38 | **110 / 40** | 115 / 42 |
+| Shoulder seam, neck point → end | 400 | **420** | 440 |
+| Shoulder seam slope | 12° | **12°** | 12° |
+| Half hem width per panel | 580 | **620** | 660 |
+| Hem circumference, finished | 2320 | **2480** | 2640 |
+| Open side edge, front / back | 750 / 800 | **797 / 847** | 844 / 894 |
+| Forearm tab, from shoulder seam end | 280 | **300** | 320 |
+| Collar height | 90 | **90** | 90 |
+| Hood height × neck edge per side | 405 × 305 | **420 × 320** | 435 × 335 |
 
-L/XL is the base size in the drawing; the other sizes grade from it by the values above.
-Tolerance: lengths ±10 mm, widths ±5 mm, collar ±5 mm.
+The back is 50 mm longer than the front so the cape stays level when worn with a rucksack.
+L/XL is the base size in the drawing. Tolerance: lengths ±10 mm, widths ±5 mm, neck opening ±5 mm.
+
+**The neck opening is the critical measurement.** There is no front opening, so it has to pass the
+head. Never grade it below 620 mm finished.
 
 ## 4. Pattern pieces (per cape)
 
 | # | Piece | Cut | Material | Finished size |
 |---|---|---|---|---|
-| 1 | Back | 1 on fold | shell | see drawing |
-| 2 | Front | 2 mirrored | shell | see drawing, incl. 60 mm placket extension |
-| 3 | Hood side | 2 mirrored | shell | 400 × 235 mm neck edge |
-| 4 | Collar stand | 2 (outer + inner) | shell / corduroy | 590 × 80 mm |
+| 1 | Front panel | 1 on fold | shell | see drawing |
+| 2 | Back panel | 1 on fold | shell | see drawing, 50 longer than front |
+| 3 | Hood side | 2 mirrored | shell | 420 × 320 mm neck edge |
+| 4 | Collar stand | 2 (outer + inner) | shell / corduroy | 640 × 90 mm |
 | 5 | Chest pocket | 1 | shell | 220 × 240 mm |
 | 6 | Pocket flap | 2 | shell | 240 × 80 mm |
 | 7 | Forearm tab | 4 (2 tabs × 2 layers) | shell | 180 × 50 mm |
-| 8 | Storm flap (under-placket) | 1 | shell | 80 × 930 mm |
-| 9 | Hood face hem facing | 2 | shell | 60 × 400 mm |
-| 10 | Hanger loop | 1 | shell | 30 × 120 mm |
+| 8 | Hood face facing | 2 | shell | 60 × 420 mm |
+| 9 | Hanger loop | 1 | shell | 30 × 120 mm |
 
-**Seam allowance is NOT included in the drawing.** Add 10 mm on all seams, **40 mm** on the hem and
-the sleeve/cuff edge, 20 mm on the hood face edge.
+Nine pieces, no placket, no storm flap, no sleeve. **Seam allowance is NOT included in the
+drawing.** Add 10 mm on the shoulder and neck seams, **40 mm** on the hem, **20 mm** on the open
+side edges and the hood face edge.
 
 ## 5. Construction
 
-1. **Shoulder/sleeve seam**: join front to back along the upper sleeve edge (neck point → cuff),
-   **flat-felled seam 10 mm**, two rows of topstitching. No overlock, no raw edge anywhere.
-2. **Side seam**: from the underarm corner down to the hem, flat-felled. Round the underarm corner
-   R 60 mm and **bartack** it — this is the load point.
-3. **Sleeve underseam = snap placket, not a seam.** Both edges (front and back) get a 30 mm turned
-   facing. Set **3 brass snaps** on it: first 60 mm from the underarm corner, then at 160 mm and
-   at 300 mm, the last one 90 mm before the cuff edge. Closed = sleeve, open = cape.
-   *(Variant B, if Björn prefers the original look: sew this seam closed from the underarm to
-   200 mm before the cuff and keep only the last 2 snaps. Same pattern pieces.)*
-4. **Centre front**: fold the 60 mm extension back twice (30 + 30) as a self-facing, topstitch.
-   **7 brass snaps**, the first in the collar stand, then pitch 120 mm downwards. Storm flap (#8)
-   sewn to the inside of the right front, so water cannot reach the snap line.
-5. **Hood**: join the two hood sides along the crown seam, flat-felled. Face edge: 20 mm double
-   turn with the facing (#9), **2 brass eyelets** 80 mm apart at the front bottom, drawcord through.
-   Hood sewn into the neck seam.
-6. **Collar**: stand collar 80 mm high, outer in shell, inner in corduroy/check, one layer of
-   interlining. Sewn over the hood neck seam so the collar stands with the hood up or down.
-   1 snap at the throat.
-7. **Chest pocket**: left front, top edge 260 mm below the neck line, inner edge 80 mm from the
-   placket fold. Patch pocket, 40 mm top fold, corners bartacked. Flap over it, 1 brass snap
-   centred.
-8. **Forearm tabs**: 2 layers, edge-stitched, sewn to the upper sleeve edge 120 mm before the cuff.
-   **2 snaps per tab** (pitch 40 mm) so the sleeve width adjusts over a jumper.
+1. **Shoulder seam** — the only seam joining front and back. From the neck point outward for
+   420 mm, sloping 12° down. **Flat-felled 10 mm**, two rows of topstitching. No overlock, no raw
+   edge anywhere.
+2. **End of the shoulder seam is the load point**: round it R 40 and **bartack** it. Everything
+   below hangs from this corner.
+3. **Open side edges** — front and back edge from the shoulder seam end down to the hem: 20 mm
+   double turn, topstitched. These edges are visible from both sides when the cape moves, so the
+   turn must be even over the whole 800 mm. Nothing is sewn together here.
+4. **Forearm tabs**: 2 layers, edge-stitched, sewn to the **front** side edge 300 mm below the
+   shoulder seam end. **2 snaps per tab** (pitch 40 mm) so the cape closes loosely or snugly around
+   the forearm. The counter sockets sit on the back side edge at the same height.
    PATCH-01 leather patch sewn on the **left** tab.
+5. **No front opening, no placket, no snaps down the front.** The cape goes over the head.
+6. **Hood**: join the two hood sides along the crown seam, flat-felled. Face edge 20 mm double turn
+   with the facing (#8), **2 brass eyelets** 80 mm apart at the front bottom, waxed drawcord.
+   Hood sewn into the neck seam.
+7. **Collar**: funnel stand 90 mm high, outer in shell, inner in corduroy/check, one layer of
+   interlining. Sewn over the hood neck seam so the collar stands with the hood up or down.
+   **1 brass snap at the throat** to draw the funnel closed in wind — this is the only snap on the
+   collar, it is not a placket.
+8. **Chest pocket**: **centred on the centre front**, top edge 300 mm below the neck seam. Patch
+   pocket, 40 mm top fold, corners bartacked. Flap over it, 1 brass snap centred.
 9. **Hem**: 40 mm double turn, topstitched. Hanger loop in the neck seam at centre back.
-10. **Sewing rules for waxed cotton**: no pins (holes stay) — use clips. Needle 100/16–110/18
-    jeans/leather point, stitch length 3.5 mm, PTFE or roller foot. Do not press with a hot iron
-    (the wax melts) — finger-press or use a cool iron with paper. Every seam flat-felled or bound;
-    waxed cotton frays and wicks water along raw edges.
+10. **Sewing rules for waxed cotton**: no pins (holes stay) — use clips. Needle 100/16 or 110/18
+    jeans point, stitch length 3.5 mm, PTFE or roller foot. Do not press with a hot iron (the wax
+    melts) — finger-press or use a cool iron with paper. Every seam flat-felled or turned; waxed
+    cotton frays and wicks water along raw edges.
 
 ## 6. Quantity and packaging
 
@@ -119,20 +128,21 @@ the sleeve/cuff edge, 20 mm on the hood face edge.
 1. Pattern per size as **PDF 1:1 and DXF** (all pieces, grain lines, notches, snap positions,
    seam allowance marked separately)
 2. Fabric data sheet: weight, weave, wax type and quantity, water column, shrinkage after 3 cycles
-3. Brass statement for snaps and eyelets (alloy, plating none, pull-off force)
-4. REACH / Prop 65 statement, lead and nickel release test for the brass hardware
-5. Rub and rain test: 2 h simulated rain, no water passage at the snap line or shoulder seam
-6. Photo of every size before shipment, laid flat with a tape measure
+3. Brass statement for snaps and eyelets (alloy, no plating, pull-off force)
+4. REACH statement, lead and nickel release test for the brass hardware
+5. Rain test: 2 h simulated rain, no water passage at the shoulder seam or the neck seam
+6. **Head-pass check on every size**: the finished neck opening must pass a 590 mm head form
+7. Photo of every size before shipment, laid flat with a tape measure
 
 ## 8. Open decisions for Björn (nothing ordered, nothing promised)
 
 1. **New product category.** The cape is textile, not leather. `markenbrief.md` currently excludes
    thread, seams and non-leather materials. Do we extend the brand brief by a textile line, or does
    the cape run under the former name "Herr Bello & Frau Wuff"?
-2. **Sleeve variant A or B** (section 5.3) — fully opening arm, or closed seam with tabs only.
+2. **Hand slits**: should the front panel get two vertical welt slits at hand height, so you can
+   keep the cape closed around you and still reach out? The reference cape has none.
 3. **Hood**: fixed as specified, or detachable with 5 snaps (+ ~4 EUR/pc)?
-4. **Hand pockets**: two additional patch pockets at hip height — yes or no?
-5. **Colour range** for the first order.
+4. **Colour range** for the first order.
 
 ## 9. Questions to answer in your quotation
 
@@ -143,4 +153,5 @@ the sleeve/cuff edge, 20 mm on the hood face edge.
 5. Payment terms (we propose 30 % after golden sample, 70 % after final inspection before shipment)
 6. Which waxed cotton do you stock, and at which weight — mill name and article number
 7. Photo and weight in grams of the exact brass snap and eyelet you would use
-8. Are pattern files (PDF 1:1 + DXF) included — yes/no
+8. Fabric consumption per cape per size, and the usable width you calculated with
+9. Are pattern files (PDF 1:1 + DXF) included — yes/no
