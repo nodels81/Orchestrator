@@ -1,7 +1,10 @@
-# HB-01 — Leather Dog Collar (Tech Pack v1.0, 9 Sep 2026)
+# HB-01 — Leather Dog Collar (Tech Pack v1.1, 17 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
-Attachments: `zeichnungen/HB-01-halsband.png`, photos `bilder/HB-01-detail-patch.jpg`, `bilder/HB-01-farben-patch.jpg`.
+Attachments: `zeichnungen/HB-01-halsband.png` (dimensioned drawing + Bill of Materials),
+photos `bilder/hardware-schnalle-1zu1.jpg`, `bilder/hardware-dring-1zu1.jpg` (hardware, photo-confirmed,
+send as-is — this is the binding 1:1 reference for shape), `bilder/HB-01-detail-patch.jpg`,
+`bilder/HB-01-farben-patch.jpg`.
 
 ## 1. Product
 
@@ -24,7 +27,22 @@ D-ring, leather keeper. Leather patch PATCH-01 near the buckle (see `bilder/HB-0
 
 Not acceptable: zinc alloy, brass-plated steel, PU/bonded/split leather, stitching, rivets, plastic, lacquer.
 
-## 3. Sizes (starting values — confirm against Björn's reference collar)
+## 3. Bill of Materials (Stückliste), per unit
+
+| Pos | Part | Qty | Material / Spec | Reference |
+|---|---|---|---|---|
+| 1 | Strap (main leather) | 1 | Vegetable-tanned oiled cowhide, full grain, 3.5–4.0 mm, dyed through | Drawing / Tech Pack |
+| 2 | Roller buckle | 1 | Solid brass, width = strap width, ≥ 2.5 kN, unlacquered | **Photo-confirmed** — `bilder/hardware-schnalle-1zu1.jpg` |
+| 3 | D-ring | 1 | Solid brass, welded, wire Ø 4 mm (20/25 mm) or 5 mm (30/40 mm), ≥ 3 kN | **Photo-confirmed** — `bilder/hardware-dring-1zu1.jpg` |
+| 4 | Keeper | 1 | Same leather as Pos. 1, fixed with 1 Chicago screw | Drawing |
+| 5 | Leather patch PATCH-01 | 1 | Cognac/medium brown, 2.0–2.5 mm, engraved "BELLOWERK / Manufaktur" | `specs/PATCH-01-markenpatch.md` |
+| 6 | Chicago screws | 6 | Solid brass, domed head Ø 8–9 mm, thread-locked | **Photo-confirmed** |
+
+"Photo-confirmed" = shape verified against a sharp reference photo of our own existing hardware —
+not an approximation. Attach these photos to every RFQ alongside the drawing; the factory must match
+them exactly, not "something similar."
+
+## 4. Sizes (starting values — confirm against Björn's reference collar)
 
 | Size | Strap width | Neck range (buckle → hole 1…5) | Cut length | Holes from tip |
 |---|---|---|---|---|
@@ -36,7 +54,7 @@ Not acceptable: zinc alloy, brass-plated steel, PU/bonded/split leather, stitchi
 Cut length = max neck + 12 cm (buckle fold 6 cm incl. keeper + D-ring). Tolerance: length ±5 mm,
 width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half width.
 
-## 4. Construction (from buckle end)
+## 5. Construction (from buckle end)
 
 1. Buckle fold: strap passes through buckle, folds back 60 mm, D-ring sits in the fold 20 mm behind
    the buckle, keeper 15 mm behind the D-ring.
@@ -47,19 +65,19 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
 4. Buckle tongue slot 10 mm long, punched clean.
 5. Grain side out. Flesh side lightly finished (no loose fibres, no coating).
 
-## 5. Quantity and packaging
+## 6. Quantity and packaging
 
 - Samples: 1 pc per size, colour olive. Then 100 pcs: S 20 / M 35 / L 30 / XL 15, colours grey /
   dark brown / olive / cognac (split to be confirmed).
 - Packing: 1 pc in kraft paper bag with size sticker (model, size, colour); 25 pcs per inner carton.
 - Care card (we supply artwork) in each bag.
 
-## 6. Deliverables with the order
+## 7. Deliverables with the order
 
 Pattern per size as PDF 1:1 + DXF (outline, holes, screw positions, fold marks), leather data sheet,
 brass alloy statement, breaking-load test of buckle/D-ring, REACH Cr(VI) test report (or 1 pc for our test).
 
-## 7. Questions to answer in your quotation
+## 8. Questions to answer in your quotation
 
 1. Unit price EXW per size, 100 pcs / 300 pcs
 2. MOQ per size and per colour

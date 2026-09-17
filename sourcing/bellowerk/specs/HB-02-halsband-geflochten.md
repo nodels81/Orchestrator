@@ -1,8 +1,10 @@
-# HB-02 — Braided Leather Collar (Tech Pack v1.0, 9 Sep 2026)
+# HB-02 — Braided Leather Collar (Tech Pack v1.1, 17 Sep 2026)
 
-Reference photos: `bilder/HB-02-geflochten-am-hund.jpg` (single colour, brass O-ring),
-`bilder/HB-02-zweifarbig-am-hund.jpg` (two-tone), `bilder/HB-02-und-LE-01-gruen.jpg` (flat buckle end
-with patch, transition to braid). Drawing: `zeichnungen/HB-02-geflochten.png`.
+Reference photos: `bilder/hardware-geflecht-oring-schnalle-1zu1.jpg` (photo-confirmed — braid, O-ring
+and buckle in one shot, the binding 1:1 reference for these parts), `bilder/HB-02-geflochten-am-hund.jpg`
+(single colour, brass O-ring, on dog), `bilder/HB-02-zweifarbig-am-hund.jpg` (two-tone),
+`bilder/HB-02-und-LE-01-gruen.jpg` (flat buckle end with patch, transition to braid).
+Drawing: `zeichnungen/HB-02-geflochten.png` (dimensioned drawing + Bill of Materials).
 
 ## 1. Product
 
@@ -21,7 +23,22 @@ As HB-01: vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle
 Ø 25 mm, wire 5 mm, ≥ 3 kN), Chicago screws domed head Ø 8–9 mm, patch PATCH-01.
 Colours: grey, dark brown, olive, cognac, black.
 
-## 3. Sizes (starting values — confirm on Björn's reference collar)
+## 3. Bill of Materials (Stückliste), per unit
+
+| Pos | Part | Qty | Material / Spec | Reference |
+|---|---|---|---|---|
+| 1 | Strap (one piece, incl. braid section) | 1 | Vegetable-tanned oiled cowhide, full grain, 3.5–4.0 mm | Drawing / Tech Pack |
+| 2 | Roller buckle (smaller version) | 1 | Solid brass, at braid transition, width = strap width, unlacquered | **Photo-confirmed** — `bilder/hardware-geflecht-oring-schnalle-1zu1.jpg` |
+| 3 | O-ring | 1 | Solid brass, welded, inner Ø 25 mm, wire 5 mm, ≥ 3 kN, worked into the braid | **Photo-confirmed** — same photo |
+| 4 | Keeper | 1 | Same leather as Pos. 1, fixed with 1 Chicago screw | Drawing |
+| 5 | Leather patch PATCH-01 | 1 | Cognac/medium brown, 2.0–2.5 mm, engraved "BELLOWERK / Manufaktur" | `specs/PATCH-01-markenpatch.md` |
+| 6 | Chicago screws | 4 | Solid brass, domed head Ø 8–9 mm, thread-locked | **Photo-confirmed** |
+
+"Photo-confirmed" = shape verified against a sharp reference photo of our own existing hardware — not
+an approximation. Note: this buckle reads smaller/more angular than the HB-01 buckle — flag it as its
+own variant in the RFQ, don't assume the factory will reuse the HB-01 buckle tooling.
+
+## 4. Sizes (starting values — confirm on Björn's reference collar)
 
 | Size | Strap width | Braided section | Flat buckle end / flat hole end | Neck range |
 |---|---|---|---|---|
@@ -33,7 +50,7 @@ Colours: grey, dark brown, olive, cognac, black.
 Braiding shortens the strap by about 15 %: cut the braid section 15 % longer than the finished
 braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
 
-## 4. Construction
+## 5. Construction
 
 1. Cut strap in one piece (buckle end + braid section + hole end). Cut two lengthwise slits over the
    braid section, three equal strands, slit ends punched Ø 2 mm.
@@ -45,12 +62,12 @@ braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
 5. Patch PATCH-01 on the flat buckle end, 30 mm behind the fold.
 6. Edges bevelled and burnished on strap and on every strand.
 
-## 5. Quantity and packaging
+## 6. Quantity and packaging
 
 Samples: 1 pc size M olive, 1 pc size M two-tone (dark brown + grey) if feasible. Then 60 pcs:
 S 10 / M 25 / L 20 / XL 5. Packing as HB-01.
 
-## 6. Quotation questions
+## 7. Quotation questions
 
 1. Do you make mystery braids in-house? Photo of a finished collar.
 2. Unit price EXW per size, 60 pcs / 150 pcs

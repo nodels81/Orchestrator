@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1400" height="560" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-02 Braided Leather Collar — size M (25 mm) — scale 1:2 — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1400" height="860" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-02 Braided Leather Collar — size M (25 mm) — scale 1:2 — Bellowerk Manufaktur, v1.1, 17 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">One-piece strap: flat buckle end · 3-strand mystery braid (two slits, ends uncut, chevron pattern) with solid brass O-ring · flat hole end · NO stitching, NO rivets</text>
 
   <!-- scale 1 mm = 2 px. buckle end 160 mm = 320 px; braid 220 mm = 440 px; hole end 120 mm = 240 px. origin x=100 -->
@@ -11,7 +11,7 @@
     <rect x="172" y="194" width="14" height="62"/>
     <circle cx="200" cy="225" r="5"/><circle cx="214" cy="225" r="5"/>
     <line x1="220" y1="200" x2="220" y2="250" stroke-dasharray="6 4"/>
-    <text x="120" y="190" fill="#000" stroke="none" font-size="13">buckle fold 60 mm, keeper, 2 screws</text>
+    <text x="120" y="190" fill="#000" stroke="none" font-size="13">buckle fold 60 mm, keeper, 2 screws — smaller buckle at braid, shape confirmed by photo, see BOM #2</text>
     <!-- patch 85x18 -> 170x36 -->
     <rect x="240" y="207" width="170" height="36" rx="6" fill="#e8c9a0" stroke="#000"/>
     <circle cx="254" cy="225" r="6" fill="#c9a44a"/><circle cx="396" cy="225" r="6" fill="#c9a44a"/>
@@ -30,7 +30,7 @@
     <!-- O-ring at centre of braid x=640 -->
     <circle cx="640" cy="225" r="28" stroke-width="3.5"/>
     <text x="560" y="180" fill="#000" stroke="none" font-size="14">3-strand mystery braid, 220 mm finished (cut +15 %)</text>
-    <text x="600" y="290" fill="#000" stroke="none" font-size="13">O-ring solid brass Ø 25 mm inner, worked into the braid at centre back</text>
+    <text x="600" y="290" fill="#000" stroke="none" font-size="13">O-ring solid brass Ø 25 mm inner, worked into the braid — shape confirmed by photo, see BOM #3</text>
 
     <!-- hole end 120 mm = 240 px, x 860..1100 -->
     <path d="M 860 200 H 1075 A 25 25 0 0 1 1075 250 H 860 Z" stroke-width="2.5"/>
@@ -58,5 +58,68 @@
     <text x="0" y="44" fill="#000" stroke="none" font-size="14">L: 25 mm, braid 260, ends 160/140, neck 46–56 cm · XL: 30 mm, braid 300, ends 180/140, neck 54–64 cm</text>
     <text x="0" y="74" fill="#000" stroke="none" font-size="14">Mystery braid: two lengthwise slits, three equal strands, slit ends punched Ø 2 mm, ends stay uncut. Tight, even, chevron pattern as photo.</text>
     <text x="0" y="94" fill="#000" stroke="none" font-size="14">Option two-tone (dark brown + grey) — factory to propose method without stitching. Colours: grey, dark brown, olive, cognac, black.</text>
+  </g>
+
+  <!-- Stückliste / Bill of Materials -->
+  <g transform="translate(40,560)">
+    <text x="0" y="0" font-size="18" font-weight="bold" fill="#000" stroke="none">Stückliste / Bill of Materials — HB-02, per unit</text>
+    <g stroke="#000" stroke-width="1.2">
+      <rect x="0" y="14" width="1320" height="210" fill="none"/>
+      <line x1="0" y1="44" x2="1320" y2="44"/>
+      <line x1="50" y1="14" x2="50" y2="224"/>
+      <line x1="480" y1="14" x2="480" y2="224"/>
+      <line x1="560" y1="14" x2="560" y2="224"/>
+      <line x1="1160" y1="14" x2="1160" y2="224"/>
+      <line x1="0" y1="74" x2="1320" y2="74"/>
+      <line x1="0" y1="104" x2="1320" y2="104"/>
+      <line x1="0" y1="134" x2="1320" y2="134"/>
+      <line x1="0" y1="164" x2="1320" y2="164"/>
+      <line x1="0" y1="194" x2="1320" y2="194"/>
+    </g>
+    <g font-size="13" fill="#000" stroke="none">
+      <text x="10" y="34" font-weight="bold">Pos</text>
+      <text x="60" y="34" font-weight="bold">Bezeichnung</text>
+      <text x="570" y="34" font-weight="bold">Menge</text>
+      <text x="670" y="34" font-weight="bold">Material / Spezifikation</text>
+      <text x="1170" y="34" font-weight="bold">Referenz</text>
+
+      <text x="10" y="64">1</text>
+      <text x="60" y="64">Riemen (einteilig, mit Flechtabschnitt)</text>
+      <text x="570" y="64">1</text>
+      <text x="670" y="64">Fettleder Rind, pflanzlich gegerbt, Vollnarbe, 3.5–4.0 mm</text>
+      <text x="1170" y="64">Zeichnung</text>
+
+      <text x="10" y="94">2</text>
+      <text x="60" y="94">Rollschnalle (kleinere Ausführung)</text>
+      <text x="570" y="94">1</text>
+      <text x="670" y="94">Vollmessing, am Flechtübergang, Breite = Riemenbreite, unlackiert</text>
+      <text x="1170" y="94" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="124">3</text>
+      <text x="60" y="124">O-Ring</text>
+      <text x="570" y="124">1</text>
+      <text x="670" y="124">Vollmessing, geschweißt, Innen-Ø 25 mm, Draht 5 mm, ≥ 3 kN</text>
+      <text x="1170" y="124" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="154">4</text>
+      <text x="60" y="154">Riemenschlaufe (Keeper)</text>
+      <text x="570" y="154">1</text>
+      <text x="670" y="154">gleiches Leder wie Pos. 1, fixiert mit 1 Buchschraube</text>
+      <text x="1170" y="154">Zeichnung</text>
+
+      <text x="10" y="184">5</text>
+      <text x="60" y="184">Lederpatch PATCH-01</text>
+      <text x="570" y="184">1</text>
+      <text x="670" y="184">Cognac/Mittelbraun, 2.0–2.5 mm, graviert "BELLOWERK / Manufaktur"</text>
+      <text x="1170" y="184">PATCH-01.svg</text>
+
+      <text x="10" y="214">6</text>
+      <text x="60" y="214">Buchschrauben (Chicago screws)</text>
+      <text x="570" y="214">4</text>
+      <text x="670" y="214">Vollmessing, Kopf Ø 8–9 mm, gewölbt, gesichert</text>
+      <text x="1170" y="214" font-weight="bold">Foto bestätigt</text>
+    </g>
+    <text x="0" y="248" font-size="12" fill="#333" stroke="none">"Foto bestätigt": Form fotografisch abgeglichen (bilder/hardware-geflecht-oring-schnalle-1zu1.jpg). Keine Annäherung — exakte Ausführung verbindlich.</text>
+    <text x="0" y="266" font-size="12" fill="#333" stroke="none">Rollschnalle wirkt kleiner/eckiger als bei HB-01 — im RFQ als eigene Ausführung markieren.</text>
   </g>
 </svg>

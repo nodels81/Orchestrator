@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1400" height="620" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-01 Leather Dog Collar — size M (25 mm) — scale 1:2 — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1400" height="900" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HB-01 Leather Dog Collar — size M (25 mm) — scale 1:2 — Bellowerk Manufaktur, v1.1, 17 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">Single layer vegetable-tanned oiled cowhide 3.5–4.0 mm · solid brass hardware · NO stitching · NO rivets · Chicago screws only</text>
 
   <!-- scale: 1 mm = 2 px. Strap 600 mm x 25 mm -> 1200 x 50 px, origin x=100, y=200 -->
@@ -14,11 +14,11 @@
     <rect x="88" y="192" width="14" height="66" rx="3" stroke-width="3"/>
     <line x1="95" y1="192" x2="95" y2="258" stroke-width="3"/>
     <path d="M 95 225 L 150 225" stroke-width="3"/>
-    <text x="60" y="290" fill="#000" stroke="none" font-size="14">roller buckle 25 mm, solid brass</text>
+    <text x="60" y="290" fill="#000" stroke="none" font-size="14">roller buckle 25 mm, solid brass — shape confirmed by photo, see BOM #2</text>
     <!-- D-ring in fold at 20 mm behind buckle = x 100+40 -->
     <path d="M 140 196 V 254" stroke-width="3"/>
     <path d="M 140 196 C 175 196 175 254 140 254" stroke-width="3"/>
-    <text x="150" y="276" fill="#000" stroke="none" font-size="14">D-ring welded, solid brass</text>
+    <text x="150" y="276" fill="#000" stroke="none" font-size="14">D-ring welded, solid brass — shape confirmed by photo, see BOM #3</text>
     <!-- keeper at 15 mm behind D ring -> x 140+30=170..185 -->
     <rect x="172" y="194" width="14" height="62" stroke-width="2"/>
     <text x="150" y="176" fill="#000" stroke="none" font-size="14">keeper</text>
@@ -88,5 +88,71 @@
     <text x="0" y="84" fill="#000" stroke="none" font-size="14">XL: 40 mm, neck 54–64 cm, cut 760 mm</text>
     <text x="0" y="110" fill="#000" stroke="none" font-size="14">Tolerances: length ±5 mm · width ±0.5 mm · hole pitch ±1 mm</text>
     <text x="0" y="130" fill="#000" stroke="none" font-size="14">Edges bevelled + burnished, no edge paint. Tip: English point.</text>
+  </g>
+
+  <!-- Stückliste / Bill of Materials -->
+  <g transform="translate(40,610)">
+    <text x="0" y="0" font-size="18" font-weight="bold" fill="#000" stroke="none">Stückliste / Bill of Materials — HB-01, per unit</text>
+    <g stroke="#000" stroke-width="1.2">
+      <!-- outer frame -->
+      <rect x="0" y="14" width="1320" height="210" fill="none"/>
+      <!-- header row -->
+      <line x1="0" y1="44" x2="1320" y2="44"/>
+      <!-- column separators -->
+      <line x1="50" y1="14" x2="50" y2="224"/>
+      <line x1="480" y1="14" x2="480" y2="224"/>
+      <line x1="560" y1="14" x2="560" y2="224"/>
+      <line x1="1160" y1="14" x2="1160" y2="224"/>
+      <!-- row lines -->
+      <line x1="0" y1="74" x2="1320" y2="74"/>
+      <line x1="0" y1="104" x2="1320" y2="104"/>
+      <line x1="0" y1="134" x2="1320" y2="134"/>
+      <line x1="0" y1="164" x2="1320" y2="164"/>
+      <line x1="0" y1="194" x2="1320" y2="194"/>
+    </g>
+    <g font-size="13" fill="#000" stroke="none">
+      <text x="10" y="34" font-weight="bold">Pos</text>
+      <text x="60" y="34" font-weight="bold">Bezeichnung</text>
+      <text x="570" y="34" font-weight="bold">Menge</text>
+      <text x="670" y="34" font-weight="bold">Material / Spezifikation</text>
+      <text x="1170" y="34" font-weight="bold">Referenz</text>
+
+      <text x="10" y="64">1</text>
+      <text x="60" y="64">Riemen (Obermaterial)</text>
+      <text x="570" y="64">1</text>
+      <text x="670" y="64">Fettleder Rind, pflanzlich gegerbt, Vollnarbe, 3.5–4.0 mm, durchgefärbt</text>
+      <text x="1170" y="64">Zeichnung</text>
+
+      <text x="10" y="94">2</text>
+      <text x="60" y="94">Rollschnalle</text>
+      <text x="570" y="94">1</text>
+      <text x="670" y="94">Vollmessing, Breite = Riemenbreite, Bruchlast ≥ 2.5 kN, unlackiert</text>
+      <text x="1170" y="94" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="124">3</text>
+      <text x="60" y="124">D-Ring</text>
+      <text x="570" y="124">1</text>
+      <text x="670" y="124">Vollmessing, geschweißt, Draht Ø 4/5 mm, ≥ 3 kN</text>
+      <text x="1170" y="124" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="154">4</text>
+      <text x="60" y="154">Riemenschlaufe (Keeper)</text>
+      <text x="570" y="154">1</text>
+      <text x="670" y="154">gleiches Leder wie Pos. 1, fixiert mit 1 Buchschraube</text>
+      <text x="1170" y="154">Zeichnung</text>
+
+      <text x="10" y="184">5</text>
+      <text x="60" y="184">Lederpatch PATCH-01</text>
+      <text x="570" y="184">1</text>
+      <text x="670" y="184">Cognac/Mittelbraun, 2.0–2.5 mm, graviert "BELLOWERK / Manufaktur"</text>
+      <text x="1170" y="184">PATCH-01.svg</text>
+
+      <text x="10" y="214">6</text>
+      <text x="60" y="214">Buchschrauben (Chicago screws)</text>
+      <text x="570" y="214">6</text>
+      <text x="670" y="214">Vollmessing, Kopf Ø 8–9 mm, gewölbt, gesichert</text>
+      <text x="1170" y="214" font-weight="bold">Foto bestätigt</text>
+    </g>
+    <text x="0" y="248" font-size="12" fill="#333" stroke="none">"Foto bestätigt": Form fotografisch abgeglichen (bilder/hardware-schnalle-1zu1.jpg, hardware-dring-1zu1.jpg). Keine Annäherung — exakte Ausführung verbindlich.</text>
   </g>
 </svg>
