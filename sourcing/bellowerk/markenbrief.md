@@ -67,7 +67,7 @@ stehen in Abschnitt 8 der jeweiligen Spec.
 | Modell | Beschreibung | Spec |
 |---|---|---|
 | RC-01 | Regencape Oilskin (gewachste Baumwolle), vorne durchgehend offen, Ärmel am Unterarm mit Messing-Druckknöpfen schließbar, Kapuze, 3 Größen | `specs/RC-01-regencape-oilskin.md` |
-| HM-01 | Hundemantel leicht gefüttert: Oilskin außen, Vlies 100 g/m², Karo-Baumwollfutter, Stehkragen, Bauchgurt, 4 Größen (Rückenlänge 45/55/65/75 cm) | `specs/HM-01-hundemantel-gefuettert.md` |
+| HM-01 | Hundemantel leicht gefüttert: Oilskin außen, Vlies 100 g/m², Karo-Baumwollfutter **in eigener Farbstellung** (kein Marken-Karo — Burberry/Barbour sind eingetragen), Stehkragen, Bauchgurt, 4 Größen (Rückenlänge 45/55/65/75 cm) | `specs/HM-01-hundemantel-gefuettert.md` |
 
 Grundsatz laut Björn: **schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung
 kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-01 und LE-01 sind

@@ -21,7 +21,8 @@ for sighthounds (`markenbrief.md`).
 | Part | Specification |
 |---|---|
 | Shell | **Waxed cotton ("oilskin")**, 100 % cotton, dry-wax finish, **380–420 g/m²** (10–12 oz), same article as RC-01. Re-waxable, not PU/PVC coated. Colours: dark olive, black, dark brown. |
-| Lining | **Firm woven cotton check**, classic British tartan look (Barbour/Burberry character), 100 % cotton, **180–220 g/m²**, yarn-dyed (not printed), pre-shrunk. *Assumption from the briefing ("Blueberry style") — if a plain blue cotton was meant instead, correct here before the RFQ goes out.* |
+| Lining | **Firm woven cotton check**, classic British house-check character, 100 % cotton, **180–220 g/m²**, **yarn-dyed (not printed)**, pre-shrunk, check repeat 30–40 mm. **Our own colourway**, derived from the brand palette: sand/camel ground, overcheck in forest green #23352A and cognac #9A6238, plus one fine black line. |
+| Lining — what you must NOT supply | **No branded or registered check.** Do not offer, copy or substitute the Burberry Haymarket check, the Barbour tartan, or any other trademarked house check, and no fabric carrying a third-party name, selvedge mark or logo. We reject the whole lot on arrival if you do. Send 3 alternative colourways of an **original** check on the strike-off and we choose. |
 | Lining, alternative | Polyester taffeta 190T, ripstop, as a slip lining for easier on/off — offer both, we compare on the sample. |
 | Wadding | Polyester wadding **100 g/m²**, thermally bonded, washable at 30 °C, not migrating. ("Lightly lined" — no thick quilt.) |
 | Collar inside | Cotton corduroy 8 wales/cm, 280 g/m², or the check lining — offer both. |
@@ -132,8 +133,10 @@ finished line). Add 10 mm where pieces are sewn to each other (collar to body, s
 ## 8. Open decisions for Björn (nothing ordered, nothing promised)
 
 1. **New product category** (textile) — same question as RC-01 section 8.1.
-2. **Lining**: "Blueberry style" read as a British check. Confirm — check, or plain blue?
-   Check cotton or polyester slip lining as the standard version?
+2. **Lining colourway** (the check itself is confirmed, 17 Sep 2026). We cannot order the Burberry
+   check — it is a registered trademark, and a factory that offers it is offering a counterfeit.
+   Proposed own colourway: sand ground + forest green + cognac + a fine black line. Björn picks
+   from the 3 strike-offs. Also: check cotton or polyester slip lining as the standard version?
 3. **Contrast yoke** (section 5.8): keep the printed panel from the reference coat, or plain?
 4. **Binding colour**: rust/orange as on the photos, or tone in tone?
 5. **Size M**: our brand brief says medium to large dogs. Do we still offer M (45 cm), or start
@@ -146,7 +149,9 @@ finished line). Add 10 mm where pieces are sewn to each other (collar to body, s
 3. Sample cost and sample lead time (both lining versions)
 4. Production lead time after golden sample approval
 5. Payment terms (we propose 30 % after golden sample, 70 % after final inspection before shipment)
-6. Which waxed cotton and which check cotton do you stock — mill name, article number, weight
+6. Which waxed cotton and which check cotton do you stock — mill name, article number, weight.
+   For the check: confirm in writing that the design is your own or freely usable, and that it does
+   not reproduce a registered house check.
 7. Photo and weight in grams of the exact brass snap you would use
 8. Are pattern files (PDF 1:1 + DXF) included — yes/no
 9. Can you also make RC-01 (the human cape), or only dog products?

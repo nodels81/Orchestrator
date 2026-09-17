@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1230" viewBox="0 0 1900 1230" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1900" height="1230" fill="#fff" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1270" viewBox="0 0 1900 1270" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1900" height="1270" fill="#fff" stroke="none"/>
   <defs>
     <marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L8,3 L0,6 z" fill="#000" stroke="none"/>
@@ -10,7 +10,7 @@
   </defs>
 
   <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HM-01 Lined Dog Coat, waxed cotton — pattern pieces, base size L (55 cm) — Bellowerk Manufaktur, v1.0, 17 Sep 2026</text>
-  <text x="40" y="66" fill="#000" stroke="none">Shell waxed cotton 380–420 g/m² · wadding 100 g/m² · lining firm cotton check · all outer edges BOUND (30 mm bias, 8 mm finished, contrast) · solid brass ring snaps only</text>
+  <text x="40" y="66" fill="#000" stroke="none">Shell waxed cotton 380–420 g/m² · wadding 100 g/m² · lining yarn-dyed cotton check in OUR OWN colourway · all outer edges BOUND (30 mm bias, 8 mm finished, contrast) · solid brass ring snaps only</text>
   <text x="40" y="88" fill="#000" stroke="none" font-size="14">All dimensions in mm. Drawing 1 px = 1 mm. Bound edges are cut ON the finished line (no allowance). Add 10 mm only where pieces are sewn together (collar to body, strap to body).</text>
 
   <!-- ============ BODY PANEL ============ -->
@@ -168,5 +168,7 @@
     <text x="0" y="104" font-size="14">4 · Collar sewn to the neck edge with 10 mm seam, seam covered by the binding. It must STAND when open and roll over when closed. 2 throat snaps + 1 chest snap at the front corners.</text>
     <text x="0" y="128" font-size="14">5 · Waxed cotton: NO PINS (holes stay) — clips only. Needle 100/16–110/18, stitch length 3.5 mm, PTFE or roller foot. No hot iron — the wax melts.</text>
     <text x="0" y="152" font-size="14">6 · Must survive 30 °C machine wash without the wadding migrating. Lining yarn-dyed (not printed), pre-shrunk, max 3 % shrinkage after 3 washes, colour fastness ≥ 4.</text>
+    <text x="0" y="176" font-size="14">7 · Check lining in OUR OWN colourway (sand ground, forest green #23352A, cognac #9A6238, fine black line), repeat 30–40 mm. NO branded or registered house check —</text>
+    <text x="20" y="200" font-size="14">no Burberry Haymarket, no Barbour tartan, no third-party name, selvedge mark or logo on the fabric. Supplier confirms in writing that the design is free to use.</text>
   </g>
 </svg>
