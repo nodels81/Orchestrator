@@ -57,6 +57,18 @@ kein Einstieg über Windhunde
 | PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |
 | VERP-01 | Verpackung + Kennzeichnung (Entwurf, Björn entscheidet) | `specs/VERP-01-verpackung.md` |
 
+### Textillinie — Entwurf, NICHT freigegeben
+
+Aus den eigenen Produkten von „Herr Bello & Frau Wuff" abgeleitet. **Kein Einkäufer fragt diese
+Modelle an, bevor Björn die Kategorie freigegeben hat** — die Werkstoffliste oben (Leder, Messing,
+keine Naht, kein Garn) gilt für die Lederlinie und deckt Textil nicht ab. Offene Entscheidungen
+stehen in Abschnitt 8 der jeweiligen Spec.
+
+| Modell | Beschreibung | Spec |
+|---|---|---|
+| RC-01 | Regencape Oilskin (gewachste Baumwolle), vorne durchgehend offen, Ärmel am Unterarm mit Messing-Druckknöpfen schließbar, Kapuze, 3 Größen | `specs/RC-01-regencape-oilskin.md` |
+| HM-01 | Hundemantel leicht gefüttert: Oilskin außen, Vlies 100 g/m², Karo-Baumwollfutter, Stehkragen, Bauchgurt, 4 Größen (Rückenlänge 45/55/65/75 cm) | `specs/HM-01-hundemantel-gefuettert.md` |
+
 Grundsatz laut Björn: **schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung
 kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-01 und LE-01 sind
 die Kernmodelle, HB-02 die geflochtene Variante. Spätere Kandidaten (nicht jetzt anfragen):

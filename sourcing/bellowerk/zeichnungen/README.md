@@ -11,6 +11,12 @@ WeChat, E-Mail). Jede Anfrage an einen Lieferanten bekommt die passende PNG plus
 | `PATCH-01-lederpatch.svg/.png` | Lederpatch graviert PA-M 85×18 und PA-S 65×14, Bohrbild, Schnitt | v1.1 |
 | `HS-01-handschlaufe.svg/.png` | Handschlaufe 50 cm | v1.0 |
 | `HB-02-geflochten.svg/.png` | Flechthalsband: flache Enden, Mystery Braid mit O-Ring, Patch | v1.0 |
+| `RC-01-regencape.svg/.png` | **Schnittmuster** Regencape Oilskin: Rücken, Vorderteil, Kapuze, Kragen, Tasche, Riegel, 3 Größen | v1.0 |
+| `HM-01-hundemantel.svg/.png` | **Schnittmuster** Hundemantel gefüttert: Rückenteil, Kragen, Bauchgurt, Passe, 4 Größen | v1.0 |
+
+Die beiden Schnittmuster gehören zur **Textillinie — noch nicht von Björn freigegeben**
+(`specs/RC-01-…`, `specs/HM-01-…`, jeweils Abschnitt 8). Sie zeigen die Netto-Linien mit allen
+Maßen; die 1:1-PDF- und DXF-Dateien liefert der Hersteller, siehe `../../vorlagen/05-schnittmuster-anfordern.md`.
 
 Startwerte (Größentabellen, Lochabstände) sind aus der Kernserie abgeleitet und von Björn am
 Referenzstück zu bestätigen. Änderungen: SVG editieren, dann PNG neu rendern:
