@@ -129,6 +129,15 @@ class Abteilung:
             "und begruendest das im Feld 'anmerkung'.\n"
         )
 
+    def auftrag_kontext(self, auftrag: dict) -> str:
+        """Unterlagen, die nur zu diesem einen Auftrag gehoeren.
+
+        Sie gehoeren in die Nutzernachricht, nicht in den System-Prompt: dort
+        wuerden sie ihn bei jedem Auftrag veraendern und damit den Zwischenspeicher
+        entwerten. Standard ist leer; Abteilungen mit umfangreichen Unterlagen
+        ueberschreiben das und waehlen nach Auftragsziel aus."""
+        return ""
+
     def antwortformat(self) -> str:
         """Kurz gehalten: jedes Wort hier geht bei jedem Aufruf mit."""
         laenge = ""
@@ -176,6 +185,9 @@ class Abteilung:
             "ABNAHMEKRITERIEN:\n"
             + "\n".join(f"  {i+1}. {k}" for i, k in enumerate(kriterien))
         )
+        unterlagen = self.auftrag_kontext(auftrag)
+        if unterlagen:
+            nutzer += "\n\n" + unterlagen
         erinnerung = self._erinnerung(auftrag)
         if erinnerung:
             nutzer += "\n\n" + erinnerung

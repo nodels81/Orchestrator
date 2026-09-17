@@ -6,20 +6,31 @@ Test: .venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vig
 """
 
 import os
+import re
 
 from abteilung_basis import Abteilung, einzeltest, BASIS
 
 SOURCING = os.path.join(BASIS, "sourcing")
+SPECS = os.path.join(SOURCING, "bellowerk", "specs")
+
+# Steht in jeder Anfrage und aendert sich nicht zwischen Auftraegen — gehoert in
+# den System-Prompt, wo der Zwischenspeicher greift.
 KONTEXT_DATEIEN = [
     "bellowerk/markenbrief.md",
-    "bellowerk/specs/HB-01-halsband.md",
-    "bellowerk/specs/LE-01-fuehrleine.md",
-    "bellowerk/specs/PATCH-01-markenpatch.md",
     "lieferanten/shortlist.md",
     "wissen/plattformen.md",
     "wissen/verhandlung.md",
     "wissen/materialkunde.md",
 ]
+
+# Tech Packs haengen am einzelnen Auftrag: eine Anfrage zu HB-01 braucht die
+# Leinen-Spec nicht. Sie gehen darum auftragsbezogen in die Nutzernachricht.
+# Ohne erkennbares Kuerzel bleibt es bei diesen dreien — dem bisherigen Umfang.
+STANDARD_SPECS = ["HB-01", "LE-01", "PATCH-01"]
+# Der Patch sitzt auf jedem Produkt; seine Spec gilt immer mit.
+IMMER_SPEC = "PATCH-01"
+KUERZEL = re.compile(r"\b((?:HB|LE|HS|PATCH|VERP)-\d{2})\b", re.IGNORECASE)
+
 MAX_KONTEXT_ZEICHEN = 60_000
 
 
@@ -35,6 +46,7 @@ def _pfad(rel: str) -> str:
 
 
 def sourcing_kontext() -> str:
+    """Der feste Teil: Markenbrief, Shortlist, Wissensdateien."""
     teile = []
     for rel in KONTEXT_DATEIEN:
         pfad = _pfad(rel)
@@ -43,6 +55,43 @@ def sourcing_kontext() -> str:
                 teile.append(f"### {rel}\n{f.read()}")
     text = "\n\n".join(teile)
     return text[:MAX_KONTEXT_ZEICHEN]
+
+
+def spec_dateien() -> dict[str, str]:
+    """Kuerzel -> Dateiname, aus dem Ordner gelesen statt fest verdrahtet.
+    So steht jede vorhandene Spec zur Verfuegung, auch HB-02, HS-01 oder VERP-01."""
+    gefunden = {}
+    if os.path.isdir(SPECS):
+        for name in sorted(os.listdir(SPECS)):
+            treffer = KUERZEL.match(name)
+            if name.endswith(".md") and treffer:
+                gefunden[treffer.group(1).upper()] = name
+    return gefunden
+
+
+def specs_fuer(ziel: str) -> list[str]:
+    """Welche Tech Packs braucht dieser Auftrag? Kuerzel aus dem Ziel lesen."""
+    vorhanden = spec_dateien()
+    genannt = [k.upper() for k in KUERZEL.findall(ziel or "")]
+    gewaehlt = [k for k in genannt if k in vorhanden]
+    if not gewaehlt:
+        gewaehlt = [k for k in STANDARD_SPECS if k in vorhanden]
+    elif IMMER_SPEC in vorhanden and IMMER_SPEC not in gewaehlt:
+        gewaehlt.append(IMMER_SPEC)
+    # Reihenfolge stabil halten, Doppelte raus.
+    return list(dict.fromkeys(gewaehlt))
+
+
+def spec_kontext(ziel: str) -> str:
+    teile = []
+    for kuerzel in specs_fuer(ziel):
+        pfad = os.path.join(SPECS, spec_dateien()[kuerzel])
+        with open(pfad, encoding="utf-8") as f:
+            teile.append(f"### specs/{spec_dateien()[kuerzel]}\n{f.read()}")
+    if not teile:
+        return ""
+    return ("TECH PACKS ZU DIESEM AUFTRAG (bindend):\n\n"
+            + "\n\n".join(teile))[:MAX_KONTEXT_ZEICHEN]
 
 
 class EinkaufChina(Abteilung):
@@ -87,10 +136,17 @@ class EinkaufChina(Abteilung):
     )
 
     def system_prompt(self) -> str:
+        """Ohne Tech Packs — die haengen am Auftrag und stehen in auftrag_kontext."""
         kontext = sourcing_kontext()
         if not kontext:
             return super().system_prompt()
         return super().system_prompt() + "\n\nEINKAUFSUNTERLAGEN (bindend):\n" + kontext
+
+    def auftrag_kontext(self, auftrag: dict) -> str:
+        """Nur die Tech Packs, die dieser Auftrag nennt. Ohne erkennbares Kuerzel
+        die drei Standardspecs. Der Patch gilt immer mit, er sitzt auf jedem
+        Produkt."""
+        return spec_kontext(auftrag.get("ziel", ""))
 
 
 if __name__ == "__main__":
