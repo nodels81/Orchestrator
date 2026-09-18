@@ -88,8 +88,8 @@ Edges bevelled along the whole length, including the braid strands.
 - **Step 0 — leather swatches:** small swatches of every colour offered (grey, dark brown, olive,
   cognac), no finished pieces. No cost, no commitment. This is the first thing we ask for.
 - **Step 1 — pre-production sample:** 2 pcs (olive, 20 mm), as before.
-- **Step 2 — pilot batch:** 10 pcs, maybe 20 — **not** a 100-pc firm order. Colour split to be
-  confirmed once golden sample is approved. We want to see how they turn out before committing further.
+- **Step 2 — pilot batch:** **10 pcs** — **not** a 100-pc firm order. Colour split to be confirmed
+  once golden sample is approved. We want to see how they turn out before committing further.
 - Packing: coiled, paper band, 1 pc per kraft bag with sticker; 10 pcs per inner carton.
 
 ## 7. Deliverables with the order

@@ -68,8 +68,8 @@ braided length. Holes on the flat hole end: 5 holes, pitch 25 mm, as HB-01.
   cognac, black), no finished pieces. No cost, no commitment. This is the first thing we ask for.
 - **Step 1 — pre-production sample:** 1 pc size M olive, 1 pc size M two-tone (dark brown + grey) if
   feasible, as before.
-- **Step 2 — pilot batch:** 10 pcs, maybe 20 — **not** the previous 60-pc firm order. Size split to
-  be confirmed once golden sample is approved.
+- **Step 2 — pilot batch:** **10 pcs each of sizes M, L, XL (30 pcs total)** — size S not included in
+  this first pilot. Not the previous 60-pc firm order — we want to see how they turn out first.
 - Packing as HB-01.
 
 ## 7. Quotation questions

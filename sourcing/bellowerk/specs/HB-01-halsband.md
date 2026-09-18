@@ -70,9 +70,9 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
 - **Step 0 — leather swatches:** small swatches of every colour offered (grey, dark brown, olive,
   cognac), no finished pieces. No cost, no commitment. This is the first thing we ask for.
 - **Step 1 — pre-production sample:** 1 pc per size, colour olive, as before.
-- **Step 2 — pilot batch:** 10 pcs, maybe 20 — **not** the previous 100-pc firm order. Size/colour
-  split to be confirmed once golden sample is approved. We want to see how they turn out before
-  committing to a larger order.
+- **Step 2 — pilot batch:** **10 pcs each of sizes M, L, XL (30 pcs total)** — size S not included in
+  this first pilot. Colour split to be confirmed once golden sample is approved. Not the previous
+  100-pc firm order — we want to see how they turn out first.
 - Packing: 1 pc in kraft paper bag with size sticker (model, size, colour); 25 pcs per inner carton.
 - Care card (we supply artwork) in each bag.
 
