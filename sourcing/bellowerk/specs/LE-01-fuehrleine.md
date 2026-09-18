@@ -27,7 +27,7 @@ signature look. Leather patch PATCH-01 near hook B.
 | O-rings 1 + 2 | Welded, ground smooth, solid brass, **outer Ø 30 mm**, wire Ø 5 mm, min. 3 kN. |
 | O-ring 3 | Welded, ground smooth, solid brass, **outer Ø 40 mm**, wire Ø 5 mm, min. 3 kN. |
 | Screws | Chicago screws solid brass, domed head Ø 9 mm, post 8 mm, thread-locked. **5 pcs** (1 per attachment) + 2 for the patch. |
-| Patch | PATCH-01, **110 × 20 mm**, 2 Chicago screws **93 mm** apart. |
+| Patch | PATCH-01 **PA-L, 110 × 18 mm**, 2 Chicago screws **93 mm** apart (hole centres 8.5 mm from each end). |
 | Edges | Bevelled, burnished, no paint — including the braid strands. |
 
 ## 3. Dimensions
@@ -80,7 +80,8 @@ Plus 248 cm with both hooks on the dog (two dogs / tie-out).
 9. Total strap cut length: 248 cm + 15 + 15 (hooks) + 30 + 30 (rings 1, 2) = **340 cm (+2 cm)**.
    One hide per lead for colour match.
 
-Patch PATCH-01 sits on the hook-B side, its outer end **30 mm** before the screw of the hook B braid.
+Patch PATCH-01 PA-L sits on the hook-B side, its outer end **30 mm** before the screw of the hook B braid,
+i.e. **185 mm** from the hook B eye. It is the large 110 mm patch, not the small PA-S.
 
 ## 5. Quantity and packaging
 
@@ -111,4 +112,3 @@ the physical lead before the order is placed:
 
 - Ring positions 80 / 168 / 245 cm and the 260 cm overall length.
 - Ring sizes: Ø 30 mm at rings 1 + 2, Ø 40 mm at ring 3.
-- Patch 110 × 20 mm — this is larger than the PA-S 65 × 14 mm listed in PATCH-01; decide which one applies.

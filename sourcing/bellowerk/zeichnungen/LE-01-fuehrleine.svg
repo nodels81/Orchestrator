@@ -70,8 +70,10 @@
     <!-- brand patch PATCH-01, 110 x 20 mm, 2 screws -->
     <rect x="1247" y="211" width="55" height="24" rx="4" stroke-width="1.5"/>
     <g stroke-width="1.5" fill="#000"><circle cx="1256" cy="223" r="3.5"/><circle cx="1293" cy="223" r="3.5"/></g>
-    <line x1="1274" y1="211" x2="1220" y2="150" stroke-width="1"/>
-    <text x="1040" y="144" fill="#000" stroke="none" font-size="14">leather patch PATCH-01, 110 × 20 mm, 2 Chicago screws 93 mm apart</text>
+    <line x1="1274" y1="211" x2="1238" y2="162" stroke-width="1"/>
+    <text x="1020" y="130" fill="#000" stroke="none" font-size="14">leather patch PATCH-01 PA-L, 110 × 18 mm</text>
+    <text x="1020" y="150" fill="#000" stroke="none" font-size="14">2 Chicago screws 93 mm apart, outer end</text>
+    <text x="1020" y="170" fill="#000" stroke="none" font-size="14">185 mm from the hook B eye</text>
   </g>
 
   <!-- ====================== DIMENSION CHAIN ====================== -->
