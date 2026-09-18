@@ -1,71 +1,86 @@
-# LE-01 — Adjustable Leather Lead, 3.00 m (Tech Pack v1.1, 9 Sep 2026)
+# LE-01 — Adjustable Leather Lead, 2.60 m (Tech Pack v2.0, 18 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
-Attachments: `zeichnungen/LE-01-fuehrleine.png`, photos `bilder/LE-01-detail-karabiner-flechtung.jpg`
-(braided hook attachment) and `bilder/LE-01-flechtung-ringe-farben.jpg` (four colours, ring in braid, patch).
+
+**v2.0 replaces v1.1.** v1.1 was an estimate (3.00 m, rings at 45/140/245, 25 mm rings). This version is
+reverse-engineered from the physical golden sample, measured 18 Sep 2026. All lengths, ring sizes and the
+braid geometry below come from that measurement. **One change against the sample:** on the sample rings 1
+and 2 are held by a leather knot — here they are braided, like every other attachment. No knots anywhere.
+
+Drawings: `zeichnungen/LE-01-fuehrleine.png` (sheet 1, general arrangement, 1:5) and
+`zeichnungen/LE-01-detail-flechtung.png` (sheet 2, braided attachment, **full size 1:1**, A4 landscape).
+Photos: `bilder/LE-01-detail-karabiner-flechtung.jpg`, `bilder/LE-01-flechtung-ringe-farben.jpg`.
 
 ## 1. Product
 
-Long lead, 3.00 m, **three-way adjustable, six working lengths**. Solid brass swivel trigger snap at
-both ends, three welded solid brass O-rings fixed along the strap. Single-layer leather, no stitching,
-no rivets. **Hooks and rings are attached by a braided section ("mystery braid", 3-strand from one
-piece) plus one Chicago screw** — this is the signature look, see photos. Leather patch PATCH-01 near hook A.
+Adjustable lead, **2.60 m overall**, three-way adjustable, six working lengths. Solid brass swivel trigger
+snap at both ends, three welded solid brass O-rings. Single-layer leather, no stitching, no rivets.
+**Every hook and every ring is held by a 3-strand "mystery braid" plus one Chicago screw** — this is the
+signature look. Leather patch PATCH-01 near hook B.
 
 ## 2. Material
 
 | Part | Specification |
 |---|---|
-| Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm**, width **20 mm** (option 25 mm). One continuous strap, no joints. Width 20 mm confirmed by Björn. Colours: grey, dark brown, olive, cognac, black (see photos `bilder/LE-01-*.jpg`). |
-| Snap hooks (2) | Swivel trigger snap ("swivel eye bolt snap"), **solid brass**, polished, eye for 20 mm strap, min. breaking load **2.0 kN**, strong spring. |
-| O-rings (3) | Welded, ground smooth, solid brass, inner Ø 25 mm, wire Ø 5 mm, min. 3 kN. |
-| Screws | Chicago screws solid brass, domed head Ø 8–9 mm, post 8 mm, thread-locked. 1 per attachment. |
-| Patch | PATCH-01 PA-S (65 × 14 mm), 2 Chicago screws. |
-| Edges | Bevelled, burnished, no paint. |
+| Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm**, width **20 mm ±0.5**. One continuous strap, no joints. Colours: grey, dark brown, olive, cognac, black. |
+| Snap hooks (2) | Swivel trigger snap ("swivel eye bolt snap"), **solid brass**, polished, overall length **60 mm**, eye for 20 mm strap, min. breaking load **2.0 kN**, strong spring. |
+| O-rings 1 + 2 | Welded, ground smooth, solid brass, **outer Ø 30 mm**, wire Ø 5 mm, min. 3 kN. |
+| O-ring 3 | Welded, ground smooth, solid brass, **outer Ø 40 mm**, wire Ø 5 mm, min. 3 kN. |
+| Screws | Chicago screws solid brass, domed head Ø 9 mm, post 8 mm, thread-locked. **5 pcs** (1 per attachment) + 2 for the patch. |
+| Patch | PATCH-01, **110 × 20 mm**, 2 Chicago screws **93 mm** apart. |
+| Edges | Bevelled, burnished, no paint — including the braid strands. |
 
-## 3. Dimensions (all measured from the inner edge of hook A eye, ±1 cm)
+## 3. Dimensions
 
-| Position | Item | Distance from hook A |
+Datum **0 = inner edge of the hook A eye**. All ring positions to the **ring centre**, tolerance **±1 cm**.
+
+| Position | Item | Distance from hook A eye |
 |---|---|---|
-| 0 cm | Hook A | 0 |
-| **45 cm** | Ring 1 | 45 |
-| **140 cm** | Ring 2 | 140 |
-| **245 cm** | Ring 3 | 245 |
-| 300 cm | Hook B | 300 |
+| 0 cm | Hook A (braided, no ring) | 0 |
+| **80 cm** | Ring 1 — Ø 30 mm | 80 |
+| **168 cm** | Ring 2 — Ø 30 mm | 168 |
+| **245 cm** | Ring 3 — Ø 40 mm | 245 |
+| 248 cm | Hook B | 248 |
 
-Total length hook eye to hook eye: **300 cm**. Rings are fixed (they do not slide).
+- Hook eye to hook eye: **248 cm**
+- **Overall, tip of hook A to tip of hook B: 260 cm**
+- Ring 3 to hook B eye: **3 cm** (both caught in the same fold)
+- Rings are fixed and must not slide.
 
 ### Six working lengths
 
 | Clip | Handle loop | Working length |
 |---|---|---|
-| Hook B → Ring 3 | 55 cm | 245 cm |
-| Hook B → Ring 2 | 160 cm (over shoulder, hands-free) | 140 cm |
-| Hook B → Ring 1 | 255 cm (cross-body) | 45 cm |
-| Hook A → Ring 1 | 45 cm | 255 cm |
-| Hook A → Ring 2 | 140 cm | 160 cm |
-| Hook A → Ring 3 | 245 cm | 55 cm |
+| Hook A → Ring 1 | 80 cm | 168 cm |
+| Hook A → Ring 2 | 168 cm (over shoulder, hands-free) | 80 cm |
+| Hook A → Ring 3 | 245 cm (cross-body) | 3 cm |
+| Hook B → Ring 1 | 168 cm | 80 cm |
+| Hook B → Ring 2 | 80 cm | 168 cm |
+| Hook B → Ring 3 | — | 245 cm |
 
-Plus 300 cm with both hooks (two dogs / tie-out).
+Plus 248 cm with both hooks on the dog (two dogs / tie-out).
 
-## 4. Construction — braided attachment (default, as on photos)
+## 4. Construction — braided attachment (all 5 positions)
 
-At each hook and each ring:
-1. Strap end passes through the hook eye / ring and folds back on itself **120 mm**.
-2. Both layers get **two lengthwise slits** each, so the doubled strap forms three strands over
-   **80 mm**; braid as a **3-strand mystery braid (trick braid)** — the pattern shows the chevron "V"
-   look in the photo. Braid tight, even, 6–8 crossings.
-3. The free end of the fold lies flat behind the braid on the inside and is fixed with **one Chicago
-   screw** through both layers, 15 mm from the end of the braid.
-4. For the three rings: the ring sits at the top of the braided loop; the strap continues on both
-   sides (the braid is made in the doubled section around the ring, same method, one screw).
-5. Total strap cut length: 300 cm + 5 attachments × 12 cm = **360 cm** (+2 cm). One hide per lead
-   for colour match.
+**Sheet 2 of the drawing is full size 1:1. Print it at 100 % and check the control bar (100 mm) before use.**
 
-Alternative if the factory cannot braid: plain fold 50 mm, 2 Chicago screws (as in drawing v1.0) —
-only with Björn's approval, quoted separately.
+1. The strap passes through the ring / hook eye and folds back on itself **150 mm**.
+2. Both layers get **two lengthwise slits** over **115 mm**, starting 10 mm after the fold, so the doubled
+   strap forms three strands of 6.7 mm. Slit ends are rounded with a 2 mm punch so they cannot tear.
+   The strands stay attached at both ends — the strap is never cut through (mystery braid / trick braid).
+3. Braid the three doubled strands tight and even, **9–10 crossings**, chevron "V" pattern as in the photos.
+4. The free end lies flat on the inside and is fixed with **one Chicago screw** 10 mm after the end of the
+   braid; the free end stops 20 mm after the screw, edge bevelled. Screw heads on the grain side.
+5. **Hook A:** braid only, no ring.
+6. **Hook B:** ring 3 **and** the hook eye are caught in the **same fold**; the ring sits 30 mm before the hook eye.
+7. **Rings 1 and 2:** one continuous strap. At the ring position the strap is folded back through the ring
+   by 150 mm (bight) and the doubled section is braided as above. The braid lies on the hook-B side of both
+   rings. **The knot on the sample is not accepted.**
+8. Attachment strength ≥ **2.0 kN**.
+9. Total strap cut length: 248 cm + 15 + 15 (hooks) + 30 + 30 (rings 1, 2) = **340 cm (+2 cm)**.
+   One hide per lead for colour match.
 
-Patch PATCH-01 at 80 mm from hook A braid end, centred, 2 screws. All screw heads on the grain side.
-Edges bevelled along the whole length, including the braid strands.
+Patch PATCH-01 sits on the hook-B side, its outer end **30 mm** before the screw of the hook B braid.
 
 ## 5. Quantity and packaging
 
@@ -87,4 +102,13 @@ the braided attachment: ≥ 2.0 kN), REACH Cr(VI) test report.
 5. Production lead time after golden sample approval
 6. Payment terms (30 % / 70 % before shipment after inspection)
 7. Pattern files incl. slit layout included — yes/no
-8. Photo + weight (grams) of the exact snap hook and O-ring you will use; tensile test available?
+8. Photo + weight (grams) of the exact snap hook and O-rings you will use; tensile test available?
+
+## 8. To confirm at the golden sample
+
+These come from measuring the sample and are the values the factory must hit — check them once against
+the physical lead before the order is placed:
+
+- Ring positions 80 / 168 / 245 cm and the 260 cm overall length.
+- Ring sizes: Ø 30 mm at rings 1 + 2, Ø 40 mm at ring 3.
+- Patch 110 × 20 mm — this is larger than the PA-S 65 × 14 mm listed in PATCH-01; decide which one applies.

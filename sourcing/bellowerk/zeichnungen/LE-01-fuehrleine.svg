@@ -1,108 +1,206 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1400" height="700" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.1, 9 Sep 2026</text>
-  <text x="40" y="66" fill="#000" stroke="none">One continuous strap, veg-tan oiled cowhide 3.5–4.0 mm · 2 solid brass swivel bolt snaps · 3 welded solid brass O-rings · hooks and rings held by 3-strand mystery braid + 1 Chicago screw · NO stitching, NO rivets</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1000" viewBox="0 0 1640 1000" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1640" height="1000" fill="#fff" stroke="none"/>
 
-  <!-- scale: 1 cm = 4 px horizontally. 300 cm = 1200 px. origin x=120 -->
-  <g id="strap">
-    <rect x="120" y="200" width="1200" height="20" stroke-width="2.5"/>
+  <text x="40" y="42" font-size="25" font-weight="bold" fill="#000" stroke="none">LE-01 · Adjustable Leather Lead 2.60 m · 20 mm · Bellowerk Manufaktur · v2.0 · 18 Sep 2026</text>
+  <text x="40" y="68" font-size="15" fill="#000" stroke="none">Sheet 1/2 — general arrangement. Length to scale 1:5. Strap width, hooks and rings drawn enlarged for legibility — THE FIGURES ARE BINDING, not the picture.</text>
+  <text x="40" y="90" font-size="15" fill="#000" stroke="none">Sheet 2/2 (LE-01-detail-flechtung) is the 1:1 braid detail. Reverse-engineered from the golden sample, measured 18 Sep 2026. All 5 attachments are braided — no knots.</text>
+
+  <!-- ====================== PLAN VIEW ====================== -->
+  <!-- scale 1 cm = 5 px, origin x = 160 = inner edge of hook A eye -->
+  <g id="lead">
+    <!-- strap -->
+    <rect x="160" y="210" width="1240" height="26" stroke-width="2.5"/>
+
     <!-- hook A -->
-    <g transform="translate(120,210)">
-      <path d="M 0 0 H -20 A 12 12 0 1 0 -44 0 A 12 12 0 1 0 -20 0" stroke-width="3"/>
-      <path d="M -44 0 H -70 A 10 10 0 0 1 -70 -18 L -60 -18" stroke-width="3"/>
-      <path d="M -70 0 A 10 10 0 0 0 -70 18 L -50 18" stroke-width="3"/>
+    <g transform="translate(160,223)">
+      <circle cx="-14" cy="0" r="14" stroke-width="2.5"/>
+      <path d="M -28 0 h -12 a 9 9 0 0 1 -9 -9 v -4" stroke-width="2.5"/>
+      <path d="M -49 -13 a 13 13 0 1 0 -18 13 a 13 13 0 1 0 18 13 v -9" stroke-width="2.5"/>
     </g>
-    <text x="20" y="250" fill="#000" stroke="none" font-size="14">hook A</text>
+    <text x="78" y="196" fill="#000" stroke="none" font-size="14" font-weight="bold">hook A</text>
+
     <!-- hook B -->
-    <g transform="translate(1320,210)">
-      <path d="M 0 0 H 20 A 12 12 0 1 1 44 0 A 12 12 0 1 1 20 0" stroke-width="3"/>
-      <path d="M 44 0 H 70 A 10 10 0 0 0 70 -18 L 60 -18" stroke-width="3"/>
-      <path d="M 70 0 A 10 10 0 0 1 70 18 L 50 18" stroke-width="3"/>
+    <g transform="translate(1400,223)">
+      <circle cx="14" cy="0" r="14" stroke-width="2.5"/>
+      <path d="M 28 0 h 12 a 9 9 0 0 0 9 -9 v -4" stroke-width="2.5"/>
+      <path d="M 49 -13 a 13 13 0 1 1 18 13 a 13 13 0 1 1 -18 13 v -9" stroke-width="2.5"/>
     </g>
-    <text x="1330" y="250" fill="#000" stroke="none" font-size="14">hook B</text>
-    <!-- folds 5 cm = 20 px at hook A (120..140), rings and hook B -->
-    <g stroke-dasharray="5 3">
-      <line x1="140" y1="200" x2="140" y2="220"/>
-      <line x1="1300" y1="200" x2="1300" y2="220"/>
-    </g>
-    <!-- rings at 45,140,245 cm => x = 120+180=300, 120+560=680, 120+980=1100 -->
+    <text x="1418" y="196" fill="#000" stroke="none" font-size="14" font-weight="bold">hook B</text>
+
+    <!-- rings: 1 and 2 = outer 30 mm ("3 cm"), 3 = outer 40 mm ("4 cm") -->
     <g stroke-width="3">
-      <circle cx="300" cy="210" r="14"/>
-      <circle cx="680" cy="210" r="14"/>
-      <circle cx="1100" cy="210" r="14"/>
+      <circle cx="560" cy="223" r="17"/>
+      <circle cx="1000" cy="223" r="17"/>
+      <circle cx="1385" cy="223" r="23"/>
     </g>
-    <!-- braided sections (12 cm = 48 px) at each attachment, 1 screw each -->
     <g stroke-width="1.2">
-      <path d="M 120 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="176" cy="210" r="3.5"/>
-      <path d="M 314 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="370" cy="210" r="3.5"/>
-      <path d="M 694 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="750" cy="210" r="3.5"/>
-      <path d="M 1114 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="1170" cy="210" r="3.5"/>
-      <path d="M 1264 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="1258" cy="210" r="3.5"/>
+      <circle cx="560" cy="223" r="12"/>
+      <circle cx="1000" cy="223" r="12"/>
+      <circle cx="1385" cy="223" r="17"/>
     </g>
-    <text x="270" y="180" fill="#000" stroke="none" font-size="14">ring 1</text>
-    <text x="650" y="180" fill="#000" stroke="none" font-size="14">ring 2</text>
-    <text x="1070" y="180" fill="#000" stroke="none" font-size="14">ring 3</text>
-    <!-- nameplate at 8 cm => x=120+32=152, 40x14 mm at this scale ~ 16x6px; draw symbolic 40x14 px -->
-    <rect x="192" y="204" width="26" height="12" rx="3" stroke-width="1.5"/>
-    <text x="150" y="250" fill="#000" stroke="none" font-size="13">leather patch PATCH-01 PA-S (65×14 mm) at 8 cm after braid</text>
+    <text x="536" y="196" fill="#000" stroke="none" font-size="14" font-weight="bold">ring 1</text>
+    <text x="976" y="196" fill="#000" stroke="none" font-size="14" font-weight="bold">ring 2</text>
+    <text x="1300" y="176" fill="#000" stroke="none" font-size="14" font-weight="bold">ring 3</text>
+    <line x1="1370" y1="182" x2="1385" y2="200" stroke-width="1"/>
+
+    <!-- braid zones: 115 mm = 57.5 px. chevron pattern -->
+    <g stroke-width="1.2">
+      <!-- hook A, braid runs to the right -->
+      <path d="M 160 212 l 9 24 l 9 -24 l 9 24 l 9 -24 l 9 24 l 9 -24 l 4 11"/>
+      <path d="M 160 234 l 9 -24 l 9 24 l 9 -24 l 9 24 l 9 -24 l 9 24 l 4 -11"/>
+      <!-- ring 1, braid runs to the right -->
+      <path d="M 560 212 l 9 24 l 9 -24 l 9 24 l 9 -24 l 9 24 l 9 -24 l 4 11"/>
+      <path d="M 560 234 l 9 -24 l 9 24 l 9 -24 l 9 24 l 9 -24 l 9 24 l 4 -11"/>
+      <!-- ring 2, braid runs to the right -->
+      <path d="M 1000 212 l 9 24 l 9 -24 l 9 24 l 9 -24 l 9 24 l 9 -24 l 4 11"/>
+      <path d="M 1000 234 l 9 -24 l 9 24 l 9 -24 l 9 24 l 9 -24 l 9 24 l 4 -11"/>
+      <!-- hook B / ring 3, braid runs to the left -->
+      <path d="M 1385 212 l -9 24 l -9 -24 l -9 24 l -9 -24 l -9 24 l -9 -24 l -4 11"/>
+      <path d="M 1385 234 l -9 -24 l -9 24 l -9 -24 l -9 24 l -9 -24 l -9 24 l -4 -11"/>
+    </g>
+
+    <!-- chicago screws, 10 mm after each braid -->
+    <g stroke-width="1.5" fill="#000">
+      <circle cx="223" cy="223" r="4"/>
+      <circle cx="623" cy="223" r="4"/>
+      <circle cx="1063" cy="223" r="4"/>
+      <circle cx="1322" cy="223" r="4"/>
+    </g>
+
+    <!-- brand patch PATCH-01, 110 x 20 mm, 2 screws -->
+    <rect x="1247" y="211" width="55" height="24" rx="4" stroke-width="1.5"/>
+    <g stroke-width="1.5" fill="#000"><circle cx="1256" cy="223" r="3.5"/><circle cx="1293" cy="223" r="3.5"/></g>
+    <line x1="1274" y1="211" x2="1220" y2="150" stroke-width="1"/>
+    <text x="1040" y="144" fill="#000" stroke="none" font-size="14">leather patch PATCH-01, 110 × 20 mm, 2 Chicago screws 93 mm apart</text>
   </g>
 
-  <!-- dimension chain from hook A -->
-  <g stroke-width="1.5">
-    <line x1="120" y1="300" x2="300" y2="300"/>
-    <line x1="120" y1="290" x2="120" y2="310"/>
-    <line x1="300" y1="290" x2="300" y2="310"/>
-    <text x="210" y="322" text-anchor="middle" fill="#000" stroke="none">45 cm</text>
+  <!-- ====================== DIMENSION CHAIN ====================== -->
+  <g stroke-width="1.3">
+    <!-- extension lines -->
+    <g stroke-dasharray="4 4" stroke-width="0.8">
+      <line x1="160" y1="240" x2="160" y2="470"/>
+      <line x1="560" y1="240" x2="560" y2="330"/>
+      <line x1="1000" y1="240" x2="1000" y2="380"/>
+      <line x1="1385" y1="240" x2="1385" y2="430"/>
+      <line x1="1400" y1="240" x2="1400" y2="470"/>
+      <line x1="95" y1="240" x2="95" y2="520"/>
+      <line x1="1465" y1="240" x2="1465" y2="520"/>
+    </g>
 
-    <line x1="120" y1="350" x2="680" y2="350"/>
-    <line x1="680" y1="340" x2="680" y2="360"/>
-    <line x1="120" y1="340" x2="120" y2="360"/>
-    <text x="400" y="372" text-anchor="middle" fill="#000" stroke="none">140 cm</text>
+    <line x1="160" y1="320" x2="560" y2="320"/>
+    <path d="M 160 320 l 9 -4 v 8 z" fill="#000"/><path d="M 560 320 l -9 -4 v 8 z" fill="#000"/>
+    <text x="360" y="312" text-anchor="middle" fill="#000" stroke="none" font-weight="bold">80 cm</text>
 
-    <line x1="120" y1="400" x2="1100" y2="400"/>
-    <line x1="1100" y1="390" x2="1100" y2="410"/>
-    <line x1="120" y1="390" x2="120" y2="410"/>
-    <text x="610" y="422" text-anchor="middle" fill="#000" stroke="none">245 cm</text>
+    <line x1="160" y1="370" x2="1000" y2="370"/>
+    <path d="M 160 370 l 9 -4 v 8 z" fill="#000"/><path d="M 1000 370 l -9 -4 v 8 z" fill="#000"/>
+    <text x="580" y="362" text-anchor="middle" fill="#000" stroke="none" font-weight="bold">168 cm</text>
 
-    <line x1="120" y1="450" x2="1320" y2="450"/>
-    <line x1="1320" y1="440" x2="1320" y2="460"/>
-    <line x1="120" y1="440" x2="120" y2="460"/>
-    <text x="720" y="472" text-anchor="middle" fill="#000" stroke="none">300 cm (hook eye to hook eye) · all positions ±1 cm, measured from inner edge of hook A eye</text>
+    <line x1="160" y1="420" x2="1385" y2="420"/>
+    <path d="M 160 420 l 9 -4 v 8 z" fill="#000"/><path d="M 1385 420 l -9 -4 v 8 z" fill="#000"/>
+    <text x="770" y="412" text-anchor="middle" fill="#000" stroke="none" font-weight="bold">245 cm</text>
 
-    <!-- width -->
-    <line x1="900" y1="150" x2="900" y2="200"/>
-    <line x1="900" y1="150" x2="900" y2="200" stroke-dasharray="3 3"/>
-    <line x1="880" y1="200" x2="880" y2="220"/>
-    <line x1="872" y1="200" x2="888" y2="200"/>
-    <line x1="872" y1="220" x2="888" y2="220"/>
-    <text x="850" y="145" fill="#000" stroke="none" font-size="13">strap width 20 mm ±0.5</text>
+    <line x1="160" y1="470" x2="1400" y2="470"/>
+    <path d="M 160 470 l 9 -4 v 8 z" fill="#000"/><path d="M 1400 470 l -9 -4 v 8 z" fill="#000"/>
+    <text x="780" y="462" text-anchor="middle" fill="#000" stroke="none" font-weight="bold">248 cm — hook eye to hook eye</text>
+
+    <line x1="95" y1="520" x2="1465" y2="520"/>
+    <path d="M 95 520 l 9 -4 v 8 z" fill="#000"/><path d="M 1465 520 l -9 -4 v 8 z" fill="#000"/>
+    <text x="780" y="512" text-anchor="middle" fill="#000" stroke="none" font-size="17" font-weight="bold">260 cm — overall, tip of hook A to tip of hook B</text>
+
+    <text x="40" y="552" fill="#000" stroke="none" font-size="14">All ring positions are measured from the INNER EDGE OF THE HOOK A EYE (datum 0) to the RING CENTRE. Tolerance ±1 cm. Rings are fixed and must not slide.</text>
   </g>
 
-  <!-- detail: braided attachment -->
-  <g transform="translate(60,510)">
-    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Detail: braided attachment at hook / ring (scale ~1:1.5)</text>
-    <circle cx="-2" cy="40" r="22" stroke-width="3"/>
-    <rect x="20" y="30" width="300" height="20" fill="#ddd" stroke="#000"/>
-    <!-- braid chevrons over 80 mm ~ 120 px -->
-    <path d="M 40 32 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16" stroke-width="1.5"/>
-    <path d="M 40 48 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16 l 10 -16 l 10 16" stroke-width="1.5"/>
-    <circle cx="200" cy="40" r="6" fill="#c9a44a" stroke="#000"/>
-    <line x1="40" y1="60" x2="160" y2="60" stroke-width="1.2"/><line x1="40" y1="55" x2="40" y2="65" stroke-width="1.2"/><line x1="160" y1="55" x2="160" y2="65" stroke-width="1.2"/>
-    <text x="100" y="78" text-anchor="middle" fill="#000" stroke="none" font-size="12">braid 80 mm</text>
-    <line x1="20" y1="90" x2="230" y2="90" stroke-width="1.2"/><line x1="20" y1="85" x2="20" y2="95" stroke-width="1.2"/><line x1="230" y1="85" x2="230" y2="95" stroke-width="1.2"/>
-    <text x="125" y="108" text-anchor="middle" fill="#000" stroke="none" font-size="12">fold-back 120 mm</text>
-    <text x="0" y="135" fill="#000" stroke="none" font-size="13">Strap through ring/hook eye, folded back 120 mm. Two lengthwise slits → 3 strands, "mystery braid" (one piece, ends uncut),</text>
-    <text x="0" y="153" fill="#000" stroke="none" font-size="13">6–8 crossings, chevron pattern as photo. Free end flat on the inside, 1 Chicago screw 15 mm after the braid. Attachment ≥ 2.0 kN.</text>
-    <text x="0" y="171" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide · alternative plain fold 50 mm + 2 screws only on request</text>
+  <!-- ====================== DETAIL A: hook B end ====================== -->
+  <g transform="translate(40,600)">
+    <rect x="0" y="0" width="720" height="360" stroke-width="1" stroke="#888"/>
+    <text x="14" y="26" font-weight="bold" fill="#000" stroke="none">DETAIL A — hook B end, scale 1:1.5 · ring 3 and hook B share ONE fold</text>
+
+    <!-- strap, 20 mm wide = 50 px at 1:1.5 (1 mm = 2.5 px); open on the ring side -->
+    <g stroke-width="2.5">
+      <line x1="30" y1="120" x2="450" y2="120"/>
+      <line x1="30" y1="170" x2="450" y2="170"/>
+      <line x1="30" y1="120" x2="30" y2="170"/>
+    </g>
+    <!-- braid 115 mm = 287 px -->
+    <g stroke-width="1.3">
+      <path d="M 163 120 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 17 35"/>
+      <path d="M 163 170 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 17 -35"/>
+    </g>
+    <!-- ring 3, outer 40 mm = 100 px -->
+    <circle cx="450" cy="145" r="50" stroke-width="3"/><circle cx="450" cy="145" r="37.5" stroke-width="1.2"/>
+    <!-- hook B eye + body, ring centre to hook eye = 30 mm = 75 px -->
+    <circle cx="525" cy="145" r="26" stroke-width="2.5"/>
+    <path d="M 551 145 h 22 a 14 14 0 0 0 14 -14 v -6" stroke-width="2.5"/>
+    <path d="M 587 125 a 20 20 0 1 1 28 20 a 20 20 0 1 1 -28 20 v -14" stroke-width="2.5"/>
+    <!-- screw -->
+    <circle cx="138" cy="145" r="9" stroke-width="1.5" fill="#000"/>
+
+    <g stroke-width="1.2">
+      <line x1="163" y1="230" x2="450" y2="230"/>
+      <path d="M 163 230 l 8 -4 v 8 z" fill="#000"/><path d="M 450 230 l -8 -4 v 8 z" fill="#000"/>
+      <text x="306" y="250" text-anchor="middle" fill="#000" stroke="none" font-size="13">braid 115 mm</text>
+
+      <line x1="138" y1="272" x2="163" y2="272"/>
+      <path d="M 138 272 l 8 -4 v 8 z" fill="#000"/><path d="M 163 272 l -8 -4 v 8 z" fill="#000"/>
+      <text x="130" y="292" text-anchor="middle" fill="#000" stroke="none" font-size="13">10 mm</text>
+
+      <line x1="450" y1="272" x2="525" y2="272"/>
+      <path d="M 450 272 l 8 -4 v 8 z" fill="#000"/><path d="M 525 272 l -8 -4 v 8 z" fill="#000"/>
+      <text x="487" y="292" text-anchor="middle" fill="#000" stroke="none" font-size="13">30 mm</text>
+    </g>
+    <text x="14" y="322" fill="#000" stroke="none" font-size="13">Strap end passes through ring 3 AND through the hook eye, then folds back 150 mm. The doubled section is</text>
+    <text x="14" y="340" fill="#000" stroke="none" font-size="13">mystery-braided over 115 mm; free end flat on the inside, 1 Chicago screw 10 mm after the braid.</text>
   </g>
 
-  <g transform="translate(900,510)">
-    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Six working lengths</text>
-    <text x="0" y="24" fill="#000" stroke="none" font-size="13">B→ring 3: 245 · B→ring 2: 140 (loop 160, hands-free) · B→ring 1: 45 cm</text>
-    <text x="0" y="44" fill="#000" stroke="none" font-size="13">A→ring 1: 255 · A→ring 2: 160 · A→ring 3: 55 cm · both hooks: 300 cm</text>
-    <text x="0" y="74" fill="#000" stroke="none" font-size="13">Cut length of strap: 360 cm (300 + 5 attachments × 12 cm).</text>
-    <text x="0" y="94" fill="#000" stroke="none" font-size="13">Swivel bolt snap solid brass, polished, eye 20 mm, ≥ 2 kN.</text>
-    <text x="0" y="114" fill="#000" stroke="none" font-size="13">Colours: grey, dark brown, olive, cognac. One hide per lead.</text>
-    <text x="0" y="134" fill="#000" stroke="none" font-size="13">Screw heads on grain side. Edges bevelled + burnished, no paint.</text>
+  <!-- ====================== DETAIL B: mid ring ====================== -->
+  <g transform="translate(790,600)">
+    <rect x="0" y="0" width="520" height="360" stroke-width="1" stroke="#888"/>
+    <text x="14" y="26" font-weight="bold" fill="#000" stroke="none">DETAIL B — ring 1 and ring 2, scale 1:1.5</text>
+
+    <!-- continuous strap, open on the ring side -->
+    <g stroke-width="2.5">
+      <line x1="100" y1="120" x2="500" y2="120"/>
+      <line x1="100" y1="170" x2="500" y2="170"/>
+      <line x1="500" y1="120" x2="500" y2="170"/>
+    </g>
+    <!-- ring, outer 30 mm = 75 px -->
+    <circle cx="100" cy="145" r="37.5" stroke-width="3"/><circle cx="100" cy="145" r="25" stroke-width="1.2"/>
+    <!-- braid over the doubled section -->
+    <g stroke-width="1.3">
+      <path d="M 140 120 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 17 35"/>
+      <path d="M 140 170 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 17 -35"/>
+    </g>
+    <circle cx="452" cy="145" r="9" stroke-width="1.5" fill="#000"/>
+
+    <g stroke-width="1.2">
+      <line x1="140" y1="230" x2="427" y2="230"/>
+      <path d="M 140 230 l 8 -4 v 8 z" fill="#000"/><path d="M 427 230 l -8 -4 v 8 z" fill="#000"/>
+      <text x="283" y="250" text-anchor="middle" fill="#000" stroke="none" font-size="13">braid 115 mm</text>
+    </g>
+    <text x="14" y="288" fill="#000" stroke="none" font-size="13">ONE continuous strap. At the ring position the strap is folded</text>
+    <text x="14" y="306" fill="#000" stroke="none" font-size="13">back through the ring by 150 mm (bight). The doubled section is</text>
+    <text x="14" y="324" fill="#000" stroke="none" font-size="13">mystery-braided 115 mm, then 1 Chicago screw. Braid lies on the</text>
+    <text x="14" y="342" fill="#000" stroke="none" font-size="13">hook-B side of both rings. NO knot — the sample's knot is replaced.</text>
+  </g>
+
+  <!-- ====================== SPEC BLOCK ====================== -->
+  <g transform="translate(1340,600)">
+    <rect x="0" y="0" width="260" height="360" stroke-width="1" stroke="#888"/>
+    <text x="12" y="26" font-weight="bold" fill="#000" stroke="none">Key data</text>
+    <text x="12" y="52" fill="#000" stroke="none" font-size="13">Strap 20 mm ±0.5, 3.5–4.0 mm</text>
+    <text x="12" y="72" fill="#000" stroke="none" font-size="13">veg-tan oiled cowhide, 1 piece</text>
+    <text x="12" y="92" fill="#000" stroke="none" font-size="13">Cut length 340 cm (+2)</text>
+    <text x="12" y="118" fill="#000" stroke="none" font-size="13">Ring 1 + 2: solid brass, welded,</text>
+    <text x="12" y="136" fill="#000" stroke="none" font-size="13">outer Ø 30 mm, wire Ø 5 mm</text>
+    <text x="12" y="156" fill="#000" stroke="none" font-size="13">Ring 3: outer Ø 40 mm, wire 5 mm</text>
+    <text x="12" y="176" fill="#000" stroke="none" font-size="13">all rings ≥ 3 kN</text>
+    <text x="12" y="202" fill="#000" stroke="none" font-size="13">Hooks: solid brass swivel</text>
+    <text x="12" y="220" fill="#000" stroke="none" font-size="13">trigger snap, length 60 mm,</text>
+    <text x="12" y="238" fill="#000" stroke="none" font-size="13">eye for 20 mm strap, ≥ 2.0 kN</text>
+    <text x="12" y="264" fill="#000" stroke="none" font-size="13">5 × Chicago screw solid brass,</text>
+    <text x="12" y="282" fill="#000" stroke="none" font-size="13">head Ø 9 mm, thread-locked</text>
+    <text x="12" y="308" fill="#000" stroke="none" font-size="13">Edges bevelled + burnished,</text>
+    <text x="12" y="326" fill="#000" stroke="none" font-size="13">no paint. No stitching, no rivets.</text>
+    <text x="12" y="348" fill="#000" stroke="none" font-size="13">Braided attachment ≥ 2.0 kN.</text>
   </g>
 </svg>
