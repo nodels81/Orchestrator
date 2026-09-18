@@ -1,331 +1,150 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1587" height="1123" viewBox="0 0 1587 1123" font-family="Arial, Helvetica, sans-serif" fill="#1a1a1a">
 <rect width="1587" height="1123" fill="#fff"/>
-<text x="40" y="44" font-size="25" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">LE-01 · Sheet 3/3 · HOW THE BRAIDED ATTACHMENT IS MADE — step by step</text>
-<text x="40" y="70" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Bellowerk Manufaktur · v2.0 · 18 Sep 2026 · A3 landscape · The three strands are coloured only to make them easy to follow — it is ONE piece of leather.</text>
-<text x="40" y="92" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The same attachment is used at all five positions: hook A, ring 1, ring 2, and ring 3 + hook B together. Binding dimensions are on sheet 1 and sheet 2.</text>
-<rect x="1066" y="30" width="470" height="76" rx="8" fill="#f7f7f7" stroke="#d5d5d5"/>
-<text x="1080" y="52" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Strands of the same strap:</text>
-<rect x="1080" y="64" width="34" height="13" rx="6" fill="#c0503a"/>
-<text x="1122" y="76" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">strand 1</text>
-<rect x="1230" y="64" width="34" height="13" rx="6" fill="#2e6f9e"/>
-<text x="1272" y="76" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">strand 2</text>
-<rect x="1380" y="64" width="34" height="13" rx="6" fill="#6e8b3d"/>
-<text x="1422" y="76" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">strand 3</text>
-<text x="1080" y="98" font-size="12.5" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">Brass = ring / hook eye · red arrow = the next move</text>
-<g><rect x="40" y="125" width="490" height="290" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="151" r="14" fill="#1a1a1a"/><text x="66" y="156" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">1</text><text x="90" y="157" font-size="16" font-weight="bold" fill="#1a1a1a">Cut the three strands</text></g>
-<g><rect x="543" y="125" width="490" height="290" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="151" r="14" fill="#1a1a1a"/><text x="569" y="156" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">2</text><text x="593" y="157" font-size="16" font-weight="bold" fill="#1a1a1a">Thread the ring, fold back</text></g>
-<g><rect x="1046" y="125" width="490" height="290" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="151" r="14" fill="#1a1a1a"/><text x="1072" y="156" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">3</text><text x="1096" y="157" font-size="16" font-weight="bold" fill="#1a1a1a">Crossing 1 — top strand over the middle</text></g>
-<rect x="80" y="220" width="400" height="56" rx="4" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<rect x="130" y="221.3" width="330" height="16" fill="#c0503a" opacity="0.85"/>
-<rect x="130" y="240.0" width="330" height="16" fill="#2e6f9e" opacity="0.85"/>
-<rect x="130" y="258.7" width="330" height="16" fill="#6e8b3d" opacity="0.85"/>
-<line x1="130" y1="238.7" x2="460" y2="238.7" stroke="#fff" stroke-width="3"/>
-<line x1="130" y1="257.3" x2="460" y2="257.3" stroke="#fff" stroke-width="3"/>
-<circle cx="130" cy="238.7" r="4" fill="#fff" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="130" cy="257.3" r="4" fill="#fff" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="460" cy="238.7" r="4" fill="#fff" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="460" cy="257.3" r="4" fill="#fff" stroke="#8c5c33" stroke-width="2"/>
-<text x="62" y="230" font-size="14" fill="#c0503a" text-anchor="start" font-weight="bold" font-style="normal">1</text>
-<text x="62" y="253" font-size="14" fill="#2e6f9e" text-anchor="start" font-weight="bold" font-style="normal">2</text>
-<text x="62" y="275" font-size="14" fill="#6e8b3d" text-anchor="start" font-weight="bold" font-style="normal">3</text>
-<line x1="130" y1="300" x2="460" y2="300" stroke="#1a1a1a" stroke-width="1.2"/>
-<line x1="130" y1="294" x2="130" y2="306" stroke="#1a1a1a" stroke-width="1.2"/>
-<line x1="460" y1="294" x2="460" y2="306" stroke="#1a1a1a" stroke-width="1.2"/>
-<text x="295" y="318" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">115 mm</text>
-<text x="62" y="350" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Two lengthwise slits over 115 mm divide the 20 mm strap into</text>
-<text x="62" y="368" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">three strands of 6.7 mm. Slit ends punched Ø 2 mm so they</text>
-<text x="62" y="386" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">cannot tear. The strap is NEVER cut through.</text>
-<circle cx="633" cy="248" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="633" cy="248" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<path d="M 633 220 H 973 V 276 H 633" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<path d="M 661 288 H 923" stroke="#8c5c33" stroke-width="20" stroke-linecap="round" opacity="0.55"/>
-<line x1="923" y1="303" x2="693" y2="303" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 693 303 L 706.5 296.5 L 706.5 309.5 Z" fill="#c0392b"/>
-<text x="743" y="325" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">fold back 150 mm</text>
-<text x="565" y="350" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pass the end through the ring (at hook B: through ring 3 AND</text>
-<text x="565" y="368" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">the hook eye) and fold it back on itself by 150 mm. From here</text>
-<text x="565" y="386" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">on every strand is TWO layers thick — braid them as one.</text>
-<circle cx="1126" cy="248" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1126" cy="248" r="19" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<g><line x1="1156" y1="231" x2="1246" y2="231" stroke="#c0503a" stroke-width="14" stroke-linecap="round"/>
-      <line x1="1156" y1="248" x2="1246" y2="248" stroke="#2e6f9e" stroke-width="14" stroke-linecap="round"/>
-      <line x1="1156" y1="265" x2="1246" y2="265" stroke="#6e8b3d" stroke-width="14" stroke-linecap="round"/></g>
-<g><path d="M 1246.0 248.0 C 1261.0 248.0 1261.0 231.0 1276.0 231.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1246.0 248.0 C 1261.0 248.0 1261.0 231.0 1276.0 231.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1246.0 265.0 C 1261.0 265.0 1261.0 265.0 1276.0 265.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1246.0 265.0 C 1261.0 265.0 1261.0 265.0 1276.0 265.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1246.0 231.0 C 1261.0 231.0 1261.0 248.0 1276.0 248.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1246.0 231.0 C 1261.0 231.0 1261.0 248.0 1276.0 248.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1276.0 248.0 C 1291.0 248.0 1291.0 265.0 1306.0 265.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1276.0 248.0 C 1291.0 248.0 1291.0 265.0 1306.0 265.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1276.0 231.0 C 1291.0 231.0 1291.0 231.0 1306.0 231.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1276.0 231.0 C 1291.0 231.0 1291.0 231.0 1306.0 231.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1276.0 265.0 C 1291.0 265.0 1291.0 248.0 1306.0 248.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1276.0 265.0 C 1291.0 265.0 1291.0 248.0 1306.0 248.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/></g>
-<g><line x1="1306" y1="231" x2="1456" y2="231" stroke="#c0503a" stroke-width="14" stroke-linecap="round"/>
-      <line x1="1306" y1="248" x2="1456" y2="248" stroke="#2e6f9e" stroke-width="14" stroke-linecap="round"/>
-      <line x1="1306" y1="265" x2="1456" y2="265" stroke="#6e8b3d" stroke-width="14" stroke-linecap="round"/></g>
-<line x1="1241" y1="209" x2="1281" y2="237" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 1281 237 L 1266.2 234.6 L 1273.7 223.9 Z" fill="#c0392b"/>
-<text x="1196" y="203" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">strand 1 over strand 2</text>
-<text x="1068" y="350" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Start the braid: bring the TOP strand over the middle one.</text>
-<text x="1068" y="368" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Keep the two layers of each strand flat and together, grain</text>
-<text x="1068" y="386" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">side out. Pull every crossing tight before the next one.</text>
-<g><rect x="40" y="440" width="490" height="290" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="466" r="14" fill="#1a1a1a"/><text x="66" y="471" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">4</text><text x="90" y="472" font-size="16" font-weight="bold" fill="#1a1a1a">Crossing 2 — bottom strand over</text></g>
-<g><rect x="543" y="440" width="490" height="290" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="466" r="14" fill="#1a1a1a"/><text x="569" y="471" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">5</text><text x="593" y="472" font-size="16" font-weight="bold" fill="#1a1a1a">THE TRICK — clear the twist</text></g>
-<g><rect x="1046" y="440" width="490" height="290" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="466" r="14" fill="#1a1a1a"/><text x="1072" y="471" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">6</text><text x="1096" y="472" font-size="16" font-weight="bold" fill="#1a1a1a">Finish: 9–10 crossings, then screw</text></g>
-<circle cx="120" cy="563" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="120" cy="563" r="19" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<g><line x1="150" y1="546" x2="210" y2="546" stroke="#c0503a" stroke-width="14" stroke-linecap="round"/>
-      <line x1="150" y1="563" x2="210" y2="563" stroke="#2e6f9e" stroke-width="14" stroke-linecap="round"/>
-      <line x1="150" y1="580" x2="210" y2="580" stroke="#6e8b3d" stroke-width="14" stroke-linecap="round"/></g>
-<g><path d="M 210.0 563.0 C 225.0 563.0 225.0 546.0 240.0 546.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 210.0 563.0 C 225.0 563.0 225.0 546.0 240.0 546.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 210.0 580.0 C 225.0 580.0 225.0 580.0 240.0 580.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 210.0 580.0 C 225.0 580.0 225.0 580.0 240.0 580.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 210.0 546.0 C 225.0 546.0 225.0 563.0 240.0 563.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 210.0 546.0 C 225.0 546.0 225.0 563.0 240.0 563.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 240.0 563.0 C 255.0 563.0 255.0 580.0 270.0 580.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 240.0 563.0 C 255.0 563.0 255.0 580.0 270.0 580.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 240.0 546.0 C 255.0 546.0 255.0 546.0 270.0 546.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 240.0 546.0 C 255.0 546.0 255.0 546.0 270.0 546.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 240.0 580.0 C 255.0 580.0 255.0 563.0 270.0 563.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 240.0 580.0 C 255.0 580.0 255.0 563.0 270.0 563.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 270.0 580.0 C 285.0 580.0 285.0 580.0 300.0 580.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 270.0 580.0 C 285.0 580.0 285.0 580.0 300.0 580.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 270.0 563.0 C 285.0 563.0 285.0 546.0 300.0 546.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 270.0 563.0 C 285.0 563.0 285.0 546.0 300.0 546.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 270.0 546.0 C 285.0 546.0 285.0 563.0 300.0 563.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 270.0 546.0 C 285.0 546.0 285.0 563.0 300.0 563.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/></g>
-<g><line x1="300" y1="546" x2="450" y2="546" stroke="#c0503a" stroke-width="14" stroke-linecap="round"/>
-      <line x1="300" y1="563" x2="450" y2="563" stroke="#2e6f9e" stroke-width="14" stroke-linecap="round"/>
-      <line x1="300" y1="580" x2="450" y2="580" stroke="#6e8b3d" stroke-width="14" stroke-linecap="round"/></g>
-<line x1="240" y1="612" x2="280" y2="580" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 280 580 L 273.5 593.5 L 265.4 583.3 Z" fill="#c0392b"/>
-<text x="180" y="634" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">strand 3 over the new middle</text>
-<text x="62" y="665" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Now the BOTTOM strand crosses over the middle. Repeat these</text>
-<text x="62" y="683" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">two moves alternately — this is an ordinary 3-strand braid,</text>
-<text x="62" y="701" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">top over middle, bottom over middle.</text>
-<circle cx="613" cy="558" r="28" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="613" cy="558" r="18" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<g><path d="M 643.0 558.0 C 658.0 558.0 658.0 541.0 673.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 643.0 558.0 C 658.0 558.0 658.0 541.0 673.0 541.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 643.0 575.0 C 658.0 575.0 658.0 575.0 673.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 643.0 575.0 C 658.0 575.0 658.0 575.0 673.0 575.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 643.0 541.0 C 658.0 541.0 658.0 558.0 673.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 643.0 541.0 C 658.0 541.0 658.0 558.0 673.0 558.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 673.0 558.0 C 688.0 558.0 688.0 575.0 703.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 673.0 558.0 C 688.0 558.0 688.0 575.0 703.0 575.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 673.0 541.0 C 688.0 541.0 688.0 541.0 703.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 673.0 541.0 C 688.0 541.0 688.0 541.0 703.0 541.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 673.0 575.0 C 688.0 575.0 688.0 558.0 703.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 673.0 575.0 C 688.0 575.0 688.0 558.0 703.0 558.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 703.0 575.0 C 718.0 575.0 718.0 575.0 733.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 703.0 575.0 C 718.0 575.0 718.0 575.0 733.0 575.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 703.0 558.0 C 718.0 558.0 718.0 541.0 733.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 703.0 558.0 C 718.0 558.0 718.0 541.0 733.0 541.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 703.0 541.0 C 718.0 541.0 718.0 558.0 733.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 703.0 541.0 C 718.0 541.0 718.0 558.0 733.0 558.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 733.0 558.0 C 748.0 558.0 748.0 575.0 763.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 733.0 558.0 C 748.0 558.0 748.0 575.0 763.0 575.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 733.0 541.0 C 748.0 541.0 748.0 541.0 763.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 733.0 541.0 C 748.0 541.0 748.0 541.0 763.0 541.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 733.0 575.0 C 748.0 575.0 748.0 558.0 763.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 733.0 575.0 C 748.0 575.0 748.0 558.0 763.0 558.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/></g>
-<path d="M 763 558 C 813 558 823 590 873 590 L 973 590" stroke="#8c5c33" stroke-width="30" fill="none" stroke-linecap="round" opacity="0.5"/>
-<text x="843" y="626" font-size="12.5" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">the strap below twists up</text>
-<ellipse cx="739" cy="558" rx="17" ry="22" fill="none" stroke="#2e7d32" stroke-width="3" stroke-dasharray="5 4"/>
-<line x1="873" y1="526" x2="748" y2="544" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/><path d="M 748 544 L 760.4 535.6 L 762.3 548.5 Z" fill="#2e7d32"/>
-<text x="779" y="514" font-size="13" fill="#2e7d32" text-anchor="start" font-weight="bold" font-style="normal">pass the tail up through here</text>
-<text x="565" y="665" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">After every 2 crossings the strap below the braid twists,</text>
-<text x="565" y="683" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">because both ends are attached. Clear it: push the free tail</text>
-<text x="565" y="701" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">UP THROUGH the opening. The twist disappears — braid on.</text>
-<circle cx="1116" cy="558" r="28" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1116" cy="558" r="18" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<g><path d="M 1142.0 558.0 C 1157.0 558.0 1157.0 541.0 1172.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1142.0 558.0 C 1157.0 558.0 1157.0 541.0 1172.0 541.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1142.0 575.0 C 1157.0 575.0 1157.0 575.0 1172.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1142.0 575.0 C 1157.0 575.0 1157.0 575.0 1172.0 575.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1142.0 541.0 C 1157.0 541.0 1157.0 558.0 1172.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1142.0 541.0 C 1157.0 541.0 1157.0 558.0 1172.0 558.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1172.0 558.0 C 1187.0 558.0 1187.0 575.0 1202.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1172.0 558.0 C 1187.0 558.0 1187.0 575.0 1202.0 575.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1172.0 541.0 C 1187.0 541.0 1187.0 541.0 1202.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1172.0 541.0 C 1187.0 541.0 1187.0 541.0 1202.0 541.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1172.0 575.0 C 1187.0 575.0 1187.0 558.0 1202.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1172.0 575.0 C 1187.0 575.0 1187.0 558.0 1202.0 558.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1202.0 575.0 C 1217.0 575.0 1217.0 575.0 1232.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1202.0 575.0 C 1217.0 575.0 1217.0 575.0 1232.0 575.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1202.0 558.0 C 1217.0 558.0 1217.0 541.0 1232.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1202.0 558.0 C 1217.0 558.0 1217.0 541.0 1232.0 541.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1202.0 541.0 C 1217.0 541.0 1217.0 558.0 1232.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1202.0 541.0 C 1217.0 541.0 1217.0 558.0 1232.0 558.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1232.0 558.0 C 1247.0 558.0 1247.0 575.0 1262.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1232.0 558.0 C 1247.0 558.0 1247.0 575.0 1262.0 575.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1232.0 541.0 C 1247.0 541.0 1247.0 541.0 1262.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1232.0 541.0 C 1247.0 541.0 1247.0 541.0 1262.0 541.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1232.0 575.0 C 1247.0 575.0 1247.0 558.0 1262.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1232.0 575.0 C 1247.0 575.0 1247.0 558.0 1262.0 558.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1262.0 558.0 C 1277.0 558.0 1277.0 541.0 1292.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1262.0 558.0 C 1277.0 558.0 1277.0 541.0 1292.0 541.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1262.0 575.0 C 1277.0 575.0 1277.0 575.0 1292.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1262.0 575.0 C 1277.0 575.0 1277.0 575.0 1292.0 575.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1262.0 541.0 C 1277.0 541.0 1277.0 558.0 1292.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1262.0 541.0 C 1277.0 541.0 1277.0 558.0 1292.0 558.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1292.0 541.0 C 1307.0 541.0 1307.0 541.0 1322.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1292.0 541.0 C 1307.0 541.0 1307.0 541.0 1322.0 541.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1292.0 558.0 C 1307.0 558.0 1307.0 575.0 1322.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1292.0 558.0 C 1307.0 558.0 1307.0 575.0 1322.0 575.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1292.0 575.0 C 1307.0 575.0 1307.0 558.0 1322.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1292.0 575.0 C 1307.0 575.0 1307.0 558.0 1322.0 558.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1322.0 558.0 C 1337.0 558.0 1337.0 541.0 1352.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1322.0 558.0 C 1337.0 558.0 1337.0 541.0 1352.0 541.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1322.0 575.0 C 1337.0 575.0 1337.0 575.0 1352.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1322.0 575.0 C 1337.0 575.0 1337.0 575.0 1352.0 575.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1322.0 541.0 C 1337.0 541.0 1337.0 558.0 1352.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1322.0 541.0 C 1337.0 541.0 1337.0 558.0 1352.0 558.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1352.0 558.0 C 1367.0 558.0 1367.0 575.0 1382.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1352.0 558.0 C 1367.0 558.0 1367.0 575.0 1382.0 575.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1352.0 541.0 C 1367.0 541.0 1367.0 541.0 1382.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1352.0 541.0 C 1367.0 541.0 1367.0 541.0 1382.0 541.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1352.0 575.0 C 1367.0 575.0 1367.0 558.0 1382.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1352.0 575.0 C 1367.0 575.0 1367.0 558.0 1382.0 558.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1382.0 575.0 C 1397.0 575.0 1397.0 575.0 1412.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1382.0 575.0 C 1397.0 575.0 1397.0 575.0 1412.0 575.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1382.0 558.0 C 1397.0 558.0 1397.0 541.0 1412.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1382.0 558.0 C 1397.0 558.0 1397.0 541.0 1412.0 541.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1382.0 541.0 C 1397.0 541.0 1397.0 558.0 1412.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1382.0 541.0 C 1397.0 541.0 1397.0 558.0 1412.0 558.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1412.0 558.0 C 1427.0 558.0 1427.0 575.0 1442.0 575.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1412.0 558.0 C 1427.0 558.0 1427.0 575.0 1442.0 575.0" stroke="#2e6f9e" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1412.0 541.0 C 1427.0 541.0 1427.0 541.0 1442.0 541.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1412.0 541.0 C 1427.0 541.0 1427.0 541.0 1442.0 541.0" stroke="#6e8b3d" stroke-width="14" fill="none" stroke-linecap="round"/>
-      <path d="M 1412.0 575.0 C 1427.0 575.0 1427.0 558.0 1442.0 558.0" stroke="#fff" stroke-width="21" fill="none" stroke-linecap="round"/>
-      <path d="M 1412.0 575.0 C 1427.0 575.0 1427.0 558.0 1442.0 558.0" stroke="#c0503a" stroke-width="14" fill="none" stroke-linecap="round"/></g>
-<rect x="1442" y="536" width="70" height="44" rx="4" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="1464" cy="558" r="11" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
-<line x1="1457" y1="558" x2="1471" y2="558" stroke="#9a7c2f" stroke-width="2.5"/>
-<line x1="1142" y1="604" x2="1442" y2="604" stroke="#1a1a1a" stroke-width="1.2"/>
-<line x1="1142" y1="598" x2="1142" y2="610" stroke="#1a1a1a" stroke-width="1.2"/>
-<line x1="1442" y1="598" x2="1442" y2="610" stroke="#1a1a1a" stroke-width="1.2"/>
-<text x="1292" y="622" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">115 mm · 9–10 crossings</text>
-<text x="1068" y="665" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Braid to 115 mm, then stop. The tail lies FLAT on the inside;</text>
-<text x="1068" y="683" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">one Chicago screw 10 mm after the braid, tail trimmed 20 mm</text>
-<text x="1068" y="701" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">after the screw, edge bevelled. Braid tight — it carries the load.</text>
-<rect x="40" y="755" width="1507" height="330" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/>
-<text x="62" y="787" font-size="17" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">What each fold has to capture — the three positions on the lead</text>
-<text x="110" y="811" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Hook A — hook eye only</text>
-<text x="110" y="1001" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">Braid points towards the middle of the lead.</text>
-<g transform="translate(270,871) scale(0.7)"><circle cx="26" cy="0" r="24" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 50 0 h 20 a 13 13 0 0 0 13 -13 v -6" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 83 -19 a 19 19 0 1 1 26 19 a 19 19 0 1 1 -26 19 v -13" fill="none" stroke="#9a7c2f" stroke-width="7"/></g>
-<g><path d="M 120.0 871.0 C 134.0 871.0 134.0 856.0 148.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 120.0 871.0 C 134.0 871.0 134.0 856.0 148.0 856.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 120.0 886.0 C 134.0 886.0 134.0 886.0 148.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 120.0 886.0 C 134.0 886.0 134.0 886.0 148.0 886.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 120.0 856.0 C 134.0 856.0 134.0 871.0 148.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 120.0 856.0 C 134.0 856.0 134.0 871.0 148.0 871.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 148.0 871.0 C 162.0 871.0 162.0 886.0 176.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 148.0 871.0 C 162.0 871.0 162.0 886.0 176.0 886.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 148.0 856.0 C 162.0 856.0 162.0 856.0 176.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 148.0 856.0 C 162.0 856.0 162.0 856.0 176.0 856.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 148.0 886.0 C 162.0 886.0 162.0 871.0 176.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 148.0 886.0 C 162.0 886.0 162.0 871.0 176.0 871.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 176.0 886.0 C 190.0 886.0 190.0 886.0 204.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 176.0 886.0 C 190.0 886.0 190.0 886.0 204.0 886.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 176.0 871.0 C 190.0 871.0 190.0 856.0 204.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 176.0 871.0 C 190.0 871.0 190.0 856.0 204.0 856.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 176.0 856.0 C 190.0 856.0 190.0 871.0 204.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 176.0 856.0 C 190.0 856.0 190.0 871.0 204.0 871.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 204.0 871.0 C 218.0 871.0 218.0 886.0 232.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 204.0 871.0 C 218.0 871.0 218.0 886.0 232.0 886.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 204.0 856.0 C 218.0 856.0 218.0 856.0 232.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 204.0 856.0 C 218.0 856.0 218.0 856.0 232.0 856.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 204.0 886.0 C 218.0 886.0 218.0 871.0 232.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 204.0 886.0 C 218.0 886.0 218.0 871.0 232.0 871.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 232.0 871.0 C 246.0 871.0 246.0 856.0 260.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 232.0 871.0 C 246.0 871.0 246.0 856.0 260.0 856.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 232.0 886.0 C 246.0 886.0 246.0 886.0 260.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 232.0 886.0 C 246.0 886.0 246.0 886.0 260.0 886.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 232.0 856.0 C 246.0 856.0 246.0 871.0 260.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 232.0 856.0 C 246.0 856.0 246.0 871.0 260.0 871.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/></g>
-<rect x="70" y="849" width="55" height="44" rx="4" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="94" cy="871" r="10" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
-<text x="490" y="811" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Ring 1 and ring 2 — ring on a bight</text>
-<text x="490" y="1001" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">ONE continuous strap. Braid on the hook-B side.</text>
-<circle cx="512" cy="871" r="28" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="512" cy="871" r="18" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<g><path d="M 540.0 871.0 C 554.0 871.0 554.0 856.0 568.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 540.0 871.0 C 554.0 871.0 554.0 856.0 568.0 856.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 540.0 886.0 C 554.0 886.0 554.0 886.0 568.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 540.0 886.0 C 554.0 886.0 554.0 886.0 568.0 886.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 540.0 856.0 C 554.0 856.0 554.0 871.0 568.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 540.0 856.0 C 554.0 856.0 554.0 871.0 568.0 871.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 568.0 871.0 C 582.0 871.0 582.0 886.0 596.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 568.0 871.0 C 582.0 871.0 582.0 886.0 596.0 886.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 568.0 856.0 C 582.0 856.0 582.0 856.0 596.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 568.0 856.0 C 582.0 856.0 582.0 856.0 596.0 856.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 568.0 886.0 C 582.0 886.0 582.0 871.0 596.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 568.0 886.0 C 582.0 886.0 582.0 871.0 596.0 871.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 596.0 886.0 C 610.0 886.0 610.0 886.0 624.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 596.0 886.0 C 610.0 886.0 610.0 886.0 624.0 886.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 596.0 871.0 C 610.0 871.0 610.0 856.0 624.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 596.0 871.0 C 610.0 871.0 610.0 856.0 624.0 856.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 596.0 856.0 C 610.0 856.0 610.0 871.0 624.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 596.0 856.0 C 610.0 856.0 610.0 871.0 624.0 871.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 624.0 871.0 C 638.0 871.0 638.0 886.0 652.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 624.0 871.0 C 638.0 871.0 638.0 886.0 652.0 886.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 624.0 856.0 C 638.0 856.0 638.0 856.0 652.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 624.0 856.0 C 638.0 856.0 638.0 856.0 652.0 856.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 624.0 886.0 C 638.0 886.0 638.0 871.0 652.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 624.0 886.0 C 638.0 886.0 638.0 871.0 652.0 871.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 652.0 871.0 C 666.0 871.0 666.0 856.0 680.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 652.0 871.0 C 666.0 871.0 666.0 856.0 680.0 856.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 652.0 886.0 C 666.0 886.0 666.0 886.0 680.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 652.0 886.0 C 666.0 886.0 666.0 886.0 680.0 886.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 652.0 856.0 C 666.0 856.0 666.0 871.0 680.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 652.0 856.0 C 666.0 856.0 666.0 871.0 680.0 871.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/></g>
-<rect x="685" y="849" width="105" height="44" rx="4" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="709" cy="871" r="10" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
-<path d="M 430 849 H 500 M 430 893 H 500" stroke="#8c5c33" stroke-width="2" fill="none"/>
-<rect x="430" y="849" width="70" height="44" fill="#b58050" stroke="none"/>
-<path d="M 430 849 H 500 M 430 893 H 500" stroke="#8c5c33" stroke-width="2"/>
-<text x="428" y="925" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
-<text x="690" y="925" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
-<text x="870" y="811" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Ring 3 + hook B — both in ONE fold</text>
-<text x="870" y="1001" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">Ring centre 30 mm before the hook eye.</text>
-<g><path d="M 880.0 871.0 C 894.0 871.0 894.0 856.0 908.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 880.0 871.0 C 894.0 871.0 894.0 856.0 908.0 856.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 880.0 886.0 C 894.0 886.0 894.0 886.0 908.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 880.0 886.0 C 894.0 886.0 894.0 886.0 908.0 886.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 880.0 856.0 C 894.0 856.0 894.0 871.0 908.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 880.0 856.0 C 894.0 856.0 894.0 871.0 908.0 871.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 908.0 871.0 C 922.0 871.0 922.0 886.0 936.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 908.0 871.0 C 922.0 871.0 922.0 886.0 936.0 886.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 908.0 856.0 C 922.0 856.0 922.0 856.0 936.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 908.0 856.0 C 922.0 856.0 922.0 856.0 936.0 856.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 908.0 886.0 C 922.0 886.0 922.0 871.0 936.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 908.0 886.0 C 922.0 886.0 922.0 871.0 936.0 871.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 936.0 886.0 C 950.0 886.0 950.0 886.0 964.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 936.0 886.0 C 950.0 886.0 950.0 886.0 964.0 886.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 936.0 871.0 C 950.0 871.0 950.0 856.0 964.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 936.0 871.0 C 950.0 871.0 950.0 856.0 964.0 856.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 936.0 856.0 C 950.0 856.0 950.0 871.0 964.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 936.0 856.0 C 950.0 856.0 950.0 871.0 964.0 871.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 964.0 871.0 C 978.0 871.0 978.0 886.0 992.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 964.0 871.0 C 978.0 871.0 978.0 886.0 992.0 886.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 964.0 856.0 C 978.0 856.0 978.0 856.0 992.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 964.0 856.0 C 978.0 856.0 978.0 856.0 992.0 856.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 964.0 886.0 C 978.0 886.0 978.0 871.0 992.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 964.0 886.0 C 978.0 886.0 978.0 871.0 992.0 871.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 992.0 871.0 C 1006.0 871.0 1006.0 856.0 1020.0 856.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 992.0 871.0 C 1006.0 871.0 1006.0 856.0 1020.0 856.0" stroke="#c0503a" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 992.0 886.0 C 1006.0 886.0 1006.0 886.0 1020.0 886.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 992.0 886.0 C 1006.0 886.0 1006.0 886.0 1020.0 886.0" stroke="#2e6f9e" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M 992.0 856.0 C 1006.0 856.0 1006.0 871.0 1020.0 871.0" stroke="#fff" stroke-width="19" fill="none" stroke-linecap="round"/>
-      <path d="M 992.0 856.0 C 1006.0 856.0 1006.0 871.0 1020.0 871.0" stroke="#6e8b3d" stroke-width="12" fill="none" stroke-linecap="round"/></g>
-<circle cx="1042" cy="871" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1042" cy="871" r="20" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<g transform="translate(1070,871) scale(0.7)"><circle cx="26" cy="0" r="24" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 50 0 h 20 a 13 13 0 0 0 13 -13 v -6" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 83 -19 a 19 19 0 1 1 26 19 a 19 19 0 1 1 -26 19 v -13" fill="none" stroke="#9a7c2f" stroke-width="7"/></g>
-<rect x="830" y="849" width="55" height="44" rx="4" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<circle cx="854" cy="871" r="10" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
-<rect x="1160" y="799" width="356" height="262" rx="8" fill="#fdf3f2" stroke="#c0392b" stroke-width="2"/>
-<text x="1182" y="841" font-size="14" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">The knot on the sample</text>
-<circle cx="1212" cy="901" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1212" cy="901" r="19" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<path d="M 1488 885 H 1252 L 1234 901 L 1252 917 H 1488" fill="#b58050" stroke="#8c5c33" stroke-width="2"/>
-<path d="M 1278 877 q 24 -22 46 0 q 14 16 -6 26" fill="none" stroke="#8c5c33" stroke-width="13" stroke-linecap="round"/>
-<line x1="1302" y1="885" x2="1302" y2="917" stroke="#fff" stroke-width="3"/>
-<g stroke="#c0392b" stroke-width="6" stroke-linecap="round"><line x1="1432" y1="851" x2="1468" y2="887"/><line x1="1468" y1="851" x2="1432" y2="887"/></g>
-<text x="1182" y="973" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">On the golden sample rings 1 and 2 are held by a</text>
-<text x="1182" y="991" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">knot: the end is pulled through a slit in itself.</text>
-<text x="1182" y="1009" font-size="12.5" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">DO NOT COPY. Every ring on our lead is</text>
-<text x="1182" y="1027" font-size="12.5" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">braided as shown above — no knots at all.</text>
+<text x="40" y="44" font-size="25" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">LE-01 · Sheet 3/3 · THE BLEED KNOT — how every ring and hook is fixed</text>
+<text x="40" y="70" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Bellowerk Manufaktur · v3.0 · 18 Sep 2026 · A3 landscape · Taken from the golden sample. The technique is the "bleed knot" (also called blood knot) —</text>
+<text x="40" y="92" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">a known leather technique, no stitching and no rivets. The strap is NEVER cut into strands and NEVER cut through. It is one piece from end to end.</text>
+<rect x="1091" y="28" width="450" height="80" rx="8" fill="#f7f7f7" stroke="#d5d5d5"/>
+<text x="1105" y="50" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">How to read the drawings:</text>
+<rect x="1105" y="60" width="40" height="16" fill="#7a4f2d" stroke="#4e3119" stroke-width="1.5"/>
+<text x="1153" y="73" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">grain side (outside)</text>
+<rect x="1315" y="60" width="40" height="16" fill="#c7b49a" stroke="#4e3119" stroke-width="1.5"/>
+<text x="1363" y="73" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">flesh side (rough)</text>
+<text x="1105" y="98" font-size="12.5" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">The flesh side showing through is how you know the knot is right.</text>
+<rect x="40" y="128" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="154" r="14" fill="#1a1a1a"/><text x="66" y="159" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">1</text><text x="90" y="160" font-size="16" font-weight="bold" fill="#1a1a1a">One slit — that is the whole secret</text>
+<rect x="70" y="218" width="430" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<line x1="228.0" y1="256" x2="342.0" y2="256" stroke="#4e3119" stroke-width="3"/><circle cx="228.0" cy="256" r="3.5" fill="none" stroke="#4e3119" stroke-width="2"/><circle cx="342.0" cy="256" r="3.5" fill="none" stroke="#4e3119" stroke-width="2"/>
+<g stroke="#1a1a1a" stroke-width="1.2"><line x1="228" y1="314" x2="342" y2="314"/><line x1="228" y1="308" x2="228" y2="320"/><line x1="342" y1="308" x2="342" y2="320"/></g>
+<text x="285" y="304" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">30 mm</text>
+<text x="362" y="306" font-size="12.5" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">slit runs ALONG the strap</text>
+<text x="70" y="340" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">ONE lengthwise slit in the middle of the strap, 30 mm long,</text>
+<text x="70" y="358" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">centred across the width. Both ends punched Ø 2 mm so the</text>
+<text x="70" y="376" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">slit cannot run. Nothing else is cut — the strap keeps its</text>
+<text x="70" y="394" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">full 20 mm width and stays one piece.</text>
+<rect x="543" y="128" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="154" r="14" fill="#1a1a1a"/><text x="569" y="159" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">2</text><text x="593" y="160" font-size="16" font-weight="bold" fill="#1a1a1a">Thread the ring, then the tail through the slit</text>
+<rect x="573" y="218" width="300" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<path d="M 661.0 256 Q 718 233.0 775.0 256 Q 718 279.0 661.0 256 Z" fill="#fff" stroke="#4e3119" stroke-width="2"/>
+<circle cx="935" cy="256" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="935" cy="256" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<path d="M 873 218 H 935 M 873 294 H 935" stroke="#4e3119" stroke-width="2" fill="none"/>
+<rect x="873" y="218" width="62" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 873 218 H 935 M 873 294 H 935" stroke="#4e3119" stroke-width="2"/>
+<line x1="923" y1="184" x2="739" y2="232" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 739 232 L 750.4 222.3 L 753.7 234.9 Z" fill="#c0392b"/>
+<text x="757" y="174" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">the WHOLE tail goes through the slit</text>
+<text x="573" y="328" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Put the ring (or the snap hook) on the strap, then push the</text>
+<text x="573" y="346" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">entire rest of the lead through the open slit. On a 2.60 m lead</text>
+<text x="573" y="364" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">that means pulling metres of leather through — that is normal</text>
+<text x="573" y="382" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">and it is why the knots are made before the lead is cut to length.</text>
+<rect x="1046" y="128" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="154" r="14" fill="#1a1a1a"/><text x="1072" y="159" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">3</text><text x="1096" y="160" font-size="16" font-weight="bold" fill="#1a1a1a">Pull tight — the V appears</text>
+<rect x="1076" y="218" width="150" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="1226" y="218" width="84" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 1231 223 Q 1272.2 240.8 1298.24 256.0 Q 1272.2 271.2 1231 289 Q 1251.2 256.0 1231 223 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="1226" y="218" width="84" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="1310" y="218" width="90" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<circle cx="1434" cy="256" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1434" cy="256" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="1400" y="218" width="34" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 1400 218 H 1434 M 1400 294 H 1434" stroke="#4e3119" stroke-width="2"/>
+<line x1="1346" y1="184" x2="1278" y2="216" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/><path d="M 1278 216 L 1287.4 204.3 L 1293.0 216.2 Z" fill="#2e7d32"/>
+<text x="1286" y="172" font-size="13" fill="#2e7d32" text-anchor="start" font-weight="bold" font-style="normal">flesh side now shows</text>
+<text x="1076" y="328" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pull the tail through until the knot sits tight against the ring.</text>
+<text x="1076" y="346" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The leather turns as it passes through itself, so the rough flesh</text>
+<text x="1076" y="364" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">side comes to the outside and forms a V. That light patch is the</text>
+<text x="1076" y="382" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">proof the knot is made correctly — it is not a fault.</text>
+<rect x="40" y="442" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="468" r="14" fill="#1a1a1a"/><text x="66" y="473" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">4</text><text x="90" y="474" font-size="16" font-weight="bold" fill="#1a1a1a">Repeat — the chain at the hook ends</text>
+<rect x="70" y="530" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="130" y="530" width="320" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 135 535 Q 165.2 552.8 185.04 568.0 Q 165.2 583.2 135 601 Q 149.2 568.0 135 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 199 535 Q 229.2 552.8 249.04 568.0 Q 229.2 583.2 199 601 Q 213.2 568.0 199 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 263 535 Q 293.2 552.8 313.04 568.0 Q 293.2 583.2 263 601 Q 277.2 568.0 263 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 327 535 Q 357.2 552.8 377.04 568.0 Q 357.2 583.2 327 601 Q 341.2 568.0 327 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 391 535 Q 421.2 552.8 441.04 568.0 Q 421.2 583.2 391 601 Q 405.2 568.0 391 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="130" y="530" width="320" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="450" y="530" width="40" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g stroke="#1a1a1a" stroke-width="1.2"><line x1="130" y1="628" x2="450" y2="628"/><line x1="130" y1="622" x2="130" y2="634"/><line x1="450" y1="622" x2="450" y2="634"/></g>
+<text x="290" y="648" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">115 mm · 5–6 V, pitch approx. 20 mm</text>
+<text x="70" y="676" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">At hook A and hook B the knot is repeated in a row: cut the next</text>
+<text x="70" y="694" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">slit, pull the tail through again, tighten. Five to six V over</text>
+<text x="70" y="712" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">115 mm, evenly spaced — match the golden sample.</text>
+<rect x="543" y="442" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="468" r="14" fill="#1a1a1a"/><text x="569" y="473" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">5</text><text x="593" y="474" font-size="16" font-weight="bold" fill="#1a1a1a">Ring 1 and ring 2 — ONE knot, no screw</text>
+<rect x="573" y="530" width="150" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="723" y="530" width="84" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 728 535 Q 769.2 552.8 795.24 568.0 Q 769.2 583.2 728 601 Q 748.2 568.0 728 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="723" y="530" width="84" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<circle cx="841" cy="568" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="841" cy="568" r="19" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="807" y="530" width="34" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 807 530 H 841 M 807 606 H 841" stroke="#4e3119" stroke-width="2"/>
+<rect x="871" y="530" width="130" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<text x="577" y="628" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
+<text x="873" y="628" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
+<text x="573" y="676" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">A middle ring gets a SINGLE bleed knot and no Chicago screw.</text>
+<text x="573" y="694" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The knot alone holds it — that is how the golden sample is made.</text>
+<text x="573" y="712" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pull it up tight so the ring cannot travel along the strap.</text>
+<rect x="1046" y="442" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="468" r="14" fill="#1a1a1a"/><text x="1072" y="473" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">6</text><text x="1096" y="474" font-size="16" font-weight="bold" fill="#1a1a1a">Finish at the hook ends</text>
+<rect x="1076" y="530" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="1136" y="530" width="256" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 1141 535 Q 1171.2 552.8 1191.04 568.0 Q 1171.2 583.2 1141 601 Q 1155.2 568.0 1141 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1205 535 Q 1235.2 552.8 1255.04 568.0 Q 1235.2 583.2 1205 601 Q 1219.2 568.0 1205 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1269 535 Q 1299.2 552.8 1319.04 568.0 Q 1299.2 583.2 1269 601 Q 1283.2 568.0 1269 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1333 535 Q 1363.2 552.8 1383.04 568.0 Q 1363.2 583.2 1333 601 Q 1347.2 568.0 1333 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="1136" y="530" width="256" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="1392" y="530" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<circle cx="1422" cy="568" r="15" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
+<line x1="1412" y1="568" x2="1432" y2="568" stroke="#9a7c2f" stroke-width="2.5"/>
+<g stroke-dasharray="6 4"><line x1="1452" y1="530" x2="1452" y2="606" stroke="#4e3119" stroke-width="2"/></g>
+<line x1="1346" y1="498" x2="1418" y2="546" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 1418 546 L 1403.1 543.9 L 1410.4 533.1 Z" fill="#c0392b"/>
+<text x="1216" y="486" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">1 Chicago screw after the last V</text>
+<text x="1076" y="676" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Only at hook A and hook B: one solid brass Chicago screw after</text>
+<text x="1076" y="694" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">the last V, tail trimmed 20 mm behind it, edge bevelled. The knots</text>
+<text x="1076" y="712" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">carry the load — the screw only stops the tail lifting.</text>
+<rect x="40" y="758" width="1507" height="330" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/>
+<text x="62" y="790" font-size="17" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">The three positions on the lead</text>
+<text x="78" y="824" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Hook A — 5–6 knots + 1 screw</text>
+<text x="78" y="986" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">Strap through the hook eye, folded back, then the</text>
+<text x="78" y="1004" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">chain of knots. Tail ends after the screw.</text>
+<circle cx="100" cy="882" r="13" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="78" y="844" width="44" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="122" y="844" width="216" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 127 849 Q 151.7 866.8 168.44 882.0 Q 151.7 897.2 127 915 Q 138.2 882.0 127 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 181 849 Q 205.7 866.8 222.44 882.0 Q 205.7 897.2 181 915 Q 192.2 882.0 181 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 235 849 Q 259.7 866.8 276.44 882.0 Q 259.7 897.2 235 915 Q 246.2 882.0 235 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 289 849 Q 313.7 866.8 330.44 882.0 Q 313.7 897.2 289 915 Q 300.2 882.0 289 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="122" y="844" width="216" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="338" y="844" width="26" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g transform="translate(364,882) scale(0.62)"><circle cx="26" cy="0" r="24" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 50 0 h 20 a 13 13 0 0 0 13 -13 v -6" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 83 -19 a 19 19 0 1 1 26 19 a 19 19 0 1 1 -26 19 v -13" fill="none" stroke="#9a7c2f" stroke-width="7"/></g>
+<text x="520" y="824" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Ring 1 and ring 2 — 1 knot, no screw</text>
+<text x="520" y="986" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">One continuous strap runs straight through.</text>
+<text x="520" y="1004" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">Nothing else holds the ring.</text>
+<rect x="520" y="844" width="96" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="616" y="844" width="76" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 621 849 Q 657.8 866.8 681.36 882.0 Q 657.8 897.2 621 915 Q 638.8 882.0 621 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="616" y="844" width="76" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="692" y="844" width="26" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 692 844 H 718 M 692 920 H 718" stroke="#4e3119" stroke-width="2"/>
+<circle cx="720" cy="882" r="28" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="720" cy="882" r="18" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="748" y="844" width="110" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<text x="960" y="824" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Ring 3 + hook B — both in one fold</text>
+<text x="960" y="986" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">The strap goes through ring 3 AND the hook eye</text>
+<text x="960" y="1004" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">before the knots start. Ring 30 mm before the eye.</text>
+<circle cx="982" cy="882" r="13" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="960" y="844" width="44" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="1004" y="844" width="216" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 1009 849 Q 1033.7 866.8 1050.44 882.0 Q 1033.7 897.2 1009 915 Q 1020.2 882.0 1009 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1063 849 Q 1087.7 866.8 1104.44 882.0 Q 1087.7 897.2 1063 915 Q 1074.2 882.0 1063 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1117 849 Q 1141.7 866.8 1158.44 882.0 Q 1141.7 897.2 1117 915 Q 1128.2 882.0 1117 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1171 849 Q 1195.7 866.8 1212.44 882.0 Q 1195.7 897.2 1171 915 Q 1182.2 882.0 1171 849 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="1004" y="844" width="216" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="1220" y="844" width="16" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<circle cx="1260" cy="882" r="32" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1260" cy="882" r="21" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<g transform="translate(1290,882) scale(0.62)"><circle cx="26" cy="0" r="24" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 50 0 h 20 a 13 13 0 0 0 13 -13 v -6" fill="none" stroke="#9a7c2f" stroke-width="7"/><path d="M 83 -19 a 19 19 0 1 1 26 19 a 19 19 0 1 1 -26 19 v -13" fill="none" stroke="#9a7c2f" stroke-width="7"/></g>
+<rect x="1330" y="804" width="200" height="262" rx="8" fill="#f2f7f2" stroke="#2e7d32" stroke-width="2"/>
+<text x="1348" y="834" font-size="13.5" fill="#2e7d32" text-anchor="start" font-weight="bold" font-style="normal">Check on the</text>
+<text x="1348" y="852" font-size="13.5" fill="#2e7d32" text-anchor="start" font-weight="bold" font-style="normal">first sample</text>
+<text x="1348" y="882" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Slit length 30 mm is a</text>
+<text x="1348" y="900" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">starting value. Adjust it</text>
+<text x="1348" y="918" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">until the chain measures</text>
+<text x="1348" y="936" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">115 mm with 5–6 even V,</text>
+<text x="1348" y="954" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">and the knots sit tight</text>
+<text x="1348" y="972" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">with no gaps.</text>
+<text x="1348" y="1002" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Send photos of one</text>
+<text x="1348" y="1020" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">finished knot, front</text>
+<text x="1348" y="1038" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">and back, before</text>
+<text x="1348" y="1056" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">production.</text>
 </svg>

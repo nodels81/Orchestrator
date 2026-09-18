@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1000" viewBox="0 0 1640 1000" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="none" stroke="#000" stroke-width="2">
   <rect x="0" y="0" width="1640" height="1000" fill="#fff" stroke="none"/>
 
-  <text x="40" y="42" font-size="25" font-weight="bold" fill="#000" stroke="none">LE-01 · Adjustable Leather Lead 2.60 m · 20 mm · Bellowerk Manufaktur · v2.0 · 18 Sep 2026</text>
+  <text x="40" y="42" font-size="25" font-weight="bold" fill="#000" stroke="none">LE-01 · Adjustable Leather Lead 2.60 m · 20 mm · Bellowerk Manufaktur · v3.0 · 18 Sep 2026</text>
   <text x="40" y="68" font-size="15" fill="#000" stroke="none">Sheet 1/3 — general arrangement. Length to scale 1:5. Strap width, hooks and rings drawn enlarged for legibility — THE FIGURES ARE BINDING, not the picture.</text>
-  <text x="40" y="90" font-size="15" fill="#000" stroke="none">Sheet 2/3 (LE-01-detail-flechtung) is the 1:1 braid detail · sheet 3/3 (LE-01-flechtung-schritte) shows step by step how the braid is made.</text>
-  <text x="40" y="112" font-size="15" fill="#000" stroke="none">Reverse-engineered from the golden sample, measured 18 Sep 2026. All 5 attachments are braided — no knots.</text>
+  <text x="40" y="90" font-size="15" fill="#000" stroke="none">Sheet 2/3 (LE-01-detail-flechtung) is the 1:1 check sheet · sheet 3/3 (LE-01-flechtung-schritte) shows step by step how the knot is tied.</text>
+  <text x="40" y="112" font-size="15" fill="#000" stroke="none">Reverse-engineered from the golden sample, measured 18 Sep 2026. Every ring and hook is held by BLEED KNOTS — no stitching, no rivets, strap never cut into strands.</text>
 
   <!-- ====================== PLAN VIEW ====================== -->
   <!-- scale 1 cm = 5 px, origin x = 160 = inner edge of hook A eye -->
@@ -63,8 +63,6 @@
     <!-- chicago screws, 10 mm after each braid -->
     <g stroke-width="1.5" fill="#000">
       <circle cx="223" cy="223" r="4"/>
-      <circle cx="623" cy="223" r="4"/>
-      <circle cx="1063" cy="223" r="4"/>
       <circle cx="1322" cy="223" r="4"/>
     </g>
 
@@ -116,7 +114,7 @@
   <!-- ====================== DETAIL A: hook B end ====================== -->
   <g transform="translate(40,600)">
     <rect x="0" y="0" width="720" height="360" stroke-width="1" stroke="#888"/>
-    <text x="14" y="26" font-weight="bold" fill="#000" stroke="none">DETAIL A — hook B end, scale 1:1.5 · ring 3 and hook B share ONE fold</text>
+    <text x="14" y="26" font-weight="bold" fill="#000" stroke="none">DETAIL A — hook B end, scale 1:1.5 · ring 3 and hook B in ONE fold</text>
 
     <!-- strap, 20 mm wide = 50 px at 1:1.5 (1 mm = 2.5 px); open on the ring side -->
     <g stroke-width="2.5">
@@ -141,7 +139,7 @@
     <g stroke-width="1.2">
       <line x1="163" y1="230" x2="450" y2="230"/>
       <path d="M 163 230 l 8 -4 v 8 z" fill="#000"/><path d="M 450 230 l -8 -4 v 8 z" fill="#000"/>
-      <text x="306" y="250" text-anchor="middle" fill="#000" stroke="none" font-size="13">braid 115 mm</text>
+      <text x="306" y="250" text-anchor="middle" fill="#000" stroke="none" font-size="13">knot chain 115 mm · 5–6 V</text>
 
       <line x1="138" y1="272" x2="163" y2="272"/>
       <path d="M 138 272 l 8 -4 v 8 z" fill="#000"/><path d="M 163 272 l -8 -4 v 8 z" fill="#000"/>
@@ -151,14 +149,14 @@
       <path d="M 450 272 l 8 -4 v 8 z" fill="#000"/><path d="M 525 272 l -8 -4 v 8 z" fill="#000"/>
       <text x="487" y="292" text-anchor="middle" fill="#000" stroke="none" font-size="13">30 mm</text>
     </g>
-    <text x="14" y="322" fill="#000" stroke="none" font-size="13">Strap end passes through ring 3 AND through the hook eye, then folds back 150 mm. The doubled section is</text>
-    <text x="14" y="340" fill="#000" stroke="none" font-size="13">mystery-braided over 115 mm; free end flat on the inside, 1 Chicago screw 10 mm after the braid.</text>
+    <text x="14" y="322" fill="#000" stroke="none" font-size="13">Strap end passes through ring 3 AND the hook eye, then folds back approx. 150 mm. Tail and standing part are</text>
+    <text x="14" y="340" fill="#000" stroke="none" font-size="13">locked together by a chain of bleed knots over 115 mm (5–6 V), then 1 Chicago screw. See sheets 2 and 3.</text>
   </g>
 
   <!-- ====================== DETAIL B: mid ring ====================== -->
   <g transform="translate(790,600)">
     <rect x="0" y="0" width="520" height="360" stroke-width="1" stroke="#888"/>
-    <text x="14" y="26" font-weight="bold" fill="#000" stroke="none">DETAIL B — ring 1 and ring 2, scale 1:1.5</text>
+    <text x="14" y="26" font-weight="bold" fill="#000" stroke="none">DETAIL B — ring 1 and ring 2, scale 1:1.5 · ONE knot, no screw</text>
 
     <!-- continuous strap, open on the ring side -->
     <g stroke-width="2.5">
@@ -173,37 +171,38 @@
       <path d="M 140 120 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 17 35"/>
       <path d="M 140 170 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 24 -50 l 24 50 l 17 -35"/>
     </g>
-    <circle cx="452" cy="145" r="9" stroke-width="1.5" fill="#000"/>
+    
 
     <g stroke-width="1.2">
       <line x1="140" y1="230" x2="427" y2="230"/>
       <path d="M 140 230 l 8 -4 v 8 z" fill="#000"/><path d="M 427 230 l -8 -4 v 8 z" fill="#000"/>
-      <text x="283" y="250" text-anchor="middle" fill="#000" stroke="none" font-size="13">braid 115 mm</text>
+      <text x="283" y="250" text-anchor="middle" fill="#000" stroke="none" font-size="13">knot chain 115 mm · 5–6 V</text>
     </g>
-    <text x="14" y="288" fill="#000" stroke="none" font-size="13">ONE continuous strap. At the ring position the strap is folded</text>
-    <text x="14" y="306" fill="#000" stroke="none" font-size="13">back through the ring by 150 mm (bight). The doubled section is</text>
-    <text x="14" y="324" fill="#000" stroke="none" font-size="13">mystery-braided 115 mm, then 1 Chicago screw. Braid lies on the</text>
-    <text x="14" y="342" fill="#000" stroke="none" font-size="13">hook-B side of both rings. NO knot — the sample's knot is replaced.</text>
+    <text x="14" y="288" fill="#000" stroke="none" font-size="13">ONE continuous strap. A single 30 mm lengthwise slit is cut, the</text>
+    <text x="14" y="306" fill="#000" stroke="none" font-size="13">ring is threaded on, and the whole tail of the lead is pulled</text>
+    <text x="14" y="324" fill="#000" stroke="none" font-size="13">through that slit and tightened — one bleed knot. NO Chicago</text>
+    <text x="14" y="342" fill="#000" stroke="none" font-size="13">screw here; the knot alone holds the ring, as on the sample.</text>
   </g>
 
   <!-- ====================== SPEC BLOCK ====================== -->
   <g transform="translate(1340,600)">
     <rect x="0" y="0" width="260" height="360" stroke-width="1" stroke="#888"/>
     <text x="12" y="26" font-weight="bold" fill="#000" stroke="none">Key data</text>
-    <text x="12" y="52" fill="#000" stroke="none" font-size="13">Strap 20 mm ±0.5, 3.5–4.0 mm</text>
-    <text x="12" y="72" fill="#000" stroke="none" font-size="13">veg-tan oiled cowhide, 1 piece</text>
-    <text x="12" y="92" fill="#000" stroke="none" font-size="13">Cut length 340 cm (+2)</text>
-    <text x="12" y="118" fill="#000" stroke="none" font-size="13">Ring 1 + 2: solid brass, welded,</text>
-    <text x="12" y="136" fill="#000" stroke="none" font-size="13">outer Ø 30 mm, wire Ø 5 mm</text>
-    <text x="12" y="156" fill="#000" stroke="none" font-size="13">Ring 3: outer Ø 40 mm, wire 5 mm</text>
-    <text x="12" y="176" fill="#000" stroke="none" font-size="13">all rings ≥ 3 kN</text>
-    <text x="12" y="202" fill="#000" stroke="none" font-size="13">Hooks: solid brass swivel</text>
-    <text x="12" y="220" fill="#000" stroke="none" font-size="13">trigger snap, length 60 mm,</text>
-    <text x="12" y="238" fill="#000" stroke="none" font-size="13">eye for 20 mm strap, ≥ 2.0 kN</text>
-    <text x="12" y="264" fill="#000" stroke="none" font-size="13">5 × Chicago screw solid brass,</text>
-    <text x="12" y="282" fill="#000" stroke="none" font-size="13">head Ø 9 mm, thread-locked</text>
-    <text x="12" y="308" fill="#000" stroke="none" font-size="13">Edges bevelled + burnished,</text>
-    <text x="12" y="326" fill="#000" stroke="none" font-size="13">no paint. No stitching, no rivets.</text>
-    <text x="12" y="348" fill="#000" stroke="none" font-size="13">Braided attachment ≥ 2.0 kN.</text>
+    <text x="12" y="50" fill="#000" stroke="none" font-size="13">Strap 20 mm ±0.5, 3.5–4.0 mm</text>
+    <text x="12" y="68" fill="#000" stroke="none" font-size="13">veg-tan oiled cowhide, 1 piece</text>
+    <text x="12" y="86" fill="#000" stroke="none" font-size="13">Cut length approx. 285 cm —</text>
+    <text x="12" y="104" fill="#000" stroke="none" font-size="13">set it on the first sample</text>
+    <text x="12" y="132" fill="#000" stroke="none" font-size="13">Ring 1 + 2: solid brass, welded,</text>
+    <text x="12" y="150" fill="#000" stroke="none" font-size="13">outer Ø 30 mm, wire Ø 5 mm</text>
+    <text x="12" y="168" fill="#000" stroke="none" font-size="13">Ring 3: outer Ø 40 mm, wire 5 mm</text>
+    <text x="12" y="186" fill="#000" stroke="none" font-size="13">all rings ≥ 3 kN</text>
+    <text x="12" y="214" fill="#000" stroke="none" font-size="13">Hooks: solid brass swivel</text>
+    <text x="12" y="232" fill="#000" stroke="none" font-size="13">trigger snap, length 60 mm,</text>
+    <text x="12" y="250" fill="#000" stroke="none" font-size="13">eye for 20 mm strap, ≥ 2.0 kN</text>
+    <text x="12" y="278" fill="#000" stroke="none" font-size="13">2 × Chicago screw solid brass</text>
+    <text x="12" y="296" fill="#000" stroke="none" font-size="13">(hook ends only), head Ø 9 mm</text>
+    <text x="12" y="314" fill="#000" stroke="none" font-size="13">Edges bevelled + burnished.</text>
+    <text x="12" y="332" fill="#000" stroke="none" font-size="13">No stitching, no rivets.</text>
+    <text x="12" y="350" fill="#000" stroke="none" font-size="13">Knotted attachment ≥ 2.0 kN.</text>
   </g>
 </svg>
