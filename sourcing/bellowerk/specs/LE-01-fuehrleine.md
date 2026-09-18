@@ -7,8 +7,10 @@ reverse-engineered from the physical golden sample, measured 18 Sep 2026. All le
 braid geometry below come from that measurement. **One change against the sample:** on the sample rings 1
 and 2 are held by a leather knot — here they are braided, like every other attachment. No knots anywhere.
 
-Drawings: `zeichnungen/LE-01-fuehrleine.png` (sheet 1, general arrangement, 1:5) and
-`zeichnungen/LE-01-detail-flechtung.png` (sheet 2, braided attachment, **full size 1:1**, A4 landscape).
+Drawings — three sheets, send all three:
+`zeichnungen/LE-01-fuehrleine.png` (sheet 1, general arrangement, 1:5),
+`zeichnungen/LE-01-detail-flechtung.png` (sheet 2, braided attachment, **full size 1:1**, A4 landscape) and
+`zeichnungen/LE-01-flechtung-schritte.png` (sheet 3, **step-by-step braiding instructions in colour**, A3 landscape).
 Photos: `bilder/LE-01-detail-karabiner-flechtung.jpg`, `bilder/LE-01-flechtung-ringe-farben.jpg`.
 
 ## 1. Product
@@ -62,22 +64,27 @@ Plus 248 cm with both hooks on the dog (two dogs / tie-out).
 
 ## 4. Construction — braided attachment (all 5 positions)
 
-**Sheet 2 of the drawing is full size 1:1. Print it at 100 % and check the control bar (100 mm) before use.**
+**Sheet 3 shows this sequence step by step in colour — work from it. Sheet 2 is full size 1:1: print it at
+100 % and check the control bar (100 mm) before using it as a template.**
 
 1. The strap passes through the ring / hook eye and folds back on itself **150 mm**.
 2. Both layers get **two lengthwise slits** over **115 mm**, starting 10 mm after the fold, so the doubled
    strap forms three strands of 6.7 mm. Slit ends are rounded with a 2 mm punch so they cannot tear.
    The strands stay attached at both ends — the strap is never cut through (mystery braid / trick braid).
-3. Braid the three doubled strands tight and even, **9–10 crossings**, chevron "V" pattern as in the photos.
-4. The free end lies flat on the inside and is fixed with **one Chicago screw** 10 mm after the end of the
+3. Braid the three doubled strands tight and even, **9–10 crossings**, chevron "V" pattern as in the photos:
+   top strand over the middle, then bottom strand over the middle, alternating.
+4. **After every 2 crossings the strap below the braid twists up**, because both ends are attached. Clear it
+   by passing the whole free tail UP THROUGH the opening in the braid, then carry on. This is the "mystery"
+   in mystery braid — without it the lead comes out twisted. See sheet 3, step 5.
+5. The free end lies flat on the inside and is fixed with **one Chicago screw** 10 mm after the end of the
    braid; the free end stops 20 mm after the screw, edge bevelled. Screw heads on the grain side.
-5. **Hook A:** braid only, no ring.
-6. **Hook B:** ring 3 **and** the hook eye are caught in the **same fold**; the ring sits 30 mm before the hook eye.
-7. **Rings 1 and 2:** one continuous strap. At the ring position the strap is folded back through the ring
+6. **Hook A:** braid only, no ring.
+7. **Hook B:** ring 3 **and** the hook eye are caught in the **same fold**; the ring sits 30 mm before the hook eye.
+8. **Rings 1 and 2:** one continuous strap. At the ring position the strap is folded back through the ring
    by 150 mm (bight) and the doubled section is braided as above. The braid lies on the hook-B side of both
-   rings. **The knot on the sample is not accepted.**
-8. Attachment strength ≥ **2.0 kN**.
-9. Total strap cut length: 248 cm + 15 + 15 (hooks) + 30 + 30 (rings 1, 2) = **340 cm (+2 cm)**.
+   rings. **The knot on the sample is not accepted** — see sheet 3, bottom right.
+9. Attachment strength ≥ **2.0 kN**.
+10. Total strap cut length: 248 cm + 15 + 15 (hooks) + 30 + 30 (rings 1, 2) = **340 cm (+2 cm)**.
    One hide per lead for colour match.
 
 Patch PATCH-01 PA-L sits on the hook-B side, its outer end **30 mm** before the screw of the hook B braid,
