@@ -39,6 +39,8 @@ class Qualitaet(Abteilung):
     NUMMER = "09"
     NAME = "Qualitaet"
     MAX_TOKENS = 10000  # als QM-Zwischenschritt prueft sie lange Ergebnisse — 6000 wurde abgeschnitten
+    MAX_WOERTER = 300  # Pruefurteil, nicht Nacherzaehlung des Geprueften
+    DENKTIEFE = "medium"  # sie faellt ein Urteil
 
     ROLLE = (
         "Du bist die Qualitaetspruefung. Du kontrollierst die Arbeit der anderen "

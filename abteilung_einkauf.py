@@ -19,7 +19,9 @@ KRITERIEN = [
 class Einkauf(Abteilung):
     NUMMER = "06"
     NAME = "Einkauf"
-    MAX_TOKENS = 8000  # zwei Anfragetexte plus Tabelle passen nicht in 4000
+    MAX_TOKENS = 5000  # zwei Anfragetexte plus Tabelle passen nicht in 2000
+    MAX_WOERTER = 350
+    DENKTIEFE = "medium"  # Angebote vergleichen heisst abwaegen
     ROLLE = (
         "Du bist Insa, zustaendig fuer Lieferantenanfragen bei Herr Bello und Fraeulein "
         "Klaeff. Du entwirfst Anfragetexte an Gerbereien und Messingzulieferer zu Preisen, "

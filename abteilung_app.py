@@ -138,6 +138,8 @@ class App(Abteilung):
     NUMMER = "11"
     NAME = "App"
     MAX_TOKENS = 32000  # drei lange Plaene (Bedienung, Technik, Zusammenfuehrung)
+    MAX_WOERTER = None  # Ergebnis ist von Natur aus lang — keine Wortgrenze
+    DENKTIEFE = "medium"  # echte Planungsarbeit, nicht Schreiben nach Schema
     ROLLE = ROLLE_RIEKE  # das Gesicht der Abteilung nach aussen
 
     def bearbeiten(self, auftrag: dict, recherche: bool = False) -> dict:
@@ -186,6 +188,7 @@ class App(Abteilung):
         argumente = {
             "model": self.modell,
             "max_tokens": self.MAX_TOKENS,
+            "output_config": {"effort": self.denktiefe},
             "system": system,
             "messages": [{"role": "user", "content": nutzer}],
         }

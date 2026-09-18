@@ -22,6 +22,7 @@ Aufrufe:
 import json
 import os
 import sys
+from collections import Counter
 from datetime import date, datetime, timedelta
 
 import gedaechtnis
@@ -130,6 +131,28 @@ def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
     return auftrag
 
 
+# Instanzen eines Laufs. Eine Abteilung wird hoechstens einmal gebaut, damit
+# mehrere Auftraege denselben System-Prompt wirklich teilen. _JE_ABTEILUNG haelt
+# fest, wie oft jede in diesem Lauf drankommt — die Zwischenpruefung eingerechnet.
+_INSTANZEN: dict = {}
+_JE_ABTEILUNG: Counter = Counter()
+
+
+def abteilung_holen(name: str):
+    """Instanz je Abteilung, ueber den Lauf hinweg behalten.
+
+    Der Zwischenspeicher der API wird nur vermerkt, wenn dieselbe Abteilung in
+    diesem Lauf mehrfach drankommt — nur dann wird er auch gelesen. Bei einem
+    einzelnen Aufruf waere der Vermerk ein Aufschlag von 25 Prozent auf etwas,
+    das nie wieder abgerufen wird."""
+    abteilung = _INSTANZEN.get(name)
+    if abteilung is None:
+        abteilung = abteilung_laden(name)
+        abteilung.cache_lohnt = _JE_ABTEILUNG[name] > 1
+        _INSTANZEN[name] = abteilung
+    return abteilung
+
+
 def abteilung_laden(name: str):
     modul_name, klassen_name = ABTEILUNGEN[name]
     modul = __import__(modul_name)
@@ -169,7 +192,7 @@ def _qm_pruefung(auftrag: dict, ergebnis: dict, config: dict) -> str | None:
                           "Pruefbuch-Eintrag vorhanden"],
             "frist": date.today().isoformat(), "rahmen": "keine Ausgaben",
         }
-        qe = abteilung_laden("09 Qualität").bearbeiten(qm_auftrag)
+        qe = abteilung_holen("09 Qualität").bearbeiten(qm_auftrag)
         return qe.get("ergebnis") or None
     except Exception as fehler:
         print(f"    [QM] Zwischenpruefung uebersprungen: {fehler}")
@@ -212,6 +235,19 @@ def lauf(probelauf: bool = False) -> None:
         return
 
     eskalationen = 0
+
+    # Wie oft kommt jede Abteilung in diesem Lauf dran? Die Zwischenpruefung zaehlt
+    # mit: sie ruft 09 Qualitaet je geprueftem Auftrag erneut auf, und gerade dort
+    # traegt der Zwischenspeicher.
+    _INSTANZEN.clear()
+    _JE_ABTEILUNG.clear()
+    _JE_ABTEILUNG.update(a["abteilung"] for a in offen)
+    gate = config.get("qm_gate") or []
+    qm_laeufe = sum(1 for a in offen
+                    if a["abteilung"] in gate and not a["abteilung"].startswith("09"))
+    if qm_laeufe:
+        _JE_ABTEILUNG["09 Qualität"] += qm_laeufe
+
     for auftrag in offen:
         print(f"\n--- {auftrag['id']} | {auftrag['abteilung']} ---")
         print(f"    Ziel: {auftrag['ziel']}")
@@ -221,7 +257,7 @@ def lauf(probelauf: bool = False) -> None:
             continue
 
         try:
-            ergebnis = abteilung_laden(auftrag["abteilung"]).bearbeiten(auftrag)
+            ergebnis = abteilung_holen(auftrag["abteilung"]).bearbeiten(auftrag)
         except Exception as fehler:
             auftrag["stand"] = "gestoert"
             auftrag["verlauf"].append({"zeit": _jetzt(), "fehler": str(fehler)})

@@ -12,6 +12,8 @@ class Ausfuehrung(Abteilung):
     NUMMER = "02"
     NAME = "Produkt & Ausfuehrung"
     MAX_TOKENS = 32000  # Spezifikation + Stueckliste + SVG-Zeichnung (gestreamt)
+    MAX_WOERTER = None  # Ergebnis ist von Natur aus lang — keine Wortgrenze
+    DENKTIEFE = "medium"  # echte Planungsarbeit, nicht Schreiben nach Schema
     ROLLE = (
         "Du machst aus einem freigegebenen Konzept eine lieferfertige technische "
         "Zeichnung — Masse, Material, Konstruktion —, damit Bjoern sie nur noch "

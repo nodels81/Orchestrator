@@ -7,28 +7,37 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 
 ## Abteilungen
 
-| Nr. | Abteilung | Datei | Was sie tut |
-|---|---|---|---|
-| 01 | Innovation | `abteilung_innovation.py` | Marktbeobachtung, Produktkonzepte |
-| 02 | Produkt & Ausführung | `abteilung_ausfuehrung.py` | Spezifikation, Stückliste, SVG-Zeichnung |
-| 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
-| 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
-| **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| Nr. | Abteilung | Datei | Wer | Was sie tut |
+|---|---|---|---|---|
+| 01 | Innovation | `abteilung_innovation.py` | Merle | Marktbeobachtung, Produktkonzepte |
+| 02 | Produkt & Ausführung | `abteilung_ausfuehrung.py` | Konrad | Spezifikation, Stückliste, SVG-Zeichnung |
+| 03 | Vertrieb | `abteilung_vertrieb.py` | Silke | Angebote, Kundenantworten als Entwurf |
+| 04 | Social Media | `abteilung_social.py` | Lasse | Beitragstexte, Aufnahmeanweisungen |
+| 05 | Personal | `abteilung_personal.py` | Wiebke | Stellenbeschreibungen, Belegschaftsfragen |
+| 06 | Einkauf | `abteilung_einkauf.py` | Insa | Anfragen und Angebotsvergleich im Inland |
+| **07** | **Einkauf China** | `abteilung_einkauf_china.py` | Henrik | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| 08 | Design | `abteilung_design.py` | Thea | Formgestaltung, Entwürfe mit Silhouetten |
+| 09 | Qualität | `abteilung_qualitaet.py` | Almut | prüft die Arbeit der anderen (`qm_gate` in `config.json`) |
+| 10 | Homepage | `abteilung_web.py` | Frauke | WooCommerce auf eigenem Webspace, mit eigenem Team |
+| 11 | App | `abteilung_app.py` | Rieke | Betriebs-App fürs Handy, mit eigenem Team |
 
-Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
-Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`,
-Gedächtnis: `gedaechtnis.py`.
+Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--freigeben`,
+`--ablehnen`, `--wochenbericht`, `--hilfe`), Mail-Eskalation: `orchestrator_mail.py`,
+Markenwahrheit: `markenwissen.py`, Gedächtnis: `gedaechtnis.py`, Vornamen: `namen.py`.
+Betriebsanleitung für den Server: `BETRIEB.md`. Hinweise für Claude Code: `CLAUDE.md`.
 
 ## Gedächtnis (`gedaechtnis.py`)
 
 Bisher fing jeder Auftrag bei null an: Markenwissen und Einkaufsunterlagen wurden jedes Mal
-komplett neu bezahlt (Abteilung 05: rund 7.500 Eingabe-Tokens pro Auftrag), und was gestern
-herausgefunden wurde, war heute vergessen. Drei Maßnahmen greifen jetzt ineinander:
+komplett neu bezahlt (Abteilung 07: rund 12.900 Eingabe-Tokens pro Auftrag), und was gestern
+herausgefunden wurde, war heute vergessen. Vier Maßnahmen greifen jetzt ineinander:
 
 | Was | Wie | Ersparnis |
 |---|---|---|
-| **Prompt-Cache** | Der unveränderliche Teil der Anfrage (Markenwissen + `sourcing/`) wird mit `cache_control` markiert. Ab dem zweiten Aufruf liest die API ihn aus dem Zwischenspeicher. | ~90 % der Eingabe-Tokens, sobald derselbe Prompt innerhalb von 5 Minuten wiederkommt — also bei jedem Lauf mit mehreren Aufträgen an dieselbe Abteilung und bei jeder Nacharbeit |
+| **Kurze Ausgabe** | Ausgabe-Tokens kosten das Fünffache der Eingabe und machen den Großteil der Rechnung aus. Wo eine Abteilung Entscheidungen liefert statt langer Entwürfe, begrenzt `MAX_WOERTER` die Antwort, `MAX_TOKENS` setzt das Dach und `DENKTIEFE` den Denkaufwand (`"denktiefe"` in `config.json`, Standard `low`; wer abwägt, steht auf `medium`). Abteilungen mit langen Ergebnissen — Ausführung, Design, Personal, Homepage, App — haben `MAX_WOERTER = None` und bleiben unberührt. | grob 40–60 % bei den Abteilungen mit Wortgrenze |
+| **Prompt-Cache** | Der unveränderliche Teil der Anfrage (Markenwissen + `sourcing/`) wird mit `cache_control` markiert. Ab dem zweiten Aufruf liest die API ihn aus dem Zwischenspeicher. Der Vermerk wird **nur gesetzt, wenn dieselbe Abteilung in diesem Lauf mehrfach drankommt** — jede hat einen eigenen System-Prompt, und Schreiben kostet das 1,25-fache. Bei einem einzelnen Aufruf wäre er ein Aufschlag auf etwas, das nie gelesen wird. Die Zwischenprüfung zählt mit: sie ruft `09 Qualität` je geprüftem Auftrag erneut auf, dort trägt der Cache am zuverlässigsten. Nacharbeit läuft erst im nächsten Lauf, also außerhalb der 5-Minuten-Frist. | ~90 % der Eingabe-Tokens, wo eine Abteilung mehrfach läuft |
 | **Gedächtnis** | Statt aller Unterlagen wandern nur die zum Ziel passenden Fakten und Kurzfassungen früherer Aufträge in den Prompt (max. 2.500 Zeichen). | Wissen aus alten Aufträgen kostet ein paar hundert statt zehntausender Tokens |
+| **Tech Packs nach Bedarf** | Abteilung 07 lädt nur die Spezifikationen, deren Kürzel im Auftragsziel steht (`HB-01`, `LE-02`, `VERP-01` …), und zwar in der Nutzernachricht statt im System-Prompt. Ohne erkennbares Kürzel bleibt es beim bisherigen Umfang. | ~1.500 Eingabe-Tokens je Auftrag, und alle sieben Spezifikationen stehen zur Verfügung statt drei |
 | **Antwortspeicher** | Ein wortgleicher Auftrag wird aus der Datenbank beantwortet. | 100 % — kein API-Aufruf |
 
 Deshalb steht im System-Prompt **nichts Wechselndes** mehr: jedes Zeichen, das sich zwischen zwei
@@ -45,10 +54,10 @@ Antwort ohnehin schreibt, und ergeben mit der Zeit einen kleinen Wissensgraph.
 lässt sich beides — so bleibt nachvollziehbar, was wann galt und wer wann was zugesagt hat.
 
 ```bash
-venv/bin/python orchestrator.py --gedaechtnis            # Stand und gesparte Tokens
-venv/bin/python orchestrator.py --wissen "Wenzhou Vigorous"   # nachschlagen, auch die Historie
-venv/bin/python orchestrator.py --vergessen 180          # alte Episoden weg, Fakten bleiben
-venv/bin/python -m unittest test_gedaechtnis -v          # 19 Tests, ohne Schlüssel, ohne Kosten
+.venv/bin/python orchestrator.py --gedaechtnis            # Stand und gesparte Tokens
+.venv/bin/python orchestrator.py --wissen "Wenzhou Vigorous"   # nachschlagen, auch die Historie
+.venv/bin/python orchestrator.py --vergessen 180          # alte Episoden weg, Fakten bleiben
+.venv/bin/python -m unittest discover -p "test_*.py"       # 36 Tests, ohne Schlüssel, ohne Kosten
 ```
 
 `gedaechtnis.db` ist reines SQLite aus der Standardbibliothek — kein zusätzliches Paket, kein
@@ -74,16 +83,16 @@ sourcing/lieferanten/               Shortlist (35 Kandidaten) und Tracker
 ```bash
 cd /opt/bello
 git pull                                   # neue Abteilungen und Unterlagen holen
-venv/bin/python orchestrator.py --probelauf
-venv/bin/python orchestrator.py --auftrag "05 Einkauf China" "RFQ fuer HB-01 und LE-01 an die Prio-1-Fabriken der Shortlist" 2026-09-19
-venv/bin/python orchestrator.py --stand
-venv/bin/python orchestrator.py --gedaechtnis
+.venv/bin/python orchestrator.py --probelauf
+.venv/bin/python orchestrator.py --auftrag "05 Einkauf China" "RFQ fuer HB-01 und LE-01 an die Prio-1-Fabriken der Shortlist" 2026-09-19
+.venv/bin/python orchestrator.py --stand
+.venv/bin/python orchestrator.py --gedaechtnis
 ```
 
 Einzeltest der Einkaufsabteilung ohne Orchestrator:
 
 ```bash
-venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzhou Vigorous Pet Products, 100 Stueck" --recherche
+.venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzhou Vigorous Pet Products, 100 Stueck" --recherche
 ```
 
 Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:

@@ -39,6 +39,8 @@ class Personal(Abteilung):
     NUMMER = "05"
     NAME = "Personal"
     MAX_TOKENS = 12000  # Stellenbeschreibungen sind lang; 4000 reichte nicht
+    MAX_WOERTER = None  # Ergebnis ist von Natur aus lang — keine Wortgrenze
+    DENKTIEFE = "medium"  # echte Planungsarbeit, nicht Schreiben nach Schema
     ROLLE = (
         f"Du heisst {VORNAME} und bist die Personalabteilung. Du bist Personaldienstleisterin "
         "fuer KI-Agenten: Du erkennst, wo im Betrieb eine Faehigkeit fehlt, und entwirfst "

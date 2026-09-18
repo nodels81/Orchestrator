@@ -4,7 +4,7 @@ abteilung_basis.py — Gemeinsame Mechanik. Muss nie angefasst werden.
 Jede Abteilung erbt von Abteilung und liefert dieselbe Status-Struktur zurueck,
 damit der Orchestrator maschinell pruefen kann statt zu interpretieren.
 
-Drei Sparmassnahmen stecken hier drin, sichtbar in 'orchestrator.py --gedaechtnis':
+Vier Sparmassnahmen stecken hier drin, sichtbar in 'orchestrator.py --gedaechtnis':
 
   1. PROMPT-CACHE   Markenwissen und Einkaufsunterlagen stehen unveraendert am
                     Anfang jeder Anfrage. Mit cache_control liest die API sie beim
@@ -16,6 +16,12 @@ Drei Sparmassnahmen stecken hier drin, sichtbar in 'orchestrator.py --gedaechtni
   3. ANTWORTSPEICHER Ein wortgleicher Auftrag wird ohne API-Aufruf beantwortet.
                     Bei Nacharbeit (versuche > 0) nie — sonst bekaeme die
                     Abteilung ewig dieselbe abgelehnte Antwort zurueck.
+  4. KURZE AUSGABE  Ausgabe kostet das Fuenffache der Eingabe und macht damit den
+                    Grossteil der Rechnung aus. Wo eine Abteilung Entscheidungen
+                    liefert statt langer Entwuerfe, begrenzt MAX_WOERTER die
+                    Antwort und DENKTIEFE den Denkaufwand. Abteilungen, die
+                    bewusst lang schreiben (Plaene, Zeichnungen), setzen
+                    MAX_WOERTER auf None und bleiben unberuehrt.
 """
 
 import json
@@ -77,7 +83,13 @@ class Abteilung:
     NUMMER = "00"
     NAME = "Basis"
     ROLLE = "Keine Rolle definiert."
-    MAX_TOKENS = 4000  # Ableitungen duerfen hochsetzen (z. B. lange Entwuerfe)
+    MAX_TOKENS = 2000  # Ableitungen duerfen hochsetzen (z. B. lange Entwuerfe)
+    # Wortgrenze fuer das Feld 'ergebnis'; steht so im Prompt. None = keine Grenze,
+    # fuer Abteilungen, deren Ergebnis von Natur aus lang ist.
+    MAX_WOERTER = 250
+    # Denkaufwand der API: low reicht, wo nach festen Regeln geschrieben wird.
+    # Wer wirklich abwaegt (Angebote, Pruefung, Plaene), hebt auf medium.
+    DENKTIEFE = "low"
 
     def __init__(self, config: dict | None = None):
         self.config = config or config_laden()
@@ -90,6 +102,10 @@ class Abteilung:
         )
         self.modell = self.config.get("modell", STANDARD_MODELL)
         self.gedaechtnis_an = self.config.get("gedaechtnis", True) is not False
+        self.denktiefe = self.config.get("denktiefe", self.DENKTIEFE)
+        # Setzt der Orchestrator, wenn in diesem Lauf mehrere Auftraege an dieselbe
+        # Abteilung gehen. Nur dann wird der Zwischenspeicher auch gelesen.
+        self.cache_lohnt = False
 
     # ---------- Prompt ----------
 
@@ -113,26 +129,41 @@ class Abteilung:
             "und begruendest das im Feld 'anmerkung'.\n"
         )
 
+    def auftrag_kontext(self, auftrag: dict) -> str:
+        """Unterlagen, die nur zu diesem einen Auftrag gehoeren.
+
+        Sie gehoeren in die Nutzernachricht, nicht in den System-Prompt: dort
+        wuerden sie ihn bei jedem Auftrag veraendern und damit den Zwischenspeicher
+        entwerten. Standard ist leer; Abteilungen mit umfangreichen Unterlagen
+        ueberschreiben das und waehlen nach Auftragsziel aus."""
+        return ""
+
     def antwortformat(self) -> str:
+        """Kurz gehalten: jedes Wort hier geht bei jedem Aufruf mit."""
+        laenge = ""
+        if self.MAX_WOERTER:
+            laenge = (
+                f"LAENGE: 'ergebnis' hoechstens {self.MAX_WOERTER} Woerter. Kein Vorwort, "
+                "keine Wiederholung des Auftrags, kein Bericht darueber, was du getan hast. "
+                "Nur das fertige Arbeitsergebnis und die Entscheidungen, die anstehen.\n"
+            )
         return (
             "Antworte ausschliesslich mit diesem JSON-Objekt:\n"
             "{\n"
-            '  "ergebnis": "<deine Arbeit, ausformuliert>",\n'
+            '  "ergebnis": "<deine Arbeit>",\n'
             '  "kriterien_erfuellt": [true, false, ...],\n'
             '  "blocker": null,\n'
-            '  "anmerkung": "<Einschraenkungen oder Hinweise, sonst null>",\n'
-            '  "zusammenfassung": "<dein Ergebnis in hoechstens zwei Saetzen>",\n'
-            '  "fakten": [\n'
-            '    {"subjekt": "<worueber>", "praedikat": "<was>", "objekt": "<Wert>"}\n'
-            "  ]\n"
-            "}\n"
-            "Die Liste kriterien_erfuellt hat genau so viele Eintraege wie Kriterien "
-            "im Auftrag, in derselben Reihenfolge.\n\n"
-            "Zu 'fakten': hoechstens fuenf harte, kurze Aussagen, die spaeter noch "
-            "gelten — Mengen, Preise, Fristen, Zusagen, Namen. Beispiel: "
+            '  "anmerkung": "<Einschraenkung, sonst null>",\n'
+            '  "zusammenfassung": "<hoechstens zwei Saetze>",\n'
+            '  "fakten": [{"subjekt": "<worueber>", "praedikat": "<was>", "objekt": "<Wert>"}]\n'
+            "}\n\n"
+            + laenge +
+            "kriterien_erfuellt hat genau so viele Eintraege wie Kriterien, in derselben "
+            "Reihenfolge.\n"
+            "fakten: hoechstens fuenf kurze Aussagen, die spaeter noch gelten — Mengen, "
+            "Preise, Fristen, Zusagen, Namen. Beispiel: "
             '{"subjekt": "Wenzhou Vigorous", "praedikat": "moq", "objekt": "100 Stueck HB-01"}. '
-            "Keine Absichten, keine Vermutungen, keine Wiederholung des Auftrags. "
-            "Weisst du nichts Bleibendes, gib eine leere Liste."
+            "Keine Absichten, keine Vermutungen. Weisst du nichts Bleibendes, leere Liste."
         )
 
     # ---------- Ausfuehrung ----------
@@ -154,6 +185,9 @@ class Abteilung:
             "ABNAHMEKRITERIEN:\n"
             + "\n".join(f"  {i+1}. {k}" for i, k in enumerate(kriterien))
         )
+        unterlagen = self.auftrag_kontext(auftrag)
+        if unterlagen:
+            nutzer += "\n\n" + unterlagen
         erinnerung = self._erinnerung(auftrag)
         if erinnerung:
             nutzer += "\n\n" + erinnerung
@@ -162,6 +196,7 @@ class Abteilung:
         argumente = {
             "model": self.modell,
             "max_tokens": self.MAX_TOKENS,
+            "output_config": {"effort": self.denktiefe},
             "system": self._system_bloecke(),
             "messages": [{"role": "user", "content": nutzer}],
         }
@@ -174,8 +209,21 @@ class Abteilung:
                 antwort = strom.get_final_message()
         else:
             antwort = self.client.messages.create(**argumente)
+        # Abgeschnitten heisst unvollstaendig. Das darf nicht als Ergebnis durchgehen,
+        # sonst wandert ein halber Satz in die Eskalation und gilt als erledigt.
         if getattr(antwort, "stop_reason", "") == "max_tokens":
             print(f"    [API] Antwort am Tokenlimit ({self.MAX_TOKENS}) abgeschnitten.")
+            ergebnis = {
+                "ergebnis": "",
+                "kriterien_erfuellt": [False] * len(kriterien),
+                "blocker": f"Antwort am Tokenlimit abgeschnitten ({self.MAX_TOKENS}).",
+                "anmerkung": "Auftrag enger fassen oder MAX_TOKENS der Abteilung anheben.",
+                "zusammenfassung": "",
+                "fakten": [],
+            }
+            self._merken(auftrag, ergebnis, _verbrauch(antwort))
+            return ergebnis
+
         text = "".join(b.text for b in antwort.content if getattr(b, "type", "") == "text")
         ergebnis = self._json_lesen(text, len(kriterien))
         self._merken(auftrag, ergebnis, _verbrauch(antwort))
@@ -192,9 +240,16 @@ class Abteilung:
             return None
 
     def _system_bloecke(self) -> list[dict]:
-        """Der System-Prompt als Block. Ist er lang genug, wird er zwischengespeichert."""
+        """Der System-Prompt als Block, bei Bedarf mit Zwischenspeicher.
+
+        Zwei Bedingungen, beide noetig. Lang genug — unter dem Mindestmass der API
+        wird nichts abgelegt, der Vermerk verpufft lautlos. Und er muss auch
+        gelesen werden: Schreiben kostet das 1,25-fache, jede Abteilung hat einen
+        eigenen System-Prompt, und ein Lauf ruft jede in der Regel einmal auf.
+        Dann wird nie gelesen und der Vermerk ist reiner Aufschlag. Darum setzt
+        der Orchestrator cache_lohnt nur bei mehreren Auftraegen je Abteilung."""
         block: dict = {"type": "text", "text": self.system_prompt()}
-        if len(block["text"]) >= MIN_CACHE_ZEICHEN:
+        if self.cache_lohnt and len(block["text"]) >= MIN_CACHE_ZEICHEN:
             block["cache_control"] = {"type": "ephemeral"}
         return [block]
 
