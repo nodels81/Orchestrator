@@ -65,10 +65,14 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
 4. Buckle tongue slot 10 mm long, punched clean.
 5. Grain side out. Flesh side lightly finished (no loose fibres, no coating).
 
-## 6. Quantity and packaging
+## 6. Quantity and packaging (samples-first strategy, revised 18 Sep 2026)
 
-- Samples: 1 pc per size, colour olive. Then 100 pcs: S 20 / M 35 / L 30 / XL 15, colours grey /
-  dark brown / olive / cognac (split to be confirmed).
+- **Step 0 — leather swatches:** small swatches of every colour offered (grey, dark brown, olive,
+  cognac), no finished pieces. No cost, no commitment. This is the first thing we ask for.
+- **Step 1 — pre-production sample:** 1 pc per size, colour olive, as before.
+- **Step 2 — pilot batch:** 10 pcs, maybe 20 — **not** the previous 100-pc firm order. Size/colour
+  split to be confirmed once golden sample is approved. We want to see how they turn out before
+  committing to a larger order.
 - Packing: 1 pc in kraft paper bag with size sticker (model, size, colour); 25 pcs per inner carton.
 - Care card (we supply artwork) in each bag.
 

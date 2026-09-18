@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1400" height="700" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.1, 9 Sep 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1600" height="1180" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.2, 18 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">One continuous strap, veg-tan oiled cowhide 3.5–4.0 mm · 2 solid brass swivel bolt snaps · 3 welded solid brass O-rings · hooks and rings held by 3-strand mystery braid + 1 Chicago screw · NO stitching, NO rivets</text>
 
   <!-- scale: 1 cm = 4 px horizontally. 300 cm = 1200 px. origin x=120 -->
@@ -93,7 +93,7 @@
     <text x="125" y="108" text-anchor="middle" fill="#000" stroke="none" font-size="12">fold-back 120 mm</text>
     <text x="0" y="135" fill="#000" stroke="none" font-size="13">Strap through ring/hook eye, folded back 120 mm. Two lengthwise slits → 3 strands, "mystery braid" (one piece, ends uncut),</text>
     <text x="0" y="153" fill="#000" stroke="none" font-size="13">6–8 crossings, chevron pattern as photo. Free end flat on the inside, 1 Chicago screw 15 mm after the braid. Attachment ≥ 2.0 kN.</text>
-    <text x="0" y="171" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide · alternative plain fold 50 mm + 2 screws only on request</text>
+    <text x="0" y="171" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide — shape confirmed by photo, see BOM #3</text>
   </g>
 
   <g transform="translate(900,510)">
@@ -101,8 +101,80 @@
     <text x="0" y="24" fill="#000" stroke="none" font-size="13">B→ring 3: 245 · B→ring 2: 140 (loop 160, hands-free) · B→ring 1: 45 cm</text>
     <text x="0" y="44" fill="#000" stroke="none" font-size="13">A→ring 1: 255 · A→ring 2: 160 · A→ring 3: 55 cm · both hooks: 300 cm</text>
     <text x="0" y="74" fill="#000" stroke="none" font-size="13">Cut length of strap: 360 cm (300 + 5 attachments × 12 cm).</text>
-    <text x="0" y="94" fill="#000" stroke="none" font-size="13">Swivel bolt snap solid brass, polished, eye 20 mm, ≥ 2 kN.</text>
+    <text x="0" y="94" fill="#000" stroke="none" font-size="13">Swivel bolt snap solid brass, polished, eye 20 mm, ≥ 2 kN — shape confirmed by photo, see BOM #2.</text>
     <text x="0" y="114" fill="#000" stroke="none" font-size="13">Colours: grey, dark brown, olive, cognac. One hide per lead.</text>
     <text x="0" y="134" fill="#000" stroke="none" font-size="13">Screw heads on grain side. Edges bevelled + burnished, no paint.</text>
+  </g>
+
+  <!-- second view: cross-section -->
+  <g transform="translate(60,745)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Section C–C (strap, single layer), scale 2:1</text>
+    <rect x="0" y="20" width="300" height="16" fill="#ddd"/>
+    <text x="310" y="34" fill="#000" stroke="none" font-size="13">grain side up, flesh side lightly finished, single layer 3.5–4.0 mm</text>
+    <text x="0" y="60" fill="#000" stroke="none" font-size="13">Strap width 20 mm ±0.5 mm (option 25 mm). At braided attachments the strap is doubled (fold-back,</text>
+    <text x="0" y="80" fill="#000" stroke="none" font-size="13">see detail above), everywhere else single layer — no glued double layer along the length.</text>
+  </g>
+
+  <!-- Stückliste / Bill of Materials -->
+  <g transform="translate(40,855)">
+    <text x="0" y="0" font-size="18" font-weight="bold" fill="#000" stroke="none">Stückliste / Bill of Materials — LE-01, per unit</text>
+    <g stroke="#000" stroke-width="1.2">
+      <rect x="0" y="14" width="1320" height="240" fill="none"/>
+      <line x1="0" y1="44" x2="1320" y2="44"/>
+      <line x1="50" y1="14" x2="50" y2="254"/>
+      <line x1="480" y1="14" x2="480" y2="254"/>
+      <line x1="560" y1="14" x2="560" y2="254"/>
+      <line x1="1160" y1="14" x2="1160" y2="254"/>
+      <line x1="0" y1="74" x2="1320" y2="74"/>
+      <line x1="0" y1="104" x2="1320" y2="104"/>
+      <line x1="0" y1="134" x2="1320" y2="134"/>
+      <line x1="0" y1="164" x2="1320" y2="164"/>
+      <line x1="0" y1="194" x2="1320" y2="194"/>
+      <line x1="0" y1="224" x2="1320" y2="224"/>
+    </g>
+    <g font-size="13" fill="#000" stroke="none">
+      <text x="10" y="34" font-weight="bold">Pos</text>
+      <text x="60" y="34" font-weight="bold">Bezeichnung</text>
+      <text x="570" y="34" font-weight="bold">Menge</text>
+      <text x="670" y="34" font-weight="bold">Material / Spezifikation</text>
+      <text x="1170" y="34" font-weight="bold">Referenz</text>
+
+      <text x="10" y="64">1</text>
+      <text x="60" y="64">Riemen (einteilig, 360 cm Zuschnitt)</text>
+      <text x="570" y="64">1</text>
+      <text x="670" y="64">Fettleder Rind, pflanzlich gegerbt, Vollnarbe, 3.5–4.0 mm, 20 mm breit</text>
+      <text x="1170" y="64">Zeichnung</text>
+
+      <text x="10" y="94">2</text>
+      <text x="60" y="94">Wirbel-Bolzenkarabiner (swivel bolt snap)</text>
+      <text x="570" y="94">2</text>
+      <text x="670" y="94">Vollmessing, poliert, Öse 20 mm, ≥ 2.0 kN</text>
+      <text x="1170" y="94" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="124">3</text>
+      <text x="60" y="124">O-Ring</text>
+      <text x="570" y="124">3</text>
+      <text x="670" y="124">Vollmessing, geschweißt, Innen-Ø 25 mm, Draht 5 mm, ≥ 3 kN</text>
+      <text x="1170" y="124" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="154">4</text>
+      <text x="60" y="154">Lederpatch PATCH-01 PA-S</text>
+      <text x="570" y="154">1</text>
+      <text x="670" y="154">Cognac/Mittelbraun, 2.0–2.5 mm, graviert "BELLOWERK / Manufaktur"</text>
+      <text x="1170" y="154">PATCH-01.svg</text>
+
+      <text x="10" y="184">5</text>
+      <text x="60" y="184">Buchschrauben (Chicago screws)</text>
+      <text x="570" y="184">5</text>
+      <text x="670" y="184">Vollmessing, Kopf Ø 8–9 mm, gewölbt, gesichert — 1 je Flechtanbindung</text>
+      <text x="1170" y="184" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="214">6</text>
+      <text x="60" y="214">Flechtung an Haken/Ringen</text>
+      <text x="570" y="214">5×</text>
+      <text x="670" y="214">3-strängiger Mystery Braid aus dem Riemen selbst, kein Zusatzteil</text>
+      <text x="1170" y="214">Zeichnung, Detail oben</text>
+    </g>
+    <text x="0" y="278" font-size="12" fill="#333" stroke="none">"Foto bestätigt": Form fotografisch abgeglichen (bilder/hardware-karabiner-1zu1.jpg, hardware-oring-1zu1.jpg). Keine Annäherung — exakte Ausführung verbindlich.</text>
   </g>
 </svg>

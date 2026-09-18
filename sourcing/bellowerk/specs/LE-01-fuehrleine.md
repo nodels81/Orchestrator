@@ -1,8 +1,10 @@
-# LE-01 — Adjustable Leather Lead, 3.00 m (Tech Pack v1.1, 9 Sep 2026)
+# LE-01 — Adjustable Leather Lead, 3.00 m (Tech Pack v1.2, 18 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
-Attachments: `zeichnungen/LE-01-fuehrleine.png`, photos `bilder/LE-01-detail-karabiner-flechtung.jpg`
-(braided hook attachment) and `bilder/LE-01-flechtung-ringe-farben.jpg` (four colours, ring in braid, patch).
+Attachments: `zeichnungen/LE-01-fuehrleine.png` (dimensioned drawing + Bill of Materials), photos
+`bilder/hardware-karabiner-1zu1.jpg`, `bilder/hardware-oring-1zu1.jpg` (photo-confirmed, binding 1:1
+reference for shape), `bilder/LE-01-detail-karabiner-flechtung.jpg` (braided hook attachment) and
+`bilder/LE-01-flechtung-ringe-farben.jpg` (four colours, ring in braid, patch).
 
 ## 1. Product
 
@@ -22,7 +24,21 @@ piece) plus one Chicago screw** — this is the signature look, see photos. Leat
 | Patch | PATCH-01 PA-S (65 × 14 mm), 2 Chicago screws. |
 | Edges | Bevelled, burnished, no paint. |
 
-## 3. Dimensions (all measured from the inner edge of hook A eye, ±1 cm)
+## 3. Bill of Materials (Stückliste), per unit
+
+| Pos | Part | Qty | Material / Spec | Reference |
+|---|---|---|---|---|
+| 1 | Strap (one piece, 360 cm cut) | 1 | Vegetable-tanned oiled cowhide, full grain, 3.5–4.0 mm, 20 mm wide | Drawing / Tech Pack |
+| 2 | Swivel bolt snap | 2 | Solid brass, polished, eye 20 mm, ≥ 2.0 kN | **Photo-confirmed** — `bilder/hardware-karabiner-1zu1.jpg` |
+| 3 | O-ring | 3 | Solid brass, welded, inner Ø 25 mm, wire 5 mm, ≥ 3 kN | **Photo-confirmed** — `bilder/hardware-oring-1zu1.jpg` |
+| 4 | Leather patch PATCH-01 PA-S | 1 | Cognac/medium brown, 2.0–2.5 mm, engraved "BELLOWERK / Manufaktur" | `specs/PATCH-01-markenpatch.md` |
+| 5 | Chicago screws | 5 | Solid brass, domed head Ø 8–9 mm, thread-locked — 1 per braided attachment | **Photo-confirmed** |
+| 6 | Braided attachment at hooks/rings | 5× | 3-strand mystery braid made from the strap itself, no separate part | Drawing, detail view |
+
+"Photo-confirmed" = shape verified against a sharp reference photo of our own existing hardware — not
+an approximation.
+
+## 4. Dimensions (all measured from the inner edge of hook A eye, ±1 cm)
 
 | Position | Item | Distance from hook A |
 |---|---|---|
@@ -47,7 +63,7 @@ Total length hook eye to hook eye: **300 cm**. Rings are fixed (they do not slid
 
 Plus 300 cm with both hooks (two dogs / tie-out).
 
-## 4. Construction — braided attachment (default, as on photos)
+## 5. Construction — braided attachment (default, as on photos)
 
 At each hook and each ring:
 1. Strap end passes through the hook eye / ring and folds back on itself **120 mm**.
@@ -67,18 +83,22 @@ only with Björn's approval, quoted separately.
 Patch PATCH-01 at 80 mm from hook A braid end, centred, 2 screws. All screw heads on the grain side.
 Edges bevelled along the whole length, including the braid strands.
 
-## 5. Quantity and packaging
+## 6. Quantity and packaging (samples-first strategy, revised 18 Sep 2026)
 
-- Samples: 2 pcs (olive, 20 mm). Then 100 pcs: olive 30 / dark brown 30 / cognac 20 / grey 20.
+- **Step 0 — leather swatches:** small swatches of every colour offered (grey, dark brown, olive,
+  cognac), no finished pieces. No cost, no commitment. This is the first thing we ask for.
+- **Step 1 — pre-production sample:** 2 pcs (olive, 20 mm), as before.
+- **Step 2 — pilot batch:** 10 pcs, maybe 20 — **not** a 100-pc firm order. Colour split to be
+  confirmed once golden sample is approved. We want to see how they turn out before committing further.
 - Packing: coiled, paper band, 1 pc per kraft bag with sticker; 10 pcs per inner carton.
 
-## 6. Deliverables with the order
+## 7. Deliverables with the order
 
 Pattern as PDF 1:1 + DXF (strap, slit positions and lengths for the braid, screw positions, ring
 positions), leather data sheet, brass alloy statement, breaking-load test of snaps and rings (and of
 the braided attachment: ≥ 2.0 kN), REACH Cr(VI) test report.
 
-## 7. Questions to answer in your quotation
+## 8. Questions to answer in your quotation
 
 1. Do you make the 3-strand mystery braid attachment in-house? Photo/video of a finished braid.
 2. Unit price EXW, 100 pcs / 300 pcs

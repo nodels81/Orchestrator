@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1000" height="520" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HS-01 Leather Hand Loop, 50 cm — 20 mm — Bellowerk Manufaktur, v1.0, 9 Sep 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" viewBox="0 0 1500 960" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1500" height="960" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">HS-01 Leather Hand Loop, 50 cm — 20 mm — Bellowerk Manufaktur, v1.1, 18 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">Veg-tan oiled cowhide 3.5–4.0 mm · 1 solid brass swivel trigger snap · overlap + snap fold fixed with Chicago screws · NO stitching, NO rivets</text>
 
   <!-- loop drawn as ellipse, circumference 50 cm symbolic -->
-  <g transform="translate(300,270)">
+  <g transform="translate(560,270)">
     <ellipse cx="0" cy="0" rx="200" ry="110" stroke-width="12" stroke="#bbb"/>
     <ellipse cx="0" cy="0" rx="200" ry="110" stroke-width="2"/>
     <!-- snap fold at right -->
@@ -16,7 +16,7 @@
       <path d="M 100 0 A 10 10 0 0 1 100 18 L 80 18" stroke-width="3"/>
     </g>
     <text x="235" y="-40" fill="#000" stroke="none" font-size="14">snap fold 50 mm, 2 screws</text>
-    <text x="300" y="60" fill="#000" stroke="none" font-size="14">swivel trigger snap, solid brass, eye 20 mm, ≥ 2 kN</text>
+    <text x="300" y="60" fill="#000" stroke="none" font-size="14">swivel trigger snap, solid brass, eye 20 mm, ≥ 2 kN — shape confirmed by photo, see BOM #2</text>
     <!-- overlap at left -->
     <g transform="translate(-200,0)">
       <rect x="-30" y="-12" width="60" height="24" fill="#fff" stroke="#000"/>
@@ -28,12 +28,70 @@
     <text x="-140" y="-135" fill="#000" stroke="none" font-size="13">nameplate PATCH-01 (40×14)</text>
   </g>
 
-  <g transform="translate(620,380)">
+  <g transform="translate(1050,430)">
     <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Dimensions</text>
     <text x="0" y="24" fill="#000" stroke="none" font-size="14">Loop circumference: 500 mm ±5</text>
     <text x="0" y="44" fill="#000" stroke="none" font-size="14">Strap width: 20 mm ±0.5</text>
     <text x="0" y="64" fill="#000" stroke="none" font-size="14">Cut length: 600 mm (500 + 50 overlap + 50 snap fold)</text>
     <text x="0" y="84" fill="#000" stroke="none" font-size="14">Chicago screws brass, head Ø 5, post 8 mm</text>
     <text x="0" y="104" fill="#000" stroke="none" font-size="14">Edges bevelled + burnished</text>
+  </g>
+
+  <!-- second view: cross-section -->
+  <g transform="translate(60,540)">
+    <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Section D–D (overlap / snap fold), scale 2:1</text>
+    <rect x="0" y="20" width="260" height="16" fill="#ddd"/>
+    <rect x="0" y="36" width="260" height="16" fill="#ddd"/>
+    <text x="270" y="34" fill="#000" stroke="none" font-size="13">grain side out</text>
+    <text x="270" y="50" fill="#000" stroke="none" font-size="13">flesh to flesh, 2 layers × 4 mm at overlap and snap fold only</text>
+    <text x="0" y="80" fill="#000" stroke="none" font-size="13">Rest of loop single layer, 3.5–4.0 mm, 20 mm width ±0.5 mm</text>
+  </g>
+
+  <!-- Stückliste / Bill of Materials -->
+  <g transform="translate(40,650)">
+    <text x="0" y="0" font-size="18" font-weight="bold" fill="#000" stroke="none">Stückliste / Bill of Materials — HS-01, per unit</text>
+    <g stroke="#000" stroke-width="1.2">
+      <rect x="0" y="14" width="920" height="150" fill="none"/>
+      <line x1="0" y1="44" x2="920" y2="44"/>
+      <line x1="50" y1="14" x2="50" y2="164"/>
+      <line x1="380" y1="14" x2="380" y2="164"/>
+      <line x1="450" y1="14" x2="450" y2="164"/>
+      <line x1="760" y1="14" x2="760" y2="164"/>
+      <line x1="0" y1="74" x2="920" y2="74"/>
+      <line x1="0" y1="104" x2="920" y2="104"/>
+      <line x1="0" y1="134" x2="920" y2="134"/>
+    </g>
+    <g font-size="13" fill="#000" stroke="none">
+      <text x="10" y="34" font-weight="bold">Pos</text>
+      <text x="60" y="34" font-weight="bold">Bezeichnung</text>
+      <text x="390" y="34" font-weight="bold">Menge</text>
+      <text x="470" y="34" font-weight="bold">Material / Spezifikation</text>
+      <text x="770" y="34" font-weight="bold">Referenz</text>
+
+      <text x="10" y="64">1</text>
+      <text x="60" y="64">Riemen (Schlaufe, 600 mm Zuschnitt)</text>
+      <text x="390" y="64">1</text>
+      <text x="470" y="64">Fettleder Rind, 3.5–4.0 mm, 20 mm breit</text>
+      <text x="770" y="64">Zeichnung</text>
+
+      <text x="10" y="94">2</text>
+      <text x="60" y="94">Wirbel-Bolzenkarabiner (swivel trigger snap)</text>
+      <text x="390" y="94">1</text>
+      <text x="470" y="94">Vollmessing, Öse 20 mm, ≥ 2.0 kN</text>
+      <text x="770" y="94" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="124">3</text>
+      <text x="60" y="124">Lederpatch PATCH-01 PA-S</text>
+      <text x="390" y="124">1</text>
+      <text x="470" y="124">Cognac/Mittelbraun, graviert "BELLOWERK"</text>
+      <text x="770" y="124">PATCH-01.svg</text>
+
+      <text x="10" y="154">4</text>
+      <text x="60" y="154">Buchschrauben (Chicago screws)</text>
+      <text x="390" y="154">4</text>
+      <text x="470" y="154">Vollmessing, Kopf Ø 5 mm, Schaft 8 mm</text>
+      <text x="770" y="154" font-weight="bold">Foto bestätigt</text>
+    </g>
+    <text x="0" y="188" font-size="12" fill="#333" stroke="none">"Foto bestätigt": Form fotografisch abgeglichen (bilder/hardware-karabiner-1zu1.jpg). Keine Annäherung — exakte Ausführung verbindlich.</text>
   </g>
 </svg>
