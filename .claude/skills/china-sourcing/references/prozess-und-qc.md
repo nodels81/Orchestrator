@@ -69,8 +69,11 @@ EU 2,7 %, plus 19 % Einfuhrumsatzsteuer. EORI-Nummer nötig. Zahlen vor Bestellu
   oder Nachweis). Vom Lieferanten Testbericht (SGS/Intertek/BV) verlangen oder eine Stichprobe selbst
   testen lassen (ca. 150–300 EUR).
 - Kein CE für Halsbänder/Leinen ohne Elektronik.
-- Textil-/Lederkennzeichnung: "Echtleder / genuine leather", Pflegehinweis, Herkunft ("Made in China"
-  beim Import verpflichtend nach Zollrecht auf Ware/Verpackung, wenn Herkunftsangabe erfolgt).
+- Textil-/Lederkennzeichnung: "Echtleder / genuine leather", Pflegehinweis.
+- Herkunftsangabe: **keine** — Björns Entscheidung vom 15.9.2026. Auf Ware, Verpackung, Anhänger und
+  im Shop steht kein Fertigungsland. Vorgeschrieben ist eine solche Angabe für Lederwaren in der EU
+  nicht. Dafür gilt strikt die Gegenrichtung: nie deutsche Fertigung behaupten. Lieferanten dürfen
+  keine Prägung, kein Etikett und keinen Aufdruck mit Herkunft anbringen — das gehört in die PO.
 
 ## Lieferanten-Bewertung nach dem Muster
 

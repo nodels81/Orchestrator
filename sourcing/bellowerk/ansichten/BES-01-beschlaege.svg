@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="700" viewBox="0 0 1760 700" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="ms" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E5312"/><stop offset="14%" stop-color="#EBD08A"/>
+      <stop offset="38%" stop-color="#C9A24E"/><stop offset="62%" stop-color="#A98430"/>
+      <stop offset="86%" stop-color="#DDBE6E"/><stop offset="100%" stop-color="#6A4F11"/>
+    </linearGradient>
+    <linearGradient id="msq" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A5C16"/><stop offset="20%" stop-color="#E4C476"/>
+      <stop offset="52%" stop-color="#C09A46"/><stop offset="80%" stop-color="#E0BF72"/><stop offset="100%" stop-color="#75570F"/>
+    </linearGradient>
+    <radialGradient id="kopf" cx="36%" cy="30%" r="74%">
+      <stop offset="0%" stop-color="#F6E4AE"/><stop offset="46%" stop-color="#C9A44E"/><stop offset="100%" stop-color="#7C5C16"/>
+    </radialGradient>
+    <filter id="wurf" x="-30%" y="-30%" width="170%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#2a251d" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="1760" height="700" fill="#F3F1EC"/>
+  <text x="60" y="56" font-size="27" font-weight="bold" fill="#211C15">BES-01 — Messing massiv, alle Teile im Maßstab 2:1 nebeneinander</text>
+  <text x="60" y="86" font-size="16" fill="#5E5648">Unlackiert · kein Zinkdruckguss, kein vermessingter Stahl · Wareneingang: Magnettest, Stückgewicht gegen Goldmuster ±5 %, Bruchlast je Teil</text>
+
+  <!-- Rollschnalle 25 mm -->
+  <g transform="translate(110,170)" filter="url(#wurf)">
+    <rect x="0" y="0" width="14" height="110" rx="6" fill="url(#msq)"/>
+    <rect x="74" y="0" width="14" height="110" rx="6" fill="url(#msq)"/>
+    <rect x="0" y="0" width="88" height="14" rx="6" fill="url(#ms)"/>
+    <rect x="0" y="96" width="88" height="14" rx="6" fill="url(#ms)"/>
+    <rect x="30" y="8" width="12" height="94" rx="5" fill="url(#msq)"/>
+    <rect x="36" y="46" width="86" height="11" rx="5" fill="url(#ms)"/>
+    <circle cx="36" cy="52" r="9" fill="url(#kopf)"/>
+  </g>
+  <g transform="translate(110,300)" font-size="13.5" fill="#5E5648">
+    <text y="0" font-size="15" font-weight="bold" fill="#211C15">Rollschnalle</text>
+    <text y="24">Innenbreite = Bandbreite</text>
+    <text y="44">20 · 25 · 30 · 40 mm</text>
+    <text y="64">mit Rolle, gebürstet</text>
+    <text y="88" fill="#8E3A24">≥ 2,5 kN</text>
+  </g>
+
+  <!-- D-Ring -->
+  <g transform="translate(400,170)" filter="url(#wurf)">
+    <path d="M 0 4 V 106" stroke="url(#msq)" stroke-width="15" stroke-linecap="round"/>
+    <path d="M 0 4 C 74 4 96 34 96 55 C 96 76 74 106 0 106" stroke="url(#ms)" stroke-width="15" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(400,300)" font-size="13.5" fill="#5E5648">
+    <text y="0" font-size="15" font-weight="bold" fill="#211C15">D-Ring — HB-01, HB-04</text>
+    <text y="24">geschweißt, Naht verschliffen</text>
+    <text y="44">Draht Ø 4 mm (20/25) · 5 mm (30/40)</text>
+    <text y="64">flache Seite am Band, dreht sich nicht</text>
+    <text y="88" fill="#8E3A24">≥ 3,0 kN</text>
+  </g>
+
+  <!-- O-Ring -->
+  <g transform="translate(700,170)" filter="url(#wurf)">
+    <circle cx="55" cy="55" r="50" fill="none" stroke="url(#ms)" stroke-width="15"/>
+  </g>
+  <g transform="translate(680,300)" font-size="13.5" fill="#5E5648">
+    <text y="0" font-size="15" font-weight="bold" fill="#211C15">O-Ring — LE-01, HB-02</text>
+    <text y="24">innen Ø 25 mm, Draht Ø 5 mm</text>
+    <text y="44">3 Stück je Leine, 1 im Geflecht</text>
+    <text y="64">die eine Ausnahme zur D-Ring-Regel</text>
+    <text y="88" fill="#8E3A24">≥ 3,0 kN</text>
+  </g>
+
+  <!-- Wirbel-Bolzenkarabiner -->
+  <g transform="translate(980,150)" filter="url(#wurf)">
+    <rect x="30" y="0" width="34" height="12" rx="6" fill="url(#ms)"/>
+    <path d="M 30 6 C 14 6 14 26 30 26 H 64 C 80 26 80 6 64 6" fill="none" stroke="url(#ms)" stroke-width="11"/>
+    <rect x="38" y="30" width="18" height="16" rx="4" fill="url(#msq)"/>
+    <circle cx="47" cy="38" r="5" fill="#8A6A22"/>
+    <rect x="34" y="46" width="26" height="30" rx="7" fill="url(#msq)"/>
+    <path d="M 47 76 C 16 84 10 130 47 148 C 84 130 78 84 47 76" fill="none" stroke="url(#ms)" stroke-width="13"/>
+    <rect x="66" y="96" width="9" height="46" rx="4" fill="url(#msq)"/>
+    <circle cx="70" cy="94" r="6" fill="url(#kopf)"/>
+  </g>
+  <g transform="translate(960,320)" font-size="13.5" fill="#5E5648">
+    <text y="0" font-size="15" font-weight="bold" fill="#211C15">Wirbel-Bolzenkarabiner</text>
+    <text y="24">Auge 20 mm, Wirbel leichtgängig</text>
+    <text y="44">Gesamtlänge ca. 70–75 mm</text>
+    <text y="64">Feder schließt aus jeder Lage</text>
+    <text y="88" fill="#8E3A24">≥ 2,0 kN</text>
+  </g>
+
+  <!-- Buchschraube: Seite und Ansicht -->
+  <g transform="translate(1290,190)" filter="url(#wurf)">
+    <ellipse cx="45" cy="16" rx="45" ry="15" fill="url(#kopf)"/>
+    <rect x="30" y="16" width="30" height="46" fill="url(#msq)"/>
+    <ellipse cx="45" cy="62" rx="15" ry="6" fill="#A8842F"/>
+    <rect x="18" y="62" width="54" height="13" rx="4" fill="url(#ms)"/>
+    <circle cx="45" cy="16" r="11" fill="#E8CE8C" fill-opacity="0.55"/>
+  </g>
+  <g transform="translate(1440,190)" filter="url(#wurf)">
+    <circle cx="45" cy="42" r="45" fill="url(#kopf)"/>
+    <circle cx="45" cy="42" r="45" fill="none" stroke="#7C5C16" stroke-width="1.5"/>
+    <circle cx="32" cy="29" r="12" fill="#F6E7B6" fill-opacity="0.5"/>
+  </g>
+  <g transform="translate(1290,320)" font-size="13.5" fill="#5E5648">
+    <text y="0" font-size="15" font-weight="bold" fill="#211C15">Buchschraube</text>
+    <text y="24">Kopf gewölbt, Ø 8–9 mm</text>
+    <text y="44">Post 8 mm (2 Lagen) · 10 mm (3 Lagen)</text>
+    <text y="64">schraubensicherungsfest, Kopf außen</text>
+    <text y="88">4 Stück je Halsband · 7 je Leine</text>
+  </g>
+
+  <!-- Fußzeile -->
+  <g transform="translate(60,470)">
+    <line x1="0" y1="0" x2="1640" y2="0" stroke="#CBC4B4" stroke-width="1.5"/>
+    <text x="0" y="32" font-size="15" font-weight="bold" fill="#211C15">Was schiefgeht, wenn niemand hinsieht</text>
+    <text x="0" y="58" font-size="13.5" fill="#5E5648">Vermessingter Stahl oder Zinkdruckguss, verkauft als „solid brass". Der Unterschied ist auf dem Foto unsichtbar und am Magneten in zwei Sekunden klar.</text>
+    <text x="0" y="80" font-size="13.5" fill="#5E5648">Deshalb nennt jedes Angebot Legierung (CuZn39Pb3 / HPb59-1 / CW617N) und Stückgewicht in Gramm, und jede Lieferung wird stichprobenweise geprüft.</text>
+    <text x="0" y="112" font-size="13.5" fill="#5E5648">Bezug: die Lederfabrik kauft und montiert. Wir schicken ein europäisches Referenzteil zum Goldmuster — Tovetis (Karabiner, Schnalle), Buckleguy (Buchschrauben).</text>
+    <text x="1640" y="112" text-anchor="end" font-size="12" fill="#877E6D">Darstellung nach BES-01 v1.1 — keine Fotografie</text>
+  </g>
+</svg>

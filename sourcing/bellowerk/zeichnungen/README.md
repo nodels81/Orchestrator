@@ -6,11 +6,12 @@ WeChat, E-Mail). Jede Anfrage an einen Lieferanten bekommt die passende PNG plus
 
 | Datei | Modell | Stand |
 |---|---|---|
-| `HB-01-halsband.svg/.png` | Halsband Fettleder, Größe M, Schnallenfalte, Lochbild, Patch-Position | v1.0 |
+| `HB-04-halsband.svg/.png` | Halsband Fettleder, Größe M, Schnallenfalte, Lochbild, Patch-Position | v1.0 |
 | `LE-01-fuehrleine.svg/.png` | Führleine 3,00 m, Ringe 45/140/245 cm, Mystery-Braid-Anbindung, sechs Führlängen | v1.1 |
 | `PATCH-01-lederpatch.svg/.png` | Lederpatch graviert PA-M 85×18 und PA-S 65×14, Bohrbild, Schnitt | v1.1 |
-| `HS-01-handschlaufe.svg/.png` | Handschlaufe 50 cm | v1.0 |
+| `HS-01-handschlaufe.svg/.png` | Handschlaufe 50 cm — **zurückgestellt 14.9.2026, nicht mehr anfragen** | v1.0 |
 | `HB-02-geflochten.svg/.png` | Flechthalsband: flache Enden, Mystery Braid mit O-Ring, Patch | v1.0 |
+| `HB-01-hamburg.svg/.png` | Hamburg Nr. 1: Mittelverbreiterung auf doppelte Breite, Patch mittig, Bögen tangential | v1.0 |
 
 Startwerte (Größentabellen, Lochabstände) sind aus der Kernserie abgeleitet und von Björn am
 Referenzstück zu bestätigen. Änderungen: SVG editieren, dann PNG neu rendern:

@@ -60,7 +60,7 @@ läuft jeder Auftrag ohne sie weiter, statt zu scheitern.
 
 ```
 sourcing/bellowerk/markenbrief.md   Werkstoffe, Ausschlüsse, Patch, Flechtung, Farben
-sourcing/bellowerk/specs/           Tech Packs (englisch): HB-01, HB-02, LE-01, HS-01, PATCH-01, VERP-01
+sourcing/bellowerk/specs/           Tech Packs (englisch): HB-01 Hamburg Nr. 1, HB-02, HB-04 Hamburg Nr. 4, LE-01, PATCH-01, BES-01, VERP-01
 sourcing/bellowerk/zeichnungen/     Bemaßte Zeichnungen SVG + PNG
 sourcing/bellowerk/bilder/          Referenzfotos für Lieferanten (marke/ = nur Look, nicht senden)
 sourcing/vorlagen/                  Sendefertige Nachrichten: RFQ, Nachfassen, Muster, Feedback, Schnittmuster, Reklamation

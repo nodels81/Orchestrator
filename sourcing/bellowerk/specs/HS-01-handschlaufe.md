@@ -1,4 +1,8 @@
-# HS-01 — Leather Hand Loop, 50 cm (Tech Pack v1.0, 9 Sep 2026)
+# HS-01 — Leather Hand Loop, 50 cm (Tech Pack v1.0 — WITHDRAWN 14 Sep 2026)
+
+Status: **withdrawn on Björn's instruction, 14 September 2026.** Not part of any enquiry and not
+in the approval folder. The file stays for reference in case the hand loop comes back as an
+accessory later; nothing below has been re-checked since.
 
 Attachments: `zeichnungen/HS-01-handschlaufe.png`.
 
@@ -9,7 +13,7 @@ Closed loop of leather, circumference **50 cm**, with one solid brass swivel tri
 
 ## 2. Material and construction
 
-- Leather: as HB-01 (veg-tan oiled cowhide, 3.5–4.0 mm), width **20 mm**.
+- Leather: as HB-04 (veg-tan oiled cowhide, 3.5–4.0 mm), width **20 mm**.
 - Cut length: 50 cm + fold at snap 5 cm + overlap of loop ends 5 cm = **60 cm**.
 - Snap: swivel trigger snap solid brass, eye 20 mm, min. 2.0 kN.
 - Loop closed by overlapping the two strap ends 50 mm (flesh to flesh) and fixing with 2 Chicago
