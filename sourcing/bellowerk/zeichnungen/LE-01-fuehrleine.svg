@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
-  <rect x="0" y="0" width="1600" height="1180" fill="#fff" stroke="none"/>
-  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.2, 18 Sep 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1210" viewBox="0 0 1600 1210" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="none" stroke="#000" stroke-width="2">
+  <rect x="0" y="0" width="1600" height="1210" fill="#fff" stroke="none"/>
+  <text x="40" y="40" font-size="26" font-weight="bold" fill="#000" stroke="none">LE-01 Adjustable Leather Lead 3.00 m — 20 mm — scale 1:2.5 (length) — Bellowerk Manufaktur, v1.3, 19 Sep 2026</text>
   <text x="40" y="66" fill="#000" stroke="none">One continuous strap, veg-tan oiled cowhide 3.5–4.0 mm · 2 solid brass swivel bolt snaps · 3 welded solid brass O-rings · hooks and rings held by 3-strand mystery braid + 1 Chicago screw · NO stitching, NO rivets</text>
 
   <!-- scale: 1 cm = 4 px horizontally. 300 cm = 1200 px. origin x=120 -->
@@ -26,10 +26,11 @@
       <line x1="1300" y1="200" x2="1300" y2="220"/>
     </g>
     <!-- rings at 45,140,245 cm => x = 120+180=300, 120+560=680, 120+980=1100 -->
+    <!-- ring 2 (coupling ring) drawn larger: Ø 40 mm vs Ø 30 mm for rings 1+3 -->
     <g stroke-width="3">
-      <circle cx="300" cy="210" r="14"/>
-      <circle cx="680" cy="210" r="14"/>
-      <circle cx="1100" cy="210" r="14"/>
+      <circle cx="300" cy="210" r="15"/>
+      <circle cx="680" cy="210" r="20"/>
+      <circle cx="1100" cy="210" r="15"/>
     </g>
     <!-- braided sections (12 cm = 48 px) at each attachment, 1 screw each -->
     <g stroke-width="1.2">
@@ -39,9 +40,9 @@
       <path d="M 1114 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="1170" cy="210" r="3.5"/>
       <path d="M 1264 202 l 8 16 l 8 -16 l 8 16 l 8 -16 l 8 16 l 8 -16" /><circle cx="1258" cy="210" r="3.5"/>
     </g>
-    <text x="270" y="180" fill="#000" stroke="none" font-size="14">ring 1</text>
-    <text x="650" y="180" fill="#000" stroke="none" font-size="14">ring 2</text>
-    <text x="1070" y="180" fill="#000" stroke="none" font-size="14">ring 3</text>
+    <text x="255" y="175" fill="#000" stroke="none" font-size="14">ring 1, Ø 30 mm</text>
+    <text x="605" y="160" fill="#000" stroke="none" font-size="14" font-weight="bold">ring 2, Ø 40 mm — coupling ring</text>
+    <text x="1055" y="175" fill="#000" stroke="none" font-size="14">ring 3, Ø 30 mm</text>
     <!-- nameplate at 8 cm => x=120+32=152, 40x14 mm at this scale ~ 16x6px; draw symbolic 40x14 px -->
     <rect x="192" y="204" width="26" height="12" rx="3" stroke-width="1.5"/>
     <text x="150" y="250" fill="#000" stroke="none" font-size="13">leather patch PATCH-01 PA-S (65×14 mm) at 8 cm after braid</text>
@@ -93,12 +94,12 @@
     <text x="125" y="108" text-anchor="middle" fill="#000" stroke="none" font-size="12">fold-back 120 mm</text>
     <text x="0" y="135" fill="#000" stroke="none" font-size="13">Strap through ring/hook eye, folded back 120 mm. Two lengthwise slits → 3 strands, "mystery braid" (one piece, ends uncut),</text>
     <text x="0" y="153" fill="#000" stroke="none" font-size="13">6–8 crossings, chevron pattern as photo. Free end flat on the inside, 1 Chicago screw 15 mm after the braid. Attachment ≥ 2.0 kN.</text>
-    <text x="0" y="171" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, inner Ø 25 mm, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide — shape confirmed by photo, see BOM #3</text>
+    <text x="0" y="171" fill="#000" stroke="none" font-size="13">O-ring welded solid brass, wire Ø 5 mm, ≥ 3 kN · ring does NOT slide — inner Ø 30 mm (ring 1+3) or 40 mm (ring 2, coupling), see BOM #3a/#3b</text>
   </g>
 
   <g transform="translate(900,510)">
     <text x="0" y="0" fill="#000" stroke="none" font-weight="bold">Six working lengths</text>
-    <text x="0" y="24" fill="#000" stroke="none" font-size="13">B→ring 3: 245 · B→ring 2: 140 (loop 160, hands-free) · B→ring 1: 45 cm</text>
+    <text x="0" y="24" fill="#000" stroke="none" font-size="13">B→ring 3: 245 · B→ring 2: 140 (loop 160, hands-free — ring 2 is the large Ø 40 mm coupling ring) · B→ring 1: 45 cm</text>
     <text x="0" y="44" fill="#000" stroke="none" font-size="13">A→ring 1: 255 · A→ring 2: 160 · A→ring 3: 55 cm · both hooks: 300 cm</text>
     <text x="0" y="74" fill="#000" stroke="none" font-size="13">Cut length of strap: 360 cm (300 + 5 attachments × 12 cm).</text>
     <text x="0" y="94" fill="#000" stroke="none" font-size="13">Swivel bolt snap solid brass, polished, eye 20 mm, ≥ 2 kN — shape confirmed by photo, see BOM #2.</text>
@@ -119,18 +120,19 @@
   <g transform="translate(40,855)">
     <text x="0" y="0" font-size="18" font-weight="bold" fill="#000" stroke="none">Stückliste / Bill of Materials — LE-01, per unit</text>
     <g stroke="#000" stroke-width="1.2">
-      <rect x="0" y="14" width="1320" height="240" fill="none"/>
+      <rect x="0" y="14" width="1320" height="270" fill="none"/>
       <line x1="0" y1="44" x2="1320" y2="44"/>
-      <line x1="50" y1="14" x2="50" y2="254"/>
-      <line x1="480" y1="14" x2="480" y2="254"/>
-      <line x1="560" y1="14" x2="560" y2="254"/>
-      <line x1="1160" y1="14" x2="1160" y2="254"/>
+      <line x1="50" y1="14" x2="50" y2="284"/>
+      <line x1="480" y1="14" x2="480" y2="284"/>
+      <line x1="560" y1="14" x2="560" y2="284"/>
+      <line x1="1160" y1="14" x2="1160" y2="284"/>
       <line x1="0" y1="74" x2="1320" y2="74"/>
       <line x1="0" y1="104" x2="1320" y2="104"/>
       <line x1="0" y1="134" x2="1320" y2="134"/>
       <line x1="0" y1="164" x2="1320" y2="164"/>
       <line x1="0" y1="194" x2="1320" y2="194"/>
       <line x1="0" y1="224" x2="1320" y2="224"/>
+      <line x1="0" y1="254" x2="1320" y2="254"/>
     </g>
     <g font-size="13" fill="#000" stroke="none">
       <text x="10" y="34" font-weight="bold">Pos</text>
@@ -151,30 +153,37 @@
       <text x="670" y="94">Vollmessing, poliert, Öse 20 mm, ≥ 2.0 kN</text>
       <text x="1170" y="94" font-weight="bold">Foto bestätigt</text>
 
-      <text x="10" y="124">3</text>
-      <text x="60" y="124">O-Ring</text>
-      <text x="570" y="124">3</text>
-      <text x="670" y="124">Vollmessing, geschweißt, Innen-Ø 25 mm, Draht 5 mm, ≥ 3 kN</text>
+      <text x="10" y="124">3a</text>
+      <text x="60" y="124">O-Ring, Standard (Ring 1+3)</text>
+      <text x="570" y="124">2</text>
+      <text x="670" y="124">Vollmessing, geschweißt, Innen-Ø 30 mm, Draht 5 mm, ≥ 3 kN</text>
       <text x="1170" y="124" font-weight="bold">Foto bestätigt</text>
 
-      <text x="10" y="154">4</text>
-      <text x="60" y="154">Lederpatch PATCH-01 PA-S</text>
+      <text x="10" y="154">3b</text>
+      <text x="60" y="154">O-Ring, groß / Kupplungsring (Ring 2)</text>
       <text x="570" y="154">1</text>
-      <text x="670" y="154">Cognac/Mittelbraun, 2.0–2.5 mm, graviert "BELLOWERK / Manufaktur"</text>
-      <text x="1170" y="154">PATCH-01.svg</text>
+      <text x="670" y="154">Vollmessing, geschweißt, Innen-Ø 40 mm — Karabiner muss hindurchpassen</text>
+      <text x="1170" y="154" font-weight="bold">Foto bestätigt</text>
 
-      <text x="10" y="184">5</text>
-      <text x="60" y="184">Buchschrauben (Chicago screws)</text>
-      <text x="570" y="184">5</text>
-      <text x="670" y="184">Vollmessing, Kopf Ø 8–9 mm, gewölbt, gesichert — 1 je Flechtanbindung</text>
-      <text x="1170" y="184" font-weight="bold">Foto bestätigt</text>
+      <text x="10" y="184">4</text>
+      <text x="60" y="184">Lederpatch PATCH-01 PA-S</text>
+      <text x="570" y="184">1</text>
+      <text x="670" y="184">Cognac/Mittelbraun, 2.0–2.5 mm, graviert "BELLOWERK / Manufaktur"</text>
+      <text x="1170" y="184">PATCH-01.svg</text>
 
-      <text x="10" y="214">6</text>
-      <text x="60" y="214">Flechtung an Haken/Ringen</text>
-      <text x="570" y="214">5×</text>
-      <text x="670" y="214">3-strängiger Mystery Braid aus dem Riemen selbst, kein Zusatzteil</text>
-      <text x="1170" y="214">Zeichnung, Detail oben</text>
+      <text x="10" y="214">5</text>
+      <text x="60" y="214">Buchschrauben (Chicago screws)</text>
+      <text x="570" y="214">5</text>
+      <text x="670" y="214">Vollmessing, Kopf Ø 8–9 mm, gewölbt, gesichert — 1 je Flechtanbindung</text>
+      <text x="1170" y="214" font-weight="bold">Foto bestätigt</text>
+
+      <text x="10" y="244">6</text>
+      <text x="60" y="244">Flechtung an Haken/Ringen</text>
+      <text x="570" y="244">5×</text>
+      <text x="670" y="244">3-strängiger Mystery Braid aus dem Riemen selbst, kein Zusatzteil</text>
+      <text x="1170" y="244">Zeichnung, Detail oben</text>
     </g>
-    <text x="0" y="278" font-size="12" fill="#333" stroke="none">"Foto bestätigt": Form fotografisch abgeglichen (bilder/hardware-karabiner-1zu1.jpg, hardware-oring-1zu1.jpg). Keine Annäherung — exakte Ausführung verbindlich.</text>
+    <text x="0" y="308" font-size="12" fill="#333" stroke="none">"Foto bestätigt": Form fotografisch abgeglichen (bilder/hardware-karabiner-1zu1.jpg, hardware-oring-1zu1.jpg). Keine Annäherung — exakte Ausführung verbindlich.</text>
+    <text x="0" y="326" font-size="12" fill="#333" stroke="none">Maße 30/40 mm nach Björns Angabe (19 Sep 2026), noch nicht mit Messschieber nachgemessen — vor Musterbestellung am Referenzstück bestätigen.</text>
   </g>
 </svg>

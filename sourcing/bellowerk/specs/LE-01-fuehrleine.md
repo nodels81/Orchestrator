@@ -1,4 +1,4 @@
-# LE-01 — Adjustable Leather Lead, 3.00 m (Tech Pack v1.2, 18 Sep 2026)
+# LE-01 — Adjustable Leather Lead, 3.00 m (Tech Pack v1.3, 19 Sep 2026)
 
 Bellowerk Manufaktur, Hamburg, Germany. Contact: Björn (owner).
 Attachments: `zeichnungen/LE-01-fuehrleine.png` (dimensioned drawing + Bill of Materials), photos
@@ -19,7 +19,8 @@ piece) plus one Chicago screw** — this is the signature look, see photos. Leat
 |---|---|
 | Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm**, width **20 mm** (option 25 mm). One continuous strap, no joints. Width 20 mm confirmed by Björn. Colours: grey, dark brown, olive, cognac, black (see photos `bilder/LE-01-*.jpg`). |
 | Snap hooks (2) | Swivel trigger snap ("swivel eye bolt snap"), **solid brass**, polished, eye for 20 mm strap, min. breaking load **2.0 kN**, strong spring. |
-| O-rings (3) | Welded, ground smooth, solid brass, inner Ø 25 mm, wire Ø 5 mm, min. 3 kN. |
+| O-rings, standard (Ring 1 + Ring 3) | Welded, ground smooth, solid brass, inner Ø **30 mm**, wire Ø 5 mm, min. 3 kN. |
+| O-ring, large / coupling (Ring 2) | Same spec but inner Ø **40 mm** — wide enough for a snap hook to be threaded through it (hands-free loop, or to couple a second lead through it). Not interchangeable with the standard rings. |
 | Screws | Chicago screws solid brass, domed head Ø 8–9 mm, post 8 mm, thread-locked. 1 per attachment. |
 | Patch | PATCH-01 PA-S (65 × 14 mm), 2 Chicago screws. |
 | Edges | Bevelled, burnished, no paint. |
@@ -30,25 +31,29 @@ piece) plus one Chicago screw** — this is the signature look, see photos. Leat
 |---|---|---|---|---|
 | 1 | Strap (one piece, 360 cm cut) | 1 | Vegetable-tanned oiled cowhide, full grain, 3.5–4.0 mm, 20 mm wide | Drawing / Tech Pack |
 | 2 | Swivel bolt snap | 2 | Solid brass, polished, eye 20 mm, ≥ 2.0 kN | **Photo-confirmed** — `bilder/hardware-karabiner-1zu1.jpg` |
-| 3 | O-ring | 3 | Solid brass, welded, inner Ø 25 mm, wire 5 mm, ≥ 3 kN | **Photo-confirmed** — `bilder/hardware-oring-1zu1.jpg` |
+| 3a | O-ring, standard (Ring 1 + 3) | 2 | Solid brass, welded, inner Ø 30 mm, wire 5 mm, ≥ 3 kN | **Photo-confirmed** — `bilder/hardware-oring-1zu1.jpg` |
+| 3b | O-ring, large / coupling (Ring 2) | 1 | Solid brass, welded, inner Ø 40 mm, wire 5 mm, ≥ 3 kN — sized for a snap hook to pass through | **Photo-confirmed** — same photo, larger size |
 | 4 | Leather patch PATCH-01 PA-S | 1 | Cognac/medium brown, 2.0–2.5 mm, engraved "BELLOWERK / Manufaktur" | `specs/PATCH-01-markenpatch.md` |
 | 5 | Chicago screws | 5 | Solid brass, domed head Ø 8–9 mm, thread-locked — 1 per braided attachment | **Photo-confirmed** |
 | 6 | Braided attachment at hooks/rings | 5× | 3-strand mystery braid made from the strap itself, no separate part | Drawing, detail view |
 
 "Photo-confirmed" = shape verified against a sharp reference photo of our own existing hardware — not
-an approximation.
+an approximation. The 30/40 mm sizes (Pos 3a/3b) are Björn's measurement from the reference lead
+(18 Sep 2026), not yet re-measured with calipers — confirm against the physical piece before sampling.
 
 ## 4. Dimensions (all measured from the inner edge of hook A eye, ±1 cm)
 
 | Position | Item | Distance from hook A |
 |---|---|---|
 | 0 cm | Hook A | 0 |
-| **45 cm** | Ring 1 | 45 |
-| **140 cm** | Ring 2 | 140 |
-| **245 cm** | Ring 3 | 245 |
+| **45 cm** | Ring 1 (standard, Ø 30 mm) | 45 |
+| **140 cm** | Ring 2 (**large, Ø 40 mm — coupling ring**) | 140 |
+| **245 cm** | Ring 3 (standard, Ø 30 mm) | 245 |
 | 300 cm | Hook B | 300 |
 
-Total length hook eye to hook eye: **300 cm**. Rings are fixed (they do not slide).
+Total length hook eye to hook eye: **300 cm**. Rings are fixed (they do not slide). Ring 2 is
+deliberately larger so a snap hook (this lead's own, or a second lead's) can be threaded through it —
+used for the hands-free shoulder loop and for coupling two leads/dogs together.
 
 ### Six working lengths
 
