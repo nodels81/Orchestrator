@@ -52,8 +52,9 @@ bleiben als spätere Alternative in der Liste.
 | 1 | Dongguan Haixinda Nameplate | Dongguan | A Messing | Ätzen, Prägen, Laser; Muster 5–7 AT | 500 (kleiner anfragen) | haixinda.en.made-in-china.com |
 | 2 | Dongguan Jinghui Hardware | Dongguan | A Messing | Logo-Plates für Lederwaren | k. A. | Alibaba |
 | 2 | Dongguan Kingming Hardware | Dongguan | A + Beschläge | gravierte Messingbeschläge, Buchschrauben | k. A. | kmhardware.com |
-| 3 | Guangzhou DOY Label | Guangzhou | B Leder geprägt | Blindprägung Echtleder, MOQ 100 | 100 | doylabel.com |
-| 3 | ClothingTAGs.cn, PB-Patch | Guangdong | B/C | Prägung, Muster 40 USD / gratis | 25–100 | nur Rückfall |
+| 3 | Guangzhou DOY Label | Guangzhou | B Leder geprägt | Blindprägung Echtleder, MOQ 100 — Laserfähigkeit unklar, direkt erfragt | 100 | info@DOYLabel.com |
+| 3 | ClothingTAGs.cn | Jinhua/Zhejiang | B Leder geprägt | Custom Embossed Leather Patches, Laserfähigkeit direkt erfragt | 25–100 | Info@ClothingTags.cn |
+| 3 | PB-Patch | Guangdong | B/C | Prägung, Muster 40 USD / gratis | 25–100 | nur Rückfall — keine E-Mail auffindbar |
 
 Empfehlung: Yongfu + Haixinda parallel anfragen (beide Ätzen **und** Prägen in massivem Messing).
 Oberfläche: gebürstet, unlackiert (living finish) — passt zu "ehrliche Verschleißspuren".
