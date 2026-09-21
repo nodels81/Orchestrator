@@ -1,4 +1,4 @@
-"""Erzeugt LE-01-flechtung-schritte.svg (A3 quer, farbig): Bleed Knot Schritt fuer Schritt.
+"""Erzeugt LE-01-knoten-schritte.svg (A3 quer, farbig): Bleed Knot Schritt fuer Schritt.
 
 Konstruktion nach dem Goldmuster (Fotos 18 Sep 2026) plus Recherche zum "bleed knot"
 (auch "blood knot"): Der Riemen wird NICHT in Straenge geschlitzt und nie durchtrennt.
@@ -267,6 +267,6 @@ A(txt(bx + 18, R3 + 298, 'production.', 12.5))
 
 A('</svg>')
 
-out = pathlib.Path(__file__).parent / 'LE-01-flechtung-schritte.svg'
+out = pathlib.Path(__file__).parent / 'LE-01-knoten-schritte.svg'
 out.write_text("\n".join(P), encoding="utf-8")
 print("geschrieben:", out)

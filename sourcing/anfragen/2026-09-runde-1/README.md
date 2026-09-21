@@ -1,9 +1,26 @@
 # Anfragerunde 1 — September 2026
 
-Erstkontakt-RFQs für **LE-01** (Führleine 2,60 m) und **HB-01** (Halsband). Stand 21.09.2026.
+Erstkontakt für **LE-01** (Führleine 2,60 m) und **HB-01** (Halsband). Stand 21.09.2026.
 
-**Noch nicht versendet.** Zwei Dinge fehlen: die Kontaktdaten (Platzhalter `[E-Mail]` und
-`[WhatsApp/WeChat]` in allen Texten) und die Freigabe.
+**Noch nicht versendet.**
+
+## Zwei Sorten Text
+
+- `anschreiben-HB01-LE01.txt` und `anschreiben-HB01.txt` — **die aktuellen.** Ausformuliertes
+  Anschreiben, zweistufig: erst Prototyp + Lederproben, dann Preise für 10 Stück je Größe plus
+  Staffel 50/100. Spricht offen an, dass die Menge unter der üblichen MOQ liegt, und bietet
+  Aufpreis für die Kleinserie an. Für E-Mail und längere Formulare.
+- `A-*.txt` und `B-*.txt` — die kurzen Fassungen der ersten Runde (nummerierte Fragenliste,
+  944–1283 Zeichen). Nur nehmen, wenn ein Formular hart begrenzt ist.
+
+Anrede `[Ms./Mr. Family name]` je Empfänger ersetzen; ohne Namen "Dear Sir or Madam".
+
+## Warum nichts versendet ist
+
+1. Von den Lieferanten hat nur Qingdao Adityna eine echte E-Mail-Adresse; die Herstellerseiten
+   und die B2B-Plattformen sind aus der Arbeitsumgebung heraus nicht erreichbar.
+2. Die Anhänge sind zusammen 2,5 MB — zu groß, um sie durch das Mail-Werkzeug zu schleusen.
+3. Der Mailversand selbst ist in dieser Session durch die Berechtigungen gesperrt.
 
 ## Welcher Text an wen
 
@@ -27,8 +44,8 @@ und Blatt 3 plus ein Foto anhängen und den Rest nachreichen.
 
 ## Anhänge
 
-- **LE-01:** `zeichnungen/LE-01-fuehrleine.png`, `LE-01-detail-flechtung.png`,
-  `LE-01-flechtung-schritte.png` (Blatt 3 ist der wichtigste Anhang — daran zeigt sich, ob der
+- **LE-01:** `zeichnungen/LE-01-fuehrleine.png`, `LE-01-knoten-1zu1.png`,
+  `LE-01-knoten-schritte.png` (Blatt 3 ist der wichtigste Anhang — daran zeigt sich, ob der
   Hersteller den Bleed Knot beherrscht) + `bilder/LE-01-goldmuster-ring-geknotet.jpg`
 - **HB-01:** `zeichnungen/HB-01-halsband.png` + `bilder/HB-01-detail-patch.jpg`,
   `HB-01-farben-patch.jpg`

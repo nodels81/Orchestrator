@@ -13,8 +13,8 @@ construction and stays.
 
 Drawings — three sheets, send all three:
 `zeichnungen/LE-01-fuehrleine.png` (sheet 1, general arrangement, 1:5),
-`zeichnungen/LE-01-detail-flechtung.png` (sheet 2, **1:1 check sheet**, A4 landscape) and
-`zeichnungen/LE-01-flechtung-schritte.png` (sheet 3, **the bleed knot step by step, in colour**, A3 landscape).
+`zeichnungen/LE-01-knoten-1zu1.png` (sheet 2, **1:1 check sheet**, A4 landscape) and
+`zeichnungen/LE-01-knoten-schritte.png` (sheet 3, **the bleed knot step by step, in colour**, A3 landscape).
 Photos of the golden sample: `bilder/LE-01-goldmuster-*.jpg`.
 
 ## 1. Product
