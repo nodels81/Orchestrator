@@ -1,7 +1,7 @@
 # Konny Design (Deutschland) — Lasergravur Lederpatches
 
 Firma: Konny Design (Inh. Christoph Nebel), Mozartstr. 24, 86498 Kettershausen
-E-Mail: info@konnydesign.de
+E-Mail: office@konnydesign.de (info@konnydesign.de bounced — Adresse existiert laut Zustellbericht nicht)
 Web: https://konnydesign.de
 Quelle: Impressum/Kontaktseite konnydesign.de (Websuche, 21.09.2026)
 
@@ -10,8 +10,9 @@ Spezialist für Lederpatches mit Lasergravur, seit 2013 — Kerngeschäft ist Ca
 (Lasergravur auf Leder, kleine Losgrößen) passt; ggf. muss die Loch-/Montageart extra
 abgestimmt werden.
 
-Status: Anfrage zu PATCH-01 (Auftragsarbeit, nur Patch) verschickt am 21.09.2026 an
-info@konnydesign.de. Wartet auf Rückmeldung.
+Status: Erster Versand an info@konnydesign.de am 21.09.2026 bounced (Delivery Status
+Notification: Adresse nicht gefunden). Sofort erneut verschickt an office@konnydesign.de,
+selbentags — kein weiterer Bounce. Wartet auf Rückmeldung.
 
 ---
 

@@ -15,6 +15,13 @@ nur im Chat erwähnen.
 - Ob der Gmail-Connector in einer Session überhaupt verfügbar ist, entscheidet die Plattform,
   nicht diese Datei — falls die Tools fehlen, kurz sagen, dass kein Mail-Zugriff besteht,
   statt es stillschweigend zu versuchen.
+- Nach jedem Versand an einen neuen Lieferanten kurz danach (gleiche Antwort, nicht erst am
+  Ende der Session) per `mcp__Gmail__search_threads` nach `from:(mailer-daemon OR postmaster)`
+  suchen. Kommt ein Bounce ("Adresse nicht gefunden"/"Non-Delivery"): nicht nur melden, sondern
+  sofort reagieren — eine bekannte Alternativadresse derselben Firma probieren, sonst kurz
+  nachrecherchieren (Impressum/Kontaktseite) oder ein weiteres Unternehmen aus der Liste
+  anschreiben. Das Ergebnis (welche Adresse tatsächlich zugestellt wurde) in die jeweilige
+  Lieferantendatei eintragen, nicht nur im Chat erwähnen.
 
 ## Lieferanten-Wissen ist Dateiwissen, kein Chat-Wissen
 
@@ -26,6 +33,10 @@ nur im Chat erwähnen.
   sofort in die jeweilige Lieferantendatei eintragen. Erst dann kann Abteilung 05/06 sie
   automatisch anschreiben (`lieferant.email` im JSON-Ergebnis, siehe README
   „Mail an Lieferanten").
+- `sourcing/antworten-uebersicht.md` ist die laufende Kurzübersicht über alle Anfragen
+  (Status, Preis, MOQ, Muster, Lieferzeit) über alle Kategorien und Länder hinweg. Trifft
+  eine Lieferantenantwort per Mail ein (Gmail-Suche nach Absenderdomain), Konditionen dort
+  eintragen UND in der jeweiligen Einzeldatei — nicht nur im Chat zusammenfassen.
 
 ## Sonst
 
