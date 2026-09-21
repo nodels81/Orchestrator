@@ -13,7 +13,7 @@ Versand kurz gegenprüfen, ob die Adresse noch aktuell ist.
 Sortiment laut Website passt zur Anfrage: Fettleder, Hundezubehör, CNC-Zuschnitt- und
 Nähservice als Auftragsarbeit.
 
-Status: Anfrage entworfen, E-Mail-Adresse bekannt — versandbereit.
+Status: Anfrage verschickt am 21.09.2026 an info@maly-leder.de. Wartet auf Rückmeldung.
 
 ---
 
