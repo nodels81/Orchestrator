@@ -28,13 +28,13 @@ Leather patch PATCH-01 PA-L near hook B.
 
 | Part | Specification |
 |---|---|
-| Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm**, width **20 mm ±0.5**. One continuous strap, no joints. Colours: grey, dark brown, olive, cognac, black. |
+| Leather | Cowhide, vegetable-tanned, full grain, oiled/waxed pull-up ("Fettleder"), dyed through, **3.5–4.0 mm = 9–10 oz**, firm temper, width **20 mm ±0.5**, cut with a strap cutter. One continuous strap, no joints. Colours: grey, dark brown, olive, cognac, black. |
 | Snap hooks (2) | Swivel trigger snap ("swivel eye bolt snap"), **solid brass**, polished, overall length **60 mm**, eye for 20 mm strap, min. breaking load **2.0 kN**, strong spring. |
 | O-rings 1 + 2 | Welded, ground smooth, solid brass, **outer Ø 30 mm**, wire Ø 5 mm, min. 3 kN. |
 | O-ring 3 | Welded, ground smooth, solid brass, **outer Ø 40 mm**, wire Ø 5 mm, min. 3 kN. |
 | Screws | Chicago screws solid brass, domed head Ø 9 mm, post 8 mm, thread-locked. **2 pcs — at hook A and hook B only** (+ 2 for the patch). The middle rings get no screw. |
 | Patch | PATCH-01 **PA-L, 110 × 18 mm**, 2 Chicago screws **93 mm** apart (hole centres 8.5 mm from each end). |
-| Edges | Bevelled, burnished, no paint — along the whole lead, including through the knots. |
+| Edges | Bevelled both sides (edge beveller size 2), burnished, **no edge paint** — along the whole lead, including through the knots. |
 
 ## 3. Dimensions
 
@@ -73,8 +73,9 @@ the control bar (100 mm) before laying parts on it.**
 
 ### One knot
 
-1. Cut **one lengthwise slit** in the strap, **30 mm** long, centred across the width. Both ends punched
-   Ø 2 mm so the slit cannot run. Nothing else is cut.
+1. Mark the slit: **30 mm** long, lengthwise, centred across the width. **Punch both ends with a Ø 2 mm
+   round punch FIRST, then cut between the two holes** with a head knife. Cutting first and punching after
+   lets the slit run under load. Nothing else is cut.
 2. Put the ring (or the hook) on the strap.
 3. Push the **whole rest of the lead** through the open slit.
 4. Pull it up tight against the ring. The leather turns as it passes through itself, so the **rough flesh
@@ -97,6 +98,11 @@ grain side. The knots carry the load — the screw only stops the tail lifting.
 
 The same, but the strap passes through **ring 3 AND the hook eye in the same fold**; ring 3 sits 30 mm
 before the hook eye.
+
+### Tools and finishing
+
+Head knife or slitting knife for the slits, Ø 2 mm round punch for the slit ends, strap cutter for the
+20 mm width, edge beveller size 2 both sides, burnisher. No edge paint, no glue, no stitching, no rivets.
 
 ### Material and strength
 

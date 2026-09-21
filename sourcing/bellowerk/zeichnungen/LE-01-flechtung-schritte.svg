@@ -3,6 +3,7 @@
 <text x="40" y="44" font-size="25" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">LE-01 · Sheet 3/3 · THE BLEED KNOT — how every ring and hook is fixed</text>
 <text x="40" y="70" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Bellowerk Manufaktur · v3.0 · 18 Sep 2026 · A3 landscape · Taken from the golden sample. The technique is the "bleed knot" (also called blood knot) —</text>
 <text x="40" y="92" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">a known leather technique, no stitching and no rivets. The strap is NEVER cut into strands and NEVER cut through. It is one piece from end to end.</text>
+<text x="40" y="112" font-size="13" fill="#444" text-anchor="start" font-weight="normal" font-style="normal">Leather: veg-tan cowhide 3.5–4.0 mm = 9–10 oz, firm temper, oiled pull-up. Strap cut 20 mm with a strap cutter. Edges bevelled both sides and burnished, no edge paint.</text>
 <rect x="1091" y="28" width="450" height="80" rx="8" fill="#f7f7f7" stroke="#d5d5d5"/>
 <text x="1105" y="50" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">How to read the drawings:</text>
 <rect x="1105" y="60" width="40" height="16" fill="#7a4f2d" stroke="#4e3119" stroke-width="1.5"/>
@@ -10,90 +11,90 @@
 <rect x="1315" y="60" width="40" height="16" fill="#c7b49a" stroke="#4e3119" stroke-width="1.5"/>
 <text x="1363" y="73" font-size="12.5" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">flesh side (rough)</text>
 <text x="1105" y="98" font-size="12.5" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">The flesh side showing through is how you know the knot is right.</text>
-<rect x="40" y="128" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="154" r="14" fill="#1a1a1a"/><text x="66" y="159" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">1</text><text x="90" y="160" font-size="16" font-weight="bold" fill="#1a1a1a">One slit — that is the whole secret</text>
-<rect x="70" y="218" width="430" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<line x1="228.0" y1="256" x2="342.0" y2="256" stroke="#4e3119" stroke-width="3"/><circle cx="228.0" cy="256" r="3.5" fill="none" stroke="#4e3119" stroke-width="2"/><circle cx="342.0" cy="256" r="3.5" fill="none" stroke="#4e3119" stroke-width="2"/>
-<g stroke="#1a1a1a" stroke-width="1.2"><line x1="228" y1="314" x2="342" y2="314"/><line x1="228" y1="308" x2="228" y2="320"/><line x1="342" y1="308" x2="342" y2="320"/></g>
-<text x="285" y="304" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">30 mm</text>
-<text x="362" y="306" font-size="12.5" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">slit runs ALONG the strap</text>
-<text x="70" y="340" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">ONE lengthwise slit in the middle of the strap, 30 mm long,</text>
-<text x="70" y="358" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">centred across the width. Both ends punched Ø 2 mm so the</text>
-<text x="70" y="376" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">slit cannot run. Nothing else is cut — the strap keeps its</text>
-<text x="70" y="394" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">full 20 mm width and stays one piece.</text>
-<rect x="543" y="128" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="154" r="14" fill="#1a1a1a"/><text x="569" y="159" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">2</text><text x="593" y="160" font-size="16" font-weight="bold" fill="#1a1a1a">Thread the ring, then the tail through the slit</text>
-<rect x="573" y="218" width="300" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<path d="M 661.0 256 Q 718 233.0 775.0 256 Q 718 279.0 661.0 256 Z" fill="#fff" stroke="#4e3119" stroke-width="2"/>
-<circle cx="935" cy="256" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="935" cy="256" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<path d="M 873 218 H 935 M 873 294 H 935" stroke="#4e3119" stroke-width="2" fill="none"/>
-<rect x="873" y="218" width="62" height="76" fill="#7a4f2d" stroke="none"/>
-<path d="M 873 218 H 935 M 873 294 H 935" stroke="#4e3119" stroke-width="2"/>
-<line x1="923" y1="184" x2="739" y2="232" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 739 232 L 750.4 222.3 L 753.7 234.9 Z" fill="#c0392b"/>
-<text x="757" y="174" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">the WHOLE tail goes through the slit</text>
-<text x="573" y="328" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Put the ring (or the snap hook) on the strap, then push the</text>
-<text x="573" y="346" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">entire rest of the lead through the open slit. On a 2.60 m lead</text>
-<text x="573" y="364" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">that means pulling metres of leather through — that is normal</text>
-<text x="573" y="382" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">and it is why the knots are made before the lead is cut to length.</text>
-<rect x="1046" y="128" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="154" r="14" fill="#1a1a1a"/><text x="1072" y="159" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">3</text><text x="1096" y="160" font-size="16" font-weight="bold" fill="#1a1a1a">Pull tight — the V appears</text>
-<rect x="1076" y="218" width="150" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<g><rect x="1226" y="218" width="84" height="76" fill="#7a4f2d" stroke="none"/>
-      <path d="M 1231 223 Q 1272.2 240.8 1298.24 256.0 Q 1272.2 271.2 1231 289 Q 1251.2 256.0 1231 223 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <rect x="1226" y="218" width="84" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
-<rect x="1310" y="218" width="90" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<circle cx="1434" cy="256" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1434" cy="256" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<rect x="1400" y="218" width="34" height="76" fill="#7a4f2d" stroke="none"/>
-<path d="M 1400 218 H 1434 M 1400 294 H 1434" stroke="#4e3119" stroke-width="2"/>
-<line x1="1346" y1="184" x2="1278" y2="216" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/><path d="M 1278 216 L 1287.4 204.3 L 1293.0 216.2 Z" fill="#2e7d32"/>
-<text x="1286" y="172" font-size="13" fill="#2e7d32" text-anchor="start" font-weight="bold" font-style="normal">flesh side now shows</text>
-<text x="1076" y="328" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pull the tail through until the knot sits tight against the ring.</text>
-<text x="1076" y="346" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The leather turns as it passes through itself, so the rough flesh</text>
-<text x="1076" y="364" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">side comes to the outside and forms a V. That light patch is the</text>
-<text x="1076" y="382" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">proof the knot is made correctly — it is not a fault.</text>
-<rect x="40" y="442" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="468" r="14" fill="#1a1a1a"/><text x="66" y="473" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">4</text><text x="90" y="474" font-size="16" font-weight="bold" fill="#1a1a1a">Repeat — the chain at the hook ends</text>
-<rect x="70" y="530" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<g><rect x="130" y="530" width="320" height="76" fill="#7a4f2d" stroke="none"/>
-      <path d="M 135 535 Q 165.2 552.8 185.04 568.0 Q 165.2 583.2 135 601 Q 149.2 568.0 135 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 199 535 Q 229.2 552.8 249.04 568.0 Q 229.2 583.2 199 601 Q 213.2 568.0 199 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 263 535 Q 293.2 552.8 313.04 568.0 Q 293.2 583.2 263 601 Q 277.2 568.0 263 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 327 535 Q 357.2 552.8 377.04 568.0 Q 357.2 583.2 327 601 Q 341.2 568.0 327 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 391 535 Q 421.2 552.8 441.04 568.0 Q 421.2 583.2 391 601 Q 405.2 568.0 391 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <rect x="130" y="530" width="320" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
-<rect x="450" y="530" width="40" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<g stroke="#1a1a1a" stroke-width="1.2"><line x1="130" y1="628" x2="450" y2="628"/><line x1="130" y1="622" x2="130" y2="634"/><line x1="450" y1="622" x2="450" y2="634"/></g>
-<text x="290" y="648" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">115 mm · 5–6 V, pitch approx. 20 mm</text>
-<text x="70" y="676" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">At hook A and hook B the knot is repeated in a row: cut the next</text>
-<text x="70" y="694" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">slit, pull the tail through again, tighten. Five to six V over</text>
-<text x="70" y="712" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">115 mm, evenly spaced — match the golden sample.</text>
-<rect x="543" y="442" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="468" r="14" fill="#1a1a1a"/><text x="569" y="473" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">5</text><text x="593" y="474" font-size="16" font-weight="bold" fill="#1a1a1a">Ring 1 and ring 2 — ONE knot, no screw</text>
-<rect x="573" y="530" width="150" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<g><rect x="723" y="530" width="84" height="76" fill="#7a4f2d" stroke="none"/>
-      <path d="M 728 535 Q 769.2 552.8 795.24 568.0 Q 769.2 583.2 728 601 Q 748.2 568.0 728 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <rect x="723" y="530" width="84" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
-<circle cx="841" cy="568" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="841" cy="568" r="19" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
-<rect x="807" y="530" width="34" height="76" fill="#7a4f2d" stroke="none"/>
-<path d="M 807 530 H 841 M 807 606 H 841" stroke="#4e3119" stroke-width="2"/>
-<rect x="871" y="530" width="130" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<text x="577" y="628" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
-<text x="873" y="628" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
-<text x="573" y="676" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">A middle ring gets a SINGLE bleed knot and no Chicago screw.</text>
-<text x="573" y="694" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The knot alone holds it — that is how the golden sample is made.</text>
-<text x="573" y="712" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pull it up tight so the ring cannot travel along the strap.</text>
-<rect x="1046" y="442" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="468" r="14" fill="#1a1a1a"/><text x="1072" y="473" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">6</text><text x="1096" y="474" font-size="16" font-weight="bold" fill="#1a1a1a">Finish at the hook ends</text>
-<rect x="1076" y="530" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<g><rect x="1136" y="530" width="256" height="76" fill="#7a4f2d" stroke="none"/>
-      <path d="M 1141 535 Q 1171.2 552.8 1191.04 568.0 Q 1171.2 583.2 1141 601 Q 1155.2 568.0 1141 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 1205 535 Q 1235.2 552.8 1255.04 568.0 Q 1235.2 583.2 1205 601 Q 1219.2 568.0 1205 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 1269 535 Q 1299.2 552.8 1319.04 568.0 Q 1299.2 583.2 1269 601 Q 1283.2 568.0 1269 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <path d="M 1333 535 Q 1363.2 552.8 1383.04 568.0 Q 1363.2 583.2 1333 601 Q 1347.2 568.0 1333 535 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
-      <rect x="1136" y="530" width="256" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
-<rect x="1392" y="530" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
-<circle cx="1422" cy="568" r="15" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
-<line x1="1412" y1="568" x2="1432" y2="568" stroke="#9a7c2f" stroke-width="2.5"/>
-<g stroke-dasharray="6 4"><line x1="1452" y1="530" x2="1452" y2="606" stroke="#4e3119" stroke-width="2"/></g>
-<line x1="1346" y1="498" x2="1418" y2="546" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 1418 546 L 1403.1 543.9 L 1410.4 533.1 Z" fill="#c0392b"/>
-<text x="1216" y="486" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">1 Chicago screw after the last V</text>
-<text x="1076" y="676" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Only at hook A and hook B: one solid brass Chicago screw after</text>
-<text x="1076" y="694" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">the last V, tail trimmed 20 mm behind it, edge bevelled. The knots</text>
-<text x="1076" y="712" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">carry the load — the screw only stops the tail lifting.</text>
+<rect x="40" y="140" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="166" r="14" fill="#1a1a1a"/><text x="66" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">1</text><text x="90" y="172" font-size="16" font-weight="bold" fill="#1a1a1a">One slit — that is the whole secret</text>
+<rect x="70" y="230" width="430" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<line x1="228.0" y1="268" x2="342.0" y2="268" stroke="#4e3119" stroke-width="3"/><circle cx="228.0" cy="268" r="3.5" fill="none" stroke="#4e3119" stroke-width="2"/><circle cx="342.0" cy="268" r="3.5" fill="none" stroke="#4e3119" stroke-width="2"/>
+<g stroke="#1a1a1a" stroke-width="1.2"><line x1="228" y1="326" x2="342" y2="326"/><line x1="228" y1="320" x2="228" y2="332"/><line x1="342" y1="320" x2="342" y2="332"/></g>
+<text x="285" y="316" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">30 mm</text>
+<text x="362" y="318" font-size="12.5" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">slit runs ALONG the strap</text>
+<text x="70" y="352" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">ONE lengthwise slit, 30 mm long, centred across the width.</text>
+<text x="70" y="370" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Punch both ends Ø 2 mm FIRST, then cut between the two</text>
+<text x="70" y="388" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">holes with a head knife — that way the slit cannot run.</text>
+<text x="70" y="406" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Nothing else is cut: the strap keeps its full 20 mm width.</text>
+<rect x="543" y="140" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="166" r="14" fill="#1a1a1a"/><text x="569" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">2</text><text x="593" y="172" font-size="16" font-weight="bold" fill="#1a1a1a">Thread the ring, then the tail through the slit</text>
+<rect x="573" y="230" width="300" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<path d="M 661.0 268 Q 718 245.0 775.0 268 Q 718 291.0 661.0 268 Z" fill="#fff" stroke="#4e3119" stroke-width="2"/>
+<circle cx="935" cy="268" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="935" cy="268" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<path d="M 873 230 H 935 M 873 306 H 935" stroke="#4e3119" stroke-width="2" fill="none"/>
+<rect x="873" y="230" width="62" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 873 230 H 935 M 873 306 H 935" stroke="#4e3119" stroke-width="2"/>
+<line x1="923" y1="196" x2="739" y2="244" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 739 244 L 750.4 234.3 L 753.7 246.9 Z" fill="#c0392b"/>
+<text x="757" y="186" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">the WHOLE tail goes through the slit</text>
+<text x="573" y="340" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Put the ring (or the snap hook) on the strap, then push the</text>
+<text x="573" y="358" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">entire rest of the lead through the open slit. On a 2.60 m lead</text>
+<text x="573" y="376" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">that means pulling metres of leather through — that is normal</text>
+<text x="573" y="394" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">and it is why the knots are made before the lead is cut to length.</text>
+<rect x="1046" y="140" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="166" r="14" fill="#1a1a1a"/><text x="1072" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">3</text><text x="1096" y="172" font-size="16" font-weight="bold" fill="#1a1a1a">Pull tight — the V appears</text>
+<rect x="1076" y="230" width="150" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="1226" y="230" width="84" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 1231 235 Q 1272.2 252.8 1298.24 268.0 Q 1272.2 283.2 1231 301 Q 1251.2 268.0 1231 235 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="1226" y="230" width="84" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="1310" y="230" width="90" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<circle cx="1434" cy="268" r="34" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="1434" cy="268" r="22" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="1400" y="230" width="34" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 1400 230 H 1434 M 1400 306 H 1434" stroke="#4e3119" stroke-width="2"/>
+<line x1="1346" y1="196" x2="1278" y2="228" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/><path d="M 1278 228 L 1287.4 216.3 L 1293.0 228.2 Z" fill="#2e7d32"/>
+<text x="1286" y="184" font-size="13" fill="#2e7d32" text-anchor="start" font-weight="bold" font-style="normal">flesh side now shows</text>
+<text x="1076" y="340" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pull the tail through until the knot sits tight against the ring.</text>
+<text x="1076" y="358" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The leather turns as it passes through itself, so the rough flesh</text>
+<text x="1076" y="376" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">side comes to the outside and forms a V. That light patch is the</text>
+<text x="1076" y="394" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">proof the knot is made correctly — it is not a fault.</text>
+<rect x="40" y="452" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="66" cy="478" r="14" fill="#1a1a1a"/><text x="66" y="483" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">4</text><text x="90" y="484" font-size="16" font-weight="bold" fill="#1a1a1a">Repeat — the chain at the hook ends</text>
+<rect x="70" y="540" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="130" y="540" width="320" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 135 545 Q 165.2 562.8 185.04 578.0 Q 165.2 593.2 135 611 Q 149.2 578.0 135 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 199 545 Q 229.2 562.8 249.04 578.0 Q 229.2 593.2 199 611 Q 213.2 578.0 199 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 263 545 Q 293.2 562.8 313.04 578.0 Q 293.2 593.2 263 611 Q 277.2 578.0 263 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 327 545 Q 357.2 562.8 377.04 578.0 Q 357.2 593.2 327 611 Q 341.2 578.0 327 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 391 545 Q 421.2 562.8 441.04 578.0 Q 421.2 593.2 391 611 Q 405.2 578.0 391 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="130" y="540" width="320" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="450" y="540" width="40" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g stroke="#1a1a1a" stroke-width="1.2"><line x1="130" y1="638" x2="450" y2="638"/><line x1="130" y1="632" x2="130" y2="644"/><line x1="450" y1="632" x2="450" y2="644"/></g>
+<text x="290" y="658" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="bold" font-style="normal">115 mm · 5–6 V, pitch approx. 20 mm</text>
+<text x="70" y="686" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">At hook A and hook B the knot is repeated in a row: cut the next</text>
+<text x="70" y="704" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">slit, pull the tail through again, tighten. Five to six V over</text>
+<text x="70" y="722" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">115 mm, evenly spaced — match the golden sample.</text>
+<rect x="543" y="452" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="569" cy="478" r="14" fill="#1a1a1a"/><text x="569" y="483" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">5</text><text x="593" y="484" font-size="16" font-weight="bold" fill="#1a1a1a">Ring 1 and ring 2 — ONE knot, no screw</text>
+<rect x="573" y="540" width="150" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="723" y="540" width="84" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 728 545 Q 769.2 562.8 795.24 578.0 Q 769.2 593.2 728 611 Q 748.2 578.0 728 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="723" y="540" width="84" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<circle cx="841" cy="578" r="30" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/><circle cx="841" cy="578" r="19" fill="#fff" stroke="#9a7c2f" stroke-width="2"/>
+<rect x="807" y="540" width="34" height="76" fill="#7a4f2d" stroke="none"/>
+<path d="M 807 540 H 841 M 807 616 H 841" stroke="#4e3119" stroke-width="2"/>
+<rect x="871" y="540" width="130" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<text x="577" y="638" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
+<text x="873" y="638" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="italic">lead continues</text>
+<text x="573" y="686" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">A middle ring gets a SINGLE bleed knot and no Chicago screw.</text>
+<text x="573" y="704" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">The knot alone holds it — that is how the golden sample is made.</text>
+<text x="573" y="722" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Pull it up tight so the ring cannot travel along the strap.</text>
+<rect x="1046" y="452" width="490" height="292" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/><circle cx="1072" cy="478" r="14" fill="#1a1a1a"/><text x="1072" y="483" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">6</text><text x="1096" y="484" font-size="16" font-weight="bold" fill="#1a1a1a">Finish at the hook ends</text>
+<rect x="1076" y="540" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<g><rect x="1136" y="540" width="256" height="76" fill="#7a4f2d" stroke="none"/>
+      <path d="M 1141 545 Q 1171.2 562.8 1191.04 578.0 Q 1171.2 593.2 1141 611 Q 1155.2 578.0 1141 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1205 545 Q 1235.2 562.8 1255.04 578.0 Q 1235.2 593.2 1205 611 Q 1219.2 578.0 1205 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1269 545 Q 1299.2 562.8 1319.04 578.0 Q 1299.2 593.2 1269 611 Q 1283.2 578.0 1269 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <path d="M 1333 545 Q 1363.2 562.8 1383.04 578.0 Q 1363.2 593.2 1333 611 Q 1347.2 578.0 1333 545 Z" fill="#c7b49a" stroke="#4e3119" stroke-width="1.8"/>
+      <rect x="1136" y="540" width="256" height="76" fill="none" stroke="#4e3119" stroke-width="2"/></g>
+<rect x="1392" y="540" width="60" height="76" fill="#7a4f2d" stroke="#4e3119" stroke-width="2"/>
+<circle cx="1422" cy="578" r="15" fill="#c9a44a" stroke="#9a7c2f" stroke-width="2"/>
+<line x1="1412" y1="578" x2="1432" y2="578" stroke="#9a7c2f" stroke-width="2.5"/>
+<g stroke-dasharray="6 4"><line x1="1452" y1="540" x2="1452" y2="616" stroke="#4e3119" stroke-width="2"/></g>
+<line x1="1346" y1="508" x2="1418" y2="556" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/><path d="M 1418 556 L 1403.1 553.9 L 1410.4 543.1 Z" fill="#c0392b"/>
+<text x="1216" y="496" font-size="13" fill="#c0392b" text-anchor="start" font-weight="bold" font-style="normal">1 Chicago screw after the last V</text>
+<text x="1076" y="686" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">Only at hook A and hook B: one solid brass Chicago screw after</text>
+<text x="1076" y="704" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">the last V, tail trimmed 20 mm behind it, edge bevelled. The knots</text>
+<text x="1076" y="722" font-size="13" fill="#1a1a1a" text-anchor="start" font-weight="normal" font-style="normal">carry the load — the screw only stops the tail lifting.</text>
 <rect x="40" y="758" width="1507" height="330" rx="8" fill="#fff" stroke="#c8c8c8" stroke-width="1.5"/>
 <text x="62" y="790" font-size="17" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">The three positions on the lead</text>
 <text x="78" y="824" font-size="14" fill="#1a1a1a" text-anchor="start" font-weight="bold" font-style="normal">Hook A — 5–6 knots + 1 screw</text>

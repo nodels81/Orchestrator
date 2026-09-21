@@ -94,6 +94,7 @@ A(f'<rect width="{W}" height="{H}" fill="#fff"/>')
 A(txt(40, 44, 'LE-01 · Sheet 3/3 · THE BLEED KNOT — how every ring and hook is fixed', 25, INK, weight="bold"))
 A(txt(40, 70, 'Bellowerk Manufaktur · v3.0 · 18 Sep 2026 · A3 landscape · Taken from the golden sample. The technique is the "bleed knot" (also called blood knot) —', 14))
 A(txt(40, 92, 'a known leather technique, no stitching and no rivets. The strap is NEVER cut into strands and NEVER cut through. It is one piece from end to end.', 14, weight="bold"))
+A(txt(40, 112, 'Leather: veg-tan cowhide 3.5–4.0 mm = 9–10 oz, firm temper, oiled pull-up. Strap cut 20 mm with a strap cutter. Edges bevelled both sides and burnished, no edge paint.', 13, "#444"))
 
 lx = 1105
 A(f'<rect x="{lx - 14}" y="28" width="450" height="80" rx="8" fill="#f7f7f7" stroke="#d5d5d5"/>')
@@ -105,7 +106,7 @@ A(txt(lx + 258, 73, 'flesh side (rough)', 12.5))
 A(txt(lx, 98, 'The flesh side showing through is how you know the knot is right.', 12.5, "#555"))
 
 PW, PH = 490, 292
-R1, R2 = 128, 442
+R1, R2 = 140, 452
 
 # ================= 1 · Ein Schlitz =================
 px, py = 40, R1
@@ -118,10 +119,10 @@ A(f'<g stroke="{INK}" stroke-width="1.2">'
   f'<line x1="{px + 302}" y1="{py + 180}" x2="{px + 302}" y2="{py + 192}"/></g>')
 A(txt(px + 245, py + 176, '30 mm', 13, anchor="middle", weight="bold"))
 A(txt(px + 322, py + 178, 'slit runs ALONG the strap', 12.5, "#555"))
-A(txt(px + 30, py + 212, 'ONE lengthwise slit in the middle of the strap, 30 mm long,', 13))
-A(txt(px + 30, py + 230, 'centred across the width. Both ends punched Ø 2 mm so the', 13))
-A(txt(px + 30, py + 248, 'slit cannot run. Nothing else is cut — the strap keeps its', 13))
-A(txt(px + 30, py + 266, 'full 20 mm width and stays one piece.', 13, weight="bold"))
+A(txt(px + 30, py + 212, 'ONE lengthwise slit, 30 mm long, centred across the width.', 13))
+A(txt(px + 30, py + 230, 'Punch both ends Ø 2 mm FIRST, then cut between the two', 13, weight="bold"))
+A(txt(px + 30, py + 248, 'holes with a head knife — that way the slit cannot run.', 13, weight="bold"))
+A(txt(px + 30, py + 266, 'Nothing else is cut: the strap keeps its full 20 mm width.', 13))
 
 # ================= 2 · Ring auffaedeln, Ende durchziehen =================
 px = 40 + (PW + 13)

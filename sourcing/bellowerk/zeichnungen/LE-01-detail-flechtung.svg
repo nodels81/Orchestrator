@@ -96,13 +96,27 @@
     <path d="M 843.3 482 l 8 -4 v 8 z" fill="#000"/><path d="M 956.7 482 l -8 -4 v 8 z" fill="#000"/>
     <text x="900" y="502" text-anchor="middle" fill="#000" stroke="none" font-size="12" font-weight="bold">30 mm — starting value</text>
   </g>
-  <text x="710" y="524" fill="#000" stroke="none" font-size="12">Lengthwise, centred, ends punched Ø 2 mm.</text>
+  <text x="710" y="524" fill="#000" stroke="none" font-size="12">Lengthwise, centred. Punch both ends Ø 2 mm FIRST,</text>
+  <text x="710" y="541" fill="#000" stroke="none" font-size="12">then cut between the holes — the slit cannot run.</text>
+
+
+  <!-- line legend, leather pattern convention -->
+  <g transform="translate(40,516)">
+    <text x="0" y="0" font-size="12.5" font-weight="bold" fill="#000" stroke="none">Line types:</text>
+    <g stroke-width="2.5"><line x1="78" y1="-4" x2="128" y2="-4"/></g>
+    <text x="134" y="0" fill="#000" stroke="none" font-size="12">cut line</text>
+    <g stroke-width="2" stroke-dasharray="8 4"><line x1="196" y1="-4" x2="246" y2="-4"/></g>
+    <text x="252" y="0" fill="#000" stroke="none" font-size="12">tail end / fold</text>
+    <g stroke-width="2.5"><line x1="350" y1="-4" x2="400" y2="-4"/></g>
+    <circle cx="350" cy="-4" r="3.5" stroke-width="1.5"/><circle cx="400" cy="-4" r="3.5" stroke-width="1.5"/>
+    <text x="408" y="0" fill="#000" stroke="none" font-size="12">slit with punched ends</text>
+  </g>
 
   <!-- ================= NOTES ================= -->
   <text x="30" y="560" fill="#000" stroke="none" font-size="12.5" font-weight="bold">The 115 mm chain and the 5–6 even V are the binding result. The slit length is a starting value — adjust it on the first sample until the chain comes out at 115 mm.</text>
   <text x="30" y="580" fill="#000" stroke="none" font-size="12.5">Hook A: same chain of knots, hook eye only, no ring. Hook A and hook B each get ONE solid brass Chicago screw after the last V; the middle rings get NO screw.</text>
   <text x="30" y="600" fill="#000" stroke="none" font-size="12.5">The rough flesh side showing in every V is correct and wanted — it is the mark of a real bleed knot, not a defect. Knots pulled up tight, no gaps, all V facing the same way.</text>
-  <text x="30" y="620" fill="#000" stroke="none" font-size="12.5">Edges bevelled and burnished along the whole lead, including through the knots. No stitching, no rivets. Attachment strength ≥ 2.0 kN.</text>
+  <text x="30" y="620" fill="#000" stroke="none" font-size="12.5">Leather 3.5–4.0 mm = 9–10 oz, veg-tan, firm temper. Strap cut with a strap cutter. Edges bevelled both sides (beveller size 2) and burnished, no edge paint.</text>
 
   <text x="30" y="660" fill="#000" stroke="none" font-size="12.5" font-weight="bold">Before production: send photos of one finished knot from the front AND the back, plus one finished hook end laid on this printed sheet.</text>
 
