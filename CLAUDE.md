@@ -23,6 +23,24 @@ nur im Chat erwähnen.
   anschreiben. Das Ergebnis (welche Adresse tatsächlich zugestellt wurde) in die jeweilige
   Lieferantendatei eintragen, nicht nur im Chat erwähnen.
 
+## Freigabe vor jedem Versand (gilt ausnahmslos)
+
+- **Keine Lieferantenmail geht ohne Björns ausdrückliche Freigabe raus.** Entwurf zuerst
+  vollständig im Chat zeigen (kompletter Text, nicht nur Zusammenfassung), Empfängerliste
+  dazu, dann auf sein "ja" warten. Das gilt für Erstkontakt, Nachfassen, Musteranfrage,
+  Reklamation — für jede einzelne Mail, auch wenn dieselbe Vorlage an mehrere Firmen geht.
+- Björn liest die Entwürfe **auf Deutsch**. Bei chinesischen Lieferanten also: deutsche
+  Fassung zur Freigabe zeigen, danach in einfachem Englisch verschicken (Standard im
+  China-Einkauf), sofern er nichts anderes sagt.
+
+## Zwei getrennte Marken im selben Postfach
+
+Im Gmail-Konto liegt auch Korrespondenz zu Björns zweiter Marke **Delatec** (Autopflege:
+Felgenreiniger, Trockentücher, Waschhandschuhe, Sprühflaschen — chinesische Chemie- und
+Textillieferanten). Das hat mit Bellowerk (Leder, Hund) **nichts** zu tun: Anfragen,
+Lieferanten und Antworten nie vermischen, und bei Gmail-Suchen immer prüfen, zu welcher
+Marke ein Treffer gehört.
+
 ## Lieferanten-Wissen ist Dateiwissen, kein Chat-Wissen
 
 - China-Lieferanten: `sourcing/lieferanten/shortlist.md` + `tracker.csv`.
