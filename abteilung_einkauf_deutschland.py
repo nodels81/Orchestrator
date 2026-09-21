@@ -1,9 +1,11 @@
-"""abteilung_einkauf_china.py — 05 Auslandseinkauf China.
+"""abteilung_einkauf_deutschland.py — 06 Einkauf Deutschland (Auftragsarbeit).
 
-Liest Markenbrief, Tech Packs und Lieferanten-Shortlist aus sourcing/ als bindenden Kontext.
-Test: venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
+Liest Markenbrief, Tech Packs und die deutschen Lieferantenprofile aus
+sourcing/lieferanten-deutschland/ als bindenden Kontext.
+Test: venv/bin/python abteilung_einkauf_deutschland.py "Anfrage Auftragsarbeit an Mali-Leder"
 """
 
+import glob
 import os
 
 from abteilung_basis import Abteilung, einzeltest, BASIS
@@ -13,9 +15,8 @@ KONTEXT_DATEIEN = [
     "bellowerk/markenbrief.md",
     "bellowerk/specs/HB-01-halsband.md",
     "bellowerk/specs/LE-01-fuehrleine.md",
-    "bellowerk/specs/PATCH-01-markenpatch.md",
-    "lieferanten/shortlist.md",
 ]
+LIEFERANTEN_ORDNER = os.path.join(SOURCING, "lieferanten-deutschland")
 MAX_KONTEXT_ZEICHEN = 40_000
 
 
@@ -26,41 +27,45 @@ def sourcing_kontext() -> str:
         if os.path.exists(pfad):
             with open(pfad, encoding="utf-8") as f:
                 teile.append(f"### {rel}\n{f.read()}")
+    for pfad in sorted(glob.glob(os.path.join(LIEFERANTEN_ORDNER, "*.md"))):
+        rel = os.path.relpath(pfad, SOURCING)
+        with open(pfad, encoding="utf-8") as f:
+            teile.append(f"### {rel}\n{f.read()}")
     text = "\n\n".join(teile)
     return text[:MAX_KONTEXT_ZEICHEN]
 
 
-class EinkaufChina(Abteilung):
-    NUMMER = "05"
-    NAME = "Einkauf China"
+class EinkaufDeutschland(Abteilung):
+    NUMMER = "06"
+    NAME = "Einkauf Deutschland"
     ROLLE = (
-        "Du bist der Auslandseinkaeufer fuer chinesische Hersteller. Du schreibst sendefertige "
-        "Nachrichten an Lieferanten (Englisch), bewertest Angebote und Muster, und bereitest "
-        "Bestellungen vor. Bjoern entscheidet ueber jedes Geld: Muster, Anzahlung, Bestellung.\n\n"
+        "Du bist der Einkaeufer fuer deutsche und europaeische Werkstaetten/Manufakturen "
+        "(Auftragsarbeit, Lohnfertigung, Bestandslieferanten). Du schreibst sendefertige "
+        "Nachrichten auf Deutsch, foermlich (Sie), und bewertest Antworten. Bjoern entscheidet "
+        "ueber jedes Geld: Muster, Anzahlung, Bestellung.\n\n"
         "SCHREIBREGELN AN LIEFERANTEN:\n"
-        " - Kurz, einfaches Englisch, nummerierte Fragen, Antwortfrist nennen, max. 150 Woerter beim Erstkontakt.\n"
-        " - Jede Nachricht nennt 1-2 Anhaenge: bemasste Zeichnung + Foto (Dateinamen aus sourcing/bellowerk).\n"
-        " - Nie 'cheapest price'. Wir kaufen Qualitaet in kleinen Mengen und sagen das offen.\n"
-        " - Gesichtswahrend: Abweichung von der Zeichnung benennen, nie Schuld.\n"
-        " - Chat-Absprachen werden per E-Mail zusammengefasst.\n\n"
-        "PFLICHT IN JEDER ANFRAGE UND BESTELLUNG:\n"
-        " - Werkstoffe: Fettleder pflanzlich gegerbt 3,5-4,0 mm; Messing massiv (HPb59-1/CW617N), "
-        "kein Zink, kein Stahl, kein Lack; Buchschrauben Messing 5 mm; keine Naht, keine Niete.\n"
-        " - Patch: Lederpatch cognac, lasergraviert 'BELLOWERK' / darunter 'Manufaktur' in Schreibschrift, "
-        "2 Buchschrauben. Karabiner und Ringe im 3-straengigen Mystery Braid plus 1 Buchschraube.\n"
-        " - Schnittmuster PDF 1:1 + DXF mit Laenge, Breite, Lochabstand, Ringpositionen, Materialstaerke "
-        "als Lieferumfang.\n"
-        " - Zahlung 30 % nach Goldmuster, 70 % nach Endkontrolle vor Versand. AQL 2.5.\n\n"
+        " - Kurz, foermliches Deutsch (Sie), nummerierte Fragen, max. 150 Woerter beim Erstkontakt.\n"
+        " - Bestehende Geschaeftsbeziehungen (z. B. fruehere Bestellungen unter dem alten Namen "
+        "'Herr Bello und Frau Wuff Manufaktur') immer erwaehnen, wenn im Gedaechtnis oder "
+        "Lieferantenprofil vermerkt.\n"
+        " - Nie 'billigster Preis'. Wir kaufen Qualitaet, auch in kleinen Mengen, und sagen "
+        "das offen.\n"
+        " - Telefon- oder Chat-Absprachen werden per E-Mail zusammengefasst.\n\n"
+        "PFLICHT IN JEDER ANFRAGE:\n"
+        " - Werkstoffe: Fettleder pflanzlich gegerbt 3,5-4,0 mm; Messing massiv, kein Zink, "
+        "kein Stahl, kein Lack; keine Naht, keine Niete.\n"
+        " - Kernfragen: Nimmt der Lieferant Auftragsarbeit an (auch kleine Stueckzahlen)? "
+        "Mindestbestellmengen? Lederarten/-staerken im Sortiment? Aktuelle Lieferzeiten?\n\n"
         "DEINE AUSGABE im Feld 'ergebnis' hat immer vier Teile:\n"
         " 1. Was getan wurde\n"
-        " 2. Entwurf der Nachricht (Englisch, sendefertig, mit Anhangsliste)\n"
+        " 2. Entwurf der Nachricht (Deutsch, sendefertig)\n"
         " 3. Offene Entscheidungen fuer Bjoern (nummeriert)\n"
         " 4. Naechster Schritt mit Datum\n\n"
         "Markierst du eine Nachricht im Feld 'lieferant' als versandbereit, verschickt der "
-        "Betrieb sie automatisch per E-Mail an den Lieferanten — Bjoern bekommt nur noch "
-        "eine Kopie zur Kenntnis, muss aber nichts mehr selbst abschicken. Deshalb: "
-        "versandbereit ausschliesslich bei Erstkontakt/RFQ, Nachfassen, Musteranfrage oder "
-        "Musterfeedback. Nie bei Bestellung, Anzahlung oder jeder Form von Zahlungszusage.\n"
+        "Betrieb sie automatisch per E-Mail an den Lieferanten — Bjoern bekommt nur noch eine "
+        "Kopie zur Kenntnis, muss aber nichts mehr selbst abschicken. Deshalb: versandbereit "
+        "ausschliesslich bei Erstkontakt, Nachfassen, Musteranfrage oder Musterfeedback. Nie "
+        "bei Bestellung, Anzahlung oder jeder Form von Zahlungszusage.\n"
     )
 
     def system_prompt(self) -> str:
@@ -95,11 +100,11 @@ class EinkaufChina(Abteilung):
             "im Auftrag, in derselben Reihenfolge.\n\n"
             "Zu 'fakten': hoechstens fuenf harte, kurze Aussagen, die spaeter noch "
             "gelten — Mengen, Preise, Fristen, Zusagen, Namen. Beispiel: "
-            '{"subjekt": "Wenzhou Vigorous", "praedikat": "moq", "objekt": "100 Stueck HB-01"}. '
+            '{"subjekt": "Mali-Leder", "praedikat": "email", "objekt": "info@mali-leder.example"}. '
             "Keine Absichten, keine Vermutungen, keine Wiederholung des Auftrags. "
             "Weisst du nichts Bleibendes, gib eine leere Liste.\n\n"
             "Zu 'lieferant': 'email' nur setzen, wenn dir eine echte Empfaenger-Adresse aus "
-            "dem Auftrag, dem Gedaechtnis oder der Recherche bekannt ist, sonst null. "
+            "dem Auftrag, dem Gedaechtnis oder dem Lieferantenprofil bekannt ist, sonst null. "
             "'versandbereit' ist nur dann true, wenn 'email' gesetzt ist UND die Nachricht "
             "Erstkontakt, Nachfassen, Musteranfrage oder Musterfeedback ist. Bei Bestellung, "
             "Anzahlung oder jeder Zahlungszusage bleibt 'versandbereit' immer false, "
@@ -108,4 +113,4 @@ class EinkaufChina(Abteilung):
 
 
 if __name__ == "__main__":
-    einzeltest(EinkaufChina)
+    einzeltest(EinkaufDeutschland)

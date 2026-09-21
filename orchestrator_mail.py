@@ -15,24 +15,25 @@ from email.message import EmailMessage
 from abteilung_basis import config_laden
 
 
-def senden(betreff: str, text: str, config: dict | None = None) -> bool:
-    config = config or config_laden()
+def _senden(empfaenger: str, betreff: str, text: str, config: dict,
+            cc: str | None = None) -> bool:
     mail = config.get("mail", {})
 
     absender = mail.get("absender")
     passwort = mail.get("app_passwort")
-    empfaenger = mail.get("empfaenger")
     server = mail.get("smtp_server", "smtp.gmail.com")
     port = int(mail.get("smtp_port", 465))
 
     if not (absender and passwort and empfaenger):
-        print("[MAIL] Nicht konfiguriert — Eskalation nur im Log:")
-        print(f"       {betreff}\n{text}")
+        print("[MAIL] Nicht konfiguriert — Nachricht nur im Log:")
+        print(f"       An: {empfaenger}\n       {betreff}\n{text}")
         return False
 
     nachricht = EmailMessage()
     nachricht["From"] = absender
     nachricht["To"] = empfaenger
+    if cc:
+        nachricht["Cc"] = cc
     nachricht["Subject"] = betreff
     nachricht.set_content(text)
 
@@ -50,6 +51,22 @@ def senden(betreff: str, text: str, config: dict | None = None) -> bool:
     except Exception as fehler:
         print(f"[MAIL] FEHLER: {fehler}")
         return False
+
+
+def senden(betreff: str, text: str, config: dict | None = None) -> bool:
+    """Eskalation an Bjoern."""
+    config = config or config_laden()
+    empfaenger = config.get("mail", {}).get("empfaenger")
+    return _senden(empfaenger, betreff, text, config)
+
+
+def senden_lieferant(empfaenger: str, betreff: str, text: str,
+                      config: dict | None = None) -> bool:
+    """Sendet direkt an einen Lieferanten. Bjoern steht in Cc, damit jede
+    ausgehende Nachricht bei ihm ankommt, ohne dass er sie selbst verschicken muss."""
+    config = config or config_laden()
+    cc = config.get("mail", {}).get("empfaenger")
+    return _senden(empfaenger, betreff, text, config, cc=cc)
 
 
 if __name__ == "__main__":

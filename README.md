@@ -14,10 +14,32 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 | 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
 | 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
 | **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| **06** | **Einkauf Deutschland** | `abteilung_einkauf_deutschland.py` | Anfragen und Nachfassen bei deutschen/europäischen Werkstätten (Auftragsarbeit) — liest `sourcing/lieferanten-deutschland/` als bindenden Kontext |
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
-Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`,
+Mail-Eskalation und Lieferanten-Versand: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`,
 Gedächtnis: `gedaechtnis.py`.
+
+## Mail an Lieferanten (`orchestrator_mail.senden_lieferant`)
+
+Beide Einkaufsabteilungen füllen im JSON-Ergebnis zusätzlich ein Feld `lieferant`
+(`email`, `betreff`, `nachricht`, `versandbereit`). Ist `versandbereit: true` und eine
+`email` bekannt, verschickt `orchestrator.py` die Nachricht **automatisch per SMTP direkt an
+den Lieferanten** — mit demselben Konto, das auch die Eskalationsmails an Björn verschickt
+(`mail.absender` / `mail.app_passwort` in `config.json`), und mit Björn in Cc, damit jede
+ausgehende Nachricht bei ihm ankommt. Der Auftrag bekommt dann den Stand `gesendet` statt
+`wartet auf Bjoern` — er muss nichts mehr selbst abschicken.
+
+`versandbereit` wird von den Abteilungen nur bei Erstkontakt, Nachfassen, Musteranfrage oder
+Musterfeedback gesetzt, nie bei Bestellung, Anzahlung oder einer Zahlungszusage — das bleibt
+Björns Entscheidung. Ist `email` unbekannt (kein verifizierter Kontakt im Lieferantenprofil),
+bleibt es bei der bisherigen Eskalation: Björn bekommt den Entwurf und verschickt ihn selbst.
+
+**Damit eine Lieferanten-Mail wirklich rausgeht, braucht es zwei Dinge:**
+1. Eine echte Empfänger-Adresse im Lieferantenprofil (`sourcing/lieferanten*/…`) oder im
+   Gedächtnis — Websites/Alibaba-Chat-Links reichen dafür nicht.
+2. `config.json` mit `mail.absender` + `mail.app_passwort` auf dem Server — dasselbe Konto,
+   das schon für die Eskalation nötig ist, kein zusätzliches Geheimnis.
 
 ## Gedächtnis (`gedaechtnis.py`)
 

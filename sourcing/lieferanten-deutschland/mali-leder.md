@@ -5,8 +5,13 @@ Manufaktur" bei Mali-Leder bestellt. Ziel dieser Anfrage: klären, ob Mali-Leder
 Auftragsarbeit (Lohnfertigung) für Lederhalsbänder und Führleinen übernimmt, und die
 Zusammenarbeit wieder aufnehmen.
 
-Status: Anfrage entworfen, noch nicht verschickt (kein Versandkanal im Orchestrator für
-deutsche Lieferanten — E-Mail-Versand erfolgt manuell durch Björn).
+E-Mail: **unbekannt** — im verbundenen Postfach ist keine frühere Korrespondenz mit
+Mali-Leder auffindbar. Ohne eingetragene Adresse hier bleibt `lieferant.email` bei jedem
+Auftrag an Abteilung 06 `null` und die Anfrage wird nicht automatisch verschickt, sondern
+wie bisher an Björn eskaliert. Sobald die Adresse bekannt ist, hier als Zeile
+`E-Mail: kontakt@mali-leder.de` (Beispiel) ergänzen.
+
+Status: Anfrage entworfen, noch nicht verschickt — wartet auf die Kontakt-E-Mail-Adresse.
 
 ---
 

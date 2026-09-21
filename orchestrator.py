@@ -22,7 +22,7 @@ from datetime import date, datetime, timedelta
 
 import gedaechtnis
 from abteilung_basis import BASIS, config_laden
-from orchestrator_mail import senden
+from orchestrator_mail import senden, senden_lieferant
 
 ZUSTAND = os.path.join(BASIS, "auftraege.json")
 MAX_NACHARBEIT = 2
@@ -33,6 +33,7 @@ ABTEILUNGEN = {
     "03 Vertrieb": ("abteilung_vertrieb", "Vertrieb"),
     "04 Social Media": ("abteilung_social", "Social"),
     "05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
+    "06 Einkauf Deutschland": ("abteilung_einkauf_deutschland", "EinkaufDeutschland"),
 }
 
 
@@ -119,6 +120,23 @@ def eskalieren(auftrag: dict, grund: str, text: str, config: dict) -> None:
     senden(betreff, text, config)
 
 
+def _lieferanten_mail_versenden(auftrag: dict, ergebnis: dict, config: dict) -> bool:
+    """Verschickt eine vom Modell als versandbereit markierte Nachricht direkt an
+    den Lieferanten (Bjoern in Cc). Nur Einkaufsabteilungen fuellen 'lieferant';
+    ist es leer, fehlt die E-Mail-Adresse oder ist versandbereit nicht true,
+    passiert nichts — der Auftrag laeuft dann wie bisher ueber die Eskalation."""
+    lieferant = ergebnis.get("lieferant") or {}
+    if not (lieferant.get("versandbereit") and lieferant.get("email") and lieferant.get("nachricht")):
+        return False
+    betreff = lieferant.get("betreff") or f"Bellowerk — {auftrag['ziel'][:60]}"
+    erfolg = senden_lieferant(lieferant["email"], betreff, lieferant["nachricht"], config)
+    auftrag["verlauf"].append({
+        "zeit": _jetzt(),
+        "lieferanten_mail": {"an": lieferant["email"], "betreff": betreff, "gesendet": erfolg},
+    })
+    return erfolg
+
+
 # ---------- Lauf ----------
 
 def lauf(probelauf: bool = False) -> None:
@@ -166,10 +184,16 @@ def lauf(probelauf: bool = False) -> None:
         })
 
         if bestanden:
-            auftrag["stand"] = "fertig"
-            print(f"    OK — {begruendung}")
-            eskalieren(auftrag, "Ergebnis liegt vor",
+            if _lieferanten_mail_versenden(auftrag, ergebnis, config):
+                auftrag["stand"] = "gesendet"
+                print(f"    OK — Mail an Lieferanten verschickt, Bjoern in Cc.")
+                senden(f"[Bello] {auftrag['id']} {auftrag['abteilung']} — Mail an Lieferanten verschickt",
                        _bericht(auftrag, ergebnis, begruendung), config)
+            else:
+                auftrag["stand"] = "fertig"
+                print(f"    OK — {begruendung}")
+                eskalieren(auftrag, "Ergebnis liegt vor",
+                           _bericht(auftrag, ergebnis, begruendung), config)
             eskalationen += 1
         elif auftrag["versuche"] >= MAX_NACHARBEIT:
             auftrag["stand"] = "gescheitert"
