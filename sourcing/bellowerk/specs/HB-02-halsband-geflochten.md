@@ -1,5 +1,15 @@
 # HB-02 — Braided Leather Collar (Tech Pack v1.0, 9 Sep 2026)
 
+> **OPEN — do not send to a supplier yet (noted 21 Sep 2026).**
+> The construction below (neck section as a 3-strand mystery braid, strap slit into three strands) was
+> written on the same assumption that turned out to be wrong for the lead: on LE-01 the hardware is held
+> by **bleed knots**, and the strap is never slit into strands. The collar photos show a V pattern that
+> looks like the lead's knot chain, but the Instagram screenshots are not sharp enough to decide it.
+> **Björn has the physical collar — one look settles it:** if the light, rough flesh side shows in every
+> V, it is a chain of bleed knots and this tech pack has to be rewritten like LE-01 v3.0. If three
+> strands of equal width weave over and under with the grain side out everywhere, the braid below is
+> correct and this note can be deleted.
+
 Reference photos: `bilder/HB-02-geflochten-am-hund.jpg` (single colour, brass O-ring),
 `bilder/HB-02-zweifarbig-am-hund.jpg` (two-tone), `bilder/HB-02-und-LE-01-gruen.jpg` (flat buckle end
 with patch, transition to braid). Drawing: `zeichnungen/HB-02-geflochten.png`.

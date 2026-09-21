@@ -43,7 +43,7 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
 2. Fold fixed with **2 Chicago screws** (side by side for 30/40 mm, in line for 20/25 mm), D-ring
    captured between them.
 3. Leather patch PATCH-01 on the outside, 30 mm behind the fold, centred on strap, 2 Chicago screws.
-   Optional (Björn decides): D-ring held by a 3-strand mystery braid instead of the screwed fold — see HB-02.
+   Optional (Björn decides): D-ring held by a **bleed knot** instead of the screwed fold — see `LE-01-fuehrleine.md` §4.
 4. Buckle tongue slot 10 mm long, punched clean.
 5. Grain side out. Flesh side lightly finished (no loose fibres, no coating).
 

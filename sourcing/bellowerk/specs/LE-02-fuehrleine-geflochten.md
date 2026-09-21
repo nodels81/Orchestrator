@@ -1,7 +1,9 @@
 # LE-02 — Round-Braided Leather Lead, 3.00 m (Tech Pack v0.9 DRAFT — ON HOLD, 9 Sep 2026)
 
-Status: **on hold**. After Björn's photos it is clear that the Bellowerk braid is the 3-strand mystery
-braid at the hardware, which is now part of **LE-01**. A fully round-braided lead is a different
+Status: **on hold**. **Correction 21 Sep 2026:** the sentence below used to read that the Bellowerk
+braid is a 3-strand mystery braid at the hardware. That was wrong — LE-01's hardware is held by
+**bleed knots**, not by a braid (see `LE-01-fuehrleine.md` §4). So LE-01 contains no braid at all, and
+a genuinely braided lead is still an entirely separate product. A fully round-braided lead is a different
 product; keep this file only if Björn wants it as an additional line.
 
 If activated, spec as follows: 4-strand round braid Ø 12 mm with leather core, veg-tan oiled cowhide

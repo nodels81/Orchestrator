@@ -28,8 +28,17 @@ Diese Datei ist die Wahrheit für alle Lieferanten-Kontakte. Änderungen hier wi
   geschweißt, O-Ring geschweißt, Wirbel-Bolzenkarabiner (swivel eye bolt snap, poliert wie auf den
   Fotos), Riemenschlaufe. Unlackiert (Patina erwünscht).
 - **Buchschrauben Messing** (Chicago screws), gewölbter Kopf Ø 8–9 mm, Schaft 8 mm, Schraubensicherung.
-- **Flechtung**: 3-strängiger Mystery Braid (Trick Braid) aus einem Stück, V-Muster — so werden
-  Karabiner und Ringe ohne Naht befestigt (Fotos `bilder/LE-01-*.jpg`). Keine anderen Flechtarten.
+- **Knotung (Bleed Knot)**: Karabiner und Ringe werden ohne Naht und ohne Niete befestigt, indem ein
+  **Längsschlitz** in den Riemen geschnitten und der **volle Riemen durch sich selbst gezogen** wird
+  (Bleed Knot, auch Blood Knot). Der Riemen wird dabei **nie in Stränge geschlitzt und nie
+  durchtrennt**. Aneinandergereiht ergibt der Knoten das V-Muster, das wie eine Flechtung aussieht —
+  es ist aber keine. Belegt am Goldmuster: `bilder/LE-01-goldmuster-*.jpg`, in jedem V sieht man die
+  helle Fleischseite. Details in `specs/LE-01-fuehrleine.md` §4 und Zeichnungsblatt 3/3.
+  **Korrektur 21.09.2026:** Frühere Fassungen dieses Briefs nannten das einen 3-strängigen Mystery
+  Braid und verwiesen dafür auf dieselben Fotos. Das war falsch und hat sich in mehrere Tech Packs
+  fortgepflanzt. Wer hier "Flechtung" liest, meint den Knoten.
+- **Echte Flechtung** gibt es — wenn überhaupt — nur im Halsteil von HB-02 (breiter Flechtabschnitt).
+  Das ist eine andere Frage und **noch nicht am Stück geprüft**, siehe `specs/HB-02-halsband-geflochten.md`.
 - **Patch**: Lederpatch in Cognac/Mittelbraun, lasergraviert "BELLOWERK" (Versalien, gesperrt) und
   darunter "Manufaktur" in Schreibschrift, 2 Buchschrauben. Siehe `specs/PATCH-01-markenpatch.md`.
 
@@ -50,8 +59,8 @@ kein Einstieg über Windhunde
 | Modell | Beschreibung | Spec |
 |---|---|---|
 | HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-01-halsband.md` |
-| LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | `specs/LE-01-fuehrleine.md` |
-| HB-02 | Halsband geflochten: Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | `specs/HB-02-halsband-geflochten.md` |
+| LE-01 | Führleine **2,60 m**, dreifach verstellbar, sechs Führlängen, Ringe bei **80/168/245 cm** (Ø 30/30/40 mm), Karabiner und Ringe im **Bleed Knot** | `specs/LE-01-fuehrleine.md` |
+| HB-02 | Halsband geflochten: Halsteil (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch — **Flechtung vs. Knotung offen, Spec noch nicht versandfertig** | `specs/HB-02-halsband-geflochten.md` |
 | LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
 | HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
 | PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |
