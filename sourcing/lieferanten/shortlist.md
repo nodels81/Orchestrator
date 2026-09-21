@@ -83,6 +83,41 @@ Oberfläche: gebürstet, unlackiert (living finish) — passt zu "ehrliche Versc
 Preisindikation Serie ab Werk: Karabiner Messing massiv 25 mm 0,8–2,0 USD; D-/O-Ring 0,15–0,60 USD;
 Rollschnalle 0,30–1,00 USD; Buchschraube ab 0,03 USD.
 
+## E) Leder-Rohlinge/Riemen-Blanks (unbearbeitet, 30/40 mm)
+
+Auslöser: Björns Foto von vier Halsband-Körper-Zuschnitten (Fettleder, naturbelassen/ungefärbt,
+Lochreihe + Schnallenschlitz + Verjüngungen, siehe `bellowerk/specs/HB-01-halsband.md`). Gesucht:
+reines Halbfertigteil — gestanzt, aber **ohne** Kantenbearbeitung, ohne Färbung, ohne Beschläge;
+Bellowerk übernimmt Kante/Farbe/Messing/Patch selbst in Hamburg. Kein Suchtreffer bewirbt genau
+dieses Zwischenprodukt als Standardware — im Gürtelgeschäft wird normalerweise bis zum Endprodukt
+durchproduziert. Nächstliegender Fabriktyp bleibt die Gürtelfabrik (identische Stanztechnik:
+Zuschnitt → Loch-/Schlitzstanzen → normalerweise weiter zu Kante/Farbe/Schnalle, bei uns Stopp nach
+dem Stanzen).
+
+| Prio | Firma | Ort | Einschätzung | Warum | MOQ | Kontakt |
+|---|---|---|---|---|---|---|
+| 1 | Wenzhou Lebo Leather | Wenzhou/Pingyang | Fabrik, Industriezone-Adresse, seit 2002 | Kompletter Workflow inhouse (Zuschnitt, Stanzen, Kante, Beschläge) — Stanzschritt separat bestellbar, muss erfragt werden | k. A., Kleinserien-Bereitschaft erfragen | lebo-leather.com (Ansprechpartnerin Ying) |
+| 2 | Wenzhou Fashion Leather Manufacture | Wenzhou | Fabrik **und** Handel laut Eigenbeschreibung — Rolle per Video-Call klären | Gürtel-/Taschen-OEM, Exporterfahrung EU/USA/Asien | k. A. | marychen127.en.made-in-china.com |
+| 2 | Wenzhou Yuanfang Leather | Wenzhou | Fabrik seit 2002, sehr hohe Kapazität (500.000 Stk/Monat) | Gürtel- + Hosenträger-Spezialist, Stanzerfahrung vorhanden | Rotes Flag: Kapazität weit über Bedarf, MOQ evtl. > 150 | yfbelt.en.made-in-china.com |
+| 2 | Dongguan Bisheng Belt Factory | Dongguan | Fabrik, 300 MA, 6.000 m² | Stanztechnik für Massenfertigung (1 Mio Gürtel/Monat) vorhanden | Rotes Flag: Volumen-Mismatch mit Kleinserie 50–150, MOQ klären | 88327078.en.made-in-china.com |
+| 3 | Guangzhou Mingcheng Leather | Guangzhou/Yuexiu (Yingfu-Ledermarkt) | Adresse im Ledermarkt statt Industriegebiet — eher Werkstatt/Handel, Fabrikstatus per Baidu Maps + Video-Call prüfen | fertigt Riemen nach Kundendesign, OEM/ODM | k. A. | gzmingcheng.en.made-in-china.com |
+
+**Vor Neurecherche prüfen:** Dongguan Zhengyong Leather (JANYO) und Wenzhou Vigorous Pet Products
+(beide bereits in Sektion A, ehemalige/aktuelle Gürtelfabriken mit Stanztechnik) im RFQ explizit
+nach "cut-only / punched blank, no edge finish, no dye, no hardware" fragen — wäre ein Volltreffer
+ohne neuen Kontakt.
+
+Rote Flaggen / offene Punkte:
+- Kein Kandidat bewirbt den unfertigen Rohling als Produkt — Sonderwunsch, ggf. Aufpreis, muss im
+  RFQ explizit beschrieben werden (Zeichnung/Maße aus HB-01-Spec beilegen).
+- Naturbelassene, ungefärbte Charge: Gürtelfabriken färben standardmäßig durch — "undyed / natural
+  veg-tan, no color added" ausdrücklich verlangen, Muster ohne Farbe anfordern.
+- Bisheng und Yuanfang sind auf Großserie ausgelegt — MOQ-Mismatch mit Zielgröße 50–150 möglich.
+- Wenzhou Fashion Leather nennt sich selbst sowohl Fabrik als auch Handelsfirma — Rolle vor
+  Zahlung klären (Business licence, Video-Call durch die Werkstatt).
+- Guangzhou Mingcheng: Adresse in einer Markthalle ist laut Prüfschema eher Händler-Indiz — vor
+  Anfrage Fabrikstatus verifizieren.
+
 ## Nächste Schritte (Vorschlag)
 
 1. Björn bestätigt Startwerte in HB-01/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
