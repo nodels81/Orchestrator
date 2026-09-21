@@ -69,7 +69,9 @@ Edges bevelled along the whole length, including the braid strands.
 
 ## 5. Quantity and packaging
 
-- Samples: 2 pcs (olive, 20 mm). Then 100 pcs: olive 30 / dark brown 30 / cognac 20 / grey 20.
+- **First order (Björn, 21 Sep 2026): 10 pcs, 20 mm, colour cognac only.** Before that a sample:
+  either 1 finished lead from your leather, or at least a swatch of the leather itself.
+- Later series (for price comparison only): 100 pcs, olive 30 / dark brown 30 / cognac 20 / grey 20.
 - Packing: coiled, paper band, 1 pc per kraft bag with sticker; 10 pcs per inner carton.
 
 ## 6. Deliverables with the order

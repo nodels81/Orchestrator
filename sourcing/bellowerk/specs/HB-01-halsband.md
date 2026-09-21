@@ -49,7 +49,10 @@ width ±0.5 mm, hole pitch ±1 mm. Tip: rounded (English point), radius = half w
 
 ## 5. Quantity and packaging
 
-- Samples: 1 pc per size, colour olive. Then 100 pcs: S 20 / M 35 / L 30 / XL 15, colours grey /
+- **First order (Björn, 21 Sep 2026): 10 pcs per size (S/M/L/XL) — 40 pcs total, colour cognac
+  only.** Before that a sample: either 1 finished collar from your leather, or at least a swatch
+  of the leather itself.
+- Later series (for price comparison only): 100 pcs, S 20 / M 35 / L 30 / XL 15, colours grey /
   dark brown / olive / cognac (split to be confirmed).
 - Packing: 1 pc in kraft paper bag with size sticker (model, size, colour); 25 pcs per inner carton.
 - Care card (we supply artwork) in each bag.
