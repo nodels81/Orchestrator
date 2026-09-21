@@ -1,17 +1,19 @@
-# Mali-Leder (Deutschland) — Auftragsarbeit Halsbänder & Leinen
+# Maly-Leder (Deutschland) — Auftragsarbeit Halsbänder & Leinen
 
 Bestandskunde: Bellowerk hat schon einmal unter dem früheren Namen „Herr Bello und Frau Wuff
-Manufaktur" bei Mali-Leder bestellt. Ziel dieser Anfrage: klären, ob Mali-Leder weiterhin
-Auftragsarbeit (Lohnfertigung) für Lederhalsbänder und Führleinen übernimmt, und die
+Manufaktur" bei Maly-Leder bestellt. Ziel dieser Anfrage: klären, ob Maly-Leder weiterhin
+Auftragsarbeit (Zuschnitt, Nähservice) für Lederhalsbänder und Führleinen übernimmt, und die
 Zusammenarbeit wieder aufnehmen.
 
-E-Mail: **unbekannt** — im verbundenen Postfach ist keine frühere Korrespondenz mit
-Mali-Leder auffindbar. Ohne eingetragene Adresse hier bleibt `lieferant.email` bei jedem
-Auftrag an Abteilung 06 `null` und die Anfrage wird nicht automatisch verschickt, sondern
-wie bisher an Björn eskaliert. Sobald die Adresse bekannt ist, hier als Zeile
-`E-Mail: kontakt@mali-leder.de` (Beispiel) ergänzen.
+Firma: maly-leder (Inh. Christoph Kabik), Schafbergstrasse 6, 91443 Scheinfeld
+E-Mail: info@maly-leder.de
+Web: https://www.maly-leder.de
+Quelle: Impressum/Kontaktseite maly-leder.de (Websuche, 21.09.2026) — vor dem ersten
+Versand kurz gegenprüfen, ob die Adresse noch aktuell ist.
+Sortiment laut Website passt zur Anfrage: Fettleder, Hundezubehör, CNC-Zuschnitt- und
+Nähservice als Auftragsarbeit.
 
-Status: Anfrage entworfen, noch nicht verschickt — wartet auf die Kontakt-E-Mail-Adresse.
+Status: Anfrage entworfen, E-Mail-Adresse bekannt — versandbereit.
 
 ---
 
