@@ -128,28 +128,30 @@ VARIANTEN = {
 
 
 def main():
-    """Exportiert alle Varianten nach ../05-velocity-elegant/ plus Übersicht."""
+    """Exportiert alle Varianten (elegant + fiffig) nach ../05-velocity-elegant/ plus Übersicht."""
+    from velocity_fiffig import VARIANTEN as FIFFIG
+    alle = {**VARIANTEN, **FIFFIG}
     import os
     import subprocess
     import bauen
     from bauen import DUNKEL, HELL, KARTE, datei_svg, einfaerben, einpassen, hubot_b, mona, tafel_svg, text, ziffern
     ziel = bauen.ZIEL / "05-velocity-elegant"
     ziel.mkdir(exist_ok=True)
-    for name, (titel, fn) in VARIANTEN.items():
+    for name, (titel, fn) in alle.items():
         for dunkel, zusatz in ((False, ""), (True, "-negativ")):
             datei = ziel / f"delatec-{name}{zusatz}.svg"
             datei_svg(datei, einfaerben(fn(), ACID, dunkel))
             bauen.rendern(datei, datei.with_suffix(".png"), 2400)
     # Übersicht
     B, kopf, zeile = 1800.0, 250.0, 300.0
-    H = kopf + zeile * len(VARIANTEN) + 60
+    H = kopf + zeile * len(alle) + 60
     rechtecke, pfade = [(0, 0, B, H, KARTE, 0)], []
     pfade.append(text(ziffern, "05", 50, 80, 70, SCHWARZ))
     pfade.append(text(hubot_b, "VELOCITY  ·  ELEGANT", 22, 230, 84, SCHWARZ, sperrung=0.18))
-    pfade.append(text(mona, "SECHS VERFEINERUNGEN  ·  SCHWARZ + ACID-GRÜN  ·  FAHRZEUGOPTIK & SERVICE",
+    pfade.append(text(mona, "NEUN VERFEINERUNGEN  ·  SCHWARZ + ACID-GRÜN  ·  FAHRZEUGOPTIK & SERVICE",
                       13, 80, 160, "#55555A", sperrung=0.26))
     y = kopf
-    for name, (titel, fn) in VARIANTEN.items():
+    for name, (titel, fn) in alle.items():
         pfade.append(text(ziffern, name[:3].upper(), 30, 80, y + 40, SCHWARZ))
         pfade.append(text(hubot_b, titel.upper(), 16, 80, y + 92, SCHWARZ, sperrung=0.18))
         rechtecke.append((330, y + 15, 700, zeile - 30, HELL, 0))
