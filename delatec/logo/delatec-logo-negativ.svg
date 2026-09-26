@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 535.96 180" width="535.96" height="180">
+  <title>DelaTec</title>
+  <rect width="535.96" height="180" fill="#1E2227"/>
+  <g transform="translate(20 30)"><rect x="0" y="0" width="120" height="120" rx="26" fill="#1E2227"/>
+  <clipPath id="dq"><path fill-rule="evenodd" d="M0 0H45Q80 0 80 35V65Q80 100 45 100H0Z M20 20V80H43Q60 80 60 60V40Q60 20 43 20Z"/></clipPath>
+  <g transform="translate(29.60 20.00) scale(0.8000)" clip-path="url(#dq)">
+    <rect x="-5" y="-5" width="90" height="110" fill="#FFFFFF"/>
+    <path fill="#E3242B" d="M-5 -5H85V12L-5 57Z"/>
+    <path stroke="#1E2227" stroke-width="5" d="M-5 57L85 12"/>
+  </g>
+  <path fill="#FFFFFF" fill-rule="evenodd" transform="translate(150.00 18) scale(0.62)" d="M0 0H45Q80 0 80 35V65Q80 100 45 100H0Z M20 20V80H43Q60 80 60 60V40Q60 20 43 20Z"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" transform="translate(208.28 18) scale(0.62)" d="M0 0H62V20H20V40H55V60H20V80H62V100H0Z"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" transform="translate(255.40 18) scale(0.62)" d="M0 0H20V80H60V100H0Z"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" transform="translate(297.56 18) scale(0.62)" d="M0 100L32 0H52L84 100H63L57 80H27L21 100Z M32.5 62H51.5L42 31Z"/>
+  <path fill="#E3242B" fill-rule="evenodd" transform="translate(352.12 18) scale(0.62)" d="M0 0H66V20H43V100H23V20H0Z"/>
+  <path fill="#E3242B" fill-rule="evenodd" transform="translate(401.72 18) scale(0.62)" d="M0 0H62V20H20V40H55V60H20V80H62V100H0Z"/>
+  <path fill="#E3242B" fill-rule="evenodd" transform="translate(448.84 18) scale(0.62)" d="M76 0H40Q0 0 0 40V60Q0 100 40 100H76V80H42Q20 80 20 58V42Q20 20 42 20H76Z"/>
+  <text x="151" y="110" fill="#FFFFFF" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="4.2" textLength="344.0" lengthAdjust="spacing">SMART REPAIR · DELLEN · LACK</text></g>
+</svg>

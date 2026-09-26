@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 558 100" width="558" height="100">
+  <title>DelaTec</title>
+  <path fill="#1E2227" fill-rule="evenodd" transform="translate(0.00 0) scale(1)" d="M0 0H45Q80 0 80 35V65Q80 100 45 100H0Z M20 20V80H43Q60 80 60 60V40Q60 20 43 20Z"/>
+  <path fill="#1E2227" fill-rule="evenodd" transform="translate(94.00 0) scale(1)" d="M0 0H62V20H20V40H55V60H20V80H62V100H0Z"/>
+  <path fill="#1E2227" fill-rule="evenodd" transform="translate(170.00 0) scale(1)" d="M0 0H20V80H60V100H0Z"/>
+  <path fill="#1E2227" fill-rule="evenodd" transform="translate(238.00 0) scale(1)" d="M0 100L32 0H52L84 100H63L57 80H27L21 100Z M32.5 62H51.5L42 31Z"/>
+  <path fill="#E3242B" fill-rule="evenodd" transform="translate(326.00 0) scale(1)" d="M0 0H66V20H43V100H23V20H0Z"/>
+  <path fill="#E3242B" fill-rule="evenodd" transform="translate(406.00 0) scale(1)" d="M0 0H62V20H20V40H55V60H20V80H62V100H0Z"/>
+  <path fill="#E3242B" fill-rule="evenodd" transform="translate(482.00 0) scale(1)" d="M76 0H40Q0 0 0 40V60Q0 100 40 100H76V80H42Q20 80 20 58V42Q20 20 42 20H76Z"/>
+</svg>
