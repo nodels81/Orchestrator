@@ -174,7 +174,7 @@ def uebersicht(pfad: Path):
     H = kopf + zeile * len(LOGOS) + 60
     rechtecke, pfade = [(0, 0, B, H, KARTE, 0)], []
     pfade.append(text(hubot, "DELATEC", 50, 80, 70, SCHWARZ, sperrung=0.02))
-    pfade.append(text(mona, "LOGO-ENTWÜRFE  ·  7 KONZEPTE  ·  SMART REPAIR · DELLEN · LACK", 14, 80, 150,
+    pfade.append(text(mona, "LOGO-ENTWÜRFE  ·  7 KONZEPTE  ·  FAHRZEUGOPTIK & SERVICE", 14, 80, 150,
                       "#55555A", sperrung=0.28))
     y = kopf
     for name, (logo_fn, akzent, _, _) in LOGOS.items():

@@ -31,7 +31,7 @@ archivo = Schrift("archivo-latin-wdth-normal.woff2", wdth=125, wght=900)
 anybody_i = Schrift("anybody-latin-wdth-italic.woff2", wdth=150, wght=900)
 michroma = Schrift("michroma-latin-400-normal.woff2")
 
-CLAIM = "SMART REPAIR · DELLEN · LACK"
+CLAIM = "FAHRZEUGOPTIK & SERVICE"
 
 
 # ------------------------------------------------------------------ Hilfen
@@ -90,10 +90,22 @@ def loecher(p):
     return konturen[1:]
 
 
-def claim_auf_breite(schrift, text, soll_breite, sperrung=0.3):
-    """Claim mit fester Sperrung; die Größe ergibt sich aus der Zielbreite."""
-    probe = breite(schrift.satz(text, 10, sperrung=sperrung))
-    return schrift.satz(text, 10 * soll_breite / probe, sperrung=sperrung)
+def claim_satz(schrift, soll_breite, kappe, text=CLAIM):
+    """Claim in fester Versalhöhe; die Sperrung wird so gewählt, dass er genau
+    `soll_breite` breit wird. So bleiben die Proportionen jedes Logos gleich,
+    egal wie lang der Claim ist."""
+    if breite(schrift.satz(text, kappe)) > soll_breite:
+        # zu lang selbst ohne Sperrung: dann kleiner setzen
+        kappe *= soll_breite / breite(schrift.satz(text, kappe))
+        return schrift.satz(text, kappe)
+    lo, hi = 0.0, 3.0
+    for _ in range(40):
+        mitte = (lo + hi) / 2
+        if breite(schrift.satz(text, kappe, sperrung=mitte)) < soll_breite:
+            lo = mitte
+        else:
+            hi = mitte
+    return schrift.satz(text, kappe, sperrung=(lo + hi) / 2)
 
 
 # ================================================================== 01 SCHNITT
@@ -123,7 +135,7 @@ def logo_01(claim=True):
         return zeichen + [(wort, "tinte")]
     wort = nach_x(hubot_i.satz("DELATEC", 0.64 * H, sperrung=0.02), zx1 + 0.26 * H)
     wx0, _, wx1, _ = grenzen(wort)
-    claim = claim_auf_breite(mona_i, CLAIM, (wx1 - wx0) * 0.965, sperrung=0.26)
+    claim = claim_satz(mona_i, (wx1 - wx0) * 0.965, 0.176 * H)
     claim = ausgerichtet(claim, wx0, H - hoehe(claim))
     return zeichen + [(wort, "tinte"), (claim, "tinte")]
 
@@ -151,7 +163,7 @@ def logo_02(wortschrift=None, kappe=38.0, sperrung=0.16):
     wort = wortschrift.satz("DELATEC", kappe, sperrung=sperrung)
     wort = nach_x(wort, (B - breite(wort)) / 2, (teil - kappe) / 2 + 3.0)
     bo, bu = grenzen(band)[1], grenzen(band)[3]
-    claim = mona_b.satz("SMART REPAIR", 11.5, sperrung=0.62)
+    claim = claim_satz(mona_b, 300.0, 10.5)
     claim = ausgerichtet(claim, (B - breite(claim)) / 2, (bo + bu) / 2 - hoehe(claim) / 2)
     fuge = rechteck(innen - 3.2, teil - 1.8, B - 2 * (innen - 3.2), 3.6)
     platte = minus(schild, rahmen, fuge, band, wort)
@@ -168,10 +180,19 @@ def logo_03():
     rand = ring(cx, cy, 94.6, 92.9)
     trenn = ring(cx, cy, 61.4, 59.7)
     rm = 76.5
-    oben = bogentext(mona_b, "DELATEC", 19, cx, cy, rm, 0, unten=False, sperrung=0.42)
-    unten = bogentext(mona_b, "SMART REPAIR", 12.5, cx, cy, rm, 180, unten=True, sperrung=0.40)
-    rauten = plus(*[drehen(rechteck(cx + sx * rm - 4.2, cy - 4.2, 8.4, 8.4), 45, cx + sx * rm, cy)
-                    for sx in (-1, 1)])
+    k_oben, k_unten, s_oben, s_unten = 18.5, 9.8, 0.30, 0.10
+    oben = bogentext(mona_b, "DELATEC", k_oben, cx, cy, rm, 0, unten=False, sperrung=s_oben)
+    unten = bogentext(mona_b, CLAIM, k_unten, cx, cy, rm, 180, unten=True, sperrung=s_unten)
+    # Rauten genau in die Mitte der Lücken zwischen oberer und unterer Zeile
+    _, b_oben = mona_b.glyphen("DELATEC", k_oben, s_oben)
+    _, b_unten = mona_b.glyphen(CLAIM, k_unten, s_unten)
+    ende_oben = math.degrees(b_oben / 2 / rm)
+    start_unten = 180 - math.degrees(b_unten / 2 / rm)
+    w = (ende_oben + start_unten) / 2
+    rauten = plus(*[drehen(rechteck(cx + rm * math.sin(math.radians(g)) - 3.8,
+                                    cy - rm * math.cos(math.radians(g)) - 3.8, 7.6, 7.6),
+                           45 + g, cx + rm * math.sin(math.radians(g)), cy - rm * math.cos(math.radians(g)))
+                    for g in (w, -w)])
     teile = zeichen_01(68)
     alle = plus(*[p for p, _ in teile])
     x0, y0, x1, y1 = grenzen(alle)
@@ -228,7 +249,7 @@ def logo_04():
     K = 100.0
     wort, lam = wortmarke_04(K)
     gb = grenzen(wort)[2]
-    claim = claim_auf_breite(mona, CLAIM, gb, sperrung=0.30)
+    claim = claim_satz(mona, gb, 0.293 * K)
     claim = ausgerichtet(claim, 0, K + 0.26 * K)
     return [(wort, "tinte"), (lam, "akzent"), (claim, "tinte")]
 
@@ -244,7 +265,7 @@ def logo_05():
     bh = 0.34 * K
     top = K + 0.13 * K
     balken = vieleck((x0 + t * bh, top), (x1, top), (x1 - t * bh, top + bh), (x0, top + bh))
-    claim = claim_auf_breite(mona_i, CLAIM, (x1 - x0) * 0.78, sperrung=0.24)
+    claim = claim_satz(mona_i, (x1 - x0) * 0.78, 0.2735 * K)
     cx0, cy0, cx1, cy1 = grenzen(claim)
     claim = verschieben(claim, (x0 + x1) / 2 - (cx0 + cx1) / 2, top + bh / 2 - (cy0 + cy1) / 2)
     return [(wort, "tinte"), (minus(balken, claim), "akzent"), (claim, SCHWARZ)]
@@ -277,7 +298,7 @@ def logo_06(claim=True):
     wort = hubot_b.satz("DELATEC", 0.40 * H, sperrung=0.22)
     wort = nach_x(wort, 0.92 * H + 0.28 * H, 0.12 * H)
     wx0, _, wx1, _ = grenzen(wort)
-    claim = claim_auf_breite(mona, CLAIM, wx1 - wx0, sperrung=0.32)
+    claim = claim_satz(mona, wx1 - wx0, 0.116 * H)
     claim = ausgerichtet(claim, wx0, 0.88 * H - hoehe(claim))
     return zeichen + [(wort, "tinte"), (claim, "tinte")]
 
@@ -312,7 +333,7 @@ def logo_07(claim=True):
     wort = michroma.satz("DELATEC", 0.36 * H, sperrung=0.18)
     wort = nach_x(wort, 0.92 * H + 0.30 * H, 0.16 * H)
     wx0, _, wx1, _ = grenzen(wort)
-    claim = claim_auf_breite(mona, CLAIM, wx1 - wx0, sperrung=0.34)
+    claim = claim_satz(mona, wx1 - wx0, 0.1095 * H)
     claim = ausgerichtet(claim, wx0, 0.84 * H - hoehe(claim))
     return zeichen + [(wort, "tinte"), (claim, "tinte")]
 

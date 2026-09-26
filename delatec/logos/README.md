@@ -1,6 +1,6 @@
 # DelaTec – sieben Logo-Entwürfe
 
-Smart Repair · Dellen · Lack, Kisdorf. Vier Entwürfe führen die Richtung des ersten
+Fahrzeugoptik & Service, Kisdorf. Vier Entwürfe führen die Richtung des ersten
 Entwurfs (`../logo/`, Schwarz/Rot, geschnittenes D) weiter – schwerer, schärfer.
 Drei stehen in **Schwarz plus einer knalligen Farbe**, streng und ohne Spielerei.
 
@@ -49,14 +49,15 @@ Damit sind sie direkt plotbar (Fahrzeugbeschriftung, Werkstattschild, Folie) und
 sich in jedem Programm verlustfrei skalieren. PNGs haben einen transparenten Hintergrund.
 
 **Hinweise zur Anwendung**
-- Die Claim-Zeile („SMART REPAIR · DELLEN · LACK“) ist nur rund 2 % so hoch wie das
+- Die Claim-Zeile („FAHRZEUGOPTIK & SERVICE“) ist nur rund 2 % so hoch wie das
   Logo breit ist. Unter etwa 80 mm Logobreite (Visitenkarte, Stempel, Kennzeichenhalter)
   deshalb die Version **ohne Claim** oder das Bildzeichen nehmen.
 - Acid-Grün (05) hat auf Weiß wenig Kontrast. Es wirkt am stärksten auf Schwarz; auf
   hellem Grund trägt die schwarze Schrift im Balken die Lesbarkeit.
 - Blau (07) auf Schwarz ist lesbar, leuchtet auf Weiß aber mehr.
-- Der Claim stammt aus dem, was über DelaTec öffentlich zu finden ist. Wenn ihr ihn
-  anders wollt (z. B. „AUSBEULEN OHNE LACKIEREN“), ist das eine Zeile im Code.
+- Der Claim steht an genau einer Stelle: `CLAIM` in `werkzeug/konzepte.py`. Alle
+  Logos halten ihre Schrifthöhe und gleichen die Länge über die Sperrung aus – ein
+  anderer Claim (oder „UND“ statt „&“) ist also eine Zeile plus `bauen.py`.
 
 ## Hausschriften
 
