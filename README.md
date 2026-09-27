@@ -23,8 +23,18 @@ und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betri
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--freigeben`,
 `--ablehnen`, `--wochenbericht`, `--hilfe`), Mail-Eskalation: `orchestrator_mail.py`,
-Markenwahrheit: `markenwissen.py`, Gedächtnis: `gedaechtnis.py`, Vornamen: `namen.py`.
-Betriebsanleitung für den Server: `BETRIEB.md`. Hinweise für Claude Code: `CLAUDE.md`.
+Telegram: `orchestrator_telegram.py` (Ergebnisse aufs Handy) und `bin/telegram_bot.py`
+(Aufträge und Entscheidungen vom Handy), Markenwahrheit: `markenwissen.py`, Gedächtnis:
+`gedaechtnis.py`, Vornamen: `namen.py`. Betriebsanleitung für den Server: `BETRIEB.md`.
+Telegram einrichten und bedienen: `TELEGRAM.md`. Hinweise für Claude Code: `CLAUDE.md`.
+
+## Vom Handy: Telegram
+
+Ein privater Telegram-Bot ist Björns Draht zu Gustav. Aufträge gehen per `@Henrik …` oder als
+Freitext mit Namensknopf, Ergebnisse kommen mit Knöpfen zum Freigeben, Überarbeiten und
+Verwerfen aufs Handy, `/jetzt` stößt einen Lauf sofort an. Der Bot ruft dieselben Funktionen
+wie die Kommandozeile auf, öffnet keinen Port und ruft nie die Claude-API. Einrichtung in einem
+Schritt: `sudo bash bin/telegram-einrichten.sh`. Alles Weitere steht in `TELEGRAM.md`.
 
 ## Gedächtnis (`gedaechtnis.py`)
 
@@ -57,7 +67,7 @@ lässt sich beides — so bleibt nachvollziehbar, was wann galt und wer wann was
 .venv/bin/python orchestrator.py --gedaechtnis            # Stand und gesparte Tokens
 .venv/bin/python orchestrator.py --wissen "Wenzhou Vigorous"   # nachschlagen, auch die Historie
 .venv/bin/python orchestrator.py --vergessen 180          # alte Episoden weg, Fakten bleiben
-.venv/bin/python -m unittest discover -p "test_*.py"       # 36 Tests, ohne Schlüssel, ohne Kosten
+.venv/bin/python -m unittest discover -p "test_*.py"       # 86 Tests, ohne Schlüssel, ohne Kosten, ohne Netz
 ```
 
 `gedaechtnis.db` ist reines SQLite aus der Standardbibliothek — kein zusätzliches Paket, kein
@@ -108,6 +118,7 @@ parallel (Scout sucht Beschlag-Lieferanten, während der Einkäufer RFQs schreib
 
 - Keine Abteilung gibt Geld aus. Muster, Anzahlung, Bestellung → Eskalation an Björn.
 - `config.json` und `gedaechtnis.db` verlassen den Server nicht. Kein Git, keine Cloud, kein Chat.
+  Der Telegram-Token steht nur in `/etc/bello/env`; `config.json` verweist bloß darauf.
 - Nacharbeit holt sich nie eine gespeicherte Antwort — sonst käme ewig dasselbe abgelehnte
   Ergebnis zurück.
 - Werkstoffliste und Ausschlüsse in `markenwissen.py` und `sourcing/bellowerk/markenbrief.md` sind bindend.

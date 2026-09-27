@@ -23,8 +23,12 @@ cd /opt/bello || exit 1
 TXT="$TMP" timeout 90 /opt/bello/.venv/bin/python - <<'PY'
 import os
 from orchestrator_mail import senden
+import orchestrator_telegram
 txt = open(os.environ["TXT"], encoding="utf-8", errors="replace").read()
 ok = senden("[Bello] Tageslauf FEHLGESCHLAGEN", txt)
 print("[eskalation] Mail gesendet." if ok else "[eskalation] Mail NICHT gesendet (Grund siehe oben).")
+# Zusaetzlich aufs Handy, falls Telegram eingerichtet ist. Wirft nie.
+if orchestrator_telegram.senden(txt, titel="⚠️ Tageslauf FEHLGESCHLAGEN"):
+    print("[eskalation] Telegram gesendet.")
 PY
 rm -f "$TMP"

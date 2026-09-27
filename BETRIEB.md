@@ -244,7 +244,8 @@ mit ins GitHub-Repo, sobald gepusht wird.
 |---|---|
 | Programm­code | `/opt/bello/*.py` |
 | Konfiguration (ohne Geheimnisse) | `/opt/bello/config.json` |
-| Geheimnisse (API-Key, Mail-Passwort) | `/etc/bello/env` – nur für root lesbar |
+| Geheimnisse (API-Key, Mail-Passwort, Telegram-Token) | `/etc/bello/env` – nur für root lesbar |
+| Telegram-Bot | `bin/telegram_bot.py`, Dienst `bello-telegram`, offene Rückfragen in `daten/telegram.json` |
 | `config.json` | nur für den Betriebsnutzer lesbar halten: `chmod 600 /opt/bello/config.json`. Die Datei verlässt den Server nicht — kein Git, keine Cloud, kein Chat. |
 | Auftragsstand | `/opt/bello/daten/auftraege.json` |
 | Zeichnungen der Abteilung 02 | `/opt/bello/daten/zeichnungen/` |
@@ -289,6 +290,21 @@ sudo systemctl disable --now bello-mailin.timer   # abschalten
 
 ---
 
+## Vom Handy: per Telegram
+
+Aufträge geben, Ergebnisse mit Knöpfen bekommen (Freigeben · Überarbeiten · Verwerfen) und
+einen Lauf sofort anstoßen, direkt in Telegram. Die Mail bleibt zusätzlich. Einrichtung
+und Bedienung Schritt für Schritt: **`TELEGRAM.md`**.
+
+```
+sudo bash /opt/bello/bin/telegram-einrichten.sh             # einrichten (einmalig, fragt nach dem Token)
+sudo bash /opt/bello/bin/telegram-einrichten.sh --pruefen   # läuft alles?
+journalctl -u bello-telegram -n 30                          # was der Bot zuletzt getan hat
+sudo systemctl disable --now bello-telegram.service         # Bot anhalten
+```
+
+---
+
 ## Den Tageslauf anhalten und wieder starten
 
 Anhalten (Agent macht dann gar nichts mehr):
@@ -318,7 +334,8 @@ sudo nano /etc/bello/env
 ```
 
 Dort `ANTHROPIC_API_KEY` und `SMTP_PASSWORT` eintragen (je eine Zeile `NAME=Wert`,
-keine Anführungszeichen). Danach testen:
+keine Anführungszeichen). `TELEGRAM_BOT_TOKEN` und `TELEGRAM_CHAT_ID` trägt
+`bin/telegram-einrichten.sh` selbst ein. Danach testen:
 
 ```
 sudo systemctl start bello-orchestrator.service
@@ -402,5 +419,5 @@ Der Agent schickt Mail über `gustav.bellowerk@gmail.com` an `pijoern.nodels@gma
 ## Grundregel, die im System verankert ist
 
 Der Agent gibt **nie** selbst Geld aus, bestellt nichts, sagt keine Preise nach außen zu.
-Jedes Ergebnis, jeder Vorschlag geht als **Entwurf** per Mail an dich und wartet auf
-dein „ja". Ein Lauf pro Tag, keine Dauerschleife.
+Jedes Ergebnis, jeder Vorschlag geht als **Entwurf** per Mail (und, falls eingerichtet,
+per Telegram) an dich und wartet auf dein „ja". Ein Lauf pro Tag, keine Dauerschleife.

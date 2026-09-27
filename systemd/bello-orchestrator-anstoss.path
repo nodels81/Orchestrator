@@ -1,0 +1,13 @@
+# Sofortstart aus Telegram (/jetzt). Der Bot schreibt diese Datei, systemd
+# startet daraufhin den gewoehnlichen Lauf — denselben, den sonst stuendlich der
+# Timer startet. Der Bot braucht dafuer keine Rechte, und laeuft schon ein Lauf,
+# startet kein zweiter. Eingerichtet von bin/telegram-einrichten.sh.
+[Unit]
+Description=Bello: Lauf sofort anstossen (aus Telegram)
+
+[Path]
+PathChanged=/opt/bello/daten/lauf-anstossen
+Unit=bello-orchestrator.service
+
+[Install]
+WantedBy=paths.target

@@ -32,10 +32,11 @@ Dateien schreiben teils noch `venv/bin/python` — beim Anfassen auf `.venv` zie
 .venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01" --recherche   # eine Abteilung einzeln
 ```
 
-Es gibt keinen Linter und keinen Formatter im Projekt. Beide Testdateien laufen ohne
+Es gibt keinen Linter und keinen Formatter im Projekt. Alle Testdateien laufen ohne
 API-Schlüssel und ohne Netz — `test_sparmassnahmen.py` ersetzt den Client durch eine
-Attrappe, die den Aufruf nur festhält. Jeder Test, der die API wirklich riefe, kostet
-Geld; halte es bei der Attrappe.
+Attrappe, die den Aufruf nur festhält, `test_telegram.py` ebenso die Bot-API von Telegram
+und systemd. Jeder Test, der die API wirklich riefe, kostet Geld; halte es bei der
+Attrappe.
 
 `anthropic` ist in Entwicklungsumgebungen oft nicht installiert, und `abteilung_basis`
 bricht dann beim Import ab. Für Messungen und Skripte eine Hülle einschleusen:
@@ -66,6 +67,23 @@ Auftrag Kriterien hat, in derselben Reihenfolge), `blocker`, `anmerkung`,
 läuft. `config.json`, `auftraege.json` und `gedaechtnis.db` bleiben auf dem Server und
 sind per `.gitignore` ausgeschlossen. Nie Code schreiben, der in den Arbeitsbaum
 schreibt.
+
+**Fünf Wege ins Register, eine Mechanik.** Kommandozeile, Mail-Antwort (`mailin.py`),
+App (`bin/dienst.py`) und Telegram (`bin/telegram_bot.py`) legen Aufträge an und tragen
+Entscheidungen ein. Sie alle rufen `auftrag_anlegen`, `freigeben`, `ablehnen` und `verwerfen`
+aus `orchestrator.py` auf und bauen nichts davon nach. Diese Funktionen schreiben unter
+`orchestrator.sperre()` (flock auf `auftraege.json.lock`, wiedereintrittsfähig). Wer neu in
+`auftraege.json` schreibt, tut das ebenso. Ein Lauf hält den Stand minutenlang im Speicher
+und schreibt deshalb über `_lauf_zurueckschreiben()` zurück, das nur die im Lauf
+bearbeiteten Aufträge ersetzt. Ein schlichtes `zustand_speichern()` am Ende eines Laufs
+würde alles überschreiben, was währenddessen per App, Mail oder Telegram hereinkam.
+
+**Telegram** ist ein zweiter Kanal neben der Mail, kein Ersatz. `eskalieren()` ruft nach
+der Mail `orchestrator_telegram.melden()`; das wirft nie, ein Lauf hängt also nicht an
+Telegram. An ist Telegram nur, wenn `config.json` einen Block `"telegram"` hat. Die Werte
+kommen als `${VAR}` aus `/etc/bello/env`; so schickt kein Test und kein Probelauf etwas aufs
+Handy. Der Bot ruft nie die Claude-API. `/jetzt` schreibt nur `daten/lauf-anstossen`, und
+`bello-orchestrator-anstoss.path` startet daraufhin den gewöhnlichen Lauf.
 
 **Das Gedächtnis (`gedaechtnis.py`)** ist SQLite aus der Standardbibliothek. Es hält
 Episoden (volltextdurchsuchbar), Fakten (Subjekt–Prädikat–Objekt, mit Gültigkeit statt
@@ -124,5 +142,7 @@ Tech Packs aus, deren Kürzel (`HB-01`, `LE-02`, `VERP-01` …) im Auftragsziel 
 - Änderungen an Prompts, Grenzen oder Kostenlogik gehören mit einem Test abgesichert,
   der ohne API auskommt (Muster: `test_sparmassnahmen.py`).
 - `BETRIEB.md` ist die Betriebsanleitung für den Server (Dienst, Sicherung, Dashboard),
-  `README.md` die Übersicht. Beide nachziehen, wenn sich Verhalten ändert — im README
-  stehen Abteilungsnummern, die bei Umbauten leicht veralten.
+  `TELEGRAM.md` die für den Telegram-Draht, `README.md` die Übersicht. Nachziehen, wenn
+  sich Verhalten ändert — im README stehen Abteilungsnummern, die bei Umbauten leicht
+  veralten. Eine neue Abteilung erscheint in Telegram von selbst (Knöpfe und `/team`
+  kommen aus `ABTEILUNGEN` und `namen.py`).
