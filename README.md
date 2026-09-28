@@ -90,6 +90,12 @@ Live-Recherche in der Refero-Bibliothek (2.000+ Stile, 150.000 App-Screens) brau
 Refero-Konto: `claude mcp add --transport http refero https://api.refero.design/mcp`, danach `/mcp` →
 anmelden. Ohne Konto arbeiten beide Skills mit den abgelegten Referenzen.
 
+## Anschlüsse (MCP)
+
+`ANSCHLUESSE.md`: Perplexity, Firecrawl, Playwright und Composio — wofür sie Bellowerk nützen,
+was sie kosten, die Befehle zum Einrichten und der Vorschlag "Einkaufs-Montag". Noch nichts davon
+ist eingerichtet; Empfehlung: Firecrawl jetzt, Playwright mit dem Shop.
+
 ## Auf dem Server (`/opt/bello`)
 
 ```bash
