@@ -8,5 +8,9 @@
     "empfaenger": "DEINE-HAUPTADRESSE@example.com",
     "smtp_server": "smtp.gmail.com",
     "smtp_port": 465
+  },
+  "telegram": {
+    "bot_token": "${TELEGRAM_BOT_TOKEN}",
+    "chat_id": "${TELEGRAM_CHAT_ID}"
   }
 }

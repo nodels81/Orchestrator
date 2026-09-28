@@ -1,0 +1,33 @@
+# Gustavs Draht zu Telegram. Fragt Telegram ab (Long Polling), oeffnet keinen
+# Port und ruft nie die Claude-API. Eingerichtet von bin/telegram-einrichten.sh.
+[Unit]
+Description=Bello: Telegram-Bot (Auftraege und Entscheidungen vom Handy)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bello
+Group=bello
+WorkingDirectory=/opt/bello
+EnvironmentFile=/etc/bello/env
+# Der Bot braucht nur seinen Token — Claude-Schluessel und Mail-Passwort nicht.
+UnsetEnvironment=ANTHROPIC_API_KEY SMTP_PASSWORT
+ExecStart=/opt/bello/.venv/bin/python -u /opt/bello/bin/telegram_bot.py
+Restart=on-failure
+RestartSec=10s
+# 78 = Einrichtung fehlt oder Token ungueltig. Neustarten hilft da nicht.
+RestartPreventExitStatus=78
+UMask=0027
+
+# Dieselbe Haertung wie der Tageslauf: nur daten/ und logs/ sind beschreibbar.
+ProtectSystem=strict
+ReadWritePaths=/opt/bello/daten /opt/bello/logs
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+# Nach draussen nur HTTPS zu Telegram; AF_UNIX fuer Rueckfragen bei systemd.
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

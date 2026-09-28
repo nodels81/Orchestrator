@@ -19,15 +19,23 @@ Aufrufe:
   orchestrator.py --hilfe
 """
 
+import contextlib
 import json
 import os
 import sys
+import threading
 from collections import Counter
 from datetime import date, datetime, timedelta
+
+try:
+    import fcntl
+except ImportError:     # nicht unter Linux: dann ohne Sperre wie bisher
+    fcntl = None
 
 import gedaechtnis
 from abteilung_basis import BASIS, DATEN, config_laden
 from orchestrator_mail import senden
+import orchestrator_telegram as telegram
 import namen
 
 ZUSTAND = os.path.join(DATEN, "auftraege.json")
@@ -62,6 +70,44 @@ def zustand_speichern(daten: dict) -> None:
     with open(temp, "w", encoding="utf-8") as f:
         json.dump(daten, f, indent=2, ensure_ascii=False)
     os.replace(temp, ZUSTAND)
+
+
+_gehalten = threading.local()
+
+
+@contextlib.contextmanager
+def sperre():
+    """Immer nur ein Schreiber auf auftraege.json — ueber Prozesse hinweg.
+
+    Lauf, App, Mail und Telegram schreiben in dasselbe Register. Ohne Sperre
+    laden zwei gleichzeitig, jeder aendert seins, und der zweite ueberschreibt
+    den ersten. Wiedereintrittsfaehig, weil ablehnen() unter der Sperre einen
+    neuen Auftrag anlegt. Laesst sie sich nicht nehmen (Rechte), geht es ohne
+    weiter wie bisher — die Sperre ist ein Netz, keine neue Fehlerquelle."""
+    tiefe = getattr(_gehalten, "tiefe", 0)
+    if tiefe or fcntl is None:
+        _gehalten.tiefe = tiefe + 1
+        try:
+            yield
+        finally:
+            _gehalten.tiefe = tiefe
+        return
+    try:
+        # Nur lesend geoeffnet: flock braucht kein Schreibrecht. So kommt bello
+        # auch an eine Sperrdatei, die root einmal von Hand angelegt hat.
+        griff = os.open(ZUSTAND + ".lock", os.O_RDONLY | os.O_CREAT, 0o666)
+    except OSError as fehler:
+        print(f"[Sperre] nicht moeglich ({fehler}) — weiter ohne.")
+        griff = None
+    try:
+        if griff is not None:
+            fcntl.flock(griff, fcntl.LOCK_EX)
+        _gehalten.tiefe = 1
+        yield
+    finally:
+        _gehalten.tiefe = 0
+        if griff is not None:
+            os.close(griff)     # gibt die Sperre mit frei
 
 
 def naechste_id(daten: dict) -> str:
@@ -105,26 +151,27 @@ def abteilung_aufloesen(eingabe: str) -> str:
 def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
                     kriterien: list[str] | None = None) -> dict:
     abteilung = abteilung_aufloesen(abteilung)
-    daten = zustand_laden()
-    auftrag = {
-        "id": naechste_id(daten),
-        "abteilung": abteilung,
-        "ziel": ziel,
-        "kriterien": kriterien or [
-            "Ergebnis ist konkret und umsetzbar",
-            "Passt zur Marke und zum Preisrahmen",
-            "Quelle oder Begruendung genannt",
-        ],
-        "frist": frist or (date.today() + timedelta(days=7)).isoformat(),
-        "rahmen": "keine Ausgaben",
-        "stand": "offen",
-        "versuche": 0,
-        "eskaliert": False,
-        "verlauf": [],
-        "angelegt": datetime.now().isoformat(timespec="seconds"),
-    }
-    daten["auftraege"].append(auftrag)
-    zustand_speichern(daten)
+    with sperre():
+        daten = zustand_laden()
+        auftrag = {
+            "id": naechste_id(daten),
+            "abteilung": abteilung,
+            "ziel": ziel,
+            "kriterien": kriterien or [
+                "Ergebnis ist konkret und umsetzbar",
+                "Passt zur Marke und zum Preisrahmen",
+                "Quelle oder Begruendung genannt",
+            ],
+            "frist": frist or (date.today() + timedelta(days=7)).isoformat(),
+            "rahmen": "keine Ausgaben",
+            "stand": "offen",
+            "versuche": 0,
+            "eskaliert": False,
+            "verlauf": [],
+            "angelegt": datetime.now().isoformat(timespec="seconds"),
+        }
+        daten["auftraege"].append(auftrag)
+        zustand_speichern(daten)
     vn = namen.vorname(abteilung)
     wer = f"{abteilung} ({vn})" if vn else abteilung
     print(f"Auftrag {auftrag['id']} an {wer} angelegt, Frist {auftrag['frist']}.")
@@ -216,6 +263,9 @@ def eskalieren(auftrag: dict, grund: str, text: str, config: dict,
     if vn:
         fuss = f"\n\nBearbeitet von {vn}.{fuss}"
     senden(betreff, text + fuss, config, anhaenge=anhaenge)
+    # Dasselbe aufs Handy, mit Knoepfen fuer die Entscheidung. Wirft nie:
+    # ohne Telegram bleibt es bei der Mail, der Lauf geht weiter.
+    telegram.melden(auftrag, grund, text, config, anhaenge=anhaenge)
 
 
 # ---------- Lauf ----------
@@ -230,7 +280,7 @@ def lauf(probelauf: bool = False) -> None:
         if probelauf:
             return
         daten["letzter_lauf"] = datetime.now().isoformat(timespec="seconds")
-        zustand_speichern(daten)
+        _lauf_zurueckschreiben(daten, set())
         _wochenbericht_faellig(daten, config)
         return
 
@@ -306,11 +356,33 @@ def lauf(probelauf: bool = False) -> None:
 
     _fristen_pruefen(daten, config)
     daten["letzter_lauf"] = _jetzt()
-    zustand_speichern(daten)
+    _lauf_zurueckschreiben(daten, {a["id"] for a in offen})
 
     if eskalationen == 0:
         print("\nKeine Eskalation. Es bleibt still.")
     _wochenbericht_faellig(daten, config)
+
+
+def _lauf_zurueckschreiben(daten: dict, bearbeitet: set) -> None:
+    """Schreibt das Ergebnis eines Laufs zurueck, ohne zu verlieren, was
+    waehrend des Laufs dazukam.
+
+    Ein Lauf haelt den Stand minutenlang im Speicher, waehrend die Abteilungen
+    arbeiten. Wer in der Zeit per App, Mail oder Telegram einen Auftrag anlegt
+    oder entscheidet, schreibt in die Datei — und bisher hat der Lauf das am
+    Ende ueberschrieben. Deshalb: frisch lesen, nur die in diesem Lauf
+    bearbeiteten Auftraege ersetzen, alles andere so lassen, wie es jetzt
+    auf der Platte steht. Danach haelt 'daten' den zusammengefuehrten Stand."""
+    with sperre():
+        frisch = zustand_laden()
+        eigene = {a["id"]: a for a in daten["auftraege"] if a["id"] in bearbeitet}
+        frisch["auftraege"] = ([eigene.pop(a["id"], a) for a in frisch["auftraege"]]
+                               + list(eigene.values()))
+        for feld in ("letzter_lauf", "letzter_wochenbericht"):
+            frisch[feld] = daten.get(feld)
+        zustand_speichern(frisch)
+    daten.clear()
+    daten.update(frisch)
 
 
 def _fristen_pruefen(daten: dict, config: dict) -> None:
@@ -353,9 +425,11 @@ def _wochenbericht_faellig(daten: dict, config: dict) -> None:
         return
     if not daten["auftraege"]:
         return
-    senden("[Bello] Wochenuebersicht", wochenbericht_text(daten), config)
+    text = wochenbericht_text(daten)
+    senden("[Bello] Wochenuebersicht", text, config)
+    telegram.senden(text, config)
     daten["letzter_wochenbericht"] = _jetzt()
-    zustand_speichern(daten)
+    _lauf_zurueckschreiben(daten, set())
 
 
 def wochenbericht_text(daten: dict | None = None) -> str:
@@ -430,46 +504,52 @@ def _auftrag_finden(daten: dict, auftrag_id: str) -> dict | None:
 
 
 def freigeben(auftrag_id: str, kommentar: str = "") -> None:
-    daten = zustand_laden()
-    a = _auftrag_finden(daten, auftrag_id)
-    if not a:
-        print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
-    a["stand"] = "freigegeben"
-    a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "freigegeben",
-                         "kommentar": kommentar or None})
-    zustand_speichern(daten)
+    with sperre():
+        daten = zustand_laden()
+        a = _auftrag_finden(daten, auftrag_id)
+        if not a:
+            print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
+        a["stand"] = "freigegeben"
+        a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "freigegeben",
+                             "kommentar": kommentar or None})
+        zustand_speichern(daten)
     print(f"{auftrag_id} freigegeben." + (f" ({kommentar})" if kommentar else ""))
 
 
 def verwerfen(auftrag_id: str, grund: str = "") -> None:
-    daten = zustand_laden()
-    a = _auftrag_finden(daten, auftrag_id)
-    if not a:
-        print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
-    a["stand"] = "verworfen"
-    a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "verworfen", "kommentar": grund or None})
-    zustand_speichern(daten)
+    with sperre():
+        daten = zustand_laden()
+        a = _auftrag_finden(daten, auftrag_id)
+        if not a:
+            print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
+        a["stand"] = "verworfen"
+        a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "verworfen",
+                             "kommentar": grund or None})
+        zustand_speichern(daten)
     print(f"{auftrag_id} verworfen." + (f" ({grund})" if grund else ""))
 
 
-def ablehnen(auftrag_id: str, kommentar: str) -> None:
-    daten = zustand_laden()
-    a = _auftrag_finden(daten, auftrag_id)
-    if not a:
-        print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
-    a["stand"] = "abgelehnt"
-    a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "abgelehnt",
-                         "kommentar": kommentar})
-    zustand_speichern(daten)
-    print(f"{auftrag_id} abgelehnt.")
-    # Ueberarbeitungs-Auftrag an dieselbe Abteilung
-    neu = auftrag_anlegen(
-        a["abteilung"],
-        f"Ueberarbeitung zu {auftrag_id}. Bjoerns Rueckmeldung: {kommentar}\n\n"
-        f"Urspruengliches Ziel war: {a['ziel']}",
-        (date.today() + timedelta(days=7)).isoformat(),
-    )
+def ablehnen(auftrag_id: str, kommentar: str) -> dict:
+    """Legt die Ueberarbeitung als neuen Auftrag an und gibt ihn zurueck."""
+    with sperre():
+        daten = zustand_laden()
+        a = _auftrag_finden(daten, auftrag_id)
+        if not a:
+            print(f"Auftrag {auftrag_id} nicht gefunden."); sys.exit(1)
+        a["stand"] = "abgelehnt"
+        a["verlauf"].append({"zeit": _jetzt(), "entscheidung": "abgelehnt",
+                             "kommentar": kommentar})
+        zustand_speichern(daten)
+        print(f"{auftrag_id} abgelehnt.")
+        # Ueberarbeitungs-Auftrag an dieselbe Abteilung
+        neu = auftrag_anlegen(
+            a["abteilung"],
+            f"Ueberarbeitung zu {auftrag_id}. Bjoerns Rueckmeldung: {kommentar}\n\n"
+            f"Urspruengliches Ziel war: {a['ziel']}",
+            (date.today() + timedelta(days=7)).isoformat(),
+        )
     print(f"Ueberarbeitung als {neu['id']} angelegt.")
+    return neu
 
 
 # ---------- Einstieg ----------
