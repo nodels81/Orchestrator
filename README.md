@@ -69,6 +69,27 @@ sourcing/lieferanten/               Shortlist (35 Kandidaten) und Tracker
 .claude/agents/                     Vier Claude-Code-Agenten: Einkäufer, Scout, Spec-Writer, QC-Prüfer
 ```
 
+## Gestaltung (`design/`)
+
+Festgelegtes Designsystem für Website, Shop, Instagram-Textkacheln und Druck — damit jede Seite und
+jede Kachel gleich aussieht, egal welcher Agent sie baut.
+
+```
+design/DESIGN.md                    Designsystem: Tokens, Komponenten, Reference Lock, Mach/Lass, offene Punkte
+design/tokens.css                   Dieselben Tokens als CSS-Variablen
+design/referenzen/                  Bugatti (Primärreferenz), Ferrari, Starbucks als DESIGN.md (MIT) + passende Refero-Stile
+.claude/skills/bellowerk-design/    Skill: wendet design/DESIGN.md an, Markenregeln haben Vorrang
+.claude/skills/refero-design/       Offizieller Refero-Skill (MIT): Methode, Typografie, Farbe, Bewegung, Texte, Anti-KI-Einheitslook
+```
+
+Richtung in einem Satz: dunkle, warme Bühne, gesperrte Versalien wie die Patch-Gravur, Lora zum Lesen,
+echte Fotos als einzige Farbe, Messing nur für die Hauptaktion — und auf jeder Produktseite das
+Saison-Logbuch aus dem Praxistest.
+
+Live-Recherche in der Refero-Bibliothek (2.000+ Stile, 150.000 App-Screens) braucht ein bezahltes
+Refero-Konto: `claude mcp add --transport http refero https://api.refero.design/mcp`, danach `/mcp` →
+anmelden. Ohne Konto arbeiten beide Skills mit den abgelegten Referenzen.
+
 ## Auf dem Server (`/opt/bello`)
 
 ```bash

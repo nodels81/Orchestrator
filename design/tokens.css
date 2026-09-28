@@ -1,0 +1,104 @@
+/* Bellowerk — Design-Tokens als CSS-Variablen.
+   Abgeleitet aus design/DESIGN.md. Bei Widerspruch gilt DESIGN.md; bei Änderungen beide anpassen.
+   Schriften: Jost 400/500 und Lora 400/400 kursiv (Google Fonts, frei). */
+
+:root {
+  color-scheme: dark;
+
+  /* Grund und Flächen */
+  --bw-canvas: #13110E;          /* Nacht */
+  --bw-surface: #1C1915;         /* Nacht 2 */
+  --bw-band: #23352A;            /* Waldgrün — nur Fläche */
+  --bw-paper: #F2EDE4;           /* Papier — Maßtabelle, Kasse, Recht, Druck */
+
+  /* Schrift auf dunkel */
+  --bw-ink: #EEE7DA;             /* Talg */
+  --bw-body: #CBC2B2;
+  --bw-muted: #948B7D;           /* nur auf Nacht */
+
+  /* Linien */
+  --bw-hairline: #2E2A24;
+  --bw-hairline-on-band: #3B4E41;
+  --bw-edge: #6B6255;
+
+  /* Messing — Hauptaktion, Fokus, Patch-Schrauben */
+  --bw-accent: #B08D57;
+  --bw-accent-pressed: #C9A76B;
+  --bw-on-accent: #13110E;
+
+  /* Auf Papier */
+  --bw-ink-on-paper: #1B1814;    /* Tinte */
+  --bw-body-on-paper: #3A342C;
+  --bw-muted-on-paper: #5E574C;
+  --bw-hairline-on-paper: #D9D1C3;
+
+  /* Zustände */
+  --bw-error: #D9674E;
+  --bw-error-on-paper: #9E3B28;
+  --bw-success: #8DB07A;
+  --bw-success-on-paper: #3F6B35;
+
+  /* Lederfarben — nur Farbfelder, Richtwerte */
+  --bw-leather-grau: #7B828A;
+  --bw-leather-dunkelbraun: #4A322B;
+  --bw-leather-oliv: #575541;
+  --bw-leather-cognac: #C07848;
+  --bw-leather-schwarz: #1C1A18;
+
+  /* Schriften */
+  --bw-font-display: "Jost", "Futura PT", Futura, "Century Gothic", sans-serif;
+  --bw-font-text: "Lora", Georgia, serif;
+
+  /* Sperrung */
+  --bw-track-display-xl: 0.12em;
+  --bw-track-display-lg: 0.14em;
+  --bw-track-display-md: 0.16em;
+  --bw-track-display-sm: 0.18em;
+  --bw-track-label: 0.24em;
+  --bw-track-button: 0.22em;
+  --bw-track-wordmark: 0.36em;
+
+  /* Abstände */
+  --bw-space-xxs: 4px;
+  --bw-space-xs: 8px;
+  --bw-space-sm: 12px;
+  --bw-space-md: 16px;
+  --bw-space-lg: 24px;
+  --bw-space-xl: 40px;
+  --bw-space-xxl: 64px;
+  --bw-space-section: 120px;
+  --bw-gutter: 24px;
+  --bw-max-width: 1280px;
+
+  /* Formen */
+  --bw-radius-none: 0;
+  --bw-radius-patch: 6px;
+  --bw-radius-pill: 9999px;
+
+  /* Bewegung */
+  --bw-duration-feedback: 120ms;
+  --bw-duration-state: 240ms;
+  --bw-duration-reveal: 480ms;
+  --bw-ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --bw-ease-weighted: cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+@media (max-width: 639px) {
+  :root {
+    --bw-space-section: 72px;
+    --bw-track-display-xl: 0.08em;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --bw-gutter: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --bw-duration-state: 120ms;
+    --bw-duration-reveal: 120ms;
+  }
+}
