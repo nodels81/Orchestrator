@@ -66,6 +66,15 @@ Fehlt danach noch etwas, trifft das System eine sinnvolle Annahme und vermerkt s
 6. Kostenbremse: `MAX_KOSTEN_PRO_VIDEO=5` (Euro) in `.env`. Jeder API-Aufruf wird vorher geschätzt und danach verbucht. Droht das Limit überschritten zu werden, weicht der Kosten-Wächter zuerst auf günstigere Optionen aus; reicht das nicht, stoppt die Produktion mit kurzer Meldung.
 7. Bildrechte: Fotos, Logos und Clips von fremden Websites nur verwenden, wenn Björn einmal pro Firma bestätigt, dass der Auftraggeber die Rechte hat. Sonst nur Fakten übernehmen und Bilder generieren. Musik nur lizenzfrei mit dokumentierter Quelle.
 8. Fremder Code: Nur die Repos aus der Werkzeugliste unten verwenden. Vor der Installation Lizenz und letzte Aktivität prüfen, Versionen festschreiben. Community-MCP-Server nie mit API-Schlüsseln füttern, ohne den Code vorher durchgesehen zu haben – im Zweifel lieber die offiziellen Python-Clients in `scripts/` nutzen.
+9. **Bestandssystem schützen:** Auf diesem Server läuft bereits das alte Agentensystem unter `/opt/bello` (Orchestrator, Abteilungen, Dashboard). Es ist aktiv und darf nicht beeinträchtigt werden.
+   - Nichts in `/opt/bello` ändern, löschen oder verschieben. Das Studio entsteht ausschließlich in `/home/studio/video-studio`.
+   - Zuerst nur lesen: laufende Dienste (`systemctl list-units --type=service --state=running`), Cronjobs (`crontab -l`, `/etc/cron*`), offene Ports (`ss -tlnp`), RAM, Speicherplatz und Python-/Node-Versionen erfassen und Björn zeigen.
+   - Keine Systempakete für Python oder Node ersetzen oder hochstufen. Eigene Versionen nur in `venv` bzw. per `nvm` für den Benutzer `studio`.
+   - ufw: Vor dem Aktivieren alle bereits genutzten Ports aus `ss -tlnp` freigeben, sonst sperrst du das Altsystem aus.
+   - SSH-Härtung (Root- und Passwort-Login aus): erst wenn geprüft ist, dass kein Dienst oder Cronjob des Altsystems Root-SSH nutzt, und nur nach Björns Freigabe.
+   - Automatische Updates ohne automatischen Neustart und ohne Neustart von Diensten des Altsystems konfigurieren.
+   - Kein Neustart des Servers und kein Neustart von Diensten des Altsystems ohne Björns Freigabe. Vor Phase 1 ein Backup von `/opt/bello` anlegen (Ziel mit Björn klären).
+   - Vor und nach jeder Phase prüfen, dass die Dienste des Altsystems noch laufen.
 
 ### Sparregeln (verbindlich)
 
