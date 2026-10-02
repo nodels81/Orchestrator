@@ -56,6 +56,36 @@ Server, keine Cloud. Die Datei bleibt wie `config.json` auf dem Server und ist p
 ausgeschlossen. Abschalten mit `"gedaechtnis": false` in `config.json`; fällt die Datenbank aus,
 läuft jeder Auftrag ohne sie weiter, statt zu scheitern.
 
+## Modell-Weiche (`modelle.py`)
+
+Nicht jede Abteilung braucht dasselbe Modell. Welche KI welchen Auftrag bearbeitet, steht in
+`config.json` unter `"modelle"` (Vorlage in `config.beispiel.json`) und wird ohne Code-Änderung
+umgestellt. Eine Kennung ist immer `anbieter:modell`:
+
+| Anbieter | Schnittstelle | Beispiel-Kennung |
+|---|---|---|
+| `anthropic` | Anthropic SDK, mit Prompt-Cache und Web-Recherche | `anthropic:claude-sonnet-5` |
+| `openai` | OpenAI Chat API (GPT-/Codex-Modelle) | `openai:gpt-5` |
+| `kimi` | Moonshot, OpenAI-kompatibel | `kimi:kimi-k2-0905-preview` |
+| `lokal` | Ollama/vLLM auf dem Server, OpenAI-kompatibel, ohne Schlüssel | `lokal:qwen3:32b` |
+
+Reihenfolge der Entscheidung: `--modell` am Auftrag → `zuordnung` der Abteilung → `standard`.
+Antwortet der gewählte Anbieter nicht (Netz, Schlüssel, HTTP-Fehler), übernimmt `ausweichen`;
+im Verlauf steht, welches Modell tatsächlich geantwortet hat. Web-Recherche (`--recherche`) gibt
+es nur bei Anthropic. Weitere OpenAI-kompatible Dienste (OpenRouter, Together …) sind ein
+Eintrag unter `anbieter` mit `basis_url` und `api_key` — kein zusätzliches Paket.
+
+```bash
+venv/bin/python orchestrator.py --modelle                     # wer arbeitet womit, ohne Schlüssel
+venv/bin/python orchestrator.py --auftrag "01 Innovation" "Ziel" --modell kimi:kimi-k2-0905-preview
+venv/bin/python abteilung_einkauf_china.py "Ziel" --modell openai:gpt-5
+venv/bin/python -m unittest test_modelle -v                   # 15 Tests, ohne Netz, ohne Kosten
+```
+
+Fehlt der Block `"modelle"`, läuft alles wie bisher über `anthropic_api_key` und `modell`.
+Schlüssel dürfen statt in `config.json` in der Umgebung liegen (`ANTHROPIC_API_KEY`,
+`OPENAI_API_KEY`, `MOONSHOT_API_KEY` oder per `api_key_env` benannt) — etwa aus `/etc/bello/env`.
+
 ## Einkaufsunterlagen (`sourcing/`)
 
 ```

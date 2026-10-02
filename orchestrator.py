@@ -8,7 +8,8 @@ Aufrufe:
   orchestrator.py                                   Lauf sofort ausloesen
   orchestrator.py --probelauf                       Trockenlauf, keine API-Kosten
   orchestrator.py --stand                           Woran wird gearbeitet
-  orchestrator.py --auftrag "01 Innovation" "Ziel" [Frist]
+  orchestrator.py --auftrag "01 Innovation" "Ziel" [Frist] [--modell kimi:kimi-k2]
+  orchestrator.py --modelle                         Welche KI welche Abteilung bearbeitet
   orchestrator.py --wochenbericht
   orchestrator.py --gedaechtnis                     Was der Betrieb weiss und was das spart
   orchestrator.py --wissen "Wenzhou Vigorous"       Im Gedaechtnis nachschlagen
@@ -21,6 +22,7 @@ import sys
 from datetime import date, datetime, timedelta
 
 import gedaechtnis
+import modelle
 from abteilung_basis import BASIS, config_laden
 from orchestrator_mail import senden
 
@@ -65,7 +67,7 @@ def naechste_id(daten: dict) -> str:
 # ---------- Auftraege ----------
 
 def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
-                    kriterien: list[str] | None = None) -> dict:
+                    kriterien: list[str] | None = None, modell: str | None = None) -> dict:
     if abteilung not in ABTEILUNGEN:
         raise ValueError(f"Unbekannte Abteilung '{abteilung}'. Bekannt: {list(ABTEILUNGEN)}")
     daten = zustand_laden()
@@ -86,9 +88,12 @@ def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
         "verlauf": [],
         "angelegt": datetime.now().isoformat(timespec="seconds"),
     }
+    if modell:
+        auftrag["modell"] = modell
     daten["auftraege"].append(auftrag)
     zustand_speichern(daten)
-    print(f"Auftrag {auftrag['id']} an {abteilung} angelegt, Frist {auftrag['frist']}.")
+    print(f"Auftrag {auftrag['id']} an {abteilung} angelegt, Frist {auftrag['frist']}"
+          + (f", Modell {modell}." if modell else "."))
     return auftrag
 
 
@@ -322,12 +327,20 @@ def main() -> None:
         print(f"{geloescht} Episoden aelter als {tage} Tage weggeraeumt. Fakten bleiben.")
     elif "--wochenbericht" in argumente:
         print(wochenbericht_text())
+    elif "--modelle" in argumente:
+        print(modelle.uebersicht(config_laden(), list(ABTEILUNGEN)))
     elif "--auftrag" in argumente:
         rest = argumente[argumente.index("--auftrag") + 1:]
+        modell = None
+        if "--modell" in rest:
+            stelle = rest.index("--modell")
+            modell = rest[stelle + 1] if stelle + 1 < len(rest) else None
+            del rest[stelle:stelle + 2]
         if len(rest) < 2:
-            print('Aufruf: orchestrator.py --auftrag "01 Innovation" "Ziel" [JJJJ-MM-TT]')
+            print('Aufruf: orchestrator.py --auftrag "01 Innovation" "Ziel" [JJJJ-MM-TT] '
+                  '[--modell anbieter:modell]')
             sys.exit(1)
-        auftrag_anlegen(rest[0], rest[1], rest[2] if len(rest) > 2 else None)
+        auftrag_anlegen(rest[0], rest[1], rest[2] if len(rest) > 2 else None, modell=modell)
     else:
         lauf(probelauf="--probelauf" in argumente)
 
