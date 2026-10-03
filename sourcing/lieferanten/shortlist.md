@@ -120,3 +120,44 @@ Alle China-Angaben sind Suchtreffer, nicht geprüft. Vor jeder Bestellung: Gewer
 und je ein Musterteil gegen Magnet- und Gewichtstest (BES-01 §1). Größtes Risiko in dieser
 Warengruppe ist nicht der Preis, sondern **vermessingter Stahl oder Zinkdruckguss, verkauft als
 "solid brass"** — deshalb steht der Magnettest in der Wareneingangsprüfung.
+
+## E) Verpackung (VERP-01) — Stand 3. Oktober 2026
+
+Eine Kistengröße für alles: **260 × 180 × 85 mm innen**, E-Welle Kraft, Stülpdeckel, 1 Farbe Druck.
+Dazu Kraft-Krinkelpapier natur als Füllmaterial. Begründung und Maßherleitung in
+`bellowerk/specs/VERP-01-verpackung.md` §1, Zeichnung `bellowerk/ansichten/VERP-01-eine-groesse.png`.
+
+### Kartonagen
+
+| Prio | Firma | Ort | Einschätzung | Warum | MOQ | Kontakt |
+|---|---|---|---|---|---|---|
+| 1 | Dongguan Lianyi Printing | Dongguan | Druckerei/Verpacker | listet Geschenkboxen ausdrücklich für **Lederhalsbänder und Leinen** — kennt den Anwendungsfall | 300 | Alibaba |
+| 1 | Shenzhen Tianyi Shengtang Printing | Shenzhen | Verpackungsdruckerei | starre Boxen, Schubladen- und Magnetboxen, **MOQ ab 200** | 200–300 | made-in-china / Alibaba |
+| 1 | Wing Chun Packaging Product | Shenzhen | Verpacker | **Kraft-Magnet-Versandboxen** — Kiste ist zugleich Versandkarton, genau unser Weg | 500 | Alibaba |
+| 2 | Dongguan Chang'an Yanan Packaging | Dongguan/Chang'an | Verpacker | **Chang'an** — derselbe Ort wie Zhengyong, Weikeman und Kimjee; Sammeltransport denkbar | 500 | Alibaba |
+| 2 | Dongguan Fison Packaging | Dongguan | Verpacker | faltbare Kraftboxen, OEM | 500 | Alibaba |
+| 2 | Shenzhen First Sail Packaging | Shenzhen | Verpacker | Kraft-Klapp-/Magnetboxen | 500 | Alibaba |
+| 3 | Guangzhou Igiftbox Printing & Packaging | Guangzhou | Verpacker | Kraft-Geschenkboxen 0,15–1,20 USD/Stück | 500 | Alibaba |
+| – | Qin Printing, Shantou Eastcross | Guangdong/Shantou | breite Sortimenter | MOQ 300 für alle Bauarten | 300 | nur als Rückfall |
+
+### Füllmaterial
+
+| Prio | Firma | Ort | Produkt | Preis | MOQ |
+|---|---|---|---|---|---|
+| 1 | Qingdao Rainbow Packaging | Qingdao | Krinkelpapier recycelt, Kraft natur | 2,79–3,20 USD/kg · **1,80 USD/kg ab 100 kg** | 10 kg |
+| 2 | Xingwang Paper (xwpaper) | — | Kraft-Krinkelpapier, auch vorportioniert 50 g | auf Anfrage | auf Anfrage |
+| 3 | Fu Te Lai Papers | — | Krinkelpapier im 10-kg-Sack | ca. 1,10 USD/kg | 1.000 Sack |
+
+Erste Bestellung **10 kg** (ca. 350 Kisten, ca. 0,35 m³). Die 100-kg-Staffel ist über 3 m³ Lagerplatz
+— erst sinnvoll, wenn die Serie steht.
+
+Zwei Dinge sind bei dieser Warengruppe wichtiger als der Preis:
+
+1. **Kein Herkunftsaufdruck.** Verpacker drucken "Made in China" gern von sich aus in die Bodenlasche.
+   Steht als Frage 6 im RFQ und als Ablehnungsgrund in der Musterprüfung.
+2. **Ungefärbtes, ungebleichtes Füllpapier.** Gefärbtes Krinkelpapier gibt bei Feuchtigkeit Farbe ab,
+   und auf geöltem Fettleder bleibt das.
+
+Alternative ohne eigene Lieferkette: Die Lederfabrik der Kernserie mitliefern lassen (Frage 9 im
+RFQ Kernserie). Spart Transport und Zahlung, ist aber selten der beste Preis — beides parallel
+anfragen und vergleichen.

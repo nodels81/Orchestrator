@@ -55,7 +55,7 @@ kein Einstieg über Windhunde
 | LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
 | HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
 | PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |
-| VERP-01 | Verpackung + Kennzeichnung (Entwurf, Björn entscheidet) | `specs/VERP-01-verpackung.md` |
+| VERP-01 | Verpackung + Kennzeichnung: **eine Kistengröße für alles**, 260 × 180 × 85 mm innen, Kraft-Stülpdeckel aus China, Krinkelpapier als Füllung (Entwurf v0.3, Björn entscheidet Höhe und Bauart) | `specs/VERP-01-verpackung.md` |
 
 Grundsatz laut Björn: **schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung
 kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-04 und LE-01 sind
