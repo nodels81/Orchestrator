@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1960" height="660" viewBox="0 0 1960 660">
+  <defs>
+    <!-- Lederkorn -->
+    <filter id="korn" x="-5%" y="-20%" width="110%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045 0.06" numOctaves="5" seed="7" result="rauschen"/>
+      <feColorMatrix in="rauschen" type="saturate" values="0" result="grau"/>
+      <feComponentTransfer in="grau" result="korn">
+        <feFuncA type="linear" slope="0.85" intercept="0.05"/>
+      </feComponentTransfer>
+      <feComposite in="korn" in2="SourceGraphic" operator="in" result="kornAufForm"/>
+      <feBlend in="SourceGraphic" in2="kornAufForm" mode="multiply"/>
+    </filter>
+    <filter id="kornPatch" x="-5%" y="-20%" width="110%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08 0.11" numOctaves="4" seed="3" result="r"/>
+      <feColorMatrix in="r" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="k"><feFuncA type="linear" slope="0.7" intercept="0.05"/></feComponentTransfer>
+      <feComposite in="k" in2="SourceGraphic" operator="in" result="ka"/>
+      <feBlend in="SourceGraphic" in2="ka" mode="multiply"/>
+    </filter>
+    <filter id="schatten" x="-10%" y="-40%" width="120%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#2a251d" flood-opacity="0.30"/>
+    </filter>
+    <filter id="gravur">
+      <feDropShadow dx="0" dy="1.1" stdDeviation="0.5" flood-color="#d9a97a" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Leder grau "washed stone", Licht von oben -->
+    <linearGradient id="leder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E6C67"/>
+      <stop offset="18%" stop-color="#9C9B95"/>
+      <stop offset="52%" stop-color="#8A8984"/>
+      <stop offset="86%" stop-color="#6A6863"/>
+      <stop offset="100%" stop-color="#55534F"/>
+    </linearGradient>
+    <linearGradient id="laengsglanz" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.00"/>
+      <stop offset="34%" stop-color="#fff" stop-opacity="0.13"/>
+      <stop offset="62%" stop-color="#fff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.06"/>
+    </linearGradient>
+    <!-- Patch cognac -->
+    <linearGradient id="patchleder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8A4C22"/>
+      <stop offset="22%" stop-color="#B2703A"/>
+      <stop offset="60%" stop-color="#9C5E2C"/>
+      <stop offset="100%" stop-color="#6F3F1C"/>
+    </linearGradient>
+    <!-- Messing -->
+    <linearGradient id="messing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E5312"/>
+      <stop offset="16%" stop-color="#E4C476"/>
+      <stop offset="38%" stop-color="#C9A24E"/>
+      <stop offset="62%" stop-color="#A98430"/>
+      <stop offset="84%" stop-color="#D8B765"/>
+      <stop offset="100%" stop-color="#6A4F11"/>
+    </linearGradient>
+    <radialGradient id="schraube" cx="38%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#F3DFA6"/>
+      <stop offset="42%" stop-color="#D9B75F"/>
+      <stop offset="45%" stop-color="#C9A44E"/>
+      <stop offset="100%" stop-color="#7C5C16"/>
+    </radialGradient>
+    <linearGradient id="grund" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3F1EC"/>
+      <stop offset="100%" stop-color="#E4E1D8"/>
+    </linearGradient>
+
+    <!-- Kontur des Halsbands: Enden 25 mm, Mitte 50 mm, tangentiale Boegen -->
+    <path id="kontur" d="M 80 272 H 410 C 462 272 568 235 620 235 H 1130 C 1182 235 1288 272 1340 272
+                         H 1843 A 38 38 0 0 1 1843 348 H 1340 C 1288 348 1182 385 1130 385
+                         H 620 C 568 385 462 348 410 348 H 80 Z"/>
+    <clipPath id="innen"><use href="#kontur"/></clipPath>
+  </defs>
+
+  <rect width="1960" height="660" fill="url(#grund)"/>
+
+  <g filter="url(#schatten)">
+    <!-- Lederkörper -->
+    <use href="#kontur" fill="url(#leder)" filter="url(#korn)"/>
+    <use href="#kontur" fill="url(#laengsglanz)"/>
+    <!-- gebrannte, polierte Kante -->
+    <use href="#kontur" fill="none" stroke="#3C3934" stroke-width="3" stroke-opacity="0.85"/>
+    <g clip-path="url(#innen)">
+      <use href="#kontur" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.16" transform="translate(0,3)"/>
+      <use href="#kontur" fill="none" stroke="#000000" stroke-width="9" stroke-opacity="0.20" transform="translate(0,-5)"/>
+    </g>
+  </g>
+
+  <!-- Lochreihe -->
+  <g>
+    <g fill="#39362F">
+      <ellipse cx="1700" cy="310" rx="10" ry="6"/><ellipse cx="1625" cy="310" rx="10" ry="6"/>
+      <ellipse cx="1550" cy="310" rx="10" ry="6"/><ellipse cx="1475" cy="310" rx="10" ry="6"/>
+      <ellipse cx="1400" cy="310" rx="10" ry="6"/>
+    </g>
+    <g fill="none" stroke="#fff" stroke-opacity="0.22" stroke-width="1.5">
+      <ellipse cx="1700" cy="311.5" rx="10" ry="6"/><ellipse cx="1625" cy="311.5" rx="10" ry="6"/>
+      <ellipse cx="1550" cy="311.5" rx="10" ry="6"/><ellipse cx="1475" cy="311.5" rx="10" ry="6"/>
+      <ellipse cx="1400" cy="311.5" rx="10" ry="6"/>
+    </g>
+  </g>
+
+  <!-- Schnalle, D-Ring, Schlaufe -->
+  <g>
+    <!-- D-Ring -->
+    <path d="M 140 258 V 362 M 140 258 C 196 258 196 362 140 362" fill="none" stroke="url(#messing)" stroke-width="13" stroke-linecap="round"/>
+    <!-- Rollschnalle -->
+    <rect x="36" y="254" width="50" height="112" rx="10" fill="none" stroke="url(#messing)" stroke-width="13"/>
+    <rect x="55" y="258" width="10" height="104" rx="5" fill="url(#messing)"/>
+    <path d="M 60 310 H 132" stroke="url(#messing)" stroke-width="9" stroke-linecap="round"/>
+    <!-- Lederschlaufe (keeper) -->
+    <g>
+      <rect x="178" y="266" width="26" height="88" rx="5" fill="#7F7E79" filter="url(#kornPatch)"/>
+      <rect x="178" y="266" width="26" height="88" rx="5" fill="none" stroke="#3C3934" stroke-width="2.5" stroke-opacity="0.8"/>
+      <rect x="178" y="269" width="26" height="6" fill="#fff" fill-opacity="0.13"/>
+    </g>
+    <!-- Buchschrauben in der Falte -->
+    <g>
+      <circle cx="222" cy="310" r="13" fill="url(#schraube)" stroke="#6C4F12" stroke-width="1.5"/>
+      <circle cx="218" cy="305" r="4" fill="#FBEFC8" fill-opacity="0.75"/>
+      <circle cx="252" cy="310" r="13" fill="url(#schraube)" stroke="#6C4F12" stroke-width="1.5"/>
+      <circle cx="248" cy="305" r="4" fill="#FBEFC8" fill-opacity="0.75"/>
+    </g>
+  </g>
+
+  <!-- Lederpatch PA-L 110 x 18 mm, mittig auf der Verbreiterung -->
+  <g>
+    <rect x="710" y="283" width="330" height="54" rx="9" fill="url(#patchleder)" filter="url(#kornPatch)"/>
+    <rect x="710" y="283" width="330" height="54" rx="9" fill="none" stroke="#4E2C11" stroke-width="2.6" stroke-opacity="0.9"/>
+    <rect x="712" y="285" width="326" height="12" rx="7" fill="#fff" fill-opacity="0.10"/>
+    <g filter="url(#gravur)">
+      <text x="875" y="311" text-anchor="middle" fill="#3B2411" font-size="25" font-weight="600" letter-spacing="7.5"
+            font-family="Futura, 'Century Gothic', 'Josefin Sans', Arial, sans-serif">BELLOWERK</text>
+      <text x="952" y="330" text-anchor="middle" fill="#3B2411" font-size="19" font-style="italic"
+            font-family="'Brush Script MT', 'Segoe Script', 'Snell Roundhand', cursive">Manufaktur</text>
+    </g>
+    <g>
+      <circle cx="731" cy="310" r="14" fill="url(#schraube)" stroke="#6C4F12" stroke-width="1.5"/>
+      <circle cx="726.5" cy="305" r="4.5" fill="#FBEFC8" fill-opacity="0.8"/>
+      <circle cx="1019" cy="310" r="14" fill="url(#schraube)" stroke="#6C4F12" stroke-width="1.5"/>
+      <circle cx="1014.5" cy="305" r="4.5" fill="#FBEFC8" fill-opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Bildunterschrift -->
+  <g font-family="Arial, Helvetica, sans-serif" fill="#5C5447">
+    <text x="80" y="590" font-size="21" font-weight="bold" fill="#211C15">Hamburg Nr. 1 · Größe M · Grau „washed stone“</text>
+    <text x="80" y="618" font-size="16">Darstellung nach Tech Pack HB-01 v1.2 — keine Fotografie. Patch PA-L 110 × 18 mm, Messing massiv, Kanten poliert.</text>
+  </g>
+</svg>

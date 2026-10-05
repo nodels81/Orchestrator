@@ -6,7 +6,7 @@ Anfrage per Video-Call und Business licence prüfen. Kein Suchtreffer nennt die 
 Nischen-Spezifikation und wird über Muster abgefragt. Beste Chancen: Gürtel-/Lederfabriken
 (Buchschrauben sind Gürtelstandard) in Guangdong und Wenzhou.
 
-## A) Leder-Halsband / Leine (HB-01, LE-01, HS-01)
+## A) Leder-Halsband / Leine (HB-04, LE-01, HS-01)
 
 | Prio | Firma | Ort | Einschätzung | Warum | MOQ | Kontakt |
 |---|---|---|---|---|---|---|
@@ -84,6 +84,80 @@ Rollschnalle 0,30–1,00 USD; Buchschraube ab 0,03 USD.
 
 ## Nächste Schritte (Vorschlag)
 
-1. Björn bestätigt Startwerte in HB-01/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
+1. Björn bestätigt Startwerte in HB-04/LE-01 am Referenzstück und legt Fotos in `bilder/` ab.
 2. Einkäufer schickt Vorlage 01 an Prio-1/2 der Gruppe A (5 Fabriken), PATCH-01-RFQ an Yongfu + Haixinda.
 3. Nach 3 Werktagen nachfassen (Vorlage 02), Angebote in Tabelle, Björn entscheidet über Muster.
+
+## D) Beschläge Messing massiv (BES-01) — Recherche 15. September 2026
+
+Erste Wahl bleibt: **die Lederfabrik liefert die Beschläge mit**. Diese Liste ist für zwei Zwecke —
+ein europäisches Referenzteil zum Mitschicken ans Goldmuster, und ein Rückfall, falls keine
+Lederfabrik massives Messing in der verlangten Qualität beschaffen kann.
+
+### Europa/USA — Referenzteile, Musterbau, Kleinserie
+
+| Quelle | Land | Was | Warum |
+|---|---|---|---|
+| Tovetis | DE | Bolzen-Karabiner Messing massiv B-9740-20-MG / -25-MG, Rollschnalle B-9880-25-MG | Artikelnummern passen exakt auf unsere Maße — bestes Referenzteil |
+| Leder-Rusch | DE | Messingschnallen, Ringe, D-Ringe, Buchschrauben | nur B2B, Lager nach Termin |
+| Das Lederhaus | DE | Rollschnallen massiv Messing | kleine Mengen |
+| MetallServiceWeiss (msw-24.de) | DE | Rollschnalle massiv Messing 26 mm, Ringe, Karabiner | kleine Mengen |
+| Buckleguy | US | Buchschrauben Messing massiv, **gewölbter Kopf**, viele Postlängen, natur + antik | beste Entsprechung zu BES-01-E |
+| Weaver Leather Supply, Rocky Mountain Leather Supply | US | Bolzenkarabiner, Buchschrauben | Alternative zu Buckleguy |
+
+### China — Serie
+
+| Firma | Ort | Einschätzung | Warum |
+|---|---|---|---|
+| Dongguan Yantao Industrial | Dongguan | steht schon in Liste A | Leder **und** eigene Beschläge aus einer Hand — für uns der interessanteste Fall |
+| Guangzhou ATI Hardware | Guangzhou | Beschlägefabrik (unbestätigt) | Listung für solid brass snap hooks |
+| Dongguan Jianchang Hardware | Dongguan | Beschlägefabrik (unbestätigt) | dito |
+| Dongguan Bosin Hardware | Dongguan | Beschlägefabrik (unbestätigt) | dito |
+| Qingdao Xinquanxi Metal Products | Qingdao | unbestätigt | dito |
+| Ningbo Inunion Import & Export | Ningbo | Händler/Exporteur | nur als Rückfall |
+
+Alle China-Angaben sind Suchtreffer, nicht geprüft. Vor jeder Bestellung: Gewerbeschein, Video-Call,
+und je ein Musterteil gegen Magnet- und Gewichtstest (BES-01 §1). Größtes Risiko in dieser
+Warengruppe ist nicht der Preis, sondern **vermessingter Stahl oder Zinkdruckguss, verkauft als
+"solid brass"** — deshalb steht der Magnettest in der Wareneingangsprüfung.
+
+## E) Verpackung (VERP-01) — Stand 3. Oktober 2026
+
+Eine Kistengröße für alles: **260 × 180 × 85 mm innen**, E-Welle Kraft, Stülpdeckel, 1 Farbe Druck.
+Dazu Kraft-Krinkelpapier natur als Füllmaterial. Begründung und Maßherleitung in
+`bellowerk/specs/VERP-01-verpackung.md` §1, Zeichnung `bellowerk/ansichten/VERP-01-eine-groesse.png`.
+
+### Kartonagen
+
+| Prio | Firma | Ort | Einschätzung | Warum | MOQ | Kontakt |
+|---|---|---|---|---|---|---|
+| 1 | Dongguan Lianyi Printing | Dongguan | Druckerei/Verpacker | listet Geschenkboxen ausdrücklich für **Lederhalsbänder und Leinen** — kennt den Anwendungsfall | 300 | Alibaba |
+| 1 | Shenzhen Tianyi Shengtang Printing | Shenzhen | Verpackungsdruckerei | starre Boxen, Schubladen- und Magnetboxen, **MOQ ab 200** | 200–300 | made-in-china / Alibaba |
+| 1 | Wing Chun Packaging Product | Shenzhen | Verpacker | **Kraft-Magnet-Versandboxen** — Kiste ist zugleich Versandkarton, genau unser Weg | 500 | Alibaba |
+| 2 | Dongguan Chang'an Yanan Packaging | Dongguan/Chang'an | Verpacker | **Chang'an** — derselbe Ort wie Zhengyong, Weikeman und Kimjee; Sammeltransport denkbar | 500 | Alibaba |
+| 2 | Dongguan Fison Packaging | Dongguan | Verpacker | faltbare Kraftboxen, OEM | 500 | Alibaba |
+| 2 | Shenzhen First Sail Packaging | Shenzhen | Verpacker | Kraft-Klapp-/Magnetboxen | 500 | Alibaba |
+| 3 | Guangzhou Igiftbox Printing & Packaging | Guangzhou | Verpacker | Kraft-Geschenkboxen 0,15–1,20 USD/Stück | 500 | Alibaba |
+| – | Qin Printing, Shantou Eastcross | Guangdong/Shantou | breite Sortimenter | MOQ 300 für alle Bauarten | 300 | nur als Rückfall |
+
+### Füllmaterial
+
+| Prio | Firma | Ort | Produkt | Preis | MOQ |
+|---|---|---|---|---|---|
+| 1 | Qingdao Rainbow Packaging | Qingdao | Krinkelpapier recycelt, Kraft natur | 2,79–3,20 USD/kg · **1,80 USD/kg ab 100 kg** | 10 kg |
+| 2 | Xingwang Paper (xwpaper) | — | Kraft-Krinkelpapier, auch vorportioniert 50 g | auf Anfrage | auf Anfrage |
+| 3 | Fu Te Lai Papers | — | Krinkelpapier im 10-kg-Sack | ca. 1,10 USD/kg | 1.000 Sack |
+
+Erste Bestellung **10 kg** (ca. 350 Kisten, ca. 0,35 m³). Die 100-kg-Staffel ist über 3 m³ Lagerplatz
+— erst sinnvoll, wenn die Serie steht.
+
+Zwei Dinge sind bei dieser Warengruppe wichtiger als der Preis:
+
+1. **Kein Herkunftsaufdruck.** Verpacker drucken "Made in China" gern von sich aus in die Bodenlasche.
+   Steht als Frage 6 im RFQ und als Ablehnungsgrund in der Musterprüfung.
+2. **Ungefärbtes, ungebleichtes Füllpapier.** Gefärbtes Krinkelpapier gibt bei Feuchtigkeit Farbe ab,
+   und auf geöltem Fettleder bleibt das.
+
+Alternative ohne eigene Lieferkette: Die Lederfabrik der Kernserie mitliefern lassen (Frage 9 im
+RFQ Kernserie). Spart Transport und Zahlung, ist aber selten der beste Preis — beides parallel
+anfragen und vergleichen.

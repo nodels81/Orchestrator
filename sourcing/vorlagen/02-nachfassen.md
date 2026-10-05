@@ -2,12 +2,12 @@
 
 ## A) Keine Antwort nach 3 Werktagen
 
-**Subject:** Re: Bellowerk – RFQ HB-01 / LE-01 – reply by [date]?
+**Subject:** Re: Bellowerk – RFQ HB-04 / LE-01 – reply by [date]?
 
 Hello [Name],
 
 short reminder about our request from [date] (drawing + spec attached again).
-Can you quote HB-01 and LE-01? A short answer to points 1–7 is enough.
+Can you quote HB-04 and LE-01? A short answer to points 1–7 is enough.
 Please reply by [date].
 
 Best regards, Björn
@@ -23,7 +23,7 @@ Best regards, Björn
 
 ## C) Angebot unvollständig — Lücken nummeriert
 
-**Subject:** Re: Bellowerk – quotation HB-01 – 3 open points
+**Subject:** Re: Bellowerk – quotation HB-04 – 3 open points
 
 Hello [Name],
 

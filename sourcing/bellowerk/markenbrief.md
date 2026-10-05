@@ -49,16 +49,16 @@ kein Einstieg über Windhunde
 
 | Modell | Beschreibung | Spec |
 |---|---|---|
-| HB-01 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-01-halsband.md` |
+| HB-04 | Halsband Fettleder, einlagig, ohne Naht, S/M/L/XL, 20–40 mm, Lederpatch | `specs/HB-04-halsband.md` |
 | LE-01 | Führleine 3,00 m, dreifach verstellbar, sechs Führlängen, Ringe bei 45/140/245 cm, Karabiner und Ringe im Mystery Braid | `specs/LE-01-fuehrleine.md` |
 | HB-02 | Halsband geflochten: Halsteil im Mystery Braid (ein- oder zweifarbig), O-Ring, flache Enden mit Schnalle und Patch | `specs/HB-02-halsband-geflochten.md` |
 | LE-02 | Rundgeflochtene Leine — zurückgestellt | `specs/LE-02-fuehrleine-geflochten.md` |
 | HS-01 | Handschlaufe, Umfang 50 cm | `specs/HS-01-handschlaufe.md` |
 | PATCH-01 | Lederpatch lasergraviert "BELLOWERK / Manufaktur", 2 Buchschrauben; später Variante N mit Hundenamen | `specs/PATCH-01-markenpatch.md` |
-| VERP-01 | Verpackung + Kennzeichnung (Entwurf, Björn entscheidet) | `specs/VERP-01-verpackung.md` |
+| VERP-01 | Verpackung + Kennzeichnung: **eine Kistengröße für alles**, 260 × 180 × 85 mm innen, Kraft-Stülpdeckel aus China, Krinkelpapier als Füllung (Entwurf v0.3, Björn entscheidet Höhe und Bauart) | `specs/VERP-01-verpackung.md` |
 
 Grundsatz laut Björn: **schlichte Produkte, bei denen die Messingringe und -schnallen zur Geltung
-kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-01 und LE-01 sind
+kommen**. Erste Bestellung: Patch nur mit "Bellowerk", keine Personalisierung. HB-04 und LE-01 sind
 die Kernmodelle, HB-02 die geflochtene Variante. Spätere Kandidaten (nicht jetzt anfragen):
 Führleine mit fester Handschlaufe, Schlüsselanhänger mit Patch, Messing-Münzanhänger am D-Ring
 (auf Fotos zu sehen), Sonderfarben Pink/Türkis/Mint/Gelb/Bordeaux.

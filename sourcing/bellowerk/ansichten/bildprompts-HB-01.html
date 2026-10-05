@@ -1,0 +1,236 @@
+<title>Bildprompts Hamburg Nr. 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root{
+  --papier:#E8E5DC; --blatt:#F6F4EE; --vertiefung:#DCD8CD;
+  --tinte:#211C15; --tinte-weich:#5E5648; --tinte-leise:#877E6D;
+  --linie:#CBC4B4; --linie-fein:#DED8C9;
+  --messing:#8F6B1F; --oliv:#4C5A31; --rost:#8E3A24; --fokus:#8F6B1F;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#14110D; --blatt:#1E1A14; --vertiefung:#262118;
+    --tinte:#EDE7D9; --tinte-weich:#AAA08B; --tinte-leise:#857C6A;
+    --linie:#3A3227; --linie-fein:#2C261E;
+    --messing:#D3A957; --oliv:#93A468; --rost:#D4775A; --fokus:#D3A957;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#14110D; --blatt:#1E1A14; --vertiefung:#262118;
+  --tinte:#EDE7D9; --tinte-weich:#AAA08B; --tinte-leise:#857C6A;
+  --linie:#3A3227; --linie-fein:#2C261E;
+  --messing:#D3A957; --oliv:#93A468; --rost:#D4775A; --fokus:#D3A957;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  margin:0; background:var(--papier); color:var(--tinte);
+  font-family:"Newsreader",Georgia,serif; font-size:17px; line-height:1.55;
+}
+.seite{max-width:960px; margin:0 auto; padding-inline:20px; padding-block:0 70px}
+h1,h2,h3,button,.eyebrow,.marke{font-family:"Archivo",system-ui,sans-serif}
+.mono,pre,code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--fokus); outline-offset:3px}
+
+header{padding-block:40px 20px; border-bottom:2px solid var(--tinte)}
+.eyebrow{font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--tinte-leise); margin:0 0 12px}
+h1{font-size:clamp(29px,5.4vw,44px); font-weight:700; letter-spacing:-.022em; line-height:1.03; margin:0 0 10px}
+header p{max-width:62ch; color:var(--tinte-weich); margin:0}
+
+h2{font-size:21px; font-weight:600; letter-spacing:-.012em; margin:44px 0 6px}
+h2 + p{color:var(--tinte-weich); max-width:62ch; margin-top:0}
+h3{font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--tinte-leise); margin:0 0 10px}
+
+.karte{background:var(--blatt); border:1px solid var(--linie); border-radius:3px; margin-top:18px; overflow:hidden}
+.k-kopf{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; padding:14px 18px; border-bottom:1px solid var(--linie-fein)}
+.k-kopf .nr{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--messing)}
+.k-kopf h3{margin:0; font-size:15px; letter-spacing:0; text-transform:none; color:var(--tinte); font-weight:600}
+.k-kopf .wofuer{margin-left:auto; font-size:12.5px; color:var(--tinte-leise); font-family:"Archivo",sans-serif}
+pre{
+  margin:0; padding:16px 18px; white-space:pre-wrap; word-break:break-word;
+  font-size:13px; line-height:1.55; color:var(--tinte-weich); background:var(--vertiefung);
+  max-height:290px; overflow:auto
+}
+.k-fuss{display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:12px 18px}
+button.kopieren{
+  font-family:"Archivo",sans-serif; font-size:13px; font-weight:600; cursor:pointer;
+  background:var(--tinte); color:var(--blatt); border:0; border-radius:2px; padding:9px 16px
+}
+button.kopieren:hover{background:var(--messing)}
+button.kopieren.fertig{background:var(--oliv)}
+.k-fuss span{font-size:12.5px; color:var(--tinte-leise)}
+
+.raster{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:26px; margin-top:20px}
+dl{margin:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:0}
+dt{font-family:"Archivo",sans-serif; font-size:11.5px; font-weight:500; letter-spacing:.04em; text-transform:uppercase;
+   color:var(--tinte-leise); padding:8px 14px 8px 0; border-top:1px solid var(--linie-fein); white-space:nowrap}
+dd{margin:0; font-size:14px; padding:8px 0; border-top:1px solid var(--linie-fein)}
+dl dt:first-of-type, dl dd:first-of-type{border-top:0}
+
+ol.pruef{counter-reset:p; list-style:none; padding:0; margin:14px 0 0}
+ol.pruef li{
+  counter-increment:p; display:grid; grid-template-columns:30px minmax(0,1fr); gap:12px;
+  padding:11px 0; border-top:1px solid var(--linie-fein); font-size:15.5px
+}
+ol.pruef li::before{content:counter(p); font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--messing)}
+ol.pruef b{font-weight:600}
+ol.pruef span{color:var(--tinte-weich); display:block; font-size:14px; margin-top:2px}
+
+figure{margin:0}
+figure img{display:block; width:100%; background:#fff; border:1px solid var(--linie); border-radius:3px; padding:5px}
+figcaption{font-size:12.5px; color:var(--tinte-weich); margin-top:8px; font-family:"IBM Plex Mono",monospace}
+
+.hinweis{border-left:3px solid var(--rost); padding:4px 0 4px 14px; color:var(--tinte-weich); font-size:15px; margin:18px 0 0; max-width:64ch}
+.fuss{margin-top:50px; padding-top:16px; border-top:1px solid var(--linie); font-size:13px; color:var(--tinte-leise)}
+</style>
+
+<div class="seite">
+<header>
+  <p class="eyebrow">Bellowerk · Bilder erzeugen statt fotografieren</p>
+  <h1>Bildprompts Hamburg Nr. 1</h1>
+  <p>Vier Prompts zum Kopieren, die Einstellungen dazu, und — wichtiger als beides — die Prüfliste, an der du erkennst, ob das Bild das Produkt zeigt oder etwas anderes.</p>
+</header>
+
+<h2>Bevor du promptest</h2>
+<p>Zwei Dinge entscheiden mehr als die Wortwahl.</p>
+<div class="raster">
+  <div>
+    <h3>Maße helfen kaum — Verhältnisse schon</h3>
+    <p style="font-size:15.5px; color:var(--tinte-weich)">Ein Bildmodell rechnet nicht in Millimetern. „50 mm in der Mitte“ versteht es nicht, <b>„exactly double the width of the ends“</b> versteht es. Genauso bei Anzahlen: „exactly five oval holes“ statt „Lochabstand 25 mm“. Die Millimeter stehen trotzdem in den Prompts — sie schaden nicht und helfen bei Modellen, die Text mitlesen.</p>
+  </div>
+  <div>
+    <h3>Den Patch leer lassen</h3>
+    <p style="font-size:15.5px; color:var(--tinte-weich)">Lass kein Modell „BELLOWERK“ auf den Patch schreiben. Es kommt Buchstabensalat heraus, der auf den ersten Blick echt aussieht. Deshalb steht in jedem Prompt <b>no text, no logo</b>. Die Gravur setzen wir danach mit unserer Vektordatei ein — dann stimmt sie.</p>
+  </div>
+</div>
+
+<h2>Die Prompts</h2>
+<p>Englisch, weil die Modelle darauf deutlich zuverlässiger reagieren. Kopieren, einfügen, laufen lassen.</p>
+
+<div class="karte">
+  <div class="k-kopf"><span class="nr">01</span><h3>Hauptbild — flach von oben</h3><span class="wofuer">Shop-Kachel, Freigabe</span></div>
+  <pre id="p1">Studio product photograph of a single leather dog collar lying flat on a smooth off-white surface, photographed from directly above, the whole collar in frame and parallel to the image edge.
+
+The collar is cut from ONE piece of grey vegetable-tanned oiled leather ("washed stone" grey). Its two ends are narrow; towards the middle it widens smoothly over a long tangential curve to exactly DOUBLE the width of the ends, then narrows back the same way. The widened middle section spans about one third of the total length. Single layer of leather, about 4 mm thick: the collar is WIDER in the middle, never thicker. Total length about 60 cm, ends about 25 mm wide, middle about 50 mm wide.
+
+On the widened middle lies a long narrow patch of cognac-brown leather, about six times longer than it is tall, held by one domed solid-brass screw at each end.
+
+Left end: a solid brass roller buckle, a brass D-ring right behind it, a leather keeper. Right end: exactly five oval holes in one evenly spaced row.
+
+All metal is solid brass, unlacquered, warm gold, lightly brushed. Leather edges bevelled and burnished. No stitching anywhere, no rivets, no visible glue.
+
+Soft diffuse daylight from the upper left, one gentle shadow under the collar, natural leather grain visible, muted true colours. Photographic, not illustrated. No text, no logo, no watermark.</pre>
+  <div class="k-fuss"><button class="kopieren" type="button" data-ziel="p1">Prompt kopieren</button><span>1:1 · höchste Auflösung</span></div>
+</div>
+
+<div class="karte">
+  <div class="k-kopf"><span class="nr">02</span><h3>Detail — Verbreiterung mit Patch</h3><span class="wofuer">Material, Kante, Messing</span></div>
+  <pre id="p2">Close-up product photograph of the widened middle section of a grey leather dog collar, three-quarter angle, shallow depth of field, the background falling out of focus.
+
+A long narrow cognac-brown leather patch is screwed onto the widened section with two domed solid-brass screws, one at each end. The grey leather is a single layer about 4 mm thick, cut in one piece; its edge is bevelled and burnished to a smooth rounded line. No stitching, no rivets, no perforations in this area.
+
+Raking light from the side so the burnished edge and the natural grain of the oiled leather catch the light. Brass warm, unlacquered, slightly worn from use. Muted natural colours, soft daylight, photographic, no studio gloss. No text, no logo, no watermark.</pre>
+  <div class="k-fuss"><button class="kopieren" type="button" data-ziel="p2">Prompt kopieren</button><span>4:5 · Makro-Look</span></div>
+</div>
+
+<div class="karte">
+  <div class="k-kopf"><span class="nr">03</span><h3>Am Hund getragen</h3><span class="wofuer">Shop-Hero, Instagram</span></div>
+  <pre id="p3">Documentary photograph of a calm short-haired dog standing outdoors on a field path in soft late afternoon light, seen from the side at the dog's head height, sharp focus on the collar around its neck.
+
+The collar is grey leather, narrow at the ends and about twice as wide across the front of the neck, where a long narrow cognac-brown leather patch is held by two brass screws. A solid brass roller buckle sits at the side of the neck. Brass warm and unlacquered.
+
+Natural setting, warm low sun, shallow depth of field, honest reportage look, no studio lighting, no props. Colours muted. No text, no logo, no watermark.</pre>
+  <div class="k-fuss"><button class="kopieren" type="button" data-ziel="p3">Prompt kopieren</button><span>3:2 · Reportage</span></div>
+</div>
+
+<div class="karte">
+  <div class="k-kopf"><span class="nr">04</span><h3>Farbreihe</h3><span class="wofuer">Farbauswahl im Shop</span></div>
+  <pre id="p4">Five leather dog collars of identical shape laid side by side on a neutral linen surface, photographed straight from above, evenly spaced, equal distance between them, all pointing the same way.
+
+Each collar is narrow at both ends and exactly twice as wide in the middle, with a smooth curved transition, and carries a long narrow cognac-brown leather patch held by two domed brass screws. Solid brass roller buckles, warm unlacquered brass.
+
+Colours from left to right: washed grey, dark brown, olive green, cognac, black. Soft even daylight, no harsh shadows, muted natural palette, catalogue look, photographic. No text, no logo, no watermark.</pre>
+  <div class="k-fuss"><button class="kopieren" type="button" data-ziel="p4">Prompt kopieren</button><span>3:2 · gleiche Beleuchtung wie 01</span></div>
+</div>
+
+<div class="karte">
+  <div class="k-kopf"><span class="nr">05</span><h3>Negativliste</h3><span class="wofuer">ins Feld „negative prompt“</span></div>
+  <pre id="p5">stitching, seams, thread, sewn edge, rivets, studs, silver metal, chrome, nickel, steel hardware, buckle in the middle, more than five holes, fewer than five holes, double layer, padded, lined, fabric lining, nylon webbing, plastic, glossy plastic look, HDR, oversaturated colours, harsh specular highlights, text, letters, lettering, logo, watermark, signature, hands, person</pre>
+  <div class="k-fuss"><button class="kopieren" type="button" data-ziel="p5">Liste kopieren</button><span>bei Modellen ohne Negativfeld ans Ende des Prompts hängen</span></div>
+</div>
+
+<h2>Einstellungen</h2>
+<div class="raster">
+  <div>
+    <dl>
+      <dt>Seitenverhältnis</dt><dd>1:1 für Shop-Kacheln · 4:5 für Instagram · 3:2 für Hero und Farbreihe</dd>
+      <dt>Auflösung</dt><dd>höchste Stufe, mindestens 2000 px an der langen Kante</dd>
+      <dt>Seed</dt><dd>notieren, sobald ein Bild sitzt — dann Varianten mit gleichem Seed erzeugen</dd>
+      <dt>Anzahl</dt><dd>4 Bilder je Durchgang; von zehn taugen erfahrungsgemäß zwei</dd>
+    </dl>
+  </div>
+  <div>
+    <dl>
+      <dt>Modell</dt><dd>Fotorealismus und Textur: Imagen/Gemini · reine Produktfotos: FLUX · wenn doch Schrift im Bild stimmen muss: GPT Image</dd>
+      <dt>Referenzbild</dt><dd>Zeichnung und Darstellung hochladen, dazu: „keep the shape and proportions from the reference image“</dd>
+      <dt>Was nicht</dt><dd>keine Gravur generieren lassen, keine Sondergrößen erfinden, keine Nahaufnahme der Schnalle ohne Referenz</dd>
+    </dl>
+  </div>
+</div>
+
+<h2>Diese beiden Bilder lädst du als Referenz mit hoch</h2>
+<div class="raster">
+  <figure>
+    <img src="media/HB-01-hamburg.png" alt="Maßzeichnung Hamburg Nr. 1">
+    <figcaption>Die Maßzeichnung — gibt dem Modell Form und Proportion</figcaption>
+  </figure>
+  <figure>
+    <img src="media/HB-01-ansicht.jpg" alt="Darstellung Hamburg Nr. 1 in Grau">
+    <figcaption>Die Darstellung — gibt Farbe, Messing und Patchgröße</figcaption>
+  </figure>
+</div>
+<p class="hinweis">Dazu gehört dein echtes Foto vom grauen Halsband. Es ist die einzige Quelle, die zeigt, wie das Leder wirklich aussieht — alles andere ist gezeichnet.</p>
+
+<h2>Prüfliste — hier scheitern die Bilder</h2>
+<p>Geh sie in dieser Reihenfolge durch. Fällt ein Punkt durch, ist das Bild unbrauchbar, egal wie schön es ist.</p>
+<ol class="pruef">
+  <li><b>Genau fünf Löcher?</b><span>Modelle zählen schlecht. Sieben Löcher sind der häufigste Fehler.</span></li>
+  <li><b>Ist die Mitte doppelt so breit wie die Enden?</b><span>Oft wird daraus eine leichte Wölbung statt der klaren Verdopplung.</span></li>
+  <li><b>Läuft der Übergang weich aus?</b><span>Kein Knick, keine Stufe, keine gerade Fase — dort reißt ein echtes Halsband.</span></li>
+  <li><b>Eine Lage Leder?</b><span>Zeigt sich an der Kante: eine Linie, nicht zwei. Keine Fütterung, kein Polster.</span></li>
+  <li><b>Keine Naht, keine Niete?</b><span>Modelle nähen Lederwaren aus Gewohnheit. Das ist bei euch ein Ausschlusskriterium.</span></li>
+  <li><b>Messing warm-golden, nicht silbern?</b><span>Silber heißt: Modell hat Stahl gebaut.</span></li>
+  <li><b>Patch lang und schmal, zwei Schrauben?</b><span>Sechsmal so lang wie hoch. Nicht drei Schrauben, nicht mittig eine.</span></li>
+  <li><b>Schnalle am Ende, nicht in der Mitte?</b><span>Und der D-Ring direkt dahinter, nicht am anderen Ende.</span></li>
+</ol>
+
+<p class="fuss">Stand 15. September 2026 · Maße aus Tech Pack HB-01 v1.3 · Diese Prompts erzeugen Bilder für Freigabe, Moodboard und Shop-Entwurf. Sobald das Goldmuster da ist, wird fotografiert und das echte Produkt in erzeugte Szenen gesetzt — ein erzeugtes Bild ersetzt nie das Foto eines Produkts, das verkauft wird.</p>
+</div>
+
+<script>
+(function () {
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button.kopieren");
+    if (!b) return;
+    var text = document.getElementById(b.getAttribute("data-ziel")).textContent;
+    var fertig = function () {
+      var alt = b.textContent;
+      b.textContent = "Kopiert"; b.classList.add("fertig");
+      setTimeout(function () { b.textContent = alt; b.classList.remove("fertig"); }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(fertig, function () { ersatz(text, fertig); });
+    } else { ersatz(text, fertig); }
+  });
+  function ersatz(text, fertig) {
+    var t = document.createElement("textarea");
+    t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); fertig(); } catch (e) {}
+    document.body.removeChild(t);
+  }
+})();
+</script>

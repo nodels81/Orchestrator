@@ -6,7 +6,7 @@ Platzhalter in `[ ]` ersetzen.
 
 ---
 
-**Subject:** Bellowerk – RFQ leather dog collar HB-01 + lead LE-01 – 100 pcs each – sample first
+**Subject:** Bellowerk – RFQ leather dog collar HB-04 + lead LE-01 – 100 pcs each – sample first
 
 Hello [Ms./Mr. Family name],
 
@@ -15,7 +15,7 @@ leads and sell them to our own dog-service customers (Instagram: @herr.bello.und
 
 We are looking for a factory partner for two products (tech packs and drawings attached):
 
-1. HB-01 leather collar, vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle and
+1. HB-04 leather collar, vegetable-tanned oiled cowhide 3.5–4.0 mm, solid brass roller buckle and
    D-ring, **no stitching, no rivets – Chicago screws only**, sizes S/M/L/XL
 2. LE-01 lead 3.00 m, 20 mm, three solid brass O-rings at 45 / 140 / 245 cm, swivel trigger snaps both ends
 

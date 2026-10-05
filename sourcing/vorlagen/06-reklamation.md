@@ -5,7 +5,7 @@ Restzahlung erst nach Lösung.
 
 ---
 
-**Subject:** Bellowerk – PO [Nr.] – 12 of 100 pcs HB-01 deviate from golden sample – proposal
+**Subject:** Bellowerk – PO [Nr.] – 12 of 100 pcs HB-04 deviate from golden sample – proposal
 
 Hello [Name],
 

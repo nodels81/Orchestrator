@@ -11,7 +11,8 @@ from abteilung_basis import Abteilung, einzeltest, BASIS
 SOURCING = os.path.join(BASIS, "sourcing")
 KONTEXT_DATEIEN = [
     "bellowerk/markenbrief.md",
-    "bellowerk/specs/HB-01-halsband.md",
+    "bellowerk/specs/HB-01-hamburg.md",
+    "bellowerk/specs/HB-04-halsband.md",
     "bellowerk/specs/LE-01-fuehrleine.md",
     "bellowerk/specs/PATCH-01-markenpatch.md",
     "lieferanten/shortlist.md",
