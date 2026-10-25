@@ -1,6 +1,6 @@
-"""abteilung_innovation.py — 01 Marktbeobachtung und Produktkonzepte."""
+"""abteilungen/innovation.py — 01 Marktbeobachtung und Produktkonzepte."""
 
-from abteilung_basis import Abteilung, einzeltest
+from abteilungen.basis import Abteilung, einzeltest
 
 # Aus Blatt 2 — jedes Konzept muss diese Pruefung bestehen, bevor es Bjoern vorgelegt wird.
 PRUEFFRAGEN = [

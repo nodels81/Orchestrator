@@ -1,5 +1,5 @@
 """
-abteilung_basis.py — Gemeinsame Mechanik. Muss nie angefasst werden.
+abteilungen/basis.py — Gemeinsame Mechanik. Muss nie angefasst werden.
 
 Jede Abteilung erbt von Abteilung und liefert dieselbe Status-Struktur zurueck,
 damit der Orchestrator maschinell pruefen kann statt zu interpretieren.
@@ -29,10 +29,10 @@ except ImportError:
     # Erst der echte API-Aufruf verlangt es (siehe __init__).
     anthropic = None
 
-import gedaechtnis as gedaechtnis_modul
-import markenwissen
+from kern import gedaechtnis as gedaechtnis_modul
+from kern import markenwissen
 
-BASIS = os.path.dirname(os.path.abspath(__file__))
+BASIS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PFAD = os.path.join(BASIS, "config.json")
 STANDARD_MODELL = "claude-sonnet-5"
 

@@ -1,9 +1,9 @@
-"""abteilung_ausfuehrung.py — 02 Spezifikation und bemasste SVG-Zeichnung."""
+"""abteilungen/ausfuehrung.py — 02 Spezifikation und bemasste SVG-Zeichnung."""
 
 import os
 import re
 
-from abteilung_basis import Abteilung, einzeltest, BASIS
+from abteilungen.basis import Abteilung, einzeltest, BASIS
 
 ZEICHNUNGEN = os.path.join(BASIS, "zeichnungen")
 

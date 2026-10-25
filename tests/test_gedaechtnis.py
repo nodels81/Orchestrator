@@ -1,16 +1,16 @@
 """
-test_gedaechtnis.py — Prueft das Gedaechtnis ohne API-Schluessel und ohne Kosten.
+tests/test_gedaechtnis.py — Prueft das Gedaechtnis ohne API-Schluessel und ohne Kosten.
 
-Aufruf auf dem Server:  venv/bin/python -m unittest test_gedaechtnis -v
-Oder ohne venv:         python3 -m unittest test_gedaechtnis -v
+Aufruf auf dem Server:  venv/bin/python -m unittest tests.test_gedaechtnis -v
+Oder ohne venv:         python3 -m unittest tests.test_gedaechtnis -v
 """
 
 import os
 import tempfile
 import unittest
 
-import gedaechtnis
-from gedaechtnis import Gedaechtnis, _fts_frage, _schluessel, kurzfassung
+from kern import gedaechtnis
+from kern.gedaechtnis import Gedaechtnis, _fts_frage, _schluessel, kurzfassung
 
 
 def auftrag(nummer="A-2026-001", abteilung="05 Einkauf China",

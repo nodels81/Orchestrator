@@ -12,7 +12,7 @@ import ssl
 import sys
 from email.message import EmailMessage
 
-from abteilung_basis import config_laden
+from abteilungen.basis import config_laden
 
 
 def senden(betreff: str, text: str, config: dict | None = None) -> bool:

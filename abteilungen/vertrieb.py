@@ -1,6 +1,6 @@
-"""abteilung_vertrieb.py — 03 Kundenantworten und Angebote als Entwurf."""
+"""abteilungen/vertrieb.py — 03 Kundenantworten und Angebote als Entwurf."""
 
-from abteilung_basis import Abteilung, einzeltest
+from abteilungen.basis import Abteilung, einzeltest
 
 
 class Vertrieb(Abteilung):

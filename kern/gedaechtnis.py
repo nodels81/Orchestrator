@@ -1,5 +1,5 @@
 """
-gedaechtnis.py — Das Gedaechtnis des Betriebs.
+kern/gedaechtnis.py — Das Gedaechtnis des Betriebs.
 
 Warum es das gibt: Bisher fing jeder Auftrag bei null an. Markenwissen und
 Einkaufsunterlagen wurden bei jedem Aufruf komplett neu bezahlt (Abteilung 05:
@@ -31,7 +31,7 @@ import re
 import sqlite3
 from datetime import datetime, timedelta
 
-BASIS = os.path.dirname(os.path.abspath(__file__))
+BASIS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATENBANK = os.environ.get("BELLO_GEDAECHTNIS") or os.path.join(BASIS, "gedaechtnis.db")
 
 # Wie lange eine gespeicherte Antwort wiederverwendet werden darf.

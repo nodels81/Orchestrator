@@ -1,6 +1,6 @@
-"""abteilung_social.py — 04 Beitragstexte und Aufnahmeanweisungen fuer echte Fotos."""
+"""abteilungen/social.py — 04 Beitragstexte und Aufnahmeanweisungen fuer echte Fotos."""
 
-from abteilung_basis import Abteilung, einzeltest
+from abteilungen.basis import Abteilung, einzeltest
 
 
 class Social(Abteilung):

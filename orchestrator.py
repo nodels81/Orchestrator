@@ -15,24 +15,25 @@ Aufrufe:
   orchestrator.py --vergessen [Tage]                Alte Episoden wegraeumen (Standard 180)
 """
 
+import importlib
 import json
 import os
 import sys
 from datetime import date, datetime, timedelta
 
-import gedaechtnis
-from abteilung_basis import BASIS, config_laden
+from kern import gedaechtnis
+from abteilungen.basis import BASIS, config_laden
 from orchestrator_mail import senden
 
 ZUSTAND = os.path.join(BASIS, "auftraege.json")
 MAX_NACHARBEIT = 2
 
 ABTEILUNGEN = {
-    "01 Innovation": ("abteilung_innovation", "Innovation"),
-    "02 Produkt & Ausführung": ("abteilung_ausfuehrung", "Ausfuehrung"),
-    "03 Vertrieb": ("abteilung_vertrieb", "Vertrieb"),
-    "04 Social Media": ("abteilung_social", "Social"),
-    "05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),
+    "01 Innovation": ("abteilungen.innovation", "Innovation"),
+    "02 Produkt & Ausführung": ("abteilungen.ausfuehrung", "Ausfuehrung"),
+    "03 Vertrieb": ("abteilungen.vertrieb", "Vertrieb"),
+    "04 Social Media": ("abteilungen.social", "Social"),
+    "05 Einkauf China": ("abteilungen.einkauf_china", "EinkaufChina"),
 }
 
 
@@ -94,7 +95,7 @@ def auftrag_anlegen(abteilung: str, ziel: str, frist: str | None = None,
 
 def abteilung_laden(name: str):
     modul_name, klassen_name = ABTEILUNGEN[name]
-    modul = __import__(modul_name)
+    modul = importlib.import_module(modul_name)
     return getattr(modul, klassen_name)()
 
 

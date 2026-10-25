@@ -1,12 +1,12 @@
-"""abteilung_einkauf_china.py — 05 Auslandseinkauf China.
+"""abteilungen/einkauf_china.py — 05 Auslandseinkauf China.
 
 Liest Markenbrief, Tech Packs und Lieferanten-Shortlist aus sourcing/ als bindenden Kontext.
-Test: venv/bin/python abteilung_einkauf_china.py "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
+Test: venv/bin/python -m abteilungen.einkauf_china "RFQ fuer HB-01 an Wenzhou Vigorous" --recherche
 """
 
 import os
 
-from abteilung_basis import Abteilung, einzeltest, BASIS
+from abteilungen.basis import Abteilung, einzeltest, BASIS
 
 SOURCING = os.path.join(BASIS, "sourcing")
 KONTEXT_DATEIEN = [

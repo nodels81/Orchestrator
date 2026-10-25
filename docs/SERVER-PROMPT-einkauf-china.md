@@ -48,7 +48,7 @@ nichts eigenmächtig.
 3. `systemctl status bello-orchestrator.timer` und `systemctl list-timers | grep bello`.
 4. `journalctl -u bello-orchestrator -n 20 --no-pager` — laufen die Tagesläufe.
 5. `cd /opt/bello && venv/bin/python orchestrator.py --stand` — welche Aufträge/Abteilungen bekannt sind.
-6. `ls /opt/bello/*.py` — welche Abteilungen (01–04) tatsächlich vorhanden sind, mit `diff` prüfen ob
+6. `ls /opt/bello/abteilungen/*.py` — welche Abteilungen (01–04) tatsächlich vorhanden sind, mit `diff` prüfen ob
    sie vom Stand in der Drive-Quelle abweichen (lokale Verbesserungen wie Logging notieren, nicht anfassen).
 7. `git -C /opt/bello status` — ist dort schon ein Repo, oder nicht.
 8. **Optional, nur mit Ansage:** `venv/bin/python orchestrator_mail.py --test` schickt eine echte
@@ -70,7 +70,7 @@ sind da, gibt es Abweichungen vom erwarteten Stand. **Dann stoppst du** und schr
 
 Der Code liegt in GitHub: `https://github.com/nodels81/Orchestrator` (Branch `main`; falls `main`
 nicht existiert, Branch `claude/bellowerk-china-sourcing-dk8k49`). Dort ist die neue **Abteilung 05
-"Einkauf China"** (`abteilung_einkauf_china.py`) bereits in `orchestrator.py` registriert, dazu der
+"Einkauf China"** (`abteilungen/einkauf_china.py`) bereits in `orchestrator.py` registriert, dazu der
 Ordner `sourcing/` mit Markenbrief, Tech Packs, Zeichnungen, Fotos, Nachrichtenvorlagen und
 Lieferanten-Shortlist. `/opt/bello` soll danach ein Klon dieses Repos sein, damit künftige Änderungen
 per `git pull` ankommen — bei laufender Mail-Eskalation und ohne Abteilungen 01–04 zu verlieren.
@@ -84,7 +84,7 @@ per `git pull` ankommen — bei laufender Mail-Eskalation und ohne Abteilungen 0
 
 3. **Zusammenführen.** Lokale Verbesserungen aus Phase 1 Punkt 6 (Logging, Retry-Begrenzung, Pfade)
    in die Repo-Dateien in `/opt/bello.neu` übernehmen — nicht umgekehrt. Die Zeile
-   `"05 Einkauf China": ("abteilung_einkauf_china", "EinkaufChina"),` im Dict `ABTEILUNGEN` muss am
+   `"05 Einkauf China": ("abteilungen.einkauf_china", "EinkaufChina"),` im Dict `ABTEILUNGEN` muss am
    Ende vorhanden sein. Dann aus dem alten `/opt/bello` **nur** diese Dinge nach `/opt/bello.neu`
    kopieren: `config.json`, `auftraege.json`, `venv/` bzw. `.venv/`, `logs/`, `zeichnungen/`,
    `BETRIEB.md`, `requirements.txt`. Existiert `daten/dashboard.html` (siehe Phase 1 Punkt 9), auch
@@ -94,7 +94,7 @@ per `git pull` ankommen — bei laufender Mail-Eskalation und ohne Abteilungen 0
    `chown -R bello:bello /opt/bello`, `chmod 640 /opt/bello/config.json`.
 
 4. **Umgebung prüfen.** `venv/bin/pip install anthropic` falls fehlend; `requirements.txt`
-   aktualisieren. `venv/bin/python -c "import abteilung_einkauf_china; print('ok')"` muss `ok` liefern.
+   aktualisieren. `venv/bin/python -c "import abteilungen.einkauf_china; print('ok')"` muss `ok` liefern.
 
 5. **Probelauf.** `venv/bin/python orchestrator.py --probelauf` und `--stand`. Fehler beheben.
 

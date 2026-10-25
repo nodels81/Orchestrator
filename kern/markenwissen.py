@@ -1,5 +1,5 @@
 """
-markenwissen.py — Die Datei, die am ehesten geaendert wird.
+kern/markenwissen.py — Die Datei, die am ehesten geaendert wird.
 
 Preise, Ausschluesse, Herkunftsregel, Wettbewerb.
 Gilt fuer alle Abteilungen. Aenderungen hier wirken sofort ueberall.

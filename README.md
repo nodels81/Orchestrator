@@ -5,21 +5,33 @@ Dieses Repo **ist** `/opt/bello` auf dem netcup-Server: ein `git pull` dort brin
 und neues Einkaufswissen in den Tageslauf. Geheimnisse (`config.json`) und Betriebszustand
 (`auftraege.json`, Logs) bleiben auf dem Server und sind per `.gitignore` ausgeschlossen.
 
+## Aufbau
+
+```
+orchestrator.py              Steuerung: --stand, --auftrag, --probelauf, --wochenbericht
+orchestrator_mail.py         Mail-Eskalation
+abteilungen/                 Eine Abteilung je Datei, gemeinsame Mechanik in basis.py
+kern/                        Markenwahrheit (markenwissen.py) und Gedächtnis (gedaechtnis.py)
+tests/                       Unittests (ohne API-Schlüssel, ohne Kosten)
+docs/                        Einmalige Setup-Anleitungen
+sourcing/                    Einkaufsunterlagen, siehe unten
+```
+
 ## Abteilungen
 
 | Nr. | Abteilung | Datei | Was sie tut |
 |---|---|---|---|
-| 01 | Innovation | `abteilung_innovation.py` | Marktbeobachtung, Produktkonzepte |
-| 02 | Produkt & Ausführung | `abteilung_ausfuehrung.py` | Spezifikation, Stückliste, SVG-Zeichnung |
-| 03 | Vertrieb | `abteilung_vertrieb.py` | Angebote, Kundenantworten als Entwurf |
-| 04 | Social Media | `abteilung_social.py` | Beitragstexte, Aufnahmeanweisungen |
-| **05** | **Einkauf China** | `abteilung_einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
+| 01 | Innovation | `abteilungen/innovation.py` | Marktbeobachtung, Produktkonzepte |
+| 02 | Produkt & Ausführung | `abteilungen/ausfuehrung.py` | Spezifikation, Stückliste, SVG-Zeichnung |
+| 03 | Vertrieb | `abteilungen/vertrieb.py` | Angebote, Kundenantworten als Entwurf |
+| 04 | Social Media | `abteilungen/social.py` | Beitragstexte, Aufnahmeanweisungen |
+| **05** | **Einkauf China** | `abteilungen/einkauf_china.py` | RFQs, Angebots- und Musterbewertung, Bestellvorbereitung bei chinesischen Herstellern — liest `sourcing/` als bindenden Kontext |
 
 Steuerung: `orchestrator.py` (`--stand`, `--auftrag`, `--probelauf`, `--wochenbericht`),
-Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `markenwissen.py`,
-Gedächtnis: `gedaechtnis.py`.
+Mail-Eskalation: `orchestrator_mail.py`, Markenwahrheit: `kern/markenwissen.py`,
+Gedächtnis: `kern/gedaechtnis.py`.
 
-## Gedächtnis (`gedaechtnis.py`)
+## Gedächtnis (`kern/gedaechtnis.py`)
 
 Bisher fing jeder Auftrag bei null an: Markenwissen und Einkaufsunterlagen wurden jedes Mal
 komplett neu bezahlt (Abteilung 05: rund 7.500 Eingabe-Tokens pro Auftrag), und was gestern
@@ -48,7 +60,7 @@ lässt sich beides — so bleibt nachvollziehbar, was wann galt und wer wann was
 venv/bin/python orchestrator.py --gedaechtnis            # Stand und gesparte Tokens
 venv/bin/python orchestrator.py --wissen "Wenzhou Vigorous"   # nachschlagen, auch die Historie
 venv/bin/python orchestrator.py --vergessen 180          # alte Episoden weg, Fakten bleiben
-venv/bin/python -m unittest test_gedaechtnis -v          # 19 Tests, ohne Schlüssel, ohne Kosten
+venv/bin/python -m unittest tests.test_gedaechtnis -v    # 19 Tests, ohne Schlüssel, ohne Kosten
 ```
 
 `gedaechtnis.db` ist reines SQLite aus der Standardbibliothek — kein zusätzliches Paket, kein
@@ -80,14 +92,14 @@ venv/bin/python orchestrator.py --stand
 venv/bin/python orchestrator.py --gedaechtnis
 ```
 
-Einzeltest der Einkaufsabteilung ohne Orchestrator:
+Einzeltest einer Abteilung ohne Orchestrator (Modulpfad mit Punkt, `-m` statt Dateiname):
 
 ```bash
-venv/bin/python abteilung_einkauf_china.py "Erstkontakt/RFQ fuer HB-01 an Wenzhou Vigorous Pet Products, 100 Stueck" --recherche
+venv/bin/python -m abteilungen.einkauf_china "Erstkontakt/RFQ fuer HB-01 an Wenzhou Vigorous Pet Products, 100 Stueck" --recherche
 ```
 
 Erstinstallation oder Umstellung eines bestehenden `/opt/bello` auf dieses Repo:
-`SERVER-PROMPT-einkauf-china.md` in Claude Code auf dem Server einfügen.
+`docs/SERVER-PROMPT-einkauf-china.md` in Claude Code auf dem Server einfügen.
 
 ## Lokal / in Claude Code
 
@@ -101,4 +113,4 @@ parallel (Scout sucht Beschlag-Lieferanten, während der Einkäufer RFQs schreib
 - `config.json` und `gedaechtnis.db` verlassen den Server nicht. Kein Git, keine Cloud, kein Chat.
 - Nacharbeit holt sich nie eine gespeicherte Antwort — sonst käme ewig dasselbe abgelehnte
   Ergebnis zurück.
-- Werkstoffliste und Ausschlüsse in `markenwissen.py` und `sourcing/bellowerk/markenbrief.md` sind bindend.
+- Werkstoffliste und Ausschlüsse in `kern/markenwissen.py` und `sourcing/bellowerk/markenbrief.md` sind bindend.
