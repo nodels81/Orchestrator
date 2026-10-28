@@ -1,7 +1,7 @@
 """
 gegenpruefung.py — Die andere KI nimmt das Ergebnis ab.
 
-Hat Claude gearbeitet, liest ChatGPT gegen — und umgekehrt. Zwei Modelle machen
+Hat eine KI gearbeitet, liest die naechste im Ring Claude -> ChatGPT -> Kimi gegen. Zwei Modelle machen
 selten denselben Fehler an derselben Stelle. Die Pruefung ist ein einzelner Aufruf
 ohne Werkzeuge und kostet nur dann etwas, wenn das Ergebnis die eigene Pruefung
 des Orchestrators schon bestanden hat.
@@ -72,7 +72,7 @@ def pruefen(auftrag: dict, ergebnis: dict, config: dict, bearbeiter: str,
     `bearbeiter` ist die KI, die das Ergebnis geschrieben hat; geprueft wird mit der anderen.
     `pruefer` erlaubt Tests, einen Anbieter ohne Netz einzusetzen.
     """
-    name = ki_anbieter.gegenueber(bearbeiter)
+    name = ki_anbieter.gegenueber(bearbeiter, config)
     try:
         pruefer = pruefer or ki_anbieter.anbieter_bauen(config, name)
         text, _ = pruefer.antworten(system_prompt(), nutzer_text(auftrag, ergebnis),

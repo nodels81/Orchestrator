@@ -14,5 +14,9 @@
   "openai": {
     "api_key": "HIER-DEN-OPENAI-SCHLUESSEL-EINTRAGEN",
     "modell": "gpt-5"
+  },
+  "kimi": {
+    "api_key": "HIER-DEN-MOONSHOT-SCHLUESSEL-EINTRAGEN",
+    "modell": "kimi-k2-0905-preview"
   }
 }

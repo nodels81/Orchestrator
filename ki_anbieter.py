@@ -1,5 +1,5 @@
 """
-ki_anbieter.py — Eine Schnittstelle, zwei KIs: Claude (Anthropic) und ChatGPT (OpenAI).
+ki_anbieter.py — Eine Schnittstelle, drei KIs: Claude (Anthropic), ChatGPT (OpenAI), Kimi (Moonshot).
 
 Die Abteilungen wissen nicht, wer antwortet. Sie rufen anbieter.antworten(system, nutzer)
 und bekommen Text plus den echten Verbrauch zurueck. Welche KI sie bekommen, steht in
@@ -8,8 +8,10 @@ config.json:
   "anbieter": "claude"                          Standard fuer alle Abteilungen
   "anbieter_je_abteilung": {"05": "openai"}     Ausnahmen nach Abteilungsnummer
   "openai": {"api_key": "...", "modell": "gpt-5"}
+  "kimi":   {"api_key": "...", "modell": "kimi-k2-0905-preview"}
 
-OpenAI wird ueber die HTTP-Schnittstelle angesprochen (nur Standardbibliothek) —
+Kimi spricht dasselbe Protokoll wie OpenAI, nur mit eigener Adresse und eigenem Schluessel.
+OpenAI und Kimi werden ueber die HTTP-Schnittstelle angesprochen (nur Standardbibliothek) —
 kein zusaetzliches Paket auf dem Server.
 """
 
@@ -26,10 +28,13 @@ except ImportError:
 
 CLAUDE = "claude"
 OPENAI = "openai"
-BEKANNT = (CLAUDE, OPENAI)
+KIMI = "kimi"
+BEKANNT = (CLAUDE, OPENAI, KIMI)   # Reihenfolge = Ring der Gegenpruefung
 
-STANDARD_MODELL = {CLAUDE: "claude-sonnet-5", OPENAI: "gpt-5"}
+STANDARD_MODELL = {CLAUDE: "claude-sonnet-5", OPENAI: "gpt-5", KIMI: "kimi-k2-0905-preview"}
 OPENAI_BASIS_URL = "https://api.openai.com/v1"
+KIMI_BASIS_URL = "https://api.moonshot.ai/v1"
+UMGEBUNGSVARIABLE = {CLAUDE: "ANTHROPIC_API_KEY", OPENAI: "OPENAI_API_KEY", KIMI: "MOONSHOT_API_KEY"}
 
 # Unterhalb dieser Laenge lohnt der Zwischenspeicher nicht: die API legt erst ab
 # rund 1.000 Tokens etwas ab. Vier Zeichen sind grob ein Token.
@@ -82,7 +87,11 @@ class ClaudeAnbieter(Anbieter):
 
 
 class OpenAIAnbieter(Anbieter):
+    """Alles, was das Chat-Completions-Protokoll spricht: OpenAI und Kimi."""
+
     NAME = OPENAI
+    TOKEN_FELD = "max_completion_tokens"
+    LABEL = "OpenAI"
 
     def __init__(self, modell: str, schluessel: str, basis_url: str = OPENAI_BASIS_URL,
                  zeitlimit: int = 180):
@@ -94,7 +103,7 @@ class OpenAIAnbieter(Anbieter):
     def antworten(self, system, nutzer, recherche=False, max_tokens=4000):
         if recherche:
             # Die Websuche haengt an Claudes Werkzeug; ChatGPT antwortet hier aus Wissen.
-            print("    [OpenAI] Websuche nicht angebunden — Antwort ohne Recherche.")
+            print(f"    [{self.LABEL}] Websuche nicht angebunden — Antwort ohne Recherche.")
         # Gleichbleibender Anfang zuerst: OpenAI cached gleiche Praefixe automatisch.
         koerper = {
             "model": self.modell,
@@ -103,13 +112,13 @@ class OpenAIAnbieter(Anbieter):
                 {"role": "user", "content": nutzer},
             ],
             "response_format": {"type": "json_object"},
-            "max_completion_tokens": max_tokens,
+            self.TOKEN_FELD: max_tokens,
         }
         antwort = self._post("/chat/completions", koerper)
         try:
             text = antwort["choices"][0]["message"]["content"] or ""
         except (KeyError, IndexError, TypeError) as fehler:
-            raise RuntimeError(f"OpenAI-Antwort unlesbar ({fehler}): {str(antwort)[:300]}") from fehler
+            raise RuntimeError(f"{self.LABEL}-Antwort unlesbar ({fehler}): {str(antwort)[:300]}") from fehler
         return text, _openai_verbrauch(antwort.get("usage"))
 
     def _post(self, pfad: str, koerper: dict) -> dict:
@@ -127,9 +136,15 @@ class OpenAIAnbieter(Anbieter):
                 return json.loads(antwort.read().decode("utf-8"))
         except urllib.error.HTTPError as fehler:
             detail = fehler.read().decode("utf-8", errors="replace")[:400]
-            raise RuntimeError(f"OpenAI antwortet mit HTTP {fehler.code}: {detail}") from fehler
+            raise RuntimeError(f"{self.LABEL} antwortet mit HTTP {fehler.code}: {detail}") from fehler
         except urllib.error.URLError as fehler:
-            raise RuntimeError(f"OpenAI nicht erreichbar: {fehler.reason}") from fehler
+            raise RuntimeError(f"{self.LABEL} nicht erreichbar: {fehler.reason}") from fehler
+
+
+class KimiAnbieter(OpenAIAnbieter):
+    NAME = KIMI
+    TOKEN_FELD = "max_tokens"
+    LABEL = "Kimi"
 
 
 def _claude_verbrauch(antwort) -> dict:
@@ -150,7 +165,8 @@ def _openai_verbrauch(nutzung: dict | None) -> dict:
         return verbrauch_leer()
     gesamt = int(nutzung.get("prompt_tokens") or 0)
     details = nutzung.get("prompt_tokens_details") or {}
-    gecached = int(details.get("cached_tokens") or 0)
+    # Kimi meldet Cache-Treffer teils direkt in usage statt in prompt_tokens_details.
+    gecached = int(details.get("cached_tokens") or nutzung.get("cached_tokens") or 0)
     return {
         "ein": max(gesamt - gecached, 0),
         "aus": int(nutzung.get("completion_tokens") or 0),
@@ -171,9 +187,19 @@ def anbieter_name(config: dict, nummer: str | None = None) -> str:
     return name
 
 
-def gegenueber(name: str) -> str:
-    """Die jeweils andere KI."""
-    return OPENAI if name == CLAUDE else CLAUDE
+def gegenueber(name: str, config: dict | None = None) -> str:
+    """Wer gegenliest: im Ring Claude -> OpenAI -> Kimi -> Claude der naechste, fuer den
+    ein Schluessel da ist. Ohne config (oder ohne jeden Schluessel) gilt der naechste im Ring.
+    `"pruefer": "kimi"` in config.json erzwingt einen bestimmten."""
+    wunsch = str((config or {}).get("pruefer") or "").lower()
+    if wunsch in BEKANNT and wunsch != name:
+        return wunsch
+    ring = [BEKANNT[(BEKANNT.index(name) + i) % len(BEKANNT)] for i in range(1, len(BEKANNT))]
+    if config is not None:
+        for kandidat in ring:
+            if schluessel_vorhanden(config, kandidat):
+                return kandidat
+    return ring[0]
 
 
 def schluessel_vorhanden(config: dict, name: str) -> bool:
@@ -183,27 +209,28 @@ def schluessel_vorhanden(config: dict, name: str) -> bool:
 def _schluessel(config: dict, name: str) -> str | None:
     if name == CLAUDE:
         return config.get("anthropic_api_key") or os.environ.get("ANTHROPIC_API_KEY")
-    block = config.get("openai") or {}
-    return block.get("api_key") or os.environ.get("OPENAI_API_KEY")
+    block = config.get(name) or {}
+    return block.get("api_key") or os.environ.get(UMGEBUNGSVARIABLE[name])
 
 
 def modell_name(config: dict, name: str) -> str:
     if name == CLAUDE:
         return config.get("modell") or STANDARD_MODELL[CLAUDE]
-    return (config.get("openai") or {}).get("modell") or STANDARD_MODELL[OPENAI]
+    return (config.get(name) or {}).get("modell") or STANDARD_MODELL[name]
 
 
 def anbieter_bauen(config: dict, name: str) -> Anbieter:
     schluessel = _schluessel(config, name)
     if not schluessel:
-        quelle = "anthropic_api_key / ANTHROPIC_API_KEY" if name == CLAUDE \
-            else "openai.api_key / OPENAI_API_KEY"
+        quelle = ("anthropic_api_key" if name == CLAUDE else f"{name}.api_key") \
+            + f" / {UMGEBUNGSVARIABLE[name]}"
         raise ValueError(f"Kein Schluessel fuer {name}: {quelle} in config.json oder Umgebung setzen.")
     modell = modell_name(config, name)
     if name == CLAUDE:
         return ClaudeAnbieter(modell, schluessel)
-    basis = (config.get("openai") or {}).get("basis_url") or OPENAI_BASIS_URL
-    return OpenAIAnbieter(modell, schluessel, basis)
+    klasse, standard = (KimiAnbieter, KIMI_BASIS_URL) if name == KIMI else (OpenAIAnbieter, OPENAI_BASIS_URL)
+    basis = (config.get(name) or {}).get("basis_url") or standard
+    return klasse(modell, schluessel, basis)
 
 
 def anbieter_waehlen(config: dict, nummer: str | None = None) -> Anbieter:

@@ -14,8 +14,8 @@ Umlaute in Markdown).
 
 - `orchestrator.py` — verteilt Aufträge, prüft Ergebnisse, eskaliert per Mail
 - `abteilung_*.py` — eine Datei pro Abteilung, alle erben von `abteilung_basis.Abteilung`
-- `ki_anbieter.py` — Claude und ChatGPT hinter einer Schnittstelle; `config.json` wählt je Abteilung
-- `gegenpruefung.py` — die jeweils andere KI nimmt ein Ergebnis ab (`"gegenpruefung": true`)
+- `ki_anbieter.py` — Claude, ChatGPT und Kimi hinter einer Schnittstelle; `config.json` wählt je Abteilung
+- `gegenpruefung.py` — eine andere KI (Ring Claude → ChatGPT → Kimi) nimmt ein Ergebnis ab (`"gegenpruefung": true`)
 - `ki_bruecke.py` — Claude Code ↔ Codex: Aufgaben und Gegenlesen, Protokoll in `uebergabe/`
 - `gedaechtnis.py` — SQLite-Gedächtnis, Prompt-Cache-Logik; `markenwissen.py` — Markenwahrheit
 - `sourcing/` — Einkaufsunterlagen, bindender Kontext für Abteilung 05

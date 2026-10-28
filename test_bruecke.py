@@ -66,9 +66,20 @@ class AuswahlTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "OPENAI_API_KEY"):
                 ki_anbieter.anbieter_bauen({}, "openai")
 
-    def test_gegenueber(self):
+    def test_gegenueber_ring_ohne_config(self):
         self.assertEqual(ki_anbieter.gegenueber("claude"), "openai")
-        self.assertEqual(ki_anbieter.gegenueber("openai"), "claude")
+        self.assertEqual(ki_anbieter.gegenueber("openai"), "kimi")
+        self.assertEqual(ki_anbieter.gegenueber("kimi"), "claude")
+
+    def test_gegenueber_ueberspringt_anbieter_ohne_schluessel(self):
+        with mock.patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(ki_anbieter.gegenueber("claude", CONFIG), "openai")
+            nur_claude_kimi = {"anthropic_api_key": "a", "kimi": {"api_key": "k"}}
+            self.assertEqual(ki_anbieter.gegenueber("claude", nur_claude_kimi), "kimi")
+
+    def test_pruefer_laesst_sich_erzwingen_aber_nie_selbst(self):
+        self.assertEqual(ki_anbieter.gegenueber("claude", {"pruefer": "kimi"}), "kimi")
+        self.assertEqual(ki_anbieter.gegenueber("kimi", {"pruefer": "kimi"}), "claude")
 
 
 class OpenAITest(unittest.TestCase):
@@ -96,6 +107,22 @@ class OpenAITest(unittest.TestCase):
         # Cache-Treffer werden aus "ein" herausgerechnet, wie bei Claude.
         self.assertEqual(verbrauch, {"ein": 200, "aus": 50, "cache_gelesen": 800,
                                      "cache_geschrieben": 0})
+
+    def test_kimi_nutzt_eigene_adresse_schluessel_und_tokenfeld(self):
+        cfg = {"kimi": {"api_key": "sk-kimi"}}
+        echt = {"choices": [{"message": {"content": "{}"}}],
+                "usage": {"prompt_tokens": 500, "completion_tokens": 10, "cached_tokens": 400}}
+        anbieter = ki_anbieter.anbieter_bauen(cfg, "kimi")
+        with mock.patch("urllib.request.urlopen", return_value=self.antwort(echt)) as auf:
+            _, verbrauch = anbieter.antworten("s", "n", max_tokens=123)
+        anfrage = auf.call_args[0][0]
+        self.assertTrue(anfrage.full_url.startswith("https://api.moonshot.ai/v1/"))
+        self.assertEqual(anfrage.get_header("Authorization"), "Bearer sk-kimi")
+        gesendet = json.loads(anfrage.data)
+        self.assertEqual(gesendet["max_tokens"], 123)
+        self.assertNotIn("max_completion_tokens", gesendet)
+        self.assertEqual(verbrauch["cache_gelesen"], 400)
+        self.assertEqual(verbrauch["ein"], 100)
 
     def test_http_fehler_zeigt_den_grund(self):
         fehler = ki_anbieter.urllib.error.HTTPError(
@@ -136,9 +163,10 @@ class AbteilungTest(unittest.TestCase):
 class GegenpruefungTest(unittest.TestCase):
 
     def test_pruefer_ist_die_andere_ki(self):
-        pruefer = FakeAnbieter("claude", '{"freigabe": true, "einwaende": []}')
-        urteil = gegenpruefung.pruefen(auftrag(), ergebnis(), CONFIG, "openai", pruefer)
-        self.assertEqual(urteil["pruefer"], "claude")
+        pruefer = FakeAnbieter("kimi", '{"freigabe": true, "einwaende": []}')
+        mit_kimi = dict(CONFIG, kimi={"api_key": "k"})
+        urteil = gegenpruefung.pruefen(auftrag(), ergebnis(), mit_kimi, "openai", pruefer)
+        self.assertEqual(urteil["pruefer"], "kimi")
         self.assertTrue(urteil["freigabe"])
 
     def test_ablehnung_mit_einwand(self):

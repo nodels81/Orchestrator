@@ -326,7 +326,7 @@ def anbieter_zeigen() -> None:
         name = ki_anbieter.anbieter_name(config, nummer)
         zeile = f"  {abteilung:<26} {name}"
         if config.get("gegenpruefung") is True:
-            zeile += f"  (Gegenpruefung: {ki_anbieter.gegenueber(name)})"
+            zeile += f"  (Gegenpruefung: {ki_anbieter.gegenueber(name, config)})"
         if not ki_anbieter.schluessel_vorhanden(config, name):
             zeile += "  <- Schluessel fehlt"
         print(zeile)

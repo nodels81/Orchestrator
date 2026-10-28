@@ -56,26 +56,31 @@ Server, keine Cloud. Die Datei bleibt wie `config.json` auf dem Server und ist p
 ausgeschlossen. Abschalten mit `"gedaechtnis": false` in `config.json`; fällt die Datenbank aus,
 läuft jeder Auftrag ohne sie weiter, statt zu scheitern.
 
-## Claude und ChatGPT vernetzt
+## Claude, ChatGPT und Kimi vernetzt
 
 Zwei Ebenen, die unabhängig voneinander funktionieren:
 
-**1. Im Betrieb (Server): jede Abteilung läuft auf Claude oder ChatGPT, und die andere KI nimmt ab.**
+**1. Im Betrieb (Server): jede Abteilung läuft auf Claude, ChatGPT oder Kimi, und eine andere KI nimmt ab.**
 `ki_anbieter.py` setzt beide hinter eine Schnittstelle; `config.json` wählt:
 
 ```json
 "anbieter": "claude",
 "anbieter_je_abteilung": {"05": "openai"},
 "gegenpruefung": true,
-"openai": {"api_key": "sk-…", "modell": "gpt-5"}
+"openai": {"api_key": "sk-…", "modell": "gpt-5"},
+"kimi": {"api_key": "sk-…", "modell": "kimi-k2-0905-preview"}
 ```
 
-Mit `gegenpruefung` liest die jeweils *andere* KI jedes Ergebnis gegen, das die eigene Prüfung
+Schlüssel alternativ als `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `MOONSHOT_API_KEY`. Wer gegenliest,
+bestimmt der Ring Claude → ChatGPT → Kimi → Claude; Anbieter ohne Schlüssel werden übersprungen.
+`"pruefer": "kimi"` erzwingt einen bestimmten (nie den Bearbeiter selbst).
+
+Mit `gegenpruefung` liest eine *andere* KI jedes Ergebnis gegen, das die eigene Prüfung
 schon bestanden hat: Verstoß gegen Werkstoffliste/Ausschlüsse, erfundene Zahlen, nicht wirklich
 erfüllte Kriterien, zugesagtes Geld. Lehnt sie ab, geht der Auftrag in Nacharbeit — und die
 Abteilung bekommt den Einwand im Prompt zu sehen. Fällt die zweite KI aus (Netz, Schlüssel),
 wird nichts blockiert, nur vermerkt. Die Websuche (`--recherche`) bleibt Claude-only.
-OpenAI wird per HTTP aus der Standardbibliothek angesprochen — kein neues Paket auf dem Server.
+OpenAI und Kimi (gleiches Protokoll, Adresse `api.moonshot.ai`) werden per HTTP aus der Standardbibliothek angesprochen — kein neues Paket auf dem Server.
 
 ```bash
 venv/bin/python orchestrator.py --anbieter    # wer macht was, welche Schlüssel fehlen
