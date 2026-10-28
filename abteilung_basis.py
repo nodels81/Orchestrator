@@ -22,24 +22,12 @@ import json
 import os
 import sys
 
-try:
-    import anthropic
-except ImportError:
-    # Kein Abbruch: --probelauf und --stand muessen ohne das Paket laufen.
-    # Erst der echte API-Aufruf verlangt es (siehe __init__).
-    anthropic = None
-
 import gedaechtnis as gedaechtnis_modul
+import ki_anbieter
 import markenwissen
 
 BASIS = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PFAD = os.path.join(BASIS, "config.json")
-STANDARD_MODELL = "claude-sonnet-5"
-
-# Unterhalb dieser Laenge lohnt der Zwischenspeicher nicht: die API legt erst ab
-# rund 1.000 Tokens etwas ab, und ein vergeblicher Schreibversuch kostet mehr,
-# als er spart. Vier Zeichen sind grob ein Token.
-MIN_CACHE_ZEICHEN = 5_000
 
 # Wie viel Platz das Gedaechtnis im Prompt bekommen darf.
 GEDAECHTNIS_BUDGET_ZEICHEN = 2_500
@@ -69,16 +57,9 @@ class Abteilung:
 
     def __init__(self, config: dict | None = None):
         self.config = config or config_laden()
-        if anthropic is None:
-            raise RuntimeError(
-                "Paket 'anthropic' fehlt. Nachinstallieren mit: "
-                "venv/bin/pip install anthropic"
-            )
-        schluessel = self.config.get("anthropic_api_key") or os.environ.get("ANTHROPIC_API_KEY")
-        if not schluessel:
-            raise ValueError("Kein API-Schluessel in config.json oder ANTHROPIC_API_KEY.")
-        self.client = anthropic.Anthropic(api_key=schluessel)
-        self.modell = self.config.get("modell", STANDARD_MODELL)
+        # Welche KI diese Abteilung bedient, entscheidet config.json (ki_anbieter.py).
+        self.anbieter = ki_anbieter.anbieter_waehlen(self.config, self.NUMMER)
+        self.modell = self.anbieter.modell
         self.gedaechtnis_an = self.config.get("gedaechtnis", True) is not False
 
     # ---------- Prompt ----------
@@ -143,21 +124,15 @@ class Abteilung:
         erinnerung = self._erinnerung(auftrag)
         if erinnerung:
             nutzer += "\n\n" + erinnerung
+        abgelehnt = _letzte_ablehnung(auftrag)
+        if abgelehnt:
+            nutzer += "\n\n" + abgelehnt
         nutzer += "\n\n" + self.antwortformat()
 
-        argumente = {
-            "model": self.modell,
-            "max_tokens": 4000,
-            "system": self._system_bloecke(),
-            "messages": [{"role": "user", "content": nutzer}],
-        }
-        if recherche:
-            argumente["tools"] = [{"type": "web_search_20250305", "name": "web_search"}]
-
-        antwort = self.client.messages.create(**argumente)
-        text = "".join(b.text for b in antwort.content if getattr(b, "type", "") == "text")
+        text, verbrauch = self.anbieter.antworten(
+            self.system_prompt(), nutzer, recherche=recherche)
         ergebnis = self._json_lesen(text, len(kriterien))
-        self._merken(auftrag, ergebnis, _verbrauch(antwort))
+        self._merken(auftrag, ergebnis, verbrauch)
         return ergebnis
 
     def _gespeicherte_antwort(self, auftrag: dict) -> dict | None:
@@ -169,13 +144,6 @@ class Abteilung:
         except Exception as fehler:
             print(f"    [Gedaechtnis] nicht lesbar ({fehler}) — Auftrag laeuft ohne.")
             return None
-
-    def _system_bloecke(self) -> list[dict]:
-        """Der System-Prompt als Block. Ist er lang genug, wird er zwischengespeichert."""
-        block: dict = {"type": "text", "text": self.system_prompt()}
-        if len(block["text"]) >= MIN_CACHE_ZEICHEN:
-            block["cache_control"] = {"type": "ephemeral"}
-        return [block]
 
     def _erinnerung(self, auftrag: dict) -> str:
         if not self.gedaechtnis_an:
@@ -238,16 +206,14 @@ class Abteilung:
         return daten
 
 
-def _verbrauch(antwort) -> dict:
-    """Die echten Zahlen der API, nicht geschaetzt."""
-    nutzung = getattr(antwort, "usage", None)
-    hole = lambda feld: int(getattr(nutzung, feld, 0) or 0) if nutzung else 0
-    return {
-        "ein": hole("input_tokens"),
-        "aus": hole("output_tokens"),
-        "cache_gelesen": hole("cache_read_input_tokens"),
-        "cache_geschrieben": hole("cache_creation_input_tokens"),
-    }
+def _letzte_ablehnung(auftrag: dict) -> str:
+    """Bei Nacharbeit: warum der letzte Versuch durchfiel — auch wenn die Gegenpruefung
+    der anderen KI ihn abgelehnt hat. Ohne das wiederholte sich derselbe Fehler."""
+    verlauf = auftrag.get("verlauf") or []
+    if not verlauf or verlauf[-1].get("bestanden", True):
+        return ""
+    return ("LETZTER VERSUCH ABGELEHNT — beheben, nicht wiederholen:\n"
+            + str(verlauf[-1].get("begruendung", ""))[:1500])
 
 
 def einzeltest(klasse) -> None:

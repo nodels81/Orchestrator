@@ -13,6 +13,7 @@ Aufrufe:
   orchestrator.py --gedaechtnis                     Was der Betrieb weiss und was das spart
   orchestrator.py --wissen "Wenzhou Vigorous"       Im Gedaechtnis nachschlagen
   orchestrator.py --vergessen [Tage]                Alte Episoden wegraeumen (Standard 180)
+  orchestrator.py --anbieter                        Welche KI macht was (Claude / ChatGPT)
 """
 
 import json
@@ -21,6 +22,8 @@ import sys
 from datetime import date, datetime, timedelta
 
 import gedaechtnis
+import gegenpruefung
+import ki_anbieter
 from abteilung_basis import BASIS, config_laden
 from orchestrator_mail import senden
 
@@ -145,7 +148,8 @@ def lauf(probelauf: bool = False) -> None:
             continue
 
         try:
-            ergebnis = abteilung_laden(auftrag["abteilung"]).bearbeiten(auftrag)
+            abteilung = abteilung_laden(auftrag["abteilung"])
+            ergebnis = abteilung.bearbeiten(auftrag)
         except Exception as fehler:
             auftrag["stand"] = "gestoert"
             auftrag["verlauf"].append({"zeit": _jetzt(), "fehler": str(fehler)})
@@ -156,6 +160,15 @@ def lauf(probelauf: bool = False) -> None:
 
         auftrag["versuche"] += 1
         bestanden, begruendung = pruefen(auftrag, ergebnis)
+        gegen = None
+        if bestanden and config.get("gegenpruefung") is True:
+            gegen = gegenpruefung.pruefen(auftrag, ergebnis, config, abteilung.anbieter.NAME)
+            if not gegen["freigabe"]:
+                bestanden, begruendung = False, gegenpruefung.begruendung(gegen)
+            elif not gegen["verfuegbar"]:
+                print(f"    [Gegenpruefung] {gegen['hinweis']}")
+            else:
+                print(f"    [Gegenpruefung] {gegen['pruefer']} gibt frei.")
         auftrag["verlauf"].append({
             "zeit": _jetzt(),
             "versuch": auftrag["versuche"],
@@ -163,6 +176,8 @@ def lauf(probelauf: bool = False) -> None:
             "begruendung": begruendung,
             "ergebnis": ergebnis.get("ergebnis", "")[:4000],
             "anmerkung": ergebnis.get("anmerkung"),
+            "bearbeiter": abteilung.anbieter.NAME,
+            "gegenpruefung": gegen,
         })
 
         if bestanden:
@@ -296,6 +311,27 @@ def wissen_zeigen(suchbegriff: str) -> None:
             print(f"     {e['zusammenfassung']}")
 
 
+def anbieter_zeigen() -> None:
+    """Zuordnung Abteilung -> KI, damit vor einem Lauf sichtbar ist, wer was bezahlt."""
+    config = config_laden()
+    print("Standard-KI:    ", ki_anbieter.anbieter_name(config))
+    print("Gegenpruefung:  ", "an" if config.get("gegenpruefung") is True else "aus")
+    print("\nSchluessel:")
+    for name in ki_anbieter.BEKANNT:
+        da = "vorhanden" if ki_anbieter.schluessel_vorhanden(config, name) else "FEHLT"
+        print(f"  {name:<7} {da:<10} Modell: {ki_anbieter.modell_name(config, name)}")
+    print("\nAbteilungen:")
+    for abteilung in ABTEILUNGEN:
+        nummer = abteilung.split()[0]
+        name = ki_anbieter.anbieter_name(config, nummer)
+        zeile = f"  {abteilung:<26} {name}"
+        if config.get("gegenpruefung") is True:
+            zeile += f"  (Gegenpruefung: {ki_anbieter.gegenueber(name)})"
+        if not ki_anbieter.schluessel_vorhanden(config, name):
+            zeile += "  <- Schluessel fehlt"
+        print(zeile)
+
+
 def _jetzt() -> str:
     return datetime.now().isoformat(timespec="seconds")
 
@@ -306,6 +342,8 @@ def main() -> None:
     argumente = sys.argv[1:]
     if "--stand" in argumente:
         stand_zeigen()
+    elif "--anbieter" in argumente:
+        anbieter_zeigen()
     elif "--gedaechtnis" in argumente:
         print(gedaechtnis.bericht())
     elif "--wissen" in argumente:

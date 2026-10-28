@@ -56,6 +56,44 @@ Server, keine Cloud. Die Datei bleibt wie `config.json` auf dem Server und ist p
 ausgeschlossen. Abschalten mit `"gedaechtnis": false` in `config.json`; fällt die Datenbank aus,
 läuft jeder Auftrag ohne sie weiter, statt zu scheitern.
 
+## Claude und ChatGPT vernetzt
+
+Zwei Ebenen, die unabhängig voneinander funktionieren:
+
+**1. Im Betrieb (Server): jede Abteilung läuft auf Claude oder ChatGPT, und die andere KI nimmt ab.**
+`ki_anbieter.py` setzt beide hinter eine Schnittstelle; `config.json` wählt:
+
+```json
+"anbieter": "claude",
+"anbieter_je_abteilung": {"05": "openai"},
+"gegenpruefung": true,
+"openai": {"api_key": "sk-…", "modell": "gpt-5"}
+```
+
+Mit `gegenpruefung` liest die jeweils *andere* KI jedes Ergebnis gegen, das die eigene Prüfung
+schon bestanden hat: Verstoß gegen Werkstoffliste/Ausschlüsse, erfundene Zahlen, nicht wirklich
+erfüllte Kriterien, zugesagtes Geld. Lehnt sie ab, geht der Auftrag in Nacharbeit — und die
+Abteilung bekommt den Einwand im Prompt zu sehen. Fällt die zweite KI aus (Netz, Schlüssel),
+wird nichts blockiert, nur vermerkt. Die Websuche (`--recherche`) bleibt Claude-only.
+OpenAI wird per HTTP aus der Standardbibliothek angesprochen — kein neues Paket auf dem Server.
+
+```bash
+venv/bin/python orchestrator.py --anbieter    # wer macht was, welche Schlüssel fehlen
+```
+
+**2. Beim Entwickeln: Claude Code ↔ Codex im selben Repo.**
+Beide lesen `AGENTS.md` (`CLAUDE.md` verweist darauf), und `ki_bruecke.py` lässt sie sich
+gegenseitig anstoßen — die Gegenseite arbeitet nur lesend, jede Übergabe wird in `uebergabe/`
+protokolliert:
+
+```bash
+python3 ki_bruecke.py an codex "Prüfe, ob gedaechtnis.py bei parallelen Läufen Daten verliert"
+python3 ki_bruecke.py gegenlesen codex     # Codex liest den aktuellen git-Diff gegen
+python3 ki_bruecke.py gegenlesen claude    # und umgekehrt
+```
+
+Tests ohne Schlüssel und ohne Netz: `python3 -m unittest discover -p "test_*.py"`.
+
 ## Einkaufsunterlagen (`sourcing/`)
 
 ```

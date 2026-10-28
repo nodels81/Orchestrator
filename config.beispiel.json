@@ -7,5 +7,12 @@
     "empfaenger": "DEINE-HAUPTADRESSE@example.com",
     "smtp_server": "smtp.gmail.com",
     "smtp_port": 465
+  },
+  "anbieter": "claude",
+  "anbieter_je_abteilung": {},
+  "gegenpruefung": false,
+  "openai": {
+    "api_key": "HIER-DEN-OPENAI-SCHLUESSEL-EINTRAGEN",
+    "modell": "gpt-5"
   }
 }

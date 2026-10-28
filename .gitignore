@@ -15,3 +15,6 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# Uebergaben zwischen Claude Code und Codex
+uebergabe/
